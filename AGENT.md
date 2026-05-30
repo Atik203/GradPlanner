@@ -481,3 +481,144 @@ export async function createProfessor(formData: unknown) {
 - [ ] No secrets hardcoded
 - [ ] `prisma generate` run after schema changes
 - [ ] `revalidatePath` called after all mutations
+
+---
+
+## 🔑 Authentication Strategy
+
+### Phase 1 — Email / Password (Current)
+
+- Provider: **Credentials** (NextAuth.js v5)
+- Password hashed with **bcryptjs** (12 salt rounds) before storage
+- Stored in `User.password` (nullable — null for OAuth users in Phase 2)
+- Registration flow: `POST /api/auth/register` → hash → `db.user.create` → redirect to login
+- Login flow: NextAuth credentials provider validates hash → issues database session
+- Session contains: `{ id, name, email, image }`
+
+```typescript
+// Phase 1 auth provider (credentials only)
+import Credentials from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
+
+providers: [
+  Credentials({
+    credentials: { email: {}, password: {} },
+    async authorize(credentials) {
+      const user = await db.user.findUnique({ where: { email: credentials.email } });
+      if (!user?.password) return null;
+      const valid = await bcrypt.compare(credentials.password, user.password);
+      return valid ? user : null;
+    },
+  }),
+],
+```
+
+### Phase 2 — OAuth (Planned, do NOT implement yet)
+
+- Provider: **Google OAuth** via NextAuth `GoogleProvider`
+- `Account` and `Session` tables already in schema — ready for OAuth when enabled
+- OAuth users will have `password: null` — never prompt them for a password
+- Add `Google` provider config only when `GOOGLE_CLIENT_ID` env var is present
+- Migration: existing credential users can link Google via account settings
+
+### Password Reset (Phase 2)
+
+- Flow: email → `VerificationToken` → time-limited link → new password
+- Use `Resend` for transactional emails
+- Token expires in 1 hour
+
+---
+
+## 📊 University Rankings Dataset
+
+### Source Files
+
+| File | Source | Years | Records |
+|---|---|---|---|
+| `dataset/qs-2026.csv` | QS World University Rankings | 2026 only | 1,500 |
+| `dataset/the-2016-2026.csv` | Times Higher Education | 2016–2026 | ~2,190/yr |
+| `dataset/arwu-2003-2025.csv` | Academic Ranking of World Universities | 2003–2025 | ~1,000/yr |
+
+### Preprocessing Pipeline
+
+Location: `notebook/preprocess.py`
+
+- Uses **latest available year** from each source: QS 2026, THE 2026, ARWU 2025
+- Merges all three into a **single row per university** via normalized name matching
+- Output: `notebook/universities.csv` — **3,045 universities**, 33 columns
+- Coverage:
+  - Ranked in all 3 systems: **468 universities**
+  - QS + THE only: 455 | QS + ARWU only: 72 | THE + ARWU only: 179
+  - Exclusive: QS only 505, THE only 1,088, ARWU only 278
+
+### Database Model: `UniversityRanking`
+
+**One row per university** (not per source/year). Fields:
+
+```
+institutionName   Canonical name
+country           Country
+region            Geographic region (from QS)
+inQs / inThe / inArwu   Boolean presence flags
+qs2026Rank / the2026Rank / arwu2025Rank   Integer ranks
+qs2026Score / the2026Score / arwu2025Score   Overall scores
+```
+
+Plus individual metric scores for each system (see `schema.prisma` for full list).
+
+### Seeding
+
+```bash
+# Step 1 — regenerate the merged CSV (re-run after dataset updates)
+python notebook/preprocess.py
+
+# Step 2 — seed the database
+cd backend && pnpm exec prisma db seed
+```
+
+### Querying Rankings
+
+```typescript
+// Universities ranked in all 3 systems, sorted by QS rank
+const top = await db.universityRanking.findMany({
+  where: { inQs: true, inThe: true, inArwu: true },
+  orderBy: { qs2026Rank: "asc" },
+  take: 50,
+});
+
+// Find a specific university's full ranking profile
+const profile = await db.universityRanking.findUnique({
+  where: { institutionName: "University of Oxford" },
+});
+
+// Universities in a target country, sorted by best available rank
+const byCountry = await db.universityRanking.findMany({
+  where: { country: "Germany" },
+  orderBy: [{ qs2026Rank: "asc" }, { the2026Rank: "asc" }],
+});
+```
+
+### Rules for Ranking Data
+
+- **Read-only** — `UniversityRanking` is seeded data, never mutated by user actions.
+- When suggesting universities to a user, join `UniversityRanking` on `University.name` for display scores.
+- Ranking data is **not** user-scoped — no `userId` filter needed.
+- When displaying ranks, always show `rankDisplay` (not the integer) to preserve ranges like "801-1000".
+- If a university is not in a ranking system, show "—" not "0" in the UI.
+
+---
+
+## 🗂️ Notebook / Data Pipeline
+
+```
+notebook/
+├── preprocess.py       ← Merge QS/THE/ARWU → universities.csv
+├── inspect.py          ← Quick dataset inspection helper
+└── universities.csv    ← Generated merged output (do NOT commit — add to .gitignore)
+```
+
+- **Never commit `universities.csv`** — it's generated from the dataset files.
+- If dataset files are updated, re-run `preprocess.py` then `prisma db seed`.
+- The `notebook/` folder is Python-only; no TypeScript/Node code here.
+
+

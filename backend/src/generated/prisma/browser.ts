@@ -23,7 +23,47 @@ export * from './enums.js';
  */
 export type User = Prisma.UserModel
 /**
- * Model Post
+ * Model Account
  * 
  */
-export type Post = Prisma.PostModel
+export type Account = Prisma.AccountModel
+/**
+ * Model Session
+ * 
+ */
+export type Session = Prisma.SessionModel
+/**
+ * Model VerificationToken
+ * 
+ */
+export type VerificationToken = Prisma.VerificationTokenModel
+/**
+ * Model UserProfile
+ * 
+ */
+export type UserProfile = Prisma.UserProfileModel
+/**
+ * Model University
+ * 
+ */
+export type University = Prisma.UniversityModel
+/**
+ * Model Professor
+ * 
+ */
+export type Professor = Prisma.ProfessorModel
+/**
+ * Model Application
+ * 
+ */
+export type Application = Prisma.ApplicationModel
+/**
+ * Model Document
+ * 
+ */
+export type Document = Prisma.DocumentModel
+/**
+ * Model UniversityRanking
+ * 
+ */
+export type UniversityRanking = Prisma.UniversityRankingModel

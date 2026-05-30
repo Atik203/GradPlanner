@@ -52,7 +52,15 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
-  Post: 'Post'
+  Account: 'Account',
+  Session: 'Session',
+  VerificationToken: 'VerificationToken',
+  UserProfile: 'UserProfile',
+  University: 'University',
+  Professor: 'Professor',
+  Application: 'Application',
+  Document: 'Document',
+  UniversityRanking: 'UniversityRanking'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -73,22 +81,191 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 
 export const UserScalarFieldEnum = {
   id: 'id',
+  name: 'name',
   email: 'email',
-  name: 'name'
+  password: 'password',
+  emailVerified: 'emailVerified',
+  image: 'image',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
-export const PostScalarFieldEnum = {
+export const AccountScalarFieldEnum = {
   id: 'id',
-  title: 'title',
-  content: 'content',
-  published: 'published',
-  authorId: 'authorId'
+  userId: 'userId',
+  type: 'type',
+  provider: 'provider',
+  providerAccountId: 'providerAccountId',
+  refresh_token: 'refresh_token',
+  access_token: 'access_token',
+  expires_at: 'expires_at',
+  token_type: 'token_type',
+  scope: 'scope',
+  id_token: 'id_token',
+  session_state: 'session_state'
 } as const
 
-export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]
+export type AccountScalarFieldEnum = (typeof AccountScalarFieldEnum)[keyof typeof AccountScalarFieldEnum]
+
+
+export const SessionScalarFieldEnum = {
+  id: 'id',
+  sessionToken: 'sessionToken',
+  userId: 'userId',
+  expires: 'expires'
+} as const
+
+export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
+
+
+export const VerificationTokenScalarFieldEnum = {
+  identifier: 'identifier',
+  token: 'token',
+  expires: 'expires'
+} as const
+
+export type VerificationTokenScalarFieldEnum = (typeof VerificationTokenScalarFieldEnum)[keyof typeof VerificationTokenScalarFieldEnum]
+
+
+export const UserProfileScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  university: 'university',
+  cgpa: 'cgpa',
+  targetIntake: 'targetIntake',
+  graduationDate: 'graduationDate',
+  targetDegree: 'targetDegree',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserProfileScalarFieldEnum = (typeof UserProfileScalarFieldEnum)[keyof typeof UserProfileScalarFieldEnum]
+
+
+export const UniversityScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  name: 'name',
+  country: 'country',
+  tier: 'tier',
+  program: 'program',
+  tuitionPerYr: 'tuitionPerYr',
+  deadline: 'deadline',
+  intake: 'intake',
+  website: 'website',
+  notes: 'notes',
+  deletedAt: 'deletedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UniversityScalarFieldEnum = (typeof UniversityScalarFieldEnum)[keyof typeof UniversityScalarFieldEnum]
+
+
+export const ProfessorScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  universityId: 'universityId',
+  name: 'name',
+  email: 'email',
+  profileUrl: 'profileUrl',
+  researchInterests: 'researchInterests',
+  emailSentDate: 'emailSentDate',
+  emailSubject: 'emailSubject',
+  replyReceived: 'replyReceived',
+  replyDate: 'replyDate',
+  status: 'status',
+  lastFollowUp: 'lastFollowUp',
+  nextFollowUp: 'nextFollowUp',
+  interviewDate: 'interviewDate',
+  suggestedContact: 'suggestedContact',
+  futureFundingNote: 'futureFundingNote',
+  notes: 'notes',
+  deletedAt: 'deletedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProfessorScalarFieldEnum = (typeof ProfessorScalarFieldEnum)[keyof typeof ProfessorScalarFieldEnum]
+
+
+export const ApplicationScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  universityId: 'universityId',
+  status: 'status',
+  deadline: 'deadline',
+  submittedAt: 'submittedAt',
+  decisionDate: 'decisionDate',
+  offerReceived: 'offerReceived',
+  scholarshipAmt: 'scholarshipAmt',
+  notes: 'notes',
+  deletedAt: 'deletedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ApplicationScalarFieldEnum = (typeof ApplicationScalarFieldEnum)[keyof typeof ApplicationScalarFieldEnum]
+
+
+export const DocumentScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  name: 'name',
+  type: 'type',
+  country: 'country',
+  status: 'status',
+  fileUrl: 'fileUrl',
+  expiresAt: 'expiresAt',
+  notes: 'notes',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DocumentScalarFieldEnum = (typeof DocumentScalarFieldEnum)[keyof typeof DocumentScalarFieldEnum]
+
+
+export const UniversityRankingScalarFieldEnum = {
+  id: 'id',
+  institutionName: 'institutionName',
+  country: 'country',
+  region: 'region',
+  inQs: 'inQs',
+  inThe: 'inThe',
+  inArwu: 'inArwu',
+  qs2026Rank: 'qs2026Rank',
+  qs2026RankDisplay: 'qs2026RankDisplay',
+  qs2026Score: 'qs2026Score',
+  qsArScore: 'qsArScore',
+  qsErScore: 'qsErScore',
+  qsFsrScore: 'qsFsrScore',
+  qsCpfScore: 'qsCpfScore',
+  qsIfrScore: 'qsIfrScore',
+  qsIsrScore: 'qsIsrScore',
+  qsEoScore: 'qsEoScore',
+  qsSusScore: 'qsSusScore',
+  the2026Rank: 'the2026Rank',
+  the2026RankDisplay: 'the2026RankDisplay',
+  the2026Score: 'the2026Score',
+  theTeaching: 'theTeaching',
+  theResearchEnv: 'theResearchEnv',
+  theResearchQuality: 'theResearchQuality',
+  theIndustry: 'theIndustry',
+  theInternational: 'theInternational',
+  arwu2025Rank: 'arwu2025Rank',
+  arwu2025Score: 'arwu2025Score',
+  arwuAlumni: 'arwuAlumni',
+  arwuAward: 'arwuAward',
+  arwuHici: 'arwuHici',
+  arwuNs: 'arwuNs',
+  arwuPub: 'arwuPub',
+  arwuPcp: 'arwuPcp'
+} as const
+
+export type UniversityRankingScalarFieldEnum = (typeof UniversityRankingScalarFieldEnum)[keyof typeof UniversityRankingScalarFieldEnum]
 
 
 export const SortOrder = {

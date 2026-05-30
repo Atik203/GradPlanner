@@ -9,5 +9,13 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/User.js'
-export type * from './models/Post.js'
+export type * from './models/Account.js'
+export type * from './models/Session.js'
+export type * from './models/VerificationToken.js'
+export type * from './models/UserProfile.js'
+export type * from './models/University.js'
+export type * from './models/Professor.js'
+export type * from './models/Application.js'
+export type * from './models/Document.js'
+export type * from './models/UniversityRanking.js'
 export type * from './commonInputTypes.js'

@@ -159,48 +159,60 @@ model Document {
   updatedAt DateTime       @updatedAt
 }
 
-// ─── University Rankings (QS / THE / ARWU) ───────────────────────────────────
+// ─── University Rankings — one row per university, all 3 systems combined ────
 
 model UniversityRanking {
   id              String  @id @default(cuid())
-  source          String  // "QS" | "THE" | "ARWU"
-  year            Int
-  rank            Int?    // parsed integer rank (null when range like "301-400")
-  rankDisplay     String  // raw rank string as in CSV
+
+  // Canonical identity
   institutionName String
   country         String
   region          String?
-  overallScore    Float?
 
-  // QS-specific metric scores
-  arScore         Float?
-  erScore         Float?
-  fsrScore        Float?
-  cpfScore        Float?
-  ifrScore        Float?
-  isrScore        Float?
-  eoScore         Float?
-  susScore        Float?
+  // Which ranking lists this university appears in
+  inQs            Boolean @default(false)
+  inThe           Boolean @default(false)
+  inArwu          Boolean @default(false)
 
-  // THE-specific metric scores
-  teachingScore         Float?
-  researchEnvScore      Float?
-  researchQualityScore  Float?
-  industryScore         Float?
-  internationalScore    Float?
+  // ── QS 2026 ──
+  qs2026Rank        Int?
+  qs2026RankDisplay String?
+  qs2026Score       Float?
+  qsArScore         Float?  // Academic Reputation
+  qsErScore         Float?  // Employer Reputation
+  qsFsrScore        Float?  // Faculty/Student Ratio
+  qsCpfScore        Float?  // Citations per Faculty
+  qsIfrScore        Float?  // International Faculty Ratio
+  qsIsrScore        Float?  // International Student Ratio
+  qsEoScore         Float?  // Employment Outcomes
+  qsSusScore        Float?  // Sustainability
 
-  // ARWU-specific metric scores
-  alumniScore     Float?
-  awardScore      Float?
-  hiciScore       Float?
-  nsScore         Float?
-  pubScore        Float?
-  pcpScore        Float?
+  // ── THE 2026 ──
+  the2026Rank        Int?
+  the2026RankDisplay String?
+  the2026Score       Float?
+  theTeaching        Float?
+  theResearchEnv     Float?
+  theResearchQuality Float?
+  theIndustry        Float?
+  theInternational   Float?
 
-  @@unique([source, year, institutionName])
-  @@index([source, year])
-  @@index([institutionName])
+  // ── ARWU 2025 ──
+  arwu2025Rank  Int?
+  arwu2025Score Float?
+  arwuAlumni    Float?
+  arwuAward     Float?
+  arwuHici      Float?
+  arwuNs        Float?  // Nature & Science publications
+  arwuPub       Float?
+  arwuPcp       Float?  // Per Capita Performance
+
+  @@unique([institutionName])
+  @@index([qs2026Rank])
+  @@index([the2026Rank])
+  @@index([arwu2025Rank])
   @@index([country])
+  @@index([inQs, inThe, inArwu])
 }
 
 // ─── Enums ───────────────────────────────────────────────────────────────────
