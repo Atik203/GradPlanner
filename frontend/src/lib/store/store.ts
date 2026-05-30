@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 
-import universityReducer from "./slices/universitySlice.js";
-import professorReducer from "./slices/professorSlice.js";
-import applicationReducer from "./slices/applicationSlice.js";
-import documentReducer from "./slices/documentSlice.js";
-import profileReducer from "./slices/profileSlice.js";
+import universityReducer from "./slices/universitySlice";
+import professorReducer from "./slices/professorSlice";
+import applicationReducer from "./slices/applicationSlice";
+import documentReducer from "./slices/documentSlice";
+import profileReducer from "./slices/profileSlice";
 
 export const store = configureStore({
   reducer: {

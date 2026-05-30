@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { auth } from "../lib/auth.js";
+import { auth } from "../lib/auth";
 
 export interface AuthenticatedRequest extends Request {
   user?: typeof auth.$Infer.Session.user;

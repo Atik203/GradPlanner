@@ -2,7 +2,7 @@ import React from "react";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { authClient } from "@/lib/auth-client.js";
+import { authClient } from "@/lib/auth-client";
 import { 
   LayoutDashboard, 
   School, 
@@ -13,7 +13,7 @@ import {
   Settings, 
   User as UserIcon 
 } from "lucide-react";
-import { SidebarLogoutButton } from "./SidebarLogoutButton.js";
+import { SidebarLogoutButton } from "./SidebarLogoutButton";
 
 interface NavItem {
   name: string;

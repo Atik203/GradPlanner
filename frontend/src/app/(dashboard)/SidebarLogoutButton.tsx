@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { authClient } from "@/lib/auth-client.js";
+import { authClient } from "@/lib/auth-client";
 import { LogOut, Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button.js";
+import { Button } from "@/components/ui/button";
 
 export function SidebarLogoutButton() {
   const router = useRouter();

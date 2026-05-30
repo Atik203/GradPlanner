@@ -1,19 +1,19 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { fetchApi } from "@/lib/api.js";
-import { useAppDispatch, useAppSelector } from "@/lib/store/store.js";
+import { fetchApi } from "@/lib/api";
+import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { 
   setUniversities, 
   addUniversity, 
   updateUniversity, 
   deleteUniversity 
-} from "@/lib/store/slices/universitySlice.js";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card.js";
-import { Button } from "@/components/ui/button.js";
-import { Input } from "@/components/ui/input.js";
-import { Label } from "@/components/ui/label.js";
-import { Select } from "@/components/ui/select.js"; // Standard HTML select is fine, or we can use custom
+} from "@/lib/store/slices/universitySlice";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select } from "@/components/ui/select"; // Standard HTML select is fine, or we can use custom
 import { 
   Search, 
   Plus, 

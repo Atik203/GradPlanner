@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { headers } from "next/headers";
-import { authClient } from "@/lib/auth-client.js";
+import { authClient } from "@/lib/auth-client";
 import { ArrowRight, Sparkles, School, GraduationCap, FolderGit2, FileCheck } from "lucide-react";
 
 export default async function LandingPage() {

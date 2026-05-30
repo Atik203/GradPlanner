@@ -2,18 +2,18 @@ import "dotenv/config";
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { toNodeHandler } from "better-auth/node";
-import { auth } from "./lib/auth.js";
-import { prisma } from "./lib/prisma.js";
-import { requireAuth } from "./middleware/auth.js";
+import { auth } from "./lib/auth";
+import { prisma } from "./lib/prisma";
+import { requireAuth } from "./middleware/auth";
 
 // Import routers
-import profileRouter from "./routes/profile.js";
-import rankingsRouter from "./routes/rankings.js";
-import universitiesRouter from "./routes/universities.js";
-import professorsRouter from "./routes/professors.js";
-import applicationsRouter from "./routes/applications.js";
-import documentsRouter from "./routes/documents.js";
-import statsRouter from "./routes/stats.js";
+import profileRouter from "./routes/profile";
+import rankingsRouter from "./routes/rankings";
+import universitiesRouter from "./routes/universities";
+import professorsRouter from "./routes/professors";
+import applicationsRouter from "./routes/applications";
+import documentsRouter from "./routes/documents";
+import statsRouter from "./routes/stats";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
