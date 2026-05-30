@@ -3,6 +3,7 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { authClient } from "@/lib/auth-client";
 import { ArrowRight, Sparkles, School, GraduationCap, FolderGit2, FileCheck } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default async function LandingPage() {
   const reqHeaders = await headers();
@@ -31,6 +32,7 @@ export default async function LandingPage() {
           <span>GradPlanner</span>
         </Link>
         <div className="flex items-center gap-4">
+          <ThemeToggle />
           {isLoggedIn ? (
             <Link
               href="/dashboard"
