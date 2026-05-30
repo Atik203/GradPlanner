@@ -1,18 +1,18 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { fetchApi } from "@/lib/api.js";
-import { useAppDispatch, useAppSelector } from "@/lib/store/store.js";
+import { fetchApi } from "@/lib/api";
+import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { 
   setDocuments, 
   addDocument, 
   updateDocument, 
   deleteDocument 
-} from "@/lib/store/slices/documentSlice.js";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card.js";
-import { Button } from "@/components/ui/button.js";
-import { Input } from "@/components/ui/input.js";
-import { Label } from "@/components/ui/label.js";
+} from "@/lib/store/slices/documentSlice";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { 
   Plus, 
   Trash2, 
