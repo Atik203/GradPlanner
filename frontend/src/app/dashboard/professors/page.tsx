@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { 
@@ -10,41 +10,30 @@ import {
   deleteProfessor 
 } from "@/lib/store/slices/professorSlice";
 import { setUniversities } from "@/lib/store/slices/universitySlice";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { 
   Plus, 
-  Trash2, 
-  User, 
-  Mail, 
-  Link as LinkIcon, 
-  Search, 
+  Save,
   Loader2, 
-  BookOpen, 
-  CheckCircle, 
-  AlertCircle 
+  Trash2,
+  Table as TableIcon
 } from "lucide-react";
-import { Professor, University, ProfessorStatus } from "@/types";
+import { Professor, ProfessorStatus } from "@/types";
 
 export default function ProfessorsPage() {
   const dispatch = useAppDispatch();
-  const professors = useAppSelector((state) => state.professors.items);
+  const storedProfessors = useAppSelector((state) => state.professors.items);
   const universities = useAppSelector((state) => state.universities.items);
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Form state
-  const [formOpen, setFormOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [universityId, setUniversityId] = useState("");
-  const [profileUrl, setProfileUrl] = useState("");
-  const [researchInterests, setResearchInterests] = useState("");
-  const [notes, setNotes] = useState("");
-  const [status, setStatus] = useState<ProfessorStatus>("NOT_CONTACTED");
-  const [saving, setSaving] = useState(false);
+  // Local grid state
+  const [rows, setRows] = useState<(Partial<Professor> & { isNew?: boolean; isDirty?: boolean; tempId?: string })[]>([]);
+  const [customColumns, setCustomColumns] = useState<string[]>([]);
+  const [newColName, setNewColName] = useState("");
+  const [showNewColInput, setShowNewColInput] = useState(false);
 
   // Load professors and universities
   useEffect(() => {
@@ -67,299 +56,316 @@ export default function ProfessorsPage() {
     loadData();
   }, [dispatch]);
 
-  const handleCreateProfessor = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!name) return;
+  // Sync local rows with redux state
+  useEffect(() => {
+    setRows(storedProfessors.map(p => ({ ...p })));
+    
+    // Extract unique custom columns
+    const cols = new Set<string>();
+    storedProfessors.forEach(p => {
+      if (p.customFields) {
+        Object.keys(p.customFields).forEach(k => cols.add(k));
+      }
+    });
+    setCustomColumns(Array.from(cols));
+  }, [storedProfessors]);
 
-    setSaving(true);
-    try {
-      const newProf = await fetchApi("/api/v1/professors", {
-        method: "POST",
-        body: JSON.stringify({
-          name,
-          email,
-          universityId: universityId || null,
-          profileUrl,
-          researchInterests,
-          status,
-          notes,
-        }),
-      });
-      dispatch(addProfessor(newProf));
-      setFormOpen(false);
-      // Reset form
-      setName("");
-      setEmail("");
-      setUniversityId("");
-      setProfileUrl("");
-      setResearchInterests("");
-      setNotes("");
-      setStatus("NOT_CONTACTED");
-    } catch (err) {
-      console.error(err);
-      setError("Failed to save professor details.");
-    } finally {
-      setSaving(false);
-    }
+  const handleAddRow = () => {
+    setRows(prev => [
+      ...prev,
+      {
+        tempId: `temp-${Date.now()}`,
+        name: "",
+        email: "",
+        universityId: "",
+        researchInterests: "",
+        status: "NOT_CONTACTED",
+        notes: "",
+        customFields: {},
+        isNew: true,
+        isDirty: true
+      }
+    ]);
   };
 
-  const handleUpdateStatus = async (id: string, newStatus: ProfessorStatus) => {
-    try {
-      const updated = await fetchApi(`/api/v1/professors/${id}`, {
-        method: "PUT",
-        body: JSON.stringify({
-          status: newStatus,
-          replyReceived: newStatus === "REPLIED_POSITIVE" || newStatus === "REPLIED_NEGATIVE" || newStatus === "INTERVIEWED",
-        }),
-      });
-      dispatch(updateProfessor(updated));
-    } catch (err) {
-      console.error(err);
-      setError("Failed to update status.");
+  const handleAddColumn = () => {
+    if (!newColName.trim() || customColumns.includes(newColName.trim())) {
+      setShowNewColInput(false);
+      setNewColName("");
+      return;
     }
+    setCustomColumns(prev => [...prev, newColName.trim()]);
+    setShowNewColInput(false);
+    setNewColName("");
   };
 
-  const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to remove this professor?")) return;
+  const updateCell = (rowIndex: number, field: string, value: any, isCustom = false) => {
+    setRows(prev => {
+      const next = [...prev];
+      const row = { ...next[rowIndex] };
+      
+      if (isCustom) {
+        row.customFields = { ...(row.customFields || {}), [field]: value };
+      } else {
+        (row as any)[field] = value;
+      }
+      
+      row.isDirty = true;
+      next[rowIndex] = row;
+      return next;
+    });
+  };
+
+  const handleDeleteRow = async (rowIndex: number) => {
+    const row = rows[rowIndex];
+    if (row.isNew) {
+      // Just remove from local state
+      setRows(prev => prev.filter((_, i) => i !== rowIndex));
+      return;
+    }
+
+    if (!confirm("Are you sure you want to delete this professor?")) return;
 
     try {
-      await fetchApi(`/api/v1/professors/${id}`, {
-        method: "DELETE",
-      });
-      dispatch(deleteProfessor(id));
+      await fetchApi(`/api/v1/professors/${row.id}`, { method: "DELETE" });
+      dispatch(deleteProfessor(row.id as string));
     } catch (err) {
       console.error(err);
       setError("Failed to delete professor.");
     }
   };
 
+  const handleSaveChanges = async () => {
+    setSaving(true);
+    setError(null);
+    
+    try {
+      const dirtyRows = rows.filter(r => r.isDirty);
+      
+      const promises = dirtyRows.map(async (row) => {
+        if (!row.name) return null; // Skip empty names
+        
+        const payload = {
+          name: row.name,
+          email: row.email || null,
+          universityId: row.universityId || null,
+          researchInterests: row.researchInterests || null,
+          status: row.status || "NOT_CONTACTED",
+          notes: row.notes || null,
+          customFields: row.customFields || {}
+        };
+
+        if (row.isNew) {
+          const newProf = await fetchApi("/api/v1/professors", {
+            method: "POST",
+            body: JSON.stringify(payload)
+          });
+          return { type: 'add', data: newProf, tempId: row.tempId };
+        } else {
+          const updated = await fetchApi(`/api/v1/professors/${row.id}`, {
+            method: "PUT",
+            body: JSON.stringify(payload)
+          });
+          return { type: 'update', data: updated };
+        }
+      });
+
+      const results = await Promise.all(promises);
+      
+      // Update Redux state
+      results.forEach(res => {
+        if (!res) return;
+        if (res.type === 'add') {
+          dispatch(addProfessor(res.data));
+        } else if (res.type === 'update') {
+          dispatch(updateProfessor(res.data));
+        }
+      });
+
+      // Rows will resync via useEffect
+    } catch (err) {
+      console.error(err);
+      setError("Failed to save some changes. Please check your network and try again.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
   return (
-    <div className="space-y-8 animate-in fade-in duration-500">
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div className="space-y-4 h-[calc(100vh-80px)] flex flex-col animate-in fade-in duration-500">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 shrink-0">
         <div>
-          <h2 className="text-2xl font-bold text-zinc-100">Faculty Contacts</h2>
+          <h2 className="text-2xl font-bold text-zinc-100 flex items-center gap-2">
+            <TableIcon className="h-6 w-6 text-emerald-500" />
+            Professor Tracker
+          </h2>
           <p className="text-zinc-500 text-sm">
-            Keep track of professors you have reached out to for research or funding opportunities.
+            Manage your faculty contacts in a flexible spreadsheet. Add custom columns as needed.
           </p>
         </div>
-        <Button
-          onClick={() => setFormOpen(true)}
-          className="self-start sm:self-center bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-bold h-9 px-4 rounded-lg flex items-center gap-2"
-        >
-          <Plus className="h-4 w-4" />
-          Add Professor
-        </Button>
+        <div className="flex items-center gap-2">
+          {showNewColInput ? (
+            <div className="flex items-center gap-2">
+              <Input
+                placeholder="Column Name..."
+                value={newColName}
+                onChange={(e) => setNewColName(e.target.value)}
+                onKeyDown={(e) => e.key === "Enter" && handleAddColumn()}
+                className="h-9 w-40 bg-zinc-900 border-zinc-700"
+                autoFocus
+              />
+              <Button onClick={handleAddColumn} size="sm" className="h-9 bg-emerald-500 text-black hover:bg-emerald-600">Add</Button>
+              <Button onClick={() => setShowNewColInput(false)} size="sm" variant="ghost" className="h-9 text-zinc-400">Cancel</Button>
+            </div>
+          ) : (
+            <Button
+              onClick={() => setShowNewColInput(true)}
+              variant="outline"
+              className="h-9 border-zinc-700 hover:bg-zinc-800 text-zinc-300"
+            >
+              + Add Column
+            </Button>
+          )}
+
+          <Button
+            onClick={handleAddRow}
+            className="h-9 bg-zinc-800 hover:bg-zinc-700 text-zinc-100 border border-zinc-700"
+          >
+            <Plus className="h-4 w-4 mr-2" /> Row
+          </Button>
+          <Button
+            onClick={handleSaveChanges}
+            disabled={saving || !rows.some(r => r.isDirty)}
+            className="h-9 bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-bold"
+          >
+            {saving ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Save className="h-4 w-4 mr-2" />}
+            Save Changes
+          </Button>
+        </div>
       </div>
 
       {error && (
-        <div className="rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
+        <div className="shrink-0 rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
           {error}
         </div>
       )}
 
-      {/* Grid List */}
-      {loading ? (
-        <div className="flex justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-emerald-500" />
-        </div>
-      ) : professors.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-16 text-zinc-600 border border-dashed border-zinc-900 rounded-xl bg-zinc-900/10">
-          <User className="h-10 w-10 mb-2 text-zinc-700" />
-          <p className="text-sm">No faculty members tracked yet.</p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {professors.map((prof) => (
-            <Card key={prof.id} className="border-zinc-900 bg-zinc-900/10 hover:border-zinc-800 transition-all flex flex-col justify-between">
-              <CardHeader className="pb-3">
-                <div>
-                  <CardTitle className="text-sm font-bold text-zinc-200 line-clamp-1">{prof.name}</CardTitle>
-                  <CardDescription className="text-xs text-zinc-500 truncate">
-                    {prof.university?.name || "Independent Researcher"}
-                  </CardDescription>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3 pb-4 flex-1">
-                {prof.email && (
-                  <div className="flex items-center gap-2 text-xs text-zinc-400">
-                    <Mail className="h-3.5 w-3.5 text-zinc-600" />
-                    <span className="truncate">{prof.email}</span>
-                  </div>
-                )}
-                {prof.researchInterests && (
-                  <div className="flex items-start gap-2 text-xs text-zinc-400">
-                    <BookOpen className="h-3.5 w-3.5 text-zinc-600 mt-0.5 shrink-0" />
-                    <p className="line-clamp-2 text-zinc-300">{prof.researchInterests}</p>
-                  </div>
-                )}
-
-                <div className="space-y-1 pt-2">
-                  <span className="text-[10px] text-muted-foreground">Contact Status</span>
-                  <select
-                    value={prof.status}
-                    onChange={(e) => handleUpdateStatus(prof.id, e.target.value as ProfessorStatus)}
-                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
-                  >
-                    <option value="NOT_CONTACTED">Not Contacted</option>
-                    <option value="EMAILED">Emailed</option>
-                    <option value="AWAITING_REPLY">Awaiting Reply</option>
-                    <option value="REPLIED_POSITIVE">Positive Reply</option>
-                    <option value="REPLIED_NEGATIVE">Negative Reply</option>
-                    <option value="INTERVIEWED">Interview Scheduled</option>
-                  </select>
-                </div>
-
-                {prof.notes && (
-                  <p className="text-[11px] text-zinc-500 bg-zinc-900/40 p-2 rounded border border-zinc-900/30 line-clamp-2 mt-2">
-                    {prof.notes}
-                  </p>
-                )}
-              </CardContent>
-              <div className="px-6 py-3 border-t border-zinc-900/60 flex items-center justify-between bg-zinc-900/20 rounded-b-xl">
-                {prof.profileUrl ? (
-                  <a
-                    href={prof.profileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition-all"
-                  >
-                    Profile <LinkIcon className="h-3 w-3" />
-                  </a>
-                ) : (
-                  <span className="text-xs text-zinc-600">No profile link</span>
-                )}
-                <Button
-                  onClick={() => handleDelete(prof.id)}
-                  className="bg-transparent hover:bg-destructive/10 text-zinc-500 hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all"
-                >
-                  <Trash2 className="h-3.5 w-3.5" />
-                </Button>
-              </div>
-            </Card>
-          ))}
-        </div>
-      )}
-
-      {/* Create form dialog */}
-      {formOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-md rounded-xl border border-zinc-800 bg-zinc-900 p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
-            <h3 className="text-lg font-bold text-zinc-200">Add Faculty Member</h3>
-            <form onSubmit={handleCreateProfessor} className="space-y-4">
-              <div className="space-y-1">
-                <Label htmlFor="profName" className="text-xs text-muted-foreground">Professor Name</Label>
-                <Input
-                  id="profName"
-                  placeholder="e.g. Dr. Yann LeCun"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                  required
-                />
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="profEmail" className="text-xs text-muted-foreground">Email Address (Optional)</Label>
-                <Input
-                  id="profEmail"
-                  type="email"
-                  placeholder="yann@nyu.edu"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <Label htmlFor="uniSelect" className="text-xs text-muted-foreground">Affiliation University</Label>
-                  <select
-                    id="uniSelect"
-                    value={universityId}
-                    onChange={(e) => setUniversityId(e.target.value)}
-                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-                  >
-                    <option value="">Select tracked university...</option>
-                    {universities.map((uni) => (
-                      <option key={uni.id} value={uni.id}>{uni.name}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="profStatus" className="text-xs text-muted-foreground">Initial Status</Label>
-                  <select
-                    id="profStatus"
-                    value={status}
-                    onChange={(e) => setStatus(e.target.value as ProfessorStatus)}
-                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-                  >
-                    <option value="NOT_CONTACTED">Not Contacted</option>
-                    <option value="EMAILED">Emailed</option>
-                    <option value="AWAITING_REPLY">Awaiting Reply</option>
-                    <option value="REPLIED_POSITIVE">Positive Reply</option>
-                    <option value="REPLIED_NEGATIVE">Negative Reply</option>
-                    <option value="INTERVIEWED">Interview Scheduled</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="profLink" className="text-xs text-muted-foreground">Lab/Profile URL (Optional)</Label>
-                <Input
-                  id="profLink"
-                  type="url"
-                  placeholder="https://..."
-                  value={profileUrl}
-                  onChange={(e) => setProfileUrl(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="interestsInput" className="text-xs text-muted-foreground">Research Interests / Lab Focus</Label>
-                <Input
-                  id="interestsInput"
-                  placeholder="e.g. Deep Learning, Computer Vision, LLMs"
-                  value={researchInterests}
-                  onChange={(e) => setResearchInterests(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Notes</Label>
-                <textarea
-                  id="notesInput"
-                  rows={2}
-                  placeholder="Requires matching project proposal, funding available for Fall 2028..."
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
-                />
-              </div>
-
-              <div className="flex justify-end gap-3 pt-4 border-t border-border">
-                <Button
-                  type="button"
-                  onClick={() => setFormOpen(false)}
-                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
-                >
-                  Cancel
-                </Button>
-                <Button
-                  type="submit"
-                  disabled={saving}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-semibold h-9"
-                >
-                  {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Save Professor"}
-                </Button>
-              </div>
-            </form>
+      {/* Grid Container */}
+      <div className="flex-1 overflow-auto rounded-xl border border-zinc-800 bg-zinc-950/50">
+        {loading ? (
+          <div className="h-full flex items-center justify-center">
+            <Loader2 className="h-8 w-8 animate-spin text-emerald-500" />
           </div>
-        </div>
-      )}
+        ) : (
+          <table className="w-full text-sm text-left whitespace-nowrap">
+            <thead className="sticky top-0 z-10 text-xs text-zinc-400 uppercase bg-zinc-900 border-b border-zinc-800">
+              <tr>
+                <th className="px-4 py-3 font-medium border-r border-zinc-800 w-10"></th>
+                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[200px]">Professor Name *</th>
+                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[250px]">University</th>
+                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[200px]">Email</th>
+                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[150px]">Status</th>
+                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[250px]">Research Focus</th>
+                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[250px]">Notes</th>
+                {customColumns.map(col => (
+                  <th key={col} className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[150px] text-emerald-400/80">
+                    {col}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-zinc-800">
+              {rows.length === 0 ? (
+                <tr>
+                  <td colSpan={7 + customColumns.length} className="px-4 py-12 text-center text-zinc-500">
+                    Click "Row" to add your first professor contact.
+                  </td>
+                </tr>
+              ) : (
+                rows.map((row, index) => (
+                  <tr key={row.id || row.tempId} className={`hover:bg-zinc-900/50 transition-colors ${row.isDirty ? 'bg-emerald-900/5' : ''}`}>
+                    <td className="px-2 py-1 border-r border-zinc-800/50 text-center">
+                      <button onClick={() => handleDeleteRow(index)} className="text-zinc-600 hover:text-red-400 p-1">
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </td>
+                    <td className="px-0 py-0 border-r border-zinc-800/50 relative">
+                      {row.isDirty && <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-500" />}
+                      <input
+                        type="text"
+                        value={row.name || ""}
+                        onChange={(e) => updateCell(index, "name", e.target.value)}
+                        placeholder="Name..."
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-200"
+                      />
+                    </td>
+                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                      <select
+                        value={row.universityId || ""}
+                        onChange={(e) => updateCell(index, "universityId", e.target.value)}
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300 appearance-none"
+                      >
+                        <option value="" className="bg-zinc-900 text-zinc-500">No University linked</option>
+                        {universities.map(u => (
+                          <option key={u.id} value={u.id} className="bg-zinc-900 text-zinc-200">{u.name}</option>
+                        ))}
+                      </select>
+                    </td>
+                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                      <input
+                        type="email"
+                        value={row.email || ""}
+                        onChange={(e) => updateCell(index, "email", e.target.value)}
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300"
+                      />
+                    </td>
+                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                      <select
+                        value={row.status || "NOT_CONTACTED"}
+                        onChange={(e) => updateCell(index, "status", e.target.value)}
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300 appearance-none"
+                      >
+                        <option value="NOT_CONTACTED" className="bg-zinc-900">Not Contacted</option>
+                        <option value="EMAILED" className="bg-zinc-900">Emailed</option>
+                        <option value="AWAITING_REPLY" className="bg-zinc-900">Awaiting Reply</option>
+                        <option value="REPLIED_POSITIVE" className="bg-zinc-900">Positive Reply</option>
+                        <option value="REPLIED_NEGATIVE" className="bg-zinc-900">Negative Reply</option>
+                        <option value="INTERVIEWED" className="bg-zinc-900">Interview Scheduled</option>
+                      </select>
+                    </td>
+                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                      <input
+                        type="text"
+                        value={row.researchInterests || ""}
+                        onChange={(e) => updateCell(index, "researchInterests", e.target.value)}
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300"
+                      />
+                    </td>
+                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                      <input
+                        type="text"
+                        value={row.notes || ""}
+                        onChange={(e) => updateCell(index, "notes", e.target.value)}
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300"
+                      />
+                    </td>
+                    {customColumns.map(col => (
+                      <td key={col} className="px-0 py-0 border-r border-zinc-800/50">
+                        <input
+                          type="text"
+                          value={(row.customFields && row.customFields[col]) || ""}
+                          onChange={(e) => updateCell(index, col, e.target.value, true)}
+                          className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-emerald-100"
+                        />
+                      </td>
+                    ))}
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        )}
+      </div>
     </div>
   );
 }
