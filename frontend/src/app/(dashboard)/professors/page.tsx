@@ -194,13 +194,12 @@ export default function ProfessorsPage() {
                   </div>
                 )}
 
-                {/* Status selector */}
                 <div className="space-y-1 pt-2">
-                  <span className="text-[10px] text-zinc-500">Contact Status</span>
+                  <span className="text-[10px] text-muted-foreground">Contact Status</span>
                   <select
                     value={prof.status}
                     onChange={(e) => handleUpdateStatus(prof.id, e.target.value as ProfessorStatus)}
-                    className="w-full h-8 px-2 bg-zinc-950 border border-zinc-900 rounded text-xs text-zinc-300 focus:outline-none"
+                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
                   >
                     <option value="NOT_CONTACTED">Not Contacted</option>
                     <option value="EMAILED">Emailed</option>
@@ -249,37 +248,37 @@ export default function ProfessorsPage() {
             <h3 className="text-lg font-bold text-zinc-200">Add Faculty Member</h3>
             <form onSubmit={handleCreateProfessor} className="space-y-4">
               <div className="space-y-1">
-                <Label htmlFor="profName" className="text-xs text-zinc-400">Professor Name</Label>
+                <Label htmlFor="profName" className="text-xs text-muted-foreground">Professor Name</Label>
                 <Input
                   id="profName"
                   placeholder="e.g. Dr. Yann LeCun"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                   required
                 />
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="profEmail" className="text-xs text-zinc-400">Email Address (Optional)</Label>
+                <Label htmlFor="profEmail" className="text-xs text-muted-foreground">Email Address (Optional)</Label>
                 <Input
                   id="profEmail"
                   type="email"
                   placeholder="yann@nyu.edu"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <Label htmlFor="uniSelect" className="text-xs text-zinc-400">Affiliation University</Label>
+                  <Label htmlFor="uniSelect" className="text-xs text-muted-foreground">Affiliation University</Label>
                   <select
                     id="uniSelect"
                     value={universityId}
                     onChange={(e) => setUniversityId(e.target.value)}
-                    className="w-full h-10 px-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="">Select tracked university...</option>
                     {universities.map((uni) => (
@@ -289,12 +288,12 @@ export default function ProfessorsPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <Label htmlFor="profStatus" className="text-xs text-zinc-400">Initial Status</Label>
+                  <Label htmlFor="profStatus" className="text-xs text-muted-foreground">Initial Status</Label>
                   <select
                     id="profStatus"
                     value={status}
                     onChange={(e) => setStatus(e.target.value as ProfessorStatus)}
-                    className="w-full h-10 px-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="NOT_CONTACTED">Not Contacted</option>
                     <option value="EMAILED">Emailed</option>
@@ -307,45 +306,45 @@ export default function ProfessorsPage() {
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="profLink" className="text-xs text-zinc-400">Lab/Profile URL (Optional)</Label>
+                <Label htmlFor="profLink" className="text-xs text-muted-foreground">Lab/Profile URL (Optional)</Label>
                 <Input
                   id="profLink"
                   type="url"
                   placeholder="https://..."
                   value={profileUrl}
                   onChange={(e) => setProfileUrl(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                 />
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="interestsInput" className="text-xs text-zinc-400">Research Interests / Lab Focus</Label>
+                <Label htmlFor="interestsInput" className="text-xs text-muted-foreground">Research Interests / Lab Focus</Label>
                 <Input
                   id="interestsInput"
                   placeholder="e.g. Deep Learning, Computer Vision, LLMs"
                   value={researchInterests}
                   onChange={(e) => setResearchInterests(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                 />
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="notesInput" className="text-xs text-zinc-400">Notes</Label>
+                <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Notes</Label>
                 <textarea
                   id="notesInput"
                   rows={2}
                   placeholder="Requires matching project proposal, funding available for Fall 2028..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-zinc-800">
+              <div className="flex justify-end gap-3 pt-4 border-t border-border">
                 <Button
                   type="button"
                   onClick={() => setFormOpen(false)}
-                  className="bg-transparent hover:bg-zinc-800 text-zinc-400 border border-zinc-800 h-9"
+                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
                 >
                   Cancel
                 </Button>

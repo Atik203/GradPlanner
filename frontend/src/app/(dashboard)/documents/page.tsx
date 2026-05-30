@@ -176,11 +176,11 @@ export default function DocumentsPage() {
               <CardContent className="space-y-3 pb-4">
                 {/* Status selector */}
                 <div className="space-y-1">
-                  <span className="text-[10px] text-zinc-500">Checklist Status</span>
+                  <span className="text-[10px] text-muted-foreground">Checklist Status</span>
                   <select
                     value={doc.status}
                     onChange={(e) => handleUpdateStatus(doc.id, e.target.value as DocumentStatus)}
-                    className="w-full h-8 px-2 bg-zinc-950 border border-zinc-900 rounded text-xs text-zinc-300 focus:outline-none"
+                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
                   >
                     <option value="PENDING">Pending</option>
                     <option value="IN_PROGRESS">In Progress</option>
@@ -215,28 +215,28 @@ export default function DocumentsPage() {
       {/* Add Document modal */}
       {formOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-md rounded-xl border border-zinc-800 bg-zinc-900 p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
-            <h3 className="text-lg font-bold text-zinc-200">Add Checklist Document</h3>
+          <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+            <h3 className="text-lg font-bold text-foreground">Add Checklist Document</h3>
             <form onSubmit={handleCreateDocument} className="space-y-4">
               <div className="space-y-1">
-                <Label htmlFor="docName" className="text-xs text-zinc-400">Document Name</Label>
+                <Label htmlFor="docName" className="text-xs text-muted-foreground">Document Name</Label>
                 <Input
                   id="docName"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                   required
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <Label htmlFor="docTypeSelect" className="text-xs text-zinc-400">Document Type</Label>
+                  <Label htmlFor="docTypeSelect" className="text-xs text-muted-foreground">Document Type</Label>
                   <select
                     id="docTypeSelect"
                     value={type}
                     onChange={(e) => setType(e.target.value as DocumentType)}
-                    className="w-full h-10 px-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="SOP">SOP (Statement of Purpose)</option>
                     <option value="CV">Curriculum Vitae (CV)</option>
@@ -252,12 +252,12 @@ export default function DocumentsPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <Label htmlFor="docStatusSelect" className="text-xs text-zinc-400">Status</Label>
+                  <Label htmlFor="docStatusSelect" className="text-xs text-muted-foreground">Status</Label>
                   <select
                     id="docStatusSelect"
                     value={status}
                     onChange={(e) => setStatus(e.target.value as DocumentStatus)}
-                    className="w-full h-10 px-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="PENDING">Pending</option>
                     <option value="IN_PROGRESS">In Progress</option>
@@ -268,22 +268,22 @@ export default function DocumentsPage() {
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="notesInput" className="text-xs text-zinc-400">Checklist Notes</Label>
+                <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Checklist Notes</Label>
                 <textarea
                   id="notesInput"
                   rows={3}
                   placeholder="Need to request transcript from Registrar's office, SOP draft needs revision..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-zinc-800">
+              <div className="flex justify-end gap-3 pt-4 border-t border-border">
                 <Button
                   type="button"
                   onClick={() => setFormOpen(false)}
-                  className="bg-transparent hover:bg-zinc-800 text-zinc-400 border border-zinc-800 h-9"
+                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
                 >
                   Cancel
                 </Button>

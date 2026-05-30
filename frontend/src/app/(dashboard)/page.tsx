@@ -122,20 +122,20 @@ export default function DashboardOverview() {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       {/* Welcome Banner */}
-      <div className="relative rounded-2xl border border-zinc-900 bg-gradient-to-r from-zinc-900/50 to-emerald-950/20 p-8 overflow-hidden">
+      <div className="relative rounded-2xl border border-border bg-linear-to-r from-muted/50 to-emerald-500/5 dark:from-zinc-900/50 dark:to-emerald-950/20 p-8 overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-zinc-100 sm:text-3xl">
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Hello, {profile?.university ? "Graduate Candidate" : "Applicant"}!
             </h2>
-            <p className="text-zinc-400 text-sm max-w-xl">
+            <p className="text-muted-foreground text-sm max-w-xl">
               Welcome to your ML/AI abroad graduate applications workspace. Track your profile, ranking list, contacted professors, and deadlines here.
             </p>
           </div>
           <Button 
             onClick={() => setEditProfileOpen(true)}
-            className="self-start md:self-center bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-zinc-200 h-9 px-4 rounded-lg flex items-center gap-2"
+            className="self-start md:self-center bg-muted border border-border hover:bg-accent hover:text-accent-foreground text-foreground h-9 px-4 rounded-lg flex items-center gap-2"
           >
             <User className="h-4 w-4 text-emerald-400" />
             Update Profile
@@ -143,22 +143,22 @@ export default function DashboardOverview() {
         </div>
 
         {/* Quick Profile Indicators */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-zinc-900">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border/80">
           <div className="space-y-1">
-            <span className="text-xs text-zinc-500 uppercase">Target Degree</span>
-            <p className="text-sm font-semibold text-zinc-200">{profile?.targetDegree || "Not Set"}</p>
+            <span className="text-xs text-muted-foreground uppercase">Target Degree</span>
+            <p className="text-sm font-semibold text-foreground">{profile?.targetDegree || "Not Set"}</p>
           </div>
           <div className="space-y-1">
-            <span className="text-xs text-zinc-500 uppercase">Undergrad CGPA</span>
-            <p className="text-sm font-semibold text-zinc-200">{profile?.cgpa ? `${profile.cgpa} / 4.0` : "Not Set"}</p>
+            <span className="text-xs text-muted-foreground uppercase">Undergrad CGPA</span>
+            <p className="text-sm font-semibold text-foreground">{profile?.cgpa ? `${profile.cgpa} / 4.0` : "Not Set"}</p>
           </div>
           <div className="space-y-1">
-            <span className="text-xs text-zinc-500 uppercase">Target Intake</span>
-            <p className="text-sm font-semibold text-zinc-200">{profile?.targetIntake || "September 2028"}</p>
+            <span className="text-xs text-muted-foreground uppercase">Target Intake</span>
+            <p className="text-sm font-semibold text-foreground">{profile?.targetIntake || "September 2028"}</p>
           </div>
           <div className="space-y-1">
-            <span className="text-xs text-zinc-500 uppercase">Current University</span>
-            <p className="text-sm font-semibold text-zinc-200 truncate">{profile?.university || "Not Set"}</p>
+            <span className="text-xs text-muted-foreground uppercase">Current University</span>
+            <p className="text-sm font-semibold text-foreground truncate">{profile?.university || "Not Set"}</p>
           </div>
         </div>
       </div>
@@ -174,57 +174,57 @@ export default function DashboardOverview() {
       {stats && (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {/* Universities */}
-          <Card className="border-zinc-900 bg-zinc-900/20 backdrop-blur-xl">
+          <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-zinc-400">Tracked Universities</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">Tracked Universities</CardTitle>
               <School className="h-4 w-4 text-emerald-500" />
             </CardHeader>
             <CardContent className="space-y-1">
-              <div className="text-2xl font-bold text-zinc-100">{stats.universities.total}</div>
-              <p className="text-xs text-zinc-500">
+              <div className="text-2xl font-bold text-foreground">{stats.universities.total}</div>
+              <p className="text-xs text-muted-foreground">
                 {stats.universities.dream} Dream · {stats.universities.match} Match · {stats.universities.safety} Safety
               </p>
             </CardContent>
           </Card>
 
           {/* Professors */}
-          <Card className="border-zinc-900 bg-zinc-900/20 backdrop-blur-xl">
+          <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-zinc-400">Contacted Professors</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">Contacted Professors</CardTitle>
               <GraduationCap className="h-4 w-4 text-blue-500" />
             </CardHeader>
             <CardContent className="space-y-1">
-              <div className="text-2xl font-bold text-zinc-100">{stats.professors.total}</div>
-              <p className="text-xs text-zinc-500">
+              <div className="text-2xl font-bold text-foreground">{stats.professors.total}</div>
+              <p className="text-xs text-muted-foreground">
                 {stats.professors.totalReplies} replies ({stats.professors.repliedPositive} positive)
               </p>
             </CardContent>
           </Card>
 
           {/* Applications */}
-          <Card className="border-zinc-900 bg-zinc-900/20 backdrop-blur-xl">
+          <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-zinc-400">Applications</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">Applications</CardTitle>
               <FolderGit2 className="h-4 w-4 text-purple-500" />
             </CardHeader>
             <CardContent className="space-y-1">
-              <div className="text-2xl font-bold text-zinc-100">{stats.applications.total}</div>
-              <p className="text-xs text-zinc-500">
+              <div className="text-2xl font-bold text-foreground">{stats.applications.total}</div>
+              <p className="text-xs text-muted-foreground">
                 {stats.applications.inProgress} in progress · {stats.applications.submitted} submitted
               </p>
             </CardContent>
           </Card>
 
           {/* Documents */}
-          <Card className="border-zinc-900 bg-zinc-900/20 backdrop-blur-xl">
+          <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-zinc-400">Document Progress</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">Document Progress</CardTitle>
               <FileText className="h-4 w-4 text-yellow-500" />
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="text-2xl font-bold text-zinc-100">{stats.documents.progressPercentage}%</div>
+              <div className="text-2xl font-bold text-foreground">{stats.documents.progressPercentage}%</div>
               {/* Progress bar */}
-              <div className="w-full bg-zinc-800 rounded-full h-1.5">
+              <div className="w-full bg-accent rounded-full h-1.5">
                 <div 
                   className="bg-emerald-500 h-1.5 rounded-full transition-all duration-500" 
                   style={{ width: `${stats.documents.progressPercentage}%` }}
@@ -238,34 +238,34 @@ export default function DashboardOverview() {
       {/* Grid of details */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         {/* Deadlines Section */}
-        <Card className="border-zinc-900 bg-zinc-900/10 backdrop-blur-md lg:col-span-2">
+        <Card className="border-border/60 bg-card/20 backdrop-blur-md lg:col-span-2">
           <CardHeader>
-            <CardTitle className="text-md font-semibold text-zinc-200">Upcoming Deadlines</CardTitle>
-            <CardDescription className="text-zinc-500">Keep track of your target program deadlines.</CardDescription>
+            <CardTitle className="text-md font-semibold text-foreground">Upcoming Deadlines</CardTitle>
+            <CardDescription className="text-muted-foreground">Keep track of your target program deadlines.</CardDescription>
           </CardHeader>
           <CardContent>
             {upcomingDeadlines.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-8 text-zinc-600 border border-dashed border-zinc-900 rounded-lg">
+              <div className="flex flex-col items-center justify-center py-8 text-muted-foreground border border-dashed border-border rounded-lg">
                 <Calendar className="h-8 w-8 mb-2" />
                 <p className="text-sm">No upcoming deadlines configured.</p>
               </div>
             ) : (
               <div className="space-y-4">
                 {upcomingDeadlines.map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-3 border border-zinc-900 bg-zinc-900/30 rounded-lg hover:border-zinc-800 transition-all">
+                  <div key={idx} className="flex items-center justify-between p-3 border border-border bg-card/30 rounded-lg hover:border-border/80 transition-all">
                     <div className="min-w-0">
-                      <p className="font-semibold text-sm text-zinc-200 truncate">{item.name}</p>
-                      <p className="text-xs text-zinc-500 truncate">{item.program}</p>
+                      <p className="font-semibold text-sm text-foreground truncate">{item.name}</p>
+                      <p className="text-xs text-muted-foreground truncate">{item.program}</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                         item.tier === "DREAM" ? "bg-purple-500/10 text-purple-400" :
                         item.tier === "MATCH" ? "bg-emerald-500/10 text-emerald-400" :
-                        "bg-zinc-800 text-zinc-400"
+                        "bg-muted text-muted-foreground"
                       }`}>
                         {item.tier}
                       </span>
-                      <span className="text-xs font-semibold text-zinc-400">{item.deadline}</span>
+                      <span className="text-xs font-semibold text-muted-foreground">{item.deadline}</span>
                     </div>
                   </div>
                 ))}
@@ -275,11 +275,11 @@ export default function DashboardOverview() {
         </Card>
 
         {/* Quick Tips */}
-        <Card className="border-zinc-900 bg-zinc-900/10 backdrop-blur-md">
+        <Card className="border-border/60 bg-card/20 backdrop-blur-md">
           <CardHeader>
-            <CardTitle className="text-md font-semibold text-zinc-200">Admissions Checklist</CardTitle>
+            <CardTitle className="text-md font-semibold text-foreground">Admissions Checklist</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 text-sm text-zinc-400">
+          <CardContent className="space-y-4 text-sm text-muted-foreground">
             <div className="flex gap-3">
               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-emerald-500/10 text-emerald-400 font-bold text-xs">1</span>
               <p>Add 5+ universities from QS, THE, or ARWU lists.</p>
@@ -303,24 +303,24 @@ export default function DashboardOverview() {
       {/* Update Profile Modal */}
       {editProfileOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-md rounded-xl border border-zinc-800 bg-zinc-900 p-6 shadow-2xl space-y-4">
-            <h3 className="text-lg font-bold text-zinc-200">Update Profile Details</h3>
+          <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4">
+            <h3 className="text-lg font-bold text-foreground">Update Profile Details</h3>
             <form onSubmit={handleSaveProfile} className="space-y-4">
               <div className="space-y-1">
-                <Label htmlFor="undergradUni" className="text-xs text-zinc-400">Current/Previous Undergrad University</Label>
+                <Label htmlFor="undergradUni" className="text-xs text-muted-foreground">Current/Previous Undergrad University</Label>
                 <Input
                   id="undergradUni"
                   type="text"
                   placeholder="UIU Dhaka"
                   value={university}
                   onChange={(e) => setUniversityName(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <Label htmlFor="cgpaInput" className="text-xs text-zinc-400">CGPA</Label>
+                  <Label htmlFor="cgpaInput" className="text-xs text-muted-foreground">CGPA</Label>
                   <Input
                     id="cgpaInput"
                     type="number"
@@ -328,54 +328,54 @@ export default function DashboardOverview() {
                     placeholder="3.8"
                     value={cgpa}
                     onChange={(e) => setCgpa(e.target.value)}
-                    className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                    className="bg-background border-border text-foreground"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <Label htmlFor="degreeInput" className="text-xs text-zinc-400">Target Degree</Label>
+                  <Label htmlFor="degreeInput" className="text-xs text-muted-foreground">Target Degree</Label>
                   <Input
                     id="degreeInput"
                     type="text"
                     placeholder="MSc ML/AI"
                     value={targetDegree}
                     onChange={(e) => setTargetDegree(e.target.value)}
-                    className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                    className="bg-background border-border text-foreground"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <Label htmlFor="intakeInput" className="text-xs text-zinc-400">Target Intake</Label>
+                  <Label htmlFor="intakeInput" className="text-xs text-muted-foreground">Target Intake</Label>
                   <Input
                     id="intakeInput"
                     type="text"
                     placeholder="Sep 2028"
                     value={targetIntake}
                     onChange={(e) => setTargetIntake(e.target.value)}
-                    className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                    className="bg-background border-border text-foreground"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <Label htmlFor="gradInput" className="text-xs text-zinc-400">Graduation Date</Label>
+                  <Label htmlFor="gradInput" className="text-xs text-muted-foreground">Graduation Date</Label>
                   <Input
                     id="gradInput"
                     type="text"
                     placeholder="Nov 2027"
                     value={graduationDate}
                     onChange={(e) => setGraduationDate(e.target.value)}
-                    className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                    className="bg-background border-border text-foreground"
                   />
                 </div>
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-zinc-800">
+              <div className="flex justify-end gap-3 pt-4 border-t border-border">
                 <Button 
                   type="button" 
                   onClick={() => setEditProfileOpen(false)}
-                  className="bg-transparent hover:bg-zinc-800 text-zinc-400 border border-zinc-800 h-9"
+                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
                 >
                   Cancel
                 </Button>

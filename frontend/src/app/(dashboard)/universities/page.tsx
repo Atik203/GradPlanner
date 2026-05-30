@@ -167,19 +167,19 @@ export default function UniversitiesPage() {
       <Card className="border-zinc-900 bg-zinc-900/30 backdrop-blur-xl">
         <CardHeader>
           <CardTitle className="text-sm font-medium text-zinc-300">Find Universities to Track</CardTitle>
-          <CardDescription className="text-zinc-500">
+          <CardDescription className="text-muted-foreground">
             Type to search by name or country (QS 2026, THE 2026, and ARWU 2025 metrics included).
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="relative">
-            <Search className="absolute left-3 top-3 h-4 w-4 text-zinc-500" />
+            <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
             <Input
               type="text"
               placeholder="Search e.g. Oxford, Stanford, Germany, Ireland..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-zinc-950 border-zinc-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-zinc-200 placeholder:text-zinc-600"
+              className="pl-10 bg-background border-border focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-foreground placeholder:text-muted-foreground/60"
             />
             {searching && (
               <Loader2 className="absolute right-3 top-3 h-4 w-4 animate-spin text-emerald-400" />
@@ -188,25 +188,25 @@ export default function UniversitiesPage() {
 
           {/* Search Results Dropdown */}
           {searchResults.length > 0 && (
-            <div className="rounded-lg border border-zinc-800 bg-zinc-900/90 divide-y divide-zinc-800/50 max-h-80 overflow-y-auto z-20">
+            <div className="rounded-lg border border-border bg-popover/95 divide-y divide-border/50 max-h-80 overflow-y-auto z-20">
               {searchResults.map((rank) => (
-                <div key={rank.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 hover:bg-zinc-800/40 transition-all gap-4">
+                <div key={rank.id} className="flex flex-col sm:flex-row sm:items-center justify-between p-4 hover:bg-accent/40 transition-all gap-4">
                   <div>
-                    <h4 className="font-semibold text-sm text-zinc-100">{rank.institutionName}</h4>
-                    <p className="text-xs text-zinc-500">{rank.country} {rank.region ? `· ${rank.region}` : ""}</p>
+                    <h4 className="font-semibold text-sm text-foreground">{rank.institutionName}</h4>
+                    <p className="text-xs text-muted-foreground">{rank.country} {rank.region ? `· ${rank.region}` : ""}</p>
                     <div className="flex gap-4 mt-2">
                       {rank.qs2026Rank && (
-                        <span className="text-[10px] text-zinc-400 bg-zinc-950 px-2 py-0.5 rounded border border-zinc-800">
+                        <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded border border-border">
                           QS: #{rank.qs2026Rank}
                         </span>
                       )}
                       {rank.the2026Rank && (
-                        <span className="text-[10px] text-zinc-400 bg-zinc-950 px-2 py-0.5 rounded border border-zinc-800">
+                        <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded border border-border">
                           THE: #{rank.the2026Rank}
                         </span>
                       )}
                       {rank.arwu2025Rank && (
-                        <span className="text-[10px] text-zinc-400 bg-zinc-950 px-2 py-0.5 rounded border border-zinc-800">
+                        <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded border border-border">
                           ARWU: #{rank.arwu2025Rank}
                         </span>
                       )}
@@ -330,24 +330,24 @@ export default function UniversitiesPage() {
             </div>
             <form onSubmit={handleTrackSubmit} className="space-y-4">
               <div className="space-y-1">
-                <Label htmlFor="progName" className="text-xs text-zinc-400">Target Program</Label>
+                <Label htmlFor="progName" className="text-xs text-muted-foreground">Target Program</Label>
                 <Input
                   id="progName"
                   value={program}
                   onChange={(e) => setProgram(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                   required
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <Label htmlFor="tierSelect" className="text-xs text-zinc-400">Application Tier</Label>
+                  <Label htmlFor="tierSelect" className="text-xs text-muted-foreground">Application Tier</Label>
                   <select
                     id="tierSelect"
                     value={tier}
                     onChange={(e) => setTier(e.target.value as Tier)}
-                    className="w-full h-10 px-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="DREAM">DREAM</option>
                     <option value="MATCH">MATCH</option>
@@ -356,69 +356,69 @@ export default function UniversitiesPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <Label htmlFor="tuitionInput" className="text-xs text-zinc-400">Tuition Per Year</Label>
+                  <Label htmlFor="tuitionInput" className="text-xs text-muted-foreground">Tuition Per Year</Label>
                   <Input
                     id="tuitionInput"
                     placeholder="e.g. €15,000 / Free"
                     value={tuitionPerYr}
                     onChange={(e) => setTuitionPerYr(e.target.value)}
-                    className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                    className="bg-background border-border text-foreground"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <Label htmlFor="deadlineInput" className="text-xs text-zinc-400">Application Deadline</Label>
+                  <Label htmlFor="deadlineInput" className="text-xs text-muted-foreground">Application Deadline</Label>
                   <Input
                     id="deadlineInput"
                     placeholder="e.g. Jan 15, 2028"
                     value={deadline}
                     onChange={(e) => setDeadline(e.target.value)}
-                    className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                    className="bg-background border-border text-foreground"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <Label htmlFor="intakeInput" className="text-xs text-zinc-400">Target Intake</Label>
+                  <Label htmlFor="intakeInput" className="text-xs text-muted-foreground">Target Intake</Label>
                   <Input
                     id="intakeInput"
                     value={intake}
                     onChange={(e) => setIntake(e.target.value)}
-                    className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                    className="bg-background border-border text-foreground"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="uniWebsite" className="text-xs text-zinc-400">University Program Website (Optional)</Label>
+                <Label htmlFor="uniWebsite" className="text-xs text-muted-foreground">University Program Website (Optional)</Label>
                 <Input
                   id="uniWebsite"
                   type="url"
                   placeholder="https://..."
                   value={website}
                   onChange={(e) => setWebsite(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                 />
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="notesInput" className="text-xs text-zinc-400">Personal Notes / Requirements</Label>
+                <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Personal Notes / Requirements</Label>
                 <textarea
                   id="notesInput"
                   rows={3}
                   placeholder="Minimum IELTS score 7.0, requires 3 LORs..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-zinc-800">
+              <div className="flex justify-end gap-3 pt-4 border-t border-border">
                 <Button
                   type="button"
                   onClick={() => setTrackFormOpen(false)}
-                  className="bg-transparent hover:bg-zinc-800 text-zinc-400 border border-zinc-800 h-9"
+                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
                 >
                   Cancel
                 </Button>

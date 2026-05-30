@@ -194,11 +194,11 @@ export default function ApplicationsPage() {
               <CardContent className="space-y-3 pb-4">
                 {/* Status updater */}
                 <div className="space-y-1">
-                  <span className="text-[10px] text-zinc-500">Admissions Status</span>
+                  <span className="text-[10px] text-muted-foreground">Admissions Status</span>
                   <select
                     value={app.status}
                     onChange={(e) => handleUpdateStatus(app.id, e.target.value as ApplicationStatus)}
-                    className="w-full h-8 px-2 bg-zinc-950 border border-zinc-900 rounded text-xs text-zinc-300 focus:outline-none"
+                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
                   >
                     <option value="PLANNING">Planning</option>
                     <option value="IN_PROGRESS">In Progress</option>
@@ -251,16 +251,16 @@ export default function ApplicationsPage() {
       {/* Track form dialog */}
       {formOpen && untrackedUniversities.length > 0 && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-md rounded-xl border border-zinc-800 bg-zinc-900 p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
-            <h3 className="text-lg font-bold text-zinc-200">Track Admissions Lifecycle</h3>
+          <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+            <h3 className="text-lg font-bold text-foreground">Track Admissions Lifecycle</h3>
             <form onSubmit={handleCreateApplication} className="space-y-4">
               <div className="space-y-1">
-                <Label htmlFor="uniSelect" className="text-xs text-zinc-400">Select Tracked University</Label>
+                <Label htmlFor="uniSelect" className="text-xs text-muted-foreground">Select Tracked University</Label>
                 <select
                   id="uniSelect"
                   value={universityId}
                   onChange={(e) => setUniversityId(e.target.value)}
-                  className="w-full h-10 px-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                  className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                   required
                 >
                   {untrackedUniversities.map((uni) => (
@@ -271,12 +271,12 @@ export default function ApplicationsPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1">
-                  <Label htmlFor="appStatus" className="text-xs text-zinc-400">Initial Status</Label>
+                  <Label htmlFor="appStatus" className="text-xs text-muted-foreground">Initial Status</Label>
                   <select
                     id="appStatus"
                     value={status}
                     onChange={(e) => setStatus(e.target.value as ApplicationStatus)}
-                    className="w-full h-10 px-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="PLANNING">Planning</option>
                     <option value="IN_PROGRESS">In Progress</option>
@@ -286,45 +286,45 @@ export default function ApplicationsPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <Label htmlFor="deadlineInput" className="text-xs text-zinc-400">Application Deadline</Label>
+                  <Label htmlFor="deadlineInput" className="text-xs text-muted-foreground">Application Deadline</Label>
                   <Input
                     id="deadlineInput"
                     placeholder="e.g. Feb 1, 2028"
                     value={deadline}
                     onChange={(e) => setDeadline(e.target.value)}
-                    className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                    className="bg-background border-border text-foreground"
                   />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="scholarshipInput" className="text-xs text-zinc-400">Scholarship Amount / Funding Offered (Optional)</Label>
+                <Label htmlFor="scholarshipInput" className="text-xs text-muted-foreground">Scholarship Amount / Funding Offered (Optional)</Label>
                 <Input
                   id="scholarshipInput"
                   placeholder="e.g. 50% tuition waiver / €10,000"
                   value={scholarshipAmt}
                   onChange={(e) => setScholarshipAmt(e.target.value)}
-                  className="bg-zinc-950 border-zinc-800 text-zinc-200"
+                  className="bg-background border-border text-foreground"
                 />
               </div>
 
               <div className="space-y-1">
-                <Label htmlFor="notesInput" className="text-xs text-zinc-400">Application Notes</Label>
+                <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Application Notes</Label>
                 <textarea
                   id="notesInput"
                   rows={3}
                   placeholder="Application fee paid, waiting on LOR submissions..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-zinc-950 border border-zinc-800 rounded-lg text-sm text-zinc-200 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-zinc-800">
+              <div className="flex justify-end gap-3 pt-4 border-t border-border">
                 <Button
                   type="button"
                   onClick={() => setFormOpen(false)}
-                  className="bg-transparent hover:bg-zinc-800 text-zinc-400 border border-zinc-800 h-9"
+                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
                 >
                   Cancel
                 </Button>
