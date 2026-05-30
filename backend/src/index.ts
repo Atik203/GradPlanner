@@ -39,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ── Registered protected routes ────────────────────────────────────────────────
 app.use("/api/v1/profile", requireAuth, profileRouter);
-app.use("/api/v1/rankings", requireAuth, rankingsRouter);
+app.use("/api/v1/rankings", rankingsRouter); // Public access
 app.use("/api/v1/universities", requireAuth, universitiesRouter);
 app.use("/api/v1/professors", requireAuth, professorsRouter);
 app.use("/api/v1/applications", requireAuth, applicationsRouter);
