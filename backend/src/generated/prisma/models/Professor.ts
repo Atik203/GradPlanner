@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Professor
@@ -91,6 +91,7 @@ export type ProfessorCountAggregateOutputType = {
   suggestedContact: number
   futureFundingNote: number
   notes: number
+  customFields: number
   deletedAt: number
   createdAt: number
   updatedAt: number
@@ -165,6 +166,7 @@ export type ProfessorCountAggregateInputType = {
   suggestedContact?: true
   futureFundingNote?: true
   notes?: true
+  customFields?: true
   deletedAt?: true
   createdAt?: true
   updatedAt?: true
@@ -262,6 +264,7 @@ export type ProfessorGroupByOutputType = {
   suggestedContact: string | null
   futureFundingNote: string | null
   notes: string | null
+  customFields: runtime.JsonValue | null
   deletedAt: Date | null
   createdAt: Date
   updatedAt: Date
@@ -307,6 +310,7 @@ export type ProfessorWhereInput = {
   suggestedContact?: Prisma.StringNullableFilter<"Professor"> | string | null
   futureFundingNote?: Prisma.StringNullableFilter<"Professor"> | string | null
   notes?: Prisma.StringNullableFilter<"Professor"> | string | null
+  customFields?: Prisma.JsonNullableFilter<"Professor">
   deletedAt?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"Professor"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Professor"> | Date | string
@@ -333,6 +337,7 @@ export type ProfessorOrderByWithRelationInput = {
   suggestedContact?: Prisma.SortOrderInput | Prisma.SortOrder
   futureFundingNote?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
+  customFields?: Prisma.SortOrderInput | Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -362,6 +367,7 @@ export type ProfessorWhereUniqueInput = Prisma.AtLeast<{
   suggestedContact?: Prisma.StringNullableFilter<"Professor"> | string | null
   futureFundingNote?: Prisma.StringNullableFilter<"Professor"> | string | null
   notes?: Prisma.StringNullableFilter<"Professor"> | string | null
+  customFields?: Prisma.JsonNullableFilter<"Professor">
   deletedAt?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"Professor"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Professor"> | Date | string
@@ -388,6 +394,7 @@ export type ProfessorOrderByWithAggregationInput = {
   suggestedContact?: Prisma.SortOrderInput | Prisma.SortOrder
   futureFundingNote?: Prisma.SortOrderInput | Prisma.SortOrder
   notes?: Prisma.SortOrderInput | Prisma.SortOrder
+  customFields?: Prisma.SortOrderInput | Prisma.SortOrder
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -418,6 +425,7 @@ export type ProfessorScalarWhereWithAggregatesInput = {
   suggestedContact?: Prisma.StringNullableWithAggregatesFilter<"Professor"> | string | null
   futureFundingNote?: Prisma.StringNullableWithAggregatesFilter<"Professor"> | string | null
   notes?: Prisma.StringNullableWithAggregatesFilter<"Professor"> | string | null
+  customFields?: Prisma.JsonNullableWithAggregatesFilter<"Professor">
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Professor"> | Date | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Professor"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Professor"> | Date | string
@@ -440,6 +448,7 @@ export type ProfessorCreateInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -466,6 +475,7 @@ export type ProfessorUncheckedCreateInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -488,6 +498,7 @@ export type ProfessorUpdateInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -514,6 +525,7 @@ export type ProfessorUncheckedUpdateInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -538,6 +550,7 @@ export type ProfessorCreateManyInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -560,6 +573,7 @@ export type ProfessorUpdateManyMutationInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -584,6 +598,7 @@ export type ProfessorUncheckedUpdateManyInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -618,6 +633,7 @@ export type ProfessorCountOrderByAggregateInput = {
   suggestedContact?: Prisma.SortOrder
   futureFundingNote?: Prisma.SortOrder
   notes?: Prisma.SortOrder
+  customFields?: Prisma.SortOrder
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -776,6 +792,7 @@ export type ProfessorCreateWithoutUserInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -800,6 +817,7 @@ export type ProfessorUncheckedCreateWithoutUserInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -853,6 +871,7 @@ export type ProfessorScalarWhereInput = {
   suggestedContact?: Prisma.StringNullableFilter<"Professor"> | string | null
   futureFundingNote?: Prisma.StringNullableFilter<"Professor"> | string | null
   notes?: Prisma.StringNullableFilter<"Professor"> | string | null
+  customFields?: Prisma.JsonNullableFilter<"Professor">
   deletedAt?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"Professor"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Professor"> | Date | string
@@ -875,6 +894,7 @@ export type ProfessorCreateWithoutUniversityInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -899,6 +919,7 @@ export type ProfessorUncheckedCreateWithoutUniversityInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -948,6 +969,7 @@ export type ProfessorCreateManyUserInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -970,6 +992,7 @@ export type ProfessorUpdateWithoutUserInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -994,6 +1017,7 @@ export type ProfessorUncheckedUpdateWithoutUserInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1017,6 +1041,7 @@ export type ProfessorUncheckedUpdateManyWithoutUserInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1040,6 +1065,7 @@ export type ProfessorCreateManyUniversityInput = {
   suggestedContact?: string | null
   futureFundingNote?: string | null
   notes?: string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -1062,6 +1088,7 @@ export type ProfessorUpdateWithoutUniversityInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1086,6 +1113,7 @@ export type ProfessorUncheckedUpdateWithoutUniversityInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1109,6 +1137,7 @@ export type ProfessorUncheckedUpdateManyWithoutUniversityInput = {
   suggestedContact?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   futureFundingNote?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  customFields?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1135,6 +1164,7 @@ export type ProfessorSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   suggestedContact?: boolean
   futureFundingNote?: boolean
   notes?: boolean
+  customFields?: boolean
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -1161,6 +1191,7 @@ export type ProfessorSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   suggestedContact?: boolean
   futureFundingNote?: boolean
   notes?: boolean
+  customFields?: boolean
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -1187,6 +1218,7 @@ export type ProfessorSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   suggestedContact?: boolean
   futureFundingNote?: boolean
   notes?: boolean
+  customFields?: boolean
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -1213,12 +1245,13 @@ export type ProfessorSelectScalar = {
   suggestedContact?: boolean
   futureFundingNote?: boolean
   notes?: boolean
+  customFields?: boolean
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type ProfessorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "universityId" | "name" | "email" | "profileUrl" | "researchInterests" | "emailSentDate" | "emailSubject" | "replyReceived" | "replyDate" | "status" | "lastFollowUp" | "nextFollowUp" | "interviewDate" | "suggestedContact" | "futureFundingNote" | "notes" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["professor"]>
+export type ProfessorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "universityId" | "name" | "email" | "profileUrl" | "researchInterests" | "emailSentDate" | "emailSubject" | "replyReceived" | "replyDate" | "status" | "lastFollowUp" | "nextFollowUp" | "interviewDate" | "suggestedContact" | "futureFundingNote" | "notes" | "customFields" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["professor"]>
 export type ProfessorInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   university?: boolean | Prisma.Professor$universityArgs<ExtArgs>
@@ -1257,6 +1290,7 @@ export type $ProfessorPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     suggestedContact: string | null
     futureFundingNote: string | null
     notes: string | null
+    customFields: runtime.JsonValue | null
     deletedAt: Date | null
     createdAt: Date
     updatedAt: Date
@@ -1703,6 +1737,7 @@ export interface ProfessorFieldRefs {
   readonly suggestedContact: Prisma.FieldRef<"Professor", 'String'>
   readonly futureFundingNote: Prisma.FieldRef<"Professor", 'String'>
   readonly notes: Prisma.FieldRef<"Professor", 'String'>
+  readonly customFields: Prisma.FieldRef<"Professor", 'Json'>
   readonly deletedAt: Prisma.FieldRef<"Professor", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"Professor", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Professor", 'DateTime'>
