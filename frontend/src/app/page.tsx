@@ -1,65 +1,132 @@
-import Image from "next/image";
+import React from "react";
+import Link from "next/link";
+import { headers } from "next/headers";
+import { authClient } from "@/lib/auth-client.js";
+import { ArrowRight, Sparkles, School, GraduationCap, FolderGit2, FileCheck } from "lucide-react";
 
-export default function Home() {
+export default async function LandingPage() {
+  const reqHeaders = await headers();
+  const { data: session } = await authClient.getSession({
+    fetchOptions: {
+      headers: reqHeaders,
+    },
+  });
+
+  const isLoggedIn = !!session;
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="relative min-h-screen flex flex-col justify-between bg-zinc-950 text-zinc-100 overflow-hidden font-sans">
+      {/* Background gradients */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-emerald-500/5 blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 translate-x-1/2 w-[500px] h-[500px] rounded-full bg-blue-500/5 blur-[120px]" />
+      </div>
+
+      {/* Navbar */}
+      <header className="z-10 flex h-20 items-center justify-between px-8 max-w-6xl w-full mx-auto">
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg tracking-tight text-white">
+          <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-emerald-500 text-zinc-950 font-extrabold text-sm">
+            GP
+          </span>
+          <span>GradPlanner</span>
+        </Link>
+        <div className="flex items-center gap-4">
+          {isLoggedIn ? (
+            <Link
+              href="/dashboard"
+              className="inline-flex h-9 items-center justify-center rounded-lg bg-emerald-500 px-4 text-sm font-semibold text-zinc-950 hover:bg-emerald-600 transition-all"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Dashboard
+            </Link>
+          ) : (
+            <>
+              <Link href="/login" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">
+                Sign In
+              </Link>
+              <Link
+                href="/register"
+                className="inline-flex h-9 items-center justify-center rounded-lg bg-emerald-500 px-4 text-sm font-semibold text-zinc-950 hover:bg-emerald-600 transition-all"
+              >
+                Get Started
+              </Link>
+            </>
+          )}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      {/* Hero Section */}
+      <main className="z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-12 max-w-4xl mx-auto space-y-8">
+        <div className="inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 px-3 py-1 text-xs text-zinc-400 backdrop-blur-md">
+          <Sparkles className="h-3.5 w-3.5 text-emerald-400" />
+          <span>Graduate Admissions Workspace for ML & AI Abroad</span>
+        </div>
+
+        <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl max-w-3xl leading-[1.1] bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">
+          Organize Your Path to a Master's Degree
+        </h1>
+
+        <p className="max-w-xl text-lg text-zinc-400 leading-8">
+          A premium workspace designed for graduate applicants to search university rankings, track target faculty members, and manage application checklists.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          {isLoggedIn ? (
+            <Link
+              href="/dashboard"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 text-base font-semibold text-zinc-950 hover:bg-emerald-600 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20 transition-all"
+            >
+              Enter Workspace <ArrowRight className="h-4 w-4" />
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/register"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 text-base font-semibold text-zinc-950 hover:bg-emerald-600 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20 transition-all"
+              >
+                Start for Free <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/login"
+                className="inline-flex h-12 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/20 px-6 text-base font-semibold text-zinc-300 hover:bg-zinc-800/50 hover:text-white transition-all"
+              >
+                Sign In
+              </Link>
+            </>
+          )}
+        </div>
+
+        {/* Feature Cards Grid */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 pt-16 w-full text-left">
+          <div className="rounded-xl border border-zinc-900 bg-zinc-900/10 p-6 backdrop-blur-sm space-y-3">
+            <School className="h-8 w-8 text-emerald-400" />
+            <h3 className="font-bold text-zinc-200">3k+ University Rankings</h3>
+            <p className="text-zinc-500 text-xs leading-relaxed">
+              Deduplicated and merged listings from QS 2026, THE 2026, and ARWU 2025. Search by ranking and country.
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-zinc-900 bg-zinc-900/10 p-6 backdrop-blur-sm space-y-3">
+            <GraduationCap className="h-8 w-8 text-blue-400" />
+            <h3 className="font-bold text-zinc-200">Professor Tracker</h3>
+            <p className="text-zinc-500 text-xs leading-relaxed">
+              Track target faculty members in deep learning, NLP, computer vision. Monitor follow-up dates and reply stats.
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-zinc-900 bg-zinc-900/10 p-6 backdrop-blur-sm space-y-3">
+            <FolderGit2 className="h-8 w-8 text-purple-400" />
+            <h3 className="font-bold text-zinc-200">Admissions Pipeline</h3>
+            <p className="text-zinc-500 text-xs leading-relaxed">
+              Track document checklists (SOP, LOR, transcripts, test reports) and applications through every submission stage.
+            </p>
+          </div>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="z-10 py-8 border-t border-zinc-900/50 text-center text-xs text-zinc-600 w-full max-w-6xl mx-auto">
+        <p>&copy; {new Date().getFullYear()} GradPlanner. Designed for ML & AI aspirants abroad.</p>
+      </footer>
     </div>
   );
 }
