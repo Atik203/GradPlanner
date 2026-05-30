@@ -19,7 +19,7 @@ export const auth = betterAuth({
   }),
 
   // ── Base URL (backend origin, NOT the Next.js frontend) ───────────────────
-  baseURL: process.env.BETTER_AUTH_URL ?? "http://localhost:5000",
+  baseURL: (process.env.BETTER_AUTH_URL ?? "http://localhost:5000") + "/api/v1/auth",
 
   // ── Secret used to sign session tokens ────────────────────────────────────
   secret: process.env.BETTER_AUTH_SECRET,
@@ -50,14 +50,13 @@ export const auth = betterAuth({
     },
   },
 
-  // ── Phase 2: Google OAuth ─────────────────────────────────────────────────
-  // Uncomment when GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET are set
-  // socialProviders: {
-  //   google: {
-  //     clientId: process.env.GOOGLE_CLIENT_ID!,
-  //     clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-  //   },
-  // },
+  // ── Google OAuth ─────────────────────────────────────────────────────────
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    },
+  },
 });
 
 export type Auth = typeof auth;

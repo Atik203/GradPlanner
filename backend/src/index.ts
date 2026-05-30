@@ -4,6 +4,16 @@ import cors from "cors";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth.js";
 import { prisma } from "./lib/prisma.js";
+import { requireAuth } from "./middleware/auth.js";
+
+// Import routers
+import profileRouter from "./routes/profile.js";
+import rankingsRouter from "./routes/rankings.js";
+import universitiesRouter from "./routes/universities.js";
+import professorsRouter from "./routes/professors.js";
+import applicationsRouter from "./routes/applications.js";
+import documentsRouter from "./routes/documents.js";
+import statsRouter from "./routes/stats.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -21,14 +31,23 @@ app.use(
 
 // ── Better-auth handler — MUST come before express.json() ─────────────────────
 // better-auth parses its own request body
-app.all("/api/auth/*splat", toNodeHandler(auth));
+app.all("/api/v1/auth/*splat", toNodeHandler(auth));
 
 // ── Body parsers (applied after auth routes) ───────────────────────────────────
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// ── Registered protected routes ────────────────────────────────────────────────
+app.use("/api/v1/profile", requireAuth, profileRouter);
+app.use("/api/v1/rankings", requireAuth, rankingsRouter);
+app.use("/api/v1/universities", requireAuth, universitiesRouter);
+app.use("/api/v1/professors", requireAuth, professorsRouter);
+app.use("/api/v1/applications", requireAuth, applicationsRouter);
+app.use("/api/v1/documents", requireAuth, documentsRouter);
+app.use("/api/v1/dashboard/stats", requireAuth, statsRouter);
+
 // ── Health check ──────────────────────────────────────────────────────────────
-app.get("/api/health", async (_req: Request, res: Response) => {
+app.get("/api/v1/health", async (_req: Request, res: Response) => {
   try {
     const rankingCount = await prisma.universityRanking.count();
     res.json({
@@ -45,5 +64,5 @@ app.get("/api/health", async (_req: Request, res: Response) => {
 
 app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`);
-  console.log(`Auth endpoints: http://localhost:${PORT}/api/auth`);
+  console.log(`Auth endpoints: http://localhost:${PORT}/api/v1/auth`);
 });

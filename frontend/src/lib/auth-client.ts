@@ -26,7 +26,7 @@ export const authClient = createAuthClient({
    * The Express backend origin where better-auth is mounted.
    * In production, set NEXT_PUBLIC_API_URL to your deployed backend URL.
    */
-  baseURL: process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000",
+  baseURL: (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000") + "/api/v1/auth",
 });
 
 // Named re-exports for convenience
