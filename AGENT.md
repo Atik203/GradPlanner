@@ -29,7 +29,7 @@
 | Framework          | Next.js 14+ (App Router)                                                       |
 | Language           | TypeScript (strict mode)                                                       |
 | Database ORM       | Prisma + PostgreSQL                                                            |
-| Auth               | NextAuth.js v5 (Auth.js) — credentials + OAuth (Google)                        |
+| Auth               | **better-auth** — email/password (Phase 1), Google OAuth planned (Phase 2)     |
 | Styling            | Tailwind CSS + shadcn/ui                                                       |
 | Forms & Validation | React Hook Form + Zod                                                          |
 | State Management   | Server state via RSC + Server Actions; no global client store unless justified |
@@ -69,8 +69,6 @@ app/
 │   ├── documents/
 │   ├── timeline/
 │   └── settings/
-├── api/
-│   └── auth/[...nextauth]/ ← NextAuth route
 ├── layout.tsx              ← Root layout (fonts, providers)
 └── page.tsx                ← Landing / marketing page
 ```
@@ -79,13 +77,17 @@ app/
 
 ## 🔐 Authentication & Multi-User Rules
 
-- Use **NextAuth.js v5 (Auth.js)** — do not implement custom JWT or session logic.
-- Support: **Google OAuth** + **Email/Password (credentials)** provider.
-- Hash all passwords with **bcryptjs** before storing. Never store plaintext passwords.
-- Session strategy: **`database`** sessions (stored in PostgreSQL via Prisma adapter).
-- **Every** database query MUST be scoped to `session.user.id`. Never query without a userId filter.
+- Use **better-auth** — do NOT use NextAuth/Auth.js. Do NOT implement custom JWT or session logic.
+- **Architecture**: better-auth runs in the **Express backend** (`backend/src/lib/auth.ts`), mounted as `app.all("/api/auth/*splat", toNodeHandler(auth))`.
+- **Phase 1**: email + password only (via `authClient.signIn.email` / `authClient.signUp.email`).
+- **Phase 2 (future)**: Google OAuth — do not implement until `GOOGLE_CLIENT_ID` env var is configured.
+- Password hashing: better-auth uses `scrypt` natively — do NOT use bcryptjs or any custom hasher unless explicitly requested.
+- Passwords are stored in the `Account` table (not `User`) with `providerId = "credential"`.
+- Session strategy: **database sessions** stored in `Session` table. Token in cookie.
+- **Every** database query MUST be scoped to `userId`. Never query without a userId filter.
 - Auth guard lives in `(dashboard)/layout.tsx` — redirect unauthenticated users to `/login`.
-- Use `auth()` from NextAuth in Server Components and Server Actions to get the session.
+- Get session in **Server Components / Server Actions** via the backend API or better-auth's `getSession()`.
+- Frontend client: `import { authClient } from "@/lib/auth-client"` — NEVER import server auth config on the client.
 - On Server Actions, always validate session first:
 
 ```typescript
@@ -488,34 +490,39 @@ export async function createProfessor(formData: unknown) {
 
 ### Phase 1 — Email / Password (Current)
 
-- Provider: **Credentials** (NextAuth.js v5)
-- Password hashed with **bcryptjs** (12 salt rounds) before storage
-- Stored in `User.password` (nullable — null for OAuth users in Phase 2)
-- Registration flow: `POST /api/auth/register` → hash → `db.user.create` → redirect to login
-- Login flow: NextAuth credentials provider validates hash → issues database session
-- Session contains: `{ id, name, email, image }`
+- Provider: **better-auth** (Replacing NextAuth.js v5)
+- Password hashed with **scrypt** automatically by better-auth's credential provider before storage
+- Stored in `Account.password` (nullable — null for OAuth users in Phase 2)
+- Registration flow: Client calls `authClient.signUp.email({ email, password, name })`
+- Login flow: Client calls `authClient.signIn.email({ email, password })`
+- Session cookie managed automatically by better-auth
+- Session contains: `{ user: { id, name, email, image }, session: { id, token, ... } }`
 
 ```typescript
-// Phase 1 auth provider (credentials only)
-import Credentials from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
+// Client-side authentication example
+import { authClient } from "@/lib/auth-client";
 
-providers: [
-  Credentials({
-    credentials: { email: {}, password: {} },
-    async authorize(credentials) {
-      const user = await db.user.findUnique({ where: { email: credentials.email } });
-      if (!user?.password) return null;
-      const valid = await bcrypt.compare(credentials.password, user.password);
-      return valid ? user : null;
-    },
-  }),
-],
+// Sign Up
+const signUp = async () => {
+  const { data, error } = await authClient.signUp.email({
+    email: "user@example.com",
+    password: "password123",
+    name: "User Name",
+  });
+};
+
+// Sign In
+const signIn = async () => {
+  const { data, error } = await authClient.signIn.email({
+    email: "user@example.com",
+    password: "password123",
+  });
+};
 ```
 
 ### Phase 2 — OAuth (Planned, do NOT implement yet)
 
-- Provider: **Google OAuth** via NextAuth `GoogleProvider`
+- Provider: **Google OAuth** via better-auth social providers
 - `Account` and `Session` tables already in schema — ready for OAuth when enabled
 - OAuth users will have `password: null` — never prompt them for a password
 - Add `Google` provider config only when `GOOGLE_CLIENT_ID` env var is present
@@ -523,7 +530,7 @@ providers: [
 
 ### Password Reset (Phase 2)
 
-- Flow: email → `VerificationToken` → time-limited link → new password
+- Flow: email → verification flow → time-limited link → new password
 - Use `Resend` for transactional emails
 - Token expires in 1 hour
 

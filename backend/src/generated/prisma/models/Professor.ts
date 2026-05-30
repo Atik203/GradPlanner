@@ -755,10 +755,6 @@ export type ProfessorUncheckedUpdateManyWithoutUniversityNestedInput = {
   deleteMany?: Prisma.ProfessorScalarWhereInput | Prisma.ProfessorScalarWhereInput[]
 }
 
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
-}
-
 export type EnumProfessorStatusFieldUpdateOperationsInput = {
   set?: $Enums.ProfessorStatus
 }
