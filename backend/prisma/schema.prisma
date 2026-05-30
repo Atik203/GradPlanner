@@ -126,6 +126,7 @@ model Professor {
   suggestedContact  String?
   futureFundingNote String?
   notes             String?
+  customFields      Json?           @default("{}")
   deletedAt         DateTime?
   createdAt         DateTime        @default(now())
   updatedAt         DateTime        @updatedAt
