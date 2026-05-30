@@ -1,8 +1,6 @@
-import { PrismaClient, Tier } from '../src/generated/prisma';
+import { prisma } from '../src/lib/prisma';
 import * as xlsx from 'xlsx';
 import path from 'path';
-
-const prisma = new PrismaClient();
 
 async function main() {
   const userEmail = 'atikurrahaman0304@gmail.com';
@@ -40,7 +38,7 @@ async function main() {
     const country = sheetName.replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '').trim(); // Remove flag emojis
     console.log(`\nProcessing country: ${country}`);
 
-    let currentTier: Tier | null = null;
+    let currentTier: any = null;
     let foundUniversityList = false;
 
     for (let i = 0; i < data.length; i++) {
@@ -58,15 +56,15 @@ async function main() {
       if (foundUniversityList) {
         // Detect tier headers
         if (firstCell.includes('Ambitious') || firstCell.includes('Ambitious')) {
-          currentTier = Tier.DREAM;
+          currentTier = 'DREAM';
           continue;
         }
         if (firstCell.includes('Middle Ground')) {
-          currentTier = Tier.MATCH;
+          currentTier = 'MATCH';
           continue;
         }
         if (firstCell.includes('CONFIRM CHANCE') || firstCell.includes('Confirm Chance') || firstCell.includes('Safety')) {
-          currentTier = Tier.SAFETY;
+          currentTier = 'SAFETY';
           continue;
         }
 
