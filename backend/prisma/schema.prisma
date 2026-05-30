@@ -7,19 +7,250 @@ generator client {
   output   = "../src/generated/prisma"
 }
 
-// Starter models — replace with your own
+// ─── Auth Models (NextAuth compatible) ──────────────────────────────────────
+
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  posts Post[]
+  id            String        @id @default(cuid())
+  name          String?
+  email         String        @unique
+  password      String?       // nullable — OAuth users have no password
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  profile       UserProfile?
+  universities  University[]
+  professors    Professor[]
+  applications  Application[]
+  documents     Document[]
+  accounts      Account[]
+  sessions      Session[]
 }
 
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  authorId  Int
-  author    User    @relation(fields: [authorId], references: [id])
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ─── Domain Models ───────────────────────────────────────────────────────────
+
+model UserProfile {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  university     String?  // e.g. "UIU Dhaka"
+  cgpa           Float?
+  targetIntake   String?  // e.g. "Sep 2028"
+  graduationDate String?  // e.g. "Nov 2027"
+  targetDegree   String?  // e.g. "MSc ML/AI"
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model University {
+  id           String       @id @default(cuid())
+  userId       String
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name         String
+  country      String
+  tier         Tier
+  program      String?
+  tuitionPerYr String?
+  deadline     String?
+  intake       String?
+  website      String?
+  notes        String?
+  deletedAt    DateTime?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  professors   Professor[]
+  application  Application?
+}
+
+model Professor {
+  id                String          @id @default(cuid())
+  userId            String
+  user              User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  universityId      String?
+  university        University?     @relation(fields: [universityId], references: [id])
+  name              String
+  email             String?
+  profileUrl        String?
+  researchInterests String?
+  emailSentDate     DateTime?
+  emailSubject      String?
+  replyReceived     Boolean         @default(false)
+  replyDate         DateTime?
+  status            ProfessorStatus @default(NOT_CONTACTED)
+  lastFollowUp      DateTime?
+  nextFollowUp      DateTime?
+  interviewDate     DateTime?
+  suggestedContact  String?
+  futureFundingNote String?
+  notes             String?
+  deletedAt         DateTime?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+}
+
+model Application {
+  id            String            @id @default(cuid())
+  userId        String
+  user          User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  universityId  String            @unique
+  university    University        @relation(fields: [universityId], references: [id])
+  status        ApplicationStatus @default(PLANNING)
+  deadline      DateTime?
+  submittedAt   DateTime?
+  decisionDate  DateTime?
+  offerReceived Boolean           @default(false)
+  scholarshipAmt String?
+  notes         String?
+  deletedAt     DateTime?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+}
+
+model Document {
+  id        String         @id @default(cuid())
+  userId    String
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name      String
+  type      DocumentType
+  country   String?
+  status    DocumentStatus @default(PENDING)
+  fileUrl   String?
+  expiresAt DateTime?
+  notes     String?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+}
+
+// ─── University Rankings (QS / THE / ARWU) ───────────────────────────────────
+
+model UniversityRanking {
+  id              String  @id @default(cuid())
+  source          String  // "QS" | "THE" | "ARWU"
+  year            Int
+  rank            Int?    // parsed integer rank (null when range like "301-400")
+  rankDisplay     String  // raw rank string as in CSV
+  institutionName String
+  country         String
+  region          String?
+  overallScore    Float?
+
+  // QS-specific metric scores
+  arScore         Float?
+  erScore         Float?
+  fsrScore        Float?
+  cpfScore        Float?
+  ifrScore        Float?
+  isrScore        Float?
+  eoScore         Float?
+  susScore        Float?
+
+  // THE-specific metric scores
+  teachingScore         Float?
+  researchEnvScore      Float?
+  researchQualityScore  Float?
+  industryScore         Float?
+  internationalScore    Float?
+
+  // ARWU-specific metric scores
+  alumniScore     Float?
+  awardScore      Float?
+  hiciScore       Float?
+  nsScore         Float?
+  pubScore        Float?
+  pcpScore        Float?
+
+  @@unique([source, year, institutionName])
+  @@index([source, year])
+  @@index([institutionName])
+  @@index([country])
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum Tier {
+  DREAM
+  MATCH
+  SAFETY
+}
+
+enum ProfessorStatus {
+  NOT_CONTACTED
+  EMAILED
+  AWAITING_REPLY
+  REPLIED_POSITIVE
+  REPLIED_NEGATIVE
+  INTERVIEWED
+}
+
+enum ApplicationStatus {
+  PLANNING
+  IN_PROGRESS
+  SUBMITTED
+  UNDER_REVIEW
+  OFFER_RECEIVED
+  ACCEPTED
+  REJECTED
+  WITHDRAWN
+}
+
+enum DocumentType {
+  TRANSCRIPT
+  DEGREE_CERTIFICATE
+  IELTS
+  TOEFL
+  GRE
+  LOR
+  SOP
+  CV
+  PASSPORT
+  POLICE_CLEARANCE
+  BANK_STATEMENT
+  MEDICAL
+  OTHER
+}
+
+enum DocumentStatus {
+  PENDING
+  IN_PROGRESS
+  OBTAINED
+  EXPIRED
+  NOT_REQUIRED
 }
