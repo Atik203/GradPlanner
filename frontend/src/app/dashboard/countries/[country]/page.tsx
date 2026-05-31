@@ -29,9 +29,9 @@ export default function CountryIntelligencePage({ params }: { params: Promise<{ 
   const countryData = countriesData[slug];
 
   // Dynamic Data from Redux
-  const universities = useAppSelector((state) => state.universities.universities);
-  const professors = useAppSelector((state) => state.professors.professors);
-  const documents = useAppSelector((state) => state.documents.documents);
+  const universities = useAppSelector((state) => state.universities.items) || [];
+  const professors = useAppSelector((state) => state.professors.items) || [];
+  const documents = useAppSelector((state) => state.documents.items) || [];
 
   if (!countryData) {
     notFound();

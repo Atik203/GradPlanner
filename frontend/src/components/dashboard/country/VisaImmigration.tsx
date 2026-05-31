@@ -1,14 +1,14 @@
 import React from "react";
 import { VisaImmigration as VisaData } from "@/data/countries";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Passport, Clock, Award, ShieldAlert } from "lucide-react";
+import { Plane, Clock, Award, ShieldAlert } from "lucide-react";
 
 export function VisaImmigration({ data }: { data: VisaData }) {
   return (
     <Card className="border-border/60 bg-card/20 backdrop-blur-md h-full">
       <CardHeader className="pb-2">
         <CardTitle className="text-md font-bold text-foreground flex items-center gap-2">
-          <Passport className="h-5 w-5 text-indigo-500" />
+          <Plane className="h-5 w-5 text-indigo-500" />
           Visa & Immigration
         </CardTitle>
       </CardHeader>
