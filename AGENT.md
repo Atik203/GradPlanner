@@ -112,19 +112,23 @@ Countries (hub)
 
 ## 🛠️ Tech Stack
 
-| Layer         | Technology                     | Notes                                     |
-| ------------- | ------------------------------ | ----------------------------------------- |
-| Framework     | Next.js 15+ (App Router)       | RSC-first                                 |
-| Language      | TypeScript (`strict: true`)    | No `any`, ever                            |
-| Database ORM  | Prisma + PostgreSQL            | Multi-tenant, userId-scoped               |
-| Auth          | **better-auth**                | NOT NextAuth. See auth section.           |
-| Styling       | Tailwind CSS + shadcn/ui       | Mobile-first                              |
-| Forms         | React Hook Form + Zod          | Client + server validation                |
-| State         | RSC + Server Actions           | No Zustand unless justified               |
-| File Storage  | Vercel Blob / Supabase Storage | Document uploads                          |
-| Email         | Resend                         | Verification, reminders, follow-up alerts |
-| Rate Limiting | @upstash/ratelimit + Redis     | Auth endpoints                            |
-| Deployment    | Vercel                         |                                           |
+### Split Architecture — Separate Backend
+
+GradPlanner uses a **split architecture**: the frontend (Next.js) and the backend (Express) run as separate processes. The backend owns Prisma, better-auth, and all REST API routes. The frontend is a client-heavy SPA shell using Redux Toolkit for state management.
+
+| Layer          | Technology                     | Notes                                        |
+| -------------- | ------------------------------ | -------------------------------------------- |
+| Frontend       | Next.js 15+ (App Router)       | UI shell, routing, SSR for landing page      |
+| Backend        | Express 5+ (TypeScript)        | REST API, auth, Prisma, business logic       |
+| Language       | TypeScript (`strict: true`)    | No `any`, ever — both frontend and backend   |
+| Database ORM   | Prisma + PostgreSQL            | Multi-tenant, userId-scoped, runs in backend |
+| Auth           | **better-auth** (in Express)   | NOT NextAuth. Mounted at `/api/v1/auth`      |
+| Client State   | Redux Toolkit + react-redux    | Slices per domain, `fetchApi()` for REST     |
+| Styling        | Tailwind CSS + shadcn/ui       | Mobile-first, light/dark theme via variables |
+| Forms          | React Hook Form + Zod          | Client validation; backend validates too     |
+| File Storage   | Vercel Blob / Supabase Storage | Document uploads                             |
+| Email          | Resend                         | Verification, reminders, follow-up alerts    |
+| Deployment     | Vercel (frontend) + Railway/Render (backend) |                               |
 
 ---
 
@@ -136,80 +140,110 @@ Countries (hub)
 
 - First-class TypeScript
 - Built-in email verification, password reset, session management
-- Cleaner plugin architecture for Phase 2 OAuth
+- Clean social provider integration (Google OAuth already working)
 - No adapter complexity
 
-### Phase 1 — Email + Password Only
+### Current Implementation — Email + Password + Google OAuth
+
+better-auth runs in the **Express backend** (`backend/src/lib/auth.ts`), mounted as:
 
 ```typescript
-// lib/auth.ts
+// backend/src/index.ts
+app.all("/api/v1/auth/*splat", toNodeHandler(auth));
+```
+
+**Server config** (`backend/src/lib/auth.ts`):
+
+```typescript
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { db } from "@/lib/db";
+import { prisma } from "./prisma";
 
 export const auth = betterAuth({
-  database: prismaAdapter(db, { provider: "postgresql" }),
+  database: prismaAdapter(prisma, { provider: "postgresql" }),
+  baseURL: (process.env.BETTER_AUTH_URL ?? "http://localhost:5000") + "/api/v1/auth",
+  secret: process.env.BETTER_AUTH_SECRET,
   emailAndPassword: {
     enabled: true,
-    requireEmailVerification: true,
     minPasswordLength: 8,
+    maxPasswordLength: 128,
+    revokeSessionsOnPasswordReset: true,
   },
-  emailVerification: {
-    sendVerificationEmail: async ({ user, url }) => {
-      await sendEmail({
-        to: user.email,
-        subject: "Verify your GradPlanner account",
-        template: "verify-email",
-        variables: { url, name: user.name },
-      });
-    },
-    autoSignInAfterVerification: true,
-  },
+  trustedOrigins: [
+    process.env.FRONTEND_URL ?? "http://localhost:3000",
+  ],
   session: {
-    expiresIn: 60 * 60 * 24 * 7, // 7 days
-    updateAge: 60 * 60 * 24, // refresh if older than 1 day
+    expiresIn: 60 * 60 * 24 * 7,    // 7 days
+    updateAge: 60 * 60 * 24,         // refresh if older than 1 day
+    cookieCache: { enabled: true, maxAge: 60 * 5 },
+  },
+  socialProviders: {
+    google: {
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      redirectURI: process.env.GOOGLE_CALLBACK_URL,
+    },
   },
 });
-
-export type Session = typeof auth.$Infer.Session;
-export type User = typeof auth.$Infer.Session.user;
 ```
 
-### Phase 2 — Add OAuth (future, do NOT implement yet)
-
-When instructed, add Google and/or GitHub via better-auth plugins:
+**Frontend client** (`frontend/src/lib/auth-client.ts`):
 
 ```typescript
-// Phase 2 addition only — do NOT add now
-import { socialProviders } from "better-auth/plugins";
-// Add to betterAuth({ plugins: [socialProviders({ google: { ... } })] })
+import { createAuthClient } from "better-auth/react";
+
+export const authClient = createAuthClient({
+  baseURL: (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000") + "/api/v1/auth",
+});
+
+export const { signIn, signUp, signOut, useSession, getSession } = authClient;
 ```
 
-### Phase 3 — Future Auth Cases (plan only, do NOT implement)
+### Auth Flows
 
-- Magic link (passwordless email)
-- Two-Factor Authentication (TOTP + backup codes)
-- Institutional SSO
-- API keys for public API
+```typescript
+// Sign up (email + password)
+await authClient.signUp.email({ name, email, password });
+
+// Sign in (email + password)
+await authClient.signIn.email({ email, password });
+
+// Sign in (Google OAuth) — ALREADY WORKING
+await authClient.signIn.social({ provider: "google", callbackURL: "/dashboard" });
+
+// Sign out
+await authClient.signOut();
+
+// Get session (SSR — for landing page auth check)
+const { data: session } = await authClient.getSession({ fetchOptions: { headers } });
+
+// Get session (client component — reactive)
+const { data: session, isPending } = authClient.useSession();
+```
+
+### Future Auth Phases (do NOT implement now)
+
+- Phase 2: GitHub OAuth, Magic link (passwordless email)
+- Phase 3: Two-Factor Authentication (TOTP + backup codes)
+- Phase 4: Institutional SSO, API keys for public API
 
 ### Auth Rules
 
-- **Every Server Action validates session FIRST** — before any logic
-- Session is obtained via `auth.api.getSession({ headers: await headers() })`
-- All user-owned DB queries MUST include `userId: session.user.id`
+- **Every Express route handler gets `req.user` from `requireAuth` middleware** — before any logic
+- Session is validated via `auth.api.getSession({ headers: req.headers })` inside the middleware
+- All user-owned DB queries MUST include `userId: req.user!.id`
 - Never expose one user's data to another — ever
-- Unverified email = cannot login (enforced in Phase 1)
 - Password reset tokens: 1 hour expiry, deleted on use, stored hashed
-- Rate limit: 5 auth attempts per 15 minutes per IP
+- CORS: only `FRONTEND_URL` allowed, credentials enabled
 
 ```typescript
-// Standard session check pattern in Server Actions
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-
-const session = await auth.api.getSession({ headers: await headers() });
-if (!session?.user?.id) {
-  return { success: false, error: "Unauthorized" };
+// backend/src/middleware/auth.ts — Standard session check
+export async function requireAuth(req: AuthenticatedRequest, res: Response, next: NextFunction) {
+  const session = await auth.api.getSession({ headers: req.headers });
+  if (!session) return res.status(401).json({ error: "Unauthorized" });
+  req.user = session.user;
+  req.session = session.session;
+  next();
 }
 ```
 
@@ -350,29 +384,60 @@ model CountryTarget {
 }
 
 // ─── UNIVERSITY RANKINGS (SEEDED — READ-ONLY FOR USERS) ───────────────────────
+// One row per university — all 3 ranking systems combined.
+// This keeps queries simple: one JOIN gives you QS + THE + ARWU together.
 
 model UniversityRanking {
-  id              String        @id @default(cuid())
-  universityName  String
-  normalizedName  String        // lowercase, trimmed, for matching
+  id              String  @id @default(cuid())
+
+  // Canonical identity
+  institutionName String  @unique
   country         String
-  source          RankingSource
-  year            Int
-  rank            Int?          // numeric lower bound for sorting
-  rankDisplay     String?       // "201-250", "501+", "47" as displayed
-  csRank          Int?          // CS/Engineering/AI subject rank
-  csRankDisplay   String?
-  score           Float?
+  region          String?
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  // Which ranking lists this university appears in
+  inQs            Boolean @default(false)
+  inThe           Boolean @default(false)
+  inArwu          Boolean @default(false)
 
-  universities University[]
+  // ── QS 2026 ──
+  qs2026Rank        Int?
+  qs2026RankDisplay String?
+  qs2026Score       Float?
+  qsArScore         Float?  // Academic Reputation
+  qsErScore         Float?  // Employer Reputation
+  qsFsrScore        Float?  // Faculty/Student Ratio
+  qsCpfScore        Float?  // Citations per Faculty
+  qsIfrScore        Float?  // International Faculty Ratio
+  qsIsrScore        Float?  // International Student Ratio
+  qsEoScore         Float?  // Employment Outcomes
+  qsSusScore        Float?  // Sustainability
 
-  @@unique([normalizedName, source, year])
-  @@index([source, year])
-  @@index([normalizedName])
-  @@index([country, source])
+  // ── THE 2026 ──
+  the2026Rank        Int?
+  the2026RankDisplay String?
+  the2026Score       Float?
+  theTeaching        Float?
+  theResearchEnv     Float?
+  theResearchQuality Float?
+  theIndustry        Float?
+  theInternational   Float?
+
+  // ── ARWU 2025 ──
+  arwu2025Rank  Int?
+  arwu2025Score Float?
+  arwuAlumni    Float?
+  arwuAward     Float?
+  arwuHici      Float?
+  arwuNs        Float?  // Nature & Science publications
+  arwuPub       Float?
+  arwuPcp       Float?  // Per Capita Performance
+
+  @@index([qs2026Rank])
+  @@index([the2026Rank])
+  @@index([arwu2025Rank])
+  @@index([country])
+  @@index([inQs, inThe, inArwu])
 }
 
 // ─── UNIVERSITIES (USER-OWNED) ────────────────────────────────────────────────
@@ -936,11 +1001,12 @@ main()
 ### Ranking Rules (Engineering + Domain)
 
 - Rankings are **global reference data** — never scoped to `userId`
-- `normalizedName` used for fuzzy matching in UI search; `universityName` is displayed
-- `rankDisplay` shown in UI (e.g. "201-250"); `rank` used for sorting
-- Users **link** their `University` to a `UniversityRanking` via `rankingId`
-- Show all 3 sources side-by-side. Show "—" if not ranked by that source
-- Re-seeding is idempotent (upsert). Safe to re-run
+- **Combined model**: one row per university with QS + THE + ARWU data in the same row
+- `institutionName` is unique per row and displayed in UI
+- `qs2026Rank`, `the2026Rank`, `arwu2025Rank` used for sorting; `*RankDisplay` for display
+- `inQs`, `inThe`, `inArwu` booleans indicate which ranking lists the university appears in
+- Show all 3 sources side-by-side. Show "—" if `inQs`/`inThe`/`inArwu` is false
+- Re-seeding is idempotent (upsert on `institutionName`). Safe to re-run
 - Never let users edit ranking data
 - **Domain note:** Do not recommend a university solely because it ranks higher. Funding availability > ranking for scholarship-dependent students
 
@@ -948,54 +1014,74 @@ main()
 
 ## 🏗️ Architecture Rules
 
-### Next.js App Router
+### Split Architecture — Frontend + Backend
 
-- **Default: React Server Components.** Add `'use client'` only for:
-  - Browser APIs (`window`, `document`, `navigator`)
-  - Interactivity requiring `useState`/`useEffect`
-  - Event handlers that change UI state
-  - shadcn/ui components that self-declare as client components
-- Never `'use client'` on a layout unless every child needs it
-- Server Actions for ALL mutations — no `/api/` routes for CRUD
-- `/api/` routes only for: better-auth handler, webhooks, file uploads
-- Never `useRouter()` inside a Server Action
+- **Backend** (Express on port 5000): owns Prisma, better-auth, all REST API routes
+- **Frontend** (Next.js on port 3000): UI rendering, Redux state, `fetchApi()` calls to backend
+- All data mutations go through **Express REST routes** (`/api/v1/*`), NOT Next.js Server Actions
+- Auth is handled entirely by better-auth in Express — frontend uses `authClient` from `better-auth/react`
+- Session cookies are cross-origin via `credentials: "include"` + CORS config
 
-### Route Structure
+### Frontend Rules
+
+- Dashboard pages are `'use client'` — they use Redux, `useEffect` for data fetching, and interactive state
+- Landing page (`page.tsx`) can be RSC — it uses `authClient.getSession()` with SSR headers
+- Layout files can be RSC for static structure, but wrap children in `<Providers>` for Redux + Theme
+- Use `fetchApi()` helper for all backend calls — it sets `credentials: "include"` and handles errors
+- Use Redux Toolkit slices for client-side state per domain (universities, professors, applications, documents, profile)
+- Never import Prisma or backend code in the frontend
+
+### Backend Rules
+
+- Every protected route uses `requireAuth` middleware → `req.user` is available
+- Every DB query on user-owned models MUST include `userId: req.user!.id`
+- All routes under `/api/v1/` with explicit REST verbs (GET, POST, PUT, DELETE)
+- better-auth handler MUST come before `express.json()` middleware
+- Use soft deletes (`deletedAt`) on: University, Professor, Application
+- Never return raw Prisma errors to client — generic error messages only
+
+### Frontend Route Structure
 
 ```
-src/app/
+frontend/src/app/
 ├── (auth)/
 │   ├── login/page.tsx
-│   ├── register/page.tsx
-│   ├── verify-email/page.tsx        ← ?token=...
-│   ├── forgot-password/page.tsx
-│   └── reset-password/page.tsx      ← ?token=...
-├── (dashboard)/
-│   ├── layout.tsx                   ← auth guard + app shell
+│   └── register/page.tsx
+├── dashboard/
+│   ├── layout.tsx                   ← auth guard + sidebar + header
 │   ├── page.tsx                     ← Country Intelligence Hub (HOME)
-│   ├── countries/
-│   │   └── [country]/
-│   │       ├── page.tsx             ← Full country report
-│   │       ├── universities/page.tsx
-│   │       └── timeline/page.tsx
-│   ├── universities/
-│   │   ├── page.tsx
-│   │   └── [id]/page.tsx
-│   ├── professors/
-│   │   ├── page.tsx
-│   │   └── [id]/page.tsx
+│   ├── universities/page.tsx
+│   ├── professors/page.tsx
 │   ├── applications/page.tsx
 │   ├── documents/page.tsx
-│   ├── funding/page.tsx
+│   ├── funding/page.tsx             ← scholarship tracker
 │   ├── timeline/page.tsx
-│   ├── rankings/page.tsx            ← Browse QS/THE/ARWU
-│   ├── analytics/page.tsx
+│   ├── rankings/page.tsx            ← Browse QS/THE/ARWU (public)
 │   └── settings/page.tsx
-├── api/
-│   ├── auth/[...all]/route.ts       ← better-auth handler
-│   └── uploads/route.ts
-├── layout.tsx
+├── universities/page.tsx            ← Public rankings browser
+├── layout.tsx                       ← Root layout (fonts, providers)
+├── providers.tsx                    ← Redux + ThemeProvider
 └── page.tsx                         ← Public landing page
+```
+
+### Backend Route Structure
+
+```
+backend/src/
+├── index.ts                         ← Express app, CORS, auth handler, route registration
+├── lib/
+│   ├── auth.ts                      ← better-auth config (email + Google OAuth)
+│   └── prisma.ts                    ← Prisma client singleton
+├── middleware/
+│   └── auth.ts                      ← requireAuth middleware
+└── routes/
+    ├── profile.ts                   ← GET/PUT /api/v1/profile
+    ├── rankings.ts                  ← GET /api/v1/rankings (public)
+    ├── universities.ts              ← CRUD /api/v1/universities
+    ├── professors.ts                ← CRUD /api/v1/professors
+    ├── applications.ts              ← CRUD /api/v1/applications
+    ├── documents.ts                 ← CRUD /api/v1/documents
+    └── stats.ts                     ← GET /api/v1/dashboard/stats
 ```
 
 ---
@@ -1123,11 +1209,15 @@ These are non-negotiable domain constraints every recommendation must consider:
 - shadcn/ui for all primitives — never reinvent Button, Input, Dialog, Table, Badge, Tabs
 - Tailwind only — no CSS modules, no inline styles, no styled-components
 - Mobile-first. Test breakpoints: 375px, 768px, 1280px
-- Dark mode: `next-themes` + shadcn ThemeProvider
-- Loading: Suspense + `loading.tsx` (page level). Skeleton components (inline)
+- **Light/Dark theme**: `next-themes` + shadcn ThemeProvider with `class` strategy
+- **CRITICAL**: Never use hardcoded color classes like `text-zinc-100`, `bg-zinc-950`, `bg-emerald-500`
+- Always use semantic Tailwind classes: `text-foreground`, `bg-background`, `bg-card`, `text-muted-foreground`, `border-border`
+- Use CSS custom properties in `globals.css` for theme-specific colors (tiers, statuses, accents)
+- Cards must be visually distinct from background in BOTH themes (dark: border, light: shadow + border)
+- Input fields must have visible borders in light mode
+- Loading: spinner + skeleton components; every list has a loading state
 - Every data list: meaningful empty state (not blank)
-- Every async boundary: `error.tsx` or inline error with retry
-- Server Action errors: surface via `sonner` toast
+- Every async operation: error handling with user-visible feedback
 - Country pages: advisor-style reports, NOT generic tables
 - Prefer visual decision-support over raw data dumps
 
@@ -1135,110 +1225,159 @@ These are non-negotiable domain constraints every recommendation must consider:
 
 ## 📁 File & Folder Conventions
 
+### Frontend (`frontend/src/`)
+
 ```
 src/
-├── app/                          ← Routes only. No business logic here.
+├── app/                          ← Routes + page components
+│   ├── (auth)/                   ← Login, Register pages
+│   ├── dashboard/                ← Protected dashboard pages
+│   ├── universities/             ← Public rankings browser
+│   ├── globals.css               ← Theme CSS variables (light + dark)
+│   ├── layout.tsx                ← Root layout (fonts, Providers)
+│   ├── providers.tsx             ← Redux Provider + ThemeProvider
+│   └── page.tsx                  ← Public landing page
 ├── components/
 │   ├── ui/                       ← shadcn/ui (never edit)
-│   ├── shared/                   ← Navbar, Sidebar, PageHeader, ThemeToggle
-│   ├── auth/                     ← LoginForm, RegisterForm, ResetPasswordForm
+│   ├── shared/                   ← Sidebar, PageHeader, ThemeToggle, EmptyState
 │   ├── countries/                ← CountryCard, CountryHub, CountryReport
 │   ├── universities/             ← UniversityCard, UniversityTable, RankingBadge
 │   ├── professors/               ← ProfessorCard, OutreachStatusBadge, FitScore
-│   ├── applications/             ← ApplicationKanban, StatusSelect
+│   ├── applications/             ← ApplicationCard, StatusPipeline
 │   ├── documents/                ← DocumentChecklist, DocumentStatusBadge
 │   ├── funding/                  ← ScholarshipCard, FundingCalculator
 │   ├── rankings/                 ← RankingTable, RankingSourceTabs, RankBadge
 │   └── timeline/                 ← TimelineView, DeadlineAlert
 ├── lib/
-│   ├── auth.ts                   ← better-auth config
+│   ├── api.ts                    ← fetchApi() helper (backend REST client)
 │   ├── auth-client.ts            ← better-auth browser client
-│   ├── db.ts                     ← Prisma singleton
-│   ├── env.ts                    ← Zod env validation
-│   ├── rate-limit.ts             ← Upstash rate limiters
-│   ├── email.ts                  ← Resend helpers
-│   └── utils.ts                  ← cn(), formatDate(), normalizeName()
-├── actions/
-│   ├── auth.ts                   ← register, verifyEmail, forgotPassword, resetPassword
-│   ├── university.ts
-│   ├── professor.ts
-│   ├── application.ts
-│   ├── document.ts
-│   ├── scholarship.ts
-│   └── country-target.ts
+│   ├── store/                    ← Redux Toolkit store
+│   │   ├── store.ts              ← configureStore, typed hooks
+│   │   └── slices/
+│   │       ├── profileSlice.ts
+│   │       ├── universitySlice.ts
+│   │       ├── professorSlice.ts
+│   │       ├── applicationSlice.ts
+│   │       └── documentSlice.ts
+│   └── utils.ts                  ← cn(), formatDate()
 ├── hooks/                        ← Client hooks only
 │   ├── use-debounce.ts
 │   └── use-toast.ts
 ├── types/
-│   ├── actions.ts                ← ActionResult<T>
-│   ├── auth.ts                   ← loginSchema, registerSchema (Zod)
-│   ├── professor.ts              ← professorSchema (Zod)
-│   ├── university.ts             ← universitySchema (Zod)
-│   ├── application.ts            ← applicationSchema (Zod)
-│   └── document.ts               ← documentSchema (Zod)
+│   └── index.ts                  ← TypeScript interfaces mirroring Prisma models
 └── constants/
     ├── countries.ts              ← COUNTRIES array, Country type, country metadata
     ├── statuses.ts               ← STATUS_LABELS, STATUS_COLORS
-    ├── rankings.ts               ← RANKING_SOURCES, RANKING_YEAR
     └── timelines.ts              ← KEY_DEADLINES, SWEDEN_DEADLINE
+```
+
+### Backend (`backend/src/`)
+
+```
+src/
+├── index.ts                      ← Express app entry point
+├── lib/
+│   ├── auth.ts                   ← better-auth config
+│   └── prisma.ts                 ← Prisma client singleton
+├── middleware/
+│   └── auth.ts                   ← requireAuth middleware
+├── routes/
+│   ├── profile.ts                ← User profile CRUD
+│   ├── rankings.ts               ← University rankings search (public)
+│   ├── universities.ts           ← Tracked universities CRUD
+│   ├── professors.ts             ← Professor contacts CRUD
+│   ├── applications.ts           ← Application tracking CRUD
+│   ├── documents.ts              ← Document checklist CRUD
+│   └── stats.ts                  ← Dashboard statistics
+└── generated/prisma/             ← Prisma generated client
 ```
 
 ---
 
-## ⚙️ Standard Server Action Pattern
+## ⚙️ Standard REST Route Pattern (Backend)
 
 ```typescript
-// actions/professor.ts
-"use server";
+// backend/src/routes/professors.ts
+import { Router, Response } from "express";
+import { prisma } from "../lib/prisma";
+import { AuthenticatedRequest } from "../middleware/auth";
 
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { db } from "@/lib/db";
-import { professorSchema } from "@/types/professor";
-import { revalidatePath } from "next/cache";
-import type { ActionResult } from "@/types/actions";
-import type { Professor } from "@prisma/client";
+const router: Router = Router();
 
-export async function createProfessor(
-  input: unknown,
-): Promise<ActionResult<Professor>> {
+// POST /api/v1/professors
+router.post("/", async (req: AuthenticatedRequest, res: Response) => {
   try {
-    // 1. Auth — always first
-    const session = await auth.api.getSession({ headers: await headers() });
-    if (!session?.user?.id) {
-      return { success: false, error: "Unauthorized" };
-    }
+    // 1. Auth — handled by requireAuth middleware (req.user is set)
+    const userId = req.user!.id;
 
-    // 2. Validate
-    const parsed = professorSchema.safeParse(input);
-    if (!parsed.success) {
-      return {
-        success: false,
-        error: "Validation failed",
-        fieldErrors: parsed.error.flatten().fieldErrors as Record<
-          string,
-          string[]
-        >,
-      };
+    // 2. Validate input
+    const { name, email, universityId, researchInterests, status, notes } = req.body;
+    if (!name) {
+      return res.status(400).json({ error: "Professor name is required" });
     }
 
     // 3. Business logic — domain checks
-    // (e.g. follow-up interval enforcement)
+    // (e.g. verify universityId ownership, follow-up interval enforcement)
+    if (universityId) {
+      const uni = await prisma.university.findFirst({
+        where: { id: universityId, userId, deletedAt: null },
+      });
+      if (!uni) return res.status(404).json({ error: "University not found" });
+    }
 
     // 4. DB write — always scoped to userId
-    const professor = await db.professor.create({
-      data: { ...parsed.data, userId: session.user.id },
+    const professor = await prisma.professor.create({
+      data: { userId, name, email, universityId, researchInterests, status, notes },
+      include: { university: true },
     });
 
-    // 5. Revalidate
-    revalidatePath("/professors");
-
-    return { success: true, data: professor };
+    // 5. Return result
+    res.status(201).json(professor);
   } catch (error) {
     // 6. Never expose raw errors
-    console.error("[CREATE_PROFESSOR]", error);
-    return { success: false, error: "Something went wrong. Please try again." };
+    console.error("POST /professors error:", error);
+    res.status(500).json({ error: "Failed to create professor" });
   }
+});
+
+export default router;
+```
+
+## ⚙️ Standard Frontend Data Flow Pattern
+
+```typescript
+// frontend/src/app/dashboard/professors/page.tsx
+"use client";
+
+import { useEffect, useState } from "react";
+import { fetchApi } from "@/lib/api";
+import { useAppDispatch, useAppSelector } from "@/lib/store/store";
+import { setProfessors, addProfessor } from "@/lib/store/slices/professorSlice";
+
+export default function ProfessorsPage() {
+  const dispatch = useAppDispatch();
+  const professors = useAppSelector((s) => s.professors.items);
+  const [loading, setLoading] = useState(true);
+
+  // 1. Load data on mount
+  useEffect(() => {
+    fetchApi("/api/v1/professors")
+      .then((data) => dispatch(setProfessors(data)))
+      .catch(console.error)
+      .finally(() => setLoading(false));
+  }, [dispatch]);
+
+  // 2. Create via REST → dispatch to Redux
+  const handleCreate = async (payload: unknown) => {
+    const newProf = await fetchApi("/api/v1/professors", {
+      method: "POST",
+      body: JSON.stringify(payload),
+    });
+    dispatch(addProfessor(newProf));
+  };
+
+  // 3. Render from Redux state
+  return ( /* ... */ );
 }
 ```
 
@@ -1246,39 +1385,37 @@ export async function createProfessor(
 
 ## 🚫 Hard Constraints — Never
 
-- ❌ Use `any` type
-- ❌ Use `useEffect` for data fetching — RSC or `use()` + Suspense
-- ❌ Use `getServerSideProps` / `getStaticProps`
+- ❌ Use `any` type — use `unknown` + type guards or explicit interfaces
+- ❌ Use `getServerSideProps` / `getStaticProps` — App Router only
 - ❌ Query Prisma on user-owned models without `userId` scope
-- ❌ Store plaintext passwords
-- ❌ Return raw Prisma or system errors to the client
-- ❌ Skip `try/catch` in any Server Action
-- ❌ Hardcode secrets — only `env.ts` via `process.env`
-- ❌ Let users mutate `UniversityRanking` data
-- ❌ Add a new country without a Prisma enum migration
-- ❌ Implement OAuth before Phase 2 is explicitly instructed
-- ❌ Allow login if `emailVerified` is false
-- ❌ Reuse or extend verification/reset tokens — delete on use
-- ❌ Skip `revalidatePath`/`revalidateTag` after mutations
+- ❌ Store plaintext passwords — better-auth handles hashing
+- ❌ Return raw Prisma or system errors to the client — generic messages only
+- ❌ Skip `try/catch` in any Express route handler
+- ❌ Hardcode secrets — use `.env` files, never commit them
+- ❌ Let users mutate `UniversityRanking` data — read-only seeded data
+- ❌ Import Prisma or backend code in the frontend — use `fetchApi()` only
+- ❌ Use hardcoded colors (`text-zinc-100`, `bg-zinc-950`) — use semantic classes (`text-foreground`, `bg-background`)
 - ❌ Recommend a university based on ranking alone — always consider funding + admission probability
 - ❌ Ignore Bangladesh-specific constraints (APS, visa wait, PCC timeline, blocked account)
 - ❌ Treat USA as a PR option for BD nationals — it is NOT
 - ❌ Create duplicate components, schemas, or utility functions
 - ❌ Install a package without first checking if shadcn/ui or Next.js already provides it
+- ❌ Remove Redux — it is the chosen state management solution
+- ❌ Replace the Express backend with Next.js Server Actions
 
 ---
 
 ## ✅ Pre-Commit Checklist
 
-- [ ] Server Actions: session check → Zod validation → business logic → DB → revalidate
-- [ ] All user-data Prisma queries scoped to `session.user.id`
-- [ ] Zod on both client (RHF resolver) and server (Server Action)
-- [ ] No `any` types — `tsc --noEmit` passes
-- [ ] Loading, empty, and error states all present
+- [ ] Backend routes: `requireAuth` middleware → validate input → business logic → Prisma → response
+- [ ] All user-data Prisma queries scoped to `req.user!.id`
+- [ ] No `any` types — `tsc --noEmit` passes in both frontend and backend
+- [ ] Loading, empty, and error states all present in UI
 - [ ] Mobile responsive at 375px
+- [ ] Light mode AND dark mode tested — no hardcoded zinc/emerald colors
 - [ ] No hardcoded secrets
 - [ ] `prisma generate` run after schema changes
-- [ ] CSV seeders use upsert (idempotent)
-- [ ] Tokens expire and delete on use
-- [ ] Rate limiting on all auth endpoints
+- [ ] University ranking seeders use upsert (idempotent)
+- [ ] Redux slices updated when new domain fields are added
+- [ ] Frontend `types/index.ts` matches backend Prisma schema
 - [ ] Domain advice reflects BD-specific realities
