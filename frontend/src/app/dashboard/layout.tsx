@@ -13,22 +13,8 @@ import {
   Settings, 
   User as UserIcon 
 } from "lucide-react";
-import { SidebarLogoutButton } from "./SidebarLogoutButton";
+import { DashboardNav } from "./DashboardNav";
 import { ThemeToggle } from "@/components/theme-toggle";
-
-interface NavItem {
-  name: string;
-  href: string;
-  icon: React.ComponentType<{ className?: string }>;
-}
-
-const navItems: NavItem[] = [
-  { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Universities", href: "/dashboard/universities", icon: School },
-  { name: "Professors", href: "/dashboard/professors", icon: GraduationCap },
-  { name: "Applications", href: "/dashboard/applications", icon: FolderGit2 },
-  { name: "Documents", href: "/dashboard/documents", icon: FileText },
-];
 
 export default async function DashboardLayout({
   children,
@@ -50,63 +36,14 @@ export default async function DashboardLayout({
 
   return (
     <div className="flex h-screen w-screen overflow-hidden bg-background text-foreground font-sans">
-      {/* Sidebar */}
-      <aside className="flex flex-col w-64 border-r border-sidebar-border bg-sidebar shrink-0">
-        {/* Brand */}
-        <div className="flex h-16 items-center px-6 border-b border-sidebar-border">
-          <Link href="/dashboard" className="flex items-center gap-2 font-bold text-lg tracking-tight text-sidebar-foreground hover:opacity-90">
-            <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-primary text-primary-foreground font-extrabold text-sm">
-              GP
-            </span>
-            <span>GradPlanner</span>
-          </Link>
-        </div>
-
-        {/* Navigation */}
-        <nav className="flex-1 space-y-1 px-4 py-6 overflow-y-auto">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-all group"
-            >
-              <item.icon className="h-4 w-4 text-sidebar-foreground/50 group-hover:text-primary transition-colors" />
-              <span>{item.name}</span>
-            </Link>
-          ))}
-        </nav>
-
-        {/* User profile footer */}
-        <div className="p-4 border-t border-sidebar-border flex flex-col gap-2">
-          <div className="flex items-center gap-3 px-2 py-1.5">
-            {user.image ? (
-              <img
-                src={user.image}
-                alt={user.name || "User Avatar"}
-                className="h-9 w-9 rounded-full object-cover border border-border"
-              />
-            ) : (
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary font-bold border border-primary/20 text-sm">
-                {user.name ? user.name[0].toUpperCase() : "U"}
-              </div>
-            )}
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold text-sidebar-foreground truncate">
-                {user.name || "Graduate Student"}
-              </p>
-              <p className="text-xs text-sidebar-foreground/60 truncate">{user.email}</p>
-            </div>
-          </div>
-          
-          <SidebarLogoutButton />
-        </div>
-      </aside>
+      {/* Responsive Navigation */}
+      <DashboardNav user={user} />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Header */}
-        <header className="flex h-16 items-center justify-between px-8 border-b border-border bg-background/50 backdrop-blur-md">
-          <div className="flex items-center">
+        <header className="flex h-16 items-center justify-between px-4 md:px-8 border-b border-border bg-background/50 backdrop-blur-md">
+          <div className="flex items-center pl-10 md:pl-0">
             <h1 className="text-lg font-semibold text-foreground">Workspace</h1>
           </div>
           <div className="flex items-center gap-4">
@@ -116,7 +53,7 @@ export default async function DashboardLayout({
         </header>
 
         {/* Main View scrollable */}
-        <main className="flex-1 overflow-y-auto bg-background p-8">
+        <main className="flex-1 overflow-y-auto bg-background p-4 md:p-8">
           <div className="mx-auto max-w-6xl space-y-8">{children}</div>
         </main>
       </div>

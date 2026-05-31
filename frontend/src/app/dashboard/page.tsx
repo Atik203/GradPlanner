@@ -19,8 +19,13 @@ import {
   Calendar,
   AlertCircle,
   TrendingUp,
-  User
+  User,
+  Globe,
+  ArrowRight
 } from "lucide-react";
+import { TierBadge } from "@/components/badges/TierBadge";
+import { EmptyState } from "@/components/shared/EmptyState";
+import Link from "next/link";
 
 interface Stats {
   universities: { total: number; dream: number; match: number; safety: number };
@@ -127,10 +132,10 @@ export default function DashboardOverview() {
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-              Hello, {profile?.university ? "Graduate Candidate" : "Applicant"}!
+              Hello, {profile?.name || "Future Scholar"}!
             </h2>
             <p className="text-muted-foreground text-sm max-w-xl">
-              Welcome to your ML/AI abroad graduate applications workspace. Track your profile, ranking list, contacted professors, and deadlines here.
+              Welcome to your Country Intelligence & Admissions Hub. Evaluate visa constraints, analyze PR pathways, and track your global applications.
             </p>
           </div>
           <Button 
@@ -235,6 +240,78 @@ export default function DashboardOverview() {
         </div>
       )}
 
+      {/* Country Intelligence Hub */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+            <Globe className="h-5 w-5 text-primary" />
+            Country Intelligence Hub
+          </h3>
+          <p className="text-xs text-muted-foreground hidden sm:block">Analyze PR, Visa, and Costs tailored for BD Nationals</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <Link href="/dashboard/countries/germany" className="block group">
+            <Card className="border-border/60 bg-card/20 backdrop-blur-md hover:bg-card/40 hover:border-primary/50 transition-all cursor-pointer h-full">
+              <CardHeader className="pb-2">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-md font-bold text-foreground">Germany 🇩🇪</CardTitle>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <CardDescription className="text-xs text-muted-foreground line-clamp-2">
+                  High funding, strict APS requirement. ~2.5yr visa wait. Excellent EU Blue Card pathway.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex gap-2 mt-2">
+                  <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-medium">Low Tuition</span>
+                  <span className="text-[10px] bg-[var(--warning)]/10 text-[var(--warning)] px-2 py-0.5 rounded font-medium">High Visa Wait</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+          
+          <Link href="/dashboard/countries/canada" className="block group">
+            <Card className="border-border/60 bg-card/20 backdrop-blur-md hover:bg-card/40 hover:border-primary/50 transition-all cursor-pointer h-full">
+              <CardHeader className="pb-2">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-md font-bold text-foreground">Canada 🇨🇦</CardTitle>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <CardDescription className="text-xs text-muted-foreground line-clamp-2">
+                  SDS eligible. ~22% BD rejection. Fastest PR route via Express Entry CEC.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex gap-2 mt-2">
+                  <span className="text-[10px] bg-[var(--success)]/10 text-[var(--success)] px-2 py-0.5 rounded font-medium">Fast PR</span>
+                  <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-medium">SDS Route</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+
+          <Link href="/dashboard/countries/usa" className="block group">
+            <Card className="border-border/60 bg-card/20 backdrop-blur-md hover:bg-card/40 hover:border-primary/50 transition-all cursor-pointer h-full">
+              <CardHeader className="pb-2">
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-md font-bold text-foreground">United States 🇺🇸</CardTitle>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <CardDescription className="text-xs text-muted-foreground line-clamp-2">
+                  Top tier research. High F-1 rejection without TA/RA. ~70-90 yr PR backlog for BD.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex gap-2 mt-2">
+                  <span className="text-[10px] bg-[var(--success)]/10 text-[var(--success)] px-2 py-0.5 rounded font-medium">Top Research</span>
+                  <span className="text-[10px] bg-destructive/10 text-destructive px-2 py-0.5 rounded font-medium">No PR Path</span>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        </div>
+      </div>
+
       {/* Grid of details */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         {/* Deadlines Section */}
@@ -245,10 +322,12 @@ export default function DashboardOverview() {
           </CardHeader>
           <CardContent>
             {upcomingDeadlines.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-8 text-muted-foreground border border-dashed border-border rounded-lg">
-                <Calendar className="h-8 w-8 mb-2" />
-                <p className="text-sm">No upcoming deadlines configured.</p>
-              </div>
+              <EmptyState
+                icon={Calendar}
+                title="No Upcoming Deadlines"
+                description="Keep track of your target program deadlines by adding dates to your tracked universities."
+                className="py-10"
+              />
             ) : (
               <div className="space-y-4">
                 {upcomingDeadlines.map((item, idx) => (
@@ -258,13 +337,7 @@ export default function DashboardOverview() {
                       <p className="text-xs text-muted-foreground truncate">{item.program}</p>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                        item.tier === "DREAM" ? "bg-purple-500/10 text-purple-400" :
-                        item.tier === "MATCH" ? "bg-emerald-500/10 text-emerald-400" :
-                        "bg-muted text-muted-foreground"
-                      }`}>
-                        {item.tier}
-                      </span>
+                      <TierBadge tier={item.tier} />
                       <span className="text-xs font-semibold text-muted-foreground">{item.deadline}</span>
                     </div>
                   </div>
