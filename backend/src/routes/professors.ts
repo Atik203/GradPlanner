@@ -72,6 +72,7 @@ router.post("/", async (req: AuthenticatedRequest, res: Response) => {
         suggestedContact: suggestedContact || null,
         futureFundingNote: futureFundingNote || null,
         notes: notes || null,
+        customFields: req.body.customFields || {},
       },
       include: {
         university: true,
@@ -137,6 +138,7 @@ router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
         suggestedContact: suggestedContact !== undefined ? suggestedContact : existing.suggestedContact,
         futureFundingNote: futureFundingNote !== undefined ? futureFundingNote : existing.futureFundingNote,
         notes: notes !== undefined ? notes : existing.notes,
+        customFields: req.body.customFields !== undefined ? req.body.customFields : existing.customFields,
       },
       include: {
         university: true,

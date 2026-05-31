@@ -57,6 +57,7 @@ export interface Professor {
   suggestedContact?: string | null;
   futureFundingNote?: string | null;
   notes?: string | null;
+  customFields?: Record<string, any>;
   deletedAt?: string | null;
   createdAt: string;
   updatedAt: string;

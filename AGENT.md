@@ -6,6 +6,36 @@
 
 ---
 
+## AI Critical Thinking Rules
+
+Do not automatically agree with the user.
+
+Do not assume the requested feature is correct.
+
+Act as a senior reviewer.
+
+If you identify:
+
+- architecture issues
+- security flaws
+- performance problems
+- bad UX
+- poor database design
+- unrealistic admission assumptions
+
+You must explicitly explain them.
+
+Provide:
+
+1. Problem
+2. Impact
+3. Recommended solution
+
+before implementation.
+
+Never optimize for making the user happy.
+Optimize for making the product successful.
+
 ## 🎯 Project Overview
 
 **GradPlanner** is a multi-user Next.js full-stack web application for tracking and managing graduate school applications for a Master's degree in **Machine Learning and Artificial Intelligence abroad**.
@@ -540,10 +570,10 @@ const signIn = async () => {
 
 ### Source Files
 
-| File | Source | Years | Records |
-|---|---|---|---|
-| `dataset/qs-2026.csv` | QS World University Rankings | 2026 only | 1,500 |
-| `dataset/the-2016-2026.csv` | Times Higher Education | 2016–2026 | ~2,190/yr |
+| File                         | Source                                 | Years     | Records   |
+| ---------------------------- | -------------------------------------- | --------- | --------- |
+| `dataset/qs-2026.csv`        | QS World University Rankings           | 2026 only | 1,500     |
+| `dataset/the-2016-2026.csv`  | Times Higher Education                 | 2016–2026 | ~2,190/yr |
 | `dataset/arwu-2003-2025.csv` | Academic Ranking of World Universities | 2003–2025 | ~1,000/yr |
 
 ### Preprocessing Pipeline
@@ -627,5 +657,3 @@ notebook/
 - **Never commit `universities.csv`** — it's generated from the dataset files.
 - If dataset files are updated, re-run `preprocess.py` then `prisma db seed`.
 - The `notebook/` folder is Python-only; no TypeScript/Node code here.
-
-

@@ -40,7 +40,7 @@ export default async function LandingPage() {
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             <Link href="#features" className="hover:text-primary transition-colors">Features</Link>
-            <Link href="/dashboard/universities" className="flex items-center gap-2 hover:text-primary transition-colors group">
+            <Link href="/universities" className="flex items-center gap-2 hover:text-primary transition-colors group">
               <School className="w-4 h-4 group-hover:scale-110 transition-transform" />
               University Rankings
             </Link>
