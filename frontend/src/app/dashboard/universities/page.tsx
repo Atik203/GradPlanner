@@ -156,17 +156,17 @@ export default function UniversitiesPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-zinc-100">University Tracker</h2>
-          <p className="text-zinc-500 text-sm">
+          <h2 className="text-2xl font-bold text-foreground">University Tracker</h2>
+          <p className="text-muted-foreground text-sm">
             Search from 3,045 ranked institutions and add them to your tracking dashboard.
           </p>
         </div>
       </div>
 
       {/* University Search Section */}
-      <Card className="border-zinc-900 bg-zinc-900/30 backdrop-blur-xl">
+      <Card className="border-border bg-card/50 backdrop-blur-xl">
         <CardHeader>
-          <CardTitle className="text-sm font-medium text-zinc-300">Find Universities to Track</CardTitle>
+          <CardTitle className="text-sm font-medium text-foreground">Find Universities to Track</CardTitle>
           <CardDescription className="text-muted-foreground">
             Type to search by name or country (QS 2026, THE 2026, and ARWU 2025 metrics included).
           </CardDescription>
@@ -179,10 +179,10 @@ export default function UniversitiesPage() {
               placeholder="Search e.g. Oxford, Stanford, Germany, Ireland..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-background border-border focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-foreground placeholder:text-muted-foreground/60"
+              className="pl-10 bg-background border-border focus:border-primary focus:ring-1 focus:ring-primary text-foreground placeholder:text-muted-foreground/60"
             />
             {searching && (
-              <Loader2 className="absolute right-3 top-3 h-4 w-4 animate-spin text-emerald-400" />
+              <Loader2 className="absolute right-3 top-3 h-4 w-4 animate-spin text-primary" />
             )}
           </div>
 
@@ -214,7 +214,7 @@ export default function UniversitiesPage() {
                   </div>
                   <Button
                     onClick={() => handleOpenTrackForm(rank)}
-                    className="bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-bold h-8 px-3 rounded-lg text-xs flex items-center gap-1 self-start sm:self-center"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-8 px-3 rounded-lg text-xs flex items-center gap-1 self-start sm:self-center"
                   >
                     <Plus className="h-3 w-3" />
                     Track
@@ -234,34 +234,34 @@ export default function UniversitiesPage() {
 
       {/* Tracked Universities list */}
       <div className="space-y-4">
-        <h3 className="text-md font-semibold text-zinc-300 flex items-center gap-2">
-          <Bookmark className="h-4 w-4 text-emerald-400" />
+        <h3 className="text-md font-semibold text-foreground flex items-center gap-2">
+          <Bookmark className="h-4 w-4 text-primary" />
           Tracked Workspace ({universities.length})
         </h3>
 
         {loading ? (
           <div className="flex justify-center py-12">
-            <Loader2 className="h-6 w-6 animate-spin text-emerald-500" />
+            <Loader2 className="h-6 w-6 animate-spin text-primary" />
           </div>
         ) : universities.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-16 text-zinc-600 border border-dashed border-zinc-900 rounded-xl bg-zinc-900/10">
-            <School className="h-10 w-10 mb-2 text-zinc-700" />
+          <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
+            <School className="h-10 w-10 mb-2 text-muted-foreground/50" />
             <p className="text-sm">No universities tracked yet. Find one above to begin!</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {universities.map((uni) => (
-              <Card key={uni.id} className="border-zinc-900 bg-zinc-900/10 hover:border-zinc-800 transition-all flex flex-col justify-between">
+              <Card key={uni.id} className="border-border bg-card/30 hover:border-border/80 transition-all flex flex-col justify-between">
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <CardTitle className="text-sm font-bold text-zinc-200 line-clamp-1">{uni.name}</CardTitle>
-                      <CardDescription className="text-xs text-zinc-500">{uni.country}</CardDescription>
+                      <CardTitle className="text-sm font-bold text-foreground line-clamp-1">{uni.name}</CardTitle>
+                      <CardDescription className="text-xs text-muted-foreground">{uni.country}</CardDescription>
                     </div>
                     <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                      uni.tier === "DREAM" ? "bg-purple-500/15 text-purple-400" :
-                      uni.tier === "MATCH" ? "bg-emerald-500/15 text-emerald-400" :
-                      "bg-zinc-800 text-zinc-400"
+                      uni.tier === "DREAM" ? "bg-[var(--tier-dream-bg)] text-[var(--tier-dream)]" :
+                      uni.tier === "MATCH" ? "bg-[var(--tier-match-bg)] text-[var(--tier-match)]" :
+                      "bg-[var(--tier-safety-bg)] text-[var(--tier-safety)]"
                     }`}>
                       {uni.tier}
                     </span>
@@ -269,47 +269,47 @@ export default function UniversitiesPage() {
                 </CardHeader>
                 <CardContent className="space-y-3 pb-4">
                   {uni.program && (
-                    <div className="flex items-center gap-2 text-xs text-zinc-400">
-                      <BookOpen className="h-3 w.3 text-zinc-600" />
-                      <span className="font-medium text-zinc-300">{uni.program}</span>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <BookOpen className="h-3 w.3 text-muted-foreground/70" />
+                      <span className="font-medium text-foreground/90">{uni.program}</span>
                     </div>
                   )}
-                  <div className="grid grid-cols-2 gap-3 pt-2 border-t border-zinc-900/60">
+                  <div className="grid grid-cols-2 gap-3 pt-2 border-t border-border/60">
                     <div className="space-y-1">
-                      <span className="text-[10px] text-zinc-500 flex items-center gap-1">
+                      <span className="text-[10px] text-muted-foreground flex items-center gap-1">
                         <DollarSign className="h-3 w-3" /> Tuition / Yr
                       </span>
-                      <p className="text-xs text-zinc-300 font-semibold">{uni.tuitionPerYr || "Not specified"}</p>
+                      <p className="text-xs text-foreground/90 font-semibold">{uni.tuitionPerYr || "Not specified"}</p>
                     </div>
                     <div className="space-y-1">
-                      <span className="text-[10px] text-zinc-500 flex items-center gap-1">
+                      <span className="text-[10px] text-muted-foreground flex items-center gap-1">
                         <Calendar className="h-3 w-3" /> Deadline
                       </span>
-                      <p className="text-xs text-zinc-300 font-semibold">{uni.deadline || "Not specified"}</p>
+                      <p className="text-xs text-foreground/90 font-semibold">{uni.deadline || "Not specified"}</p>
                     </div>
                   </div>
                   {uni.notes && (
-                    <p className="text-xs text-zinc-500 bg-zinc-900/40 p-2 rounded border border-zinc-900/30 line-clamp-2">
+                    <p className="text-xs text-muted-foreground bg-muted/40 p-2 rounded border border-border/40 line-clamp-2">
                       {uni.notes}
                     </p>
                   )}
                 </CardContent>
-                <div className="px-6 py-3 border-t border-zinc-900/60 flex items-center justify-between bg-zinc-900/20 rounded-b-xl">
+                <div className="px-6 py-3 border-t border-border/60 flex items-center justify-between bg-muted/30 rounded-b-xl">
                   {uni.website ? (
                     <a
                       href={uni.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition-all"
+                      className="text-xs text-primary hover:text-primary/80 flex items-center gap-1 transition-all"
                     >
                       Website <ExternalLink className="h-3 w-3" />
                     </a>
                   ) : (
-                    <span className="text-xs text-zinc-600">No website</span>
+                    <span className="text-xs text-muted-foreground">No website</span>
                   )}
                   <Button
                     onClick={() => handleDelete(uni.id)}
-                    className="bg-transparent hover:bg-destructive/10 text-zinc-500 hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all"
+                    className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all"
                   >
                     <Trash2 className="h-3.5 w-3.5" />
                   </Button>
@@ -323,10 +323,10 @@ export default function UniversitiesPage() {
       {/* Track form dialog */}
       {trackFormOpen && selectedRanking && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-md rounded-xl border border-zinc-800 bg-zinc-900 p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
+          <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
             <div>
-              <h3 className="text-lg font-bold text-zinc-200">Track University</h3>
-              <p className="text-xs text-zinc-500">{selectedRanking.institutionName} ({selectedRanking.country})</p>
+              <h3 className="text-lg font-bold text-foreground">Track University</h3>
+              <p className="text-xs text-muted-foreground">{selectedRanking.institutionName} ({selectedRanking.country})</p>
             </div>
             <form onSubmit={handleTrackSubmit} className="space-y-4">
               <div className="space-y-1">
@@ -347,7 +347,7 @@ export default function UniversitiesPage() {
                     id="tierSelect"
                     value={tier}
                     onChange={(e) => setTier(e.target.value as Tier)}
-                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                   >
                     <option value="DREAM">DREAM</option>
                     <option value="MATCH">MATCH</option>
@@ -410,7 +410,7 @@ export default function UniversitiesPage() {
                   placeholder="Minimum IELTS score 7.0, requires 3 LORs..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
 
@@ -425,7 +425,7 @@ export default function UniversitiesPage() {
                 <Button
                   type="submit"
                   disabled={saving}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-semibold h-9"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9"
                 >
                   {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Track University"}
                 </Button>

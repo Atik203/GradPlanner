@@ -195,11 +195,11 @@ export default function ProfessorsPage() {
     <div className="space-y-4 h-[calc(100vh-80px)] flex flex-col animate-in fade-in duration-500">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 shrink-0">
         <div>
-          <h2 className="text-2xl font-bold text-zinc-100 flex items-center gap-2">
-            <TableIcon className="h-6 w-6 text-emerald-500" />
+          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+            <TableIcon className="h-6 w-6 text-primary" />
             Professor Tracker
           </h2>
-          <p className="text-zinc-500 text-sm">
+          <p className="text-muted-foreground text-sm">
             Manage your faculty contacts in a flexible spreadsheet. Add custom columns as needed.
           </p>
         </div>
@@ -211,17 +211,17 @@ export default function ProfessorsPage() {
                 value={newColName}
                 onChange={(e) => setNewColName(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleAddColumn()}
-                className="h-9 w-40 bg-zinc-900 border-zinc-700"
+                className="h-9 w-40 bg-background border-border text-foreground"
                 autoFocus
               />
-              <Button onClick={handleAddColumn} size="sm" className="h-9 bg-emerald-500 text-black hover:bg-emerald-600">Add</Button>
-              <Button onClick={() => setShowNewColInput(false)} size="sm" variant="ghost" className="h-9 text-zinc-400">Cancel</Button>
+              <Button onClick={handleAddColumn} size="sm" className="h-9 bg-primary text-primary-foreground hover:bg-primary/90">Add</Button>
+              <Button onClick={() => setShowNewColInput(false)} size="sm" variant="ghost" className="h-9 text-muted-foreground">Cancel</Button>
             </div>
           ) : (
             <Button
               onClick={() => setShowNewColInput(true)}
               variant="outline"
-              className="h-9 border-zinc-700 hover:bg-zinc-800 text-zinc-300"
+              className="h-9 border-border hover:bg-accent text-muted-foreground"
             >
               + Add Column
             </Button>
@@ -229,14 +229,14 @@ export default function ProfessorsPage() {
 
           <Button
             onClick={handleAddRow}
-            className="h-9 bg-zinc-800 hover:bg-zinc-700 text-zinc-100 border border-zinc-700"
+            className="h-9 bg-muted hover:bg-muted/80 text-foreground border border-border"
           >
             <Plus className="h-4 w-4 mr-2" /> Row
           </Button>
           <Button
             onClick={handleSaveChanges}
             disabled={saving || !rows.some(r => r.isDirty)}
-            className="h-9 bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-bold"
+            className="h-9 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
           >
             {saving ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Save className="h-4 w-4 mr-2" />}
             Save Changes
@@ -251,111 +251,111 @@ export default function ProfessorsPage() {
       )}
 
       {/* Grid Container */}
-      <div className="flex-1 overflow-auto rounded-xl border border-zinc-800 bg-zinc-950/50">
+      <div className="flex-1 overflow-auto rounded-xl border border-border bg-card/50 backdrop-blur-sm">
         {loading ? (
           <div className="h-full flex items-center justify-center">
-            <Loader2 className="h-8 w-8 animate-spin text-emerald-500" />
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
           </div>
         ) : (
           <table className="w-full text-sm text-left whitespace-nowrap">
-            <thead className="sticky top-0 z-10 text-xs text-zinc-400 uppercase bg-zinc-900 border-b border-zinc-800">
+            <thead className="sticky top-0 z-10 text-xs text-muted-foreground uppercase bg-muted/50 border-b border-border">
               <tr>
-                <th className="px-4 py-3 font-medium border-r border-zinc-800 w-10"></th>
-                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[200px]">Professor Name *</th>
-                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[250px]">University</th>
-                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[200px]">Email</th>
-                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[150px]">Status</th>
-                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[250px]">Research Focus</th>
-                <th className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[250px]">Notes</th>
+                <th className="px-4 py-3 font-medium border-r border-border w-10"></th>
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[200px]">Professor Name *</th>
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[250px]">University</th>
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[200px]">Email</th>
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[150px]">Status</th>
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[250px]">Research Focus</th>
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[250px]">Notes</th>
                 {customColumns.map(col => (
-                  <th key={col} className="px-4 py-3 font-medium border-r border-zinc-800 min-w-[150px] text-emerald-400/80">
+                  <th key={col} className="px-4 py-3 font-medium border-r border-border min-w-[150px] text-primary">
                     {col}
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-zinc-800">
+            <tbody className="divide-y divide-border/50">
               {rows.length === 0 ? (
                 <tr>
-                  <td colSpan={7 + customColumns.length} className="px-4 py-12 text-center text-zinc-500">
+                  <td colSpan={7 + customColumns.length} className="px-4 py-12 text-center text-muted-foreground">
                     Click "Row" to add your first professor contact.
                   </td>
                 </tr>
               ) : (
                 rows.map((row, index) => (
-                  <tr key={row.id || row.tempId} className={`hover:bg-zinc-900/50 transition-colors ${row.isDirty ? 'bg-emerald-900/5' : ''}`}>
-                    <td className="px-2 py-1 border-r border-zinc-800/50 text-center">
-                      <button onClick={() => handleDeleteRow(index)} className="text-zinc-600 hover:text-red-400 p-1">
+                  <tr key={row.id || row.tempId} className={`hover:bg-muted/50 transition-colors ${row.isDirty ? 'bg-primary/5' : ''}`}>
+                    <td className="px-2 py-1 border-r border-border/50 text-center">
+                      <button onClick={() => handleDeleteRow(index)} className="text-muted-foreground hover:text-destructive p-1">
                         <Trash2 className="h-4 w-4" />
                       </button>
                     </td>
-                    <td className="px-0 py-0 border-r border-zinc-800/50 relative">
-                      {row.isDirty && <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-emerald-500" />}
+                    <td className="px-0 py-0 border-r border-border/50 relative">
+                      {row.isDirty && <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary" />}
                       <input
                         type="text"
                         value={row.name || ""}
                         onChange={(e) => updateCell(index, "name", e.target.value)}
                         placeholder="Name..."
-                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-200"
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground"
                       />
                     </td>
-                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                    <td className="px-0 py-0 border-r border-border/50">
                       <select
                         value={row.universityId || ""}
                         onChange={(e) => updateCell(index, "universityId", e.target.value)}
-                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300 appearance-none"
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground appearance-none"
                       >
-                        <option value="" className="bg-zinc-900 text-zinc-500">No University linked</option>
+                        <option value="" className="bg-background text-muted-foreground">No University linked</option>
                         {universities.map(u => (
-                          <option key={u.id} value={u.id} className="bg-zinc-900 text-zinc-200">{u.name}</option>
+                          <option key={u.id} value={u.id} className="bg-background text-foreground">{u.name}</option>
                         ))}
                       </select>
                     </td>
-                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                    <td className="px-0 py-0 border-r border-border/50">
                       <input
                         type="email"
                         value={row.email || ""}
                         onChange={(e) => updateCell(index, "email", e.target.value)}
-                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300"
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground"
                       />
                     </td>
-                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                    <td className="px-0 py-0 border-r border-border/50">
                       <select
                         value={row.status || "NOT_CONTACTED"}
                         onChange={(e) => updateCell(index, "status", e.target.value)}
-                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300 appearance-none"
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground appearance-none"
                       >
-                        <option value="NOT_CONTACTED" className="bg-zinc-900">Not Contacted</option>
-                        <option value="EMAILED" className="bg-zinc-900">Emailed</option>
-                        <option value="AWAITING_REPLY" className="bg-zinc-900">Awaiting Reply</option>
-                        <option value="REPLIED_POSITIVE" className="bg-zinc-900">Positive Reply</option>
-                        <option value="REPLIED_NEGATIVE" className="bg-zinc-900">Negative Reply</option>
-                        <option value="INTERVIEWED" className="bg-zinc-900">Interview Scheduled</option>
+                        <option value="NOT_CONTACTED" className="bg-background">Not Contacted</option>
+                        <option value="EMAILED" className="bg-background">Emailed</option>
+                        <option value="AWAITING_REPLY" className="bg-background">Awaiting Reply</option>
+                        <option value="REPLIED_POSITIVE" className="bg-background">Positive Reply</option>
+                        <option value="REPLIED_NEGATIVE" className="bg-background">Negative Reply</option>
+                        <option value="INTERVIEWED" className="bg-background">Interview Scheduled</option>
                       </select>
                     </td>
-                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                    <td className="px-0 py-0 border-r border-border/50">
                       <input
                         type="text"
                         value={row.researchInterests || ""}
                         onChange={(e) => updateCell(index, "researchInterests", e.target.value)}
-                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300"
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground"
                       />
                     </td>
-                    <td className="px-0 py-0 border-r border-zinc-800/50">
+                    <td className="px-0 py-0 border-r border-border/50">
                       <input
                         type="text"
                         value={row.notes || ""}
                         onChange={(e) => updateCell(index, "notes", e.target.value)}
-                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-zinc-300"
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground"
                       />
                     </td>
                     {customColumns.map(col => (
-                      <td key={col} className="px-0 py-0 border-r border-zinc-800/50">
+                      <td key={col} className="px-0 py-0 border-r border-border/50">
                         <input
                           type="text"
                           value={(row.customFields && row.customFields[col]) || ""}
                           onChange={(e) => updateCell(index, col, e.target.value, true)}
-                          className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-emerald-500 text-emerald-100"
+                          className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-primary"
                         />
                       </td>
                     ))}
