@@ -104,7 +104,7 @@ export default function DashboardOverview() {
   if (loading) {
     return (
       <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-emerald-500" />
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
       </div>
     );
   }
@@ -122,8 +122,8 @@ export default function DashboardOverview() {
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       {/* Welcome Banner */}
-      <div className="relative rounded-2xl border border-border bg-linear-to-r from-muted/50 to-emerald-500/5 dark:from-zinc-900/50 dark:to-emerald-950/20 p-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl" />
+      <div className="relative rounded-2xl border border-border bg-gradient-to-r from-muted/50 to-primary/10 p-8 overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
@@ -137,7 +137,7 @@ export default function DashboardOverview() {
             onClick={() => setEditProfileOpen(true)}
             className="self-start md:self-center bg-muted border border-border hover:bg-accent hover:text-accent-foreground text-foreground h-9 px-4 rounded-lg flex items-center gap-2"
           >
-            <User className="h-4 w-4 text-emerald-400" />
+            <User className="h-4 w-4 text-primary" />
             Update Profile
           </Button>
         </div>
@@ -177,7 +177,7 @@ export default function DashboardOverview() {
           <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium text-muted-foreground">Tracked Universities</CardTitle>
-              <School className="h-4 w-4 text-emerald-500" />
+              <School className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent className="space-y-1">
               <div className="text-2xl font-bold text-foreground">{stats.universities.total}</div>
@@ -226,7 +226,7 @@ export default function DashboardOverview() {
               {/* Progress bar */}
               <div className="w-full bg-accent rounded-full h-1.5">
                 <div 
-                  className="bg-emerald-500 h-1.5 rounded-full transition-all duration-500" 
+                  className="bg-primary h-1.5 rounded-full transition-all duration-500" 
                   style={{ width: `${stats.documents.progressPercentage}%` }}
                 />
               </div>
@@ -281,19 +281,19 @@ export default function DashboardOverview() {
           </CardHeader>
           <CardContent className="space-y-4 text-sm text-muted-foreground">
             <div className="flex gap-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-emerald-500/10 text-emerald-400 font-bold text-xs">1</span>
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-primary/10 text-primary font-bold text-xs">1</span>
               <p>Add 5+ universities from QS, THE, or ARWU lists.</p>
             </div>
             <div className="flex gap-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-emerald-500/10 text-emerald-400 font-bold text-xs">2</span>
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-primary/10 text-primary font-bold text-xs">2</span>
               <p>Contact target professors in your research areas.</p>
             </div>
             <div className="flex gap-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-emerald-500/10 text-emerald-400 font-bold text-xs">3</span>
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-primary/10 text-primary font-bold text-xs">3</span>
               <p>Prepare transcript copies, draft your SOP & CV.</p>
             </div>
             <div className="flex gap-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-emerald-500/10 text-emerald-400 font-bold text-xs">4</span>
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-primary/10 text-primary font-bold text-xs">4</span>
               <p>Register for standard exams (IELTS/GRE).</p>
             </div>
           </CardContent>
@@ -382,7 +382,7 @@ export default function DashboardOverview() {
                 <Button 
                   type="submit" 
                   disabled={profileSaving}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-semibold h-9"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9"
                 >
                   {profileSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Save Changes"}
                 </Button>

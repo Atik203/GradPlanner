@@ -55,7 +55,7 @@ export default async function DashboardLayout({
         {/* Brand */}
         <div className="flex h-16 items-center px-6 border-b border-sidebar-border">
           <Link href="/dashboard" className="flex items-center gap-2 font-bold text-lg tracking-tight text-sidebar-foreground hover:opacity-90">
-            <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-emerald-500 text-zinc-950 font-extrabold text-sm">
+            <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-primary text-primary-foreground font-extrabold text-sm">
               GP
             </span>
             <span>GradPlanner</span>
@@ -70,7 +70,7 @@ export default async function DashboardLayout({
               href={item.href}
               className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-all group"
             >
-              <item.icon className="h-4 w-4 text-sidebar-foreground/50 group-hover:text-emerald-400 transition-colors" />
+              <item.icon className="h-4 w-4 text-sidebar-foreground/50 group-hover:text-primary transition-colors" />
               <span>{item.name}</span>
             </Link>
           ))}
@@ -86,7 +86,7 @@ export default async function DashboardLayout({
                 className="h-9 w-9 rounded-full object-cover border border-border"
               />
             ) : (
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 font-bold border border-emerald-500/20 text-sm">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary font-bold border border-primary/20 text-sm">
                 {user.name ? user.name[0].toUpperCase() : "U"}
               </div>
             )}

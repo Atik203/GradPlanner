@@ -119,8 +119,8 @@ export default function DocumentsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-zinc-100">Document Checklist</h2>
-          <p className="text-zinc-500 text-sm">
+          <h2 className="text-2xl font-bold text-foreground">Document Checklist</h2>
+          <p className="text-muted-foreground text-sm">
             Manage files, SOPs, CV drafts, and examination transcripts needed for admissions.
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function DocumentsPage() {
             setType("SOP");
             setFormOpen(true);
           }}
-          className="self-start sm:self-center bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-bold h-9 px-4 rounded-lg flex items-center gap-2"
+          className="self-start sm:self-center bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-9 px-4 rounded-lg flex items-center gap-2"
         >
           <Plus className="h-4 w-4" />
           Add Document
@@ -146,28 +146,28 @@ export default function DocumentsPage() {
       {/* Checklist Grid */}
       {loading ? (
         <div className="flex justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-emerald-500" />
+          <Loader2 className="h-6 w-6 animate-spin text-primary" />
         </div>
       ) : documents.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-16 text-zinc-600 border border-dashed border-zinc-900 rounded-xl bg-zinc-900/10">
-          <FileText className="h-10 w-10 mb-2 text-zinc-700" />
+        <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
+          <FileText className="h-10 w-10 mb-2 text-muted-foreground/50" />
           <p className="text-sm">Your document checklist is empty. Add a file checklist item!</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {documents.map((doc) => (
-            <Card key={doc.id} className="border-zinc-900 bg-zinc-900/10 hover:border-zinc-800 transition-all flex flex-col justify-between">
+            <Card key={doc.id} className="border-border bg-card/30 hover:border-border/80 transition-all flex flex-col justify-between">
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
-                    <CardTitle className="text-sm font-bold text-zinc-200 line-clamp-1">{doc.name}</CardTitle>
-                    <CardDescription className="text-xs text-zinc-500">{doc.type}</CardDescription>
+                    <CardTitle className="text-sm font-bold text-foreground line-clamp-1">{doc.name}</CardTitle>
+                    <CardDescription className="text-xs text-muted-foreground">{doc.type}</CardDescription>
                   </div>
                   <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
-                    doc.status === "OBTAINED" ? "bg-emerald-500/15 text-emerald-400" :
-                    doc.status === "IN_PROGRESS" ? "bg-yellow-500/15 text-yellow-400" :
-                    doc.status === "PENDING" ? "bg-zinc-850 text-zinc-400" :
-                    "bg-zinc-800 text-zinc-500"
+                    doc.status === "OBTAINED" ? "bg-[var(--success)]/15 text-[var(--success)]" :
+                    doc.status === "IN_PROGRESS" ? "bg-[var(--warning)]/15 text-[var(--warning)]" :
+                    doc.status === "PENDING" ? "bg-muted text-muted-foreground" :
+                    "bg-muted text-muted-foreground"
                   }`}>
                     {doc.status.replace("_", " ")}
                   </span>
@@ -191,18 +191,18 @@ export default function DocumentsPage() {
                 </div>
 
                 {doc.notes && (
-                  <p className="text-[11px] text-zinc-500 bg-zinc-900/40 p-2 rounded border border-zinc-900/30 line-clamp-2 mt-2">
+                  <p className="text-[11px] text-muted-foreground bg-muted/40 p-2 rounded border border-border/40 line-clamp-2 mt-2">
                     {doc.notes}
                   </p>
                 )}
               </CardContent>
-              <div className="px-6 py-3 border-t border-zinc-900/60 flex items-center justify-between bg-zinc-900/20 rounded-b-xl">
-                <span className="text-[10px] text-zinc-600 flex items-center gap-1">
+              <div className="px-6 py-3 border-t border-border/60 flex items-center justify-between bg-muted/30 rounded-b-xl">
+                <span className="text-[10px] text-muted-foreground flex items-center gap-1">
                   <Clock className="h-3.5 w-3.5" /> Updated {new Date(doc.updatedAt).toLocaleDateString()}
                 </span>
                 <Button
                   onClick={() => handleDelete(doc.id)}
-                  className="bg-transparent hover:bg-destructive/10 text-zinc-500 hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all"
+                  className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                 </Button>
@@ -236,7 +236,7 @@ export default function DocumentsPage() {
                     id="docTypeSelect"
                     value={type}
                     onChange={(e) => setType(e.target.value as DocumentType)}
-                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                   >
                     <option value="SOP">SOP (Statement of Purpose)</option>
                     <option value="CV">Curriculum Vitae (CV)</option>
@@ -257,7 +257,7 @@ export default function DocumentsPage() {
                     id="docStatusSelect"
                     value={status}
                     onChange={(e) => setStatus(e.target.value as DocumentStatus)}
-                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                   >
                     <option value="PENDING">Pending</option>
                     <option value="IN_PROGRESS">In Progress</option>
@@ -275,7 +275,7 @@ export default function DocumentsPage() {
                   placeholder="Need to request transcript from Registrar's office, SOP draft needs revision..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500"
+                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
 
@@ -290,7 +290,7 @@ export default function DocumentsPage() {
                 <Button
                   type="submit"
                   disabled={saving}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-zinc-950 font-semibold h-9"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9"
                 >
                   {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Save Checklist"}
                 </Button>
