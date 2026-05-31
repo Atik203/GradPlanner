@@ -18,6 +18,13 @@ export interface University {
   tier: Tier;
   program?: string | null;
   tuitionPerYr?: string | null;
+  livingCostPerYr?: string | null;
+  scholarshipsAvailable: boolean;
+  minCgpa?: number | null;
+  minIelts?: number | null;
+  acceptanceRate?: number | null;
+  fundingAvailable: boolean;
+  prPathwayQuality?: string | null;
   deadline?: string | null;
   intake?: string | null;
   website?: string | null;
@@ -37,6 +44,12 @@ export type ProfessorStatus =
   | "REPLIED_NEGATIVE"
   | "INTERVIEWED";
 
+export type FundingStatus =
+  | "FUNDED"
+  | "LIKELY"
+  | "UNLIKELY"
+  | "UNKNOWN";
+
 export interface Professor {
   id: string;
   userId: string;
@@ -51,6 +64,9 @@ export interface Professor {
   replyReceived: boolean;
   replyDate?: string | null;
   status: ProfessorStatus;
+  fundingStatus: FundingStatus;
+  researchFitScore?: number | null;
+  followUpCount: number;
   lastFollowUp?: string | null;
   nextFollowUp?: string | null;
   interviewDate?: string | null;
