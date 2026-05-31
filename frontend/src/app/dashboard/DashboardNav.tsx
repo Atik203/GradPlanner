@@ -21,13 +21,28 @@ interface NavItem {
   icon: React.ComponentType<{ className?: string }>;
 }
 
-const navItems: NavItem[] = [
+const trackingItems: NavItem[] = [
   { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Country Intelligence", href: "/dashboard/countries", icon: Globe },
   { name: "Universities", href: "/dashboard/universities", icon: School },
   { name: "Professors", href: "/dashboard/professors", icon: GraduationCap },
   { name: "Applications", href: "/dashboard/applications", icon: FolderGit2 },
   { name: "Documents", href: "/dashboard/documents", icon: FileText },
+];
+
+const countryItems: { name: string; href: string }[] = [
+  { name: "Ireland", href: "/dashboard/countries/ireland" },
+  { name: "Sweden", href: "/dashboard/countries/sweden" },
+  { name: "Germany", href: "/dashboard/countries/germany" },
+  { name: "Australia", href: "/dashboard/countries/australia" },
+  { name: "USA", href: "/dashboard/countries/usa" },
+  { name: "Canada", href: "/dashboard/countries/canada" },
+  { name: "South Korea", href: "/dashboard/countries/south-korea" },
+  { name: "China", href: "/dashboard/countries/china" },
+  { name: "Japan", href: "/dashboard/countries/japan" },
+  { name: "UAE", href: "/dashboard/countries/uae" },
+  { name: "Netherlands", href: "/dashboard/countries/netherlands" },
+  { name: "Switzerland", href: "/dashboard/countries/switzerland" },
+  { name: "Finland", href: "/dashboard/countries/finland" },
 ];
 
 export function DashboardNav({ user }: { user: any }) {
@@ -45,25 +60,50 @@ export function DashboardNav({ user }: { user: any }) {
         </Link>
       </div>
 
-      <nav className="flex-1 space-y-1 px-4 py-6 overflow-y-auto">
-        {navItems.map((item) => {
-          const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
-          return (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all group ${
-                isActive 
-                  ? "bg-sidebar-accent text-sidebar-accent-foreground" 
-                  : "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent/50"
-              }`}
-            >
-              <item.icon className={`h-4 w-4 transition-colors ${isActive ? "text-primary" : "text-sidebar-foreground/50 group-hover:text-primary"}`} />
-              <span>{item.name}</span>
-            </Link>
-          );
-        })}
+      <nav className="flex-1 space-y-6 px-4 py-6 overflow-y-auto">
+        <div className="space-y-1">
+          <p className="px-3 text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider mb-2">Intelligence Hub</p>
+          {countryItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all group ${
+                  isActive 
+                    ? "bg-sidebar-accent text-sidebar-accent-foreground" 
+                    : "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent/50"
+                }`}
+              >
+                <Globe className={`h-4 w-4 transition-colors ${isActive ? "text-primary" : "text-sidebar-foreground/50 group-hover:text-primary"}`} />
+                <span>{item.name}</span>
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="space-y-1">
+          <p className="px-3 text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider mb-2">Application Tracking</p>
+          {trackingItems.map((item) => {
+            const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all group ${
+                  isActive 
+                    ? "bg-sidebar-accent text-sidebar-accent-foreground" 
+                    : "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent/50"
+                }`}
+              >
+                <item.icon className={`h-4 w-4 transition-colors ${isActive ? "text-primary" : "text-sidebar-foreground/50 group-hover:text-primary"}`} />
+                <span>{item.name}</span>
+              </Link>
+            );
+          })}
+        </div>
       </nav>
 
       <div className="p-4 border-t border-sidebar-border flex flex-col gap-2 shrink-0">
