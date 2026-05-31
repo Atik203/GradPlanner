@@ -92,14 +92,21 @@ model University {
   country      String
   tier         Tier
   program      String?
-  tuitionPerYr String?
-  deadline     String?
-  intake       String?
-  website      String?
-  notes        String?
-  deletedAt    DateTime?
-  createdAt    DateTime     @default(now())
-  updatedAt    DateTime     @updatedAt
+  tuitionPerYr          String?
+  livingCostPerYr       String?
+  scholarshipsAvailable Boolean      @default(false)
+  minCgpa               Float?
+  minIelts              Float?
+  acceptanceRate        Float?
+  fundingAvailable      Boolean      @default(false)
+  prPathwayQuality      String?
+  deadline              String?
+  intake                String?
+  website               String?
+  notes                 String?
+  deletedAt             DateTime?
+  createdAt             DateTime     @default(now())
+  updatedAt             DateTime     @updatedAt
 
   professors   Professor[]
   application  Application?
@@ -120,6 +127,9 @@ model Professor {
   replyReceived     Boolean         @default(false)
   replyDate         DateTime?
   status            ProfessorStatus @default(NOT_CONTACTED)
+  fundingStatus     FundingStatus   @default(UNKNOWN)
+  researchFitScore  Int?            // 1-10
+  followUpCount     Int             @default(0)
   lastFollowUp      DateTime?
   nextFollowUp      DateTime?
   interviewDate     DateTime?
@@ -236,6 +246,13 @@ enum ProfessorStatus {
   REPLIED_POSITIVE
   REPLIED_NEGATIVE
   INTERVIEWED
+}
+
+enum FundingStatus {
+  FUNDED
+  LIKELY
+  UNLIKELY
+  UNKNOWN
 }
 
 enum ApplicationStatus {
