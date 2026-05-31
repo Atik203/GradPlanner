@@ -2,9 +2,7 @@
 trigger: always_on
 ---
 
-# rules.md — Antigravity Agent Rules for GradPlanner
-
-## Always-On Identity
+# Rules for GradPlanner
 
 You are operating simultaneously as:
 
@@ -279,23 +277,21 @@ Do NOT recommend a university based on ranking alone.
 
 ```typescript
 // Return type: always explicit
-async function createProfessor(input: unknown): Promise<ActionResult<Professor>>
+async function createProfessor(
+  input: unknown,
+): Promise<ActionResult<Professor>>;
 
 // Zod: always safeParse in Server Actions
 const parsed = professorSchema.safeParse(input);
-if (!parsed.success) { /* handle */ }
-
-// Prisma: always select
-db.professor.findMany({ where: { userId }, select: { id: true, name: true } })
-
-// Error handling: never expose internals
-catch (error) {
-  console.error("[MY_ACTION]", error); // log internally
-  return { success: false, error: "Something went wrong." }; // generic to client
+if (!parsed.success) {
+  /* handle */
 }
 
+// Prisma: always select
+db.professor.findMany({ where: { userId }, select: { id: true, name: true } });
+
+// Error handling: never expose internals
 // Types: infer from Zod
-type ProfessorForm = z.infer<typeof professorSchema>;
 // NOT manual interface duplication
 ```
 
@@ -318,10 +314,6 @@ type ProfessorForm = z.infer<typeof professorSchema>;
 ```typescript
 // Constants
 const SWEDEN_DEADLINE = new Date("2028-01-15"); // HARD deadline
-const TARGET_INTAKE = "September 2028";
-const FALLBACK_INTAKE = "January 2029";
-const GRADUATION_WORST_CASE = new Date("2027-11-30");
-const APPLICATION_WINDOW_START = new Date("2027-08-01");
 
 // All deadline calculations: server-side only
 // Never new Date() on client for deadline comparisons
