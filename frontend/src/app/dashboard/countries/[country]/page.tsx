@@ -1,7 +1,7 @@
 "use client";
 
 import React, { use } from "react";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { useAppSelector } from "@/lib/store/store";
 import { countriesData } from "@/data/countries";
 
@@ -24,6 +24,7 @@ import { School, GraduationCap, FileText, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function CountryIntelligencePage({ params }: { params: Promise<{ country: string }> }) {
+  const router = useRouter();
   const resolvedParams = use(params);
   const slug = resolvedParams.country.toLowerCase();
   const countryData = countriesData[slug];
@@ -80,7 +81,7 @@ export default function CountryIntelligencePage({ params }: { params: Promise<{ 
             title="No Documents Found"
             description="You haven't tracked any documents yet."
             actionLabel="Add Document"
-            onAction={() => {}} // Hook up to modal later
+            onAction={() => router.push(`/dashboard/documents/new?country=${slug}`)}
           />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -113,7 +114,7 @@ export default function CountryIntelligencePage({ params }: { params: Promise<{ 
             title={`No Universities Tracked in ${countryData.hero.title}`}
             description="Start adding universities to evaluate your chances."
             actionLabel="Add University"
-            onAction={() => {}}
+            onAction={() => router.push(`/dashboard/universities/new?country=${slug}`)}
           />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -152,7 +153,7 @@ export default function CountryIntelligencePage({ params }: { params: Promise<{ 
             title="No Professors Contacted"
             description="Find professors at your target universities to secure funding."
             actionLabel="Add Professor"
-            onAction={() => {}}
+            onAction={() => router.push(`/dashboard/professors/new?country=${slug}`)}
           />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

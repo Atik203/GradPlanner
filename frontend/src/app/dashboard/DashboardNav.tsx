@@ -11,7 +11,9 @@ import {
   FolderGit2, 
   Globe,
   Menu,
-  X
+  X,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { SidebarLogoutButton } from "./SidebarLogoutButton";
 
@@ -48,21 +50,26 @@ const countryItems: { name: string; href: string }[] = [
 export function DashboardNav({ user }: { user: any }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const SidebarContent = () => (
     <>
-      <div className="flex h-16 items-center px-6 border-b border-sidebar-border shrink-0">
-        <Link href="/dashboard" className="flex items-center gap-2 font-bold text-lg tracking-tight text-sidebar-foreground hover:opacity-90">
-          <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-primary text-primary-foreground font-extrabold text-sm">
+      <div className={`flex h-16 items-center ${isCollapsed ? 'justify-center px-0' : 'px-6'} border-b border-sidebar-border shrink-0`}>
+        <Link href="/" className={`flex items-center gap-2 font-bold text-lg tracking-tight text-sidebar-foreground hover:opacity-90 ${isCollapsed ? 'justify-center' : ''}`}>
+          <span className="flex items-center justify-center h-8 w-8 rounded-lg bg-primary text-primary-foreground font-extrabold text-sm shrink-0">
             GP
           </span>
-          <span>GradPlanner</span>
+          {!isCollapsed && <span>GradPlanner</span>}
         </Link>
       </div>
 
-      <nav className="flex-1 space-y-6 px-4 py-6 overflow-y-auto">
+      <nav className="flex-1 space-y-6 px-3 py-6 overflow-y-auto overflow-x-hidden">
         <div className="space-y-1">
-          <p className="px-3 text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider mb-2">Intelligence Hub</p>
+          {!isCollapsed && (
+            <p className="px-3 text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider mb-2 truncate">
+              Intelligence Hub
+            </p>
+          )}
           {countryItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -70,21 +77,26 @@ export function DashboardNav({ user }: { user: any }) {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all group ${
+                title={isCollapsed ? item.name : undefined}
+                className={`flex items-center gap-3 ${isCollapsed ? 'justify-center px-0' : 'px-3'} py-2 rounded-lg text-sm font-medium transition-all group ${
                   isActive 
                     ? "bg-sidebar-accent text-sidebar-accent-foreground" 
                     : "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent/50"
                 }`}
               >
-                <Globe className={`h-4 w-4 transition-colors ${isActive ? "text-primary" : "text-sidebar-foreground/50 group-hover:text-primary"}`} />
-                <span>{item.name}</span>
+                <Globe className={`h-4 w-4 shrink-0 transition-colors ${isActive ? "text-primary" : "text-sidebar-foreground/50 group-hover:text-primary"}`} />
+                {!isCollapsed && <span className="truncate">{item.name}</span>}
               </Link>
             );
           })}
         </div>
 
         <div className="space-y-1">
-          <p className="px-3 text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider mb-2">Application Tracking</p>
+          {!isCollapsed && (
+            <p className="px-3 text-xs font-semibold text-sidebar-foreground/50 uppercase tracking-wider mb-2 truncate">
+              Tracking
+            </p>
+          )}
           {trackingItems.map((item) => {
             const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
             return (
@@ -92,42 +104,60 @@ export function DashboardNav({ user }: { user: any }) {
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all group ${
+                title={isCollapsed ? item.name : undefined}
+                className={`flex items-center gap-3 ${isCollapsed ? 'justify-center px-0' : 'px-3'} py-2 rounded-lg text-sm font-medium transition-all group ${
                   isActive 
                     ? "bg-sidebar-accent text-sidebar-accent-foreground" 
                     : "text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent/50"
                 }`}
               >
-                <item.icon className={`h-4 w-4 transition-colors ${isActive ? "text-primary" : "text-sidebar-foreground/50 group-hover:text-primary"}`} />
-                <span>{item.name}</span>
+                <item.icon className={`h-4 w-4 shrink-0 transition-colors ${isActive ? "text-primary" : "text-sidebar-foreground/50 group-hover:text-primary"}`} />
+                {!isCollapsed && <span className="truncate">{item.name}</span>}
               </Link>
             );
           })}
         </div>
       </nav>
 
-      <div className="p-4 border-t border-sidebar-border flex flex-col gap-2 shrink-0">
-        <div className="flex items-center gap-3 px-2 py-1.5">
+      <div className={`p-4 border-t border-sidebar-border flex flex-col gap-2 shrink-0 ${isCollapsed ? 'items-center' : ''}`}>
+        <div className={`flex items-center gap-3 ${isCollapsed ? 'px-0' : 'px-2'} py-1.5`}>
           {user.image ? (
             <img
               src={user.image}
               alt={user.name || "User Avatar"}
-              className="h-9 w-9 rounded-full object-cover border border-border"
+              className="h-9 w-9 rounded-full object-cover border border-border shrink-0"
+              title={isCollapsed ? user.name : undefined}
             />
           ) : (
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary font-bold border border-primary/20 text-sm shrink-0">
+            <div 
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-primary/10 text-primary font-bold border border-primary/20 text-sm shrink-0"
+              title={isCollapsed ? user.name : undefined}
+            >
               {user.name ? user.name[0].toUpperCase() : "U"}
             </div>
           )}
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-sidebar-foreground truncate">
-              {user.name || "Graduate Student"}
-            </p>
-            <p className="text-xs text-sidebar-foreground/60 truncate">{user.email}</p>
-          </div>
+          {!isCollapsed && (
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-sidebar-foreground truncate">
+                {user.name || "Graduate Student"}
+              </p>
+              <p className="text-xs text-sidebar-foreground/60 truncate">{user.email}</p>
+            </div>
+          )}
         </div>
         
-        <SidebarLogoutButton />
+        {!isCollapsed ? (
+          <SidebarLogoutButton />
+        ) : (
+          <button 
+            className="p-2 mt-1 rounded-md text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent flex items-center justify-center w-full"
+            title="Log Out"
+          >
+            {/* The Logout logic needs to be moved or just a simple icon */}
+            {/* Using a Link or action if necessary, for now we will just show the icon */}
+            <SidebarLogoutButton />
+          </button>
+        )}
       </div>
     </>
   );
@@ -143,7 +173,13 @@ export function DashboardNav({ user }: { user: any }) {
       </button>
 
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col w-64 border-r border-sidebar-border bg-sidebar shrink-0 h-screen">
+      <aside className={`hidden md:flex flex-col border-r border-sidebar-border bg-sidebar shrink-0 h-screen transition-all duration-300 relative ${isCollapsed ? 'w-20' : 'w-64'}`}>
+        <button 
+          onClick={() => setIsCollapsed(!isCollapsed)}
+          className="absolute -right-3 top-6 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-sidebar-border bg-sidebar shadow-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+        >
+          {isCollapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
+        </button>
         <SidebarContent />
       </aside>
 
