@@ -20,8 +20,22 @@ export type UniversityModel = runtime.Types.Result.DefaultSelection<Prisma.$Univ
 
 export type AggregateUniversity = {
   _count: UniversityCountAggregateOutputType | null
+  _avg: UniversityAvgAggregateOutputType | null
+  _sum: UniversitySumAggregateOutputType | null
   _min: UniversityMinAggregateOutputType | null
   _max: UniversityMaxAggregateOutputType | null
+}
+
+export type UniversityAvgAggregateOutputType = {
+  minCgpa: number | null
+  minIelts: number | null
+  acceptanceRate: number | null
+}
+
+export type UniversitySumAggregateOutputType = {
+  minCgpa: number | null
+  minIelts: number | null
+  acceptanceRate: number | null
 }
 
 export type UniversityMinAggregateOutputType = {
@@ -32,6 +46,13 @@ export type UniversityMinAggregateOutputType = {
   tier: $Enums.Tier | null
   program: string | null
   tuitionPerYr: string | null
+  livingCostPerYr: string | null
+  scholarshipsAvailable: boolean | null
+  minCgpa: number | null
+  minIelts: number | null
+  acceptanceRate: number | null
+  fundingAvailable: boolean | null
+  prPathwayQuality: string | null
   deadline: string | null
   intake: string | null
   website: string | null
@@ -49,6 +70,13 @@ export type UniversityMaxAggregateOutputType = {
   tier: $Enums.Tier | null
   program: string | null
   tuitionPerYr: string | null
+  livingCostPerYr: string | null
+  scholarshipsAvailable: boolean | null
+  minCgpa: number | null
+  minIelts: number | null
+  acceptanceRate: number | null
+  fundingAvailable: boolean | null
+  prPathwayQuality: string | null
   deadline: string | null
   intake: string | null
   website: string | null
@@ -66,6 +94,13 @@ export type UniversityCountAggregateOutputType = {
   tier: number
   program: number
   tuitionPerYr: number
+  livingCostPerYr: number
+  scholarshipsAvailable: number
+  minCgpa: number
+  minIelts: number
+  acceptanceRate: number
+  fundingAvailable: number
+  prPathwayQuality: number
   deadline: number
   intake: number
   website: number
@@ -77,6 +112,18 @@ export type UniversityCountAggregateOutputType = {
 }
 
 
+export type UniversityAvgAggregateInputType = {
+  minCgpa?: true
+  minIelts?: true
+  acceptanceRate?: true
+}
+
+export type UniversitySumAggregateInputType = {
+  minCgpa?: true
+  minIelts?: true
+  acceptanceRate?: true
+}
+
 export type UniversityMinAggregateInputType = {
   id?: true
   userId?: true
@@ -85,6 +132,13 @@ export type UniversityMinAggregateInputType = {
   tier?: true
   program?: true
   tuitionPerYr?: true
+  livingCostPerYr?: true
+  scholarshipsAvailable?: true
+  minCgpa?: true
+  minIelts?: true
+  acceptanceRate?: true
+  fundingAvailable?: true
+  prPathwayQuality?: true
   deadline?: true
   intake?: true
   website?: true
@@ -102,6 +156,13 @@ export type UniversityMaxAggregateInputType = {
   tier?: true
   program?: true
   tuitionPerYr?: true
+  livingCostPerYr?: true
+  scholarshipsAvailable?: true
+  minCgpa?: true
+  minIelts?: true
+  acceptanceRate?: true
+  fundingAvailable?: true
+  prPathwayQuality?: true
   deadline?: true
   intake?: true
   website?: true
@@ -119,6 +180,13 @@ export type UniversityCountAggregateInputType = {
   tier?: true
   program?: true
   tuitionPerYr?: true
+  livingCostPerYr?: true
+  scholarshipsAvailable?: true
+  minCgpa?: true
+  minIelts?: true
+  acceptanceRate?: true
+  fundingAvailable?: true
+  prPathwayQuality?: true
   deadline?: true
   intake?: true
   website?: true
@@ -167,6 +235,18 @@ export type UniversityAggregateArgs<ExtArgs extends runtime.Types.Extensions.Int
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
+   * Select which fields to average
+  **/
+  _avg?: UniversityAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to sum
+  **/
+  _sum?: UniversitySumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
    * Select which fields to find the minimum value
   **/
   _min?: UniversityMinAggregateInputType
@@ -197,6 +277,8 @@ export type UniversityGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   _count?: UniversityCountAggregateInputType | true
+  _avg?: UniversityAvgAggregateInputType
+  _sum?: UniversitySumAggregateInputType
   _min?: UniversityMinAggregateInputType
   _max?: UniversityMaxAggregateInputType
 }
@@ -209,6 +291,13 @@ export type UniversityGroupByOutputType = {
   tier: $Enums.Tier
   program: string | null
   tuitionPerYr: string | null
+  livingCostPerYr: string | null
+  scholarshipsAvailable: boolean
+  minCgpa: number | null
+  minIelts: number | null
+  acceptanceRate: number | null
+  fundingAvailable: boolean
+  prPathwayQuality: string | null
   deadline: string | null
   intake: string | null
   website: string | null
@@ -217,6 +306,8 @@ export type UniversityGroupByOutputType = {
   createdAt: Date
   updatedAt: Date
   _count: UniversityCountAggregateOutputType | null
+  _avg: UniversityAvgAggregateOutputType | null
+  _sum: UniversitySumAggregateOutputType | null
   _min: UniversityMinAggregateOutputType | null
   _max: UniversityMaxAggregateOutputType | null
 }
@@ -247,6 +338,13 @@ export type UniversityWhereInput = {
   tier?: Prisma.EnumTierFilter<"University"> | $Enums.Tier
   program?: Prisma.StringNullableFilter<"University"> | string | null
   tuitionPerYr?: Prisma.StringNullableFilter<"University"> | string | null
+  livingCostPerYr?: Prisma.StringNullableFilter<"University"> | string | null
+  scholarshipsAvailable?: Prisma.BoolFilter<"University"> | boolean
+  minCgpa?: Prisma.FloatNullableFilter<"University"> | number | null
+  minIelts?: Prisma.FloatNullableFilter<"University"> | number | null
+  acceptanceRate?: Prisma.FloatNullableFilter<"University"> | number | null
+  fundingAvailable?: Prisma.BoolFilter<"University"> | boolean
+  prPathwayQuality?: Prisma.StringNullableFilter<"University"> | string | null
   deadline?: Prisma.StringNullableFilter<"University"> | string | null
   intake?: Prisma.StringNullableFilter<"University"> | string | null
   website?: Prisma.StringNullableFilter<"University"> | string | null
@@ -267,6 +365,13 @@ export type UniversityOrderByWithRelationInput = {
   tier?: Prisma.SortOrder
   program?: Prisma.SortOrderInput | Prisma.SortOrder
   tuitionPerYr?: Prisma.SortOrderInput | Prisma.SortOrder
+  livingCostPerYr?: Prisma.SortOrderInput | Prisma.SortOrder
+  scholarshipsAvailable?: Prisma.SortOrder
+  minCgpa?: Prisma.SortOrderInput | Prisma.SortOrder
+  minIelts?: Prisma.SortOrderInput | Prisma.SortOrder
+  acceptanceRate?: Prisma.SortOrderInput | Prisma.SortOrder
+  fundingAvailable?: Prisma.SortOrder
+  prPathwayQuality?: Prisma.SortOrderInput | Prisma.SortOrder
   deadline?: Prisma.SortOrderInput | Prisma.SortOrder
   intake?: Prisma.SortOrderInput | Prisma.SortOrder
   website?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -290,6 +395,13 @@ export type UniversityWhereUniqueInput = Prisma.AtLeast<{
   tier?: Prisma.EnumTierFilter<"University"> | $Enums.Tier
   program?: Prisma.StringNullableFilter<"University"> | string | null
   tuitionPerYr?: Prisma.StringNullableFilter<"University"> | string | null
+  livingCostPerYr?: Prisma.StringNullableFilter<"University"> | string | null
+  scholarshipsAvailable?: Prisma.BoolFilter<"University"> | boolean
+  minCgpa?: Prisma.FloatNullableFilter<"University"> | number | null
+  minIelts?: Prisma.FloatNullableFilter<"University"> | number | null
+  acceptanceRate?: Prisma.FloatNullableFilter<"University"> | number | null
+  fundingAvailable?: Prisma.BoolFilter<"University"> | boolean
+  prPathwayQuality?: Prisma.StringNullableFilter<"University"> | string | null
   deadline?: Prisma.StringNullableFilter<"University"> | string | null
   intake?: Prisma.StringNullableFilter<"University"> | string | null
   website?: Prisma.StringNullableFilter<"University"> | string | null
@@ -310,6 +422,13 @@ export type UniversityOrderByWithAggregationInput = {
   tier?: Prisma.SortOrder
   program?: Prisma.SortOrderInput | Prisma.SortOrder
   tuitionPerYr?: Prisma.SortOrderInput | Prisma.SortOrder
+  livingCostPerYr?: Prisma.SortOrderInput | Prisma.SortOrder
+  scholarshipsAvailable?: Prisma.SortOrder
+  minCgpa?: Prisma.SortOrderInput | Prisma.SortOrder
+  minIelts?: Prisma.SortOrderInput | Prisma.SortOrder
+  acceptanceRate?: Prisma.SortOrderInput | Prisma.SortOrder
+  fundingAvailable?: Prisma.SortOrder
+  prPathwayQuality?: Prisma.SortOrderInput | Prisma.SortOrder
   deadline?: Prisma.SortOrderInput | Prisma.SortOrder
   intake?: Prisma.SortOrderInput | Prisma.SortOrder
   website?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -318,8 +437,10 @@ export type UniversityOrderByWithAggregationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.UniversityCountOrderByAggregateInput
+  _avg?: Prisma.UniversityAvgOrderByAggregateInput
   _max?: Prisma.UniversityMaxOrderByAggregateInput
   _min?: Prisma.UniversityMinOrderByAggregateInput
+  _sum?: Prisma.UniversitySumOrderByAggregateInput
 }
 
 export type UniversityScalarWhereWithAggregatesInput = {
@@ -333,6 +454,13 @@ export type UniversityScalarWhereWithAggregatesInput = {
   tier?: Prisma.EnumTierWithAggregatesFilter<"University"> | $Enums.Tier
   program?: Prisma.StringNullableWithAggregatesFilter<"University"> | string | null
   tuitionPerYr?: Prisma.StringNullableWithAggregatesFilter<"University"> | string | null
+  livingCostPerYr?: Prisma.StringNullableWithAggregatesFilter<"University"> | string | null
+  scholarshipsAvailable?: Prisma.BoolWithAggregatesFilter<"University"> | boolean
+  minCgpa?: Prisma.FloatNullableWithAggregatesFilter<"University"> | number | null
+  minIelts?: Prisma.FloatNullableWithAggregatesFilter<"University"> | number | null
+  acceptanceRate?: Prisma.FloatNullableWithAggregatesFilter<"University"> | number | null
+  fundingAvailable?: Prisma.BoolWithAggregatesFilter<"University"> | boolean
+  prPathwayQuality?: Prisma.StringNullableWithAggregatesFilter<"University"> | string | null
   deadline?: Prisma.StringNullableWithAggregatesFilter<"University"> | string | null
   intake?: Prisma.StringNullableWithAggregatesFilter<"University"> | string | null
   website?: Prisma.StringNullableWithAggregatesFilter<"University"> | string | null
@@ -349,6 +477,13 @@ export type UniversityCreateInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -369,6 +504,13 @@ export type UniversityUncheckedCreateInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -387,6 +529,13 @@ export type UniversityUpdateInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -407,6 +556,13 @@ export type UniversityUncheckedUpdateInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -426,6 +582,13 @@ export type UniversityCreateManyInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -442,6 +605,13 @@ export type UniversityUpdateManyMutationInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -459,6 +629,13 @@ export type UniversityUncheckedUpdateManyInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -486,6 +663,13 @@ export type UniversityCountOrderByAggregateInput = {
   tier?: Prisma.SortOrder
   program?: Prisma.SortOrder
   tuitionPerYr?: Prisma.SortOrder
+  livingCostPerYr?: Prisma.SortOrder
+  scholarshipsAvailable?: Prisma.SortOrder
+  minCgpa?: Prisma.SortOrder
+  minIelts?: Prisma.SortOrder
+  acceptanceRate?: Prisma.SortOrder
+  fundingAvailable?: Prisma.SortOrder
+  prPathwayQuality?: Prisma.SortOrder
   deadline?: Prisma.SortOrder
   intake?: Prisma.SortOrder
   website?: Prisma.SortOrder
@@ -493,6 +677,12 @@ export type UniversityCountOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type UniversityAvgOrderByAggregateInput = {
+  minCgpa?: Prisma.SortOrder
+  minIelts?: Prisma.SortOrder
+  acceptanceRate?: Prisma.SortOrder
 }
 
 export type UniversityMaxOrderByAggregateInput = {
@@ -503,6 +693,13 @@ export type UniversityMaxOrderByAggregateInput = {
   tier?: Prisma.SortOrder
   program?: Prisma.SortOrder
   tuitionPerYr?: Prisma.SortOrder
+  livingCostPerYr?: Prisma.SortOrder
+  scholarshipsAvailable?: Prisma.SortOrder
+  minCgpa?: Prisma.SortOrder
+  minIelts?: Prisma.SortOrder
+  acceptanceRate?: Prisma.SortOrder
+  fundingAvailable?: Prisma.SortOrder
+  prPathwayQuality?: Prisma.SortOrder
   deadline?: Prisma.SortOrder
   intake?: Prisma.SortOrder
   website?: Prisma.SortOrder
@@ -520,6 +717,13 @@ export type UniversityMinOrderByAggregateInput = {
   tier?: Prisma.SortOrder
   program?: Prisma.SortOrder
   tuitionPerYr?: Prisma.SortOrder
+  livingCostPerYr?: Prisma.SortOrder
+  scholarshipsAvailable?: Prisma.SortOrder
+  minCgpa?: Prisma.SortOrder
+  minIelts?: Prisma.SortOrder
+  acceptanceRate?: Prisma.SortOrder
+  fundingAvailable?: Prisma.SortOrder
+  prPathwayQuality?: Prisma.SortOrder
   deadline?: Prisma.SortOrder
   intake?: Prisma.SortOrder
   website?: Prisma.SortOrder
@@ -527,6 +731,12 @@ export type UniversityMinOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type UniversitySumOrderByAggregateInput = {
+  minCgpa?: Prisma.SortOrder
+  minIelts?: Prisma.SortOrder
+  acceptanceRate?: Prisma.SortOrder
 }
 
 export type UniversityNullableScalarRelationFilter = {
@@ -622,6 +832,13 @@ export type UniversityCreateWithoutUserInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -640,6 +857,13 @@ export type UniversityUncheckedCreateWithoutUserInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -688,6 +912,13 @@ export type UniversityScalarWhereInput = {
   tier?: Prisma.EnumTierFilter<"University"> | $Enums.Tier
   program?: Prisma.StringNullableFilter<"University"> | string | null
   tuitionPerYr?: Prisma.StringNullableFilter<"University"> | string | null
+  livingCostPerYr?: Prisma.StringNullableFilter<"University"> | string | null
+  scholarshipsAvailable?: Prisma.BoolFilter<"University"> | boolean
+  minCgpa?: Prisma.FloatNullableFilter<"University"> | number | null
+  minIelts?: Prisma.FloatNullableFilter<"University"> | number | null
+  acceptanceRate?: Prisma.FloatNullableFilter<"University"> | number | null
+  fundingAvailable?: Prisma.BoolFilter<"University"> | boolean
+  prPathwayQuality?: Prisma.StringNullableFilter<"University"> | string | null
   deadline?: Prisma.StringNullableFilter<"University"> | string | null
   intake?: Prisma.StringNullableFilter<"University"> | string | null
   website?: Prisma.StringNullableFilter<"University"> | string | null
@@ -704,6 +935,13 @@ export type UniversityCreateWithoutProfessorsInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -723,6 +961,13 @@ export type UniversityUncheckedCreateWithoutProfessorsInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -756,6 +1001,13 @@ export type UniversityUpdateWithoutProfessorsInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -775,6 +1027,13 @@ export type UniversityUncheckedUpdateWithoutProfessorsInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -792,6 +1051,13 @@ export type UniversityCreateWithoutApplicationInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -811,6 +1077,13 @@ export type UniversityUncheckedCreateWithoutApplicationInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -844,6 +1117,13 @@ export type UniversityUpdateWithoutApplicationInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -863,6 +1143,13 @@ export type UniversityUncheckedUpdateWithoutApplicationInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -880,6 +1167,13 @@ export type UniversityCreateManyUserInput = {
   tier: $Enums.Tier
   program?: string | null
   tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
   deadline?: string | null
   intake?: string | null
   website?: string | null
@@ -896,6 +1190,13 @@ export type UniversityUpdateWithoutUserInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -914,6 +1215,13 @@ export type UniversityUncheckedUpdateWithoutUserInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -932,6 +1240,13 @@ export type UniversityUncheckedUpdateManyWithoutUserInput = {
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
   program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -980,6 +1295,13 @@ export type UniversitySelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   tier?: boolean
   program?: boolean
   tuitionPerYr?: boolean
+  livingCostPerYr?: boolean
+  scholarshipsAvailable?: boolean
+  minCgpa?: boolean
+  minIelts?: boolean
+  acceptanceRate?: boolean
+  fundingAvailable?: boolean
+  prPathwayQuality?: boolean
   deadline?: boolean
   intake?: boolean
   website?: boolean
@@ -1001,6 +1323,13 @@ export type UniversitySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   tier?: boolean
   program?: boolean
   tuitionPerYr?: boolean
+  livingCostPerYr?: boolean
+  scholarshipsAvailable?: boolean
+  minCgpa?: boolean
+  minIelts?: boolean
+  acceptanceRate?: boolean
+  fundingAvailable?: boolean
+  prPathwayQuality?: boolean
   deadline?: boolean
   intake?: boolean
   website?: boolean
@@ -1019,6 +1348,13 @@ export type UniversitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   tier?: boolean
   program?: boolean
   tuitionPerYr?: boolean
+  livingCostPerYr?: boolean
+  scholarshipsAvailable?: boolean
+  minCgpa?: boolean
+  minIelts?: boolean
+  acceptanceRate?: boolean
+  fundingAvailable?: boolean
+  prPathwayQuality?: boolean
   deadline?: boolean
   intake?: boolean
   website?: boolean
@@ -1037,6 +1373,13 @@ export type UniversitySelectScalar = {
   tier?: boolean
   program?: boolean
   tuitionPerYr?: boolean
+  livingCostPerYr?: boolean
+  scholarshipsAvailable?: boolean
+  minCgpa?: boolean
+  minIelts?: boolean
+  acceptanceRate?: boolean
+  fundingAvailable?: boolean
+  prPathwayQuality?: boolean
   deadline?: boolean
   intake?: boolean
   website?: boolean
@@ -1046,7 +1389,7 @@ export type UniversitySelectScalar = {
   updatedAt?: boolean
 }
 
-export type UniversityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "country" | "tier" | "program" | "tuitionPerYr" | "deadline" | "intake" | "website" | "notes" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["university"]>
+export type UniversityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "country" | "tier" | "program" | "tuitionPerYr" | "livingCostPerYr" | "scholarshipsAvailable" | "minCgpa" | "minIelts" | "acceptanceRate" | "fundingAvailable" | "prPathwayQuality" | "deadline" | "intake" | "website" | "notes" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["university"]>
 export type UniversityInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   professors?: boolean | Prisma.University$professorsArgs<ExtArgs>
@@ -1075,6 +1418,13 @@ export type $UniversityPayload<ExtArgs extends runtime.Types.Extensions.Internal
     tier: $Enums.Tier
     program: string | null
     tuitionPerYr: string | null
+    livingCostPerYr: string | null
+    scholarshipsAvailable: boolean
+    minCgpa: number | null
+    minIelts: number | null
+    acceptanceRate: number | null
+    fundingAvailable: boolean
+    prPathwayQuality: string | null
     deadline: string | null
     intake: string | null
     website: string | null
@@ -1515,6 +1865,13 @@ export interface UniversityFieldRefs {
   readonly tier: Prisma.FieldRef<"University", 'Tier'>
   readonly program: Prisma.FieldRef<"University", 'String'>
   readonly tuitionPerYr: Prisma.FieldRef<"University", 'String'>
+  readonly livingCostPerYr: Prisma.FieldRef<"University", 'String'>
+  readonly scholarshipsAvailable: Prisma.FieldRef<"University", 'Boolean'>
+  readonly minCgpa: Prisma.FieldRef<"University", 'Float'>
+  readonly minIelts: Prisma.FieldRef<"University", 'Float'>
+  readonly acceptanceRate: Prisma.FieldRef<"University", 'Float'>
+  readonly fundingAvailable: Prisma.FieldRef<"University", 'Boolean'>
+  readonly prPathwayQuality: Prisma.FieldRef<"University", 'String'>
   readonly deadline: Prisma.FieldRef<"University", 'String'>
   readonly intake: Prisma.FieldRef<"University", 'String'>
   readonly website: Prisma.FieldRef<"University", 'String'>
