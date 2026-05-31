@@ -30,6 +30,16 @@ export const ProfessorStatus = {
 export type ProfessorStatus = (typeof ProfessorStatus)[keyof typeof ProfessorStatus]
 
 
+export const FundingStatus = {
+  FUNDED: 'FUNDED',
+  LIKELY: 'LIKELY',
+  UNLIKELY: 'UNLIKELY',
+  UNKNOWN: 'UNKNOWN'
+} as const
+
+export type FundingStatus = (typeof FundingStatus)[keyof typeof FundingStatus]
+
+
 export const ApplicationStatus = {
   PLANNING: 'PLANNING',
   IN_PROGRESS: 'IN_PROGRESS',

@@ -20,8 +20,20 @@ export type ProfessorModel = runtime.Types.Result.DefaultSelection<Prisma.$Profe
 
 export type AggregateProfessor = {
   _count: ProfessorCountAggregateOutputType | null
+  _avg: ProfessorAvgAggregateOutputType | null
+  _sum: ProfessorSumAggregateOutputType | null
   _min: ProfessorMinAggregateOutputType | null
   _max: ProfessorMaxAggregateOutputType | null
+}
+
+export type ProfessorAvgAggregateOutputType = {
+  researchFitScore: number | null
+  followUpCount: number | null
+}
+
+export type ProfessorSumAggregateOutputType = {
+  researchFitScore: number | null
+  followUpCount: number | null
 }
 
 export type ProfessorMinAggregateOutputType = {
@@ -37,6 +49,9 @@ export type ProfessorMinAggregateOutputType = {
   replyReceived: boolean | null
   replyDate: Date | null
   status: $Enums.ProfessorStatus | null
+  fundingStatus: $Enums.FundingStatus | null
+  researchFitScore: number | null
+  followUpCount: number | null
   lastFollowUp: Date | null
   nextFollowUp: Date | null
   interviewDate: Date | null
@@ -61,6 +76,9 @@ export type ProfessorMaxAggregateOutputType = {
   replyReceived: boolean | null
   replyDate: Date | null
   status: $Enums.ProfessorStatus | null
+  fundingStatus: $Enums.FundingStatus | null
+  researchFitScore: number | null
+  followUpCount: number | null
   lastFollowUp: Date | null
   nextFollowUp: Date | null
   interviewDate: Date | null
@@ -85,6 +103,9 @@ export type ProfessorCountAggregateOutputType = {
   replyReceived: number
   replyDate: number
   status: number
+  fundingStatus: number
+  researchFitScore: number
+  followUpCount: number
   lastFollowUp: number
   nextFollowUp: number
   interviewDate: number
@@ -99,6 +120,16 @@ export type ProfessorCountAggregateOutputType = {
 }
 
 
+export type ProfessorAvgAggregateInputType = {
+  researchFitScore?: true
+  followUpCount?: true
+}
+
+export type ProfessorSumAggregateInputType = {
+  researchFitScore?: true
+  followUpCount?: true
+}
+
 export type ProfessorMinAggregateInputType = {
   id?: true
   userId?: true
@@ -112,6 +143,9 @@ export type ProfessorMinAggregateInputType = {
   replyReceived?: true
   replyDate?: true
   status?: true
+  fundingStatus?: true
+  researchFitScore?: true
+  followUpCount?: true
   lastFollowUp?: true
   nextFollowUp?: true
   interviewDate?: true
@@ -136,6 +170,9 @@ export type ProfessorMaxAggregateInputType = {
   replyReceived?: true
   replyDate?: true
   status?: true
+  fundingStatus?: true
+  researchFitScore?: true
+  followUpCount?: true
   lastFollowUp?: true
   nextFollowUp?: true
   interviewDate?: true
@@ -160,6 +197,9 @@ export type ProfessorCountAggregateInputType = {
   replyReceived?: true
   replyDate?: true
   status?: true
+  fundingStatus?: true
+  researchFitScore?: true
+  followUpCount?: true
   lastFollowUp?: true
   nextFollowUp?: true
   interviewDate?: true
@@ -211,6 +251,18 @@ export type ProfessorAggregateArgs<ExtArgs extends runtime.Types.Extensions.Inte
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
+   * Select which fields to average
+  **/
+  _avg?: ProfessorAvgAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
+   * Select which fields to sum
+  **/
+  _sum?: ProfessorSumAggregateInputType
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+   * 
    * Select which fields to find the minimum value
   **/
   _min?: ProfessorMinAggregateInputType
@@ -241,6 +293,8 @@ export type ProfessorGroupByArgs<ExtArgs extends runtime.Types.Extensions.Intern
   take?: number
   skip?: number
   _count?: ProfessorCountAggregateInputType | true
+  _avg?: ProfessorAvgAggregateInputType
+  _sum?: ProfessorSumAggregateInputType
   _min?: ProfessorMinAggregateInputType
   _max?: ProfessorMaxAggregateInputType
 }
@@ -258,6 +312,9 @@ export type ProfessorGroupByOutputType = {
   replyReceived: boolean
   replyDate: Date | null
   status: $Enums.ProfessorStatus
+  fundingStatus: $Enums.FundingStatus
+  researchFitScore: number | null
+  followUpCount: number
   lastFollowUp: Date | null
   nextFollowUp: Date | null
   interviewDate: Date | null
@@ -269,6 +326,8 @@ export type ProfessorGroupByOutputType = {
   createdAt: Date
   updatedAt: Date
   _count: ProfessorCountAggregateOutputType | null
+  _avg: ProfessorAvgAggregateOutputType | null
+  _sum: ProfessorSumAggregateOutputType | null
   _min: ProfessorMinAggregateOutputType | null
   _max: ProfessorMaxAggregateOutputType | null
 }
@@ -304,6 +363,9 @@ export type ProfessorWhereInput = {
   replyReceived?: Prisma.BoolFilter<"Professor"> | boolean
   replyDate?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   status?: Prisma.EnumProfessorStatusFilter<"Professor"> | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFilter<"Professor"> | $Enums.FundingStatus
+  researchFitScore?: Prisma.IntNullableFilter<"Professor"> | number | null
+  followUpCount?: Prisma.IntFilter<"Professor"> | number
   lastFollowUp?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   nextFollowUp?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   interviewDate?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
@@ -331,6 +393,9 @@ export type ProfessorOrderByWithRelationInput = {
   replyReceived?: Prisma.SortOrder
   replyDate?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
+  fundingStatus?: Prisma.SortOrder
+  researchFitScore?: Prisma.SortOrderInput | Prisma.SortOrder
+  followUpCount?: Prisma.SortOrder
   lastFollowUp?: Prisma.SortOrderInput | Prisma.SortOrder
   nextFollowUp?: Prisma.SortOrderInput | Prisma.SortOrder
   interviewDate?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -361,6 +426,9 @@ export type ProfessorWhereUniqueInput = Prisma.AtLeast<{
   replyReceived?: Prisma.BoolFilter<"Professor"> | boolean
   replyDate?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   status?: Prisma.EnumProfessorStatusFilter<"Professor"> | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFilter<"Professor"> | $Enums.FundingStatus
+  researchFitScore?: Prisma.IntNullableFilter<"Professor"> | number | null
+  followUpCount?: Prisma.IntFilter<"Professor"> | number
   lastFollowUp?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   nextFollowUp?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   interviewDate?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
@@ -388,6 +456,9 @@ export type ProfessorOrderByWithAggregationInput = {
   replyReceived?: Prisma.SortOrder
   replyDate?: Prisma.SortOrderInput | Prisma.SortOrder
   status?: Prisma.SortOrder
+  fundingStatus?: Prisma.SortOrder
+  researchFitScore?: Prisma.SortOrderInput | Prisma.SortOrder
+  followUpCount?: Prisma.SortOrder
   lastFollowUp?: Prisma.SortOrderInput | Prisma.SortOrder
   nextFollowUp?: Prisma.SortOrderInput | Prisma.SortOrder
   interviewDate?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -399,8 +470,10 @@ export type ProfessorOrderByWithAggregationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.ProfessorCountOrderByAggregateInput
+  _avg?: Prisma.ProfessorAvgOrderByAggregateInput
   _max?: Prisma.ProfessorMaxOrderByAggregateInput
   _min?: Prisma.ProfessorMinOrderByAggregateInput
+  _sum?: Prisma.ProfessorSumOrderByAggregateInput
 }
 
 export type ProfessorScalarWhereWithAggregatesInput = {
@@ -419,6 +492,9 @@ export type ProfessorScalarWhereWithAggregatesInput = {
   replyReceived?: Prisma.BoolWithAggregatesFilter<"Professor"> | boolean
   replyDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Professor"> | Date | string | null
   status?: Prisma.EnumProfessorStatusWithAggregatesFilter<"Professor"> | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusWithAggregatesFilter<"Professor"> | $Enums.FundingStatus
+  researchFitScore?: Prisma.IntNullableWithAggregatesFilter<"Professor"> | number | null
+  followUpCount?: Prisma.IntWithAggregatesFilter<"Professor"> | number
   lastFollowUp?: Prisma.DateTimeNullableWithAggregatesFilter<"Professor"> | Date | string | null
   nextFollowUp?: Prisma.DateTimeNullableWithAggregatesFilter<"Professor"> | Date | string | null
   interviewDate?: Prisma.DateTimeNullableWithAggregatesFilter<"Professor"> | Date | string | null
@@ -442,6 +518,9 @@ export type ProfessorCreateInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -469,6 +548,9 @@ export type ProfessorUncheckedCreateInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -492,6 +574,9 @@ export type ProfessorUpdateInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -519,6 +604,9 @@ export type ProfessorUncheckedUpdateInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -544,6 +632,9 @@ export type ProfessorCreateManyInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -567,6 +658,9 @@ export type ProfessorUpdateManyMutationInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -592,6 +686,9 @@ export type ProfessorUncheckedUpdateManyInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -627,6 +724,9 @@ export type ProfessorCountOrderByAggregateInput = {
   replyReceived?: Prisma.SortOrder
   replyDate?: Prisma.SortOrder
   status?: Prisma.SortOrder
+  fundingStatus?: Prisma.SortOrder
+  researchFitScore?: Prisma.SortOrder
+  followUpCount?: Prisma.SortOrder
   lastFollowUp?: Prisma.SortOrder
   nextFollowUp?: Prisma.SortOrder
   interviewDate?: Prisma.SortOrder
@@ -637,6 +737,11 @@ export type ProfessorCountOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type ProfessorAvgOrderByAggregateInput = {
+  researchFitScore?: Prisma.SortOrder
+  followUpCount?: Prisma.SortOrder
 }
 
 export type ProfessorMaxOrderByAggregateInput = {
@@ -652,6 +757,9 @@ export type ProfessorMaxOrderByAggregateInput = {
   replyReceived?: Prisma.SortOrder
   replyDate?: Prisma.SortOrder
   status?: Prisma.SortOrder
+  fundingStatus?: Prisma.SortOrder
+  researchFitScore?: Prisma.SortOrder
+  followUpCount?: Prisma.SortOrder
   lastFollowUp?: Prisma.SortOrder
   nextFollowUp?: Prisma.SortOrder
   interviewDate?: Prisma.SortOrder
@@ -676,6 +784,9 @@ export type ProfessorMinOrderByAggregateInput = {
   replyReceived?: Prisma.SortOrder
   replyDate?: Prisma.SortOrder
   status?: Prisma.SortOrder
+  fundingStatus?: Prisma.SortOrder
+  researchFitScore?: Prisma.SortOrder
+  followUpCount?: Prisma.SortOrder
   lastFollowUp?: Prisma.SortOrder
   nextFollowUp?: Prisma.SortOrder
   interviewDate?: Prisma.SortOrder
@@ -685,6 +796,11 @@ export type ProfessorMinOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type ProfessorSumOrderByAggregateInput = {
+  researchFitScore?: Prisma.SortOrder
+  followUpCount?: Prisma.SortOrder
 }
 
 export type ProfessorCreateNestedManyWithoutUserInput = {
@@ -775,6 +891,26 @@ export type EnumProfessorStatusFieldUpdateOperationsInput = {
   set?: $Enums.ProfessorStatus
 }
 
+export type EnumFundingStatusFieldUpdateOperationsInput = {
+  set?: $Enums.FundingStatus
+}
+
+export type NullableIntFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type ProfessorCreateWithoutUserInput = {
   id?: string
   name: string
@@ -786,6 +922,9 @@ export type ProfessorCreateWithoutUserInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -811,6 +950,9 @@ export type ProfessorUncheckedCreateWithoutUserInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -865,6 +1007,9 @@ export type ProfessorScalarWhereInput = {
   replyReceived?: Prisma.BoolFilter<"Professor"> | boolean
   replyDate?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   status?: Prisma.EnumProfessorStatusFilter<"Professor"> | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFilter<"Professor"> | $Enums.FundingStatus
+  researchFitScore?: Prisma.IntNullableFilter<"Professor"> | number | null
+  followUpCount?: Prisma.IntFilter<"Professor"> | number
   lastFollowUp?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   nextFollowUp?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
   interviewDate?: Prisma.DateTimeNullableFilter<"Professor"> | Date | string | null
@@ -888,6 +1033,9 @@ export type ProfessorCreateWithoutUniversityInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -913,6 +1061,9 @@ export type ProfessorUncheckedCreateWithoutUniversityInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -963,6 +1114,9 @@ export type ProfessorCreateManyUserInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -986,6 +1140,9 @@ export type ProfessorUpdateWithoutUserInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1011,6 +1168,9 @@ export type ProfessorUncheckedUpdateWithoutUserInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1035,6 +1195,9 @@ export type ProfessorUncheckedUpdateManyWithoutUserInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1059,6 +1222,9 @@ export type ProfessorCreateManyUniversityInput = {
   replyReceived?: boolean
   replyDate?: Date | string | null
   status?: $Enums.ProfessorStatus
+  fundingStatus?: $Enums.FundingStatus
+  researchFitScore?: number | null
+  followUpCount?: number
   lastFollowUp?: Date | string | null
   nextFollowUp?: Date | string | null
   interviewDate?: Date | string | null
@@ -1082,6 +1248,9 @@ export type ProfessorUpdateWithoutUniversityInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1107,6 +1276,9 @@ export type ProfessorUncheckedUpdateWithoutUniversityInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1131,6 +1303,9 @@ export type ProfessorUncheckedUpdateManyWithoutUniversityInput = {
   replyReceived?: Prisma.BoolFieldUpdateOperationsInput | boolean
   replyDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   status?: Prisma.EnumProfessorStatusFieldUpdateOperationsInput | $Enums.ProfessorStatus
+  fundingStatus?: Prisma.EnumFundingStatusFieldUpdateOperationsInput | $Enums.FundingStatus
+  researchFitScore?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  followUpCount?: Prisma.IntFieldUpdateOperationsInput | number
   lastFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   nextFollowUp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interviewDate?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -1158,6 +1333,9 @@ export type ProfessorSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   replyReceived?: boolean
   replyDate?: boolean
   status?: boolean
+  fundingStatus?: boolean
+  researchFitScore?: boolean
+  followUpCount?: boolean
   lastFollowUp?: boolean
   nextFollowUp?: boolean
   interviewDate?: boolean
@@ -1185,6 +1363,9 @@ export type ProfessorSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   replyReceived?: boolean
   replyDate?: boolean
   status?: boolean
+  fundingStatus?: boolean
+  researchFitScore?: boolean
+  followUpCount?: boolean
   lastFollowUp?: boolean
   nextFollowUp?: boolean
   interviewDate?: boolean
@@ -1212,6 +1393,9 @@ export type ProfessorSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   replyReceived?: boolean
   replyDate?: boolean
   status?: boolean
+  fundingStatus?: boolean
+  researchFitScore?: boolean
+  followUpCount?: boolean
   lastFollowUp?: boolean
   nextFollowUp?: boolean
   interviewDate?: boolean
@@ -1239,6 +1423,9 @@ export type ProfessorSelectScalar = {
   replyReceived?: boolean
   replyDate?: boolean
   status?: boolean
+  fundingStatus?: boolean
+  researchFitScore?: boolean
+  followUpCount?: boolean
   lastFollowUp?: boolean
   nextFollowUp?: boolean
   interviewDate?: boolean
@@ -1251,7 +1438,7 @@ export type ProfessorSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ProfessorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "universityId" | "name" | "email" | "profileUrl" | "researchInterests" | "emailSentDate" | "emailSubject" | "replyReceived" | "replyDate" | "status" | "lastFollowUp" | "nextFollowUp" | "interviewDate" | "suggestedContact" | "futureFundingNote" | "notes" | "customFields" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["professor"]>
+export type ProfessorOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "universityId" | "name" | "email" | "profileUrl" | "researchInterests" | "emailSentDate" | "emailSubject" | "replyReceived" | "replyDate" | "status" | "fundingStatus" | "researchFitScore" | "followUpCount" | "lastFollowUp" | "nextFollowUp" | "interviewDate" | "suggestedContact" | "futureFundingNote" | "notes" | "customFields" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["professor"]>
 export type ProfessorInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   university?: boolean | Prisma.Professor$universityArgs<ExtArgs>
@@ -1284,6 +1471,9 @@ export type $ProfessorPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     replyReceived: boolean
     replyDate: Date | null
     status: $Enums.ProfessorStatus
+    fundingStatus: $Enums.FundingStatus
+    researchFitScore: number | null
+    followUpCount: number
     lastFollowUp: Date | null
     nextFollowUp: Date | null
     interviewDate: Date | null
@@ -1731,6 +1921,9 @@ export interface ProfessorFieldRefs {
   readonly replyReceived: Prisma.FieldRef<"Professor", 'Boolean'>
   readonly replyDate: Prisma.FieldRef<"Professor", 'DateTime'>
   readonly status: Prisma.FieldRef<"Professor", 'ProfessorStatus'>
+  readonly fundingStatus: Prisma.FieldRef<"Professor", 'FundingStatus'>
+  readonly researchFitScore: Prisma.FieldRef<"Professor", 'Int'>
+  readonly followUpCount: Prisma.FieldRef<"Professor", 'Int'>
   readonly lastFollowUp: Prisma.FieldRef<"Professor", 'DateTime'>
   readonly nextFollowUp: Prisma.FieldRef<"Professor", 'DateTime'>
   readonly interviewDate: Prisma.FieldRef<"Professor", 'DateTime'>
