@@ -26,6 +26,7 @@ import {
 import { TierBadge } from "@/components/badges/TierBadge";
 import { EmptyState } from "@/components/shared/EmptyState";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
 
 interface Stats {
   universities: { total: number; dream: number; match: number; safety: number };
@@ -36,6 +37,7 @@ interface Stats {
 
 export default function DashboardOverview() {
   const dispatch = useAppDispatch();
+  const { data: session } = authClient.useSession();
   const profile = useAppSelector((state) => state.profile.profile);
   const universities = useAppSelector((state) => state.universities.items);
 
@@ -132,7 +134,7 @@ export default function DashboardOverview() {
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2">
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-              Hello, {profile?.name || "Future Scholar"}!
+              Hello, {session?.user?.name || "Future Scholar"}!
             </h2>
             <p className="text-muted-foreground text-sm max-w-xl">
               Welcome to your Country Intelligence & Admissions Hub. Evaluate visa constraints, analyze PR pathways, and track your global applications.
