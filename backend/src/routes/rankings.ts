@@ -8,18 +8,23 @@ const router: Router = Router();
 router.get("/", async (req: Request, res: Response) => {
   try {
     const q = (req.query.q as string) || "";
+    const countryFilter = (req.query.country as string) || "";
     const limit = Math.min(parseInt(req.query.limit as string, 10) || 50, 100);
     const page = Math.max(parseInt(req.query.page as string, 10) || 1, 1);
     const skip = (page - 1) * limit;
 
-    const where = q
-      ? {
-          OR: [
-            { institutionName: { contains: q, mode: "insensitive" as const } },
-            { country: { contains: q, mode: "insensitive" as const } },
-          ],
-        }
-      : {};
+    const where: any = {};
+    
+    if (q) {
+      where.OR = [
+        { institutionName: { contains: q, mode: "insensitive" as const } },
+        { country: { contains: q, mode: "insensitive" as const } },
+      ];
+    }
+
+    if (countryFilter && countryFilter !== "all") {
+      where.country = { equals: countryFilter, mode: "insensitive" as const };
+    }
 
     const orderBy = [
       { qs2026Rank: "asc" as const },
