@@ -173,7 +173,8 @@ export const UniversityScalarFieldEnum = {
   notes: 'notes',
   deletedAt: 'deletedAt',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  rankingId: 'rankingId'
 } as const
 
 export type UniversityScalarFieldEnum = (typeof UniversityScalarFieldEnum)[keyof typeof UniversityScalarFieldEnum]

@@ -544,6 +544,7 @@ export type UniversityRankingWhereInput = {
   arwuNs?: Prisma.FloatNullableFilter<"UniversityRanking"> | number | null
   arwuPub?: Prisma.FloatNullableFilter<"UniversityRanking"> | number | null
   arwuPcp?: Prisma.FloatNullableFilter<"UniversityRanking"> | number | null
+  universities?: Prisma.UniversityListRelationFilter
 }
 
 export type UniversityRankingOrderByWithRelationInput = {
@@ -581,6 +582,7 @@ export type UniversityRankingOrderByWithRelationInput = {
   arwuNs?: Prisma.SortOrderInput | Prisma.SortOrder
   arwuPub?: Prisma.SortOrderInput | Prisma.SortOrder
   arwuPcp?: Prisma.SortOrderInput | Prisma.SortOrder
+  universities?: Prisma.UniversityOrderByRelationAggregateInput
 }
 
 export type UniversityRankingWhereUniqueInput = Prisma.AtLeast<{
@@ -621,6 +623,7 @@ export type UniversityRankingWhereUniqueInput = Prisma.AtLeast<{
   arwuNs?: Prisma.FloatNullableFilter<"UniversityRanking"> | number | null
   arwuPub?: Prisma.FloatNullableFilter<"UniversityRanking"> | number | null
   arwuPcp?: Prisma.FloatNullableFilter<"UniversityRanking"> | number | null
+  universities?: Prisma.UniversityListRelationFilter
 }, "id" | "institutionName">
 
 export type UniversityRankingOrderByWithAggregationInput = {
@@ -740,6 +743,7 @@ export type UniversityRankingCreateInput = {
   arwuNs?: number | null
   arwuPub?: number | null
   arwuPcp?: number | null
+  universities?: Prisma.UniversityCreateNestedManyWithoutRankingInput
 }
 
 export type UniversityRankingUncheckedCreateInput = {
@@ -777,6 +781,7 @@ export type UniversityRankingUncheckedCreateInput = {
   arwuNs?: number | null
   arwuPub?: number | null
   arwuPcp?: number | null
+  universities?: Prisma.UniversityUncheckedCreateNestedManyWithoutRankingInput
 }
 
 export type UniversityRankingUpdateInput = {
@@ -814,6 +819,7 @@ export type UniversityRankingUpdateInput = {
   arwuNs?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   arwuPub?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   arwuPcp?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  universities?: Prisma.UniversityUpdateManyWithoutRankingNestedInput
 }
 
 export type UniversityRankingUncheckedUpdateInput = {
@@ -851,6 +857,7 @@ export type UniversityRankingUncheckedUpdateInput = {
   arwuNs?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   arwuPub?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   arwuPcp?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  universities?: Prisma.UniversityUncheckedUpdateManyWithoutRankingNestedInput
 }
 
 export type UniversityRankingCreateManyInput = {
@@ -962,6 +969,11 @@ export type UniversityRankingUncheckedUpdateManyInput = {
   arwuNs?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   arwuPub?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   arwuPcp?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+}
+
+export type UniversityRankingNullableScalarRelationFilter = {
+  is?: Prisma.UniversityRankingWhereInput | null
+  isNot?: Prisma.UniversityRankingWhereInput | null
 }
 
 export type UniversityRankingCountOrderByAggregateInput = {
@@ -1131,6 +1143,215 @@ export type UniversityRankingSumOrderByAggregateInput = {
   arwuPcp?: Prisma.SortOrder
 }
 
+export type UniversityRankingCreateNestedOneWithoutUniversitiesInput = {
+  create?: Prisma.XOR<Prisma.UniversityRankingCreateWithoutUniversitiesInput, Prisma.UniversityRankingUncheckedCreateWithoutUniversitiesInput>
+  connectOrCreate?: Prisma.UniversityRankingCreateOrConnectWithoutUniversitiesInput
+  connect?: Prisma.UniversityRankingWhereUniqueInput
+}
+
+export type UniversityRankingUpdateOneWithoutUniversitiesNestedInput = {
+  create?: Prisma.XOR<Prisma.UniversityRankingCreateWithoutUniversitiesInput, Prisma.UniversityRankingUncheckedCreateWithoutUniversitiesInput>
+  connectOrCreate?: Prisma.UniversityRankingCreateOrConnectWithoutUniversitiesInput
+  upsert?: Prisma.UniversityRankingUpsertWithoutUniversitiesInput
+  disconnect?: Prisma.UniversityRankingWhereInput | boolean
+  delete?: Prisma.UniversityRankingWhereInput | boolean
+  connect?: Prisma.UniversityRankingWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UniversityRankingUpdateToOneWithWhereWithoutUniversitiesInput, Prisma.UniversityRankingUpdateWithoutUniversitiesInput>, Prisma.UniversityRankingUncheckedUpdateWithoutUniversitiesInput>
+}
+
+export type UniversityRankingCreateWithoutUniversitiesInput = {
+  id?: string
+  institutionName: string
+  country: string
+  region?: string | null
+  inQs?: boolean
+  inThe?: boolean
+  inArwu?: boolean
+  qs2026Rank?: number | null
+  qs2026RankDisplay?: string | null
+  qs2026Score?: number | null
+  qsArScore?: number | null
+  qsErScore?: number | null
+  qsFsrScore?: number | null
+  qsCpfScore?: number | null
+  qsIfrScore?: number | null
+  qsIsrScore?: number | null
+  qsEoScore?: number | null
+  qsSusScore?: number | null
+  the2026Rank?: number | null
+  the2026RankDisplay?: string | null
+  the2026Score?: number | null
+  theTeaching?: number | null
+  theResearchEnv?: number | null
+  theResearchQuality?: number | null
+  theIndustry?: number | null
+  theInternational?: number | null
+  arwu2025Rank?: number | null
+  arwu2025Score?: number | null
+  arwuAlumni?: number | null
+  arwuAward?: number | null
+  arwuHici?: number | null
+  arwuNs?: number | null
+  arwuPub?: number | null
+  arwuPcp?: number | null
+}
+
+export type UniversityRankingUncheckedCreateWithoutUniversitiesInput = {
+  id?: string
+  institutionName: string
+  country: string
+  region?: string | null
+  inQs?: boolean
+  inThe?: boolean
+  inArwu?: boolean
+  qs2026Rank?: number | null
+  qs2026RankDisplay?: string | null
+  qs2026Score?: number | null
+  qsArScore?: number | null
+  qsErScore?: number | null
+  qsFsrScore?: number | null
+  qsCpfScore?: number | null
+  qsIfrScore?: number | null
+  qsIsrScore?: number | null
+  qsEoScore?: number | null
+  qsSusScore?: number | null
+  the2026Rank?: number | null
+  the2026RankDisplay?: string | null
+  the2026Score?: number | null
+  theTeaching?: number | null
+  theResearchEnv?: number | null
+  theResearchQuality?: number | null
+  theIndustry?: number | null
+  theInternational?: number | null
+  arwu2025Rank?: number | null
+  arwu2025Score?: number | null
+  arwuAlumni?: number | null
+  arwuAward?: number | null
+  arwuHici?: number | null
+  arwuNs?: number | null
+  arwuPub?: number | null
+  arwuPcp?: number | null
+}
+
+export type UniversityRankingCreateOrConnectWithoutUniversitiesInput = {
+  where: Prisma.UniversityRankingWhereUniqueInput
+  create: Prisma.XOR<Prisma.UniversityRankingCreateWithoutUniversitiesInput, Prisma.UniversityRankingUncheckedCreateWithoutUniversitiesInput>
+}
+
+export type UniversityRankingUpsertWithoutUniversitiesInput = {
+  update: Prisma.XOR<Prisma.UniversityRankingUpdateWithoutUniversitiesInput, Prisma.UniversityRankingUncheckedUpdateWithoutUniversitiesInput>
+  create: Prisma.XOR<Prisma.UniversityRankingCreateWithoutUniversitiesInput, Prisma.UniversityRankingUncheckedCreateWithoutUniversitiesInput>
+  where?: Prisma.UniversityRankingWhereInput
+}
+
+export type UniversityRankingUpdateToOneWithWhereWithoutUniversitiesInput = {
+  where?: Prisma.UniversityRankingWhereInput
+  data: Prisma.XOR<Prisma.UniversityRankingUpdateWithoutUniversitiesInput, Prisma.UniversityRankingUncheckedUpdateWithoutUniversitiesInput>
+}
+
+export type UniversityRankingUpdateWithoutUniversitiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  institutionName?: Prisma.StringFieldUpdateOperationsInput | string
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  region?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  inQs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  inThe?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  inArwu?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  qs2026Rank?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  qs2026RankDisplay?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  qs2026Score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsArScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsErScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsFsrScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsCpfScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsIfrScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsIsrScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsEoScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsSusScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  the2026Rank?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  the2026RankDisplay?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  the2026Score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theTeaching?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theResearchEnv?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theResearchQuality?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theIndustry?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theInternational?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwu2025Rank?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  arwu2025Score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuAlumni?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuAward?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuHici?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuNs?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuPub?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuPcp?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+}
+
+export type UniversityRankingUncheckedUpdateWithoutUniversitiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  institutionName?: Prisma.StringFieldUpdateOperationsInput | string
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  region?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  inQs?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  inThe?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  inArwu?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  qs2026Rank?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  qs2026RankDisplay?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  qs2026Score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsArScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsErScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsFsrScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsCpfScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsIfrScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsIsrScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsEoScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  qsSusScore?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  the2026Rank?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  the2026RankDisplay?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  the2026Score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theTeaching?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theResearchEnv?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theResearchQuality?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theIndustry?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  theInternational?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwu2025Rank?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  arwu2025Score?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuAlumni?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuAward?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuHici?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuNs?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuPub?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  arwuPcp?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+}
+
+
+/**
+ * Count Type UniversityRankingCountOutputType
+ */
+
+export type UniversityRankingCountOutputType = {
+  universities: number
+}
+
+export type UniversityRankingCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  universities?: boolean | UniversityRankingCountOutputTypeCountUniversitiesArgs
+}
+
+/**
+ * UniversityRankingCountOutputType without action
+ */
+export type UniversityRankingCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UniversityRankingCountOutputType
+   */
+  select?: Prisma.UniversityRankingCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * UniversityRankingCountOutputType without action
+ */
+export type UniversityRankingCountOutputTypeCountUniversitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UniversityWhereInput
+}
 
 
 export type UniversityRankingSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1168,6 +1389,8 @@ export type UniversityRankingSelect<ExtArgs extends runtime.Types.Extensions.Int
   arwuNs?: boolean
   arwuPub?: boolean
   arwuPcp?: boolean
+  universities?: boolean | Prisma.UniversityRanking$universitiesArgs<ExtArgs>
+  _count?: boolean | Prisma.UniversityRankingCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["universityRanking"]>
 
 export type UniversityRankingSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1282,10 +1505,18 @@ export type UniversityRankingSelectScalar = {
 }
 
 export type UniversityRankingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "institutionName" | "country" | "region" | "inQs" | "inThe" | "inArwu" | "qs2026Rank" | "qs2026RankDisplay" | "qs2026Score" | "qsArScore" | "qsErScore" | "qsFsrScore" | "qsCpfScore" | "qsIfrScore" | "qsIsrScore" | "qsEoScore" | "qsSusScore" | "the2026Rank" | "the2026RankDisplay" | "the2026Score" | "theTeaching" | "theResearchEnv" | "theResearchQuality" | "theIndustry" | "theInternational" | "arwu2025Rank" | "arwu2025Score" | "arwuAlumni" | "arwuAward" | "arwuHici" | "arwuNs" | "arwuPub" | "arwuPcp", ExtArgs["result"]["universityRanking"]>
+export type UniversityRankingInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  universities?: boolean | Prisma.UniversityRanking$universitiesArgs<ExtArgs>
+  _count?: boolean | Prisma.UniversityRankingCountOutputTypeDefaultArgs<ExtArgs>
+}
+export type UniversityRankingIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type UniversityRankingIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
 
 export type $UniversityRankingPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "UniversityRanking"
-  objects: {}
+  objects: {
+    universities: Prisma.$UniversityPayload<ExtArgs>[]
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     institutionName: string
@@ -1715,6 +1946,7 @@ readonly fields: UniversityRankingFieldRefs;
  */
 export interface Prisma__UniversityRankingClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  universities<T extends Prisma.UniversityRanking$universitiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UniversityRanking$universitiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UniversityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1795,6 +2027,10 @@ export type UniversityRankingFindUniqueArgs<ExtArgs extends runtime.Types.Extens
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
+  /**
    * Filter, which UniversityRanking to fetch.
    */
   where: Prisma.UniversityRankingWhereUniqueInput
@@ -1813,6 +2049,10 @@ export type UniversityRankingFindUniqueOrThrowArgs<ExtArgs extends runtime.Types
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
+  /**
    * Filter, which UniversityRanking to fetch.
    */
   where: Prisma.UniversityRankingWhereUniqueInput
@@ -1830,6 +2070,10 @@ export type UniversityRankingFindFirstArgs<ExtArgs extends runtime.Types.Extensi
    * Omit specific fields from the UniversityRanking
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
   /**
    * Filter, which UniversityRanking to fetch.
    */
@@ -1879,6 +2123,10 @@ export type UniversityRankingFindFirstOrThrowArgs<ExtArgs extends runtime.Types.
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
+  /**
    * Filter, which UniversityRanking to fetch.
    */
   where?: Prisma.UniversityRankingWhereInput
@@ -1926,6 +2174,10 @@ export type UniversityRankingFindManyArgs<ExtArgs extends runtime.Types.Extensio
    * Omit specific fields from the UniversityRanking
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
   /**
    * Filter, which UniversityRankings to fetch.
    */
@@ -1975,6 +2227,10 @@ export type UniversityRankingCreateArgs<ExtArgs extends runtime.Types.Extensions
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
+  /**
    * The data needed to create a UniversityRanking.
    */
   data: Prisma.XOR<Prisma.UniversityRankingCreateInput, Prisma.UniversityRankingUncheckedCreateInput>
@@ -2022,6 +2278,10 @@ export type UniversityRankingUpdateArgs<ExtArgs extends runtime.Types.Extensions
    * Omit specific fields from the UniversityRanking
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
   /**
    * The data needed to update a UniversityRanking.
    */
@@ -2089,6 +2349,10 @@ export type UniversityRankingUpsertArgs<ExtArgs extends runtime.Types.Extensions
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
+  /**
    * The filter to search for the UniversityRanking to update in case it exists.
    */
   where: Prisma.UniversityRankingWhereUniqueInput
@@ -2115,6 +2379,10 @@ export type UniversityRankingDeleteArgs<ExtArgs extends runtime.Types.Extensions
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
+  /**
    * Filter which UniversityRanking to delete.
    */
   where: Prisma.UniversityRankingWhereUniqueInput
@@ -2135,6 +2403,30 @@ export type UniversityRankingDeleteManyArgs<ExtArgs extends runtime.Types.Extens
 }
 
 /**
+ * UniversityRanking.universities
+ */
+export type UniversityRanking$universitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the University
+   */
+  select?: Prisma.UniversitySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the University
+   */
+  omit?: Prisma.UniversityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityInclude<ExtArgs> | null
+  where?: Prisma.UniversityWhereInput
+  orderBy?: Prisma.UniversityOrderByWithRelationInput | Prisma.UniversityOrderByWithRelationInput[]
+  cursor?: Prisma.UniversityWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UniversityScalarFieldEnum | Prisma.UniversityScalarFieldEnum[]
+}
+
+/**
  * UniversityRanking without action
  */
 export type UniversityRankingDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2146,4 +2438,8 @@ export type UniversityRankingDefaultArgs<ExtArgs extends runtime.Types.Extension
    * Omit specific fields from the UniversityRanking
    */
   omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
 }

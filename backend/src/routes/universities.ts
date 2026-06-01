@@ -50,6 +50,12 @@ router.post("/", async (req: AuthenticatedRequest, res: Response) => {
       return res.status(400).json({ error: "Name, country, and tier are required" });
     }
 
+    const ranking = await prisma.universityRanking.findFirst({
+      where: {
+        institutionName: { equals: name, mode: "insensitive" },
+      },
+    });
+
     const university = await prisma.university.create({
       data: {
         userId,
@@ -62,7 +68,11 @@ router.post("/", async (req: AuthenticatedRequest, res: Response) => {
         intake: intake || null,
         website: website || null,
         notes: notes || null,
+        rankingId: ranking?.id || null,
       },
+      include: {
+        ranking: true,
+      }
     });
 
     res.status(201).json(university);
