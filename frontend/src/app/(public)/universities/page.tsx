@@ -6,10 +6,29 @@ import { fetchApi } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, Loader2, ArrowLeft, School, ChevronLeft, ChevronRight } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Search, Loader2, ChevronLeft, ChevronRight, Filter } from "lucide-react";
 import { UniversityRanking } from "@/types";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { useDebounce } from "@/hooks/use-debounce";
+
+const COUNTRIES = [
+  "all",
+  "United States of America",
+  "United Kingdom",
+  "Canada",
+  "Australia",
+  "Germany",
+  "Ireland",
+  "Sweden",
+  "Netherlands",
+  "Switzerland",
+  "Finland",
+  "Japan",
+  "China (Mainland)",
+  "Republic of Korea",
+  "Singapore",
+  "Hong Kong SAR, China"
+];
 
 interface PaginatedResponse {
   data: UniversityRanking[];
@@ -23,6 +42,7 @@ const ITEMS_PER_PAGE = 50;
 
 export default function PublicUniversitiesPage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [countryFilter, setCountryFilter] = useState("all");
   const debouncedQuery = useDebounce(searchQuery, 350);
   const [results, setResults] = useState<UniversityRanking[]>([]);
   const [total, setTotal] = useState(0);
@@ -31,7 +51,7 @@ export default function PublicUniversitiesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const loadData = useCallback(async (page: number, query: string) => {
+  const loadData = useCallback(async (page: number, query: string, country: string) => {
     setLoading(true);
     setError(null);
     try {
@@ -40,6 +60,7 @@ export default function PublicUniversitiesPage() {
         page: String(page),
       });
       if (query.trim()) params.set("q", query.trim());
+      if (country !== "all") params.set("country", country);
 
       const response: PaginatedResponse = await fetchApi(`/api/v1/rankings?${params.toString()}`);
       setResults(response.data);
@@ -54,36 +75,23 @@ export default function PublicUniversitiesPage() {
     }
   }, []);
 
-  // Reset to page 1 when search changes
+  // Reset to page 1 when search or country changes
   useEffect(() => {
     setCurrentPage(1);
-    loadData(1, debouncedQuery);
-  }, [debouncedQuery, loadData]);
+    loadData(1, debouncedQuery, countryFilter);
+  }, [debouncedQuery, countryFilter, loadData]);
 
   const handlePageChange = (newPage: number) => {
     if (newPage < 1 || newPage > totalPages) return;
     window.scrollTo({ top: 0, behavior: "smooth" });
-    loadData(newPage, debouncedQuery);
+    loadData(newPage, debouncedQuery, countryFilter);
   };
 
   const startItem = (currentPage - 1) * ITEMS_PER_PAGE + 1;
   const endItem = Math.min(currentPage * ITEMS_PER_PAGE, total);
 
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
-      <header className="z-10 sticky top-0 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl">
-        <div className="flex h-16 items-center justify-between px-6 max-w-7xl mx-auto">
-          <Link href="/" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
-          <div className="flex items-center gap-2 font-bold text-lg tracking-tight">
-            <School className="h-5 w-5 text-primary" />
-            <span>Global Rankings</span>
-          </div>
-          <ThemeToggle />
-        </div>
-      </header>
+    <>
 
       <main className="px-6 py-12 max-w-7xl mx-auto space-y-8 animate-in fade-in duration-500">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
@@ -99,19 +107,40 @@ export default function PublicUniversitiesPage() {
             <CardDescription>Type a university name or country to filter the rankings. Click any institution for detailed breakdown.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            {/* Search */}
-            <div className="relative max-w-xl mx-auto">
-              <Search className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground" />
-              <Input
-                type="text"
-                placeholder="e.g. Oxford, Stanford, Germany, Ireland..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 h-12 bg-background border-border/60 focus:border-primary text-base rounded-xl shadow-sm"
-              />
-              {loading && (
-                <Loader2 className="absolute right-4 top-3.5 h-5 w-5 animate-spin text-primary" />
-              )}
+            <div className="flex flex-col sm:flex-row items-center gap-4 max-w-3xl mx-auto">
+              {/* Search */}
+              <div className="relative flex-1 w-full">
+                <Search className="absolute left-4 top-3.5 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="e.g. Oxford, Stanford, MIT..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-12 h-12 bg-background border-border/60 focus:border-primary text-base rounded-xl shadow-sm w-full"
+                />
+                {loading && (
+                  <Loader2 className="absolute right-4 top-3.5 h-5 w-5 animate-spin text-primary" />
+                )}
+              </div>
+              
+              {/* Country Filter */}
+              <div className="w-full sm:w-[220px]">
+                <Select value={countryFilter} onValueChange={setCountryFilter}>
+                  <SelectTrigger className="h-12 bg-background border-border/60 rounded-xl shadow-sm">
+                    <div className="flex items-center gap-2">
+                      <Filter className="h-4 w-4 text-muted-foreground" />
+                      <SelectValue placeholder="All Countries" />
+                    </div>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {COUNTRIES.map((c) => (
+                      <SelectItem key={c} value={c}>
+                        {c === "all" ? "All Countries" : c}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             {/* Result count */}
@@ -264,6 +293,6 @@ export default function PublicUniversitiesPage() {
           </CardContent>
         </Card>
       </main>
-    </div>
+    </>
   );
 }

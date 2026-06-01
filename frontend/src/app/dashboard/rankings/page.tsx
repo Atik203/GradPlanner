@@ -6,9 +6,29 @@ import { fetchApi } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, Loader2, ChevronLeft, ChevronRight, BarChart3, Star, ExternalLink } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Search, Loader2, ChevronLeft, ChevronRight, BarChart3, Star, ExternalLink, Filter } from "lucide-react";
 import { UniversityRanking } from "@/types";
 import { useDebounce } from "@/hooks/use-debounce";
+
+const COUNTRIES = [
+  "all",
+  "United States of America",
+  "United Kingdom",
+  "Canada",
+  "Australia",
+  "Germany",
+  "Ireland",
+  "Sweden",
+  "Netherlands",
+  "Switzerland",
+  "Finland",
+  "Japan",
+  "China (Mainland)",
+  "Republic of Korea",
+  "Singapore",
+  "Hong Kong SAR, China"
+];
 
 interface PaginatedResponse {
   data: UniversityRanking[];
@@ -22,6 +42,7 @@ const ITEMS_PER_PAGE = 50;
 
 export default function DashboardRankingsPage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [countryFilter, setCountryFilter] = useState("all");
   const debouncedQuery = useDebounce(searchQuery, 350);
   const [results, setResults] = useState<UniversityRanking[]>([]);
   const [total, setTotal] = useState(0);
@@ -30,7 +51,7 @@ export default function DashboardRankingsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const loadData = useCallback(async (page: number, query: string) => {
+  const loadData = useCallback(async (page: number, query: string, country: string) => {
     setLoading(true);
     setError(null);
     try {
@@ -39,6 +60,7 @@ export default function DashboardRankingsPage() {
         page: String(page),
       });
       if (query.trim()) params.set("q", query.trim());
+      if (country !== "all") params.set("country", country);
 
       const response: PaginatedResponse = await fetchApi(`/api/v1/rankings?${params.toString()}`);
       setResults(response.data);
@@ -55,12 +77,12 @@ export default function DashboardRankingsPage() {
 
   useEffect(() => {
     setCurrentPage(1);
-    loadData(1, debouncedQuery);
-  }, [debouncedQuery, loadData]);
+    loadData(1, debouncedQuery, countryFilter);
+  }, [debouncedQuery, countryFilter, loadData]);
 
   const handlePageChange = (newPage: number) => {
     if (newPage < 1 || newPage > totalPages) return;
-    loadData(newPage, debouncedQuery);
+    loadData(newPage, debouncedQuery, countryFilter);
   };
 
   const startItem = (currentPage - 1) * ITEMS_PER_PAGE + 1;
@@ -87,19 +109,40 @@ export default function DashboardRankingsPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="pt-5 space-y-5">
-          {/* Search */}
-          <div className="relative max-w-lg">
-            <Search className="absolute left-4 top-3 h-5 w-5 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Search by university name or country..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 h-11 bg-background border-border focus:border-primary text-sm"
-            />
-            {loading && (
-              <Loader2 className="absolute right-4 top-3 h-5 w-5 animate-spin text-primary" />
-            )}
+          <div className="flex flex-col sm:flex-row items-center gap-4 max-w-2xl">
+            {/* Search */}
+            <div className="relative flex-1 w-full">
+              <Search className="absolute left-4 top-3 h-5 w-5 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search by university name or country..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-12 h-11 bg-background border-border focus:border-primary text-sm w-full"
+              />
+              {loading && (
+                <Loader2 className="absolute right-4 top-3 h-5 w-5 animate-spin text-primary" />
+              )}
+            </div>
+
+            {/* Country Filter */}
+            <div className="w-full sm:w-[220px]">
+              <Select value={countryFilter} onValueChange={setCountryFilter}>
+                <SelectTrigger className="h-11 bg-background border-border rounded-md shadow-sm">
+                  <div className="flex items-center gap-2">
+                    <Filter className="h-4 w-4 text-muted-foreground" />
+                    <SelectValue placeholder="All Countries" />
+                  </div>
+                </SelectTrigger>
+                <SelectContent>
+                  {COUNTRIES.map((c) => (
+                    <SelectItem key={c} value={c}>
+                      {c === "all" ? "All Countries" : c}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           {/* Result count */}
