@@ -9,8 +9,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   ArrowLeft, School, ExternalLink, Star, BarChart3, Users, Briefcase,
-  Globe, BookOpen, Loader2, Trophy, Building2
+  Globe, BookOpen, Loader2, Trophy, Building2, AlertTriangle, Lightbulb, Wallet, FileCheck
 } from "lucide-react";
+import { getCountryIntelligence } from "@/lib/countryIntelligence";
 
 function RankBadge({ rank, display, source, color }: { rank?: number | null; display?: string | null; source: string; color: string }) {
   const label = display || (rank ? `#${rank}` : "—");
@@ -237,29 +238,165 @@ export default function UniversityDetailPage() {
           </Card>
         )}
 
-        {/* Bangladesh Advisory Note */}
-        <Card className="border-amber-500/20 bg-amber-500/5">
-          <CardContent className="pt-5 pb-5">
-            <div className="flex items-start gap-3">
-              <Briefcase className="h-5 w-5 text-amber-500 mt-0.5 shrink-0" />
-              <div className="space-y-1.5">
-                <h3 className="text-sm font-bold text-foreground">BD Applicant Advisory</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Rankings alone should not drive your decision. For Bangladeshi students, funding availability, visa difficulty,
-                  and post-study PR pathways matter more than QS position. A fully-funded PhD at a rank-200 university is
-                  better than an unfunded position at a rank-20 university. Always research funding first.
+        {/* --- INTELLIGENCE SECTION --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6">
+          {/* Country Reality Check */}
+          <Card className="border-border bg-card/50 backdrop-blur-xl lg:col-span-2">
+            <CardHeader className="pb-3 border-b border-border/40">
+              <CardTitle className="flex items-center gap-2 text-lg">
+                <Globe className="h-5 w-5 text-blue-500" />
+                Country Reality Check: {university.country}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="pt-5 space-y-5">
+              {(() => {
+                const intel = getCountryIntelligence(university.country);
+                return (
+                  <>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {intel.tags.map((t, idx) => (
+                        <span key={idx} className={`text-xs px-2.5 py-1 rounded-md font-medium ${
+                          t.type === 'success' ? 'bg-[var(--success)]/10 text-[var(--success)]' :
+                          t.type === 'warning' ? 'bg-[var(--warning)]/10 text-[var(--warning)]' :
+                          t.type === 'destructive' ? 'bg-destructive/10 text-destructive' :
+                          'bg-muted text-muted-foreground'
+                        }`}>
+                          {t.label}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
+                          <AlertTriangle className="h-4 w-4 text-amber-500" />
+                          Visa & Immigration
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {intel.visaReality}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
+                          <Briefcase className="h-4 w-4 text-emerald-500" />
+                          PR Pathway for BD Nationals
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {intel.prPathway}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
+                          <Wallet className="h-4 w-4 text-purple-500" />
+                          Funding Sources
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {intel.fundingSources}
+                        </p>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
+            </CardContent>
+          </Card>
+
+          {/* Actionable Next Steps */}
+          <div className="space-y-6">
+            <Card className="border-border bg-card/50 backdrop-blur-xl">
+              <CardHeader className="pb-3 border-b border-border/40">
+                <CardTitle className="flex items-center gap-2 text-base">
+                  <Lightbulb className="h-4 w-4 text-amber-500" />
+                  "What It Takes" Estimator
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-5">
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                  Based on global competitiveness, here is a realistic profile estimator for a fully-funded BD applicant:
                 </p>
-                <Link
-                  href="/dashboard"
-                  className="inline-flex items-center gap-1.5 text-xs text-primary font-semibold hover:underline mt-1"
-                >
-                  <ExternalLink className="h-3 w-3" />
-                  Explore Country Intelligence Hub
-                </Link>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+                <div className="p-3 bg-muted/40 border border-border/50 rounded-lg text-sm space-y-2">
+                  {(() => {
+                    const bestRank = Math.min(
+                      university.qs2026Rank || 9999,
+                      university.the2026Rank || 9999,
+                      university.arwu2025Rank || 9999
+                    );
+                    if (bestRank <= 50) return (
+                      <>
+                        <div className="flex justify-between border-b border-border/50 pb-1">
+                          <span className="text-muted-foreground">CGPA</span>
+                          <span className="font-semibold text-foreground">3.85+</span>
+                        </div>
+                        <div className="flex justify-between border-b border-border/50 pb-1">
+                          <span className="text-muted-foreground">IELTS</span>
+                          <span className="font-semibold text-foreground">7.5+</span>
+                        </div>
+                        <div className="flex justify-between pb-1">
+                          <span className="text-muted-foreground">Other</span>
+                          <span className="font-semibold text-foreground text-right">Q1 Publications <br/>Direct Prof. Outreach</span>
+                        </div>
+                      </>
+                    );
+                    if (bestRank <= 200) return (
+                      <>
+                        <div className="flex justify-between border-b border-border/50 pb-1">
+                          <span className="text-muted-foreground">CGPA</span>
+                          <span className="font-semibold text-foreground">3.60+</span>
+                        </div>
+                        <div className="flex justify-between border-b border-border/50 pb-1">
+                          <span className="text-muted-foreground">IELTS</span>
+                          <span className="font-semibold text-foreground">7.0+</span>
+                        </div>
+                        <div className="flex justify-between pb-1">
+                          <span className="text-muted-foreground">Other</span>
+                          <span className="font-semibold text-foreground text-right">Research Exp. <br/>Strong SOP</span>
+                        </div>
+                      </>
+                    );
+                    return (
+                      <>
+                        <div className="flex justify-between border-b border-border/50 pb-1">
+                          <span className="text-muted-foreground">CGPA</span>
+                          <span className="font-semibold text-foreground">3.30+</span>
+                        </div>
+                        <div className="flex justify-between border-b border-border/50 pb-1">
+                          <span className="text-muted-foreground">IELTS</span>
+                          <span className="font-semibold text-foreground">6.5+</span>
+                        </div>
+                        <div className="flex justify-between pb-1">
+                          <span className="text-muted-foreground">Other</span>
+                          <span className="font-semibold text-foreground text-right">Relevant Work Exp.</span>
+                        </div>
+                      </>
+                    );
+                  })()}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 bg-primary/5">
+              <CardHeader className="pb-3 border-b border-primary/10">
+                <CardTitle className="flex items-center gap-2 text-base text-primary">
+                  <FileCheck className="h-4 w-4" />
+                  Action Plan
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4 space-y-3 text-sm">
+                <div className="flex items-start gap-2">
+                  <div className="h-5 w-5 rounded border border-primary/40 flex items-center justify-center shrink-0 mt-0.5 text-primary text-xs">1</div>
+                  <p className="text-muted-foreground">Track this university to your dashboard to set your target degree.</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="h-5 w-5 rounded border border-primary/40 flex items-center justify-center shrink-0 mt-0.5 text-primary text-xs">2</div>
+                  <p className="text-muted-foreground">Look up professors in your target department for potential TA/RA.</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <div className="h-5 w-5 rounded border border-primary/40 flex items-center justify-center shrink-0 mt-0.5 text-primary text-xs">3</div>
+                  <p className="text-muted-foreground">Check exact net-annual cost for your specific program on the official website.</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </main>
     </div>
   );
