@@ -1,0 +1,1103 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Complete timeline rules for Bangladeshi CS/AI/ML students from application to citizenship",
+    "targetProfile": "Bangladeshi student, MSc/PhD in CS/AI/ML, planning 2027-2029 start, full lifecycle planning",
+    "criticalNote": "Timelines are estimates based on 2026 policy. Allow 3-6 month buffer at each stage. Political changes can affect timelines significantly."
+  },
+  "globalTimeline": {
+    "typicalFullJourney": "10-18 years from application to citizenship depending on country",
+    "phases": [
+      "Phase 1: Application & Admission (6-18 months before start)",
+      "Phase 2: Study (2-6 years)",
+      "Phase 3: Post-Study Work (1-4 years)",
+      "Phase 4: Permanent Residency (1-5 years after employment)",
+      "Phase 5: Citizenship (3-10 years after PR)",
+      "Phase 6: Family Relocation (parallel or post-PR)"
+    ],
+    "bangladeshiSpecificNotes": [
+      "Bangladesh passport holders require visa for all listed countries",
+      "Police clearance certificate from Bangladesh required for PR/citizenship",
+      "Financial documentation from Bangladesh banks may need apostille",
+      "English test (IELTS/TOEFL) required for most countries",
+      "No dual citizenship with Bangladesh - must consider renunciation timing"
+    ]
+  },
+  "countryTimelines": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "totalJourneyYears": {
+        "mscPathway": "10-13 years",
+        "phdPathway": "12-15 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-12 months",
+          "startDate": "January 2026 for September 2027 intake",
+          "keyMilestones": [
+            "IELTS/TOEFL: 3-6 months prep",
+            "University applications: September-January",
+            "Acceptance letter: February-April",
+            "Study permit application: 4-12 weeks processing",
+            "Visa approved: 4-8 weeks"
+          ],
+          "criticalDeadlines": "Most universities deadline November-January for September intake"
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "4-5 years",
+          "keyMilestones": [
+            "Year 1: Settle, study, build supervisor relationship",
+            "Year 2 MSc: Research/thesis + job search begins",
+            "Apply for PGWP 3 months before graduation"
+          ],
+          "criticalNote": "3-year MSc unlocks 3-year PGWP - strategically important"
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Post-Graduate Work Permit (PGWP)",
+          "duration": "Up to 3 years (length of study)",
+          "processingTime": "2-5 months",
+          "keyMilestones": [
+            "Month 1-3: PGWP application",
+            "Month 3-6: Job search and employment",
+            "Month 6+: Build CRS score for Express Entry",
+            "Month 12-18: Apply Express Entry if CRS sufficient"
+          ],
+          "criticalNote": "Must apply for PGWP before study permit expires"
+        },
+        "phase4_pr": {
+          "pathwayName": "Express Entry (FSWP or CEC)",
+          "processingTime": "6 months after ITA",
+          "eligibilityRequirements": [
+            "1 year Canadian work experience (CEC) or job offer (FSWP)",
+            "CLB 7+ English",
+            "CRS score varies (450-550 typically)",
+            "Valid PGWP"
+          ],
+          "estimatedYearsFromGraduation": "1-3 years",
+          "keyMilestones": [
+            "Month 6-18: Gain 1 year work experience",
+            "Enter Express Entry pool",
+            "Wait for Invitation To Apply (ITA)",
+            "Submit PR application within 60 days",
+            "PR approval in 6 months"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "3 years physical presence in 5-year window",
+          "processingTime": "12-24 months",
+          "languageRequired": "CLB 4+ (easy for CS graduates)",
+          "estimatedYearsFromGraduation": "5-8 years",
+          "note": "Faster pathway than most countries; language test relatively easy"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Open work permit on PR application",
+          "childrenVisa": "Included in PR application",
+          "parentSponsor": "Super Visa (2yr) or sponsor queue (lengthy)",
+          "bestTime": "After PR approval - spouse gets open work permit immediately",
+          "timeFromGraduation": "3-5 years for spouse, 5-7 for parents"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {"year": 2026, "event": "Apply to Canadian universities, take IELTS"},
+        {"year": 2027, "event": "Begin MSc in CS/AI - September start"},
+        {"year": 2028, "event": "Year 2 MSc - research + internship"},
+        {"year": 2029, "event": "Graduate - apply for PGWP (3yr if 3yr program)"},
+        {"year": 2030, "event": "Working on PGWP - build CRS score"},
+        {"year": 2031, "event": "Apply for Express Entry PR"},
+        {"year": 2032, "event": "PR approved - sponsor spouse"},
+        {"year": 2035, "event": "Apply for citizenship"},
+        {"year": 2036, "event": "Canadian citizen"}
+      ],
+      "confidenceScore": 86
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "totalJourneyYears": {
+        "mscPathway": "Highly uncertain - 10-30+ years",
+        "phdPathway": "12-25+ years (green card uncertain)"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "9-15 months",
+          "keyMilestones": [
+            "GRE prep: 3-6 months",
+            "TOEFL/IELTS prep: 2-3 months",
+            "Applications: September-December",
+            "Acceptance: March-April",
+            "F1 visa: 4-8 weeks"
+          ],
+          "criticalDeadlines": "PhD applications December 1-15; MSc varies"
+        },
+        "phase2_study": {
+          "mscDuration": "1.5-2 years",
+          "phdDuration": "5-6 years",
+          "keyMilestones": [
+            "PhD: TA/RA from year 1",
+            "MSc: Intern during summer (CPT)",
+            "Final year: job search intensive"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "OPT + STEM OPT",
+          "duration": "12 months OPT + 24 months STEM OPT = 3 years",
+          "processingTime": "3-5 months for OPT",
+          "keyMilestones": [
+            "Month 1-3: Apply OPT 90 days before graduation",
+            "Month 3: Start work on OPT",
+            "Month 4-12: Apply H1B in April lottery",
+            "H1B odds: ~28% per year"
+          ],
+          "criticalNote": "H1B lottery failure = must leave; 3 years to try 3 lottery chances"
+        },
+        "phase4_pr": {
+          "pathwayName": "Green Card via EB-2/EB-3 employer sponsorship",
+          "processingTime": "2-10 years depending on nationality",
+          "bangladeshNote": "Bangladesh currently no significant backlog but could change",
+          "keyMilestones": [
+            "Year 1-3: Get H1B approved",
+            "Year 2-4: Employer files PERM labor certification (1-2yr)",
+            "Year 4-6: I-140 approval (6-18 months)",
+            "Year 5-15+: Wait for visa number if backlog develops"
+          ],
+          "alternativePathways": [
+            "EB-1A (Extraordinary Ability) - self-petition, no employer needed",
+            "EB-2 NIW (National Interest Waiver) - PhD researchers",
+            "O-1 visa as bridge"
+          ],
+          "criticalNote": "Bangladesh EB backlog currently minimal but growing - apply early"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years (3 if married to US citizen)",
+          "processingTime": "12-24 months",
+          "estimatedYearsFromGraduation": "10-20+ years total",
+          "note": "Most uncertain timeline among all analyzed countries"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "H4 visa - work authorization (H4 EAD) possible if H1B in green card queue",
+          "childrenVisa": "Included in H4",
+          "bestTime": "After H1B approval",
+          "note": "H4 EAD allows spouse to work - significant benefit"
+        }
+      },
+      "sampleTimeline_PhD": [
+        {"year": 2026, "event": "Apply to US PhD programs, GRE + TOEFL"},
+        {"year": 2027, "event": "Begin fully-funded PhD"},
+        {"year": 2032, "event": "Graduate PhD - apply OPT"},
+        {"year": 2032, "event": "Apply H1B April lottery - 28% chance"},
+        {"year": 2033, "event": "H1B approved (if successful) or try again"},
+        {"year": 2034, "event": "Employer files PERM for green card"},
+        {"year": 2036, "event": "I-140 approved, wait for visa number"},
+        {"year": 2038, "event": "Green card approved (best case, no backlog)"},
+        {"year": 2043, "event": "US citizenship eligible"}
+      ],
+      "confidenceScore": 72,
+      "criticalWarning": "H1B lottery is high-stakes gamble; plan backup Canada/Australia pathway simultaneously"
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "totalJourneyYears": {
+        "mscPathway": "8-11 years",
+        "phdPathway": "8-10 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-12 months",
+          "keyMilestones": [
+            "German A1/A2 optional but helpful: 3-6 months",
+            "IELTS/TOEFL: 2-3 months",
+            "uni-assist application: October-January",
+            "Acceptance: March-May",
+            "Student visa: 4-8 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years (salaried employment)",
+          "keyMilestones": [
+            "Year 1: Study + German language course",
+            "Year 2: Thesis + job applications",
+            "German B1/B2: Critical for PR (start early)"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "18-month Job Seeker Visa (post-graduation)",
+          "duration": "18 months to find job",
+          "processingTime": "4-8 weeks",
+          "keyMilestones": [
+            "Graduate: Apply job seeker extension",
+            "Month 1-6: Active job search",
+            "Job offer received: Switch to work permit",
+            "EU Blue Card: If salary above EUR 45,300 (STEM: EUR 35,100)"
+          ],
+          "criticalNote": "18-month window is generous; STEM salary threshold lower = easier Blue Card"
+        },
+        "phase4_pr": {
+          "pathwayName": "EU Blue Card to Settlement Permit",
+          "processingTime": "21-33 months employment",
+          "requirements": [
+            "EU Blue Card + B1 German = 21 months to PR",
+            "Regular work permit + B1 German = 48 months to PR",
+            "Job required; salary threshold met"
+          ],
+          "estimatedYearsFromGraduation": "2-4 years",
+          "keyMilestones": [
+            "Month 1: Get Blue Card (job + salary threshold)",
+            "Month 12-18: Achieve German B1",
+            "Month 21: Apply for Niederlassungserlaubnis (PR)",
+            "Month 24-27: PR approved"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years (reduced to 3 for outstanding contribution)",
+          "processingTime": "12-24 months",
+          "languageRequired": "German B1 minimum",
+          "estimatedYearsFromGraduation": "6-9 years",
+          "note": "New citizenship law 2024 allows dual citizenship - Bangladesh passport can be retained"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification visa - spouse can work upon arrival",
+          "childrenVisa": "Included in family reunification",
+          "parentSponsor": "Possible but limited",
+          "bestTime": "After work permit secured - spouse visa takes 3-6 months",
+          "note": "Spouse needs German A1 for visa (important - start immediately)"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {"year": 2026, "event": "Apply German universities, start German A1, get IELTS"},
+        {"year": 2027, "event": "Begin MSc - take German language courses"},
+        {"year": 2028, "event": "Year 2 MSc - achieve German B1, thesis"},
+        {"year": 2029, "event": "Graduate - job seeker visa, find job in 3 months"},
+        {"year": 2029, "event": "EU Blue Card obtained"},
+        {"year": 2031, "event": "21 months Blue Card + B1 = apply PR"},
+        {"year": 2032, "event": "PR approved - sponsor spouse (A1 German required)"},
+        {"year": 2034, "event": "5 years PR - apply citizenship"},
+        {"year": 2035, "event": "German citizen (dual citizenship allowed from 2024)"}
+      ],
+      "confidenceScore": 88
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "totalJourneyYears": {
+        "mscPathway": "9-12 years",
+        "phdPathway": "10-13 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-12 months",
+          "keyMilestones": [
+            "IELTS Academic 6.5+: 2-3 months prep",
+            "Applications: March-August for February or July intake",
+            "Acceptance: 4-8 weeks",
+            "Student visa (subclass 500): 4-12 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "Year 1-2: Study + networking + internships",
+            "Final semester: Apply graduate visa"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Temporary Graduate Visa (subclass 485)",
+          "duration": "2-4 years (MSc 2-3yr, PhD 4yr)",
+          "processingTime": "2-4 months",
+          "keyMilestones": [
+            "Graduate: Apply 485 visa within 6 months",
+            "Month 3-6: Secure employment",
+            "Month 6-12: Build skills assessment for PR",
+            "Year 2: Apply PR via employer sponsorship or points"
+          ]
+        },
+        "phase4_pr": {
+          "pathwayName": "Skilled Independent (189) or Employer Sponsored (186/482)",
+          "processingTime": "6-18 months",
+          "requirements": [
+            "Skills assessment (ACS for IT)",
+            "Points test 65+ (age, education, English, experience)",
+            "State nomination or employer sponsorship"
+          ],
+          "estimatedYearsFromGraduation": "2-4 years",
+          "keyMilestones": [
+            "Graduate: Skills assessment (3-6 months)",
+            "EOI submitted to SkillSelect",
+            "State nomination or employer TSS 482",
+            "PR granted"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "4 years (1 year as PR, 4 years total)",
+          "processingTime": "12-18 months",
+          "estimatedYearsFromGraduation": "7-10 years",
+          "note": "No dual citizenship option - must renounce Bangladeshi citizenship"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Secondary applicant on 485; open work rights",
+          "childrenVisa": "Included in applications",
+          "parentSponsor": "Contributory Parent Visa - very long wait (10-15 years) and expensive",
+          "bestTime": "Include spouse in 485 application from start",
+          "note": "Include spouse from day 1 on student visa to maximize work rights"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {"year": 2026, "event": "Apply to Go8 universities, IELTS prep"},
+        {"year": 2027, "event": "Begin MSc at Melbourne/Sydney/ANU"},
+        {"year": 2028, "event": "Year 2 - networking, internship, job search"},
+        {"year": 2029, "event": "Graduate - apply 485 visa (2-3yr)"},
+        {"year": 2030, "event": "Secure job - ACS skills assessment - EOI"},
+        {"year": 2031, "event": "PR approved (189/186)"},
+        {"year": 2032, "event": "Spouse PR confirmed"},
+        {"year": 2035, "event": "4-year PR requirement met"},
+        {"year": 2036, "event": "Australian citizenship (renounce BD passport)"}
+      ],
+      "confidenceScore": 82
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "totalJourneyYears": {
+        "mscPathway": "9-12 years",
+        "phdPathway": "9-11 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-9 months",
+          "keyMilestones": [
+            "Studielink application: January 15 (hard deadline for most programs)",
+            "IELTS/TOEFL: 2-3 months prep",
+            "Acceptance: March-May",
+            "MVV entry visa: 4-8 weeks",
+            "Residence permit on arrival: 2 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "4 years (employment contract)",
+          "keyMilestones": [
+            "Register municipality (DigiD, BSN)",
+            "Year 1-2: Study + networking + Dutch language course",
+            "Final year: Job applications"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Orientation Year Permit (Zoekjaar)",
+          "duration": "1 year",
+          "processingTime": "2-4 weeks",
+          "keyMilestones": [
+            "Graduate: Apply orientation year permit",
+            "Month 1-6: Job search and interviews",
+            "Job offer: Switch to Highly Skilled Migrant permit",
+            "HSM permit: Fast-track 2-week processing"
+          ]
+        },
+        "phase4_pr": {
+          "pathwayName": "EU Long-Term Residence Permit",
+          "processingTime": "5 years lawful residence",
+          "requirements": [
+            "5 years continuous residence",
+            "HSM permit during this period",
+            "Civic integration exam (NT2 level)"
+          ],
+          "estimatedYearsFromGraduation": "4-6 years",
+          "note": "Student years count 50% toward 5-year requirement in some cases"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years total residence (some overlap)",
+          "processingTime": "12 months",
+          "languageRequired": "Dutch B1 (NT2)",
+          "estimatedYearsFromGraduation": "6-9 years",
+          "note": "Dutch citizenship requires renunciation of Bangladeshi citizenship (exceptions exist)"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification - work rights immediately",
+          "childrenVisa": "Included",
+          "bestTime": "After Highly Skilled Migrant permit secured",
+          "note": "30% tax ruling applies to main applicant - significant financial benefit"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {"year": 2026, "event": "Apply Studielink by January 15, IELTS"},
+        {"year": 2027, "event": "Begin MSc TU Delft/UvA/TU/e"},
+        {"year": 2028, "event": "Year 2 - Dutch language A2/B1, thesis"},
+        {"year": 2029, "event": "Graduate - orientation year permit"},
+        {"year": 2029, "event": "Job at Booking/ASML/Adyen - HSM permit + 30% ruling"},
+        {"year": 2030, "event": "Sponsor spouse - both working"},
+        {"year": 2034, "event": "5 years residence - EU Long-Term PR"},
+        {"year": 2035, "event": "Apply Dutch citizenship with Dutch B1"}
+      ],
+      "confidenceScore": 84
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "totalJourneyYears": {
+        "mscPathway": "10-14 years",
+        "phdPathway": "9-12 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-10 months",
+          "keyMilestones": [
+            "universityadmissions.se application: January 15",
+            "IELTS 6.5+: 2-3 months prep",
+            "Acceptance: April",
+            "Residence permit for study: 4-10 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "4-5 years (employment)",
+          "keyMilestones": [
+            "Register Skatteverket (tax authority)",
+            "Swedish language SFI course (free)",
+            "Year 2: Job market entry"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Work Permit (employer-tied)",
+          "duration": "Employer-sponsored, initially 2 years renewable",
+          "processingTime": "1-3 months",
+          "keyMilestones": [
+            "Graduate: Apply work permit with job offer",
+            "No dedicated post-study visa - must have job offer",
+            "Critical: Job offer before graduation preferred"
+          ],
+          "criticalNote": "No dedicated post-study work visa - job offer required immediately"
+        },
+        "phase4_pr": {
+          "pathwayName": "Permanent Residence (permanent uppehållstillstånd)",
+          "processingTime": "4 years continuous legal residence",
+          "requirements": [
+            "4 years work permit (or combined study+work)",
+            "Self-support requirement met",
+            "No serious criminal offenses"
+          ],
+          "estimatedYearsFromGraduation": "3-5 years"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "Must have 5 years legal residence total",
+          "processingTime": "6-18 months",
+          "languageRequired": "No formal test but Swedish A2+ recommended",
+          "estimatedYearsFromGraduation": "7-11 years",
+          "note": "No language test for citizenship - unique advantage; dual citizenship allowed from 2001"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification - work permit rights",
+          "childrenVisa": "Included",
+          "bestTime": "After PR secured",
+          "note": "Housing shortage in Stockholm makes family relocation practically challenging"
+        }
+      },
+      "sampleTimeline_PhD": [
+        {"year": 2026, "event": "Apply KTH/Chalmers PhD positions, IELTS"},
+        {"year": 2027, "event": "Begin PhD (salaried employment)"},
+        {"year": 2031, "event": "Graduate PhD - apply work permit (job offer lined up)"},
+        {"year": 2031, "event": "4 years residence = apply permanent residence"},
+        {"year": 2032, "event": "PR approved - sponsor spouse"},
+        {"year": 2034, "event": "5 years total residence - citizenship eligible"},
+        {"year": 2035, "event": "Swedish citizen (dual with BD allowed)"}
+      ],
+      "confidenceScore": 80
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "totalJourneyYears": {
+        "mscPathway": "9-12 years",
+        "phdPathway": "8-11 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-10 months",
+          "keyMilestones": [
+            "studyinfo.fi applications: January",
+            "IELTS 6.0+: 2-3 months",
+            "Acceptance: March-May",
+            "Residence permit: 4-8 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "4 years (salaried)",
+          "keyMilestones": [
+            "Finnish language course (free SuomiAreena)",
+            "Build Finnish professional network",
+            "Aalto/Helsinki best for AI"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Extended Residence Permit for job search",
+          "duration": "1 year after graduation",
+          "processingTime": "4-8 weeks",
+          "keyMilestones": [
+            "Graduate: Apply 1-year job search extension",
+            "Find job: Specialist permit or employer-sponsored",
+            "Finnish language B1+ helps significantly for jobs"
+          ]
+        },
+        "phase4_pr": {
+          "pathwayName": "Permanent Residence Permit (jatkuva oleskelulupa P)",
+          "processingTime": "4 years continuous residence",
+          "requirements": [
+            "4 years on continuous residence permits",
+            "Self-sufficiency",
+            "No serious violations"
+          ],
+          "estimatedYearsFromGraduation": "3-5 years"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "Total 5 years continuous residence",
+          "processingTime": "12-24 months",
+          "languageRequired": "Finnish or Swedish B1",
+          "estimatedYearsFromGraduation": "7-10 years",
+          "note": "Finnish language is the main investment required; dual citizenship allowed"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification permit - work rights",
+          "childrenVisa": "Included",
+          "note": "Free daycare and education system excellent for children"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {"year": 2026, "event": "Apply Aalto MSc - scholarship if possible, Finnish A1"},
+        {"year": 2027, "event": "Begin MSc Aalto/Helsinki - Finnish language courses"},
+        {"year": 2028, "event": "Year 2 - Finnish A2/B1, thesis, job search"},
+        {"year": 2029, "event": "Graduate - 1-year job search permit"},
+        {"year": 2029, "event": "Job secured at Nokia/Aalto spin-off"},
+        {"year": 2033, "event": "4 years residence - permanent residence"},
+        {"year": 2034, "event": "Finnish citizenship (Finnish B1 required)"}
+      ],
+      "confidenceScore": 81
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "totalJourneyYears": {
+        "mscPathway": "9-12 years",
+        "phdPathway": "8-10 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-10 months",
+          "keyMilestones": [
+            "optagelse.dk or direct applications: March deadline",
+            "IELTS 6.5+",
+            "Acceptance: June-July",
+            "Study permit: 4-8 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3 years (salaried)",
+          "keyMilestones": [
+            "CPR number registration",
+            "Danish language course (free Danskuddannelse)",
+            "DTU/Copenhagen strongest for AI"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Job Search Permit (Jobsøgertilladelse)",
+          "duration": "6 months",
+          "processingTime": "2-4 weeks",
+          "keyMilestones": [
+            "6-month window to find job",
+            "Job found: Apply Positive List or Pay Limit Scheme permit",
+            "Pay Limit Scheme: salary above DKK 464,000/year"
+          ],
+          "criticalNote": "Only 6 months - start job search 6 months before graduation"
+        },
+        "phase4_pr": {
+          "pathwayName": "Permanent Residence Permit",
+          "processingTime": "4-8 years depending on pathway",
+          "requirements": [
+            "8 years general OR 4 years fast-track",
+            "Fast-track: Danish B1, employment, self-support, passed tests",
+            "Citizen test required"
+          ],
+          "estimatedYearsFromGraduation": "4-8 years"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "9 years total residence normally OR 7 years with A2 Danish",
+          "processingTime": "12-18 months",
+          "languageRequired": "Danish Prøve i Dansk 3 (B1+)",
+          "estimatedYearsFromGraduation": "8-12 years",
+          "note": "Dual citizenship allowed since 2015"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification - 24-year rule applies (both must be 24+)",
+          "note": "Strict family reunification rules; Denmark known for conservative policies here"
+        }
+      },
+      "sampleTimeline_PhD": [
+        {"year": 2026, "event": "Apply DTU PhD positions, IELTS"},
+        {"year": 2027, "event": "Begin PhD DTU (salaried) - Danish language"},
+        {"year": 2030, "event": "Graduate - 6-month job search permit"},
+        {"year": 2030, "event": "Job at Novo Nordisk/Vestas/Maersk"},
+        {"year": 2034, "event": "4-year fast-track PR (with Danish B1 + tests)"},
+        {"year": 2035, "event": "Citizenship application (9yr total)"},
+        {"year": 2037, "event": "Danish citizen (dual allowed)"}
+      ],
+      "confidenceScore": 79
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "totalJourneyYears": {
+        "mscPathway": "8-11 years",
+        "phdPathway": "7-9 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-9 months",
+          "keyMilestones": [
+            "Direct university applications: December-April",
+            "IELTS 6.0+",
+            "No tuition fees - just living cost planning",
+            "Student residence permit: 4-8 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years (salaried)",
+          "keyMilestones": [
+            "No tuition - strong financial advantage",
+            "Norwegian language Norskkurs (free)",
+            "NTNU Bergen Oslo best options"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Job Seeker Permit",
+          "duration": "1 year",
+          "processingTime": "2-4 weeks",
+          "keyMilestones": [
+            "Graduate: Apply 1-year job seeker permit",
+            "Month 1-6: Job search",
+            "Job found: Skilled worker permit"
+          ]
+        },
+        "phase4_pr": {
+          "pathwayName": "Permanent Residence Permit",
+          "processingTime": "3 years continuous residence on work permit",
+          "requirements": [
+            "3 years skilled worker permit",
+            "Self-support",
+            "Norwegian A2 recommended"
+          ],
+          "estimatedYearsFromGraduation": "3-4 years",
+          "note": "One of fastest PR pathways globally"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "Total 7 years residence",
+          "processingTime": "12-18 months",
+          "languageRequired": "Norwegian A2+",
+          "estimatedYearsFromGraduation": "6-8 years",
+          "note": "Dual citizenship allowed since 2020 - Bangladesh passport retained"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification - work rights immediately",
+          "childrenVisa": "Included",
+          "note": "Generous family benefits; free education including university for children"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {"year": 2026, "event": "Apply NTNU/Oslo - no tuition, save for living costs"},
+        {"year": 2027, "event": "Begin MSc - Norwegian language course"},
+        {"year": 2028, "event": "Year 2 - Norwegian A2, thesis"},
+        {"year": 2029, "event": "Graduate - 1-year job seeker permit"},
+        {"year": 2029, "event": "Job at NTNU spinoff/Equinor/Telenor"},
+        {"year": 2032, "event": "3 years work = permanent residence"},
+        {"year": 2033, "event": "Sponsor spouse - both working"},
+        {"year": 2034, "event": "7 years total = citizenship (keep BD passport)"}
+      ],
+      "confidenceScore": 84
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "totalJourneyYears": {
+        "mscPathway": "13-16 years",
+        "phdPathway": "12-15 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "8-12 months",
+          "keyMilestones": [
+            "ETH/EPFL applications: December 15",
+            "TOEFL/IELTS + GRE",
+            "Acceptance: March-April",
+            "Student permit: 4-8 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "1.5-2 years",
+          "phdDuration": "4-5 years (salaried)",
+          "keyMilestones": [
+            "Register Gemeinde (municipality)",
+            "Learn local language (German/French by canton)",
+            "ETH stipend: CHF 3,900-4,600/month PhD"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Work Permit L/B (employer-tied)",
+          "duration": "Employer sponsored initially 1 year, renewable",
+          "processingTime": "4-8 weeks",
+          "keyMilestones": [
+            "Graduate: Job offer from Swiss employer",
+            "Employer applies for work permit",
+            "L permit (1yr) → B permit (5yr)"
+          ],
+          "criticalNote": "No dedicated post-study visa; job offer essential; quota system limits non-EU permits"
+        },
+        "phase4_pr": {
+          "pathwayName": "C Permit (Niederlassungsbewilligung)",
+          "processingTime": "5-10 years continuous residence",
+          "requirements": [
+            "5 years B permit for EU (not applicable)",
+            "10 years residence for non-EU",
+            "Language proficiency",
+            "Integration criteria"
+          ],
+          "estimatedYearsFromGraduation": "8-12 years",
+          "note": "Longest PR timeline among all analyzed countries"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "10 years residence (C permit for 1-3 years first)",
+          "processingTime": "12-24 months",
+          "languageRequired": "Local language B1+",
+          "estimatedYearsFromGraduation": "12-16 years",
+          "note": "Canton and commune must also approve; very localized process"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification - work rights",
+          "note": "Housing in Zurich/Geneva extremely expensive; plan finances carefully"
+        }
+      },
+      "sampleTimeline_PhD": [
+        {"year": 2026, "event": "Apply ETH/EPFL PhD - extremely competitive"},
+        {"year": 2027, "event": "Begin PhD ETH Zurich (CHF 4,000/month)"},
+        {"year": 2031, "event": "Graduate - job at Google Zurich/ABB/Roche"},
+        {"year": 2031, "event": "B permit obtained"},
+        {"year": 2036, "event": "5 years B permit - apply C permit (10yr rule for non-EU)"},
+        {"year": 2041, "event": "10 years - C permit and citizenship eligible"},
+        {"year": 2043, "event": "Swiss citizenship (long process)"}
+      ],
+      "confidenceScore": 78,
+      "criticalNote": "Longest immigration pathway; best salaries but hardest PR/citizenship"
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "totalJourneyYears": {
+        "mscPathway": "10-14 years",
+        "phdPathway": "11-15 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-10 months",
+          "keyMilestones": [
+            "CAO/direct applications: February-May",
+            "IELTS 6.5+",
+            "Acceptance: August",
+            "Study visa: 4-8 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "1-2 years",
+          "phdDuration": "4 years",
+          "keyMilestones": [
+            "IRP registration on arrival",
+            "PPS number for work/tax",
+            "Year 2: Job market preparation"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Third Level Graduate Programme Stay",
+          "duration": "2 years (NFQ Level 9+)",
+          "processingTime": "4-8 weeks",
+          "keyMilestones": [
+            "Graduate: Apply 2-year graduate stay",
+            "Month 1-6: Job at Big Tech company",
+            "Apply Critical Skills Employment Permit"
+          ]
+        },
+        "phase4_pr": {
+          "pathwayName": "Long-Term Residence (Stamp 4)",
+          "processingTime": "5 years legal residence",
+          "requirements": [
+            "5 years legal continuous residence",
+            "Critical Skills EP or work permit",
+            "Tax compliance"
+          ],
+          "estimatedYearsFromGraduation": "4-6 years"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years residence (1 of which must be immediately before application)",
+          "processingTime": "18-24 months (backlog in Ireland)",
+          "languageRequired": "English (no formal test)",
+          "estimatedYearsFromGraduation": "8-12 years",
+          "note": "No dual citizenship restriction - Bangladesh passport retained"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification - Stamp 3 (limited work) or Stamp 1G",
+          "note": "Housing crisis in Dublin severely impacts family quality of life"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {"year": 2026, "event": "Apply TCD/UCD MSc, IELTS"},
+        {"year": 2027, "event": "Begin MSc Dublin"},
+        {"year": 2028, "event": "Graduate - 2-year graduate stay permit"},
+        {"year": 2028, "event": "Job at Google/Meta/Amazon Dublin"},
+        {"year": 2029, "event": "Critical Skills Employment Permit"},
+        {"year": 2033, "event": "5 years - Long-Term Residence (Stamp 4)"},
+        {"year": 2034, "event": "Citizenship application"},
+        {"year": 2036, "event": "Irish citizen (EU passport - huge benefit)"}
+      ],
+      "confidenceScore": 76,
+      "keyBenefit": "Irish citizenship = EU passport - enables working across all EU countries"
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "totalJourneyYears": {
+        "mscPathway": "12-16 years",
+        "phdPathway": "11-14 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "8-14 months",
+          "keyMilestones": [
+            "MEXT application: April-May (embassy route)",
+            "JLPT N4/N3 helpful",
+            "IELTS 6.0+ for English programs",
+            "Acceptance: November-December",
+            "Student visa: 4-6 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3 years",
+          "keyMilestones": [
+            "Japanese language intensive (critical)",
+            "Target N2 by graduation",
+            "Lab integration with Japanese colleagues"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Engineer/Specialist in Humanities work visa",
+          "duration": "1-5 years renewable",
+          "processingTime": "1-3 months",
+          "keyMilestones": [
+            "Graduate: Job offer needed (companies recruit spring only)",
+            "Work visa: Engineer category",
+            "Japanese N2 critical for corporate jobs",
+            "N3 minimum for international company roles"
+          ],
+          "criticalNote": "Japanese hiring cycle is April-only for new grads; plan accordingly"
+        },
+        "phase4_pr": {
+          "pathwayName": "Permanent Residency (eijuken)",
+          "processingTime": "10 years general OR 1 year Highly Skilled Professional",
+          "requirements": [
+            "HSP points 70+ = 3 years to PR",
+            "HSP points 80+ = 1 year to PR",
+            "PhD + Japanese + salary = high points",
+            "Tax compliance, good behavior"
+          ],
+          "estimatedYearsFromGraduation": "1-5 years via HSP",
+          "note": "Highly Skilled Professional visa fastest PR in Japan - target this"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years residence total (no double citizenship required for PR)",
+          "processingTime": "12-24 months",
+          "languageRequired": "Japanese N2 minimum",
+          "estimatedYearsFromGraduation": "8-13 years",
+          "note": "CRITICAL: Japan requires renunciation of Bangladeshi citizenship for naturalization"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Dependent visa - spouse can apply for work permission",
+          "note": "Children assimilate well in Japan school system but Japanese language essential"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {"year": 2026, "event": "Apply MEXT scholarship - April application"},
+        {"year": 2027, "event": "Begin Japanese language + MSc Tokyo/Kyoto"},
+        {"year": 2028, "event": "Year 2 - JLPT N2 target, research"},
+        {"year": 2029, "event": "Graduate - job (April hiring) at Sony/Toyota/NTT"},
+        {"year": 2030, "event": "Apply HSP visa - target 70+ points"},
+        {"year": 2032, "event": "3 years HSP = PR eligible"},
+        {"year": 2033, "event": "PR approved - sponsor spouse"},
+        {"year": 2034, "event": "Total 5 years - citizenship eligible"},
+        {"year": 2036, "event": "Japanese citizen (must renounce Bangladesh)"}
+      ],
+      "confidenceScore": 77
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "totalJourneyYears": {
+        "mscPathway": "11-14 years",
+        "phdPathway": "10-13 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "6-10 months",
+          "keyMilestones": [
+            "GKS application: September-October",
+            "TOPIK I/II helpful",
+            "IELTS 5.5-6.0+",
+            "Acceptance: February-March",
+            "Student visa (D-2): 4-6 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "GKS includes 1-year Korean language training",
+            "Target TOPIK II Level 4 by year 2",
+            "KAIST/SNU/POSTECH strongest"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Job Seeker Visa (D-10)",
+          "duration": "6 months - 1 year",
+          "processingTime": "2-4 weeks",
+          "keyMilestones": [
+            "Graduate: D-10 job seeker visa",
+            "Find job: E-7 Specialist/Professor or equivalent",
+            "Korean TOPIK 4+ for most corporate roles"
+          ]
+        },
+        "phase4_pr": {
+          "pathwayName": "F-5 Permanent Residence",
+          "processingTime": "Varies: 2-10 years depending on pathway",
+          "requirements": [
+            "F-2 resident visa first: 1+ year on E-7",
+            "F-5: 5 years in Korea OR points-based system",
+            "TOPIK Level 4+, income requirements"
+          ],
+          "estimatedYearsFromGraduation": "5-8 years"
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years F-5 status + other criteria",
+          "processingTime": "12-18 months",
+          "languageRequired": "TOPIK Level 3+",
+          "estimatedYearsFromGraduation": "9-12 years",
+          "note": "Korea does NOT allow dual citizenship (with limited exceptions) - must renounce Bangladesh passport"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "F-3 dependent - limited work rights initially",
+          "note": "Korean education system excellent but Korean language essential for children"
+        }
+      },
+      "sampleTimeline_PhD": [
+        {"year": 2026, "event": "Apply GKS scholarship + KAIST direct"},
+        {"year": 2026, "event": "1-year Korean language training (GKS included)"},
+        {"year": 2027, "event": "Begin PhD KAIST - TOPIK II target"},
+        {"year": 2030, "event": "Graduate PhD - D-10 job seeker"},
+        {"year": 2031, "event": "Job at Samsung/Naver/Kakao - E-7 visa"},
+        {"year": 2033, "event": "F-2 resident visa"},
+        {"year": 2036, "event": "F-5 permanent residence"},
+        {"year": 2038, "event": "Korean citizenship (must renounce BD)"}
+      ],
+      "confidenceScore": 75
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "totalJourneyYears": {
+        "mscPathway": "Not recommended as permanent pathway",
+        "phdPathway": "Use as 5-7 year career accelerator then relocate"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "4-8 months",
+          "keyMilestones": [
+            "CSC application: January-April",
+            "HSK 4+ helpful (not required for English programs)",
+            "Acceptance: June-July",
+            "Student visa (X1/X2): 4-6 weeks"
+          ]
+        },
+        "phase2_study": {
+          "mscDuration": "2-3 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "HSK 4-6 for career (critical)",
+            "Network with industry (ByteDance, Alibaba camps)",
+            "Publish in top venues"
+          ]
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Work Permit for Foreigners (Type B/A)",
+          "duration": "Employer-tied, renewable",
+          "processingTime": "4-8 weeks",
+          "keyMilestones": [
+            "Type B: Regular skilled worker",
+            "Type A: High-end talent (PhD + publications + high salary)",
+            "HSK 5+ for most professional environments"
+          ]
+        },
+        "phase4_pr": {
+          "pathwayName": "Permanent Residence (Zhongguolüka - China Green Card)",
+          "processingTime": "Highly selective - effective PR very rare",
+          "requirements": [
+            "Category A (talent): PhD + significant contribution + recommendation",
+            "Category B: 4 consecutive years work + high salary + employer endorsement",
+            "Very discretionary process"
+          ],
+          "estimatedYearsFromGraduation": "8-15+ years (if achievable)",
+          "note": "Only 10,000-20,000 green cards issued per year in entire China - extremely difficult"
+        },
+        "phase5_citizenship": {
+          "note": "Chinese citizenship essentially unavailable for foreigners - do not plan for this",
+          "recommendation": "Use China as 5-7 year career platform then move to Canada/Germany/Australia"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Dependent visa (S1/S2) - no automatic work rights",
+          "note": "Internet restrictions significantly impact quality of life for family"
+        }
+      },
+      "sampleTimeline_Realistic": [
+        {"year": 2026, "event": "Apply CSC scholarship - Tsinghua/Peking"},
+        {"year": 2027, "event": "Begin PhD - study HSK + publish intensively"},
+        {"year": 2030, "event": "Graduate PhD - Type B work permit at ByteDance/Alibaba"},
+        {"year": 2031, "event": "Build publications, international reputation"},
+        {"year": 2033, "event": "Apply Canada Express Entry (foreign PhD + experience)"},
+        {"year": 2033, "event": "OR apply Germany Blue Card with strong profile"},
+        {"year": 2034, "event": "Relocate to Canada/Germany with excellent credentials"}
+      ],
+      "strategicNote": "China is best treated as a 5-7 year investment: get world-class AI research experience + publications + industry exposure, then use that strong profile to fast-track immigration in Canada, Germany, or Netherlands",
+      "confidenceScore": 79
+    }
+  ],
+  "criticalTimingRules": {
+    "universalRules": [
+      "Never let any visa/permit expire - maintain legal status continuously",
+      "Apply for next permit 3 months before current expires",
+      "PR applications: submit immediately when eligible, do not delay",
+      "Language tests: take early, retake if needed, valid scores maintained",
+      "Always have 6 months emergency fund at every stage"
+    ],
+    "bangladeshiSpecific": [
+      "Bangladesh has no dual citizenship - time citizenship renunciation carefully",
+      "Australia, South Korea, and some others require renunciation - major life decision",
+      "Germany, Sweden, Norway, Ireland, Netherlands allow dual - much safer",
+      "Police clearance from Bangladesh: apply 3 months in advance (processing slow)",
+      "Bangladesh passport renewal: renew before expiry even while abroad"
+    ],
+    "familyRelocationTiming": [
+      "Spouse: bring after PR application approved or work permit secured",
+      "Children: bring when school placement and housing secured",
+      "Parents: most countries very difficult - plan Super Visa (Canada) or extended visits",
+      "Do NOT bring family on student visa - financial strain and uncertainty too high"
+    ]
+  }
+}
