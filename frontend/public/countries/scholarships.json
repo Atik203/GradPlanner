@@ -1,0 +1,1271 @@
+
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Comprehensive scholarship database for Bangladeshi CS/AI/ML students planning 2027-2029 intake for MSc/PhD abroad",
+    "targetProfile": "Bangladeshi student, CS/AI/ML/Data Science/Robotics/Software Engineering, age 20-28, BSc completed or final year",
+    "criticalNote": "Scholarship is not just financial aid - it determines visa eligibility, housing priority, post-study work rights activation, and PR pathway speed. A fully funded scholarship can save USD 80,000-200,000 over study duration and compress the entire GradPlanner timeline by 2-3 years.",
+    "scholarshipPhilosophy": "For Bangladeshi students, the hierarchy is: (1) Full funding covering tuition+living, (2) Tuition-only with livable stipend from TA/RA, (3) Partial funding with part-time work supplement, (4) Self-funded only as last resort for high ROI destinations",
+    "bangladeshSpecificNote": "Bangladesh is classified as a developing country / LDC (Least Developed Country) by UN until 2026 graduation. This LDC status opens specific scholarship windows at EU, UN, and bilateral programs. Apply strategically before LDC graduation status changes.",
+    "applicationTimeline": {
+      "2027intake": "Apply scholarships September 2025 - January 2026 for most programs",
+      "2028intake": "Apply scholarships September 2026 - January 2027",
+      "2029intake": "Apply scholarships September 2027 - January 2028"
+    }
+  },
+  "scholarships": [
+    {
+      "id": "DAAD-GSSP",
+      "scholarshipName": "DAAD Graduate School Scholarship Programme (GSSP)",
+      "provider": "DAAD (Deutscher Akademischer Austauschdienst)",
+      "country": "Germany",
+      "countryCode": "DE",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc", "PhD"],
+      "fieldsCovered": ["Computer Science", "Artificial Intelligence", "Data Science", "Electrical Engineering", "Robotics"],
+      "bangladeshEligible": true,
+      "annualAwards": "Approximately 1,000 globally across all programs",
+      "competitionLevel": "HIGH",
+      "successRateEstimate": "3-8% for CS/AI applicants from South Asia",
+      "funding": {
+        "tuitionCoverage": "FULL - Germany public universities charge no tuition; DAAD covers enrollment fees",
+        "monthlyStipend": { "amount": 934, "currency": "EUR", "usd": 1018, "note": "MSc level 2026 rate; PhD EUR 1,200-1,365/month" },
+        "healthInsurance": "Covered up to EUR 36/month supplement",
+        "travelAllowance": "One-time travel grant up to EUR 1,000 from Bangladesh",
+        "familyAllowance": "EUR 276/month for accompanying spouse; EUR 276 per child",
+        "researchAllowance": "Annual research/material allowance EUR 460",
+        "totalAnnualValueUSD": "14000-18000 depending on family status"
+      },
+      "eligibility": {
+        "gpa": "Minimum 3.0/4.0 or equivalent; competitive applicants 3.5+",
+        "ageLimit": "32 years for MSc; 36 for PhD at time of application",
+        "languageRequirement": "German B1 OR English B2/IELTS 6.0+ depending on program language",
+        "workExperience": "2+ years preferred but not mandatory",
+        "bangladeshSpecific": "Must apply through DAAD New Delhi office (covers Bangladesh); strong research proposal required"
+      },
+      "applicationProcess": {
+        "portal": "https://www.daad.de/en/",
+        "documentsRequired": ["Motivation letter", "Research proposal (PhD)", "CV", "Transcripts", "2-3 recommendation letters", "Language certificate", "Portfolio if applicable"],
+        "typicalDeadline": "October-November for following year intake",
+        "processingTime": "4-6 months",
+        "interviewRequired": true,
+        "interviewFormat": "Online video interview with academic panel"
+      },
+      "strategicValue": {
+        "prPathwayImpact": "Germany Blue Card eligibility from day 1 of employment post-study; EU Settlement after 21 months",
+        "networkValue": "DAAD alumni network 550,000+ globally; active in industry and academia",
+        "renewability": "Annual renewal based on academic performance",
+        "probabilityAssessment": "For top CS/AI Bangladeshi applicants with CGPA 3.6+, GRE 320+, strong SOP: 15-25% success rate"
+      },
+      "confidenceScore": 90,
+      "recommendation": "TIER 1 PRIORITY - Apply simultaneously with university applications to TU Munich, KIT, RWTH Aachen, TU Berlin for CS/AI programs"
+    },
+    {
+      "id": "DAAD-DEV",
+      "scholarshipName": "DAAD Development-Related Postgraduate Courses",
+      "provider": "DAAD",
+      "country": "Germany",
+      "countryCode": "DE",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc"],
+      "fieldsCovered": ["Computer Science", "Information Systems", "Data Science for Development", "Computational Engineering"],
+      "bangladeshEligible": true,
+      "annualAwards": "800+ globally",
+      "competitionLevel": "MEDIUM-HIGH",
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "monthlyStipend": { "amount": 934, "currency": "EUR", "usd": 1018 },
+        "healthInsurance": "Included",
+        "travelAllowance": "Included",
+        "totalAnnualValueUSD": "13000-16000"
+      },
+      "eligibility": {
+        "gpa": "Minimum 3.0/4.0",
+        "ageLimit": "36 years",
+        "workExperience": "2 years post-graduation work experience REQUIRED - key differentiator",
+        "developmentFocus": "Must demonstrate commitment to return and contribute to Bangladesh development",
+        "bangladeshSpecific": "Bangladesh as LDC/developing country is prioritized category"
+      },
+      "applicationProcess": {
+        "portal": "https://www.daad.de/en/study-and-research-in-germany/scholarships/",
+        "typicalDeadline": "October annually",
+        "interviewRequired": false,
+        "processingTime": "3-5 months"
+      },
+      "strategicValue": {
+        "bangladeshAdvantage": "Development focus means Bangladesh applicants compete in smaller, more favorable pool",
+        "returnObligationNote": "Technically encourages return but not legally binding; many recipients transition to skilled worker visa",
+        "probabilityAssessment": "For applicants with 2+ years work experience and development-focused research: 20-30% success"
+      },
+      "confidenceScore": 85,
+      "recommendation": "STRONG OPTION especially for applicants with 2+ years work experience post-BSc"
+    },
+    {
+      "id": "AUSTRALIA-RTP",
+      "scholarshipName": "Research Training Program (RTP) Scholarship",
+      "provider": "Australian Government / Host University",
+      "country": "Australia",
+      "countryCode": "AU",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["PhD", "MRes"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science", "Robotics", "Software Engineering"],
+      "bangladeshEligible": true,
+      "annualAwards": "3,900 nationally; allocated per university",
+      "competitionLevel": "HIGH",
+      "successRateEstimate": "5-12% for international CS/AI applicants",
+      "funding": {
+        "tuitionCoverage": "FULL - international tuition waived entirely",
+        "annualStipend": { "amount": 32192, "currency": "AUD", "usd": 20925, "note": "2026 rate; tax-free; indexed annually to CPI" },
+        "monthlyStipend": { "amount": 2683, "currency": "AUD", "usd": 1745 },
+        "relocationAllowance": "AUD 500-1,500 one-time",
+        "healthInsurance": "OSHC (Overseas Student Health Cover) included",
+        "thesisAllowance": "AUD 840/year for thesis costs",
+        "totalAnnualValueUSD": "40000-55000 (tuition waiver + stipend combined value)"
+      },
+      "eligibility": {
+        "gpa": "First class equivalent; CGPA 3.5+/4.0 or distinction average",
+        "publicationsRequired": "Not mandatory but strongly beneficial; conference papers in IEEE/ACM a major advantage",
+        "supervisorRequired": "Must have confirmed supervisor BEFORE application; email potential supervisors directly",
+        "languageRequirement": "IELTS 6.5 overall (6.0 each band) minimum; 7.0+ competitive",
+        "bangladeshSpecific": "No quota system; pure merit; strong research proposal essential"
+      },
+      "applicationProcess": {
+        "portal": "Apply via individual university websites; major ones: ANU, Melbourne, Sydney, UNSW, Monash, QUT, Adelaide",
+        "supervisorEmailStrategy": "Email 5-10 potential supervisors 6-9 months before deadline with research proposal draft",
+        "typicalDeadline": "October-December for Semester 1 (February) start; March-May for Semester 2 (July) start",
+        "processingTime": "3-6 months",
+        "interviewRequired": true,
+        "interviewFormat": "Video call with potential supervisor and sometimes departmental committee"
+      },
+      "strategicValue": {
+        "prPathwayImpact": "485 Visa (2 years) post-PhD → Skilled Independent Visa (189) or Employer Sponsored (482→186); strong pathway",
+        "universityRankingStrategy": "Apply to Group of Eight (Go8): ANU, Melbourne, Sydney, UNSW, Monash, UQ, UWA, Adelaide for best research environment",
+        "aiSpecificLabs": "ANU Intelligent Systems; Melbourne School of Engineering AI; UNSW AI Institute; QUT Centre for Robotics",
+        "probabilityAssessment": "Strong Bangladeshi applicant CGPA 3.7+, IELTS 7.0+, research proposal, supervisor interest: 20-35% per application; apply to 5-8 universities"
+      },
+      "confidenceScore": 92,
+      "recommendation": "TIER 1 PRIORITY for PhD. Best combination of full funding, research quality, and PR pathway. Supervisor outreach is the critical success factor - start 9 months before intended start."
+    },
+    {
+      "id": "AUSTRALIA-ENDEAVOUR",
+      "scholarshipName": "Australia Awards Scholarships (formerly Endeavour)",
+      "provider": "Australian Government (DFAT)",
+      "country": "Australia",
+      "countryCode": "AU",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc", "PhD"],
+      "fieldsCovered": ["All fields including CS/AI/Data Science"],
+      "bangladeshEligible": true,
+      "annualAwards": "Approximately 15-25 for Bangladesh annually",
+      "competitionLevel": "VERY HIGH - limited Bangladesh quota",
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "annualStipend": { "amount": 30240, "currency": "AUD", "usd": 19656, "note": "Living allowance AUD 2,520/month" },
+        "airfare": "Return economy airfare covered",
+        "healthInsurance": "OSHC covered",
+        "establishmentAllowance": "AUD 5,000 one-time",
+        "totalAnnualValueUSD": "55000-70000 combined tuition + living value"
+      },
+      "eligibility": {
+        "gpa": "Very high; top 10% of graduating class expected",
+        "ageLimit": "No strict upper limit but younger applicants preferred",
+        "workExperience": "Preferred; community leadership valued",
+        "languageRequirement": "IELTS 6.5+",
+        "bangladeshSpecific": "Must not have spent more than 6 months in Australia in last 3 years; apply through Bangladesh Australian High Commission"
+      },
+      "applicationProcess": {
+        "portal": "https://www.australiaawards.gov.au/",
+        "typicalDeadline": "April-June for following year intake",
+        "interviewRequired": true,
+        "bangladeshOffice": "Australian High Commission Dhaka manages Bangladesh quota"
+      },
+      "confidenceScore": 80,
+      "recommendation": "Apply simultaneously with RTP. Limited Bangladesh quota makes this competitive but the full package value is exceptional."
+    },
+    {
+      "id": "CANADA-VANIER",
+      "scholarshipName": "Vanier Canada Graduate Scholarships",
+      "provider": "Government of Canada (tri-council)",
+      "country": "Canada",
+      "countryCode": "CA",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science", "Engineering"],
+      "bangladeshEligible": true,
+      "annualAwards": "166 nationally; open to internationals nominated by Canadian universities",
+      "competitionLevel": "EXTREMELY HIGH",
+      "funding": {
+        "tuitionCoverage": "Not directly; but stipend covers typical PhD tuition",
+        "annualStipend": { "amount": 50000, "currency": "CAD", "usd": 37000, "note": "3 years; CAD 50,000/year; among Canada's highest PhD awards" },
+        "totalAnnualValueUSD": "37000/year for 3 years"
+      },
+      "eligibility": {
+        "gpa": "First class standing; 3.7+/4.0 mandatory",
+        "nominationRequired": "MUST be nominated by Canadian university; cannot apply directly",
+        "publicationsRequired": "Strong publication record expected; at minimum strong conference papers",
+        "leadershipRequired": "Demonstrated leadership is explicit evaluation criterion",
+        "bangladeshSpecific": "International students eligible; nominating university is the bottleneck"
+      },
+      "applicationProcess": {
+        "portal": "https://vanier.gc.ca/",
+        "process": "Secure Canadian PhD admission first → ask supervisor to nominate for Vanier → supervisor submits nomination package",
+        "typicalDeadline": "November (university internal deadline); national deadline usually later",
+        "interviewRequired": false,
+        "processingTime": "6-8 months"
+      },
+      "strategicValue": {
+        "prPathwayImpact": "Vanier holder's profile greatly strengthens Express Entry CRS score via provincial nomination programs",
+        "networkValue": "Vanier community is Canada's elite research network",
+        "probabilityAssessment": "Extremely selective; 5-10% of nominees receive; focus on getting nomination first by impressing supervisor"
+      },
+      "confidenceScore": 82,
+      "recommendation": "Aspirational tier. Pursue if admitted to top Canadian CS program (UofT, UBC, McGill, Waterloo, Alberta). Ask supervisor about Vanier nomination in first meeting."
+    },
+    {
+      "id": "CANADA-NSERC-PGS",
+      "scholarshipName": "NSERC Postgraduate Scholarships-Doctoral (PGS-D)",
+      "provider": "Natural Sciences and Engineering Research Council of Canada",
+      "country": "Canada",
+      "countryCode": "CA",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Robotics", "Data Science"],
+      "bangladeshEligible": false,
+      "bangladeshEligibilityNote": "Canadian citizens and permanent residents only. International students NOT eligible. However, if you obtain Canadian PR during studies (via Express Entry or PNP), you may become eligible.",
+      "annualAwards": "Approximately 3,700 nationally",
+      "funding": {
+        "annualStipend": { "amount": 21000, "currency": "CAD", "usd": 15540, "note": "PGS-D rate; up to 3 years" }
+      },
+      "confidenceScore": 88,
+      "recommendation": "Not directly applicable but note: obtaining Canadian PR during studies (possible via Express Entry with job offer or CRS score) makes you eligible for subsequent NSERC CGS-D at CAD 35,000/year. Long-term planning consideration."
+    },
+    {
+      "id": "NETHERLANDS-NFP",
+      "scholarshipName": "Netherlands Fellowship Programme (NFP) / Orange Knowledge Programme",
+      "provider": "Netherlands Ministry of Foreign Affairs / Nuffic",
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc"],
+      "fieldsCovered": ["Computer Science", "Data Science", "AI for Development", "Information Technology"],
+      "bangladeshEligible": true,
+      "bangladeshPriorityStatus": "HIGH - Bangladesh is an OKP partner country with dedicated quota",
+      "annualAwards": "Approximately 30-50 for Bangladesh across all fields",
+      "competitionLevel": "MEDIUM (due to dedicated Bangladesh quota)",
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "monthlyLivingAllowance": { "amount": 1200, "currency": "EUR", "usd": 1308 },
+        "airfare": "Return economy covered",
+        "healthInsurance": "Included",
+        "visaFees": "Covered",
+        "totalAnnualValueUSD": "28000-35000"
+      },
+      "eligibility": {
+        "gpa": "Good academic standing; 3.0+",
+        "workExperience": "2 years post-graduation employment REQUIRED",
+        "ageLimit": "45 years maximum",
+        "employerEndorsement": "Must have employer or organization letter of support in Bangladesh",
+        "bangladeshSpecific": "Must have lived in Bangladesh for at least 24 months before application; must return to Bangladesh after studies (enforced)"
+      },
+      "applicationProcess": {
+        "portal": "https://www.nuffic.nl/en/subjects/orange-knowledge-programme",
+        "process": "Apply to Dutch university first → once conditionally admitted → apply for OKP scholarship",
+        "typicalDeadline": "February for September intake; some programs November deadline",
+        "interviewRequired": false,
+        "processingTime": "3-4 months"
+      },
+      "returnObligation": {
+        "required": true,
+        "duration": "Must return to Bangladesh for at least 2 years post-study",
+        "enforcement": "Bond/agreement signed; partial scholarship recovery if not returned",
+        "planningNote": "This creates a complication for GradPlanner PR pathway. Consider: complete NFP MSc → return to BD 2 years → apply for Netherlands self-funded PhD or work → OR use the MSc to qualify for other country PR pathways"
+      },
+      "confidenceScore": 85,
+      "recommendation": "STRONG for MSc funding but return obligation conflicts with direct PR pathway. Best strategy: use OKP MSc to build credentials, then pursue PhD in Netherlands or Germany for PR pathway."
+    },
+    {
+      "id": "NETHERLANDS-NWO-PHD",
+      "scholarshipName": "NWO PhD Employment Position",
+      "provider": "Dutch Research Council (NWO) / Host University",
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "type": "EMPLOYMENT_CONTRACT",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science", "Robotics"],
+      "bangladeshEligible": true,
+      "annualAwards": "Hundreds across Dutch universities; CS/AI particularly active",
+      "competitionLevel": "HIGH but manageable with strong profile",
+      "funding": {
+        "tuitionCoverage": "FULL - PhD is employment, not student status",
+        "monthlyGross": { "amount": 2872, "currency": "EUR", "usd": 3131, "note": "Year 1 of AIO (Assistant-in-Opleiding) scale; rises to EUR 3,670 by Year 4" },
+        "netMonthlyEstimate": { "amount": 2100, "currency": "EUR", "usd": 2289, "note": "After 20% income tax + social security; effectively a job" },
+        "holidayAllowance": "8% extra monthly salary in May",
+        "endYearBonus": "8.3% end-of-year bonus",
+        "pensionContribution": "ABP pension scheme included",
+        "healthInsurance": "Zorgtoeslag subsidy; employee arranges own ZVW insurance",
+        "totalAnnualValueUSD": "35000-42000 gross employment value"
+      },
+      "eligibility": {
+        "gpa": "MSc degree (or near completion) with excellent grades",
+        "publicationsRequired": "Not mandatory but MSc thesis of high quality expected",
+        "supervisorMatch": "Must respond to specific advertised PhD position; or approach professor with proposal",
+        "languageRequirement": "English sufficient for research; Dutch not required",
+        "bangladeshSpecific": "No restrictions; Dutch universities actively recruit internationally"
+      },
+      "applicationProcess": {
+        "platforms": ["academictransfer.com", "universityvacancies.com", "jobs.nl", "LinkedIn", "individual university HR portals"],
+        "topUniversities": ["TU Delft", "TU Eindhoven", "University of Amsterdam", "Utrecht University", "Leiden University", "Radboud Nijmegen"],
+        "aiSpecificGroups": "ELLIS (European Laboratory for Learning and Intelligent Systems) units in Amsterdam, Eindhoven",
+        "typicalDeadline": "Rolling; positions advertised year-round",
+        "processingTime": "2-4 months from application to start"
+      },
+      "strategicValue": {
+        "prPathwayImpact": "After 5 years employment (including PhD) → Netherlands permanent residency; 30% tax ruling for first 5 years",
+        "taxRuling30Percent": "30% ruling: 30% of salary tax-free as expatriate benefit; significantly increases net income",
+        "careerValue": "Dutch PhD alumni highly valued at ASML, Philips, Booking.com, Adyen, TomTom",
+        "probabilityAssessment": "For MSc graduates with strong thesis, publications, good English: 25-40% per position applied; apply to 10-15 positions"
+      },
+      "confidenceScore": 90,
+      "recommendation": "TIER 1 PRIORITY for PhD. The employment model (not scholarship) means full social benefits, pension, and the 30% ruling. Better financial package than most scholarships. Eindhoven and Amsterdam are prime targets."
+    },
+    {
+      "id": "SWEDEN-SI",
+      "scholarshipName": "Swedish Institute Scholarships for Global Professionals (SISGP)",
+      "provider": "Swedish Institute (SI)",
+      "country": "Sweden",
+      "countryCode": "SE",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc"],
+      "fieldsCovered": ["Computer Science", "AI", "Data Science", "Electrical Engineering", "Robotics"],
+      "bangladeshEligible": true,
+      "bangladeshPriorityStatus": "MEDIUM-HIGH - Bangladesh listed as priority country",
+      "annualAwards": "Approximately 350 globally; Bangladesh typically receives 5-15 per year",
+      "competitionLevel": "VERY HIGH",
+      "successRateEstimate": "2-5% globally",
+      "funding": {
+        "tuitionCoverage": "FULL - covers international tuition",
+        "monthlyGrant": { "amount": 11000, "currency": "SEK", "usd": 1056, "note": "SEK 11,000/month living grant; SI rate 2026" },
+        "travelGrant": "SEK 15,000 one-time",
+        "insuranceGrant": "Included in package",
+        "totalAnnualValueUSD": "25000-40000 depending on program tuition"
+      },
+      "eligibility": {
+        "gpa": "Very high; top grades in BSc",
+        "workExperience": "3,000 hours (approx 2 years full-time) work experience required",
+        "leadershipRequired": "Leadership and community contribution explicitly evaluated",
+        "languageRequirement": "English IELTS 6.5+ or TOEFL 90+",
+        "bangladeshSpecific": "Must have lived in Bangladesh at least 2 of last 5 years; must intend to return to Bangladesh or developing country after studies",
+        "socialMediaNote": "SI evaluates applicant's public profile and professional network; LinkedIn should be polished"
+      },
+      "applicationProcess": {
+        "portal": "https://si.se/en/apply/scholarships/",
+        "process": "Apply to Swedish university program AND simultaneously apply to SI; university admission is prerequisite",
+        "topUniversities": ["KTH Royal Institute of Technology", "Chalmers University", "Uppsala University", "Linköping University", "Lund University"],
+        "typicalDeadline": "January 15 for September intake; this is firm",
+        "interviewRequired": false,
+        "processingTime": "March-April decision"
+      },
+      "returnObligation": {
+        "required": true,
+        "planningNote": "Return obligation exists but Sweden PhD employment positions do NOT have this restriction; use SI MSc to gain Sweden network and supervisor connection, then apply for PhD employment position"
+      },
+      "confidenceScore": 82,
+      "recommendation": "High value but very competitive. Apply with 2+ years work experience. KTH for AI/ML is world-class. Use SI MSc as stepping stone to Swedish PhD employment position which has no return obligation."
+    },
+    {
+      "id": "SWEDEN-PHD-DOKTORAND",
+      "scholarshipName": "Swedish University PhD Employment (Doktorandtjänst)",
+      "provider": "Swedish Universities / Swedish Research Council (VR)",
+      "country": "Sweden",
+      "countryCode": "SE",
+      "type": "EMPLOYMENT_CONTRACT",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science", "Robotics"],
+      "bangladeshEligible": true,
+      "annualAwards": "Hundreds across Swedish universities",
+      "competitionLevel": "HIGH",
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "monthlyGross": { "amount": 32000, "currency": "SEK", "usd": 3072, "note": "2026 doktorand salary; rises annually; Year 4 approximately SEK 36,000/month" },
+        "netMonthlyEstimate": { "amount": 22000, "currency": "SEK", "usd": 2112, "note": "After 32% municipal tax" },
+        "holidayPay": "25 days paid holiday per year",
+        "parentalLeave": "Full Swedish parental leave included; up to 480 days per child with pay",
+        "sickLeave": "Full Swedish sick pay protection",
+        "pensionContribution": "ITP/Alecta pension scheme",
+        "totalAnnualValueUSD": "35000-42000 gross; comprehensive benefits"
+      },
+      "eligibility": {
+        "gpa": "MSc or equivalent with strong grades",
+        "languageRequirement": "English sufficient; Swedish not required for most positions",
+        "bangladeshSpecific": "No restrictions; Swedish universities internationally open"
+      },
+      "applicationProcess": {
+        "platforms": ["varbi.com (main Swedish academic jobs portal)", "kth.se/work-at-kth", "chalmers.se/en/about-chalmers/work-with-us", "su.se/english/about/working-at-su"],
+        "topUniversitiesForAI": ["KTH Royal Institute of Technology", "Chalmers University of Technology", "Uppsala University", "Linköping University (WASP program)", "Lund University"],
+        "waspProgram": "Wallenberg AI, Autonomous Systems and Software Program (WASP) - Sweden's largest AI research program; SEK 6.5 billion; PhD positions across Swedish universities",
+        "typicalDeadline": "Rolling throughout year",
+        "processingTime": "2-4 months"
+      },
+      "strategicValue": {
+        "waspAdvantage": "WASP program PhD includes industry placement, international exchange, and Wallenberg network - transformative for AI career",
+        "prPathwayImpact": "After 4 years employment → Swedish permanent residence application; 5 years for citizenship",
+        "probabilityAssessment": "With strong MSc from reputable university, good English, clear research fit: 20-35% per application; apply to 10+ positions"
+      },
+      "confidenceScore": 88,
+      "recommendation": "TIER 1 for Sweden PhD. WASP positions are especially valuable - target WASP-affiliated professors at KTH, Chalmers, Linköping. Full employment benefits including parental leave make this excellent for family planning."
+    },
+    {
+      "id": "FINLAND-UNIVERSITY-PHD",
+      "scholarshipName": "Finnish University Doctoral Researcher Position",
+      "provider": "Finnish Universities / Academy of Finland",
+      "country": "Finland",
+      "countryCode": "FI",
+      "type": "EMPLOYMENT_CONTRACT",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science"],
+      "bangladeshEligible": true,
+      "annualAwards": "Hundreds across Finnish universities",
+      "competitionLevel": "MEDIUM-HIGH",
+      "funding": {
+        "tuitionCoverage": "FULL - employment contract covers all costs",
+        "monthlyGross": { "amount": 2500, "currency": "EUR", "usd": 2725, "note": "Year 1-2 researcher salary; Year 3-4 approximately EUR 3,000/month" },
+        "netMonthlyEstimate": { "amount": 1900, "currency": "EUR", "usd": 2071, "note": "After Finnish income tax approximately 24%" },
+        "healthInsurance": "Finnish public healthcare (YTHS for students; occupational healthcare for employees)",
+        "pensionContribution": "TyEL pension scheme",
+        "totalAnnualValueUSD": "28000-36000"
+      },
+      "eligibility": {
+        "gpa": "MSc or equivalent strong",
+        "languageRequirement": "English sufficient; Finnish helpful but not required",
+        "bangladeshSpecific": "No restrictions; Academy of Finland values international diversity"
+      },
+      "applicationProcess": {
+        "platforms": ["academic.fi", "te-palvelut.fi", "university career pages"],
+        "topUniversitiesForAI": ["Aalto University (FCAI - Finnish Center for AI)", "University of Helsinki", "Tampere University", "University of Oulu"],
+        "fcaiNote": "Finnish Center for Artificial Intelligence (FCAI) at Aalto/Helsinki is world-class; specific PhD calls under FCAI umbrella",
+        "typicalDeadline": "Rolling",
+        "processingTime": "2-4 months"
+      },
+      "strategicValue": {
+        "fcaiValue": "FCAI is ranked among Europe's top AI research centers; collaborates with DeepMind, Google, Nokia",
+        "agingPopulationNote": "Finland's severe demographic challenge means long-term immigration need; strategic timing for 2027-2029 entry",
+        "prPathwayImpact": "4 years residence → permanent residence; 5 years → citizenship",
+        "probabilityAssessment": "Strong MSc profile with good English: 25-40% per position"
+      },
+      "confidenceScore": 83,
+      "recommendation": "Excellent option especially for AI research. Aalto FCAI is the prime target. Finland's aging population creates genuine long-term need for skilled immigrants - entering 2027-2029 is strategically timed."
+    },
+    {
+      "id": "FINLAND-SCHOLARSHIP-MSC",
+      "scholarshipName": "Finnish Universities Scholarship Programme (Tuition Fee Waivers + Stipend)",
+      "provider": "Individual Finnish Universities",
+      "country": "Finland",
+      "countryCode": "FI",
+      "type": "PARTIAL_FULL_FUNDING",
+      "degreeLevel": ["MSc"],
+      "fieldsCovered": ["Computer Science", "AI", "Data Science", "Information Technology"],
+      "bangladeshEligible": true,
+      "annualAwards": "Varies by university; Aalto approximately 30-50 waivers + stipend packages",
+      "competitionLevel": "HIGH",
+      "funding": {
+        "tuitionCoverage": "FULL waiver (typically EUR 10,000-18,000/year tuition eliminated)",
+        "monthlyStipend": { "amount": 500, "currency": "EUR", "usd": 545, "note": "Some programs add EUR 500/month stipend; varies by university" },
+        "totalAnnualValueUSD": "13000-22000 in tuition value + limited living support"
+      },
+      "eligibility": {
+        "gpa": "Very high; top 5-10% of BSc class",
+        "languageRequirement": "IELTS 6.5+ or equivalent",
+        "bangladeshSpecific": "Bangladesh explicitly listed as eligible developing country for Aalto scholarship"
+      },
+      "applicationProcess": {
+        "portal": "Apply directly to university admissions portal; scholarship application usually embedded in admission application",
+        "topTargets": ["Aalto University", "University of Helsinki", "Tampere University"],
+        "typicalDeadline": "January for September intake",
+        "processingTime": "2-4 months"
+      },
+      "confidenceScore": 80,
+      "recommendation": "Apply as complement to PhD position search. If MSc needed before PhD, Finnish university scholarship is good value. Aalto is the prime choice for AI/CS."
+    },
+    {
+      "id": "DENMARK-GOVERNMENT-PHD",
+      "scholarshipName": "Danish University PhD Fellowship (Stipend Position)",
+      "provider": "Danish Universities / Independent Research Fund Denmark (IRFD)",
+      "country": "Denmark",
+      "countryCode": "DK",
+      "type": "EMPLOYMENT_CONTRACT",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science", "Robotics"],
+      "bangladeshEligible": true,
+      "annualAwards": "Hundreds nationally; DTU and Copenhagen active in CS/AI",
+      "competitionLevel": "HIGH",
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "monthlyGross": { "amount": 36000, "currency": "DKK", "usd": 5256, "note": "2026 PhD stipend rate; among world's highest PhD salaries" },
+        "netMonthlyEstimate": { "amount": 24000, "currency": "DKK", "usd": 3504, "note": "After 37% Danish tax; still excellent net income" },
+        "holidayPay": "6 weeks paid holiday",
+        "parentalLeave": "Full Danish parental leave entitlement",
+        "pensionContribution": "17.1% employer pension contribution",
+        "overtimeComp": "Included in employment agreement",
+        "totalAnnualValueUSD": "42000-50000 gross employment value; net USD 30,000+ annually"
+      },
+      "eligibility": {
+        "gpa": "MSc with strong grades; first class equivalent",
+        "languageRequirement": "English sufficient for research; Danish not required at PhD level",
+        "bangladeshSpecific": "No restrictions; Danish universities internationally open"
+      },
+      "applicationProcess": {
+        "platforms": ["au.dk/en/about/vacancies", "dtu.dk/english/about/job-and-study", "itu.dk/research/phd", "ku.dk/english/research/phd"],
+        "topTargets": ["DTU (Technical University of Denmark) - ML and data science", "IT University of Copenhagen - AI focus", "Aarhus University - CS excellence", "University of Copenhagen - computational biology, AI"],
+        "typicalDeadline": "Rolling; specific project calls",
+        "processingTime": "2-4 months"
+      },
+      "strategicValue": {
+        "salaryNote": "Denmark PhD is world's highest-paying PhD; net income USD 3,500/month is more than many countries' working salaries",
+        "prPathwayImpact": "4 years employment → permanent residence; 9 years → citizenship (currently); language requirement for citizenship increasing",
+        "danishLanguageNote": "Danish A2-B1 now increasingly expected for PR; invest in language from Year 1",
+        "probabilityAssessment": "Strong MSc profile: 20-30% per application"
+      },
+      "confidenceScore": 87,
+      "recommendation": "TIER 1 for PhD. World's highest PhD salary. DTU for engineering/AI, ITU Copenhagen for pure AI/ML. Begin Danish language learning from Day 1 of enrollment - essential for long-term settlement."
+    },
+    {
+      "id": "NORWAY-QUOTA",
+      "scholarshipName": "Norwegian Quota Scheme (Now Replaced) / Norwegian Government Scholarship",
+      "provider": "Norwegian State Educational Loan Fund (Lånekassen)",
+      "country": "Norway",
+      "countryCode": "NO",
+      "type": "PARTIAL_FUNDING",
+      "degreeLevel": ["MSc", "PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Technology", "Engineering"],
+      "bangladeshEligible": true,
+      "statusNote": "The Quota Scheme ended 2016. Norway now charges tuition for non-EU students (since 2023). Current scholarships are through individual university programs and Lånekassen for qualifying cases.",
+      "annualAwards": "Limited; Norway scholarship landscape significantly reduced post-2023 tuition introduction",
+      "funding": {
+        "tuitionCoverage": "NOT covered by government; university-specific waivers rare",
+        "ntuPhDEmployment": "NTNU PhD positions are employment contracts; full salary NOK 38,000-48,000/month; no separate scholarship needed",
+        "note": "For Norway, the path is PhD employment position, not traditional scholarship"
+      },
+      "recommendedPath": {
+        "description": "Apply directly for NTNU Trondheim PhD Research Fellow (Stipendiat) position; this is employment, not scholarship; salary covered",
+        "platform": "jobbnorge.no",
+        "targetDepartment": "NTNU Department of Computer Science (IDI); Department of Engineering Cybernetics"
+      },
+      "eligibility": {
+        "gpa": "MSc with excellent grades",
+        "languageRequirement": "English sufficient; Norwegian B1 helpful for integration"
+      },
+      "confidenceScore": 75,
+      "recommendation": "Focus on NTNU PhD employment position (stipendiat) rather than scholarship. Norwegian PhD salary NOK 38,000-48,000/month (USD 3,600-4,560) is excellent. Norway is a long-term stability play."
+    },
+    {
+      "id": "NORWAY-NTNU-PHD",
+      "scholarshipName": "NTNU PhD Research Fellow (Stipendiat) Employment",
+      "provider": "Norwegian University of Science and Technology (NTNU)",
+      "country": "Norway",
+      "countryCode": "NO",
+      "type": "EMPLOYMENT_CONTRACT",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Robotics", "Data Science"],
+      "bangladeshEligible": true,
+      "annualAwards": "Hundreds at NTNU alone; Norway's largest university",
+      "competitionLevel": "MEDIUM-HIGH",
+      "funding": {
+        "tuitionCoverage": "FULL - employment contract; no separate tuition",
+        "monthlyGross": { "amount": 43100, "currency": "NOK", "usd": 4095, "note": "2026 Research Fellow salary (code 1017); increases annually" },
+        "netMonthlyEstimate": { "amount": 30000, "currency": "NOK", "usd": 2850, "note": "After 28-32% Norwegian tax" },
+        "holidayPay": "10.2% of previous year salary; 5 weeks holiday",
+        "pensionContribution": "Statens Pensjonskasse (SPK) - excellent public pension",
+        "sickLeave": "Full Norwegian sick pay; 100% salary for up to 1 year",
+        "parentalLeave": "Full Norwegian parental leave; 49 weeks at 100% or 59 weeks at 80%",
+        "totalAnnualValueUSD": "40000-50000 comprehensive employment package"
+      },
+      "eligibility": {
+        "gpa": "MSc with high grades",
+        "languageRequirement": "English; Norwegian courses provided by university",
+        "bangladeshSpecific": "No restrictions; NTNU actively recruits internationally"
+      },
+      "applicationProcess": {
+        "platform": "jobbnorge.no - search 'PhD' + 'computer science' or 'artificial intelligence'",
+        "typicalDeadline": "Rolling; specific project calls",
+        "processingTime": "2-3 months"
+      },
+      "strategicValue": {
+        "ntnu_ai": "NTNU has strong AI groups; AMOS, NTNU AI Lab; collaborations with Equinor, Kongsberg, Telenor",
+        "norwayStability": "Norway's sovereign wealth fund and oil economy ensure exceptional long-term stability",
+        "prPathwayImpact": "3 years → permanent residence; 7 years → citizenship",
+        "probabilityAssessment": "Strong MSc in CS/AI, good English: 25-40% per position"
+      },
+      "confidenceScore": 85,
+      "recommendation": "Excellent for long-term quality of life. NTNU Trondheim is Norway's tech university. Norwegian parental leave policy makes this the best country for family planning during PhD. Apply to multiple NTNU departments."
+    },
+    {
+      "id": "SWITZERLAND-ETHZ-EPFL",
+      "scholarshipName": "ETH Zurich / EPFL PhD Fellowship",
+      "provider": "ETH Zurich / EPFL",
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "type": "EMPLOYMENT_CONTRACT",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Robotics", "Data Science"],
+      "bangladeshEligible": true,
+      "annualAwards": "ETH ~500 PhD positions/year; EPFL similar; CS/AI among most active",
+      "competitionLevel": "EXTREMELY HIGH - global top talent competition",
+      "successRateEstimate": "1-3% for cold applications; 5-10% with warm supervisor introduction",
+      "funding": {
+        "tuitionCoverage": "FULL - nominal CHF 730/semester fee only",
+        "monthlyGross": { "amount": 4500, "currency": "CHF", "usd": 5085, "note": "ETH/EPFL PhD salary 2026; world's highest PhD salary in absolute terms" },
+        "netMonthlyEstimate": { "amount": 3400, "currency": "CHF", "usd": 3842, "note": "After Swiss tax approximately 20-25%; social insurance" },
+        "healthInsurance": "Not covered; student must purchase mandatory Swiss KVG CHF 350-450/month",
+        "thirteenthSalary": "One month extra salary paid in December",
+        "totalAnnualValueUSD": "52000-60000 gross; net approximately USD 40,000-46,000"
+      },
+      "eligibility": {
+        "gpa": "Top of class; CGPA 3.8+/4.0 or distinction equivalent; exceptional academic record",
+        "publicationsRequired": "Strongly expected for competitive applicants; top venue papers (NeurIPS, ICML, ICLR, CVPR) dramatically improve chances",
+        "gre": "GRE not required at ETH/EPFL; not used in evaluation",
+        "supervisorMatch": "CRITICAL: email-based supervisor relationship before formal application is key to success",
+        "bangladeshSpecific": "No quota; pure meritocracy; Bangladeshi applicants compete globally"
+      },
+      "applicationProcess": {
+        "ethProcess": "ETH CS: Apply through graduate school portal; but professor interest is prerequisite",
+        "epflProcess": "EPFL: Apply through EDIC (Electrical Engineering) or other doctoral programs; admission to school then matched to lab",
+        "supervisorOutreach": "Email target professor with: tailored 2-page research proposal, CV, 2 representative papers/projects, and explicit statement of why their lab",
+        "typicalDeadline": "ETH CS: December 1 for September start; EPFL: December 15",
+        "interviewRequired": true,
+        "interviewFormat": "Technical interview with professor; may include coding or research discussion"
+      },
+      "strategicValue": {
+        "globalRecognition": "ETH/EPFL PhD is among world's most prestigious; transforms career ceiling globally",
+        "industryConnections": "Google Zurich, Microsoft Research, Amazon, ABB, Roche all recruit heavily from ETH/EPFL",
+        "netSavingsInSwitzerland": "Despite extreme cost of living, net savings CHF 1,500-2,500/month (USD 1,700-2,800) possible with careful budgeting",
+        "prPathwayNote": "Switzerland non-EU immigration to permanent C Permit requires 5-10 years; complex but achievable",
+        "alternativeStrategy": "Use ETH/EPFL PhD for global career launch, then target Germany/Canada/Netherlands for long-term settlement",
+        "probabilityAssessment": "Bangladeshi applicants with publications in top venues, strong GPA, specific supervisor interest: 10-20% per professor outreach"
+      },
+      "confidenceScore": 88,
+      "recommendation": "ASPIRATIONAL TIER 1. If you have publications in NeurIPS/ICML/ICLR or equivalent, apply here first. ETH/EPFL PhD changes career trajectory permanently. Extremely competitive but worth pursuing alongside other applications."
+    },
+    {
+      "id": "USA-NSF-GRFP",
+      "scholarshipName": "NSF Graduate Research Fellowship Program (GRFP)",
+      "provider": "National Science Foundation (USA)",
+      "country": "United States",
+      "countryCode": "US",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science", "Robotics"],
+      "bangladeshEligible": false,
+      "bangladeshEligibilityNote": "US citizens and permanent residents ONLY. Not available to international students on F-1 visa. Noted for completeness - if student achieves US Green Card during studies, opens future eligibility.",
+      "funding": {
+        "annualStipend": { "amount": 37000, "currency": "USD", "usd": 37000, "note": "3 years; cost-of-education allowance additional USD 16,000/year to university" }
+      },
+      "confidenceScore": 95,
+      "recommendation": "Not applicable for Bangladeshi F-1 students. However, awareness important: if you marry a US citizen or get Green Card during studies, this window opens."
+    },
+    {
+      "id": "USA-UNIVERSITY-PHD-FUNDING",
+      "scholarshipName": "US University PhD Funding (TA/RA Packages)",
+      "provider": "Individual US Universities",
+      "country": "United States",
+      "countryCode": "US",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science", "Robotics"],
+      "bangladeshEligible": true,
+      "annualAwards": "Thousands nationally; top programs fund all admitted PhD students",
+      "competitionLevel": "EXTREMELY HIGH for top programs; HIGH overall",
+      "funding": {
+        "tuitionCoverage": "FULL - tuition waiver standard for PhD admits",
+        "monthlyStipend": { "amount": 2500, "currency": "USD", "usd": 2500, "note": "Range USD 2,000-3,500/month; varies by university and city; MIT/Stanford/CMU higher end" },
+        "healthInsurance": "Included in most university packages",
+        "summerFunding": "Typically covered; summer internships at tech companies ADD to this",
+        "totalAnnualValueUSD": "50000-90000 (tuition value + stipend; tuition at CMU/MIT can be USD 50,000/year alone)"
+      },
+      "eligibility": {
+        "gpa": "Top universities expect CGPA 3.8+/4.0; strong programs 3.6+",
+        "gre": "Many programs made GRE optional 2020-2025; check specific program; some reinstating",
+        "publicationsRequired": "Critical differentiator; NeurIPS/ICML/ICLR/CVPR/ACL papers transform application",
+        "toefl": "TOEFL 100+ or IELTS 7.0+",
+        "bangladeshSpecific": "No restrictions; significant Bangladeshi faculty at US universities (use this network)"
+      },
+      "applicationProcess": {
+        "typicalDeadline": "December 1-15 for September start (most programs)",
+        "topTargets": {
+          "tier1": ["MIT CSAIL", "Stanford AI Lab", "CMU ML Department", "UC Berkeley EECS", "University of Washington AI"],
+          "tier2": ["UCLA", "UIUC", "Cornell Tech", "Columbia", "NYU Courant", "Georgia Tech"],
+          "tier3": ["Purdue", "Ohio State", "Arizona State", "Pittsburgh", "Maryland"]
+        },
+        "bangladeshiFacultyNetwork": "Identify Bangladeshi professors at target universities via MIT/Stanford/CMU faculty pages; cold email is highly effective when done properly",
+        "stemOPTNote": "F-1 STEM OPT: 12 months OPT + 24 months STEM extension = 36 months work authorization; critical bridge to H-1B"
+      },
+      "strategicValue": {
+        "careerCeiling": "US PhD from top program creates highest career ceiling globally; Big Tech salary USD 200,000-500,000+ total compensation for senior AI roles",
+        "immigrationRisk": "H-1B lottery 20-30% annual chance; EB-2 Green Card backlog potentially 20-40 years for Bangladesh-born; MAJOR long-term risk",
+        "recommendedStrategy": "Use US PhD + OPT (3 years) to maximize career velocity and savings, then transition to Canada/Germany/Australia for settlement",
+        "bangladeshiCommunityAdvantage": "Strongest and most established Bangladeshi diaspora in academia globally; networking advantage is real",
+        "probabilityAssessment": "Top 1% Bangladeshi CS graduates with publications: 20-40% at Tier 2 programs; 5-15% at Tier 1"
+      },
+      "confidenceScore": 90,
+      "recommendation": "TIER 1 for career maximization. MIT/CMU/Stanford PhD transforms everything. BUT treat as career launchpad, NOT settlement destination. Parallel-plan Canada PR from Year 1. The H-1B and Green Card situation is genuinely risky for long-term settlement."
+    },
+    {
+      "id": "JAPAN-MEXT",
+      "scholarshipName": "MEXT (Monbukagakusho) Research Student Scholarship",
+      "provider": "Japanese Ministry of Education, Culture, Sports, Science and Technology",
+      "country": "Japan",
+      "countryCode": "JP",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc", "PhD", "Research Student"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Robotics", "Data Science", "Information Science"],
+      "bangladeshEligible": true,
+      "bangladeshPriorityStatus": "MEDIUM - Bangladesh has bilateral education agreement with Japan",
+      "annualAwards": "Approximately 2,000 globally for research scholarships; Bangladesh receives 20-40 per year across all fields",
+      "competitionLevel": "VERY HIGH",
+      "successRateEstimate": "5-10% for CS/AI applicants through Embassy recommendation",
+      "funding": {
+        "tuitionCoverage": "FULL - national university entrance fees and tuition waived",
+        "monthlyStipend": {
+          "mastersStudent": { "amount": 144000, "currency": "JPY", "usd": 965, "note": "MSc level 2026 rate" },
+          "phdStudent": { "amount": 145000, "currency": "JPY", "usd": 972, "note": "PhD level" },
+          "researchStudent": { "amount": 143000, "currency": "JPY", "usd": 958, "note": "Pre-master/pre-PhD research student phase" }
+        },
+        "airfare": "Economy return airfare covered",
+        "enrollmentFees": "Covered",
+        "totalAnnualValueUSD": "18000-24000 (stipend + tuition value; very competitive for Japan's cost structure)"
+      },
+      "eligibility": {
+        "ageLimit": "Under 35 for research students",
+        "gpa": "High academic achievement",
+        "languageRequirement": "Japanese OR English depending on program; Japanese proficiency not required for English-medium programs but recommended",
+        "bangladeshSpecific": "Apply through Japanese Embassy in Dhaka; Embassy Recommendation route (most accessible) or University Recommendation route (requires direct professor contact)",
+        "healthRequirement": "Medical examination required"
+      },
+      "applicationProcess": {
+        "embassyRoute": {
+          "process": "Apply at Japanese Embassy Dhaka April-June annually; written exam + interview; embassy nominates candidates to MEXT",
+          "examSubjects": "Japanese language exam (or English for science applicants), mathematics, and subject-specific papers",
+          "deadline": "April-May annually for following April enrollment",
+          "interviewLocation": "Japanese Embassy, Gulshan, Dhaka"
+        },
+        "universityRoute": {
+          "process": "Directly contact Japanese professor → professor recommends to MEXT → university submits recommendation",
+          "advantage": "Bypasses embassy competition; more direct",
+          "requirement": "Must find professor willing to supervise before application"
+        },
+        "targetUniversities": ["University of Tokyo (UTokyo) - IST", "Kyoto University", "Osaka University - ISIR", "Tokyo Institute of Technology (Tokyo Tech)", "Tohoku University", "NAIST", "JAIST", "Keio University", "Waseda University"]
+      },
+      "researchStudentPhase": {
+        "description": "Most MEXT scholars enter as 研究生 (kenkyusei - Research Student) for 6-12 months before formal MSc/PhD enrollment; use this phase to improve Japanese, settle in, and prepare for entrance exam",
+        "importantNote": "Research student status counts toward scholarship; stipend continues throughout"
+      },
+      "strategicValue": {
+        "japaneseLaborMarketNote": "MEXT scholars who learn Japanese (N2+) access Japan's enormous tech market with significant salary premium over English-only professionals",
+        "prPathwayImpact": "Highly Skilled Professional (HSP) points system: MEXT degree + Japan university adds points → faster PR (1-3 years vs standard 5)",
+        "aiEcosystemAccess": "Access to Sony AI, Toyota Research Institute, Preferred Networks, NTT, NEC, Fujitsu AI labs",
+        "probabilityAssessment": "Bangladeshi applicants via embassy route with strong academic record: 10-20%; via professor introduction: 20-35%"
+      },
+      "confidenceScore": 87,
+      "recommendation": "TIER 1 for Japan pathway. MEXT is financially excellent for Japan's cost structure. Start Japanese language classes immediately - N3 by application, N2 target during study. Japan's immigration is opening; MEXT + Japanese fluency = strong long-term position. UTokyo and Kyoto University for AI/CS are globally competitive."
+    },
+    {
+      "id": "JAPAN-JASSO",
+      "scholarshipName": "JASSO Honor Scholarship for Privately-Financed International Students",
+      "provider": "Japan Student Services Organization (JASSO)",
+      "country": "Japan",
+      "countryCode": "JP",
+      "type": "PARTIAL_FUNDING",
+      "degreeLevel": ["MSc", "PhD"],
+      "fieldsCovered": ["All STEM fields"],
+      "bangladeshEligible": true,
+      "annualAwards": "Allocated per university; variable",
+      "competitionLevel": "MEDIUM",
+      "funding": {
+        "monthlyStipend": { "amount": 48000, "currency": "JPY", "usd": 322, "note": "Supplement only; not full living support" },
+        "tuitionCoverage": "None",
+        "note": "Supplementary to other funding; combine with RA stipend from supervisor"
+      },
+      "confidenceScore": 70,
+      "recommendation": "Secondary scholarship; combine with professor RA salary (JPY 50,000-100,000/month) and MEXT if available. Not standalone sufficient."
+    },
+    {
+      "id": "KOREA-GKS-GRADUATE",
+      "scholarshipName": "Korean Government Scholarship Program (KGSP) - Graduate",
+      "provider": "National Institute for International Education (NIIED), South Korea",
+      "country": "South Korea",
+      "countryCode": "KR",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc", "PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Electrical Engineering", "Robotics", "Data Science"],
+      "bangladeshEligible": true,
+      "bangladeshPriorityStatus": "HIGH - Bangladesh has active KGSP allocation",
+      "annualAwards": "Approximately 1,100 globally; Bangladesh receives 15-25 per year",
+      "competitionLevel": "HIGH",
+      "successRateEstimate": "8-15% for CS/AI applicants through embassy route",
+      "funding": {
+        "tuitionCoverage": "FULL - all tuition and fees covered",
+        "monthlyStipend": {
+          "masters": { "amount": 1000000, "currency": "KRW", "usd": 730, "note": "KRW 1,000,000/month for MSc" },
+          "phd": { "amount": 1000000, "currency": "KRW", "usd": 730, "note": "KRW 1,000,000/month for PhD; same rate" }
+        },
+        "airfare": "Round-trip economy airfare covered",
+        "settlement": "KRW 200,000 settlement allowance on arrival",
+        "koreanLanguageCourse": "1 year Korean language training (KRW 800,000 stipend during this period) BEFORE degree program",
+        "healthInsurance": "Covered",
+        "winterSummerSupport": "KRW 200,000 per semester",
+        "researchAllowance": "KRW 240,000/year",
+        "totalAnnualValueUSD": "20000-30000 (tuition + living; tuition at KAIST can be KRW 8,000,000/semester)"
+      },
+      "eligibility": {
+        "gpa": "Minimum 2.64/4.0 (80%); competitive applicants 3.5+",
+        "ageLimit": "Under 40 for master's; under 40 for PhD",
+        "languageRequirement": "TOPIK 3+ preferred but Korean language training provided; English TOEFL 80+ or IELTS 5.5+ if applying to English-medium program",
+        "bangladeshSpecific": "Apply through Korean Embassy Dhaka; embassy recommends candidates; limited spots so very competitive within Bangladesh pool"
+      },
+      "applicationProcess": {
+        "embassyRoute": {
+          "process": "Apply Korean Embassy Dhaka September-October annually; document submission + interview",
+          "deadline": "Typically September-October for following September intake",
+          "interviewRequired": true
+        },
+        "universityRoute": {
+          "process": "Apply directly to target university which nominates to NIIED; requires direct university admission",
+          "advantage": "Can target specific programs and supervisors"
+        },
+        "targetUniversities": ["KAIST (Daejeon) - AI Lab, Machine Learning Group", "POSTECH (Pohang) - AI Graduate School", "Seoul National University (SNU)", "Korea University", "Yonsei University", "UNIST (Ulsan)"]
+      },
+      "koreanLanguagePhase": {
+        "description": "All KGSP scholars undergo 1 year Korean language training at designated language institute before degree program begins",
+        "strategicValue": "This free Korean language year is excellent preparation; TOPIK 4-5 achievable; dramatically increases career options and PR pathway",
+        "note": "Plan total duration: 1 year Korean + 2 years MSc or 4 years PhD = 3 or 5 years total"
+      },
+      "strategicValue": {
+        "kaistValue": "KAIST AI Lab is one of Asia's premier AI research centers; Professor Sung Kim, Oh Wonsam labs among world leaders",
+        "industryAccess": "Samsung AI Center, Kakao, Naver, Hyundai Motor Company AI division recruit KAIST graduates heavily",
+        "prPathwayImpact": "Points-based KIIP program: Korean language training + degree = faster PR pathway; 3 years → PR potentially with HSP visa",
+        "agingCrisis": "Korea's demographic crisis is severe; government actively increasing skilled immigration; strategic 2027-2029 entry well-timed",
+        "probabilityAssessment": "Strong CS/AI applicants through embassy: 15-25%; through university route with supervisor contact: 25-40%"
+      },
+      "confidenceScore": 88,
+      "recommendation": "TIER 1 for Korea pathway. KGSP + KAIST is an outstanding combination. The free 1-year Korean language course is a genuine advantage. Korean language fluency (TOPIK 4+) is THE key differentiator for long-term settlement and career advancement in Korea."
+    },
+    {
+      "id": "KOREA-KAIST-PHD",
+      "scholarshipName": "KAIST Graduate Fellowship / Research Assistantship",
+      "provider": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "country": "South Korea",
+      "countryCode": "KR",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc", "PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Electrical Engineering", "Robotics"],
+      "bangladeshEligible": true,
+      "annualAwards": "Hundreds; KAIST admits approximately 500 international graduate students per year",
+      "competitionLevel": "HIGH",
+      "funding": {
+        "tuitionCoverage": "FULL for funded students",
+        "monthlyRAStipend": { "amount": 1500000, "currency": "KRW", "usd": 1095, "note": "Typical RA stipend; varies by advisor; can reach KRW 2,000,000/month for senior PhD" },
+        "additionalGrants": "KAIST Global Scholarship for outstanding international students adds KRW 500,000/month",
+        "healthInsurance": "NHIS included",
+        "dormitory": "Priority dormitory access for international students",
+        "totalAnnualValueUSD": "22000-28000 including tuition value and stipend"
+      },
+      "eligibility": {
+        "gpa": "3.0+ minimum; competitive 3.5+",
+        "supervisorMatch": "Contact professor directly before application; KAIST admission is professor-driven",
+        "languageRequirement": "English TOEFL 90+ or IELTS 6.5+; Korean TOPIK not required for English programs",
+        "bangladeshSpecific": "No restrictions; KAIST has significant international community"
+      },
+      "applicationProcess": {
+        "portal": "admission.kaist.ac.kr",
+        "supervisorOutreach": "Email KAIST CS/AI professors with research proposal; list on cs.kaist.ac.kr",
+        "typicalDeadline": "April for September intake; October for March intake",
+        "interviewRequired": true,
+        "processingTime": "2-4 months"
+      },
+      "confidenceScore": 87,
+      "recommendation": "Apply simultaneously with KGSP. If KGSP not obtained, KAIST direct admission with RA funding is the next best path. Professor outreach is critical - identify specific KAIST professors whose research aligns with your interests."
+    },
+    {
+      "id": "CHINA-CSC",
+      "scholarshipName": "Chinese Government Scholarship (CSC - China Scholarship Council)",
+      "provider": "China Scholarship Council / Ministry of Education China",
+      "country": "China",
+      "countryCode": "CN",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc", "PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science", "Robotics", "Software Engineering"],
+      "bangladeshEligible": true,
+      "bangladeshPriorityStatus": "HIGH - Bangladesh-China diplomatic relations strong; Belt and Road Initiative scholarship priority",
+      "annualAwards": "50,000+ globally; Bangladesh receives 200-400 per year across all fields; CS/AI subset approximately 30-60",
+      "competitionLevel": "MEDIUM within Bangladesh quota (lower competition than other scholarships)",
+      "successRateEstimate": "15-30% for CS/AI applicants through embassy route",
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "monthlyStipend": {
+          "masters": { "amount": 3000, "currency": "CNY", "usd": 414, "note": "MSc monthly stipend" },
+          "phd": { "amount": 3500, "currency": "CNY", "usd": 483, "note": "PhD monthly stipend; some universities add supplementary allowance" }
+        },
+        "accommodation": "Free university dormitory accommodation OR housing subsidy",
+        "healthInsurance": "Comprehensive medical insurance included",
+        "airfare": "Usually one-time economy airfare covered",
+        "totalAnnualValueUSD": "15000-22000 (tuition + accommodation + stipend; tuition at Tsinghua can be USD 5,000-8,000/year)"
+      },
+      "eligibility": {
+        "gpa": "Minimum 3.0/4.0 (75%); competitive applicants 3.5+",
+        "ageLimit": "35 for MSc; 40 for PhD",
+        "languageRequirement": "Chinese HSK 4+ for Chinese-medium programs; IELTS 6.0+ or TOEFL 80+ for English-medium programs",
+        "bangladeshSpecific": "Apply through Chinese Embassy Dhaka; Bangladesh has bilateral CSC agreement increasing quota access"
+      },
+      "applicationProcess": {
+        "embassyRoute": {
+          "process": "Apply Chinese Embassy Dhaka typically March-May annually",
+          "deadline": "March-April for September intake",
+          "interviewRequired": false,
+          "processingTime": "3-5 months"
+        },
+        "universityRoute": {
+          "process": "Apply directly to Chinese university which recommends to CSC",
+          "targetUniversities": ["Tsinghua University (AI Department)", "Peking University", "Shanghai Jiao Tong University", "Zhejiang University", "Fudan University", "USTC", "NUDT (National University of Defense Technology - AI strong)", "Beihang University"]
+        }
+      },
+      "mandarin_requirement": {
+        "importance": "CRITICAL for long-term career in China",
+        "targetLevel": "HSK 4 for admission; HSK 5-6 for career advancement",
+        "strategy": "Begin Mandarin classes 12-18 months before application; HSK 4 is achievable in 12 months intensive study"
+      },
+      "strategicValue": {
+        "chinaAIEcosystem": "Alibaba DAMO Academy, Baidu Research, ByteDance AI Lab, Huawei Noah's Ark Lab - world's largest AI talent ecosystem outside USA",
+        "tsinghuaQuality": "Tsinghua CS is ranked top 15 globally; exceptional research output in AI/CV/NLP",
+        "geopoliticalCaution": "US-China tech tensions create career mobility risk for China-trained professionals; some US companies have concerns about Chinese AI lab affiliations",
+        "settlementReality": "China permanent residence (绿卡) extremely difficult; typically requires 10+ years contribution; only ~10,000 foreigners hold it nationwide",
+        "bestStrategy": "Use CSC for world-class AI research training at Tsinghua/PKU/SJTU, then transition to Germany/Netherlands/Canada for settlement; China experience is a career asset",
+        "probabilityAssessment": "Bangladesh embassy route with CGPA 3.5+, some research experience: 20-35% success rate; highest probability scholarship among all options"
+      },
+      "confidenceScore": 85,
+      "recommendation": "TIER 2 - Strong option for AI research training especially if top Western scholarships are not obtained. CSC + Tsinghua is a world-class research education. Plan exit strategy to Western country before/after PhD. Mandarin HSK 4+ opens enormous additional career value."
+    },
+    {
+      "id": "EU-ERASMUS-MUNDUS",
+      "scholarshipName": "Erasmus Mundus Joint Masters (EMJM) Scholarships",
+      "provider": "European Commission",
+      "country": "Multiple EU Countries",
+      "countryCode": "EU",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc"],
+      "fieldsCovered": ["Computer Science", "AI", "Data Science", "Machine Learning", "Robotics", "Human-Computer Interaction"],
+      "bangladeshEligible": true,
+      "bangladeshPriorityStatus": "HIGH - Category A (non-EU) students receive largest scholarship",
+      "annualAwards": "Varies per program; typically 10-30 Category A scholarships per program per year",
+      "competitionLevel": "VERY HIGH",
+      "relevantPrograms": [
+        {
+          "programName": "EMJM in Big Data Management and Analytics (BDMA)",
+          "universities": ["UPC Barcelona", "ULB Brussels", "TU Berlin", "CWI Amsterdam"],
+          "aiRelevance": "HIGH"
+        },
+        {
+          "programName": "EMJM in Computational Logic",
+          "universities": ["TU Dresden", "TU Wien", "FU Bozen-Bolzano"],
+          "aiRelevance": "MEDIUM-HIGH"
+        },
+        {
+          "programName": "EMJM in Brain and Data Science",
+          "universities": ["University of Groningen", "University of Padova"],
+          "aiRelevance": "HIGH for ML in neuroscience"
+        },
+        {
+          "programName": "EMJM in Autonomous Systems",
+          "universities": ["DTU Denmark", "KTH Sweden", "UNICAMP Brazil"],
+          "aiRelevance": "HIGH for Robotics/AI"
+        },
+        {
+          "programName": "EMJM in Intelligent Field Robotic Systems (IFRoS)",
+          "universities": ["University of Girona", "University of Zagreb", "University of Lincoln"],
+          "aiRelevance": "HIGH for Robotics"
+        }
+      ],
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "monthlyStipend": { "amount": 1400, "currency": "EUR", "usd": 1526, "note": "Category A (Bangladesh) students receive EUR 1,400/month" },
+        "installmentPayment": "EUR 8,400 per semester as lump sum",
+        "travelAndInstallation": "EUR 1,000 travel allowance; EUR 2,000 installation allowance",
+        "totalProgramValue": "EUR 48,600 for 2-year program; approximately USD 53,000",
+        "note": "Scholarship covers tuition at all 2-4 partner universities as you rotate between countries"
+      },
+      "eligibility": {
+        "gpa": "Very high; first class; CGPA 3.6+",
+        "languageRequirement": "English IELTS 6.5+; some programs require French/German/Spanish depending on university mix",
+        "bangladeshSpecific": "Bangladesh classified as Category A (Third Country, non-EU); eligible for highest scholarship tier",
+        "researchExperience": "Highly valued; projects, publications, thesis quality evaluated"
+      },
+      "applicationProcess": {
+        "portal": "eacea.ec.europa.eu/scholarships/erasmus-mundus-joint-masters_en; individual program websites",
+        "keyDatabase": "catalogue.erasmusmundus.eu - full list of active programs",
+        "strategy": "Apply to 3-5 relevant Erasmus Mundus programs simultaneously; each has separate application",
+        "typicalDeadline": "November-January for September intake; varies by program",
+        "interviewRequired": "Some programs require interview; varies",
+        "processingTime": "3-5 months"
+      },
+      "strategicValue": {
+        "multiCountryExposure": "Study in 2-3 EU countries; builds pan-European network; exposes to different AI ecosystems (Germany, Netherlands, Sweden, Denmark all in various programs)",
+        "prPathwayComplexity": "Having lived in multiple EU countries during Erasmus Mundus complicates PR pathway; best to target residency in one country post-graduation",
+        "networkValue": "Erasmus Mundus alumni network is active and international; strong for European tech career",
+        "postStudyStrategy": "Complete EMJM in EU country → apply for that country's post-study work permit → transition to standard work permit → PR",
+        "probabilityAssessment": "Strong Bangladeshi applicant per program: 5-15% per application; apply to multiple programs to increase overall probability"
+      },
+      "confidenceScore": 83,
+      "recommendation": "STRONG OPTION for MSc funding covering multiple EU countries. EUR 1,400/month living allowance is livable especially in Germany/Netherlands combination programs. Multi-country exposure is a genuine career and network advantage. Apply to 4-5 programs simultaneously."
+    },
+    {
+      "id": "VLIR-UOS-BELGIUM",
+      "scholarshipName": "VLIR-UOS Scholarships",
+      "provider": "Flemish Interuniversity Council - University Development Cooperation (VLIR-UOS)",
+      "country": "Belgium",
+      "countryCode": "BE",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["MSc"],
+      "fieldsCovered": ["Computer Science", "Data Science", "Information Technology", "Engineering"],
+      "bangladeshEligible": true,
+      "bangladeshPriorityStatus": "VERY HIGH - Bangladesh is a VLIR-UOS priority partner country",
+      "annualAwards": "Approximately 50-80 for Bangladesh across all fields; CS/IT approximately 10-15",
+      "competitionLevel": "MEDIUM-HIGH within Bangladesh (favorable allocation)",
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "monthlyAllowance": { "amount": 950, "currency": "EUR", "usd": 1036, "note": "Monthly living allowance; EUR 950 is livable in Ghent/Leuven" },
+        "airfare": "Return economy airfare",
+        "healthInsurance": "Included",
+        "visa": "Visa fees covered",
+        "totalAnnualValueUSD": "22000-28000 tuition + living value"
+      },
+      "eligibility": {
+        "gpa": "Good academic record; 3.0+",
+        "ageLimit": "40 years maximum",
+        "workExperience": "Recommended but not mandatory",
+        "bangladeshSpecific": "Must be Bangladeshi citizen; must reside in Bangladesh at application; must not hold Belgian/EU residence",
+        "returnObligation": "Strong expectation to return to Bangladesh after studies; not legally enforced but signed commitment"
+      },
+      "applicationProcess": {
+        "portal": "https://www.vliruos.be/en/scholarships",
+        "process": "Apply directly to VLIR-UOS scholarship; simultaneously apply to KU Leuven, Ghent University, or VUB Brussels for program",
+        "targetUniversities": ["KU Leuven (world top 50, excellent CS/AI research)", "Ghent University", "Vrije Universiteit Brussel (VUB)"],
+        "typicalDeadline": "February 1 for September intake; FIRM deadline",
+        "interviewRequired": false,
+        "processingTime": "3-4 months"
+      },
+      "strategicValue": {
+        "kuLeuvenAI": "KU Leuven consistently ranked world top 50; strong AI research groups (DTAI); excellent for ML/NLP/CV",
+        "bangladeshAdvantage": "Bangladesh priority partner country status means genuinely favorable allocation vs global competition",
+        "returnObligationNote": "Plan: VLIR-UOS MSc → return to Bangladesh 1-2 years (satisfying commitment) → apply for KU Leuven PhD (funded employment) → Belgium PR pathway",
+        "probabilityAssessment": "Bangladesh CS/AI applicant with 3.3+GPA, good SOP: 20-35% success rate - among highest probability scholarships available"
+      },
+      "confidenceScore": 86,
+      "recommendation": "HIGH PRIORITY for Belgium pathway. Bangladesh priority status makes this more accessible than most scholarships. KU Leuven DTAI group is world-class. Genuine opportunity for students who may not reach threshold for more competitive scholarships."
+    },
+    {
+      "id": "IRELAND-IRC",
+      "scholarshipName": "Irish Research Council (IRC) Government of Ireland Postgraduate Scholarship",
+      "provider": "Irish Research Council",
+      "country": "Ireland",
+      "countryCode": "IE",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Machine Learning", "Data Science"],
+      "bangladeshEligible": true,
+      "annualAwards": "Approximately 200 nationally; small proportion international",
+      "competitionLevel": "VERY HIGH",
+      "funding": {
+        "tuitionCoverage": "Up to EUR 5,500/year tuition contribution",
+        "annualStipend": { "amount": 19000, "currency": "EUR", "usd": 20710, "note": "2026 IRC stipend rate; increased from EUR 18,500" },
+        "researchCosts": "EUR 3,250 per year research contribution",
+        "totalAnnualValueUSD": "25000-28000"
+      },
+      "eligibility": {
+        "gpa": "First class honors; CGPA 3.7+",
+        "supervisorRequired": "Must have committed supervisor at Irish university",
+        "bangladeshSpecific": "No restrictions but limited international allocation; competition primarily domestic and EU"
+      },
+      "applicationProcess": {
+        "portal": "https://research.ie/",
+        "process": "Secure supervisor first at Trinity, UCD, UCC, NUI Galway → supervisor applies on your behalf",
+        "typicalDeadline": "November for following September",
+        "interviewRequired": true
+      },
+      "strategicValue": {
+        "irelandTechEcosystem": "Google, Meta, Microsoft, Amazon, LinkedIn, Stripe, Salesforce all have major Irish operations; PhD alumni highly recruited",
+        "housingCaution": "IRC stipend of EUR 1,583/month barely covers Dublin housing; consider Cork (UCC) or Galway (NUIG) for affordability",
+        "prPathwayImpact": "5 years → Irish citizenship (one of fastest EU citizenship pathways); EU mobility follows"
+      },
+      "confidenceScore": 78,
+      "recommendation": "Strong if supervisor secured at Cork or Galway university. Dublin housing crisis makes Trinity/UCD IRC positions financially stressful. Target Cork-based supervisors for housing sustainability."
+    },
+    {
+      "id": "SCIENCE-FOUNDATION-IRELAND",
+      "scholarshipName": "Science Foundation Ireland (SFI) Centre PhD Positions",
+      "provider": "Science Foundation Ireland",
+      "country": "Ireland",
+      "countryCode": "IE",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["AI", "Machine Learning", "Data Science", "Cybersecurity", "Quantum Computing"],
+      "bangladeshEligible": true,
+      "annualAwards": "Hundreds across SFI Research Centres",
+      "competitionLevel": "HIGH",
+      "funding": {
+        "tuitionCoverage": "FULL",
+        "annualStipend": { "amount": 22000, "currency": "EUR", "usd": 23980, "note": "SFI centre positions typically EUR 22,000-25,000/year; higher than IRC" },
+        "industryEngagement": "SFI centres have industry partners; additional support and internship opportunities"
+      },
+      "keyCentres": [
+        { "name": "Lero - The Science Foundation Ireland Research Centre for Software", "focus": "AI software systems, ML engineering" },
+        { "name": "Insight SFI Research Centre for Data Analytics", "focus": "Machine learning, data science, AI applications" },
+        { "name": "ADAPT Centre", "focus": "Digital content technology, NLP, AI" },
+        { "name": "CONNECT Centre", "focus": "Communications, IoT, edge AI" }
+      ],
+      "applicationProcess": {
+        "process": "Apply to specific advertised PhD positions within SFI centres; positions advertised on university websites and irishjobs.ie",
+        "supervisorContact": "Identify SFI centre researchers whose work aligns; email directly"
+      },
+      "confidenceScore": 82,
+      "recommendation": "Better stipend than IRC; industry connections via SFI centres valuable for post-PhD employment. Insight Centre (data analytics/ML) and ADAPT (NLP/AI) are prime targets."
+    },
+    {
+      "id": "COMMONWEALTH-SCHOLARSHIP",
+      "scholarshipName": "Commonwealth Scholarship and Fellowship Plan (CSFP)",
+      "provider": "Commonwealth Scholarship Commission (UK-administered)",
+      "country": "United Kingdom (administered but relevant as alternative)",
+      "countryCode": "GB",
+      "type": "FULL_FUNDING",
+      "degreeLevel": ["PhD"],
+      "fieldsCovered": ["Computer Science", "AI", "Data Science", "Technology"],
+      "bangladeshEligible": true,
+      "bangladeshPriorityStatus": "HIGH - Bangladesh is Commonwealth member",
+      "annualAwards": "Approximately 800 globally; Bangladesh receives 15-25 per year",
+      "competitionLevel": "HIGH",
+      "note": "UK not in main country list but Commonwealth scholarship often appears in Bangladesh student planning as it is administered through Bangladesh government selection",
+      "funding": {
+        "tuitionCoverage": "FULL - UK university fees paid",
+        "monthlyStipend": { "amount": 1347, "currency": "GBP", "usd": 1700, "note": "London rate; non-London GBP 1,144/month" },
+        "airfare": "Return economy airfare",
+        "thesis": "Thesis grant up to GBP 900",
+        "totalAnnualValueUSD": "35000-50000 in tuition + living value"
+      },
+      "eligibility": {
+        "bangladeshSpecific": "Apply through University Grants Commission (UGC) Bangladesh or directly to CSC; UGC Bangladesh selects nominees",
+        "ageLimit": "No strict limit but younger applicants favored",
+        "gpa": "First class; CGPA 3.7+"
+      },
+      "applicationProcess": {
+        "bangladeshProcess": "Apply through UGC Bangladesh annually; selection process by UGC; winners nominated to CSC",
+        "deadline": "UGC Bangladesh deadline typically September-October"
+      },
+      "confidenceScore": 80,
+      "recommendation": "Included for completeness as many Bangladeshi students pursue UK. UK post-study work visa (Graduate Route 2 years, 3 for PhD) provides pathway. Note UK not in primary country list but Commonwealth scholarship is a major opportunity."
+    }
+  ],
+  "scholarshipStrategyByCountryTarget": {
+    "germany": {
+      "primaryScholarship": "DAAD-GSSP or DAAD-DEV",
+      "alternativePhD": "DFG-funded position (advertised on university websites)",
+      "applicationPriority": 1,
+      "bangladeshiSuccessRate": "MEDIUM-HIGH",
+      "keyNote": "Germany tuition-free model means even without stipend scholarship, only living costs needed; combined with HiWi job = survivable"
+    },
+    "australia": {
+      "primaryScholarship": "RTP (PhD) or Australia Awards",
+      "applicationPriority": 1,
+      "bangladeshiSuccessRate": "MEDIUM",
+      "keyNote": "Supervisor relationship is THE deciding factor for RTP; spend 6-9 months building this connection before formal application"
+    },
+    "canada": {
+      "primaryScholarship": "University PhD TA/RA packages; Vanier for exceptional candidates",
+      "applicationPriority": 2,
+      "bangladeshiSuccessRate": "MEDIUM",
+      "keyNote": "Canadian universities fund most PhD students; key is admission to a funded PhD program, not separate scholarship"
+    },
+    "netherlands": {
+      "primaryScholarship": "NWO PhD Employment position (not scholarship - employment)",
+      "alternativeMSc": "OKP/NFP (note return obligation)",
+      "applicationPriority": 1,
+      "bangladeshiSuccessRate": "MEDIUM-HIGH",
+      "keyNote": "Dutch PhD employment + 30% ruling = excellent financial package; monitor academictransfer.com daily"
+    },
+    "sweden": {
+      "primaryScholarship": "Swedish PhD Employment (Doktorandtjänst) + WASP program",
+      "alternativeMSc": "SI Scholarship (very competitive)",
+      "applicationPriority": 2,
+      "bangladeshiSuccessRate": "MEDIUM",
+      "keyNote": "WASP PhD positions are the premium target; SEK 6.5B program funds hundreds of AI PhD positions"
+    },
+    "finland": {
+      "primaryScholarship": "Doctoral Researcher employment position at Aalto/FCAI",
+      "alternativeMSc": "University tuition waiver scholarship",
+      "applicationPriority": 3,
+      "bangladeshiSuccessRate": "MEDIUM-HIGH",
+      "keyNote": "Smaller competition pool than Sweden/Germany; Aalto FCAI is world-class; aging population creates genuine long-term need"
+    },
+    "denmark": {
+      "primaryScholarship": "PhD Stipend Employment (world's highest PhD salary)",
+      "applicationPriority": 2,
+      "bangladeshiSuccessRate": "MEDIUM",
+      "keyNote": "DTU for engineering AI, ITU Copenhagen for pure ML/AI; Danish language investment from Day 1 critical for 9-year citizenship"
+    },
+    "norway": {
+      "primaryScholarship": "NTNU Research Fellow (Stipendiat) employment",
+      "applicationPriority": 3,
+      "bangladeshiSuccessRate": "MEDIUM",
+      "keyNote": "Norway's sovereign wealth fund = exceptional stability; smaller competition pool; NTNU AI Lab growing rapidly"
+    },
+    "switzerland": {
+      "primaryScholarship": "ETH Zurich / EPFL PhD Fellowship",
+      "applicationPriority": "Aspirational",
+      "bangladeshiSuccessRate": "LOW (but highest reward)",
+      "keyNote": "Apply only if you have publications in top venues; world's highest PhD salary; use as career launchpad then transition for settlement"
+    },
+    "usa": {
+      "primaryScholarship": "University PhD TA/RA + STEM OPT (36 months)",
+      "applicationPriority": 1,
+      "bangladeshiSuccessRate": "MEDIUM for Tier 2; LOW for Tier 1",
+      "keyNote": "No government scholarship for internationals; funding comes through department TA/RA; H-1B + Green Card risk is the critical planning factor"
+    },
+    "japan": {
+      "primaryScholarship": "MEXT Research Student Scholarship",
+      "applicationPriority": 2,
+      "bangladeshiSuccessRate": "MEDIUM-HIGH through embassy route",
+      "keyNote": "Embassy route most accessible; Japanese language investment (N2) multiplies career value and PR speed enormously"
+    },
+    "southKorea": {
+      "primaryScholarship": "KGSP (Korean Government) or KAIST direct funding",
+      "applicationPriority": 2,
+      "bangladeshiSuccessRate": "HIGH through embassy route",
+      "keyNote": "Bangladesh has strong KGSP allocation; 1-year free Korean language training is bonus; KAIST AI Lab is Asia's elite"
+    },
+    "china": {
+      "primaryScholarship": "CSC (Chinese Government Scholarship)",
+      "applicationPriority": 3,
+      "bangladeshiSuccessRate": "HIGH through embassy (BRI priority)",
+      "keyNote": "Highest probability scholarship for Bangladesh; excellent research at Tsinghua; plan Western transition after PhD; Mandarin investment essential"
+    }
+  },
+  "applicationCalendar2027Intake": {
+    "september2025": ["Begin MEXT application process (embassy route opens April 2026 for 2027)", "Start Japanese/Korean/Mandarin language learning", "Email potential PhD supervisors in Netherlands, Sweden, Finland, Denmark, Switzerland"],
+    "october2025": ["DAAD-GSSP application deadline", "DAAD-DEV application deadline", "Korean Embassy KGSP application opens"],
+    "november2025": ["US PhD applications due (December 1-15 most programs)", "Canadian PhD applications due", "Irish Research Council deadline", "Vanier internal university deadline"],
+    "december2025": ["ETH Zurich PhD deadline (December 1)", "EPFL PhD deadline (December 15)", "Erasmus Mundus various program deadlines begin"],
+    "january2026": ["SI Scholarship Sweden deadline (January 15 FIRM)", "Finnish university scholarship deadline", "Australian university RTP application deadline (first round)"],
+    "february2026": ["VLIR-UOS Belgium deadline (February 1 FIRM)", "OKP Netherlands deadline (some programs)"],
+    "march2026": ["CSC China embassy route opens", "Australian RTP second round"],
+    "april2026": ["Australia Awards scholarship deadline", "MEXT embassy application opens"],
+    "may2026": ["KGSP Korea final applications", "CSC China deadline"],
+    "june2026": ["Results from November-January applications begin arriving", "Accept/decline decisions", "Visa applications begin"],
+    "criticalNote": "Apply to MINIMUM 8-12 scholarships/positions across multiple countries simultaneously. Do NOT wait for one result before applying to others. Scholarship applications are not mutually exclusive."
+  },
+  "documentPreparationChecklist": {
+    "academic": ["Official transcripts (all years, certified translation if Bengali)", "Degree certificate (or enrollment letter if final year)", "GPA conversion to 4.0 scale (use WES or official university letter)"],
+    "language": ["IELTS Academic 7.0+ (strongly preferred over minimum 6.5)", "TOEFL iBT 100+ as alternative", "Japanese JLPT N3+ for Japan pathways", "Korean TOPIK 2+ for Korea applications", "German A2+ for Germany integration (B1 preferred)"],
+    "research": ["Research proposal (8-15 pages for PhD; 2-3 pages for MSc)", "Writing sample or thesis chapter", "List of publications or preprints (arXiv papers count)", "GitHub profile with ML projects (CRITICAL for CS/AI)"],
+    "recommendations": ["3 academic reference letters (2 minimum from professors who supervised projects/thesis)", "At least 1 from CS/AI domain", "Reference from Bangladesh university CS/CSE department head adds weight"],
+    "personal": ["Motivation letter (1,500-2,000 words; tailored per scholarship)", "CV (2 pages maximum; academic format)", "Research statement for PhD applications", "Passport valid 2+ years from application date"],
+    "financial": ["Bank statements (if self-funded component)", "Scholarship application forms"],
+    "bangladeshSpecific": ["National ID (NID)", "Birth certificate certified translation", "Police clearance certificate", "Embassy may require medical examination form"]
+  }
+}

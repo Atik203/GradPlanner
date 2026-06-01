@@ -1,0 +1,913 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Country risk analysis for Bangladeshi CS/AI/ML students planning 2027-2029",
+    "targetProfile": "Bangladeshi student, STEM graduate, age 22-30, planning long-term settlement",
+    "criticalNote": "Risks are dynamic. Policy shifts, housing crises, and geopolitical tensions can rapidly change risk profiles. Review annually."
+  },
+  "countryRisks": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "overallRiskScore": 52,
+      "confidenceScore": 88,
+      "riskLevel": "MODERATE-HIGH",
+      "risks": {
+        "housingRisk": {
+          "score": 78,
+          "level": "HIGH",
+          "summary": "Toronto and Vancouver among least affordable cities globally. Average rent for 1BR exceeds CAD 2,400/month in major cities. Student housing waitlists common. Supply-demand gap worsening through 2027.",
+          "trend": "WORSENING"
+        },
+        "economicRisk": {
+          "score": 45,
+          "level": "MODERATE",
+          "summary": "GDP growth stable but slowing. High household debt levels. Tech sector layoffs impacted junior roles 2023-2025. AI sector remains resilient. CAD currency moderately stable.",
+          "trend": "STABLE"
+        },
+        "inflationRisk": {
+          "score": 50,
+          "level": "MODERATE",
+          "summary": "Inflation peaked 2022-2023, now cooling to 2.5-3%. Cost of groceries and services remains elevated. Bank of Canada rate cuts expected 2026-2027.",
+          "trend": "IMPROVING"
+        },
+        "antiImmigrationRisk": {
+          "score": 68,
+          "level": "HIGH",
+          "summary": "Federal government cut permanent resident targets 2025-2026 under political pressure. PGWP rules tightened. International student cap introduced. Public sentiment shifted against high immigration volumes.",
+          "trend": "WORSENING"
+        },
+        "climateRisk": {
+          "score": 42,
+          "level": "MODERATE",
+          "summary": "Wildfire seasons intensifying in BC and Alberta. Flooding in Quebec and Ontario. Most student cities (Toronto, Montreal, Vancouver) remain relatively safe but air quality events increasing.",
+          "trend": "WORSENING"
+        },
+        "warRisk": {
+          "score": 5,
+          "level": "VERY LOW",
+          "summary": "No direct military threat. NATO member. Strong geopolitical stability. US-Canada alliance secure.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 55,
+          "level": "MODERATE",
+          "summary": "Tech layoffs impacted market 2023-2025. AI and ML roles recovering. Competition increased due to high international student numbers. Junior roles competitive. Senior AI roles remain strong.",
+          "trend": "IMPROVING"
+        },
+        "politicalRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Liberal government policy reversal on immigration surprised many. Conservative party may further tighten if elected. Immigration policy now politically contentious. Institutional stability strong.",
+          "trend": "WORSENING"
+        }
+      },
+      "keyWarnings": [
+        "PGWP eligibility rules changed - verify program qualifies before enrolling",
+        "PR competition significantly increased - Express Entry CRS scores remain high",
+        "Do not assume housing is manageable - budget CAD 1,800-2,500/month for 1BR outside downtown",
+        "Political climate around immigration may further tighten post-2025 elections"
+      ],
+      "evidenceSummary": "Canada remains a viable destination but the risk profile has deteriorated significantly since 2022. Housing unaffordability, immigration policy tightening, and increased competition are real structural concerns for 2027-2029 cohorts."
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "overallRiskScore": 48,
+      "confidenceScore": 85,
+      "riskLevel": "MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 72,
+          "level": "HIGH",
+          "summary": "Sydney and Melbourne face severe rental shortages. Average 1BR rent AUD 2,200-2,800/month in major cities. Student accommodation oversubscribed. Government building targets falling short.",
+          "trend": "WORSENING"
+        },
+        "economicRisk": {
+          "score": 38,
+          "level": "LOW-MODERATE",
+          "summary": "Strong commodity-backed economy. Mining and tech sectors stable. Interest rate pressures easing 2026. GDP growth 2-3% projected. Strong trade ties with Asia.",
+          "trend": "STABLE"
+        },
+        "inflationRisk": {
+          "score": 48,
+          "level": "MODERATE",
+          "summary": "Inflation peaked 2022-2023 at 7%+, cooling toward 3% by 2026. Grocery and energy costs still elevated. RBA expected to cut rates 2026.",
+          "trend": "IMPROVING"
+        },
+        "antiImmigrationRisk": {
+          "score": 50,
+          "level": "MODERATE",
+          "summary": "Government reduced international student intake caps 2025. Net migration targets reduced. However skilled STEM graduates remain priority. 482 and 189 visas still processing. Policy remains more favorable than Canada for skilled migrants.",
+          "trend": "STABLE"
+        },
+        "climateRisk": {
+          "score": 65,
+          "level": "MODERATE-HIGH",
+          "summary": "Extreme heat, bushfires, and flooding are structural risks. 2019-2020 Black Summer fires remain benchmark. Major cities experience increasing heat events. Coastal flooding risk long-term.",
+          "trend": "WORSENING"
+        },
+        "warRisk": {
+          "score": 12,
+          "level": "VERY LOW",
+          "summary": "No direct threat. AUKUS alliance strengthens security. South China Sea tensions monitored but no direct impact expected.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 40,
+          "level": "MODERATE",
+          "summary": "Tech sector healthy. AI and data science demand strong in Sydney and Melbourne. Graduate employment rates high for STEM. Some oversupply of junior devs from bootcamps.",
+          "trend": "STABLE"
+        },
+        "politicalRisk": {
+          "score": 28,
+          "level": "LOW",
+          "summary": "Labor government stable. Strong institutions. Immigration reform bipartisan challenge. Policy changes pragmatic rather than ideological. Stable governance expected through 2028.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "Housing costs in Sydney and Melbourne are among the worst globally for students",
+        "International student caps may affect availability of funded positions",
+        "Climate risk particularly in Queensland and NSW - consider Melbourne or Adelaide",
+        "485 visa post-study rights remain but policy could change - monitor annually"
+      ],
+      "evidenceSummary": "Australia offers strong job market and PR pathways for STEM graduates but housing affordability and climate risk are genuine structural concerns. Better policy stability than Canada as of 2026 but housing crisis remains unsolved."
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "overallRiskScore": 38,
+      "confidenceScore": 82,
+      "riskLevel": "LOW-MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 60,
+          "level": "MODERATE-HIGH",
+          "summary": "Munich, Berlin, Frankfurt face severe rental shortages. Average rent EUR 1,400-2,000/month for 1BR in major cities. Student housing waitlists 6-18 months. Smaller cities like Dresden or Leipzig more affordable.",
+          "trend": "WORSENING"
+        },
+        "economicRisk": {
+          "score": 48,
+          "level": "MODERATE",
+          "summary": "Germany entered mild recession 2024-2025 due to energy costs and manufacturing slowdown. Recovery expected 2026-2027. Strong industrial base. Export competitiveness under pressure from China.",
+          "trend": "IMPROVING"
+        },
+        "inflationRisk": {
+          "score": 42,
+          "level": "MODERATE",
+          "summary": "Inflation cooling to ECB targets by 2026. Energy price shocks of 2022-2023 stabilized. Grocery costs remain elevated versus pre-2022 levels.",
+          "trend": "IMPROVING"
+        },
+        "antiImmigrationRisk": {
+          "score": 55,
+          "level": "MODERATE",
+          "summary": "AfD political rise creating anti-immigration pressure. However coalition government maintains skilled worker immigration policy. Chancenkarte (Opportunity Card) introduced 2024. STEM immigrants largely protected from political backlash.",
+          "trend": "STABLE"
+        },
+        "climateRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Flooding risk in Rhine and Danube regions. Summer heat waves increasing. Germany investing heavily in climate adaptation. Lower climate risk than Southern Europe or Australia.",
+          "trend": "STABLE"
+        },
+        "warRisk": {
+          "score": 22,
+          "level": "LOW",
+          "summary": "NATO member. Russia-Ukraine war elevated European threat perception but direct attack on Germany extremely unlikely. Germany increasing defense spending. Institutional security strong.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Structural labor shortage across IT, AI, and engineering. Fachkraftemangel (skilled worker shortage) is official government policy driver. 200,000+ IT vacancies projected by 2030. German language is a barrier for some roles.",
+          "trend": "IMPROVING"
+        },
+        "politicalRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "AfD influence growing but coalition governance stable. CDU/SPD maintain pro-immigration skilled worker stance. Federal institutions resilient. Rule of law strong.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "German language proficiency is critical for long-term integration even if job is English-speaking",
+        "Economic recession 2024-2025 may delay some hiring - research company-specific hiring plans",
+        "Housing in Munich and Berlin is extremely competitive - plan accommodation early",
+        "AfD political rise is a social risk factor even if policy impact is limited"
+      ],
+      "evidenceSummary": "Germany has one of the lowest overall risk profiles in Europe for STEM immigrants. Structural labor shortages, strong institutions, and active immigration reform work in favor. Language integration and housing in major cities remain genuine challenges."
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "overallRiskScore": 45,
+      "confidenceScore": 80,
+      "riskLevel": "MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 82,
+          "level": "VERY HIGH",
+          "summary": "Dublin is among the most unaffordable cities in Europe. Average 1BR rent EUR 2,200-2,800/month. Student accommodation severely oversubscribed. Housing crisis officially declared. Government struggling to build sufficient supply.",
+          "trend": "WORSENING"
+        },
+        "economicRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Ireland hosts European HQs of Google, Meta, Apple, Microsoft. Corporate tax revenue strong. GDP growth robust. Economy highly dependent on multinational sector which carries concentration risk.",
+          "trend": "STABLE"
+        },
+        "inflationRisk": {
+          "score": 45,
+          "level": "MODERATE",
+          "summary": "Cost of living among highest in EU. Inflation cooling post-2023 but base cost levels remain very high. ECB rate cuts providing relief.",
+          "trend": "IMPROVING"
+        },
+        "antiImmigrationRisk": {
+          "score": 58,
+          "level": "MODERATE-HIGH",
+          "summary": "Anti-immigration protests emerged 2023-2024 in Dublin. Public sentiment shifting. Government under pressure to manage migration numbers. Skilled tech workers largely supported but climate has changed.",
+          "trend": "WORSENING"
+        },
+        "climateRisk": {
+          "score": 20,
+          "level": "VERY LOW",
+          "summary": "Ireland is one of the most climate-stable countries in Europe. Mild temperatures, no extreme heat events, low flooding risk in major cities. Long-term climate resilience high.",
+          "trend": "STABLE"
+        },
+        "warRisk": {
+          "score": 8,
+          "level": "VERY LOW",
+          "summary": "Ireland is neutral, not NATO member. No military threat. Strong international relationships. Geopolitically safe.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Tech job market strong due to concentration of FAANG and Big Tech European HQs. AI and ML demand high. Meta, Google, Microsoft all have large Dublin engineering operations. Tech layoffs 2023-2025 reduced some junior openings but recovering.",
+          "trend": "IMPROVING"
+        },
+        "politicalRisk": {
+          "score": 25,
+          "level": "LOW",
+          "summary": "Stable coalition government. EU member with strong institutional framework. Rule of law robust. Immigration debate politically active but not destabilizing.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "Housing crisis in Dublin is the single biggest practical risk - budget EUR 2,000+ for 1BR",
+        "Anti-immigration sentiment growing - social environment may feel less welcoming than 2018-2022",
+        "Multinational concentration risk - if US-EU tax treaties change, corporate presence could shift",
+        "Small country means limited geographic job mobility - Dublin is effectively the only tech hub"
+      ],
+      "evidenceSummary": "Ireland offers exceptional tech job access via FAANG European HQs but the housing crisis is severe and worsening. Best suited for students who can manage high living costs. Strong for short-medium term career building, less ideal for family settlement due to cost."
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "overallRiskScore": 40,
+      "confidenceScore": 83,
+      "riskLevel": "MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 75,
+          "level": "HIGH",
+          "summary": "Amsterdam and Utrecht face extreme housing shortages. Average 1BR rent EUR 1,800-2,400/month. Student housing waitlists 2-4 years at some universities. Government building targets missed repeatedly.",
+          "trend": "WORSENING"
+        },
+        "economicRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Strong trade-based economy. ASML, Philips, Shell anchor industrial base. Tech sector growing. Port of Rotterdam strategic asset. GDP growth stable 1.5-2.5%.",
+          "trend": "STABLE"
+        },
+        "inflationRisk": {
+          "score": 38,
+          "level": "LOW-MODERATE",
+          "summary": "Inflation returning to normal ECB target range. Energy price stabilization helping. Cost of living high but wages are correspondingly higher.",
+          "trend": "IMPROVING"
+        },
+        "antiImmigrationRisk": {
+          "score": 65,
+          "level": "HIGH",
+          "summary": "Geert Wilders PVV party won 2023 elections. Coalition government formed with anti-immigration stance. Asylum reduction targets set. However skilled worker immigration and highly skilled migrant visa remain policy-protected.",
+          "trend": "WORSENING"
+        },
+        "climateRisk": {
+          "score": 55,
+          "level": "MODERATE",
+          "summary": "Netherlands is below sea level in many areas. Climate change raises long-term flood risk. Dutch water management is world-class but structural risk exists. Government investing heavily in Delta Programme.",
+          "trend": "MONITORED"
+        },
+        "warRisk": {
+          "score": 10,
+          "level": "VERY LOW",
+          "summary": "NATO member. Strong EU integration. No direct military threat. Hague-based international institutions add diplomatic stability.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 32,
+          "level": "LOW-MODERATE",
+          "summary": "Strong demand for AI, ML, data science and software engineers. ASML semiconductor ecosystem creates high-tech demand. Amsterdam tech scene growing. English widely spoken in workplace.",
+          "trend": "STABLE"
+        },
+        "politicalRisk": {
+          "score": 45,
+          "level": "MODERATE",
+          "summary": "PVV-led coalition created uncertainty for immigrants. Highly skilled migrant route remains protected but social climate changed. Rule of law and EU oversight provide structural stability.",
+          "trend": "WORSENING"
+        }
+      },
+      "keyWarnings": [
+        "30% ruling tax benefit for expats being phased down - verify current status before planning",
+        "Political shift to right is real - social climate less welcoming than 2015-2022",
+        "Housing crisis in Amsterdam is acute - consider Rotterdam or Eindhoven as alternatives",
+        "Dutch language expected for long-term integration despite English workplace"
+      ],
+      "evidenceSummary": "Netherlands offers strong job market and EU connectivity but political shift rightward and housing crisis are significant risks. Highly skilled migrant pathway remains viable but social climate has changed. Eindhoven near ASML may offer better housing and career options than Amsterdam."
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "overallRiskScore": 35,
+      "confidenceScore": 80,
+      "riskLevel": "LOW-MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 65,
+          "level": "MODERATE-HIGH",
+          "summary": "Stockholm rental market tightly regulated with decade-long queues for rent-controlled apartments. Private market rents EUR 1,400-2,000/month for 1BR. Student housing limited. Gothenburg and Malmo better than Stockholm.",
+          "trend": "STABLE"
+        },
+        "economicRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Sweden experienced economic contraction 2023-2024 due to rate hikes and housing sector slowdown. Recovery expected 2026. Kronor depreciation impacted purchasing power. Strong industrial and tech base.",
+          "trend": "IMPROVING"
+        },
+        "inflationRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Inflation peaked 2022-2023 and now cooling. Riksbank cutting rates 2025-2026. Price levels stabilizing. SEK weakness means imported goods more expensive.",
+          "trend": "IMPROVING"
+        },
+        "antiImmigrationRisk": {
+          "score": 52,
+          "level": "MODERATE",
+          "summary": "SD party influence in government resulted in stricter immigration rules 2022-2024. Asylum significantly restricted. However labor migration and student visas for STEM remain accessible. Skilled worker demand strong.",
+          "trend": "STABLE"
+        },
+        "climateRisk": {
+          "score": 22,
+          "level": "LOW",
+          "summary": "Sweden is one of the most climate-resilient countries long term. Cold climate limits heat risk. Some flooding in south. Strong renewable energy infrastructure. Good 30-40 year climate outlook.",
+          "trend": "STABLE"
+        },
+        "warRisk": {
+          "score": 25,
+          "level": "LOW",
+          "summary": "Sweden joined NATO 2024 - significant shift. Proximity to Russia raises awareness but direct threat remains very low. Defense spending increasing. Institutional security strong.",
+          "trend": "MONITORED"
+        },
+        "jobMarketRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Strong tech ecosystem. Spotify, Klarna, Ericsson, King HQ in Stockholm. AI research strong at KTH and Chalmers. English widely spoken in tech workplace. High demand for AI and ML engineers.",
+          "trend": "STABLE"
+        },
+        "politicalRisk": {
+          "score": 28,
+          "level": "LOW",
+          "summary": "Stable governance despite right-wing shift. Rule of law excellent. EU member with strong institutions. Immigration policy tightened but STEM skilled workers remain welcome.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "Stockholm housing queue system is not suitable for new arrivals - private market only option at high cost",
+        "SEK currency weaker than EUR - salary in SEK converts less favorably internationally",
+        "Swedish language expected for long-term integration and citizenship",
+        "NATO membership is new - monitor regional security development"
+      ],
+      "evidenceSummary": "Sweden offers excellent quality of life, strong tech ecosystem, and good long-term climate resilience. Housing in Stockholm and immigration policy tightening are real challenges. Good option for students prioritizing research quality and quality of life."
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "overallRiskScore": 30,
+      "confidenceScore": 78,
+      "riskLevel": "LOW-MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 40,
+          "level": "MODERATE",
+          "summary": "Helsinki is more affordable than Stockholm, Amsterdam or Dublin. Average 1BR rent EUR 1,100-1,500/month. Student housing available through university foundations. Smaller cities like Tampere and Oulu very affordable.",
+          "trend": "STABLE"
+        },
+        "economicRisk": {
+          "score": 42,
+          "level": "MODERATE",
+          "summary": "Finland contracted 2023-2024 due to trade with Russia ending and global slowdown. Recovery expected 2026-2027. Nokia ecosystem legacy. Gaming, cleantech, and AI growing. Smaller economy with concentration risk.",
+          "trend": "IMPROVING"
+        },
+        "inflationRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Inflation normalized. Finland uses EUR so ECB policy applies. Cost of living moderate by Nordic standards. Grocery and transport costs manageable.",
+          "trend": "STABLE"
+        },
+        "antiImmigrationRisk": {
+          "score": 40,
+          "level": "MODERATE",
+          "summary": "Right-wing government 2023 tightened some immigration rules. However Finland officially acknowledges demographic need for immigration. Talent Boost program continues attracting STEM workers. Social attitudes warming toward skilled immigrants.",
+          "trend": "STABLE"
+        },
+        "climateRisk": {
+          "score": 18,
+          "level": "VERY LOW",
+          "summary": "Excellent long-term climate resilience. Cold climate actually becomes advantageous as southern Europe heats. Low flood, drought, and extreme heat risk. Strong renewable energy base.",
+          "trend": "STABLE"
+        },
+        "warRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Finland shares 1,340km border with Russia. NATO member since 2023. Defense preparations strong. Historical experience with Russia. Direct attack extremely unlikely but proximity creates awareness. Strong NATO guarantee.",
+          "trend": "MONITORED"
+        },
+        "jobMarketRisk": {
+          "score": 38,
+          "level": "LOW-MODERATE",
+          "summary": "Smaller job market than larger EU countries. Helsinki tech scene growing. Nokia, Rovio, Wolt, Supercell provide tech base. AI and ML demand growing but limited compared to UK or Germany. English tech workplace common.",
+          "trend": "IMPROVING"
+        },
+        "politicalRisk": {
+          "score": 22,
+          "level": "LOW",
+          "summary": "Stable democratic governance. Strong rule of law. EU member. Immigration policy debates are political but institutions remain neutral. Finland consistently ranks in top 5 governance globally.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "Aging population means government will need more immigrants - good long-term signal",
+        "Finnish language needed for citizenship and full integration - difficult language",
+        "Russia border is a perception risk even if actual threat is low under NATO",
+        "Job market smaller than Germany or Netherlands - may require relocation within EU later"
+      ],
+      "evidenceSummary": "Finland is a hidden gem for long-term settlement. Lower housing costs, excellent governance, climate resilience, and genuine demographic need for immigrants. Key challenge is language and smaller job market. Best suited for students willing to integrate deeply."
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "overallRiskScore": 32,
+      "confidenceScore": 80,
+      "riskLevel": "LOW-MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 55,
+          "level": "MODERATE",
+          "summary": "Copenhagen housing market competitive but more manageable than Dublin or Amsterdam. Average 1BR EUR 1,400-1,900/month. Student housing through universities available. Aarhus and Odense more affordable.",
+          "trend": "STABLE"
+        },
+        "economicRisk": {
+          "score": 25,
+          "level": "LOW",
+          "summary": "One of the strongest economies in Europe. Life sciences, shipping, and cleantech anchor economy. Novo Nordisk alone represents significant portion of GDP. Stable and diversified.",
+          "trend": "STABLE"
+        },
+        "inflationRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Inflation well controlled. DKK pegged to EUR provides stability. Cost of living high but wages compensate. One of highest wage levels in EU.",
+          "trend": "STABLE"
+        },
+        "antiImmigrationRisk": {
+          "score": 60,
+          "level": "MODERATE-HIGH",
+          "summary": "Denmark has among the strictest immigration policies in EU. Points-based system, language requirements, integration contracts. However Fast-track scheme for highly paid skilled workers remains accessible. STEM workers with good salaries qualify.",
+          "trend": "STABLE"
+        },
+        "climateRisk": {
+          "score": 25,
+          "level": "LOW",
+          "summary": "Low climate risk. Some coastal flooding concerns but robust infrastructure. Excellent renewable energy transition underway. Wind power leader. Long-term climate outlook very good.",
+          "trend": "STABLE"
+        },
+        "warRisk": {
+          "score": 10,
+          "level": "VERY LOW",
+          "summary": "NATO member. Strong EU integration. No direct threat. Greenland geopolitics monitored but no security risk to mainland Denmark.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Strong demand for AI, software, and data science especially in life sciences and cleantech. Novo Nordisk digital transformation creating AI roles. Copenhagen tech scene growing. English widely used in tech sector.",
+          "trend": "IMPROVING"
+        },
+        "politicalRisk": {
+          "score": 20,
+          "level": "VERY LOW",
+          "summary": "Exceptionally stable governance. Centre-left and centre-right alternation without institutional disruption. Strong rule of law. Immigration is politically contested but within stable democratic framework.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "Integration requirements are strict - Danish language classes mandatory and integration contracts enforced",
+        "Denmark has toughest immigration rules in Nordics - salary thresholds for fast-track must be met",
+        "High taxes reduce net income - effective tax rate for single earner can exceed 40%",
+        "Small country limits job market breadth - but quality of roles is high"
+      ],
+      "evidenceSummary": "Denmark offers excellent economic stability, strong tech demand particularly in life sciences AI, and very low geopolitical risk. Strict immigration integration requirements are the main hurdle. Suitable for students targeting high-quality long-term settlement with patience for integration process."
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "overallRiskScore": 28,
+      "confidenceScore": 79,
+      "riskLevel": "LOW",
+      "risks": {
+        "housingRisk": {
+          "score": 50,
+          "level": "MODERATE",
+          "summary": "Oslo housing expensive but not as extreme as Dublin or Vancouver. Average 1BR NOK 15,000-20,000/month (~EUR 1,300-1,700). Student housing available through SiO. Bergen and Trondheim more affordable.",
+          "trend": "STABLE"
+        },
+        "economicRisk": {
+          "score": 12,
+          "level": "VERY LOW",
+          "summary": "Sovereign Wealth Fund exceeds USD 1.7 trillion. Oil and gas revenues stable. Diversifying into tech and renewables. One of most economically secure countries globally. Near-zero sovereign debt risk.",
+          "trend": "STABLE"
+        },
+        "inflationRisk": {
+          "score": 38,
+          "level": "LOW-MODERATE",
+          "summary": "Norges Bank managing inflation with rate policy. NOK somewhat volatile. Inflation moderating toward 2-3% target by 2026. High wages absorb cost increases.",
+          "trend": "IMPROVING"
+        },
+        "antiImmigrationRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Skilled worker immigration supported. EU EEA area workers prioritized but non-EU skilled workers welcomed. Smaller immigration volumes than Sweden or Germany. STEM workers in demand. Social integration expectations present.",
+          "trend": "STABLE"
+        },
+        "climateRisk": {
+          "score": 18,
+          "level": "VERY LOW",
+          "summary": "Excellent long-term climate resilience. Fjords and hydropower provide energy security. Cold climate means heat wave risk minimal. Some flooding in mountain valleys. Among best climate security in Europe.",
+          "trend": "STABLE"
+        },
+        "warRisk": {
+          "score": 15,
+          "level": "VERY LOW",
+          "summary": "NATO member. Svalbard has geopolitical sensitivity but mainland extremely secure. Strong NATO commitment. Defense cooperation with US and UK solid.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Smaller tech job market than Germany or UK. Oslo has growing tech scene. Strong AI demand in oil and gas digitalization, maritime, and public sector. Limited startup ecosystem compared to Stockholm or Amsterdam.",
+          "trend": "IMPROVING"
+        },
+        "politicalRisk": {
+          "score": 12,
+          "level": "VERY LOW",
+          "summary": "Exceptionally stable governance. Oil fund governance model globally respected. Rule of law excellent. Political stability near top globally. Immigration policy pragmatic and managed.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "Norwegian language essential for long-term career and citizenship - strong integration expectation",
+        "Smaller job market - Oslo dominates tech employment so geographic flexibility limited",
+        "High cost of living even by European standards but matched by very high salaries",
+        "Non-EU citizen so additional work permit steps required versus EU students"
+      ],
+      "evidenceSummary": "Norway has the lowest overall risk profile in this dataset. Economic security from sovereign wealth fund, excellent governance, and climate resilience make it exceptional for long-term planning. Key constraints are smaller job market and language requirements. Best for students prioritizing long-term stability over immediate career scale."
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "overallRiskScore": 30,
+      "confidenceScore": 82,
+      "riskLevel": "LOW-MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 62,
+          "level": "MODERATE-HIGH",
+          "summary": "Zurich and Geneva among most expensive cities globally. Average 1BR CHF 2,200-3,000/month. Vacancy rate extremely low in major cities. Basel and smaller cities more manageable. High salaries partially compensate.",
+          "trend": "STABLE"
+        },
+        "economicRisk": {
+          "score": 10,
+          "level": "VERY LOW",
+          "summary": "One of strongest and most stable economies globally. Banking, pharma, and precision engineering anchor. Low unemployment, high innovation. CHF is global safe haven currency.",
+          "trend": "STABLE"
+        },
+        "inflationRisk": {
+          "score": 18,
+          "level": "VERY LOW",
+          "summary": "Switzerland has lowest inflation in Europe historically. SNB managing price stability expertly. CHF strength provides import price advantage. Inflation well below 2% as of 2025-2026.",
+          "trend": "STABLE"
+        },
+        "antiImmigrationRisk": {
+          "score": 48,
+          "level": "MODERATE",
+          "summary": "Switzerland manages immigration via bilateral treaties with EU and separate non-EU quota system. Non-EU skilled workers face quotas and employer sponsorship requirements. University research positions more accessible. Referendum-based politics can create immigration policy surprises.",
+          "trend": "MONITORED"
+        },
+        "climateRisk": {
+          "score": 22,
+          "level": "LOW",
+          "summary": "Alpine glacier retreat long-term concern but not near-term risk for urban residents. Low extreme weather risk in cities. Excellent infrastructure and emergency management.",
+          "trend": "STABLE"
+        },
+        "warRisk": {
+          "score": 5,
+          "level": "VERY LOW",
+          "summary": "Neutral country with long diplomatic tradition. Not NATO or EU member. Hosts UN and international organizations. Among safest geopolitically.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 25,
+          "level": "LOW",
+          "summary": "ETH Zurich and EPFL create world-class research to industry pipeline. Google, IBM, Disney Research have Zurich labs. Very strong AI and ML research demand. Industry salary among highest globally for AI roles.",
+          "trend": "STABLE"
+        },
+        "politicalRisk": {
+          "score": 15,
+          "level": "VERY LOW",
+          "summary": "Exceptionally stable governance. Direct democracy provides legitimacy. Rule of law among top globally. Federal system distributes power effectively. Very low political risk.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "Non-EU citizen faces work permit quota system - employer sponsorship required",
+        "Cost of living is extremely high even with high salaries - lifestyle adjustment needed",
+        "PR pathway takes 10 years as non-EU citizen - longest in this dataset",
+        "Multilingual country - German, French, Italian used depending on canton - language expectations high"
+      ],
+      "evidenceSummary": "Switzerland offers the highest salaries, best research institutions, and exceptional stability. Main barriers are the non-EU work permit quota system and extremely high living costs. Ideal for PhD researchers targeting top-tier research careers. PR pathway very long for non-EU citizens."
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "overallRiskScore": 55,
+      "confidenceScore": 85,
+      "riskLevel": "MODERATE-HIGH",
+      "risks": {
+        "housingRisk": {
+          "score": 58,
+          "level": "MODERATE-HIGH",
+          "summary": "Highly variable by city. SF and NYC extremely expensive, average 1BR USD 2,800-4,000/month. Austin, Raleigh, Pittsburgh more affordable at USD 1,200-1,800. University towns often have reasonable student housing.",
+          "trend": "STABLE"
+        },
+        "economicRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "World's largest AI and tech economy. Strong GDP growth. Fed managing inflation landing. Some tech layoff volatility but sector fundamentally strong. AI investment boom ongoing.",
+          "trend": "STABLE"
+        },
+        "inflationRisk": {
+          "score": 40,
+          "level": "MODERATE",
+          "summary": "Fed achieved soft landing. Inflation cooling toward 2-3% target by 2026. Interest rates elevated but cutting cycle underway. USD strong globally.",
+          "trend": "IMPROVING"
+        },
+        "antiImmigrationRisk": {
+          "score": 80,
+          "level": "VERY HIGH",
+          "summary": "Trump administration 2025 significantly tightened immigration enforcement. H-1B visa process more uncertain. OPT STEM extension maintained but politically contested. Green card backlogs for Bangladesh-born applicants exceed 50+ years in employment categories. Significant deportation actions underway.",
+          "trend": "WORSENING"
+        },
+        "climateRisk": {
+          "score": 45,
+          "level": "MODERATE",
+          "summary": "Highly variable. Florida, Texas Gulf Coast face hurricane and flooding risk. California wildfire risk. Midwest tornado corridor. Northeast and Pacific Northwest more stable. Climate risk city-specific.",
+          "trend": "WORSENING"
+        },
+        "warRisk": {
+          "score": 10,
+          "level": "VERY LOW",
+          "summary": "No direct territorial threat. World's largest military. Some domestic political instability risk but no external war risk. Taiwan-China tensions monitored geopolitically.",
+          "trend": "STABLE"
+        },
+        "jobMarketRisk": {
+          "score": 25,
+          "level": "LOW",
+          "summary": "World's best AI job market. Silicon Valley, NYC, Seattle, Austin all major hubs. Highest AI salaries globally. FAANG and leading AI labs all headquartered here. Fundamental demand strongest in the world.",
+          "trend": "STABLE"
+        },
+        "politicalRisk": {
+          "score": 65,
+          "level": "HIGH",
+          "summary": "Significant political polarization. Immigration policy dramatically different between administrations. For immigrants specifically the political risk is very high as status and pathways can reverse. Bangladesh-born faces extremely long EB-2/EB-3 green card waits. Political uncertainty around H-1B renewals.",
+          "trend": "WORSENING"
+        }
+      },
+      "keyWarnings": [
+        "Green card for Bangladesh-born in employment categories has 50+ year backlog - plan accordingly",
+        "Political risk for immigrants is the highest in this dataset - policy reversals can happen overnight",
+        "Best AI career but worst immigration outcome - use USA for experience then move to friendly country",
+        "OPT STEM 3-year extension politically contested - could change between graduation and use",
+        "H-1B lottery means no guarantee of work authorization after OPT"
+      ],
+      "evidenceSummary": "USA offers unmatched AI career opportunity and highest salaries globally. However immigration risk for Bangladeshi nationals is the highest in this dataset. Green card backlogs of 50+ years make permanent settlement unlikely for most. Strategic approach: study and gain experience in USA, then migrate to Canada, Australia, or Europe for PR."
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "overallRiskScore": 38,
+      "confidenceScore": 78,
+      "riskLevel": "LOW-MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Tokyo surprisingly affordable compared to Western cities. Average 1BR JPY 80,000-130,000/month (~USD 550-900). Quality housing available near university campuses. Smaller cities very affordable. Gaijin house options for new arrivals.",
+          "trend": "STABLE"
+        },
+        "economicRisk": {
+          "score": 40,
+          "level": "MODERATE",
+          "summary": "Japan exited deflation cycle 2023-2024. BOJ rate normalization underway. JPY was historically weak 2022-2024 but recovering. Third largest economy globally with strong industrial base. Government debt levels high but domestically held.",
+          "trend": "IMPROVING"
+        },
+        "inflationRisk": {
+          "score": 38,
+          "level": "LOW-MODERATE",
+          "summary": "Inflation now moderate 2-3% after decades of deflation. Wage growth emerging. Cost of living reasonable for developed economy. Food prices moderate. JPY depreciation increased import costs.",
+          "trend": "STABLE"
+        },
+        "antiImmigrationRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Japan is actively opening immigration as of 2024-2026. J-Skip Highly Skilled Professional visa launched. Startup visa expanded. Government officially targeting skilled foreign worker attraction. Cultural integration expectations remain high even if policy is opening.",
+          "trend": "IMPROVING"
+        },
+        "climateRisk": {
+          "score": 52,
+          "level": "MODERATE",
+          "summary": "Typhoon season significant risk particularly in Okinawa and southern Japan. Earthquake and tsunami risk structural and permanent. Tokyo Bay liquefaction risk in major earthquake. Flood risk in low-lying areas. Well-prepared infrastructure mitigates but cannot eliminate.",
+          "trend": "MONITORED"
+        },
+        "warRisk": {
+          "score": 28,
+          "level": "LOW-MODERATE",
+          "summary": "North Korea missile tests periodic threat. China-Japan tensions in East China Sea. US-Japan alliance provides strong security umbrella. Direct attack extremely unlikely but regional tensions elevated versus 2015.",
+          "trend": "MONITORED"
+        },
+        "jobMarketRisk": {
+          "score": 32,
+          "level": "LOW-MODERATE",
+          "summary": "Strong demand for AI and software engineers. Toyota, Sony, SoftBank, Fujitsu, NEC all investing heavily in AI. Government Society 5.0 initiative driving AI adoption. English tech jobs growing but Japanese language significantly expands opportunities.",
+          "trend": "IMPROVING"
+        },
+        "politicalRisk": {
+          "score": 20,
+          "level": "VERY LOW",
+          "summary": "Extremely stable governance. LDP-dominated politics predictable. Immigration policy opening is bipartisan necessity due to demographics. Rule of law excellent. Very low corruption.",
+          "trend": "STABLE"
+        }
+      },
+      "keyWarnings": [
+        "Japanese language proficiency is critical for career progression and social integration",
+        "Without Japanese N2 or better, career ceiling is lower even at tech companies",
+        "Earthquake and natural disaster risk is structural and permanent - not a reason to avoid but must be accepted",
+        "Japanese workplace culture significantly different from Western or Bangladeshi expectations",
+        "Aging population means immigration need will increase - long-term signal is positive"
+      ],
+      "evidenceSummary": "Japan is an underrated destination that is actively opening to skilled immigrants. Affordable housing, strong AI investment, and improving immigration policy are positives. Language barrier and natural disaster risk are real challenges. Best for students willing to invest in Japanese language learning."
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "overallRiskScore": 40,
+      "confidenceScore": 75,
+      "riskLevel": "MODERATE",
+      "risks": {
+        "housingRisk": {
+          "score": 50,
+          "level": "MODERATE",
+          "summary": "Seoul housing expensive with unique jeonse deposit system requiring large lump sums. Monthly rent for 1BR KRW 800,000-1,500,000 (~USD 600-1,100). University student housing available. Outside Seoul very affordable.",
+          "trend": "STABLE"
+        },
+        "economicRisk": {
+          "score": 38,
+          "level": "LOW-MODERATE",
+          "summary": "Strong export-driven economy. Samsung, SK Hynix, LG, Hyundai anchor. Semiconductor and EV sectors globally competitive. Political turmoil 2024 temporary disruption. Recovery underway.",
+          "trend": "IMPROVING"
+        },
+        "inflationRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Inflation moderate and well-managed by BOK. Cost of living moderate for developed Asian economy. KRW relatively stable. Food and transport affordable.",
+          "trend": "STABLE"
+        },
+        "antiImmigrationRisk": {
+          "score": 45,
+          "level": "MODERATE",
+          "summary": "Korea improving talent attraction via K-Move and point-based immigration. Skilled worker demand explicit in government policy. Social integration remains culturally challenging. Historical ethnic homogeneity creates social but not legal barriers.",
+          "trend": "IMPROVING"
+        },
+        "climateRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Typhoon and flooding risk in summer monsoon season. Air quality issues from Chinese dust storms periodic. Seoul well-prepared for natural events. Longer term climate outlook manageable.",
+          "trend": "STABLE"
+        },
+        "warRisk": {
+          "score": 45,
+          "level": "MODERATE",
+          "summary": "North Korea missile and nuclear threat is a permanent structural risk. Armistice not peace treaty means technically still at war. US military presence provides strong deterrence. Actual conflict probability low but perception risk high for Bangladeshi families.",
+          "trend": "MONITORED"
+        },
+        "jobMarketRisk": {
+          "score": 35,
+          "level": "LOW-MODERATE",
+          "summary": "Strong semiconductor and AI demand. Samsung and SK Hynix hire international AI researchers. KAIST and SNU producing strong research. English jobs available in large chaebols and startups. Korean language expands opportunities significantly.",
+          "trend": "IMPROVING"
+        },
+        "politicalRisk": {
+          "score": 40,
+          "level": "MODERATE",
+          "summary": "Presidential crisis 2024 martial law declaration shocked investors and immigrants. Constitutional system held and democracy restored but demonstrated political volatility. Rule of law strong but executive political risk elevated.",
+          "trend": "MONITORED"
+        }
+      },
+      "keyWarnings": [
+        "2024 martial law crisis showed political risk is real despite strong institutions - monitor",
+        "Korean language highly recommended for career advancement beyond entry level",
+        "North Korea threat is permanent background risk - assess personal comfort level",
+        "Social integration for non-East Asian immigrants can be challenging - prepare for cultural adjustment",
+        "Aging population crisis severe - government will need immigrants, good long-term signal"
+      ],
+      "evidenceSummary": "South Korea offers strong AI and semiconductor career opportunities with lower cost of living than Japan or Western Europe. Political instability risk demonstrated in 2024 and North Korea threat are real considerations. Korean language investment needed for full career development. Improving immigration policy is a positive signal."
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "overallRiskScore": 58,
+      "confidenceScore": 70,
+      "riskLevel": "MODERATE-HIGH",
+      "risks": {
+        "housingRisk": {
+          "score": 45,
+          "level": "MODERATE",
+          "summary": "Housing market correction 2022-2025 reduced prices significantly. Shanghai and Beijing rent for 1BR CNY 5,000-9,000/month (~USD 700-1,250). International areas more expensive. Student housing at top universities available and subsidized.",
+          "trend": "IMPROVING"
+        },
+        "economicRisk": {
+          "score": 55,
+          "level": "MODERATE",
+          "summary": "Significant structural economic challenges. Property sector debt crisis ongoing. Deflation risk. Export pressure from US tariffs. However government AI and tech investment massive. World's second largest AI economy. Long-term trajectory contested.",
+          "trend": "MONITORED"
+        },
+        "inflationRisk": {
+          "score": 25,
+          "level": "LOW",
+          "summary": "China actually faces deflation risk not inflation. Consumer prices flat or declining. This reduces cost of living but signals economic weakness. CNY relatively stable managed currency.",
+          "trend": "MONITORED"
+        },
+        "antiImmigrationRisk": {
+          "score": 40,
+          "level": "MODERATE",
+          "summary": "China does not have traditional immigration infrastructure. Permanent residence historically very difficult. However Talent Visa, R Visa for experts, and new high-skilled immigration channels introduced 2023-2025. Government explicitly targeting international talent attraction in AI and tech.",
+          "trend": "IMPROVING"
+        },
+        "climateRisk": {
+          "score": 50,
+          "level": "MODERATE",
+          "summary": "Highly variable by region. Northern China air quality poor. Flooding in Yangtze River basin. Typhoons in coastal southeast. Beijing and Shanghai face heat and air quality stress. Western China more extreme. Southern universities in Guangzhou and Shenzhen have pollution risk.",
+          "trend": "MONITORED"
+        },
+        "warRisk": {
+          "score": 55,
+          "level": "MODERATE-HIGH",
+          "summary": "Taiwan strait tensions are the primary long-term geopolitical risk. South China Sea disputes ongoing. US-China strategic competition intensifying. Actual military conflict still considered low probability but the risk has increased since 2020. Any Taiwan conflict would severely impact China-based foreigners.",
+          "trend": "WORSENING"
+        },
+        "jobMarketRisk": {
+          "score": 30,
+          "level": "LOW-MODERATE",
+          "summary": "Massive AI investment from Baidu, Alibaba, Tencent, Huawei, ByteDance, and government labs. World's second largest AI research output. However US sanctions on AI chips creates technology access constraints. Youth unemployment high in China generally.",
+          "trend": "MONITORED"
+        },
+        "politicalRisk": {
+          "score": 70,
+          "level": "HIGH",
+          "summary": "Single party authoritarian governance. Policy can change overnight without legal recourse. Foreigners subject to national security laws that are broadly defined. Internet restrictions limit professional global connectivity. Exit bans possible in disputes. High political risk for foreign nationals.",
+          "trend": "WORSENING"
+        }
+      },
+      "keyWarnings": [
+        "Political risk and rule of law concerns are fundamental - no independent judiciary for disputes",
+        "Taiwan conflict risk is a genuine long-term scenario that could trap or displace foreign residents",
+        "Great Firewall restricts access to Google Scholar, GitHub, VPN use is legally gray area",
+        "Traditional PR pathway remains very difficult - new channels exist but not proven at scale",
+        "Recommended only for students comfortable with authoritarian governance environment",
+        "Mandarin Chinese proficiency essentially required for daily life and career",
+        "US chip export controls may limit cutting-edge AI hardware access"
+      ],
+      "evidenceSummary": "China offers massive AI industry scale and investment but comes with fundamental political risk, rule of law concerns, and long-term geopolitical uncertainty around Taiwan. Suitable only for students explicitly seeking China experience with eyes open to risks. Not recommended as primary settlement destination."
+    }
+  ]
+}

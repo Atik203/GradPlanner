@@ -1,0 +1,937 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Future-proofing analysis for Bangladeshi CS/AI/ML graduates evaluating long-term country prospects",
+    "targetProfile": "Bangladeshi student planning 20-30 year horizon: study, work, PR, citizenship, family",
+    "criticalNote": "Future-proofing scores reflect 2035 and 2045 outlook - aging populations, AI investment, labor shortages, and immigration openness are key drivers"
+  },
+  "futureProofing": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "futureProofScore": 82,
+      "agingPopulationNeed": {
+        "score": 84,
+        "medianAge2026": 42,
+        "projectedMedianAge2045": 46,
+        "laborShortageByField": "Critical in tech, healthcare, trades",
+        "immigrationDependency": "Very High - immigration drives 100% of population growth"
+      },
+      "aiInvestment": {
+        "score": 82,
+        "annualPublicInvestment": "CAD 2.4B (Pan-Canadian AI Strategy Phase 1+2)",
+        "privateInvestment": "Growing - Toronto, Montreal, Vancouver hubs",
+        "trend": "Rising",
+        "keyInitiatives": ["CIFAR AI Chairs", "Vector Institute", "Mila", "Amii"]
+      },
+      "demographicTrend": {
+        "score": 78,
+        "populationGrowth": "Immigration-dependent; native birth rate below replacement",
+        "youthPopulation": "Declining without immigration",
+        "workforceChallenge": "Significant - aging boomers retiring en masse 2025-2035"
+      },
+      "longTermImmigrationNeed": {
+        "score": 91,
+        "annualImmigrationTarget": "500,000+/year through 2025 (may reduce but structural need remains)",
+        "stemDemand": "Critically high",
+        "policyStability": "Medium - political pressure to reduce but economic need overrides"
+      },
+      "energySecurity": {
+        "score": 86,
+        "renewableTransition": "Strong hydro, growing wind/solar",
+        "fossilDependency": "Still significant (Alberta oil sands)",
+        "climateVulnerability": "Moderate - wildfires, floods increasing"
+      },
+      "technologyGrowth": {
+        "score": 80,
+        "sectors": ["AI/ML", "FinTech", "CleanTech", "AgTech"],
+        "rankGlobally": "Top 15 tech ecosystem",
+        "weaknesses": "Brain drain to USA remains significant"
+      },
+      "globalCompetitiveness": {
+        "score": 76,
+        "worldEconomicForumRank": 14,
+        "innovationIndex": 15,
+        "tradeOpenness": "High - CPTPP, CUSMA",
+        "currencyStability": "Moderate - commodity-linked CAD"
+      },
+      "laborShortageOutlook": {
+        "score": 88,
+        "shortfallProjection2030": "1.5-2M skilled workers",
+        "techSpecific": "300,000+ tech workers needed by 2030",
+        "benefit": "High demand = easier PR, stable jobs, salary growth"
+      },
+      "risks": {
+        "housingCrisis": "Severe - structural issue unlikely to fully resolve by 2035",
+        "politicalShift": "Conservative government may reduce immigration temporarily",
+        "usDependency": "70% trade with USA - vulnerability"
+      },
+      "forecast2035": "Strong - aging population forces continued immigration; AI sector mature; housing stress easing slightly but unresolved; salary growth moderate",
+      "forecast2045": "Very strong for immigrants - Canada will need millions more workers; tech sector dominant; climate refugee pressure may challenge housing further",
+      "overallVerdict": "Safe long-term bet with high immigration certainty; housing the main challenge",
+      "confidenceScore": 85
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "futureProofScore": 86,
+      "agingPopulationNeed": {
+        "score": 75,
+        "medianAge2026": 39,
+        "projectedMedianAge2045": 43,
+        "laborShortageByField": "High in AI, healthcare, engineering",
+        "immigrationDependency": "High but politically contested"
+      },
+      "aiInvestment": {
+        "score": 99,
+        "annualPublicInvestment": "USD 3B+ (CHIPS Act, NSF AI priorities)",
+        "privateInvestment": "USD 200B+ annually - global leader",
+        "trend": "Exponential",
+        "keyInitiatives": ["OpenAI", "Anthropic", "NVIDIA", "Google DeepMind", "Meta AI"]
+      },
+      "demographicTrend": {
+        "score": 72,
+        "populationGrowth": "Slowing; birth rate below replacement",
+        "youthPopulation": "Supported by legal immigration",
+        "workforceChallenge": "Significant but cushioned by historical immigration"
+      },
+      "longTermImmigrationNeed": {
+        "score": 72,
+        "annualImmigrationTarget": "1M+ legal annually but backlog severe",
+        "stemDemand": "Critically high",
+        "policyStability": "Low - politically volatile; swings between administrations"
+      },
+      "energySecurity": {
+        "score": 84,
+        "renewableTransition": "Large solar/wind investment post-IRA",
+        "fossilDependency": "Still significant but diversifying",
+        "climateVulnerability": "High - hurricanes, wildfires, heat"
+      },
+      "technologyGrowth": {
+        "score": 99,
+        "sectors": ["AI/ML", "Biotech", "Space", "Defense Tech", "FinTech"],
+        "rankGlobally": "Undisputed #1",
+        "weaknesses": "Immigration system limits talent retention"
+      },
+      "globalCompetitiveness": {
+        "score": 94,
+        "worldEconomicForumRank": 2,
+        "innovationIndex": 3,
+        "tradeOpenness": "High but protectionist trend",
+        "currencyStability": "Very high - USD global reserve"
+      },
+      "laborShortageOutlook": {
+        "score": 82,
+        "shortfallProjection2030": "85,000+ tech workers/year",
+        "techSpecific": "AI talent gap 1M+ by 2030",
+        "benefit": "Extreme demand but immigration bottleneck limits access"
+      },
+      "risks": {
+        "immigrationVolatility": "Critical risk - H1B lottery, green card backlog, political swings",
+        "inequality": "Growing wealth gap; housing expensive in tech hubs",
+        "geopolitics": "Trade wars, China tensions create business uncertainty"
+      },
+      "forecast2035": "Dominant in AI and technology; immigration system likely reformed but imperfect; excellent career but uncertain residency",
+      "forecast2045": "Continued global tech leader; immigration will be more open by necessity; but political cycles create uncertainty",
+      "overallVerdict": "Best career and salary destination but worst immigration certainty; use as career accelerator not permanent plan",
+      "confidenceScore": 88
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "futureProofScore": 87,
+      "agingPopulationNeed": {
+        "score": 93,
+        "medianAge2026": 46,
+        "projectedMedianAge2045": 49,
+        "laborShortageByField": "Critical - skilled workers shortage 600,000+ already",
+        "immigrationDependency": "Essential - Fachkräftemangel (skilled worker shortage) is political priority"
+      },
+      "aiInvestment": {
+        "score": 83,
+        "annualPublicInvestment": "EUR 5B (KI-Strategie)",
+        "privateInvestment": "Strong in automotive AI, industrial AI",
+        "trend": "Rising",
+        "keyInitiatives": ["DFKI", "Cyber Valley", "Fraunhofer AI", "BMBF AI programs"]
+      },
+      "demographicTrend": {
+        "score": 88,
+        "populationGrowth": "Negative without immigration",
+        "youthPopulation": "Declining; lowest birth rate in developed world",
+        "workforceChallenge": "Severe - most acute of all analyzed countries"
+      },
+      "longTermImmigrationNeed": {
+        "score": 94,
+        "annualImmigrationTarget": "400,000+ skilled workers/year needed",
+        "stemDemand": "Critically high",
+        "policyStability": "Medium-High - economic consensus for immigration despite political noise"
+      },
+      "energySecurity": {
+        "score": 72,
+        "renewableTransition": "Strong - Energiewende; 50%+ renewable by 2026",
+        "fossilDependency": "Significant reduction since Russia crisis; still dependent on gas",
+        "climateVulnerability": "Low-Medium"
+      },
+      "technologyGrowth": {
+        "score": 85,
+        "sectors": ["Automotive AI", "Industrial AI", "Robotics", "FinTech", "GreenTech"],
+        "rankGlobally": "Top 5 manufacturing tech; Top 10 AI",
+        "weaknesses": "Slower digital transformation vs US/China; startup culture underdeveloped"
+      },
+      "globalCompetitiveness": {
+        "score": 82,
+        "worldEconomicForumRank": 7,
+        "innovationIndex": 8,
+        "tradeOpenness": "Very high - export champion",
+        "currencyStability": "Very high - EUR"
+      },
+      "laborShortageOutlook": {
+        "score": 95,
+        "shortfallProjection2030": "3-5M workers by 2030",
+        "techSpecific": "300,000+ IT professionals needed now",
+        "benefit": "Highest benefit for immigrants - structural demand ensures stable employment"
+      },
+      "risks": {
+        "bureaucracy": "Slow integration processes despite reforms",
+        "languageBarrier": "German required for full integration",
+        "farRight": "AfD rise creates social tension but not policy threat to skilled workers"
+      },
+      "forecast2035": "Very strong - deepening labor shortage forces immigration reform; AI industrial leadership; excellent for long-term settlers",
+      "forecast2045": "Excellent - demographic crisis creates permanent demand for skilled immigrants; language will matter more",
+      "overallVerdict": "Most structurally favorable for long-term immigrant workers in Europe; labor shortage guarantees demand",
+      "confidenceScore": 89
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "futureProofScore": 79,
+      "agingPopulationNeed": {
+        "score": 79,
+        "medianAge2026": 38,
+        "projectedMedianAge2045": 43,
+        "laborShortageByField": "Significant in tech, healthcare, infrastructure",
+        "immigrationDependency": "Very High - immigration-built economy"
+      },
+      "aiInvestment": {
+        "score": 71,
+        "annualPublicInvestment": "AUD 124M (AI Action Plan) - relatively modest",
+        "privateInvestment": "Growing but smaller than US/EU",
+        "trend": "Rising",
+        "keyInitiatives": ["CSIRO Data61", "National AI Centre", "Industry growth centres"]
+      },
+      "demographicTrend": {
+        "score": 76,
+        "populationGrowth": "Immigration-dependent",
+        "youthPopulation": "Stable with immigration",
+        "workforceChallenge": "Moderate - less acute than Germany/Japan"
+      },
+      "longTermImmigrationNeed": {
+        "score": 84,
+        "annualImmigrationTarget": "200,000-250,000/year",
+        "stemDemand": "High",
+        "policyStability": "Medium - bipartisan support for skilled migration; occasional populist pressure"
+      },
+      "energySecurity": {
+        "score": 80,
+        "renewableTransition": "Rapid solar/wind growth; abundant resources",
+        "fossilDependency": "Significant (coal, LNG exports) but transitioning",
+        "climateVulnerability": "High - extreme heat, fires, floods"
+      },
+      "technologyGrowth": {
+        "score": 74,
+        "sectors": ["FinTech", "AgTech", "Mining Tech", "EdTech", "CleanTech"],
+        "rankGlobally": "Top 20 ecosystem",
+        "weaknesses": "Small domestic market; geographic isolation; brain drain to US/UK"
+      },
+      "globalCompetitiveness": {
+        "score": 76,
+        "worldEconomicForumRank": 19,
+        "innovationIndex": 24,
+        "tradeOpenness": "High - CPTPP, Australia-UK FTA",
+        "currencyStability": "Moderate - commodity-linked AUD"
+      },
+      "laborShortageOutlook": {
+        "score": 81,
+        "shortfallProjection2030": "1M+ workers across sectors",
+        "techSpecific": "200,000+ tech workers needed",
+        "benefit": "High demand benefits skilled immigrants"
+      },
+      "risks": {
+        "housingCrisis": "Severe - Sydney/Melbourne among most unaffordable globally",
+        "climateRisk": "High - fire seasons, coastal flooding",
+        "chinaRelations": "Trade diversification ongoing; geopolitical uncertainty"
+      },
+      "forecast2035": "Strong - resource-rich, immigration-friendly, growing AI sector; housing challenge persists",
+      "forecast2045": "Good - climate risks increasing; AI and green tech growth; immigration essential",
+      "overallVerdict": "Solid long-term option with clear immigration pathway; climate risk is growing concern",
+      "confidenceScore": 81
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "futureProofScore": 80,
+      "agingPopulationNeed": {
+        "score": 82,
+        "medianAge2026": 43,
+        "projectedMedianAge2045": 47,
+        "laborShortageByField": "Critical in tech, engineering, healthcare",
+        "immigrationDependency": "Very High"
+      },
+      "aiInvestment": {
+        "score": 82,
+        "annualPublicInvestment": "EUR 376M (National AI Strategy)",
+        "privateInvestment": "Strong - ASML, Booking, Adyen, BigTech EU offices",
+        "trend": "Rising",
+        "keyInitiatives": ["ELSA AI", "ICAI Labs", "AINed program"]
+      },
+      "demographicTrend": {
+        "score": 79,
+        "populationGrowth": "Slow but positive; immigration helping",
+        "youthPopulation": "Stable",
+        "workforceChallenge": "Moderate-High"
+      },
+      "longTermImmigrationNeed": {
+        "score": 86,
+        "annualImmigrationTarget": "High skilled migration priority",
+        "stemDemand": "Very high",
+        "policyStability": "Medium - right-wing government reducing some immigration but tech workers protected"
+      },
+      "energySecurity": {
+        "score": 76,
+        "renewableTransition": "Strong offshore wind investment",
+        "fossilDependency": "Groningen gas field closed; dependent on imports",
+        "climateVulnerability": "Very High - below sea level; flooding existential risk"
+      },
+      "technologyGrowth": {
+        "score": 84,
+        "sectors": ["Semiconductors (ASML)", "FinTech", "Logistics Tech", "AgTech"],
+        "rankGlobally": "Top 10 European ecosystem",
+        "weaknesses": "Small domestic market"
+      },
+      "globalCompetitiveness": {
+        "score": 85,
+        "worldEconomicForumRank": 5,
+        "innovationIndex": 9,
+        "tradeOpenness": "Highest in Europe - port of Europe",
+        "currencyStability": "Very high - EUR"
+      },
+      "laborShortageOutlook": {
+        "score": 87,
+        "shortfallProjection2030": "Significant across all skilled sectors",
+        "techSpecific": "150,000+ tech workers shortage",
+        "benefit": "Strong demand for skilled immigrants"
+      },
+      "risks": {
+        "housingCrisis": "Very severe - Amsterdam among Europe's worst",
+        "floodingRisk": "Long-term existential but well-managed",
+        "politicalShift": "Wilders government reducing non-EU immigration; tech workers less affected"
+      },
+      "forecast2035": "Strong - semiconductor leadership (ASML critical), EU hub, strong AI investment; housing stress",
+      "forecast2045": "Good - climate adaptation will be costly; tech leadership sustained; immigration need high",
+      "overallVerdict": "Strong European option with EU access; housing and politics are key risks",
+      "confidenceScore": 83
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "futureProofScore": 81,
+      "agingPopulationNeed": {
+        "score": 80,
+        "medianAge2026": 41,
+        "projectedMedianAge2045": 44,
+        "laborShortageByField": "High in tech, healthcare, engineering",
+        "immigrationDependency": "High"
+      },
+      "aiInvestment": {
+        "score": 83,
+        "annualPublicInvestment": "SEK 5.6B (WASP program)",
+        "privateInvestment": "Strong - Spotify, Ericsson, gaming sector",
+        "trend": "Strong and rising",
+        "keyInitiatives": ["WASP", "AI Innovation of Sweden", "Vinnova grants"]
+      },
+      "demographicTrend": {
+        "score": 77,
+        "populationGrowth": "Immigration-dependent",
+        "youthPopulation": "Declining natively",
+        "workforceChallenge": "Moderate-High"
+      },
+      "longTermImmigrationNeed": {
+        "score": 82,
+        "annualImmigrationTarget": "Skilled migration prioritized despite political debate",
+        "stemDemand": "Very high",
+        "policyStability": "Medium - right-wing shift but economic need for tech immigrants"
+      },
+      "energySecurity": {
+        "score": 91,
+        "renewableTransition": "Excellent - 90%+ renewable electricity",
+        "fossilDependency": "Minimal",
+        "climateVulnerability": "Low - northern location; some flooding risk"
+      },
+      "technologyGrowth": {
+        "score": 85,
+        "sectors": ["Gaming", "FinTech", "CleanTech", "Telecom AI", "Medtech"],
+        "rankGlobally": "Top 10 startup ecosystem per capita",
+        "weaknesses": "Small market; reliance on exports"
+      },
+      "globalCompetitiveness": {
+        "score": 83,
+        "worldEconomicForumRank": 6,
+        "innovationIndex": 2,
+        "tradeOpenness": "Very high",
+        "currencyStability": "Moderate - SEK can be volatile"
+      },
+      "laborShortageOutlook": {
+        "score": 83,
+        "shortfallProjection2030": "Significant especially in tech and care sectors",
+        "techSpecific": "High demand for AI/ML engineers",
+        "benefit": "Structured immigration creates opportunities"
+      },
+      "risks": {
+        "housingCrisis": "Significant in Stockholm",
+        "integration": "Social cohesion challenges from prior immigration waves",
+        "smallMarket": "Limited growth ceiling locally"
+      },
+      "forecast2035": "Strong - clean energy advantage, strong innovation, quality of life leader",
+      "forecast2045": "Very good - climate-resilient, sustainable economy, but small scale limits global impact",
+      "overallVerdict": "Excellent quality of life and sustainability; smaller market but high long-term stability",
+      "confidenceScore": 82
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "futureProofScore": 80,
+      "agingPopulationNeed": {
+        "score": 92,
+        "medianAge2026": 43,
+        "projectedMedianAge2045": 48,
+        "laborShortageByField": "Critical - among worst in Europe per capita",
+        "immigrationDependency": "Essential - government acknowledges critical need"
+      },
+      "aiInvestment": {
+        "score": 80,
+        "annualPublicInvestment": "EUR 200M+ in AI strategy",
+        "privateInvestment": "Nokia, gaming sector, growing startups",
+        "trend": "Rising",
+        "keyInitiatives": ["FCAI", "Business Finland", "AI acceleration program"]
+      },
+      "demographicTrend": {
+        "score": 85,
+        "populationGrowth": "Negative without immigration - critical issue",
+        "youthPopulation": "Declining sharply",
+        "workforceChallenge": "Severe - needs 200,000+ immigrants by 2030"
+      },
+      "longTermImmigrationNeed": {
+        "score": 93,
+        "annualImmigrationTarget": "Government target 50,000/year skilled",
+        "stemDemand": "Very high",
+        "policyStability": "High - all parties agree on skilled immigration need"
+      },
+      "energySecurity": {
+        "score": 88,
+        "renewableTransition": "Strong hydro + nuclear + wind",
+        "fossilDependency": "Low - Olkiluoto 3 nuclear operational",
+        "climateVulnerability": "Low"
+      },
+      "technologyGrowth": {
+        "score": 78,
+        "sectors": ["Gaming", "Telecom AI", "CleanTech", "EdTech", "HealthTech"],
+        "rankGlobally": "Top 15 innovation",
+        "weaknesses": "Small market; language barrier"
+      },
+      "globalCompetitiveness": {
+        "score": 80,
+        "worldEconomicForumRank": 11,
+        "innovationIndex": 7,
+        "tradeOpenness": "High - EU member",
+        "currencyStability": "Very high - EUR"
+      },
+      "laborShortageOutlook": {
+        "score": 94,
+        "shortfallProjection2030": "200,000+ workers needed",
+        "techSpecific": "40,000+ tech workers needed by 2030",
+        "benefit": "Highest labor shortage = easiest immigration for skilled workers"
+      },
+      "risks": {
+        "languageBarrier": "Finnish essential for long-term integration and citizenship",
+        "smallMarket": "Limited job variety",
+        "climate": "Cold may deter immigrants"
+      },
+      "forecast2035": "Strong - demographic crisis forces immigration openness; clean energy secure; stable society",
+      "forecast2045": "Very strong for immigrants - Finland will critically need workers; smaller but stable economy",
+      "overallVerdict": "Hidden gem for long-term settlement; demographic need ensures welcome; language is the investment needed",
+      "confidenceScore": 82
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "futureProofScore": 79,
+      "agingPopulationNeed": {
+        "score": 81,
+        "medianAge2026": 42,
+        "projectedMedianAge2045": 46,
+        "laborShortageByField": "High in tech, healthcare, skilled trades",
+        "immigrationDependency": "High"
+      },
+      "aiInvestment": {
+        "score": 79,
+        "annualPublicInvestment": "DKK 2B (Digital strategy)",
+        "privateInvestment": "Novo Nordisk, Maersk, Vestas strong",
+        "trend": "Growing",
+        "keyInitiatives": ["Pioneer Centre for AI (P1)", "Digital Hub Denmark"]
+      },
+      "demographicTrend": {
+        "score": 77,
+        "populationGrowth": "Slightly positive; immigration-supported",
+        "youthPopulation": "Stable",
+        "workforceChallenge": "Moderate-High"
+      },
+      "longTermImmigrationNeed": {
+        "score": 82,
+        "annualImmigrationTarget": "Skilled migration needed; political tension with refugee migration",
+        "stemDemand": "High",
+        "policyStability": "Medium - strict on social migration, open on skilled"
+      },
+      "energySecurity": {
+        "score": 90,
+        "renewableTransition": "Global leader in wind energy",
+        "fossilDependency": "Minimal - North Sea transition complete",
+        "climateVulnerability": "Low-Medium"
+      },
+      "technologyGrowth": {
+        "score": 82,
+        "sectors": ["GreenTech", "BioTech", "Logistics", "AgTech", "FinTech"],
+        "rankGlobally": "Top 15 innovation",
+        "weaknesses": "Small market; expensive living"
+      },
+      "globalCompetitiveness": {
+        "score": 82,
+        "worldEconomicForumRank": 9,
+        "innovationIndex": 10,
+        "tradeOpenness": "Very high - EU hub",
+        "currencyStability": "Very high - EUR-pegged DKK"
+      },
+      "laborShortageOutlook": {
+        "score": 84,
+        "shortfallProjection2030": "Significant across sectors",
+        "techSpecific": "Strong demand for AI/ML engineers",
+        "benefit": "Structured immigration for skilled workers"
+      },
+      "risks": {
+        "cost": "Very expensive - high taxes and living costs",
+        "smallMarket": "Limited job market size",
+        "language": "Danish important for integration despite English sufficiency"
+      },
+      "forecast2035": "Strong - green tech global leader; biotech growing; quality of life excellent",
+      "forecast2045": "Good - sustainable economy; immigration need grows; high quality of life sustained",
+      "overallVerdict": "Excellent quality of life and sustainability leadership; expensive but stable long-term",
+      "confidenceScore": 80
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "futureProofScore": 85,
+      "agingPopulationNeed": {
+        "score": 78,
+        "medianAge2026": 40,
+        "projectedMedianAge2045": 44,
+        "laborShortageByField": "Moderate in tech; growing healthcare shortage",
+        "immigrationDependency": "Moderate-High"
+      },
+      "aiInvestment": {
+        "score": 76,
+        "annualPublicInvestment": "NOK 2.5B AI strategy",
+        "privateInvestment": "Oil-funded sovereign wealth backing tech; smaller startup scene",
+        "trend": "Rising",
+        "keyInitiatives": ["Norwegian Research Council AI", "SINTEF", "Simula"]
+      },
+      "demographicTrend": {
+        "score": 76,
+        "populationGrowth": "Positive with immigration",
+        "youthPopulation": "Relatively stable",
+        "workforceChallenge": "Moderate but manageable"
+      },
+      "longTermImmigrationNeed": {
+        "score": 80,
+        "annualImmigrationTarget": "Controlled skilled immigration",
+        "stemDemand": "High",
+        "policyStability": "Medium-High - smaller political extremes"
+      },
+      "energySecurity": {
+        "score": 98,
+        "renewableTransition": "99% renewable electricity; major oil exporter",
+        "fossilDependency": "Export dependent but domestic clean",
+        "climateVulnerability": "Low"
+      },
+      "technologyGrowth": {
+        "score": 76,
+        "sectors": ["Energy Tech", "Maritime AI", "Aquaculture AI", "HealthTech"],
+        "rankGlobally": "Top 20 innovation",
+        "weaknesses": "Small market; oil dependency creates transition risk"
+      },
+      "globalCompetitiveness": {
+        "score": 83,
+        "worldEconomicForumRank": 11,
+        "innovationIndex": 20,
+        "tradeOpenness": "High - EEA member",
+        "currencyStability": "Moderate - oil-linked NOK"
+      },
+      "laborShortageOutlook": {
+        "score": 78,
+        "shortfallProjection2030": "Moderate - manageable with current immigration",
+        "techSpecific": "Growing demand for AI/ML",
+        "benefit": "Stable employment; high wages"
+      },
+      "risks": {
+        "oilDependency": "Transition from oil economy creates uncertainty post-2040",
+        "smallMarket": "Very limited job variety",
+        "isolation": "Geographic isolation from EU"
+      },
+      "forecast2035": "Excellent stability - oil wealth funds transition; high quality of life; smaller opportunity set",
+      "forecast2045": "Good - post-oil transition challenging but sovereign wealth buffer; green energy leader",
+      "overallVerdict": "Highest quality of life and stability; limited growth ceiling; excellent for family-oriented immigrants",
+      "confidenceScore": 83
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "futureProofScore": 84,
+      "agingPopulationNeed": {
+        "score": 82,
+        "medianAge2026": 43,
+        "projectedMedianAge2045": 47,
+        "laborShortageByField": "High in pharma, finance, tech, engineering",
+        "immigrationDependency": "Very High - 30%+ foreign-born"
+      },
+      "aiInvestment": {
+        "score": 88,
+        "annualPublicInvestment": "CHF 400M+ (SNF and ETH-domain)",
+        "privateInvestment": "Very strong - pharma AI, finance AI, BigTech Zurich offices",
+        "trend": "Strong",
+        "keyInitiatives": ["ETH AI Center", "EPFL AI", "Swiss AI Initiative", "SDSC"]
+      },
+      "demographicTrend": {
+        "score": 80,
+        "populationGrowth": "Immigration-dependent",
+        "youthPopulation": "Stable with immigration",
+        "workforceChallenge": "Significant"
+      },
+      "longTermImmigrationNeed": {
+        "score": 84,
+        "annualImmigrationTarget": "Continued high-skilled intake",
+        "stemDemand": "Very high",
+        "policyStability": "Medium - direct democracy creates uncertainty (referendums on immigration)"
+      },
+      "energySecurity": {
+        "score": 86,
+        "renewableTransition": "Strong hydro + growing solar",
+        "fossilDependency": "Low - imports gas/electricity",
+        "climateVulnerability": "Low-Medium - alpine melting"
+      },
+      "technologyGrowth": {
+        "score": 90,
+        "sectors": ["Pharma AI", "FinTech", "Robotics", "CleanTech", "MedTech"],
+        "rankGlobally": "Top 5 globally by innovation",
+        "weaknesses": "Very expensive; difficult PR for non-EU"
+      },
+      "globalCompetitiveness": {
+        "score": 95,
+        "worldEconomicForumRank": 1,
+        "innovationIndex": 1,
+        "tradeOpenness": "High bilateral agreements",
+        "currencyStability": "Excellent - CHF safe haven"
+      },
+      "laborShortageOutlook": {
+        "score": 85,
+        "shortfallProjection2030": "Significant in all skilled sectors",
+        "techSpecific": "Very high demand for AI/ML talent",
+        "benefit": "Extremely high salaries; best per-capita remuneration"
+      },
+      "risks": {
+        "prDifficulty": "10 years to citizenship; difficult PR for non-EU",
+        "referendumRisk": "Direct democracy can restrict immigration suddenly",
+        "cost": "Most expensive country to live in globally"
+      },
+      "forecast2035": "Excellent - innovation leader, pharma AI hub, financial stability; immigration access challenging",
+      "forecast2045": "Very strong economically; immigration policy uncertain; aging needs more openness",
+      "overallVerdict": "Best salaries and innovation globally; difficult immigration pathway; for high-performers only",
+      "confidenceScore": 84
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "futureProofScore": 77,
+      "agingPopulationNeed": {
+        "score": 74,
+        "medianAge2026": 39,
+        "projectedMedianAge2045": 43,
+        "laborShortageByField": "High in tech, pharma, healthcare",
+        "immigrationDependency": "Very High - fastest growing EU economy needs workers"
+      },
+      "aiInvestment": {
+        "score": 77,
+        "annualPublicInvestment": "EUR 180M (AI Strategy 2021-2025)",
+        "privateInvestment": "Strong - BigTech European HQs",
+        "trend": "Rising",
+        "keyInitiatives": ["SFI AI Hubs", "ADAPT Centre", "Insight Centre"]
+      },
+      "demographicTrend": {
+        "score": 76,
+        "populationGrowth": "One of fastest-growing in EU",
+        "youthPopulation": "Highest birth rate in EU",
+        "workforceChallenge": "Moderate but growing"
+      },
+      "longTermImmigrationNeed": {
+        "score": 80,
+        "annualImmigrationTarget": "High - needs workers to sustain BigTech presence",
+        "stemDemand": "Very high",
+        "policyStability": "Medium - housing crisis creating political pressure"
+      },
+      "energySecurity": {
+        "score": 74,
+        "renewableTransition": "Strong offshore wind plans",
+        "fossilDependency": "Moderate - gas dependent",
+        "climateVulnerability": "Low-Medium"
+      },
+      "technologyGrowth": {
+        "score": 82,
+        "sectors": ["FinTech", "Cloud Computing", "Pharma Tech", "CyberSecurity"],
+        "rankGlobally": "Top 15 tech hub (BigTech concentration)",
+        "weaknesses": "Dependent on BigTech tax advantages"
+      },
+      "globalCompetitiveness": {
+        "score": 79,
+        "worldEconomicForumRank": 24,
+        "innovationIndex": 18,
+        "tradeOpenness": "Very high - EU member, English-speaking bridge",
+        "currencyStability": "Very high - EUR"
+      },
+      "laborShortageOutlook": {
+        "score": 80,
+        "shortfallProjection2030": "Significant across tech sectors",
+        "techSpecific": "50,000+ tech workers needed",
+        "benefit": "BigTech jobs accessible for skilled workers"
+      },
+      "risks": {
+        "housingCrisis": "Critical - Dublin housing among most unaffordable in Europe",
+        "taxBase": "Dependent on BigTech tax revenue - OECD minimum tax threatens",
+        "smallMarket": "Very small domestic market"
+      },
+      "forecast2035": "Good - EU English hub remains valuable; BigTech dependency risk; housing must improve",
+      "forecast2045": "Moderate - OECD tax reforms may shift BigTech; strong education system; uncertain",
+      "overallVerdict": "Good short-term for BigTech access; medium-term risk from housing and tax policy",
+      "confidenceScore": 76
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "futureProofScore": 74,
+      "agingPopulationNeed": {
+        "score": 96,
+        "medianAge2026": 49,
+        "projectedMedianAge2045": 54,
+        "laborShortageByField": "Critical across all sectors - worst in developed world",
+        "immigrationDependency": "Rising fast - historic shift in policy"
+      },
+      "aiInvestment": {
+        "score": 82,
+        "annualPublicInvestment": "JPY 100B+ in AI strategy",
+        "privateInvestment": "Toyota, Sony, Fujitsu, NEC, SoftBank strong",
+        "trend": "Rising rapidly post-2023",
+        "keyInitiatives": ["RIKEN AI", "Society 5.0", "Generative AI Summit", "AI Safety Institute"]
+      },
+      "demographicTrend": {
+        "score": 90,
+        "populationGrowth": "Declining by 600,000/year - most severe in G7",
+        "youthPopulation": "Critically low birth rate 1.2",
+        "workforceChallenge": "Existential - immigration now recognized as unavoidable"
+      },
+      "longTermImmigrationNeed": {
+        "score": 88,
+        "annualImmigrationTarget": "Increasing targets; new skilled visa categories",
+        "stemDemand": "Critical - Japan desperate for tech workers",
+        "policyStability": "Medium-High - bipartisan recognition of need despite cultural resistance"
+      },
+      "energySecurity": {
+        "score": 68,
+        "renewableTransition": "Growing solar/wind but slow",
+        "fossilDependency": "Very high - imports 90% of energy",
+        "climateVulnerability": "High - typhoons, earthquakes, sea level"
+      },
+      "technologyGrowth": {
+        "score": 82,
+        "sectors": ["Robotics", "Automotive AI", "Manufacturing AI", "Gaming", "Healthcare AI"],
+        "rankGlobally": "Top 5 in robotics; Top 15 overall",
+        "weaknesses": "Slow digital transformation domestically; startup culture weak"
+      },
+      "globalCompetitiveness": {
+        "score": 78,
+        "worldEconomicForumRank": 10,
+        "innovationIndex": 13,
+        "tradeOpenness": "High - CPTPP, RCEP",
+        "currencyStability": "Moderate - Yen weakness 2022-2026"
+      },
+      "laborShortageOutlook": {
+        "score": 95,
+        "shortfallProjection2030": "7M+ worker shortage by 2030",
+        "techSpecific": "400,000+ IT workers needed now",
+        "benefit": "Very high demand = exceptional opportunity for skilled immigrants willing to learn Japanese"
+      },
+      "risks": {
+        "languageBarrier": "Japanese essential - massive integration barrier",
+        "culturalIntegration": "Traditionally closed society; slow acceptance",
+        "earthquakeRisk": "Significant geological hazard",
+        "yenWeakness": "Currency depreciation reduces USD value of savings"
+      },
+      "forecast2035": "Good - immigration opening significantly; robotics leader; Japanese language remains critical gate",
+      "forecast2045": "Strong for those settled - demographic crisis forces major immigration reform; early movers advantaged",
+      "overallVerdict": "Huge opportunity for Japanese-speaking skilled immigrants; language investment is the key requirement",
+      "confidenceScore": 80
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "futureProofScore": 72,
+      "agingPopulationNeed": {
+        "score": 93,
+        "medianAge2026": 45,
+        "projectedMedianAge2045": 55,
+        "laborShortageByField": "Critical - birth rate world's lowest at 0.72",
+        "immigrationDependency": "Growing but culturally resistant"
+      },
+      "aiInvestment": {
+        "score": 86,
+        "annualPublicInvestment": "KRW 2.2T AI investment plan",
+        "privateInvestment": "Samsung, SK, LG, Naver, Kakao massive",
+        "trend": "Very strong - national priority",
+        "keyInitiatives": ["National AI Strategy", "AI Semiconductor Initiative", "K-NARD"]
+      },
+      "demographicTrend": {
+        "score": 88,
+        "populationGrowth": "Declining rapidly - worst birth rate globally",
+        "youthPopulation": "Critically declining",
+        "workforceChallenge": "Existential - workforce could halve by 2050"
+      },
+      "longTermImmigrationNeed": {
+        "score": 82,
+        "annualImmigrationTarget": "Policy evolving; new skilled worker programs",
+        "stemDemand": "Critical",
+        "policyStability": "Medium - cultural resistance slowing policy reform"
+      },
+      "energySecurity": {
+        "score": 65,
+        "renewableTransition": "Growing solar; nuclear expansion planned",
+        "fossilDependency": "Very high - imports nearly all energy",
+        "climateVulnerability": "Moderate"
+      },
+      "technologyGrowth": {
+        "score": 88,
+        "sectors": ["Semiconductors", "Display Tech", "Gaming", "K-content AI", "BioTech"],
+        "rankGlobally": "Top 10 semiconductor; Top 15 AI",
+        "weaknesses": "Chaebols dominate; startup ecosystem less dynamic"
+      },
+      "globalCompetitiveness": {
+        "score": 82,
+        "worldEconomicForumRank": 13,
+        "innovationIndex": 6,
+        "tradeOpenness": "High - FTAs globally",
+        "currencyStability": "Moderate - KRW volatile"
+      },
+      "laborShortageOutlook": {
+        "score": 92,
+        "shortfallProjection2030": "Severe across all sectors",
+        "techSpecific": "100,000+ tech workers needed",
+        "benefit": "Enormous opportunity but immigration reform lagging"
+      },
+      "risks": {
+        "northKorea": "Geopolitical risk; unpredictable",
+        "languageBarrier": "Korean essential for career progression",
+        "chaebols": "Oligopolistic economy limits opportunity diversity",
+        "immigrationLag": "Policy reform slower than demographic need"
+      },
+      "forecast2035": "Good - AI investment strong; demographic crisis forces immigration reform; Korean language still required",
+      "forecast2045": "Strong structural need for immigrants - policy will be much more open by necessity; early immigrants advantaged",
+      "overallVerdict": "High-potential but language and immigration reform pace are critical uncertainties",
+      "confidenceScore": 78
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "futureProofScore": 68,
+      "agingPopulationNeed": {
+        "score": 82,
+        "medianAge2026": 40,
+        "projectedMedianAge2045": 50,
+        "laborShortageByField": "Growing in skilled tech; manufacturing still oversupplied",
+        "immigrationDependency": "Low - does not rely on immigration historically"
+      },
+      "aiInvestment": {
+        "score": 96,
+        "annualPublicInvestment": "USD 15B+ (massive state investment)",
+        "privateInvestment": "Alibaba, Tencent, Baidu, Huawei, ByteDance billions",
+        "trend": "Extremely aggressive",
+        "keyInitiatives": ["New Generation AI Development Plan", "AI 2030 Strategy", "BAAI"]
+      },
+      "demographicTrend": {
+        "score": 74,
+        "populationGrowth": "Declining - one-child policy legacy",
+        "youthPopulation": "Declining rapidly",
+        "workforceChallenge": "Growing but less acute than Japan/Korea now; worsens post-2035"
+      },
+      "longTermImmigrationNeed": {
+        "score": 55,
+        "annualImmigrationTarget": "Selective - Thousand Talents etc.",
+        "stemDemand": "Domestic talent supply still large",
+        "policyStability": "Low - geopolitical tensions affect foreign talent attraction"
+      },
+      "energySecurity": {
+        "score": 78,
+        "renewableTransition": "World's largest solar and wind installer",
+        "fossilDependency": "Still significant coal dependency",
+        "climateVulnerability": "High - floods, heat, desertification"
+      },
+      "technologyGrowth": {
+        "score": 93,
+        "sectors": ["AI", "EV", "5G", "Robotics", "Biotech", "Quantum Computing"],
+        "rankGlobally": "Top 2 globally in AI investment",
+        "weaknesses": "Access restrictions; US tech embargo; internet censorship"
+      },
+      "globalCompetitiveness": {
+        "score": 82,
+        "worldEconomicForumRank": 28,
+        "innovationIndex": 12,
+        "tradeOpenness": "Selective - large domestic market focus",
+        "currencyStability": "Moderate - CNY partially controlled"
+      },
+      "laborShortageOutlook": {
+        "score": 62,
+        "shortfallProjection2030": "Skilled tech talent competition increasing",
+        "techSpecific": "High domestic supply for now; shortage post-2035",
+        "benefit": "Strong for foreigners willing to learn Mandarin by 2035+"
+      },
+      "risks": {
+        "geopolitics": "US-China tensions; risk of economic decoupling",
+        "immigrationBarrier": "Traditional permanent residency nearly impossible",
+        "internetRestrictions": "Censored internet impacts professional connectivity",
+        "politicalRisk": "Authoritarian system; policy unpredictability"
+      },
+      "forecast2035": "Strong economically and in AI; but immigration pathway remains difficult; best as education and career stepping stone",
+      "forecast2045": "Will be top-2 global AI power; immigration may open slightly but political system constraints remain",
+      "overallVerdict": "Excellent for AI research training and career acceleration; weak for permanent settlement; treat as 5-year stepping stone",
+      "confidenceScore": 75
+    }
+  ],
+  "summaryRankings": {
+    "topFutureProofOverall": [
+      {"rank": 1, "country": "Germany", "score": 87, "reason": "Labor shortage + AI investment + clear immigration"},
+      {"rank": 2, "country": "United States", "score": 86, "reason": "AI dominance + economic scale, immigration risk"},
+      {"rank": 3, "country": "Norway", "score": 85, "reason": "Stability + clean energy + quality of life"},
+      {"rank": 4, "country": "Switzerland", "score": 84, "reason": "Innovation leader + salaries, PR difficulty"},
+      {"rank": 5, "country": "Canada", "score": 82, "reason": "Immigration certainty + AI growth, housing risk"}
+    ],
+    "bestForImmigrantLongTerm": ["Germany", "Canada", "Norway", "Finland", "Netherlands"],
+    "bestForAiCareer": ["USA", "China", "Germany", "Canada", "South Korea"],
+    "mostUnderratedChoices": ["Finland", "Norway", "Denmark"],
+    "highestRiskChoices": ["China (immigration)", "USA (immigration)", "Ireland (housing/tax)"]
+  }
+}
