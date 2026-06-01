@@ -150,7 +150,7 @@ export default function DashboardOverview() {
         </div>
 
         {/* Quick Profile Indicators */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border/80">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border/80">
           <div className="space-y-1">
             <span className="text-xs text-muted-foreground uppercase">Target Degree</span>
             <p className="text-sm font-semibold text-foreground">{profile?.targetDegree || "Not Set"}</p>

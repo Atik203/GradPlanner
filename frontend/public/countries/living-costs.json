@@ -1,0 +1,1539 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Comprehensive monthly living cost analysis for Bangladeshi CS/AI/ML students and graduates planning 2027-2029, covering student phase and post-graduation working phase",
+    "targetProfile": "Bangladeshi student/graduate, CS/AI/ML field, age 22-30, single or with spouse, planning MSc/PhD abroad",
+    "currency": "USD",
+    "conversionNote": "All costs converted to USD for comparison. Local currency figures also provided. Exchange rates as of June 2026.",
+    "criticalNote": "Living costs are a PRIMARY factor in financial sustainability. A high-salary country with extreme living costs may yield LESS net savings than a moderate-salary country with reasonable costs. Always evaluate NET SAVINGS, not gross salary.",
+    "dataSource": "Aggregated from Numbeo 2026, Expatistan 2026, national statistics offices, student union surveys, Bangladesh embassy cost reports, and GradPlanner field research",
+    "phases": {
+      "studentPhase": "During MSc/PhD studies - typically 1.5 to 5 years",
+      "postStudyPhase": "After graduation, during post-study work visa - typically 1 to 3 years",
+      "settledPhase": "After PR or long-term residency secured"
+    }
+  },
+  "livingCosts": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "currency": "CAD",
+      "usdExchangeRate": 0.74,
+      "majorStudyCities": ["Toronto", "Vancouver", "Montreal", "Ottawa", "Calgary"],
+      "recommendedCitiesForBangladeshiStudents": ["Montreal", "Ottawa", "Calgary"],
+      "avoidCitiesNote": "Toronto and Vancouver have severe housing crises. Rent for a 1-bedroom can exceed CAD 2,800/month. Not recommended for budget-conscious students unless fully funded.",
+      "confidenceScore": 88,
+      "evidenceSummary": "Canada faces ongoing housing crisis as of 2026. Government cap on international students has reduced competition slightly but prices remain elevated. Montreal and Calgary offer significantly better affordability.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 4-5 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 900, "usd": 666, "note": "Shared 3-4 person apartment" },
+            "privateRoom": { "localCurrency": 1400, "usd": 1036, "note": "Private room in shared flat" },
+            "studio1BR": { "localCurrency": 2000, "usd": 1480, "note": "1BR apartment, city average" },
+            "onCampus": { "localCurrency": 1100, "usd": 814, "note": "Campus housing where available" }
+          },
+          "groceries": { "localCurrency": 400, "usd": 296, "note": "Cooking at home, South Asian groceries available in major cities" },
+          "utilities": { "localCurrency": 120, "usd": 89, "note": "Electricity, heating, internet included in many rentals" },
+          "internet": { "localCurrency": 60, "usd": 44 },
+          "transportation": { "localCurrency": 120, "usd": 89, "note": "Monthly transit pass; student discounts available" },
+          "healthInsurance": { "localCurrency": 100, "usd": 74, "note": "Provincial health coverage varies; some provinces cover students, some don't" },
+          "personalCare": { "localCurrency": 80, "usd": 59 },
+          "mobilePhone": { "localCurrency": 50, "usd": 37, "note": "Budget SIM; Canada mobile plans are expensive overall" },
+          "entertainment": { "localCurrency": 100, "usd": 74 },
+          "miscellaneous": { "localCurrency": 150, "usd": 111 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 2080, "usd": 1540 },
+          "privateAccommodation": { "localCurrency": 2580, "usd": 1910 },
+          "fullIndependent": { "localCurrency": 3180, "usd": 2353 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "18000-35000", "usd": "13320-25900", "note": "International student tuition; fully funded PhDs often waive tuition" },
+          "phd": { "localCurrency": "6000-18000", "usd": "4440-13320", "note": "PhD often funded with stipend; tuition waived" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "1000-2000/month", "usd": "740-1480/month", "note": "TA/RA positions; not always guaranteed" },
+          "phd": { "localCurrency": "2000-3500/month", "usd": "1480-2590/month", "note": "NSERC/university funded PhDs" }
+        },
+        "stipendCoversLiving": "Partially for shared accommodation scenario; tightly",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "No restriction for full-time students as of 2024 policy",
+        "partTimeEarningPotential": { "localCurrency": "1500-2500/month", "usd": "1110-1850/month", "note": "Typical campus or tech-adjacent part-time" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Post-Graduation Work Permit (PGWP)",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "70000-95000/year", "usd": "51800-70300/year" },
+          "midLevelDataScientist": { "localCurrency": "90000-130000/year", "usd": "66600-96200/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "4800-7500", "usd": "3550-5550" },
+        "monthlyLivingCost": { "localCurrency": "2800-4200", "usd": "2070-3108" },
+        "estimatedMonthlySavings": { "localCurrency": "1000-3500", "usd": "740-2590" },
+        "savingsNote": "Housing costs severely reduce savings in Toronto/Vancouver. Calgary and Ottawa offer meaningfully better net savings."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "SEVERE",
+        "currentVacancyRate": "1.5% in Toronto, 0.9% in Vancouver",
+        "forecastNote": "Government has pledged housing investment but structural shortage continues through 2028-2030",
+        "bangladeshiCommunityNote": "Strong Bangladeshi diaspora in Toronto, Brampton, Calgary. Community networks help find affordable shared housing."
+      },
+
+      "affordabilityRating": 52,
+      "valueForMoneyRating": 58,
+      "overallCostRisk": "HIGH in major cities, MODERATE in secondary cities",
+      "recommendation": "Choose Montreal, Ottawa, or Calgary over Toronto and Vancouver. Shared accommodation essential in student phase. PhD stipends are survivable. PGWP income allows saving if city choice is strategic."
+    },
+
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "currency": "AUD",
+      "usdExchangeRate": 0.65,
+      "majorStudyCities": ["Sydney", "Melbourne", "Brisbane", "Adelaide", "Perth", "Canberra"],
+      "recommendedCitiesForBangladeshiStudents": ["Adelaide", "Brisbane", "Canberra"],
+      "avoidCitiesNote": "Sydney and Melbourne face acute housing shortages. Rents rising 8-12% annually. International student influx post-COVID worsened supply.",
+      "confidenceScore": 86,
+      "evidenceSummary": "Australia housing crisis is severe and well-documented. Government announced international student caps in 2025. Salary levels are high but living costs offset much of the advantage. Adelaide and Brisbane remain viable.",
+
+      "studentPhase": {
+        "durationTypical": "1.5-2 years MSc, 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 900, "usd": 585, "note": "Shared house, regional cities" },
+            "privateRoom": { "localCurrency": 1600, "usd": 1040, "note": "Private room shared flat" },
+            "studio1BR": { "localCurrency": 2200, "usd": 1430, "note": "Sydney/Melbourne average" },
+            "onCampus": { "localCurrency": 1200, "usd": 780, "note": "Limited availability" }
+          },
+          "groceries": { "localCurrency": 450, "usd": 293 },
+          "utilities": { "localCurrency": 150, "usd": 98 },
+          "internet": { "localCurrency": 70, "usd": 46 },
+          "transportation": { "localCurrency": 150, "usd": 98 },
+          "healthInsurance": { "localCurrency": 60, "usd": 39, "note": "OSHC (Overseas Student Health Cover) mandatory, approx AUD 700/year" },
+          "personalCare": { "localCurrency": 80, "usd": 52 },
+          "mobilePhone": { "localCurrency": 30, "usd": 20, "note": "Competitive prepaid plans available" },
+          "entertainment": { "localCurrency": 100, "usd": 65 },
+          "miscellaneous": { "localCurrency": 150, "usd": 98 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 2190, "usd": 1424 },
+          "privateAccommodation": { "localCurrency": 2890, "usd": 1879 },
+          "fullIndependent": { "localCurrency": 3490, "usd": 2269 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "32000-52000", "usd": "20800-33800", "note": "High tuition for international students; some scholarship pathways available" },
+          "phd": { "localCurrency": "0-28000", "usd": "0-18200", "note": "RTP scholarship covers full tuition plus stipend; highly competitive" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Not standard", "usd": "Not standard", "note": "MSc funding rare; TA/RA limited" },
+          "phd": { "localCurrency": "2400-3200/month", "usd": "1560-2080/month", "note": "RTP stipend 2026 approximately AUD 32,192/year tax-free" }
+        },
+        "stipendCoversLiving": "Tightly in shared accommodation, especially outside Sydney/Melbourne",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "48 hours per fortnight (24 hours per week)",
+        "partTimeEarningPotential": { "localCurrency": "1500-2800/month", "usd": "975-1820/month", "note": "AUD 23.23/hour minimum wage; tech-adjacent tutoring/support pays more" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Temporary Graduate Visa (subclass 485)",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "75000-100000/year", "usd": "48750-65000/year" },
+          "midLevelDataScientist": { "localCurrency": "100000-140000/year", "usd": "65000-91000/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "5000-8000", "usd": "3250-5200" },
+        "monthlyLivingCost": { "localCurrency": "3000-4500", "usd": "1950-2925" },
+        "estimatedMonthlySavings": { "localCurrency": "1000-4000", "usd": "650-2600" },
+        "savingsNote": "Savings potential is good in Adelaide/Brisbane. Sydney/Melbourne housing costs are destructive to savings."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "SEVERE",
+        "currentVacancyRate": "1.0% in Sydney, 1.2% in Melbourne",
+        "forecastNote": "Government building commitments face labor shortages in construction. 2028-2030 likely still constrained.",
+        "bangladeshiCommunityNote": "Growing Bangladeshi community in Sydney, Melbourne. Halal food widely available. Community support networks strong."
+      },
+
+      "affordabilityRating": 50,
+      "valueForMoneyRating": 62,
+      "overallCostRisk": "HIGH in Sydney/Melbourne, MODERATE in Adelaide/Brisbane",
+      "recommendation": "RTP PhD scholarship is excellent deal - covers tuition and living. For self-funded MSc, cost-benefit analysis must include city choice. Adelaide strongly recommended for affordability with good job market access."
+    },
+
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "majorStudyCities": ["Berlin", "Munich", "Hamburg", "Frankfurt", "Stuttgart", "Heidelberg", "Aachen", "Dresden"],
+      "recommendedCitiesForBangladeshiStudents": ["Berlin", "Dresden", "Aachen", "Heidelberg"],
+      "avoidCitiesNote": "Munich has extremely high rents (EUR 1,800+ for 1BR). Frankfurt is expensive. Berlin is rising but still more affordable than Western European peers.",
+      "confidenceScore": 90,
+      "evidenceSummary": "Germany offers tuition-free public university education, making it one of the highest value destinations. Housing is tightening in Berlin and Munich. Blocked account requirement (EUR 11,904/year as of 2026) ensures minimum financial baseline. Language integration increasingly important for long-term settlement.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 450, "usd": 491, "note": "WG (Wohngemeinschaft - shared flat) room; highly competitive in Berlin" },
+            "privateRoom": { "localCurrency": 700, "usd": 763, "note": "Private room in shared flat" },
+            "studio1BR": { "localCurrency": 1200, "usd": 1308, "note": "Studio in Berlin; Munich is EUR 1,800+" },
+            "studentDorm": { "localCurrency": 350, "usd": 382, "note": "Studentenwerk dorms; 1-2 year waitlist common" }
+          },
+          "groceries": { "localCurrency": 300, "usd": 327, "note": "Aldi/Lidl widely used; affordable grocery options exist" },
+          "utilities": { "localCurrency": 100, "usd": 109, "note": "Often included in WG rent" },
+          "internet": { "localCurrency": 30, "usd": 33, "note": "Often included in WG" },
+          "transportation": { "localCurrency": 86, "usd": 94, "note": "Deutschlandticket EUR 58/month as of 2026; some states offer student version EUR 29" },
+          "healthInsurance": { "localCurrency": 110, "usd": 120, "note": "Public KV required for students; TK/AOK/Barmer approx EUR 110/month" },
+          "personalCare": { "localCurrency": 50, "usd": 55 },
+          "mobilePhone": { "localCurrency": 15, "usd": 16, "note": "Budget SIM plans very affordable in Germany" },
+          "entertainment": { "localCurrency": 80, "usd": 87 },
+          "miscellaneous": { "localCurrency": 100, "usd": 109 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 1321, "usd": 1440 },
+          "privateAccommodation": { "localCurrency": 1571, "usd": 1712 },
+          "fullIndependent": { "localCurrency": 2071, "usd": 2257 }
+        },
+        "blockedAccountRequirement": { "localCurrency": 11904, "usd": 12975, "note": "Per year, EUR 992/month; must be maintained in German bank account" },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "0-500 semester fee", "usd": "0-545", "note": "Public universities tuition-free; semester fee covers admin + transport" },
+          "phd": { "localCurrency": "0-500 semester fee", "usd": "0-545", "note": "Fully tuition-free; PhD contracts common (TVöD E13 65% = approx EUR 2,200/month)" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "400-1000/month HiWi", "usd": "436-1090/month", "note": "Student assistant (HiWi) positions common in CS/AI labs" },
+          "phd": { "localCurrency": "2000-2800/month", "usd": "2180-3052/month", "note": "TVöD E13 65-100% contract; DAAD/DFG funding also available" }
+        },
+        "stipendCoversLiving": "Comfortably for PhD, tightly for MSc HiWi",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "120 full days or 240 half days per year",
+        "partTimeEarningPotential": { "localCurrency": "500-1200/month", "usd": "545-1308/month", "note": "HiWi: EUR 13-17/hour; other tech support roles available" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Job Seeker Visa (18 months) + EU Blue Card or Skilled Worker Permit",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "55000-75000/year", "usd": "59950-81750/year" },
+          "midLevelDataScientist": { "localCurrency": "70000-95000/year", "usd": "76300-103550/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "2800-4500", "usd": "3052-4905", "note": "Germany's tax burden is significant; health/social insurance deductions 40%+" },
+        "monthlyLivingCost": { "localCurrency": "1500-2500", "usd": "1635-2725" },
+        "estimatedMonthlySavings": { "localCurrency": "800-2500", "usd": "872-2725" },
+        "savingsNote": "Despite high taxes, low-to-zero tuition during study phase makes Germany outstanding value overall. Munich salaries are higher but cost of living offsets much of the gain."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "MODERATE-HIGH in Munich/Frankfurt, MODERATE in Berlin",
+        "currentVacancyRate": "0.8% in Munich, 1.5% in Berlin",
+        "forecastNote": "New construction lagging demand. 2028-2030 still challenging for renters in major cities. Smaller university cities like Aachen, Kaiserslautern, Dresden remain affordable.",
+        "bangladeshiCommunityNote": "Growing Bangladeshi community in Berlin, Frankfurt. Halal food available. German language investment critical for long-term integration."
+      },
+
+      "affordabilityRating": 78,
+      "valueForMoneyRating": 88,
+      "overallCostRisk": "LOW-MODERATE (tuition-free model dramatically reduces financial burden)",
+      "recommendation": "Germany is the HIGHEST VALUE destination when tuition-free model is factored. PhD funded positions offer best financial sustainability. Language investment in German (B2-C1) is essential and should begin before arrival. Choose smaller university cities for better affordability."
+    },
+
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "majorStudyCities": ["Dublin", "Cork", "Galway", "Limerick"],
+      "recommendedCitiesForBangladeshiStudents": ["Cork", "Galway", "Limerick"],
+      "avoidCitiesNote": "Dublin has one of the worst housing crises in Europe. Rent for a single room exceeds EUR 1,500/month in central areas. Extremely difficult for students without pre-arranged accommodation.",
+      "confidenceScore": 83,
+      "evidenceSummary": "Ireland's tech sector (Google, Meta, Microsoft, Amazon EMEA HQs) creates excellent job market but has fueled a catastrophic housing shortage. Government struggling to address it. Cork and Galway are emerging alternatives with growing tech scenes.",
+
+      "studentPhase": {
+        "durationTypical": "1-2 years MSc, 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 900, "usd": 981, "note": "Dublin; Cork/Galway EUR 600-750" },
+            "privateRoom": { "localCurrency": 1500, "usd": 1635, "note": "Dublin 1BR; nearly impossible to find" },
+            "studio1BR": { "localCurrency": 2100, "usd": 2289, "note": "Dublin studio; severe shortage" },
+            "onCampus": { "localCurrency": 800, "usd": 872, "note": "Limited; UCD/TCD campus accommodation very competitive" }
+          },
+          "groceries": { "localCurrency": 350, "usd": 382 },
+          "utilities": { "localCurrency": 150, "usd": 164 },
+          "internet": { "localCurrency": 40, "usd": 44 },
+          "transportation": { "localCurrency": 120, "usd": 131, "note": "Dublin Leap Card; young adult discount available" },
+          "healthInsurance": { "localCurrency": 600, "usd": 654, "note": "Annual; private health recommended; public system has long waits" },
+          "personalCare": { "localCurrency": 60, "usd": 65 },
+          "mobilePhone": { "localCurrency": 20, "usd": 22 },
+          "entertainment": { "localCurrency": 100, "usd": 109 },
+          "miscellaneous": { "localCurrency": 120, "usd": 131 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 2410, "usd": 2627 },
+          "privateAccommodation": { "localCurrency": 2960, "usd": 3226 },
+          "fullIndependent": { "localCurrency": 3660, "usd": 3989 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "15000-28000", "usd": "16350-30520", "note": "International tuition; Irish universities mid-tier expensive" },
+          "phd": { "localCurrency": "5000-12000", "usd": "5450-13080", "note": "Some funded positions through IRC/SFI; competitive" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Rare", "usd": "Rare" },
+          "phd": { "localCurrency": "1500-2200/month", "usd": "1635-2398/month", "note": "Irish Research Council / SFI funded PhDs; EUR 18,500-22,000/year" }
+        },
+        "stipendCoversLiving": "Barely in Dublin; manageable in Cork/Galway",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "20 hours per week during term; 40 hours during holidays",
+        "partTimeEarningPotential": { "localCurrency": "900-1600/month", "usd": "981-1744/month", "note": "Minimum wage EUR 13.50/hour as of 2026" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Third Level Graduate Programme (TLGP) - 24 months for Masters, 24 months for PhD",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "55000-75000/year", "usd": "59950-81750/year" },
+          "midLevelDataScientist": { "localCurrency": "70000-100000/year", "usd": "76300-109000/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "3200-5500", "usd": "3488-5995" },
+        "monthlyLivingCost": { "localCurrency": "2500-3500", "usd": "2725-3815" },
+        "estimatedMonthlySavings": { "localCurrency": "500-2500", "usd": "545-2725" },
+        "savingsNote": "Housing crisis severely compresses savings. Tech salaries are strong but Dublin living costs are among Europe's highest. Critical to secure accommodation before arriving."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "CRITICAL in Dublin",
+        "currentVacancyRate": "0.6% in Dublin",
+        "forecastNote": "No meaningful relief expected before 2029-2030. Government unable to build fast enough. Students report spending 60-80 hours searching for accommodation.",
+        "bangladeshiCommunityNote": "Small but growing Bangladeshi community. South Asian food available in Dublin. English-speaking environment is major advantage."
+      },
+
+      "affordabilityRating": 38,
+      "valueForMoneyRating": 55,
+      "overallCostRisk": "VERY HIGH in Dublin, HIGH in Cork",
+      "recommendation": "Ireland is strategically excellent (English language, EU access, tech jobs) but Dublin housing is a serious barrier. Only viable with secured accommodation BEFORE travel or with substantial savings buffer. Cork and Galway emerging as viable alternatives. Funded PhD positions strongly preferred."
+    },
+
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "majorStudyCities": ["Amsterdam", "Delft", "Eindhoven", "Leiden", "Utrecht", "Rotterdam", "Groningen"],
+      "recommendedCitiesForBangladeshiStudents": ["Eindhoven", "Groningen", "Delft"],
+      "avoidCitiesNote": "Amsterdam rent for a room exceeds EUR 1,400/month. Utrecht is also severely overpriced. Eindhoven is the tech hub (ASML, Philips) with better affordability.",
+      "confidenceScore": 85,
+      "evidenceSummary": "Netherlands has a documented international student housing crisis. Multiple Dutch universities temporarily stopped accepting international students due to housing shortages (2024-2025). English-taught programs are numerous, making it attractive but competition is intense. Eindhoven remains the AI/tech hub of choice.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 700, "usd": 763, "note": "Amsterdam/Utrecht; Eindhoven EUR 500-600" },
+            "privateRoom": { "localCurrency": 1200, "usd": 1308, "note": "Hard to find; intense competition" },
+            "studio1BR": { "localCurrency": 1800, "usd": 1962, "note": "Amsterdam; Eindhoven EUR 1,200" },
+            "studentDorm": { "localCurrency": 500, "usd": 545, "note": "SSH Housing; waitlist 1+ year in Amsterdam/Delft" }
+          },
+          "groceries": { "localCurrency": 320, "usd": 349 },
+          "utilities": { "localCurrency": 120, "usd": 131, "note": "High energy costs post-Ukraine crisis persisting" },
+          "internet": { "localCurrency": 35, "usd": 38 },
+          "transportation": { "localCurrency": 100, "usd": 109, "note": "OV-chipkaart; cycling reduces costs significantly; bike EUR 200-500 one-time" },
+          "healthInsurance": { "localCurrency": 135, "usd": 147, "note": "Basic Dutch health insurance ZVW mandatory if working; EHBO for pure students" },
+          "personalCare": { "localCurrency": 60, "usd": 65 },
+          "mobilePhone": { "localCurrency": 20, "usd": 22 },
+          "entertainment": { "localCurrency": 100, "usd": 109 },
+          "miscellaneous": { "localCurrency": 100, "usd": 109 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 1790, "usd": 1951 },
+          "privateAccommodation": { "localCurrency": 2290, "usd": 2496 },
+          "fullIndependent": { "localCurrency": 2890, "usd": 3150 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "12000-22000", "usd": "13080-23980", "note": "International tuition; NL charges higher than Germany" },
+          "phd": { "localCurrency": "0", "usd": "0", "note": "PhD is employment contract (AIO); full salary EUR 2,770-3,500/month gross" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Limited TA", "usd": "Limited" },
+          "phd": { "localCurrency": "2770-3500/month gross", "usd": "3020-3815/month gross", "note": "Employment contract; pension, health insurance all included; NWO-funded positions" }
+        },
+        "stipendCoversLiving": "Excellently as PhD employee; MSc requires self-funding or scholarship",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "16 hours per week; full-time in summer",
+        "partTimeEarningPotential": { "localCurrency": "800-1400/month", "usd": "872-1526/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Orientation Year (Zoekjaar) - 12 months",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "55000-75000/year", "usd": "59950-81750/year" },
+          "midLevelDataScientist": { "localCurrency": "70000-100000/year", "usd": "76300-109000/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "3000-5000", "usd": "3270-5450", "note": "30% ruling (tax relief for international skilled workers) if eligible" },
+        "monthlyLivingCost": { "localCurrency": "2200-3200", "usd": "2398-3488" },
+        "estimatedMonthlySavings": { "localCurrency": "500-2500", "usd": "545-2725" },
+        "savingsNote": "30% ruling is a significant financial advantage for the first 5 years. PhD employment route is financially excellent during study phase."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "SEVERE in Amsterdam/Utrecht/Delft",
+        "currentVacancyRate": "0.8% national",
+        "forecastNote": "Structural housing deficit. Some universities actively warning international applicants about housing before accepting. 2027-2029 unlikely to improve significantly.",
+        "bangladeshiCommunityNote": "South Asian community present in Rotterdam, Amsterdam. English widely spoken - major advantage for Bangladeshi students."
+      },
+
+      "affordabilityRating": 55,
+      "valueForMoneyRating": 68,
+      "overallCostRisk": "HIGH in Amsterdam/Utrecht, MODERATE in Eindhoven/Groningen",
+      "recommendation": "Netherlands PhD employment model is outstanding. Eindhoven is the strategic choice combining ASML/Philips ecosystem, TU/e research quality, and better affordability. 30% ruling for workers is a major bonus. Housing must be solved before arrival."
+    },
+
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "currency": "SEK",
+      "usdExchangeRate": 0.096,
+      "majorStudyCities": ["Stockholm", "Gothenburg", "Lund", "Uppsala", "Linkoping"],
+      "recommendedCitiesForBangladeshiStudents": ["Lund", "Linkoping", "Uppsala"],
+      "avoidCitiesNote": "Stockholm has acute housing shortage. Queue for social housing is 10+ years. International students struggle severely. Smaller university cities are significantly more manageable.",
+      "confidenceScore": 84,
+      "evidenceSummary": "Sweden charges tuition for non-EU students but has solid scholarship schemes (SI Scholarships). High quality of life, strong tech ecosystem (Spotify, Ericsson, King). Housing queue system is notoriously difficult. Gothenburg and Stockholm have better job markets but housing constrains options.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 5500, "usd": 528, "note": "Corridor room in student accommodation; Stockholm queue brutal" },
+            "privateRoom": { "localCurrency": 8000, "usd": 768, "note": "Private in shared flat, Lund/Uppsala" },
+            "studio1BR": { "localCurrency": 14000, "usd": 1344, "note": "Stockholm studio; secondary market (Blocket)" },
+            "studentCorridors": { "localCurrency": 4500, "usd": 432, "note": "University student housing; apply immediately upon admission" }
+          },
+          "groceries": { "localCurrency": 3500, "usd": 336, "note": "ICA, Coop, Lidl; budget shopping manageable" },
+          "utilities": { "localCurrency": 500, "usd": 48, "note": "Often included in rent" },
+          "internet": { "localCurrency": 300, "usd": 29 },
+          "transportation": { "localCurrency": 1000, "usd": 96, "note": "Monthly pass; student discount available" },
+          "healthInsurance": { "localCurrency": 0, "usd": 0, "note": "Covered by Swedish healthcare system if registered with Skatteverket" },
+          "personalCare": { "localCurrency": 500, "usd": 48 },
+          "mobilePhone": { "localCurrency": 200, "usd": 19 },
+          "entertainment": { "localCurrency": 800, "usd": 77 },
+          "miscellaneous": { "localCurrency": 1000, "usd": 96 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 13300, "usd": 1277 },
+          "privateAccommodation": { "localCurrency": 15800, "usd": 1517 },
+          "fullIndependent": { "localCurrency": 21300, "usd": 2045 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "80000-180000", "usd": "7680-17280", "note": "International tuition varies by program and university" },
+          "phd": { "localCurrency": "0", "usd": "0", "note": "PhD is employment (doktorand); full salary + benefits" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "SI Scholarship covers tuition + SEK 10,000/month stipend", "usd": "960/month", "note": "Very competitive; ~300 awards globally per year" },
+          "phd": { "localCurrency": "28000-35000/month", "usd": "2688-3360/month", "note": "Doktorand salary includes social benefits, holiday pay, parental leave" }
+        },
+        "stipendCoversLiving": "Excellently as PhD employee; MSc requires SI Scholarship or self-funding",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "No formal limit for EU Residence Permit holders; effectively tied to study permit terms",
+        "partTimeEarningPotential": { "localCurrency": "8000-15000/month", "usd": "768-1440/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Job Seeker Permit (6 months) then Work Permit",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "480000-600000/year", "usd": "46080-57600/year" },
+          "midLevelDataScientist": { "localCurrency": "600000-750000/year", "usd": "57600-72000/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "28000-40000", "usd": "2688-3840", "note": "Swedish income tax 30-50%; high but comprehensive benefits included" },
+        "monthlyLivingCost": { "localCurrency": "13000-20000", "usd": "1248-1920" },
+        "estimatedMonthlySavings": { "localCurrency": "8000-20000", "usd": "768-1920" },
+        "savingsNote": "High tax reduces nominal savings but pension, healthcare, childcare heavily subsidized. Net quality of life is high."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "SEVERE in Stockholm, MODERATE in Gothenburg, MANAGEABLE in Lund/Linkoping",
+        "currentVacancyRate": "0.9% in Stockholm",
+        "forecastNote": "Social housing queue 10-20 years in Stockholm. Private market inflating. Secondary cities remain viable for students.",
+        "bangladeshiCommunityNote": "Small Bangladeshi community. Sweden is very multicultural and inclusive. Halal food available in cities."
+      },
+
+      "affordabilityRating": 62,
+      "valueForMoneyRating": 72,
+      "overallCostRisk": "HIGH in Stockholm, MODERATE in university cities",
+      "recommendation": "PhD employment path in Sweden is excellent - full salary, comprehensive benefits, world-class research. For MSc, SI Scholarship is the only financially viable path for most Bangladeshi students. Language not required for work in tech sector but Swedish B1+ helps for PR."
+    },
+
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "majorStudyCities": ["Helsinki", "Espoo", "Tampere", "Oulu", "Turku"],
+      "recommendedCitiesForBangladeshiStudents": ["Tampere", "Oulu", "Turku"],
+      "avoidCitiesNote": "Helsinki costs have risen sharply. Espoo (Aalto University) is expensive. Tampere and Oulu offer better value while maintaining strong university quality.",
+      "confidenceScore": 82,
+      "evidenceSummary": "Finland has introduced tuition fees for non-EU students since 2017. Scholarship schemes exist but are competitive. Strong tech ecosystem (Nokia, KONE, Wärtsilä, gaming industry). Aging population means growing immigration need. Finnish language important for integration but tech sector is increasingly English-friendly.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 450, "usd": 491, "note": "HOAS/TOAS student housing" },
+            "privateRoom": { "localCurrency": 700, "usd": 763 },
+            "studio1BR": { "localCurrency": 1100, "usd": 1199, "note": "Helsinki; Tampere EUR 750-900" },
+            "studentHousing": { "localCurrency": 380, "usd": 414, "note": "Foundation student housing; apply early" }
+          },
+          "groceries": { "localCurrency": 300, "usd": 327 },
+          "utilities": { "localCurrency": 100, "usd": 109 },
+          "internet": { "localCurrency": 25, "usd": 27 },
+          "transportation": { "localCurrency": 80, "usd": 87, "note": "Student discounts; Helsinki transport pass HSL" },
+          "healthInsurance": { "localCurrency": 0, "usd": 0, "note": "YTHS student healthcare for registered students; free for degree students" },
+          "personalCare": { "localCurrency": 50, "usd": 55 },
+          "mobilePhone": { "localCurrency": 15, "usd": 16 },
+          "entertainment": { "localCurrency": 80, "usd": 87 },
+          "miscellaneous": { "localCurrency": 100, "usd": 109 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 1200, "usd": 1308 },
+          "privateAccommodation": { "localCurrency": 1450, "usd": 1581 },
+          "fullIndependent": { "localCurrency": 1950, "usd": 2126 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "8000-18000", "usd": "8720-19620", "note": "International tuition; Aalto EUR 15,000+, Tampere EUR 10,000-12,000" },
+          "phd": { "localCurrency": "0", "usd": "0", "note": "PhD is employment; tuition-free with salary" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Scholarship up to EUR 10,000/year tuition waiver + EUR 500/month", "usd": "Up to 545/month", "note": "Finland Scholarship and university-specific awards" },
+          "phd": { "localCurrency": "2200-3000/month", "usd": "2398-3270/month", "note": "University employment; Academy of Finland funded positions" }
+        },
+        "stipendCoversLiving": "Comfortably for PhD in non-Helsinki cities",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "25 hours per week during study; unlimited during breaks",
+        "partTimeEarningPotential": { "localCurrency": "700-1200/month", "usd": "763-1308/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Job Seeker Permit (12 months) then Specialist Work Permit",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "45000-60000/year", "usd": "49050-65400/year" },
+          "midLevelDataScientist": { "localCurrency": "58000-80000/year", "usd": "63220-87200/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "2500-4000", "usd": "2725-4360" },
+        "monthlyLivingCost": { "localCurrency": "1500-2200", "usd": "1635-2398" },
+        "estimatedMonthlySavings": { "localCurrency": "800-2200", "usd": "872-2398" },
+        "savingsNote": "Finland salaries lower than Western European peers but cost of living is moderate. Overall savings potential is reasonable."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "MODERATE in Helsinki, LOW in Tampere/Oulu",
+        "currentVacancyRate": "2.5% national average",
+        "forecastNote": "More manageable than other Nordic capitals. Student housing foundations functional. 2027-2029 outlook stable.",
+        "bangladeshiCommunityNote": "Small community. Finland is very safe, high quality of life. Finnish language investment important for long-term integration."
+      },
+
+      "affordabilityRating": 70,
+      "valueForMoneyRating": 74,
+      "overallCostRisk": "LOW-MODERATE",
+      "recommendation": "Finland offers good value especially for PhD positions. Growing AI sector (Aalto FCAI research center). Finnish language important for long-term success. Aging population means Finland will increasingly need skilled immigrants - strategic timing is good for 2027-2029 entry."
+    },
+
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "currency": "DKK",
+      "usdExchangeRate": 0.146,
+      "majorStudyCities": ["Copenhagen", "Aarhus", "Odense", "Aalborg"],
+      "recommendedCitiesForBangladeshiStudents": ["Aarhus", "Aalborg"],
+      "avoidCitiesNote": "Copenhagen is one of the most expensive cities in Europe. Student housing is competitive. Aarhus offers better affordability with strong university (Aarhus University, AAU).",
+      "confidenceScore": 81,
+      "evidenceSummary": "Denmark charges no tuition for EU students but non-EU students pay full fees. Strong welfare state, excellent work-life balance. Increasing tightening of immigration rules since 2023. Skilled Worker Scheme requires job offer. Danish language increasingly expected for settlement.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 4500, "usd": 657, "note": "Copenhagen shared room; Aarhus DKK 3,000-3,800" },
+            "privateRoom": { "localCurrency": 7000, "usd": 1022, "note": "Private room Copenhagen" },
+            "studio1BR": { "localCurrency": 12000, "usd": 1752, "note": "Copenhagen 1BR; severe shortage" },
+            "studentHousing": { "localCurrency": 3500, "usd": 511, "note": "KAB/housing foundation; long waitlist in Copenhagen" }
+          },
+          "groceries": { "localCurrency": 2800, "usd": 409 },
+          "utilities": { "localCurrency": 800, "usd": 117 },
+          "internet": { "localCurrency": 250, "usd": 37 },
+          "transportation": { "localCurrency": 430, "usd": 63, "note": "Metro/bus monthly pass; cycling dominant in Denmark" },
+          "healthInsurance": { "localCurrency": 0, "usd": 0, "note": "Free public healthcare for registered residents" },
+          "personalCare": { "localCurrency": 400, "usd": 58 },
+          "mobilePhone": { "localCurrency": 150, "usd": 22 },
+          "entertainment": { "localCurrency": 700, "usd": 102 },
+          "miscellaneous": { "localCurrency": 800, "usd": 117 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 10830, "usd": 1581 },
+          "privateAccommodation": { "localCurrency": 13330, "usd": 1946 },
+          "fullIndependent": { "localCurrency": 18330, "usd": 2676 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "90000-160000", "usd": "13140-23360", "note": "Non-EU international tuition" },
+          "phd": { "localCurrency": "0", "usd": "0", "note": "PhD is employment; Danish PhD salary very competitive" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Government scholarships rare", "usd": "Rare" },
+          "phd": { "localCurrency": "35000-42000/month", "usd": "5110-6132/month", "note": "Danish PhD salary among highest in world; gross figure" }
+        },
+        "stipendCoversLiving": "Very comfortably as PhD employee; MSc requires substantial savings",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "20 hours per week",
+        "partTimeEarningPotential": { "localCurrency": "5000-9000/month", "usd": "730-1314/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Job Seeker Permit (6 months) then Work Permit",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "480000-600000/year", "usd": "70080-87600/year" },
+          "midLevelDataScientist": { "localCurrency": "600000-750000/year", "usd": "87600-109500/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "27000-38000", "usd": "3942-5548", "note": "Danish tax rate 37-52% but comprehensive benefits" },
+        "monthlyLivingCost": { "localCurrency": "12000-18000", "usd": "1752-2628" },
+        "estimatedMonthlySavings": { "localCurrency": "9000-22000", "usd": "1314-3212" },
+        "savingsNote": "Despite high taxes, Danish PhD and working salaries are among Europe's best. Net savings can be strong."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "HIGH in Copenhagen, MODERATE in Aarhus",
+        "currentVacancyRate": "1.1% in Copenhagen",
+        "forecastNote": "Student housing shortage ongoing. Government building initiatives slow. 2027-2029 tight.",
+        "bangladeshiCommunityNote": "Small South Asian community. Very safe, progressive society. Danish language expected for integration beyond tech sector."
+      },
+
+      "affordabilityRating": 60,
+      "valueForMoneyRating": 72,
+      "overallCostRisk": "HIGH nominally but excellent value if PhD funded",
+      "recommendation": "Denmark PhD employment is exceptional - world's highest PhD salaries. For MSc, requires significant self-funding. Immigration policy tightening; language investment important. Aarhus preferred over Copenhagen for affordability."
+    },
+
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "currency": "NOK",
+      "usdExchangeRate": 0.095,
+      "majorStudyCities": ["Oslo", "Bergen", "Trondheim", "Tromso"],
+      "recommendedCitiesForBangladeshiStudents": ["Trondheim", "Bergen"],
+      "avoidCitiesNote": "Oslo is one of the world's most expensive cities. Trondheim (NTNU - Norway's tech university) offers excellent research with better affordability.",
+      "confidenceScore": 80,
+      "evidenceSummary": "Norway abolished international student tuition fees until 2023 when Government reinstated them at NOK 100,000-250,000/year for non-EU students at some institutions. NTNU Trondheim is the prime destination for engineering/CS. Norway's sovereign wealth fund and oil economy provide exceptional stability. Smaller labor market but high quality of life.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 6000, "usd": 570, "note": "Student housing SiT (Trondheim) or SiO (Oslo)" },
+            "privateRoom": { "localCurrency": 9000, "usd": 855, "note": "Private market Trondheim" },
+            "studio1BR": { "localCurrency": 15000, "usd": 1425, "note": "Oslo 1BR" },
+            "studentHousing": { "localCurrency": 5500, "usd": 523, "note": "SiO/SiT student welfare organizations; apply early" }
+          },
+          "groceries": { "localCurrency": 4000, "usd": 380, "note": "Norway food prices very high; cooking essential" },
+          "utilities": { "localCurrency": 600, "usd": 57, "note": "Often included in student housing" },
+          "internet": { "localCurrency": 400, "usd": 38 },
+          "transportation": { "localCurrency": 900, "usd": 86, "note": "Monthly pass; student discount" },
+          "healthInsurance": { "localCurrency": 0, "usd": 0, "note": "Norwegian public healthcare covers registered students" },
+          "personalCare": { "localCurrency": 500, "usd": 48 },
+          "mobilePhone": { "localCurrency": 200, "usd": 19 },
+          "entertainment": { "localCurrency": 800, "usd": 76 },
+          "miscellaneous": { "localCurrency": 1000, "usd": 95 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 14400, "usd": 1368 },
+          "privateAccommodation": { "localCurrency": 17400, "usd": 1653 },
+          "fullIndependent": { "localCurrency": 23400, "usd": 2223 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "100000-250000", "usd": "9500-23750", "note": "New tuition fees reinstated 2023; varies by institution" },
+          "phd": { "localCurrency": "0", "usd": "0", "note": "PhD is employment; Norwegian Research Council funded" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Quota Scheme scholarships available", "usd": "Check annually" },
+          "phd": { "localCurrency": "38000-48000/month", "usd": "3610-4560/month", "note": "Research Fellow (stipendiat) salary; excellent compensation" }
+        },
+        "stipendCoversLiving": "Very comfortably as PhD; MSc significantly harder without scholarship",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "20 hours per week",
+        "partTimeEarningPotential": { "localCurrency": "8000-14000/month", "usd": "760-1330/month", "note": "Norway minimum wage sector-dependent; generally high" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Skilled Worker Permit (requires job offer)",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "600000-750000/year", "usd": "57000-71250/year" },
+          "midLevelDataScientist": { "localCurrency": "750000-950000/year", "usd": "71250-90250/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "35000-50000", "usd": "3325-4750", "note": "Norwegian tax progressive; around 25-38% effective rate" },
+        "monthlyLivingCost": { "localCurrency": "15000-22000", "usd": "1425-2090" },
+        "estimatedMonthlySavings": { "localCurrency": "13000-28000", "usd": "1235-2660" },
+        "savingsNote": "Despite high cost of living, Norwegian salaries yield meaningful savings. Smaller tech job market than UK/Germany/Netherlands is the main constraint."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "HIGH in Oslo, MODERATE in Trondheim/Bergen",
+        "currentVacancyRate": "1.8% national",
+        "forecastNote": "Student housing organizations manage supply reasonably. Private market tighter. 2027-2029 manageable outside Oslo.",
+        "bangladeshiCommunityNote": "Small South Asian community. Very high quality of life. Norwegian language helpful for long-term integration."
+      },
+
+      "affordabilityRating": 58,
+      "valueForMoneyRating": 70,
+      "overallCostRisk": "HIGH nominally; excellent if PhD funded",
+      "recommendation": "Norway offers exceptional quality of life, political stability, and long-term security (sovereign wealth fund). Smaller job market is a constraint. PhD at NTNU Trondheim is the prime strategy. Norwegian language investment helps for permanent settlement."
+    },
+
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "currency": "CHF",
+      "usdExchangeRate": 1.13,
+      "majorStudyCities": ["Zurich", "Lausanne", "Geneva", "Basel"],
+      "recommendedCitiesForBangladeshiStudents": ["Lausanne", "Basel"],
+      "avoidCitiesNote": "Zurich and Geneva are consistently ranked world's most expensive cities. Without substantial funding, self-supporting is extremely difficult.",
+      "confidenceScore": 85,
+      "evidenceSummary": "Switzerland hosts ETH Zurich and EPFL - two of world's top 15 universities. PhD salaries are among world's highest but cost of living is extreme. Non-EU immigration rules are strict. Research quality is exceptional. ETH and EPFL PhD fellowships are competitive globally.",
+
+      "studentPhase": {
+        "durationTypical": "4-5 years PhD (ETH/EPFL research focused)",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 900, "usd": 1017, "note": "Zurich WG room; Lausanne CHF 800" },
+            "privateRoom": { "localCurrency": 1500, "usd": 1695, "note": "Private room shared flat Zurich" },
+            "studio1BR": { "localCurrency": 2500, "usd": 2825, "note": "1BR Zurich; world's highest rental market" },
+            "dormitory": { "localCurrency": 800, "usd": 904, "note": "ETH/EPFL dormitories; competitive" }
+          },
+          "groceries": { "localCurrency": 600, "usd": 678, "note": "Aldi/Lidl exist; still expensive by European standards" },
+          "utilities": { "localCurrency": 200, "usd": 226 },
+          "internet": { "localCurrency": 50, "usd": 57 },
+          "transportation": { "localCurrency": 100, "usd": 113, "note": "Half-Fare Card + zonal pass; trains exceptional" },
+          "healthInsurance": { "localCurrency": 400, "usd": 452, "note": "Mandatory Swiss health insurance (KVG); major expense" },
+          "personalCare": { "localCurrency": 100, "usd": 113 },
+          "mobilePhone": { "localCurrency": 30, "usd": 34 },
+          "entertainment": { "localCurrency": 200, "usd": 226 },
+          "miscellaneous": { "localCurrency": 200, "usd": 226 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 2780, "usd": 3141 },
+          "privateAccommodation": { "localCurrency": 3380, "usd": 3819 },
+          "fullIndependent": { "localCurrency": 4380, "usd": 4949 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "1460/year at ETH (CHF 730/semester)", "usd": "1650/year", "note": "ETH Zurich and EPFL charge nominal tuition even for internationals; exceptional value" },
+          "phd": { "localCurrency": "730/year nominal", "usd": "825/year", "note": "Fully funded with employment salary" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "No standard stipend", "usd": "Self-funded typically" },
+          "phd": { "localCurrency": "4000-5500/month", "usd": "4520-6215/month", "note": "ETH/EPFL PhD salaries world's highest; covers living comfortably" }
+        },
+        "stipendCoversLiving": "Comfortably for PhD even in Zurich; MSc self-funded is challenging",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "15 hours per week for non-EU students",
+        "partTimeEarningPotential": { "localCurrency": "1500-2500/month", "usd": "1695-2825/month", "note": "Switzerland minimum wages canton-dependent; very high" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Work Permit B (annual renewal) then C Permit after 5-10 years",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "100000-130000/year", "usd": "113000-146900/year" },
+          "midLevelDataScientist": { "localCurrency": "130000-170000/year", "usd": "146900-192100/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "6500-11000", "usd": "7345-12430", "note": "Switzerland tax lower than Scandinavia; 20-30% effective; no social security drain" },
+        "monthlyLivingCost": { "localCurrency": "3500-5000", "usd": "3955-5650" },
+        "estimatedMonthlySavings": { "localCurrency": "2500-6500", "usd": "2825-7345" },
+        "savingsNote": "Highest net savings potential in Europe for senior AI/ML roles. Entry level competitive but manageable."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "EXTREME in Zurich/Geneva, HIGH in Lausanne",
+        "currentVacancyRate": "0.7% national",
+        "forecastNote": "Switzerland has chronic housing shortage. Strict building regulations limit supply. PhD dorms are critical to secure.",
+        "bangladeshiCommunityNote": "Small but present South Asian community. Multiple official languages (German, French, Italian). English widely used in research."
+      },
+
+      "affordabilityRating": 40,
+      "valueForMoneyRating": 80,
+      "overallCostRisk": "EXTREME cost BUT highest income compensation ratio; only viable with full funding",
+      "recommendation": "ETH/EPFL PhD is a once-in-a-career opportunity with global recognition and the highest PhD salaries in the world. Only pursue if admitted to funded PhD. MSc self-funding in Switzerland is financially extremely risky. Secure PhD admission first, then plan financials."
+    },
+
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "majorStudyCities": ["Vienna", "Graz", "Linz", "Innsbruck", "Salzburg"],
+      "recommendedCitiesForBangladeshiStudents": ["Graz", "Linz"],
+      "avoidCitiesNote": "Vienna is pleasant but more expensive than other Austrian cities. Graz (TU Graz) and Linz (JKU) offer strong tech programs with better affordability.",
+      "confidenceScore": 78,
+      "evidenceSummary": "Austria offers low tuition (EUR 726/semester for non-EU) at public universities. Strong research output. Vienna offers good quality of life. German language essential for long-term integration. Right-wing political shifts in 2024-2025 elections raise some immigration concern.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 500, "usd": 545, "note": "WG room Vienna; Graz EUR 400-450" },
+            "privateRoom": { "localCurrency": 800, "usd": 872 },
+            "studio1BR": { "localCurrency": 1200, "usd": 1308, "note": "Vienna 1BR; Graz EUR 900-1000" },
+            "studentDorm": { "localCurrency": 400, "usd": 436, "note": "ÖH/OeAD student housing" }
+          },
+          "groceries": { "localCurrency": 280, "usd": 305 },
+          "utilities": { "localCurrency": 100, "usd": 109 },
+          "internet": { "localCurrency": 25, "usd": 27 },
+          "transportation": { "localCurrency": 50, "usd": 55, "note": "Vienna annual pass Wiener Linien student: EUR 365/year = EUR 30/month" },
+          "healthInsurance": { "localCurrency": 65, "usd": 71, "note": "ÖGK student health insurance affordable" },
+          "personalCare": { "localCurrency": 50, "usd": 55 },
+          "mobilePhone": { "localCurrency": 15, "usd": 16 },
+          "entertainment": { "localCurrency": 80, "usd": 87 },
+          "miscellaneous": { "localCurrency": 100, "usd": 109 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 1265, "usd": 1379 },
+          "privateAccommodation": { "localCurrency": 1565, "usd": 1706 },
+          "fullIndependent": { "localCurrency": 1965, "usd": 2142 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "1452/year (EUR 726/semester)", "usd": "1583/year", "note": "Very affordable; among lowest in Europe for international students" },
+          "phd": { "localCurrency": "1452/year or 0 if employed", "usd": "1583/year" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Rare; some OeAD scholarships", "usd": "Limited" },
+          "phd": { "localCurrency": "2000-2800/month", "usd": "2180-3052/month", "note": "FWF funded positions; university contract (30h/week)" }
+        },
+        "stipendCoversLiving": "Comfortably outside Vienna",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "20 hours per week",
+        "partTimeEarningPotential": { "localCurrency": "600-1000/month", "usd": "654-1090/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Job Seeker Visa (12 months) then Red-White-Red Card",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "45000-65000/year", "usd": "49050-70850/year" },
+          "midLevelDataScientist": { "localCurrency": "60000-85000/year", "usd": "65400-92650/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "2500-4000", "usd": "2725-4360" },
+        "monthlyLivingCost": { "localCurrency": "1500-2200", "usd": "1635-2398" },
+        "estimatedMonthlySavings": { "localCurrency": "700-2200", "usd": "763-2398" },
+        "savingsNote": "Austria is underrated for cost-efficiency. Low tuition, moderate living costs, reasonable salaries. Right-wing political climate warrants monitoring."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "MODERATE in Vienna, LOW in Graz/Linz",
+        "currentVacancyRate": "2.8% national",
+        "forecastNote": "More stable than Western European capitals. Vienna's social housing system (Gemeindebau) is extensive.",
+        "bangladeshiCommunityNote": "Small South Asian community. German language essential. Vienna culturally rich and internationally diverse."
+      },
+
+      "affordabilityRating": 72,
+      "valueForMoneyRating": 75,
+      "overallCostRisk": "LOW-MODERATE",
+      "recommendation": "Austria is underrated. Low tuition plus manageable living costs make it financially accessible. TU Graz and JKU Linz have strong CS programs. German language investment essential. Monitor political developments regarding immigration tightening."
+    },
+
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "majorStudyCities": ["Brussels", "Leuven", "Ghent", "Liege", "Bruges"],
+      "recommendedCitiesForBangladeshiStudents": ["Leuven", "Ghent"],
+      "avoidCitiesNote": "Brussels cost of living high relative to Belgium norms. Leuven (KU Leuven - top global research university) and Ghent offer excellent value.",
+      "confidenceScore": 79,
+      "evidenceSummary": "KU Leuven is ranked in global top 50 for AI/CS research. Belgium has one of Europe's highest income tax rates but comprehensive social system. Trilingual country (Dutch/French/German) creates integration complexity. Political instability (record government formation times) a minor concern.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 450, "usd": 491, "note": "Kot (student room) in Leuven; Ghent EUR 400" },
+            "privateRoom": { "localCurrency": 700, "usd": 763 },
+            "studio1BR": { "localCurrency": 1100, "usd": 1199 },
+            "studentKot": { "localCurrency": 380, "usd": 414, "note": "University managed student rooms" }
+          },
+          "groceries": { "localCurrency": 300, "usd": 327 },
+          "utilities": { "localCurrency": 100, "usd": 109, "note": "Energy costs elevated post-2022; settling 2025-2026" },
+          "internet": { "localCurrency": 30, "usd": 33 },
+          "transportation": { "localCurrency": 50, "usd": 55, "note": "De Lijn bus/tram; student passes" },
+          "healthInsurance": { "localCurrency": 30, "usd": 33, "note": "Mutuality health insurance affordable; covers most costs" },
+          "personalCare": { "localCurrency": 50, "usd": 55 },
+          "mobilePhone": { "localCurrency": 15, "usd": 16 },
+          "entertainment": { "localCurrency": 80, "usd": 87 },
+          "miscellaneous": { "localCurrency": 100, "usd": 109 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 1205, "usd": 1314 },
+          "privateAccommodation": { "localCurrency": 1455, "usd": 1586 },
+          "fullIndependent": { "localCurrency": 1855, "usd": 2022 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "4000-9000", "usd": "4360-9810", "note": "KU Leuven international MSc: EUR 4,000-9,000; reasonable by European standards" },
+          "phd": { "localCurrency": "0", "usd": "0", "note": "FWO/FNRS funded PhDs; employment contract" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "VLIR-UOS scholarships for developing country students", "usd": "Covers tuition + EUR 800-1000/month", "note": "Very relevant for Bangladeshi applicants" },
+          "phd": { "localCurrency": "2300-3000/month", "usd": "2507-3270/month", "note": "FWO mandate standard PhD salary; net after tax approx EUR 1,800" }
+        },
+        "stipendCoversLiving": "Comfortably in Leuven/Ghent",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "20 hours per week",
+        "partTimeEarningPotential": { "localCurrency": "700-1200/month", "usd": "763-1308/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Highly Skilled Worker Permit",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "50000-70000/year", "usd": "54500-76300/year" },
+          "midLevelDataScientist": { "localCurrency": "65000-90000/year", "usd": "70850-98100/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "2200-3800", "usd": "2398-4142", "note": "Belgian tax is high (50%+); expert status tax exemption may apply" },
+        "monthlyLivingCost": { "localCurrency": "1500-2300", "usd": "1635-2507" },
+        "estimatedMonthlySavings": { "localCurrency": "500-1800", "usd": "545-1962" },
+        "savingsNote": "Belgium's high tax rate compresses net savings. VLIR-UOS scholarship for MSc is a strong option for Bangladeshi students specifically."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "MODERATE",
+        "currentVacancyRate": "3.0% national",
+        "forecastNote": "More stable than Netherlands/Ireland. Leuven student housing market manageable.",
+        "bangladeshiCommunityNote": "Growing Muslim community in Brussels. Halal food very accessible. Multilingual environment."
+      },
+
+      "affordabilityRating": 68,
+      "valueForMoneyRating": 70,
+      "overallCostRisk": "MODERATE",
+      "recommendation": "KU Leuven is world-class for AI research. VLIR-UOS scholarship specifically targets developing country students including Bangladesh - highly strategic opportunity. Belgian bureaucracy and high taxes are downsides. Language (Dutch or French) matters for long-term settlement."
+    },
+
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "currency": "NZD",
+      "usdExchangeRate": 0.61,
+      "majorStudyCities": ["Auckland", "Wellington", "Christchurch", "Dunedin"],
+      "recommendedCitiesForBangladeshiStudents": ["Wellington", "Christchurch", "Dunedin"],
+      "avoidCitiesNote": "Auckland is NZ's most expensive city with housing crisis. Wellington is the tech/government hub with better affordability balance.",
+      "confidenceScore": 77,
+      "evidenceSummary": "New Zealand offers a straightforward pathway to PR and citizenship with English language advantage. Smaller economy limits high-paying AI jobs. University research quality improving but not in global top tier. Good quality of life. Remote geography affects career mobility.",
+
+      "studentPhase": {
+        "durationTypical": "1.5-2 years MSc, 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 800, "usd": 488, "note": "Shared house; Auckland NZD 950-1,200" },
+            "privateRoom": { "localCurrency": 1200, "usd": 732 },
+            "studio1BR": { "localCurrency": 1800, "usd": 1098, "note": "Auckland; Wellington NZD 1,500-1,700" },
+            "onCampus": { "localCurrency": 1000, "usd": 610, "note": "University accommodation" }
+          },
+          "groceries": { "localCurrency": 400, "usd": 244 },
+          "utilities": { "localCurrency": 150, "usd": 92 },
+          "internet": { "localCurrency": 60, "usd": 37 },
+          "transportation": { "localCurrency": 150, "usd": 92, "note": "Public transport limited; car useful" },
+          "healthInsurance": { "localCurrency": 50, "usd": 31, "note": "ACC covers accidents; basic health included; private insurance for extras" },
+          "personalCare": { "localCurrency": 60, "usd": 37 },
+          "mobilePhone": { "localCurrency": 30, "usd": 18 },
+          "entertainment": { "localCurrency": 100, "usd": 61 },
+          "miscellaneous": { "localCurrency": 120, "usd": 73 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 1920, "usd": 1171 },
+          "privateAccommodation": { "localCurrency": 2320, "usd": 1415 },
+          "fullIndependent": { "localCurrency": 2920, "usd": 1781 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "32000-45000", "usd": "19520-27450", "note": "International tuition; NZ universities moderately priced" },
+          "phd": { "localCurrency": "7000-10000 or 0 with scholarship", "usd": "4270-6100 or 0" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "NZ international scholarship covers fees", "usd": "Selective" },
+          "phd": { "localCurrency": "2000-2800/month", "usd": "1220-1708/month", "note": "Doctoral scholarship approximately NZD 27,500/year" }
+        },
+        "stipendCoversLiving": "Tightly for PhD; barely covering costs in Auckland",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "20 hours per week",
+        "partTimeEarningPotential": { "localCurrency": "800-1400/month", "usd": "488-854/month", "note": "Minimum wage NZD 23.15/hour 2026" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Post-Study Work Visa (3 years for Level 7+ graduates)",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "70000-90000/year", "usd": "42700-54900/year" },
+          "midLevelDataScientist": { "localCurrency": "85000-110000/year", "usd": "51850-67100/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "4500-6500", "usd": "2745-3965" },
+        "monthlyLivingCost": { "localCurrency": "2500-3500", "usd": "1525-2135" },
+        "estimatedMonthlySavings": { "localCurrency": "1500-3500", "usd": "915-2135" },
+        "savingsNote": "NZ salaries lower than Australia. PR pathway is straightforward. Quality of life excellent. Remote location limits global career mobility."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "HIGH in Auckland, MODERATE in Wellington/Christchurch",
+        "currentVacancyRate": "1.8% national",
+        "forecastNote": "NZ government actively addressing housing. Some improvement expected 2026-2028.",
+        "bangladeshiCommunityNote": "Growing South Asian and Muslim community in Auckland. Halal food available. English-speaking environment ideal."
+      },
+
+      "affordabilityRating": 65,
+      "valueForMoneyRating": 62,
+      "overallCostRisk": "MODERATE",
+      "recommendation": "NZ is appealing for its simple PR pathway and English language environment. However, lower salaries and remoteness limit career ceiling for AI/ML professionals. Best considered as lifestyle choice with career trade-off rather than optimal career maximization destination."
+    },
+
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "currency": "USD",
+      "usdExchangeRate": 1.0,
+      "majorStudyCities": ["Boston", "San Francisco", "New York", "Seattle", "Austin", "Pittsburgh", "San Diego", "Atlanta"],
+      "recommendedCitiesForBangladeshiStudents": ["Pittsburgh", "Atlanta", "Austin", "Boston (if funded)"],
+      "avoidCitiesNote": "San Francisco Bay Area is globally the most expensive tech hub. New York similarly. Pittsburgh, Atlanta, Austin offer far better cost-benefit ratio with strong universities and growing tech sectors.",
+      "confidenceScore": 90,
+      "evidenceSummary": "USA remains the world leader in AI research and industry. Silicon Valley concentration is unmatched. However, immigration pathway (H1B → Green Card) is extremely slow (20-50 years for Indian and potentially similar for Bangladeshi nationals under EB-2/EB-3 categories). Political climate under current administration shows tightening of immigration broadly. Excellent for career peak earnings but poor for long-term settlement certainty.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc (often self-funded), 4-6 years PhD (funded)",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 800, "usd": 800, "note": "Pittsburgh/Atlanta shared; SF/NY USD 1,500-2,500" },
+            "privateRoom": { "localCurrency": 1200, "usd": 1200, "note": "Secondary city; SF USD 2,000+" },
+            "studio1BR": { "localCurrency": 1800, "usd": 1800, "note": "Pittsburgh/Austin; SF/NY USD 3,000+" },
+            "gradHousing": { "localCurrency": 900, "usd": 900, "note": "Grad student housing where available" }
+          },
+          "groceries": { "localCurrency": 400, "usd": 400 },
+          "utilities": { "localCurrency": 120, "usd": 120 },
+          "internet": { "localCurrency": 60, "usd": 60 },
+          "transportation": { "localCurrency": 100, "usd": 100, "note": "Car needed in many US cities; transit in Boston/NYC/SF" },
+          "healthInsurance": { "localCurrency": 200, "usd": 200, "note": "University plan for students; covered by stipend for PhD" },
+          "personalCare": { "localCurrency": 60, "usd": 60 },
+          "mobilePhone": { "localCurrency": 40, "usd": 40 },
+          "entertainment": { "localCurrency": 100, "usd": 100 },
+          "miscellaneous": { "localCurrency": 150, "usd": 150 }
+        },
+        "totalMonthlyEstimate": {
+          "sharedAccommodation": { "localCurrency": 2030, "usd": 2030, "note": "Secondary tech city estimate" },
+          "privateAccommodation": { "localCurrency": 2430, "usd": 2430 },
+          "fullIndependent": { "localCurrency": 3030, "usd": 3030 },
+          "sfNyPremium": "Add USD 1,500-3,000/month for San Francisco or New York"
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "35000-75000", "usd": "35000-75000", "note": "International tuition; elite programs very expensive" },
+          "phd": { "localCurrency": "0 (funded)", "usd": "0 (funded)", "note": "Top CS PhD programs fully funded with tuition waiver + stipend" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Rare; TA positions competitive", "usd": "Rare" },
+          "phd": { "localCurrency": "2000-3500/month", "usd": "2000-3500/month", "note": "Top PhD programs Carnegie Mellon, MIT, Stanford, etc." }
+        },
+        "stipendCoversLiving": "Adequately in Pittsburgh/Atlanta; tightly in Boston; barely in SF/NYC",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "20 hours per week on F-1 visa; OPT = full time",
+        "partTimeEarningPotential": { "localCurrency": "800-1500/month", "usd": "800-1500/month", "note": "TA/RA, research positions" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "OPT (12 months), STEM OPT Extension (24 months additional = 36 months total), then H-1B lottery",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "95000-140000/year", "usd": "95000-140000/year" },
+          "midLevelDataScientist": { "localCurrency": "130000-200000/year", "usd": "130000-200000/year" },
+          "seniorMLEngineerBigTech": { "localCurrency": "200000-400000+/year", "usd": "200000-400000+/year", "note": "Total comp including RSUs/bonuses" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "6000-12000", "usd": "6000-12000", "note": "State income tax varies; California 9.3-13.3%, Texas 0%" },
+        "monthlyLivingCost": { "localCurrency": "2500-6000", "usd": "2500-6000", "note": "Massive variation by city" },
+        "estimatedMonthlySavings": { "localCurrency": "1500-8000", "usd": "1500-8000" },
+        "savingsNote": "USA offers highest absolute income for AI/ML. However H-1B lottery (20-30% chance annually) and decade-long Green Card wait make long-term settlement uncertain. STEM OPT provides 3-year bridge which is critical."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "EXTREME in SF/NYC/Seattle, HIGH in Boston/Austin, MODERATE in Pittsburgh/Atlanta",
+        "currentVacancyRate": "Varies widely; SF 6.4% (post-tech layoffs), NYC 1.4%",
+        "forecastNote": "US housing market varies dramatically by city. Midwest and secondary tech cities remain accessible. Coastal tech hubs remain extreme.",
+        "bangladeshiCommunityNote": "Large, established Bangladeshi community particularly in NYC (Jackson Heights), Boston, Detroit. Strong community networks. Halal food universally available in major cities."
+      },
+
+      "affordabilityRating": 52,
+      "valueForMoneyRating": 75,
+      "overallCostRisk": "HIGH in coastal tech hubs; MODERATE in secondary cities",
+      "recommendation": "USA is the peak destination for AI/ML career earnings and research prestige. CMU, MIT, Stanford, Berkeley, UIUC for CS PhD are transformative. However, immigration uncertainty is a MAJOR risk factor - H-1B lottery, Green Card backlog, political environment. Best strategy: use US PhD and OPT for career and savings acceleration, then transition to Canada/Australia/Germany for stable long-term settlement. NOT recommended as sole long-term plan without backup country."
+    },
+
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "currency": "JPY",
+      "usdExchangeRate": 0.0067,
+      "majorStudyCities": ["Tokyo", "Osaka", "Kyoto", "Nagoya", "Sapporo", "Fukuoka"],
+      "recommendedCitiesForBangladeshiStudents": ["Osaka", "Kyoto", "Nagoya", "Fukuoka"],
+      "avoidCitiesNote": "Tokyo is the main hub but expensive. Other cities offer quality university options (Osaka University, Kyoto University, Nagoya University) with lower living costs.",
+      "confidenceScore": 80,
+      "evidenceSummary": "Japan is strategically opening immigration due to severe demographic crisis. MEXT scholarship is excellent. Japanese language proficiency is critical for long-term settlement and career beyond research. AI investment increasing significantly under government programs. Currency weakness (JPY) makes Japan increasingly affordable for incoming students but reduces real savings value.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 30000, "usd": 201, "note": "Share house Tokyo; Osaka JPY 25,000" },
+            "privateRoom": { "localCurrency": 50000, "usd": 335, "note": "1R apartment outside central Tokyo" },
+            "studio1BR": { "localCurrency": 80000, "usd": 536, "note": "1K apartment Tokyo; Osaka JPY 55,000-65,000" },
+            "dormitory": { "localCurrency": 25000, "usd": 168, "note": "University international dormitory; apply immediately" }
+          },
+          "groceries": { "localCurrency": 30000, "usd": 201, "note": "Japanese convenience stores and supermarkets; reasonable" },
+          "utilities": { "localCurrency": 10000, "usd": 67, "note": "Gas, electricity, water" },
+          "internet": { "localCurrency": 4000, "usd": 27 },
+          "transportation": { "localCurrency": 10000, "usd": 67, "note": "IC card (Suica/Pasmo); student discount on local buses" },
+          "healthInsurance": { "localCurrency": 2000, "usd": 13, "note": "National Health Insurance for students; very affordable" },
+          "personalCare": { "localCurrency": 5000, "usd": 34 },
+          "mobilePhone": { "localCurrency": 3000, "usd": 20, "note": "Budget SIM plans affordable" },
+          "entertainment": { "localCurrency": 10000, "usd": 67 },
+          "miscellaneous": { "localCurrency": 10000, "usd": 67 }
+        },
+        "totalMonthlyEstimate": {
+          "dormitoryBased": { "localCurrency": 109000, "usd": 730 },
+          "sharedAccommodation": { "localCurrency": 114000, "usd": 764 },
+          "privateRoom": { "localCurrency": 134000, "usd": 898 },
+          "independent1BR": { "localCurrency": 164000, "usd": 1099 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "535800/year", "usd": "3590/year", "note": "National university standard fee; very low" },
+          "phd": { "localCurrency": "535800/year or 0 with MEXT", "usd": "3590/year or 0" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "MEXT: 144,000-145,000/month", "usd": "965-971/month", "note": "MEXT scholarship covers tuition + monthly stipend; highly competitive" },
+          "phd": { "localCurrency": "MEXT: 145,000/month + tuition waiver", "usd": "971/month", "note": "For MEXT recipients; RA positions additional JPY 50,000-100,000/month" }
+        },
+        "stipendCoversLiving": "Comfortably for dormitory-based living; tight for private apartment",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "28 hours per week",
+        "partTimeEarningPotential": { "localCurrency": "60000-100000/month", "usd": "402-670/month", "note": "Part-time arubaito; coding/tutoring higher" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Work Visa (Engineer/Specialist in Humanities) then Highly Skilled Professional Points system",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "4500000-6000000/year", "usd": "30150-40200/year", "note": "Entry level Japan tech; lower than Western peers in USD terms" },
+          "midLevelDataScientist": { "localCurrency": "7000000-10000000/year", "usd": "46900-67000/year" },
+          "topTechForeignCompany": { "localCurrency": "12000000-20000000/year", "usd": "80400-134000/year", "note": "Google/Amazon/Meta Japan offices pay much higher" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "280000-550000", "usd": "1876-3685" },
+        "monthlyLivingCost": { "localCurrency": "120000-200000", "usd": "804-1340" },
+        "estimatedMonthlySavings": { "localCurrency": "80000-350000", "usd": "536-2345" },
+        "savingsNote": "JPY weakness reduces USD savings value significantly. Foreign companies (Google, Amazon) pay much better. Japanese language fluency dramatically increases salary ceiling."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "LOW-MODERATE; Japan has housing surplus in most non-Tokyo areas",
+        "currentVacancyRate": "13.8% national (includes rural akiya - vacant homes)",
+        "forecastNote": "Japan has structural housing oversupply in rural areas; Tokyo remains competitive. Gaijin (foreigner) discrimination in rental market is a real barrier - guarantor systems needed.",
+        "bangladeshiCommunityNote": "Small Muslim community; halal food available in major cities. Japan society relatively homogeneous; integration takes deliberate effort. Mosque access in major cities."
+      },
+
+      "affordabilityRating": 82,
+      "valueForMoneyRating": 76,
+      "overallCostRisk": "LOW in cost terms; HIGH in language and cultural integration risk",
+      "recommendation": "Japan offers extraordinary value for money if MEXT scholarship is obtained. Extremely low living costs, high safety, excellent research infrastructure. Japanese language (N2 minimum) is essential for long-term career and settlement. Government actively opening immigration for skilled workers. Strategic 2027-2029 entry with MEXT is high value proposition."
+    },
+
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "currency": "KRW",
+      "usdExchangeRate": 0.00073,
+      "majorStudyCities": ["Seoul", "Daejeon", "Busan", "Daegu", "Suwon"],
+      "recommendedCitiesForBangladeshiStudents": ["Daejeon", "Busan"],
+      "avoidCitiesNote": "Seoul (SNU, Yonsei, KAIST branch) is most prestigious but expensive. Daejeon (KAIST, ETRI) is Korea's science city with excellent research and lower costs.",
+      "confidenceScore": 79,
+      "evidenceSummary": "South Korea has a rapidly growing AI ecosystem supported by Samsung, LG, Hyundai, Kakao, Naver. Government K-Global AI initiative with massive investment. Aging demographic crisis accelerating need for skilled immigrants. Korean language critical for integration and career beyond research labs. KAIST and SNU are world-class for AI/CS.",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc, 4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 300000, "usd": 219, "note": "Goshiwon (study room) Seoul; very basic" },
+            "privateRoom": { "localCurrency": 500000, "usd": 365, "note": "Private room shared flat Seoul" },
+            "officetell": { "localCurrency": 600000, "usd": 438, "note": "Studio-type; jeonse system complex" },
+            "dormitory": { "localCurrency": 200000, "usd": 146, "note": "University dormitory; priority for international students at KAIST" }
+          },
+          "groceries": { "localCurrency": 300000, "usd": 219 },
+          "utilities": { "localCurrency": 80000, "usd": 58 },
+          "internet": { "localCurrency": 30000, "usd": 22, "note": "Korea has world's fastest internet; very affordable" },
+          "transportation": { "localCurrency": 60000, "usd": 44, "note": "T-money card; excellent subway/bus system" },
+          "healthInsurance": { "localCurrency": 60000, "usd": 44, "note": "National Health Insurance for students; affordable" },
+          "personalCare": { "localCurrency": 50000, "usd": 37 },
+          "mobilePhone": { "localCurrency": 30000, "usd": 22 },
+          "entertainment": { "localCurrency": 80000, "usd": 58 },
+          "miscellaneous": { "localCurrency": 80000, "usd": 58 }
+        },
+        "totalMonthlyEstimate": {
+          "dormitoryBased": { "localCurrency": 930000, "usd": 679 },
+          "sharedAccommodation": { "localCurrency": 1070000, "usd": 781 },
+          "privateAccommodation": { "localCurrency": 1270000, "usd": 927 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "5000000-8000000", "usd": "3650-5840", "note": "KAIST often fully funded; SNU international fees" },
+          "phd": { "localCurrency": "0 with funding", "usd": "0 with funding", "note": "KAIST/POSTECH PhD fully funded with research assistant salary" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "800000-1200000/month", "usd": "584-876/month", "note": "Government scholarship (GKS) or KAIST RA" },
+          "phd": { "localCurrency": "1200000-2000000/month", "usd": "876-1460/month", "note": "KAIST PhD stipend; KRW 1,500,000 average with RA" }
+        },
+        "stipendCoversLiving": "Comfortably in Daejeon; tightly in Seoul",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "20 hours per week",
+        "partTimeEarningPotential": { "localCurrency": "400000-700000/month", "usd": "292-511/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "D-10 Job Seeking (6 months) then E-7 Skilled Worker",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "40000000-55000000/year", "usd": "29200-40150/year" },
+          "midLevelDataScientist": { "localCurrency": "60000000-90000000/year", "usd": "43800-65700/year" },
+          "bigTechKorea": { "localCurrency": "80000000-150000000/year", "usd": "58400-109500/year", "note": "Samsung, Kakao, Naver, Hyundai AI labs" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "2800000-5500000", "usd": "2044-4015" },
+        "monthlyLivingCost": { "localCurrency": "1200000-1800000", "usd": "876-1314" },
+        "estimatedMonthlySavings": { "localCurrency": "1000000-3500000", "usd": "730-2555" },
+        "savingsNote": "Korea offers excellent value - strong tech salaries against low living costs. Korean language skills multiply income potential significantly."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "MODERATE in Seoul; LOW in Daejeon/Busan",
+        "currentVacancyRate": "3.5% national",
+        "forecastNote": "Korea's jeonse (deposit-based rental) system is complex for foreigners. Monthly rent (wolse) is simpler but more expensive long-term. Universities provide dormitory access which is most practical.",
+        "bangladeshiCommunityNote": "Small but growing Muslim community. Halal food available in Seoul. Korean cultural homogeneity requires deliberate integration effort."
+      },
+
+      "affordabilityRating": 80,
+      "valueForMoneyRating": 78,
+      "overallCostRisk": "LOW-MODERATE",
+      "recommendation": "KAIST for AI/ML PhD is world-class at exceptional financial terms. Korea's tech ecosystem is strengthening rapidly. Korean language (TOPIK 4+) essential for career advancement and long-term residency. Government actively simplifying immigration for skilled tech workers. Strong aging population pressure will increase immigration opening through 2030-2035."
+    },
+
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "currency": "SGD",
+      "usdExchangeRate": 0.75,
+      "majorStudyCities": ["Singapore"],
+      "recommendedCitiesForBangladeshiStudents": ["Singapore (only city)"],
+      "avoidCitiesNote": "Singapore is a city-state; no alternative cities. Housing costs are extreme. Only viable with NUS/NTU funded research scholarship.",
+      "confidenceScore": 85,
+      "evidenceSummary": "Singapore is Asia's leading AI and tech hub. NUS and NTU are consistently top 15 globally. Job market excellent - all major tech companies have regional HQs. However, permanent settlement is deliberately difficult. Employment Pass to PR conversion rate dropping. Government controls immigration strictly for its small population. High cost of living.",
+
+      "studentPhase": {
+        "durationTypical": "1.5-2 years MSc, 4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 800, "usd": 600, "note": "HDB common room; competitive market" },
+            "privateRoom": { "localCurrency": 1200, "usd": 900, "note": "Private condo share" },
+            "studio1BR": { "localCurrency": 2500, "usd": 1875, "note": "1BR private; extremely expensive" },
+            "studentHall": { "localCurrency": 500, "usd": 375, "note": "NUS/NTU on-campus hall; priority for scholarship holders" }
+          },
+          "groceries": { "localCurrency": 400, "usd": 300, "note": "Hawker centres very affordable for cooked food SGD 4-6/meal" },
+          "utilities": { "localCurrency": 100, "usd": 75 },
+          "internet": { "localCurrency": 30, "usd": 23 },
+          "transportation": { "localCurrency": 120, "usd": 90, "note": "EZ-Link card; excellent MRT/bus system" },
+          "healthInsurance": { "localCurrency": 0, "usd": 0, "note": "Medisave/Medishield covered for scholarship holders; included in scholarship package" },
+          "personalCare": { "localCurrency": 80, "usd": 60 },
+          "mobilePhone": { "localCurrency": 20, "usd": 15 },
+          "entertainment": { "localCurrency": 150, "usd": 113 },
+          "miscellaneous": { "localCurrency": 150, "usd": 113 }
+        },
+        "totalMonthlyEstimate": {
+          "studentHallBased": { "localCurrency": 1550, "usd": 1163 },
+          "sharedHDB": { "localCurrency": 1850, "usd": 1388 },
+          "privateShare": { "localCurrency": 2250, "usd": 1688 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "20000-32000", "usd": "15000-24000", "note": "International tuition; MOE Tuition Grant reduces to SGD 8,000-16,000 with 3-year work bond" },
+          "phd": { "localCurrency": "0 with scholarship", "usd": "0 with scholarship", "note": "NUS/NTU Research Scholarship: full tuition + SGD 2,000-2,500/month" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "MOE Tuition Grant only; no monthly stipend", "usd": "No monthly stipend" },
+          "phd": { "localCurrency": "2000-2500/month", "usd": "1500-1875/month", "note": "NUS Research Scholarship 2026; top-up available for high performers" }
+        },
+        "stipendCoversLiving": "Adequately for hall-based living; tight for private market",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "16 hours per week during term; full-time during vacation",
+        "partTimeEarningPotential": { "localCurrency": "500-1000/month", "usd": "375-750/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Employment Pass (EP) requires job offer with minimum SGD 5,000/month salary",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "60000-90000/year", "usd": "45000-67500/year" },
+          "midLevelDataScientist": { "localCurrency": "90000-140000/year", "usd": "67500-105000/year" },
+          "seniorAIEngineerBigTech": { "localCurrency": "140000-250000/year", "usd": "105000-187500/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "4500-15000", "usd": "3375-11250", "note": "Singapore income tax very low: 0-22% with progressive structure; first SGD 20,000 tax-free" },
+        "monthlyLivingCost": { "localCurrency": "2500-4000", "usd": "1875-3000" },
+        "estimatedMonthlySavings": { "localCurrency": "1500-11000", "usd": "1125-8250" },
+        "savingsNote": "Singapore offers highest net savings potential in Asia for senior AI roles due to low taxes. But PR is hard to get and costs rise quickly with family."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "EXTREME; smallest geographic area, controlled supply",
+        "currentVacancyRate": "Less than 1% private market",
+        "forecastNote": "Singapore deliberately controls HDB pricing. BTO for PRs possible but requires PR first. Private rental market will remain expensive indefinitely.",
+        "bangladeshiCommunityNote": "Significant South Asian (Indian/Bangladeshi) community. Halal food extremely accessible. English-speaking society. Muslim-friendly environment."
+      },
+
+      "affordabilityRating": 45,
+      "valueForMoneyRating": 72,
+      "overallCostRisk": "HIGH in absolute costs; HIGH net savings if senior role secured",
+      "recommendation": "Singapore is excellent for career acceleration and tax-efficient savings in AI sector. NUS/NTU PhD is world-class. However, PR and long-term settlement deliberately restricted. Best strategy: use Singapore for peak earning years, then transition to Canada/Australia/Germany for family settlement. NOT recommended as final destination for family building."
+    },
+
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "currency": "CNY",
+      "usdExchangeRate": 0.138,
+      "majorStudyCities": ["Beijing", "Shanghai", "Shenzhen", "Hangzhou", "Chengdu"],
+      "recommendedCitiesForBangladeshiStudents": ["Beijing", "Shanghai", "Shenzhen"],
+      "avoidCitiesNote": "Third and fourth tier cities have limited AI industry despite low costs. Beijing (Tsinghua, Peking University) and Shanghai (Fudan, Shanghai Jiao Tong) are the primary research hubs. Shenzhen is the AI tech hub (Huawei, DJI, Tencent HQs).",
+      "confidenceScore": 75,
+      "evidenceSummary": "China has made extraordinary AI investments and is arguably the world's second largest AI superpower. Tsinghua and Peking University are among Asia's best. However, long-term permanent residency for foreigners (Chinese green card) is extremely difficult. Political climate, internet restrictions, geopolitical tensions, and US export controls create significant uncertainties. Chinese Mandarin is essential. Despite challenges, China's AI ecosystem is real and growing.",
+
+      "studentPhase": {
+        "durationTypical": "2-3 years MSc, 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 1500, "usd": 207, "note": "Shared apartment Beijing; Shanghai CNY 2,000" },
+            "privateRoom": { "localCurrency": 2500, "usd": 345 },
+            "studio1BR": { "localCurrency": 4000, "usd": 552, "note": "Beijing 1BR near university" },
+            "dormitory": { "localCurrency": 800, "usd": 110, "note": "International student dormitory mandatory at many universities; basic" }
+          },
+          "groceries": { "localCurrency": 1500, "usd": 207, "note": "Local markets very affordable; eating out cheap" },
+          "utilities": { "localCurrency": 300, "usd": 41 },
+          "internet": { "localCurrency": 100, "usd": 14, "note": "VPN needed for unrestricted access; additional consideration" },
+          "transportation": { "localCurrency": 300, "usd": 41, "note": "Subway/bus excellent and cheap; Didi affordable" },
+          "healthInsurance": { "localCurrency": 400, "usd": 55, "note": "Basic health insurance included in many government scholarships" },
+          "personalCare": { "localCurrency": 300, "usd": 41 },
+          "mobilePhone": { "localCurrency": 100, "usd": 14 },
+          "entertainment": { "localCurrency": 500, "usd": 69 },
+          "miscellaneous": { "localCurrency": 500, "usd": 69 }
+        },
+        "totalMonthlyEstimate": {
+          "dormitoryBased": { "localCurrency": 4800, "usd": 662 },
+          "sharedAccommodation": { "localCurrency": 5500, "usd": 759 },
+          "privateAccommodation": { "localCurrency": 7000, "usd": 966 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "20000-40000", "usd": "2760-5520", "note": "International student tuition; very affordable by global standards" },
+          "phd": { "localCurrency": "0 with CSC scholarship", "usd": "0 with CSC", "note": "Chinese Government Scholarship (CSC) covers full tuition + CNY 3,000/month stipend" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "CSC: 2500/month", "usd": "345/month", "note": "Chinese Government Scholarship MSc stipend" },
+          "phd": { "localCurrency": "CSC: 3000/month", "usd": "414/month", "note": "PhD stipend; additional RA from professor common" }
+        },
+        "stipendCoversLiving": "Comfortably in dormitory; tightly for private accommodation",
+        "partTimeWorkAllowed": false,
+        "partTimeWorkHoursLimit": "Officially restricted for student visa; research assistant work within university allowed",
+        "partTimeEarningPotential": { "localCurrency": "Limited", "usd": "Limited" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Work Visa (Z visa) then Residence Permit; Permanent Residence (Chinese Green Card) extremely difficult",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "200000-350000/year", "usd": "27600-48300/year" },
+          "midLevelDataScientist": { "localCurrency": "400000-600000/year", "usd": "55200-82800/year" },
+          "bigTechChina": { "localCurrency": "600000-1200000/year", "usd": "82800-165600/year", "note": "Alibaba, Tencent, Bytedance, Huawei, Baidu competitive salaries" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "14000-70000", "usd": "1932-9660" },
+        "monthlyLivingCost": { "localCurrency": "6000-12000", "usd": "828-1656" },
+        "estimatedMonthlySavings": { "localCurrency": "6000-58000", "usd": "828-8004" },
+        "savingsNote": "Top tech company salaries in China are substantial and living costs are low. Capital controls limit transferring large sums abroad. Geopolitical risk must be priced."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "LOW-MODERATE in major cities; property market deflating in 2024-2026",
+        "currentVacancyRate": "Estimated 15-20% nationally due to property market correction",
+        "forecastNote": "China's property market crisis (Evergrande collapse aftermath) has actually made housing more accessible in mid-2020s. Beijing/Shanghai rental markets stable-to-softening.",
+        "bangladeshiCommunityNote": "Small Bangladeshi community. Islam practiced; mosques in major cities. Halal food available. VPN required for social media access. Bangladesh-China diplomatic relations strong."
+      },
+
+      "affordabilityRating": 85,
+      "valueForMoneyRating": 70,
+      "overallCostRisk": "LOW financial risk; HIGH geopolitical and settlement risk",
+      "recommendation": "China offers extraordinary research opportunities and career acceleration in AI at the world's second largest AI ecosystem. CSC scholarship is financially excellent. However: long-term permanent settlement is realistically very difficult, geopolitical tensions create career risk for internationally mobile professionals, internet restrictions are real. Best viewed as a 3-5 year strategic experience for AI research/industry exposure, then transition to a settlement-friendly country. NOT recommended as final settlement destination."
+    },
+
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "majorStudyCities": ["Paris", "Lyon", "Grenoble", "Toulouse", "Sophia Antipolis", "Rennes"],
+      "recommendedCitiesForBangladeshiStudents": ["Grenoble", "Lyon", "Toulouse"],
+      "avoidCitiesNote": "Paris is significantly more expensive than other French cities. Grenoble (strong research with INRIA, CEA) and Lyon offer better cost-benefit ratio for tech students.",
+      "confidenceScore": 80,
+      "evidenceSummary": "France has invested heavily in AI (France 2030 plan, EUR 1.5B AI investment). INRIA is world-class AI research institute. Top Grandes Ecoles (Ecole Polytechnique, CentraleSupelec) are prestigious. Low or no tuition at public universities. French language increasingly required for long-term settlement. Growing AI startup ecosystem in Paris (Station F - world's largest startup campus).",
+
+      "studentPhase": {
+        "durationTypical": "2 years MSc (Master), 3-4 years PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 500, "usd": 545, "note": "Colocation Paris; Grenoble/Lyon EUR 350-450" },
+            "privateRoom": { "localCurrency": 800, "usd": 872 },
+            "studio1BR": { "localCurrency": 1400, "usd": 1526, "note": "Paris studio; Grenoble EUR 700-900" },
+            "crous": { "localCurrency": 250, "usd": 273, "note": "CROUS student housing EUR 200-400; very limited; apply immediately via SVE" }
+          },
+          "groceries": { "localCurrency": 300, "usd": 327, "note": "Lidl/Aldi/Intermarché; France food quality good" },
+          "utilities": { "localCurrency": 80, "usd": 87, "note": "Often included in colocation" },
+          "internet": { "localCurrency": 30, "usd": 33 },
+          "transportation": { "localCurrency": 100, "usd": 109, "note": "Navigo monthly Paris; student rate; free for under 26 in some zones" },
+          "healthInsurance": { "localCurrency": 0, "usd": 0, "note": "CPAM Sécurité Sociale for students; essentially free" },
+          "personalCare": { "localCurrency": 50, "usd": 55 },
+          "mobilePhone": { "localCurrency": 10, "usd": 11, "note": "Budget operators Free/Bouygues very cheap" },
+          "entertainment": { "localCurrency": 80, "usd": 87 },
+          "miscellaneous": { "localCurrency": 100, "usd": 109 }
+        },
+        "totalMonthlyEstimate": {
+          "crousHousing": { "localCurrency": 1000, "usd": 1090 },
+          "sharedAccommodation": { "localCurrency": 1250, "usd": 1363 },
+          "privateAccommodation": { "localCurrency": 1550, "usd": 1690 },
+          "fullIndependent": { "localCurrency": 2060, "usd": 2245, "note": "Paris 1BR scenario" }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "2770-3770 (national rate) or 16000+ (Grande Ecole)", "usd": "3019-4110 or 17440+", "note": "Public university very affordable; Grandes Ecoles expensive but prestigious" },
+          "phd": { "localCurrency": "0", "usd": "0", "note": "PhD is CIFRE or ATER employment contract; full salary" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "Eiffel Scholarship: EUR 1,181/month + tuition waiver", "usd": "1287/month", "note": "Eiffel Excellence Programme; competitive for Bangladeshi students" },
+          "phd": { "localCurrency": "1500-2000/month net", "usd": "1635-2180/month", "note": "PhD contract (contrat doctoral) minimum EUR 2,300/month gross" }
+        },
+        "stipendCoversLiving": "Adequately outside Paris; tightly in Paris",
+        "partTimeWorkAllowed": true,
+        "partTimeWorkHoursLimit": "964 hours per year (approx 18.5h/week)",
+        "partTimeEarningPotential": { "localCurrency": "500-1000/month", "usd": "545-1090/month" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Autorisation Provisoire de Séjour (APS) - 12 months job search; then Talent Passport",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "42000-58000/year", "usd": "45780-63220/year" },
+          "midLevelDataScientist": { "localCurrency": "55000-80000/year", "usd": "59950-87200/year" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "2200-4000", "usd": "2398-4360", "note": "French income tax and social charges ~25-35% total" },
+        "monthlyLivingCost": { "localCurrency": "1500-2500", "usd": "1635-2725" },
+        "estimatedMonthlySavings": { "localCurrency": "500-2000", "usd": "545-2180" },
+        "savingsNote": "France salaries lower than UK/Netherlands/Germany for tech roles. Strong job market in AI particularly in Paris. Eiffel Scholarship plus low tuition makes France excellent value in study phase."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "SEVERE in Paris, MODERATE in Lyon, LOW in Grenoble/Toulouse",
+        "currentVacancyRate": "2.2% national; 0.8% in Paris",
+        "forecastNote": "Paris housing structurally constrained. Encadrement des loyers (rent control) helps tenants but supply remains limited.",
+        "bangladeshiCommunityNote": "France has one of Europe's largest Muslim communities. Halal food universally available. North African/South Asian diaspora well-established. French language essential."
+      },
+
+      "affordabilityRating": 70,
+      "valueForMoneyRating": 72,
+      "overallCostRisk": "LOW-MODERATE (excellent if public university + CROUS housing)",
+      "recommendation": "France offers excellent value through public university system and strong PhD contracts. Eiffel Scholarship is strategic for Bangladeshi students. INRIA/CEA research world-class for AI. French language (B2) increasingly required for Carte de Résident permanent. Paris AI ecosystem (Station F, AI for Good) is exciting. Grenoble strongly recommended for CS/AI research."
+    },
+
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "currency": "AED",
+      "usdExchangeRate": 0.272,
+      "majorStudyCities": ["Dubai", "Abu Dhabi", "Sharjah"],
+      "recommendedCitiesForBangladeshiStudents": ["Dubai", "Abu Dhabi"],
+      "avoidCitiesNote": "UAE essentially means Dubai or Abu Dhabi for tech opportunities. Sharjah cheaper but limited AI industry.",
+      "confidenceScore": 82,
+      "evidenceSummary": "UAE (Dubai/Abu Dhabi) offers exceptional tax-free salaries and rapidly growing AI ecosystem (Mohamed bin Zayed AI University, G42, Microsoft AI hub). Zero income tax is a major financial draw. However, long-term permanent residency is weak - the Golden Visa is residence not citizenship. Citizenship essentially unavailable for non-Emirati. Family life possible but expensive. Geopolitical region carries risk.",
+
+      "studentPhase": {
+        "durationTypical": "Limited graduate programs; MBZUAI for AI-specific master/PhD",
+        "monthlyBreakdown": {
+          "rent": {
+            "sharedRoom": { "localCurrency": 1800, "usd": 490, "note": "Shared apartment Dubai; Abu Dhabi AED 1,500" },
+            "privateRoom": { "localCurrency": 3000, "usd": 816 },
+            "studio1BR": { "localCurrency": 6000, "usd": 1632, "note": "Dubai studio; rising significantly" },
+            "mbzuaiCampus": { "localCurrency": "Covered by scholarship", "usd": "Covered", "note": "MBZUAI fully funded scholarships include accommodation" }
+          },
+          "groceries": { "localCurrency": 1200, "usd": 326 },
+          "utilities": { "localCurrency": 400, "usd": 109, "note": "Electricity high due to AC; DEWA" },
+          "internet": { "localCurrency": 300, "usd": 82 },
+          "transportation": { "localCurrency": 500, "usd": 136, "note": "Metro Dubai; car preferred; Careem/Uber" },
+          "healthInsurance": { "localCurrency": 0, "usd": 0, "note": "Covered by employer/university for scholarship holders" },
+          "personalCare": { "localCurrency": 200, "usd": 54 },
+          "mobilePhone": { "localCurrency": 100, "usd": 27 },
+          "entertainment": { "localCurrency": 500, "usd": 136, "note": "Dubai entertainment expensive; free activities limited" },
+          "miscellaneous": { "localCurrency": 300, "usd": 82 }
+        },
+        "totalMonthlyEstimate": {
+          "mbzuaiFullScholarship": { "localCurrency": "Covered", "usd": "Fully covered including accommodation", "note": "MBZUAI scholarship one of world's most generous AI programs" },
+          "sharedAccommodation": { "localCurrency": 5300, "usd": 1442 },
+          "privateAccommodation": { "localCurrency": 7000, "usd": 1904 }
+        },
+        "annualTuitionRange": {
+          "mscs": { "localCurrency": "MBZUAI fully funded", "usd": "Fully funded with stipend AED 8,000-12,000/month", "note": "Most competitive AI program in Middle East" },
+          "phd": { "localCurrency": "MBZUAI fully funded", "usd": "Fully funded with higher stipend" }
+        },
+        "typicalStipend": {
+          "mscs": { "localCurrency": "8000-12000/month", "usd": "2176-3264/month", "note": "MBZUAI stipend among world's most generous; covers all living costs" },
+          "phd": { "localCurrency": "12000-18000/month", "usd": "3264-4896/month" }
+        },
+        "stipendCoversLiving": "Very generously for MBZUAI scholarship holders",
+        "partTimeWorkAllowed": false,
+        "partTimeWorkHoursLimit": "Student visa does not permit part-time work; MBZUAI is exception within campus",
+        "partTimeEarningPotential": { "localCurrency": "Not applicable", "usd": "Not applicable" }
+      },
+
+      "postStudyPhase": {
+        "visaType": "Employment Visa (sponsored by employer); Golden Visa for high earners/investors",
+        "typicalSalary": {
+          "juniorDeveloperAI": { "localCurrency": "15000-22000/month", "usd": "4080-5984/month" },
+          "midLevelDataScientist": { "localCurrency": "22000-35000/month", "usd": "5984-9520/month" },
+          "seniorAIResearcherGoogleMicrosoft": { "localCurrency": "40000-80000/month", "usd": "10880-21760/month" }
+        },
+        "monthlyNetAfterTax": { "localCurrency": "15000-80000", "usd": "4080-21760", "note": "ZERO income tax; all salary is net; only social contributions minimal" },
+        "monthlyLivingCost": { "localCurrency": "7000-15000", "usd": "1904-4080", "note": "Lifestyle-dependent; Dubai can be very expensive for luxury living" },
+        "estimatedMonthlySavings": { "localCurrency": "7000-65000", "usd": "1904-17680" },
+        "savingsNote": "UAE offers world's highest absolute savings potential due to zero tax. However, this is explicitly a temporary accumulation strategy - not a long-term settlement destination. Golden Visa (10-year renewable) is not citizenship."
+      },
+
+      "housingCrisisImpact": {
+        "severity": "HIGH and rising in Dubai; Abu Dhabi moderate",
+        "currentVacancyRate": "3.5% Dubai but prices inflating rapidly",
+        "forecastNote": "Dubai rent inflation 15-25% annually in 2022-2025. EXPO 2020 legacy and global wealth influx driving prices. 2027-2029 likely continued inflation.",
+        "bangladeshiCommunityNote": "Very large Bangladeshi expat community in UAE. Halal food everywhere. Mosques abundant. Strong community support networks. Cultural comfort is high. However, labor rights protections remain limited for lower-tier workers."
+      },
+
+      "affordabilityRating": 48,
+      "valueForMoneyRating": 65,
+      "overallCostRisk": "HIGH absolute costs; justified by zero tax income advantage",
+      "recommendation": "MBZUAI scholarship is one of the world's most generous AI programs - extremely strategic for Bangladeshi students. Post-graduation UAE employment yields highest absolute savings globally due to zero tax. HOWEVER: treat UAE as a wealth accumulation phase (3-7 years), NOT as permanent home. PR and citizenship essentially unavailable. Family costs extreme. Use UAE income to fund settlement in Canada/Australia/Germany. Geopolitical risk (regional instability) must be monitored."
+    }
+  ],
+
+  "comparativeSummary": {
+    "lowestLivingCost": ["Japan", "South Korea", "China"],
+    "highestLivingCost": ["Switzerland", "Norway", "Singapore", "United Arab Emirates"],
+    "bestValueForMoney": ["Germany", "Finland", "Austria", "Belgium"],
+    "bestNetSavings": ["United Arab Emirates (temporary)", "Switzerland (if PhD funded)", "United States (senior level)", "Singapore (senior level)"],
+    "housingCrisisSeverity": {
+      "critical": ["Ireland (Dublin)", "Netherlands (Amsterdam)", "Canada (Toronto/Vancouver)"],
+      "severe": ["Australia (Sydney/Melbourne)", "United Kingdom if applicable", "Sweden (Stockholm)"],
+      "moderate": ["France (Paris)", "Germany (Munich)", "South Korea (Seoul)"],
+      "manageable": ["Japan", "Finland", "Austria", "New Zealand (secondary cities)"]
+    },
+    "bestForPhDFunding": ["Switzerland (ETH/EPFL)", "Denmark", "Norway", "Netherlands", "Sweden", "Germany"],
+    "bestForMScAffordability": ["Germany (tuition free)", "Austria", "France (public universities)", "Japan (MEXT)", "South Korea (GKS/KAIST)"],
+    "bangladeshiStudentTopRecommendations": {
+      "rank1": { "country": "Germany", "reason": "Tuition-free, funded PhD, EU Blue Card, 21 year PR pathway, German language investment required" },
+      "rank2": { "country": "Canada", "reason": "Strong PR, English language, large Bangladeshi community; housing crisis concern; choose secondary cities" },
+      "rank3": { "country": "Australia", "reason": "RTP PhD excellent, English language, strong PR pathway; housing crisis management critical" },
+      "rank4": { "country": "Netherlands", "reason": "PhD employment excellent, 30% ruling, EU access; Eindhoven strategic choice" },
+      "rank5": { "country": "Japan", "reason": "MEXT scholarship exceptional value, world-class AI research, immigration gradually opening; language investment critical" }
+    },
+    "notRecommendedAsFinalDestination": ["United Arab Emirates", "Singapore", "China"],
+    "highRiskHighReward": ["United States", "Switzerland"],
+    "strategicTransitionPaths": [
+      "UAE (savings) → Canada (PR)",
+      "USA OPT (career) → Canada Express Entry (settlement)",
+      "Singapore (peak earning) → Australia (family)",
+      "Japan PhD → Germany Blue Card (career flexibility)",
+      "China CSC PhD → Germany/Netherlands (settlement)"
+    ]
+  }
+}

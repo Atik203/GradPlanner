@@ -1,0 +1,887 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Family immigration rights analysis for Bangladeshi CS/AI/ML graduates covering all 20 destination countries",
+    "targetProfile": "Bangladeshi student, STEM graduate (CS/AI/ML), age 22-30, planning family relocation across study → work → PR → citizenship pathway",
+    "criticalNote": "Family immigration policy is THE most underestimated factor in country selection. Spouse work rights, child education costs, and parent sponsorship availability dramatically affect long-term financial planning and quality of life. Evaluate carefully before committing to a country.",
+    "scoringNote": "All scores 1-100. Higher = better for family immigration. Confidence score reflects data reliability as of June 2026."
+  },
+  "familyImmigrationRights": [
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "overallFamilyScore": 58,
+      "overallFamilyScoreConfidence": 88,
+      "overallFamilyScoreEvidence": "F-2 spouse cannot work during study/OPT phases - critical financial weakness. H-4 EAD (spouse work authorization) only available after H-1B + I-140 approval, which takes 2-5 years minimum. Children attend free public schools. Parent sponsorship only after citizenship (8-10 years). Birthright citizenship for children born in US is major advantage. Healthcare extremely expensive ($1,500-3,000/month family). Overall: strong long-term rights after green card but severe restrictions during the critical early years.",
+      "spouseRights": {
+        "spouseCanWork": false,
+        "spouseCanWorkDuringStudy": false,
+        "spouseCanWorkDuringPostStudy": false,
+        "spouseCanWorkDuringWorkPermit": "Conditional - H-4 EAD only if primary's I-140 approved or H-1B beyond 6-year cap; policy volatile under Trump 2.0",
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 32,
+        "spouseRestrictions": "F-2 visa prohibits ALL employment. H-4 dependent visa allows work ONLY via H-4 EAD which requires: (1) primary on H-1B AND (2) primary's I-140 immigrant petition approved OR primary on H-1B extension beyond 6 years. Average wait for I-140 approval: 1-3 years. H-4 EAD policy threatened under Trump 2.0 (2025-2029) - may be revoked by executive action. Prior attempt 2018 blocked by courts but risk remains.",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "F-2 can study part-time (not full-time degree-seeking - would need F-1 separately)",
+        "estimatedIncomeOpportunityCostUSD": "200,000-400,000+ over 3-5 years (F-2/early H-4 phase without work rights)",
+        "dualIncomeViability": "Very Low during first 3-5 years; improves significantly after green card"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "F-2 dependent",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "Free public K-12 (funded by property taxes - quality varies dramatically by district; excellent in wealthy suburbs, poor in underfunded areas). Private school $15,000-50,000/year. University: domestic tuition after PR ($10,000-25,000/year state), international tuition ($30,000-70,000/year private) until PR.",
+        "schoolingQualityScore": 72,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "After PR: in-state tuition (~$10,000-25,000/year public university) + financial aid eligible. Before PR: international tuition. Major savings after PR.",
+        "childcareAvailability": "Limited government support; cost $1,000-3,000/month per child; no universal childcare; Child Tax Credit ($2,000/child annually) for residents",
+        "childcareCostScore": 20
+      },
+      "healthcareAccess": {
+        "score": 28,
+        "duringStudy": "No automatic coverage; must purchase private insurance ($400-800/month family); university student plans available (expensive)",
+        "duringWorkPermit": "Employer-sponsored (if employer offers; not guaranteed); family add-on $500-1,500/month additional",
+        "afterPR": "No universal healthcare; private or employer-sponsored; Medicaid if low income; CHIP for children; Medicare at 65 (after 10 years work)",
+        "estimatedFamilyHealthcareCostUSD": "15,000-30,000/year (premiums + deductibles + copays for family of 3-4)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": true,
+        "availabilityNotes": "ONLY after primary becomes US citizen (NOT possible as green card holder). Citizenship takes 5 years as green card holder minimum = 8-15 years total from arrival.",
+        "parentVisaType": "IR-5 (Immediate Relative of US Citizen)",
+        "parentPRTimeline": "12-24 months after citizen files I-130",
+        "parentCanWork": true,
+        "parentCanWorkNotes": "Once parent receives green card - full work authorization",
+        "parentHealthcareAccess": "Private insurance until green card; Medicare at 65 (if worked 10 years or premium Medicare $500+/month); Medicaid (state-dependent, limited for new immigrants)",
+        "parentCitizenshipEligible": true,
+        "parentCitizenshipTimeline": "5 years as green card holder → citizen (13-20 years total from primary's arrival)",
+        "financialSponsorshipRequired": true,
+        "financialSponsorshipNotes": "I-864 Affidavit of Support: must prove income 125% of poverty line for household including parents (~$30,000-45,000/year)",
+        "parentSponsorshipScore": 55,
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": true,
+        "birthrightNotes": "Any child born on US soil = automatic US citizen (jus soli). Strongest birthright citizenship globally. Child keeps US citizenship even if family relocates. Opens door to all US citizen rights.",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children under 18 who are green card holders automatically become citizens when parent naturalizes (Child Citizenship Act 2000)",
+        "citizenshipTimeline": "At birth (if born in US) OR when parent naturalizes (if child under 18 and green card holder)",
+        "citizenshipForChildrenScore": 98
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsUSD": "250,000-400,000",
+        "estimatedSavingsVsAlternativeCAD": "Negative vs. Canada (spouse cannot work = $150,000-250,000 income loss; healthcare $75,000-150,000 premium; education costs higher)",
+        "breakEvenPointYears": "After green card + PR (~6-10 years) - then financial benefits become very strong (highest salaries globally, career opportunities)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Delay family reunification until H-1B secured + I-140 filed (enables H-4 EAD for spouse). OR spouse pursues independent F-1 → OPT → H-1B pathway (dual high income). OR delay until green card (both work freely). Early reunification (F-2) very financially painful - single income supporting family in expensive US cities.",
+        "worstScenario": "Spouse on F-2 for 3-5 years (cannot work) in expensive city like San Francisco/NYC = $100,000-200,000+ lost income + healthcare crisis ($20,000-30,000/year). Avoid unless primary salary $150,000+.",
+        "bestScenario": "Both spouses on independent visas (dual F-1 → OPT → H-1B), children born in US (citizens), family income $200,000-400,000+, green cards after 3-5 years, sponsor parents after citizenship in 10-12 years.",
+        "bangladeshiSpecificTips": [
+          "Large Bangladeshi communities in NYC, Bay Area, Houston, Detroit provide family support networks",
+          "Halal food widely available in major cities; Islamic schools/weekend schools common",
+          "Bangladeshi professional associations (BAASF, BAPA) can connect with immigration attorneys for family planning",
+          "H-4 EAD: file as soon as I-140 approved - can take 6-12 months processing; plan financially for the wait",
+          "Birthright citizenship: if visit US while pregnant, child born = automatic citizen (controversial but legal as of 2026 - Trump EO challenged in courts)"
+        ]
+      },
+      "overallFamilyRating": "Long-term strong (best salaries, birthright citizenship, parent sponsorship after citizenship) but severely restrictive during critical early years (F-2 spouse cannot work, healthcare expensive, single income unsustainable). Best for single students or couples where both independently qualify for work visas. Not family-friendly until green card stage.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "overallFamilyScore": 96,
+      "overallFamilyScoreConfidence": 97,
+      "overallFamilyScoreEvidence": "World's best family immigration policy. Spouse open work permit from Day 1 of study. Children free public education K-12. Universal healthcare. Clear PR for entire family via Express Entry. Parent sponsorship via PGP (lottery) or Super Visa (10-year multiple entry). Birthright citizenship. Canada Child Benefit ($500-600/month per child tax-free). Gold standard globally.",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": true,
+        "spouseCanWorkDuringPostStudy": true,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 98,
+        "spouseRestrictions": "NONE - Open work permit from Day 1. During study: spouse of student in eligible Master's/PhD program at public institution gets open work permit. During PGWP: spouse gets C41 open work permit (same duration as PGWP). No employer restrictions, no occupation restrictions, no hours restrictions. Spouse can work for ANY employer.",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "Spouse can study while on open work permit (study permit needed for full-time degree programs - easy to obtain alongside open work permit)",
+        "estimatedIncomeOpportunityCostCAD": "0 - spouse earns from Day 1 (CAD 40,000-70,000/year additional income typical)",
+        "dualIncomeViability": "Excellent from Day 1 - rare globally"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on study/work permit",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "Free public K-12 in all provinces. Quality consistently high (PISA top-10 consistently). French immersion programs valuable for bilingualism (Express Entry French points advantage). Catholic schools in Ontario free (publicly funded).",
+        "schoolingQualityScore": 90,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "Domestic tuition after PR: CAD 6,000-12,000/year (vs. $25,000-50,000 international). World-class universities: UofT, UBC, McGill, Waterloo, McMaster. OSAP, provincial student loans, bursaries available.",
+        "childcareAvailability": "CAD $10/day childcare in Quebec (fully implemented); other provinces rolling out federal $10/day program (2024-2026); unsubsidized: CAD 1,000-2,000/month; Canada Child Benefit (CCB): up to CAD 7,800/year per child under 6 (CAD 650/month) tax-free",
+        "childcareCostScore": 72
+      },
+      "healthcareAccess": {
+        "score": 88,
+        "duringStudy": "Provincial healthcare typically available after 3-month waiting period; private insurance needed initially (~CAD $100-150/month); some provinces (BC, Ontario) cover from Day 1 for families",
+        "duringWorkPermit": "Full provincial healthcare (doctor, hospital, emergency) free or very low premium ($0-$900/year Ontario, $0 BC); dental/vision separate (employer or private)",
+        "afterPR": "Full provincial healthcare indefinitely; dental/vision not covered universally (federal dental plan for families income under CAD $90,000 introduced 2024-2026)",
+        "estimatedFamilyCostCAD": "0-200/month (premiums, dental/vision extra)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": true,
+        "availabilityNotes": "Parent and Grandparent Program (PGP): lottery-based (~25,000 spots/year from 200,000+ applicants = ~12% annual draw). Requires primary to be PR or citizen with income LICO +30% for 3 consecutive years. OR Super Visa (alternative): 10-year multiple entry, up to 5 years per stay (no PR pathway but long visits).",
+        "parentVisaType": "Parent and Grandparent Program (PGP) → PR; OR Super Visa (long-term visit, no PR)",
+        "parentPRTimeline": "2-4 years after invitation to apply (lottery wait varies)",
+        "parentCanWork": true,
+        "parentCanWorkNotes": "Full work authorization as PR holder; no restrictions",
+        "parentHealthcareAccess": "Full provincial healthcare as PR holder; dental via federal plan if eligible",
+        "parentCitizenshipEligible": true,
+        "parentCitizenshipTimeline": "3 years physical presence in Canada as PR → eligible for citizenship",
+        "financialSponsorshipRequired": true,
+        "financialSponsorshipNotes": "Must demonstrate LICO + 30% for household size for 3 consecutive tax years (e.g., ~CAD 60,000-85,000/year for family + 2 parents depending on province)",
+        "parentSponsorshipScore": 78,
+        "superVisaAvailable": true,
+        "superVisaNotes": "Super Visa: 10-year multiple entry, up to 5 years per visit (practical solution while waiting for PGP). Requires: private medical insurance ($100,000+ coverage), letter of invitation, proof of financial support. No work rights on Super Visa.",
+        "grandparentSponsorshipAvailable": true,
+        "grandparentSponsorshipNotes": "Same PGP program covers grandparents"
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": true,
+        "birthrightNotes": "Any child born in Canada = automatic Canadian citizen (jus soli). Canadian passport = visa-free access to 185+ countries. Exceptional value.",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children included in parents' citizenship application OR can apply independently after 3 years PR",
+        "citizenshipTimeline": "At birth (if born in Canada) OR 3 years as PR → eligible for citizenship",
+        "citizenshipForChildrenScore": 97
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsCAD": "150,000-250,000 (total, both working)",
+        "estimatedSavingsVsUS": "CAD 150,000-300,000+ (spouse income + healthcare savings + childcare subsidies + education savings)",
+        "breakEvenPointYears": "Immediate - dual income from Day 1; PR within 2-3 years"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Bring family immediately upon arrival (spouse open work permit, children free school, healthcare after 3 months). Both work, build Express Entry CRS points (spouse's Canadian work experience also counts for CRS). Apply Express Entry as family unit after 1 year skilled work. PR for entire family together. After 3 years PR → citizenship. Then PGP lottery for parents OR Super Visa immediately.",
+        "worstScenario": "Housing costs in Toronto/Vancouver (CAD $2,000-4,000/month rent for family) strain budget; PGP lottery missed for parents (apply Super Visa instead); PGWP policy changes affect spouse permit.",
+        "bestScenario": "Both spouses working CAD $80,000-120,000+, CCB income for children, PR in 2 years, citizenship in 5 years, parents via PGP after 6-7 years. Total family income CAD $160,000-240,000+.",
+        "bangladeshiSpecificTips": [
+          "Very large Bangladeshi communities in Toronto (Scarborough, Mississauga, Brampton), Montreal, Vancouver - excellent cultural infrastructure",
+          "Mosques, halal groceries (Purbani, AR Supermarket), Bengali schools everywhere in major cities",
+          "CCB (Canada Child Benefit) automatically pays $500-650/month per child under 6 after PR - apply immediately",
+          "French language bonus: CLB 7+ French adds 15-30 CRS points (Express Entry) - consider immersion programs in Quebec/Ottawa",
+          "PGP lottery: register interest form as soon as PR obtained; apply Super Visa immediately for parents while waiting for PGP",
+          "BC PNP Tech, Ontario Tech draws, Quebec Regular Skilled Worker Program offer alternative pathways if Express Entry CRS borderline"
+        ]
+      },
+      "overallFamilyRating": "Global gold standard for family immigration. Spouse work rights from Day 1, free K-12 education, universal healthcare, clear PR for entire family, parent sponsorship (PGP + Super Visa), birthright citizenship, generous child benefits (CCB). Only challenges: housing costs in major cities (Toronto, Vancouver) and PGP lottery for parents (use Super Visa as backup). Unmatched globally for Bangladeshi families.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "overallFamilyScore": 85,
+      "overallFamilyScoreConfidence": 87,
+      "overallFamilyScoreEvidence": "Strong family policy: spouse can work after family reunification, free K-12 and FREE university tuition, excellent healthcare, Kindergeld (€250/month per child). Parent sponsorship essentially unavailable (exceptional dependency cases only). Citizenship requires renouncing Bangladeshi passport. German language critical for integration. Bureaucracy challenging but manageable. Excellent long-term for nuclear family, limited for extended family.",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": true,
+        "spouseCanWorkDuringPostStudy": true,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 83,
+        "spouseRestrictions": "Spouse receives work authorization with family reunification permit (Familiennachzug). Full work rights - no employer restrictions, no occupation restrictions. During primary's job search visa phase (18 months): spouse work rights more limited initially (case-by-case). After EU Blue Card: spouse full unrestricted work authorization immediately. German language B1+ helps spouse find work significantly.",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "Spouse can study at German universities; free tuition (€0-500 semester fee) - massive advantage",
+        "estimatedIncomeOpportunityCostEUR": "Minimal after first 3-6 months (family reunification processing time)",
+        "dualIncomeViability": "Good after first year; challenging initially due to German language barrier for many jobs"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on family reunification permit",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "Free public K-12 (excellent quality; €50-200/year materials). Gymnasium (university-prep) track critical for higher education - understand school system early. German language required. University: FREE at public universities (€0-500/semester admin fee ONLY - massive advantage vs. US/UK; saves €50,000-200,000 vs. international fees). TUM, LMU, Heidelberg, RWTH Aachen - world-class and free.",
+        "schoolingQualityScore": 88,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "FREE university tuition for PR holders and children. BAföG (federal student aid: up to €934/month, 50% grant/50% interest-free loan) available after PR. No equivalent in most other countries.",
+        "childcareAvailability": "Kita (daycare) €100-800/month (income-based subsidy); Kindergarten 3-6 age subsidized; Kindergeld (child benefit): €250/month per child for all residents with valid permit - no income test; universal",
+        "childcareCostScore": 78
+      },
+      "healthcareAccess": {
+        "score": 90,
+        "duringStudy": "Mandatory public health insurance for students (€110-120/month, comprehensive coverage including dental for students under 25); family members can be co-insured for free if not working",
+        "duringWorkPermit": "Public health insurance mandatory (Techniker Krankenkasse, AOK, etc.); ~7-8% of salary (shared employer/employee); family members (spouse not working, children) insured FREE as co-insured; dental, mental health, prescription covered",
+        "afterPR": "Full public health insurance (same as citizens); excellent coverage (hospital, specialist, dental, vision partially, mental health, physiotherapy); no co-insurance required for family",
+        "estimatedFamilyCostEUR": "0-250/month (employee contribution; family co-insured free if spouse not separately insured)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": false,
+        "availabilityNotes": "Germany effectively does NOT allow parent sponsorship for adult immigrant children except in exceptional dependency cases (severe medical need, advanced age + dependency, no other family support). NOT a viable pathway for most Bangladeshi families.",
+        "parentVisaType": "National Visa (up to 1 year, renewable) OR Schengen Tourist Visa (90 days/180 days) - NO PR pathway for parents",
+        "parentPRTimeline": "N/A - not available except exceptional dependency cases",
+        "parentCanWork": false,
+        "parentCanWorkNotes": "No work rights on National Visa for parents",
+        "parentHealthcareAccess": "Must have comprehensive private health insurance (required for visa); expensive for elderly €400-800/month; limited access to German public system",
+        "parentCitizenshipEligible": false,
+        "financialSponsorshipRequired": true,
+        "financialSponsorshipNotes": "Must fully support parents financially + provide accommodation (minimum sqm per person) for visa approval",
+        "parentSponsorshipScore": 15,
+        "alternativeSolution": "National Visa (§§ 27, 36 AufenthG) for dependent parents: requires demonstrable dependency (medical, care need), accommodation in Germany, full financial support by child. Long-term stays possible (1 year renewable) but no PR or work rights. OR: parents visit on Schengen tourist visa 90 days/180 days.",
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": "Conditional",
+        "birthrightNotes": "Child born in Germany gets German citizenship IF at least one parent has legally resided in Germany for 8+ years AND holds permanent residence permit (Niederlassungserlaubnis) at time of birth. NOT automatic jus soli like US/Canada - parent must already have PR. For new immigrants (first 5-8 years): children do NOT automatically get German citizenship at birth.",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children naturalize with parents after 6-8 years (integration course = 6 years; without = 8 years). Dual citizenship: Germany now allows in most cases after 2024 reform (StAG amendment) - can retain Bangladeshi nationality in many circumstances. Major improvement vs. previous rules.",
+        "citizenshipTimeline": "6-8 years from arrival (integration course completes = 6 years); conditional birthright for children born after parent gets Niederlassungserlaubnis",
+        "citizenshipForChildrenScore": 78
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsEUR": "120,000-200,000 (both working after year 1)",
+        "keyFinancialAdvantages": "Free university (saves €50,000-200,000 vs. US/UK); Kindergeld €250/month per child; free healthcare; free K-12; low childcare costs (subsidized Kita)",
+        "breakEvenPointYears": "Year 2-3 (spouse working, dual income, subsidies applying)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Bring family after EU Blue Card secured (family reunification straightforward; spouse full work rights immediately). Prioritize German language for entire family (free Integrationskurs). Children in German schools integrate quickly. Accumulate 5 years for PR (Niederlassungserlaubnis). At PR: children get conditional citizenship rights. At 6-8 years: entire family naturalizes (retain Bangladeshi passport under 2024 dual citizenship reform in most cases).",
+        "worstScenario": "Parent sponsorship unavailable (major cultural challenge for Bangladeshi families expecting to bring elderly parents). German language barrier causes spouse employment difficulty. Children struggle with German school system language shock (first 1-2 years).",
+        "bestScenario": "Both working by Year 2 (combined €70,000-120,000), free healthcare, Kindergeld income, children in excellent German schools, free university in future, citizenship at Year 6-8. Parents visit on extended National Visa or tourist visa.",
+        "bangladeshiSpecificTips": [
+          "German language for children: schools provide integration classes (Deutschkurs); children age 5-10 learn fastest - bring young",
+          "Kindergeld application: apply at Familienkasse immediately upon arrival with valid permit - €250/month per child automatic",
+          "School system: Gymnasium track (university prep) requires good grades by age 10 - invest in tutoring if language barrier",
+          "Dual citizenship 2024 reform (StAG): now possible to retain Bangladeshi passport in MOST cases when naturalizing German - major change vs. previous law requiring renunciation. Verify specific case (some exceptions apply).",
+          "Community: Bangladeshi communities in Berlin, Frankfurt, Hamburg, Munich, Cologne - smaller than UK/US but supportive; Turkish community mosques often accommodate South Asian Muslims",
+          "Parent visits: Schengen tourist visa allows 90 days/180 days; National Visa (Besuchsvisum) allows longer stays if medical need - plan for this as your only realistic option"
+        ]
+      },
+      "overallFamilyRating": "Excellent for nuclear family: spouse work rights, free healthcare, free K-12 and FREE university (unique globally), Kindergeld €250/month, clear PR pathway. Major limitation: parent sponsorship effectively unavailable (cultural challenge for Bangladeshi families). German language investment required for entire family. Bureaucracy manageable. 2024 dual citizenship reform (mostly retain Bangladeshi passport) is very positive development. Second-best globally after Canada for overall family package.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "overallFamilyScore": 88,
+      "overallFamilyScoreConfidence": 90,
+      "overallFamilyScoreEvidence": "Strong family policy: spouse full work rights on subclass 485, children can attend school (fees apply for temporary), Medicare after PR, clear PR pathway for family. Parent sponsorship available (Contributory Parent visa - expensive but viable). Birthright citizenship. Child education fees for temporary residents offset by strong long-term benefits after PR. High cost of living (Sydney/Melbourne) main challenge.",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": "Partial - spouse of student can apply for dependent visa with work rights if primary studies full-time; 48 hours/fortnight work limit for student; spouse typically gets open work rights",
+        "spouseCanWorkDuringPostStudy": true,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 87,
+        "spouseRestrictions": "Subclass 485 (post-study): spouse included as secondary applicant with FULL work rights (no restrictions). Skilled migration PR: spouse included, full work rights after PR. During study: spouse on Subclass 500 dependent stream - can work full-time. Very strong policy.",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "Spouse can study at Australian institutions; fees apply (international student rates until PR)",
+        "estimatedIncomeOpportunityCostAUD": "Minimal - full work rights throughout most stages",
+        "dualIncomeViability": "Excellent from 485 stage; good during study"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on parent's visa (subclass 485 secondary; skilled migration dependent)",
+        "freeSchooling": false,
+        "freeSchoolingNotes": "NOT free for temporary residents - public school fees apply: AUD 4,000-15,000/year per child (varies by state; NSW expensive, SA cheaper). FREE after PR (permanent residents pay no school fees). University: domestic tuition after PR significantly cheaper (AUD $6,000-12,000/year HECS-HELP debt deferred vs. AUD $25,000-45,000/year international).",
+        "schoolingQualityScore": 85,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "HECS-HELP (tuition debt deferred until earning AUD $51,000+/year) available after PR. Commonwealth-supported places. World-class universities (ANU, Melbourne, Sydney, UNSW, Monash).",
+        "childcareAvailability": "Child Care Subsidy (CCS): up to 90% subsidy for eligible families (income-based); after PR/citizenship. Private childcare AUD 150-200/day; subsidized AUD 15-100/day. Available for PR holders.",
+        "childcareCostScore": 65
+      },
+      "healthcareAccess": {
+        "score": 82,
+        "duringStudy": "OSHC (Overseas Student Health Cover) mandatory: AUD 700-900/year single, AUD 2,000-3,000/year family; limited to student and dependents",
+        "duringPostStudy": "OVHC (Overseas Visitor Health Cover) mandatory: AUD 500-700/year single, AUD 1,500-2,500/year family; covers basic GP, emergency; dental/vision not covered",
+        "afterPR": "Medicare (universal healthcare) - free GP visits (bulk billing), subsidized specialist, public hospital free. PBS (Pharmaceutical Benefits Scheme) subsidized medications. Dental: separate (private or limited public). Excellent quality.",
+        "estimatedFamilyCostAUD": "2,000-3,000/year temporary; near-free after PR (Medicare)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": true,
+        "availabilityNotes": "Contributory Parent visa (Subclass 143/173): VERY EXPENSIVE ($43,600 AUD per parent visa = €26,700) but viable. Long queue (5-10 year wait for main stream; 2-4 years for contributory). Balance of Family Test: more than half of children must live in Australia. Aged Parent visa (Subclass 804) cheaper but 30+ year queue. Parent Sponsored visa (Subclass 103) cheapest but longest wait.",
+        "parentVisaType": "Contributory Parent Visa (Subclass 143 - permanent; 173 - temporary bridge)",
+        "parentPRTimeline": "2-5 years (Contributory Parent via queue) after primary becomes PR",
+        "parentCanWork": true,
+        "parentCanWorkNotes": "Full work rights after permanent Subclass 143 granted",
+        "parentHealthcareAccess": "Medicare after Subclass 143 granted; OVHC required during Subclass 173 (bridge visa)",
+        "parentCitizenshipEligible": true,
+        "parentCitizenshipTimeline": "4 years as PR (including 1 year as citizen) → eligible for citizenship (total ~8-10 years from primary's arrival)",
+        "financialSponsorshipRequired": true,
+        "financialSponsorshipNotes": "Assurance of Support (AoS): bond $10,000-20,000 AUD lodged for 10 years (refundable if not claimed); plus Centrelink public funds exclusion period",
+        "parentSponsorshipScore": 62,
+        "parentVisaCostAUD": "43,600 AUD (Subclass 143) = €26,700 approximately",
+        "grandparentSponsorshipAvailable": true,
+        "grandparentSponsorshipNotes": "Same Contributory Parent visa process for grandparents if primary's grandparent meets Balance of Family test"
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": "Conditional",
+        "birthrightNotes": "Child born in Australia does NOT automatically get citizenship unless at least one parent is Australian citizen or permanent resident at time of birth. If parents are temporary visa holders: child born in Australia gets citizenship only after living in Australia for 10 years (Citizenship By Birth - Section 12 Australian Citizenship Act). Different from US/Canada birthright.",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children included in family PR application (dependent applicants). After parents naturalize (4 years as PR), children can also naturalize.",
+        "citizenshipTimeline": "4 years as PR (including 1 year as citizen) → eligible; children included in family naturalization",
+        "citizenshipForChildrenScore": 82
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsAUD": "300,000-500,000 (school fees, OVHC, high cost of living Sydney/Melbourne)",
+        "keyFinancialAdvantages": "Dual income from 485; Child Care Subsidy after PR; Medicare after PR; HECS-HELP for children's university; strong job market",
+        "keyFinancialChallenges": "School fees during temporary (AUD 4,000-15,000/year per child); OVHC not as good as Medicare; Sydney/Melbourne rent AUD 1,800-4,000/month; Contributory Parent visa AUD 43,600 (expensive)",
+        "breakEvenPointYears": "Year 3-4 after PR (Medicare, CCS, free schooling kick in)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Bring family during 485 (both work, dual income AUD 120,000-180,000+). Pay school fees during temporary phase (unavoidable). Target regional study/work for state nomination (easier PR, extra points). PR: free schooling, Medicare, CCS. After citizenship: sponsor parents (Contributory Parent visa - expensive but viable; start saving AUD 45,000 per parent). Consider SA, TAS, NT for cheaper cost of living + easier PR.",
+        "worstScenario": "School fees AUD 8,000-15,000/year per child drain savings. Sydney/Melbourne rent AUD 2,000-4,000/month extreme. Points test threshold rises before PR secured. Parent visa AUD 43,600 per parent strain (save early).",
+        "bestScenario": "Regional study (Adelaide/Hobart) → longer 485 → state nomination → PR quickly. Both working AUD 80,000-120,000. Medicare + free schooling after PR. Parent Contributory visa ~5 years after PR.",
+        "bangladeshiSpecificTips": [
+          "Large Bangladeshi communities in Sydney (Lakemba, Greenacre), Melbourne (Dandenong, Noble Park), Brisbane, Perth - mosques, halal food, community support",
+          "School fees: some states cheaper than others - NT and SA often lower fees than NSW/VIC; consider strategic state selection",
+          "Child Care Subsidy (CCS): apply immediately after PR - can significantly reduce childcare costs (up to 90% subsidy for low-income families)",
+          "Contributory Parent visa: start saving AUD 45,000/parent immediately; 5-10 year planning horizon needed",
+          "Balance of Family Test for parent visa: need majority of children in Australia - relevant if siblings in Bangladesh; only one child in Australia can still qualify if they have majority",
+          "AUD/BDT remittance: easy via bank transfer or services like Wise, Western Union - important for supporting family in Bangladesh while saving for parent visa"
+        ]
+      },
+      "overallFamilyRating": "Very strong family immigration: spouse full work rights, clear PR for family, Medicare after PR, parent sponsorship viable (expensive but available), birthright citizenship (conditional). Main challenges: school fees during temporary phase (AUD 4,000-15,000/year), high cost of living (Sydney/Melbourne), Contributory Parent visa cost (AUD 43,600 per parent). Excellent for nuclear family; parent sponsorship expensive but possible (unlike Germany). Third-best globally after Canada and Germany for Bangladeshi families.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "overallFamilyScore": 78,
+      "overallFamilyScoreConfidence": 83,
+      "overallFamilyScoreEvidence": "Ireland has a significant limitation: spouse CANNOT work during Stamp 1G (2-year post-study period) - only gains work rights when primary transitions to Critical Skills Employment Permit. Free primary/secondary education. HSE healthcare (variable access for temporary residents). Parent sponsorship not available. Birthright citizenship controversial (constitutional amendment removed birthright in 2004 - children born to non-citizens NOT automatically Irish). Housing crisis severe.",
+      "spouseRights": {
+        "spouseCanWork": false,
+        "spouseCanWorkDuringStudy": false,
+        "spouseCanWorkDuringPostStudy": false,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 52,
+        "spouseRestrictions": "During study: spouse on Stamp 3 (dependent) CANNOT work. During Stamp 1G (post-study 2 years): spouse on Stamp 3 still CANNOT work. ONLY when primary transitions to Critical Skills Employment Permit (CSEP) does spouse get Stamp 1 Dependant permit with FULL work authorization. Timeline to spouse work rights: 1-3 years after arrival (Stamp 1G + CSEP transition). Major limitation vs. Canada/Germany/Australia.",
+        "spouseCanStudy": "Limited - spouse can study but fees apply (international rates until long-term resident status)",
+        "estimatedIncomeOpportunityCostEUR": "40,000-80,000+ (1-3 years spouse cannot work during Stamp 1G phase)",
+        "dualIncomeViability": "Poor during first 2-3 years; good after CSEP transition"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on parent's immigration permission",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "Free public primary and secondary education (Educate Together, Catholic schools, community schools). Quality generally good. Irish language (Gaeilge) compulsory in school - minor cultural adaptation needed. University fees: EU/EEA rate ~€3,000-10,000/year after long-term resident status; full international fees (~€10,000-35,000/year) until then.",
+        "schoolingQualityScore": 80,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "Stamp 4 (long-term resident equivalent) allows EU fee rates at universities. Trinity College Dublin, UCD, UCC - good universities. SUSI grants available for long-term residents.",
+        "childcareAvailability": "ECCE (Early Childhood Care and Education): free 2 years for children 2.5-5.5 years. National Childcare Scheme (NCS) subsidies income-based. Childcare expensive: €1,000-1,800/month (one of Europe's most expensive). Child Benefit: €140/month per child (universal, no income test) after legal residence.",
+        "childcareCostScore": 45
+      },
+      "healthcareAccess": {
+        "score": 65,
+        "duringStudy": "HSE public healthcare limited for Stamp 2 (student visa) holders; private insurance recommended (~€800-1,500/year for student); GP visits not free (€50-70/visit); emergency care available",
+        "duringPostStudy": "Stamp 1G: access to HSE emergency care; GP visits private (€50-70/visit); public hospitals emergency only; private insurance recommended (€1,200-2,500/year family)",
+        "afterPR": "Medical Card (if low income) or GP Visit Card provides free GP visits; public hospital free with referral; specialist waiting lists long (mental health, specialist: 6-18 month waits common). Private health insurance recommended: €1,500-3,000/year family.",
+        "estimatedFamilyCostEUR": "1,500-3,000/year (private insurance recommended); GP visits additional"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": false,
+        "availabilityNotes": "Ireland does NOT have a parent sponsorship program for adult immigrant children. Parents can visit on tourist C visa (90 days/180 days Schengen) OR apply for long-stay D visa (national visa, longer period, case-by-case, no PR pathway). No mechanism for parents to become permanent residents via adult child sponsorship.",
+        "parentVisaType": "Tourist C Visa (90 days) OR Long-Stay D Visa (case-by-case, no PR pathway)",
+        "parentPRTimeline": "N/A",
+        "parentCanWork": false,
+        "parentHealthcareAccess": "Private insurance required for visa; limited public access",
+        "parentCitizenshipEligible": false,
+        "financialSponsorshipRequired": true,
+        "parentSponsorshipScore": 12,
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": false,
+        "birthrightNotes": "Ireland REMOVED birthright citizenship by constitutional referendum in 2004 (Twenty-seventh Amendment). Children born in Ireland to non-citizen parents are NOT automatically Irish unless at least one parent is Irish citizen, EU/EEA citizen exercising treaty rights, or has been legally resident in Ireland for 3+ years of the 4 years before birth. New immigrants: children born in Ireland are NOT Irish citizens unless parent already long-term resident (3+ years lawful residence). Significant difference from US/Canada/Australia.",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children naturalize with parents after 5 years legal residence (1 year Stamp 4 required). Irish citizenship by descent: if child born after parent naturalizes, child is Irish citizen by descent.",
+        "citizenshipTimeline": "5 years legal residence (1 year as Stamp 4) → eligible for citizenship; conditional birthright requires 3+ years parent residence at birth",
+        "citizenshipForChildrenScore": 68
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsEUR": "180,000-280,000 (housing crisis, single income for 1-3 years, healthcare private)",
+        "keyFinancialChallenges": "Spouse cannot work 1-3 years (€40,000-80,000 lost income); housing crisis extreme (Dublin rent €1,800-3,000/month); childcare very expensive (€1,200-1,800/month); private healthcare needed",
+        "keyFinancialAdvantages": "Free primary/secondary education; Child Benefit €140/month; tech salaries competitive (€50,000-90,000); EU access after 5 years (Stamp 4)",
+        "breakEvenPointYears": "Year 3-4 (spouse working after CSEP; tech salary competitive)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Delay family reunification until Critical Skills Employment Permit secured (Year 2-3 typically). Then: spouse gets Stamp 1 Dependant + full work rights. Children free schooling. Build toward Stamp 4 at 5 years (PR equivalent). Citizenship at 5 years. Parent visits on tourist/D visa only - NO sponsorship pathway available.",
+        "worstScenario": "Bringing spouse immediately (Stamp 3, cannot work) during Stamp 1G phase in Dublin during housing crisis = single income €40,000-55,000 supporting family in one of Europe's most expensive cities. Financially extremely difficult.",
+        "bestScenario": "Primary secures CSEP quickly (Year 1-2 of Stamp 1G), brings spouse on Stamp 1 Dependant (full work rights), both working €50,000-80,000+ in Dublin tech sector, free schooling for children, citizenship at 5 years.",
+        "bangladeshiSpecificTips": [
+          "Dublin Bangladeshi community (~10,000-15,000): Clonskeagh Mosque, Islamic Cultural Centre, halal food available in Dublin 1, 7, 8; cultural associations growing",
+          "Housing crisis: start searching 2-3 months before arrival; use Daft.ie, MyHome.ie; consider Drogheda, Maynooth, Navan (commuter towns) for cheaper rent (€1,000-1,500 vs. Dublin €1,800-2,500)",
+          "Child Benefit: €140/month per child automatically paid for children resident in Ireland; apply at Department of Social Protection",
+          "ECCE scheme (free 2 years childcare): register early - places limited in some areas",
+          "Critical advice: do NOT bring spouse during Stamp 1G unless primary earns €60,000+ (can comfortably afford single income family); wait for CSEP",
+          "Stamp 4: apply as soon as eligible (5 years legal + 1 year CSEP or 5 years total); gives EU access and spouse unrestricted rights"
+        ]
+      },
+      "overallFamilyRating": "Moderate for family: free K-12 education, English-speaking, tech salaries competitive, clear citizenship pathway (5 years), EU access after Stamp 4. Significant challenges: spouse cannot work during Stamp 1G (1-3 years), housing crisis extreme (Dublin), parent sponsorship unavailable, no birthright citizenship, expensive childcare (€1,200-1,800/month). Better for those who delay family reunification until CSEP transition; challenging for early family immigration. Not ideal for those with immediate family needs but workable with financial planning.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "overallFamilyScore": 80,
+      "overallFamilyScoreConfidence": 84,
+      "overallFamilyScoreEvidence": "Netherlands offers good family policy: spouse can work after family reunification (not during orientation year), free K-12, good healthcare, Kinderbijslag (child benefit). Parent sponsorship essentially unavailable for permanent residence. Dutch language critical for integration and PR. Housing crisis extreme (Amsterdam, Utrecht, Rotterdam). Civic integration (inburgeringsexamen) mandatory.",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": "Limited - spouse of student can get MVV/residence permit as partner; work requires separate authorization (work permit or partner of HSM if student becomes HSM)",
+        "spouseCanWorkDuringPostStudy": false,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 72,
+        "spouseRestrictions": "During Orientation Year (12 months post-study): spouse work rights limited (spouse permit does not automatically include work authorization). After HSM (Highly Skilled Migrant) permit: spouse receives residence permit with FULL work authorization (Arbeid vrij toegestaan - labor freely permitted). During study: partner of international student can apply for residence permit but work authorization depends on student's permit type.",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "Spouse can study at Dutch universities; free/subsidized for EU resident-equivalent status after 5 years",
+        "estimatedIncomeOpportunityCostEUR": "30,000-50,000 (Orientation Year phase spouse work limited)",
+        "dualIncomeViability": "Good after HSM permit secured (typically Year 2 after graduation)"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on parent's residence permit (gezinshereniging - family reunification)",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "Free public primary and secondary education. Quality excellent (PISA top-5 consistently). Dutch language instruction; international schools expensive (€10,000-25,000/year). University: tuition ~€2,200/year after 5 years legal residence (instellingscollegegeld statutory rate) - significantly cheaper than US/UK; DUO student finance (loans/grants) available after permanent residence.",
+        "schoolingQualityScore": 88,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "Statutory tuition rate ~€2,314/year after 5 years legal residence. DUO student finance accessible after PR. Excellent universities (TU Delft, Eindhoven TU, Utrecht, Amsterdam, Leiden) - many English-language Master's programs.",
+        "childcareAvailability": "Kinderopvangtoeslag (childcare benefit): up to 96% of childcare costs subsidized for working parents after PR/residence permit. Childcare costs: €1,000-1,500/month before subsidy; after subsidy €50-300/month for low-middle income. Kinderbijslag (child benefit): €261-363/quarter per child (universal after residence)",
+        "childcareCostScore": 75
+      },
+      "healthcareAccess": {
+        "score": 82,
+        "duringStudy": "Mandatory Dutch health insurance required after 3 months residence (regardless of student status); ~€120-150/month; basic package covers GP, hospital, emergency; zorgtoeslag (healthcare benefit) available to offset cost after income assessment",
+        "duringWorkPermit": "Mandatory Dutch health insurance (~€120-150/month); zorgtoeslag subsidy available (up to €120/month refund for low income); excellent coverage; own risk (eigen risico) €385/year",
+        "afterPR": "Same mandatory insurance system; zorgtoeslag subsidy; full access to specialist care; dental for children free (until 18); mental health covered; quality excellent",
+        "estimatedFamilyCostEUR": "300-600/month (2 adults; children under 18 free for basic)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": false,
+        "availabilityNotes": "Netherlands does NOT have a parent sponsorship program for adult immigrants. Elderly dependent parents: possible in exceptional cases if over 65, seriously ill/dependent, AND no other children in home country + full financial support by Dutch child - very restrictive. Normal parent immigration not possible.",
+        "parentVisaType": "Tourist visa (Schengen 90 days/180 days) OR National Visa (MVV, case-by-case for longer stays, no PR pathway)",
+        "parentPRTimeline": "N/A - not available except exceptional dependency",
+        "parentCanWork": false,
+        "parentHealthcareAccess": "Travel insurance required for visits; no access to Dutch health insurance system",
+        "parentCitizenshipEligible": false,
+        "financialSponsorshipRequired": true,
+        "parentSponsorshipScore": 13,
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": false,
+        "birthrightNotes": "Netherlands does NOT grant citizenship to children of foreign parents by birth on Dutch soil (no jus soli). Child gets parents' nationality. Dutch citizenship for children: (1) one parent is Dutch citizen, OR (2) child naturalizes after 5 years residence, OR (3) born in Netherlands AND primary parent has been legally resident for 5+ years AND child is resident in Netherlands since birth (option 5 naturalization).",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children naturalize with parents after 5 years legal residence + Dutch A2/B1 language + inburgeringsexamen. Must renounce Bangladeshi citizenship UNLESS: dual citizenship allowed (limited exceptions; Bangladeshi-Dutch dual generally not permitted under Dutch law except marriage to Dutch citizen or statelessness risk).",
+        "citizenshipTimeline": "5 years legal residence → eligible for naturalization; dual citizenship generally not allowed (must renounce Bangladeshi passport in most cases)",
+        "citizenshipForChildrenScore": 70
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsEUR": "200,000-320,000 (housing extreme, orientation year spouse limited)",
+        "keyFinancialChallenges": "Housing crisis EXTREME (Amsterdam rent €1,200-2,500/month 1-bed); dual citizenship not allowed (must renounce Bangladeshi passport); spouse limited during orientation year; civic integration exam required",
+        "keyFinancialAdvantages": "Kinderopvangtoeslag (up to 96% childcare subsidy); Kinderbijslag (€261-363/quarter); free K-12; subsidized university tuition; zorgtoeslag healthcare subsidy",
+        "breakEvenPointYears": "Year 2-3 (HSM permit → spouse working; subsidies applying)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Secure HSM permit quickly (within 12-month orientation year). Bring family after HSM: spouse full work rights, Kinderbijslag, kinderopvangtoeslag. Both working (combined €70,000-120,000). Learn Dutch as family (free integration courses). 5 years → permanent residence. Citizenship: dual citizenship not possible in most cases (must renounce Bangladeshi) - weigh this carefully. Parent visits: tourist visa only (90 days/180 days); no sponsorship pathway.",
+        "worstScenario": "Housing crisis: 1.5-year wait for Amsterdam rental; extreme costs; dual citizenship renunciation of Bangladeshi passport culturally difficult; Dutch civic integration exam challenging.",
+        "bestScenario": "Eindhoven (Brainport/ASML area) - cheaper housing, excellent tech jobs, spouse working in ASML ecosystem. Combined income €90,000-150,000. Subsidies apply. PR at 5 years.",
+        "bangladeshiSpecificTips": [
+          "Bangladeshi community in Amsterdam (~3,000-5,000), Rotterdam, The Hague, Utrecht; Westermoskee Amsterdam; halal food available; Bengali associations growing",
+          "Dutch language: enroll in Inburgeringscursus (integration course) immediately - mandatory for residence; free/subsidized; DUO can loan money for course fees",
+          "Civic Integration Exam (inburgeringsexamen): required for PR; language A2 reading/listening/speaking + knowledge of Dutch society + orientation on Dutch labor market (ONA module)",
+          "Kinderbijslag: apply at SVB (Sociale Verzekeringsbank) immediately; quarterly payments €261-363 per child",
+          "Kinderopvangtoeslag: apply at Belastingdienst (tax authority); up to 96% of childcare costs subsidized - significant for working families",
+          "Dual citizenship: CRITICAL consideration - Dutch naturalization typically requires renouncing Bangladeshi passport; only exceptions: statelessness risk, country doesn't allow renunciation, marriage to Dutch citizen. Verify your specific case before committing to citizenship process.",
+          "Housing: Eindhoven significantly cheaper than Amsterdam/Utrecht (€700-1,200/month vs. €1,200-2,500); High Tech Campus Eindhoven (ASML, Philips, NXP) offers excellent STEM jobs - strategic alternative to Amsterdam"
+        ]
+      },
+      "overallFamilyRating": "Good family policy with strong subsidies (Kinderopvangtoeslag, Kinderbijslag), free K-12, good healthcare. Challenges: spouse limited during orientation year (12 months), housing crisis extreme (Amsterdam), parent sponsorship unavailable, dual citizenship not possible in most cases (must renounce Bangladeshi passport - major cultural/practical consideration). Better than Ireland/Singapore for family; not as good as Canada/Germany. Best for those prioritizing Eindhoven tech ecosystem (ASML, Philips) where housing more affordable.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "overallFamilyScore": 83,
+      "overallFamilyScoreConfidence": 85,
+      "overallFamilyScoreEvidence": "Sweden has excellent family benefits: free K-12 and free university, universal healthcare, generous parental leave (480 days total), Barnbidrag (child benefit SEK 1,250/month per child). Spouse can work after work permit (not during job search). Parent sponsorship limited (elderly dependency only). Swedish language important for integration. Housing crisis (Stockholm). Recent rightward political shift affecting immigration sentiment but skilled worker pathway intact.",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": "Partial - spouse of international student can get residence permit; work authorization case-by-case but generally allowed",
+        "spouseCanWorkDuringPostStudy": false,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 76,
+        "spouseRestrictions": "During job search permit (12 months): spouse accompanying not automatic; during work permit (after job secured): spouse gets residence permit with work authorization (arbetsmarknadstillstånd for accompanying family). After permanent residence (PUT): spouse full unrestricted work rights. Swedish language B1+ helps spouse find work significantly.",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "FREE university tuition for accompanying family after primary gets work permit (Swedish residents pay no university fees); extraordinary advantage",
+        "estimatedIncomeOpportunityCostSEK": "200,000-400,000 SEK (job search phase spouse limited ~12 months)",
+        "dualIncomeViability": "Good after work permit; Swedish language barrier affects spouse job search"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on parent's residence permit",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "FREE public K-12 (excellent quality; PISA consistently strong). School lunch free in most municipalities. Fritids (after-school care) subsidized. University: FREE tuition at public universities after PR (extraordinary). Barnbidrag (child benefit): SEK 1,250/month per child (€110) universal after residence. Flerbarnstillägg (multiple children supplement) additional.",
+        "schoolingQualityScore": 90,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "FREE tuition at Swedish public universities for PR holders. Study aid (CSN): monthly grants and loans for qualifying students. KTH, Chalmers, Lund, Uppsala - world-class and free.",
+        "childcareAvailability": "Maxtaxa (maximum childcare fee): maximum SEK 1,598/month (€140/month) per child regardless of income after PR (heavily subsidized). Before PR: same subsidized rates. Extraordinarily cheap vs. global standards.",
+        "childcareCostScore": 92
+      },
+      "healthcareAccess": {
+        "score": 87,
+        "duringStudy": "Registered residents access regional healthcare (landsting/region); EU students via EHIC; non-EU international students: private insurance OR register with Försäkringskassan for patientavgift (patient fee ~SEK 200-300/GP visit); limited Försäkringskassan rights until work permit",
+        "duringWorkPermit": "Full Swedish healthcare via landsting (regional healthcare). Patientavgift (copayment) max SEK 1,100/year GP visits then free; max SEK 2,350/year total (frrikort - free card). Children under 18: free healthcare (no copayment). Excellent quality.",
+        "afterPR": "Same as Swedish citizens: full universal healthcare; patientavgift capped; children free; dental subsidy (Tandvårdsbidraget SEK 600/year per person); mental health included",
+        "estimatedFamilyCostSEK": "0-2,350/year total (only patientavgift up to frrikort limit; children free)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": false,
+        "availabilityNotes": "Sweden does not have a parent sponsorship program for adult immigrants. Elderly/dependent parents: possible in exceptional cases via family reunification (Chapter 5 § 3 Aliens Act) IF parent is fully dependent, seriously ill, AND no other support in home country - very restrictive. Standard parent immigration not available.",
+        "parentVisaType": "Schengen tourist visa (90 days/180 days) OR National Visa (Nationellt visum) case-by-case longer stays",
+        "parentPRTimeline": "N/A",
+        "parentCanWork": false,
+        "parentHealthcareAccess": "Travel insurance required; emergency care only access in Sweden",
+        "parentCitizenshipEligible": false,
+        "financialSponsorshipRequired": true,
+        "parentSponsorshipScore": 14,
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": false,
+        "birthrightNotes": "Sweden does NOT grant citizenship to children of foreign parents by birth on Swedish soil (no jus soli). Child gets parents' nationality. Swedish citizenship for children: parent must be Swedish citizen OR child naturalizes after 5 years residence (3 years if born in Sweden to foreign parents, with clean record and known identity).",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children naturalize with parents after 5 years legal residence. Sweden ALLOWS dual citizenship (Swedes can hold both Swedish + Bangladeshi nationality) - major advantage vs. Netherlands/Germany (pre-2024 reform). Children can become both Swedish and Bangladeshi citizens.",
+        "citizenshipTimeline": "5 years legal residence → naturalization; dual citizenship ALLOWED (keep Bangladeshi passport)",
+        "citizenshipForChildrenScore": 82
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsSEK": "1,500,000-2,500,000 SEK (housing Stockholm extreme; high taxes offset by benefits)",
+        "keyFinancialAdvantages": "FREE K-12 + FREE university (€0 tuition); maxixa childcare (max SEK 1,598/month = €140); Barnbidrag SEK 1,250/month; free healthcare capped at SEK 2,350/year; FREE school lunch; 480-day parental leave (Föräldrapenning); dual citizenship allowed",
+        "keyFinancialChallenges": "Stockholm housing crisis (years-long queue for secure housing, private rent SEK 10,000-20,000/month = €880-1,760); high income taxes (32-57%); Swedish language needed for spouse employment",
+        "breakEvenPointYears": "Year 2-3 (work permit secured, spouse working, benefits fully accessible)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Bring family after work permit secured (spouse full work rights). Learn Swedish as family (SFI free). Benefit from Barnbidrag, maxtaxa childcare, free schooling. Both work (combined SEK 700,000-1,200,000/year gross). Dual citizenship after 5 years (keep Bangladeshi passport). Stockholm housing: join Bostad Stockholm queue on Day 1 (years wait) + rent private meanwhile. Parent sponsorship unavailable - plan tourist/national visa visits.",
+        "worstScenario": "Stockholm housing queue 5-10+ years; private rent SEK 15,000-20,000/month (€1,320-1,760) unsustainable on single income; Sweden Democrats political influence increasing immigration restrictions.",
+        "bestScenario": "Gothenburg or Malmö (shorter housing queues); both working in Volvo/Ericsson/gaming ecosystem; free schooling + childcare €140/month; dual citizenship at 5 years; excellent quality of life.",
+        "bangladeshiSpecificTips": [
+          "Bangladeshi community in Stockholm (~3,000-5,000), Gothenburg, Malmö; Stockholm Mosque, Malmö Mosque; halal food available in multicultural areas; modest community infrastructure",
+          "SFI (Swedish for Immigrants): free Swedish courses for all residents - enroll immediately; required for integration and permanent residence",
+          "Föräldrapenning (parental leave): 480 days total (both parents) paid at ~80% of salary up to SEK 42,800/month ceiling; use it fully (non-transferable days require other parent to take leave)",
+          "Personnummer (personal identity number): get immediately after residence permit - needed for banking, healthcare, everything; apply at Skatteverket",
+          "Housing: Bostad Stockholm queue - register Day 1 (online, free); years wait but essential long-term; meanwhile private rental via Blocket.se, Hemnet",
+          "Dual citizenship advantage: Sweden allows dual citizenship → keep Bangladeshi passport when naturalizing Swedish. No need to choose. Major advantage vs. Netherlands/Germany (historical).",
+          "School system: Swedish school (grundskola) non-competitive until age 16; gymnasium (upper secondary) tracks career; relaxed vs. Bangladesh/South Korea - children typically adjust well"
+        ]
+      },
+      "overallFamilyRating": "Excellent family benefits: FREE K-12 + FREE university, lowest childcare costs in world (maxtaxa €140/month max), free healthcare (capped at €210/year), generous parental leave (480 days), Barnbidrag €110/month, dual citizenship allowed (keep Bangladeshi passport). Challenges: Stockholm housing crisis (years-long queue), spouse limited during job search phase, parent sponsorship unavailable, Swedish language needed. Best Nordic country for family benefits when housing is manageable (Gothenburg, Malmö better than Stockholm for housing). Strong overall for families committed to Nordic lifestyle.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "overallFamilyScore": 81,
+      "overallFamilyScoreConfidence": 83,
+      "overallFamilyScoreEvidence": "Finland offers excellent family benefits: free world-class K-12 education (PISA #1 consistently), free university tuition, universal healthcare (KELA), generous family benefits (Lapsilisä child allowance, home care allowance, parental leave). Spouse can work after work permit. Parent sponsorship limited. Finnish language critical and difficult. Small job market. Aging population creates long-term immigration need. Recent rightward political shift.",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": "Limited during job search; possible during study permit",
+        "spouseCanWorkDuringPostStudy": false,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 74,
+        "spouseRestrictions": "During job search permit (12 months): spouse accompanying status limited; after continuous work residence permit: spouse receives permit with work authorization. Full work rights once primary has stable work permit. Finnish language critical for spouse employment (most jobs require Finnish; English roles limited outside Helsinki tech sector).",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "FREE university tuition for residents (extraordinary); spouse can study at Finnish universities; Finnish language programs intensive first step",
+        "estimatedIncomeOpportunityCostEUR": "20,000-40,000 (job search phase, 12 months)",
+        "dualIncomeViability": "Moderate - Finnish language barrier affects spouse significantly"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on parent's residence permit",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "FREE public K-12 (Finland's education system world-renowned - PISA consistently #1 or top-3). School meals free. No homework until upper grades. Less competitive, more holistic. University: FREE tuition (€0 at public Finnish universities after PR). Lapsilisä (child allowance): €100/month per child under 17 (universal after residence). Remarkable education value.",
+        "schoolingQualityScore": 98,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "FREE tuition at Finnish public universities for PR holders. KELA study aid (opintotuki): grants + loans for eligible students. Aalto, University of Helsinki, Tampere, Oulu - excellent universities.",
+        "childcareAvailability": "Kunnallinen päiväkoti (municipal daycare): heavily subsidized; max €300/month per child; home care allowance (kotihoidontuki): €342/month if parent stays home to care child under 3 (instead of daycare). Extraordinary flexibility vs. other countries.",
+        "childcareCostScore": 90
+      },
+      "healthcareAccess": {
+        "score": 85,
+        "duringStudy": "KELA health insurance after 4+ month residence permit; student healthcare (FSHS - Frank Student Health Service) for registered students - good quality; GP visits subsidized",
+        "duringWorkPermit": "Full KELA health insurance; public health center (terveyskeskus) ~€20/visit (capped at €692/year then free); hospital free after referral; children under 18 free; excellent preventive care",
+        "afterPR": "Same as Finnish citizens; full KELA coverage; dental subsidy (hammashoidon tuki); mental health included; prescription subsidy (sairausvakuutus)",
+        "estimatedFamilyCostEUR": "0-700/year maximum (copayments capped; children free)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": false,
+        "availabilityNotes": "Finland does not have a general parent sponsorship program. Elderly dependent parents: very limited - must demonstrate full dependency, no other support in Bangladesh, health need. Standard parent immigration not available. Tourist visa (Schengen 90 days) or extended national visa for documented health/dependency cases only.",
+        "parentVisaType": "Schengen tourist visa (90 days) OR National Visa case-by-case",
+        "parentPRTimeline": "N/A",
+        "parentCanWork": false,
+        "parentHealthcareAccess": "Travel insurance mandatory for visits; emergency care available",
+        "parentCitizenshipEligible": false,
+        "parentSponsorshipScore": 13,
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": false,
+        "birthrightNotes": "Finland does NOT grant birthright citizenship (no jus soli). Child born in Finland to foreign parents does NOT automatically get Finnish citizenship unless parent is Finnish citizen OR child would otherwise be stateless AND born in Finland AND parent has lived in Finland since before the child's birth for several years.",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children naturalize with parents after 5 years residence. Finland ALLOWS dual citizenship (keep Bangladeshi passport when naturalizing Finnish) - major advantage. No need to renounce Bangladeshi passport.",
+        "citizenshipTimeline": "5 years legal residence → naturalization; dual citizenship ALLOWED",
+        "citizenshipForChildrenScore": 80
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsEUR": "150,000-250,000",
+        "keyFinancialAdvantages": "FREE K-12 (world-best) + FREE university; maximum €300/month childcare; KELA free healthcare (capped copayments); Lapsilisä €100/month; generous parental leave (up to 160 days each parent); home care allowance €342/month; dual citizenship (keep Bangladeshi)",
+        "keyFinancialChallenges": "Small job market (Helsinki-centric); Finnish language barrier severe (spouse employment very difficult without Finnish); Finns Party political environment; cold climate; small Bangladeshi community (isolation)",
+        "breakEvenPointYears": "Year 3-4 (work permit + some Finnish language → spouse working)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Bring family after continuous work permit secured. Entire family must commit to Finnish language learning (free kotoutumiskoulutus integration training for all family members). Children will excel in Finnish school system (world's best). Free university future for children. Both work in Helsinki tech ecosystem long-term. Dual citizenship at 5 years (keep Bangladeshi). Parent visits on Schengen tourist visa only.",
+        "worstScenario": "Spouse cannot find work for 2-3 years (Finnish language barrier); Helsinki housing expensive (€1,000-2,000/month 1-bed); Finns Party immigration restrictions tightening; small Bangladeshi community causes cultural isolation.",
+        "bestScenario": "Tampere or Oulu (cheaper housing, Nokia/gaming ecosystem, university towns); children in world-class Finnish schools; free childcare €300/month; dual citizenship at 5 years; long-term security in aging-population-needs-immigrants country.",
+        "bangladeshiSpecificTips": [
+          "Very small Bangladeshi community (~1,500 total in Finland); Helsinki Islamic Centre; halal food available in Helsinki supermarkets (S-market Asian sections, Halal shops Helsinki); significant cultural isolation expected",
+          "Kotoutumiskoulutus (integration training): free Finnish language + civic courses for all immigrants; mandatory for employment permit holders; entire family should enroll immediately",
+          "Lapsilisä: apply at KELA immediately; €100/month per child automatically; increases with number of children (€123 for 3rd, €144 for 4th+)",
+          "Parental leave: 160 days each parent (non-transferable quota encourages father's leave) + shared days; use fully; KELA pays ~70% of salary during leave",
+          "Personnummer (Finnish personal identity number - henkilötunnus): get at Digital and Population Data Services Agency (DVV) immediately after residence permit; needed for everything",
+          "School system: no formal assessment until age 15; no homework until upper years; equal education (no top/bottom streaming initially); children adjust very well; schools have integration support for non-Finnish speakers",
+          "YKI test (kielitutkinto): Finnish language proficiency test required for citizenship; aim for intermediate level (3-4); start preparation early with kotoutumiskoulutus"
+        ]
+      },
+      "overallFamilyRating": "Exceptional education benefits (world's best K-12 free, free university), very affordable childcare (€300/month max), excellent universal healthcare, generous parental leave, dual citizenship allowed (keep Bangladeshi). Major limitations: very small job market (Helsinki only viable), Finnish language critical and difficult (spouse employment challenging without Finnish), small Bangladeshi community (cultural isolation), Finns Party political environment. Best for families deeply committed to Finnish language and culture who value world-class education for children long-term. Not ideal for those needing immediate spouse employment or large community support.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "overallFamilyScore": 79,
+      "overallFamilyScoreConfidence": 82,
+      "overallFamilyScoreEvidence": "Denmark has strong family benefits: free K-12 and free university, excellent healthcare, børnebidrag (child support) and børnecheck (child benefit), generous parental leave. Spouse can work after work permit. Parent sponsorship extremely limited. Danish language critical and PR timeline very long (8 years). High salary threshold for work permit. Political environment increasingly restrictive for immigrants. High cost of living.",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": "Limited - accompanying family member of student; work permit case-by-case",
+        "spouseCanWorkDuringPostStudy": false,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 70,
+        "spouseRestrictions": "During Establishment Card (12 months post-study): spouse accompanying limited; after work/residence permit: spouse receives accompanying family member permit with work authorization. Danish language B1+ highly recommended for spouse employment (most jobs require Danish; international companies in Copenhagen more English-friendly).",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "FREE university tuition for residents; spouse can study at Danish universities",
+        "estimatedIncomeOpportunityCostDKK": "300,000-450,000 DKK (Establishment Card phase, 12 months limited)",
+        "dualIncomeViability": "Moderate - Danish language barrier affects spouse employment; Copenhagen tech sector more accessible"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on parent's residence permit (familiesammenføring)",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "FREE public K-12 (folkeskole). Good quality education. Danish language instruction; optional private schools (friskoler) subsidized by state. University: FREE tuition after PR/long-term residence (DKK 0; extraordinary). Børnecheck (child benefit): up to DKK 4,868/quarter per child under 7 = DKK 19,472/year (€2,610/year) after 2 years legal residence.",
+        "schoolingQualityScore": 85,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "FREE tuition at public Danish universities for PR holders. SU (State Education Grant): DKK 6,243/month (€840/month) available after PR - generous student support. University of Copenhagen, DTU, Aarhus - strong universities.",
+        "childcareAvailability": "Dagpleje (childminder) or daginstitution (nursery): heavily subsidized; max 25% of cost for parents (75% state-funded); maximum forældrerbetaling (parental payment) ~DKK 3,000-4,000/month per child; Børnetilskud (child subsidy) available for single parents. Extraordinary childcare value.",
+        "childcareCostScore": 85
+      },
+      "healthcareAccess": {
+        "score": 86,
+        "duringStudy": "Free GP with yellow health card (sundhedskort) after CPR number registration; free hospital care; prescription subsidy; mental health subsidized; excellent quality",
+        "duringWorkPermit": "Full Danish universal healthcare (yellow card); free GP, free hospital, free emergency; prescription medicines subsidized (tilskud); dental: adults partial subsidy (90-100% for complex treatments), children free until 18; mental health covered",
+        "afterPR": "Same as Danish citizens; extraordinary comprehensive coverage; no copayments for most services; dental free for children until 18; adults partial subsidy",
+        "estimatedFamilyCostDKK": "0-500/year (only prescriptions and some dental; otherwise free)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": false,
+        "availabilityNotes": "Denmark has VERY restrictive family reunification rules. Parent immigration for adult immigrants' parents extremely limited. Exceptional dependency cases only (over 60, seriously ill, no other family support, fully dependent on Danish child). Standard parent immigration not available. Denmark has deliberately tightened family reunification rules since 2002 (bipartisan restrictive consensus).",
+        "parentVisaType": "Schengen tourist visa (90 days) OR extended national visa case-by-case for documented dependency",
+        "parentPRTimeline": "N/A",
+        "parentCanWork": false,
+        "parentHealthcareAccess": "Travel insurance required; emergency access only",
+        "parentCitizenshipEligible": false,
+        "parentSponsorshipScore": 10,
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": false,
+        "birthrightNotes": "Denmark does NOT grant birthright citizenship (no jus soli). Children of foreign parents born in Denmark are not Danish citizens. Danish citizenship requires: parent is Danish citizen OR naturalization (9 years residence, Danish PD3/B2 language, self-sufficient, clean record, passed citizenship test).",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children naturalize with parents after 9 years residence (one of Europe's longest). Denmark ALLOWS dual citizenship (2015 law change) - keep Bangladeshi passport when naturalizing Danish. No need to renounce.",
+        "citizenshipTimeline": "9 years legal residence → naturalization (among longest in Europe); dual citizenship ALLOWED",
+        "citizenshipForChildrenScore": 68
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsDKK": "2,000,000-3,500,000 DKK (very high cost of living; single income initially)",
+        "keyFinancialAdvantages": "FREE K-12 + FREE university; børnecheck up to DKK 19,472/year per child under 7; childcare max DKK 3,000-4,000/month (75% state-funded); free healthcare (completely); SU student grant DKK 6,243/month; dual citizenship (keep Bangladeshi)",
+        "keyFinancialChallenges": "Very high salary threshold (DKK 436,000/year = €58,500 for work permit); very high cost of living (Copenhagen most expensive Nordic city); 9-year PR timeline then 9-year citizenship = very long; Danish language PD3 (B2) extremely difficult; Establishment Card spouse limited 12 months",
+        "breakEvenPointYears": "Year 3-4 (work permit, spouse working; benefits apply) but 9-year PR timeline is deterrent"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Secure high-salary job (DKK 500,000+ = €67,000+) to meet work permit threshold comfortably. Bring family after work permit: spouse full work rights, børnecheck immediately, free healthcare, subsidized childcare. Learn Danish as family (free municipally-funded Danish courses). 8-year PR timeline → 9-year citizenship (dual citizenship = keep Bangladeshi). Parent sponsorship unavailable - Schengen tourist visits only.",
+        "worstScenario": "Cannot meet DKK 436,000 salary threshold (limiting); 8-9 year wait for PR/citizenship (very long); Danish language PD3 very difficult; Copenhagen housing extremely expensive (DKK 12,000-20,000/month rent); restrictive political climate toward immigrants.",
+        "bestScenario": "High-salary tech role (Zendesk, Unity, Microsoft, Maersk - DKK 550,000-800,000); spouse works in English-friendly tech sector; børnecheck DKK 19,472/year per young child; free healthcare; dual citizenship at year 9 (keep Bangladeshi). High quality of life if language mastered.",
+        "bangladeshiSpecificTips": [
+          "Very small Bangladeshi community in Denmark (~3,000-4,000); Copenhagen Central Mosque; halal food in Nørrebro (multicultural district); significant isolation expected outside Copenhagen",
+          "Free Danish language courses: municipalities provide dansk undervisning (Danish instruction) - mandatory for many permit types; Fast Track integration programs available",
+          "Børnecheck: DKK 4,868/quarter per child under 7; DKK 3,844 per child 7-14; DKK 1,283 per child 15-17; apply at borger.dk immediately after CPR registration",
+          "CPR number (Central Person Register): get immediately after registration at local municipality (borgerservice); critical for banking, healthcare, everything",
+          "Salary threshold: DKK 436,000/year (2026) indexed annually; if earning below, work permit refused; negotiate aggressively; Fast Track employers easier",
+          "Dual citizenship: Denmark allows since 2015 - keep Bangladeshi passport when naturalizing Danish. Major improvement for Bangladeshi families.",
+          "Long timeline realistic assessment: 8 years PR + additional years for citizenship = 9-10 years minimum total. Commit only if long-term Denmark plan is certain."
+        ]
+      },
+      "overallFamilyRating": "Strong benefits (free K-12/university, heavily subsidized childcare, free universal healthcare, børnecheck, dual citizenship allowed) but significant barriers: very high work permit salary threshold (DKK 436,000 = €58,500), very long PR/citizenship timeline (8-9 years, longest in Nordic region), extremely restrictive parent sponsorship (essentially unavailable), Danish language PD3/B2 very difficult, politically restrictive environment toward immigrants, very high cost of living. Best for high-earning professionals (DKK 550,000+) committed to long-term Denmark who value work-life balance and family benefits. Not suitable for those needing quick PR or low-income entry roles.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "overallFamilyScore": 84,
+      "overallFamilyScoreConfidence": 86,
+      "overallFamilyScoreEvidence": "Norway offers excellent family benefits: free K-12 and free university, comprehensive universal healthcare, generous parental leave (49 weeks full pay or 59 weeks 80% pay), barnebidrag (child support) and barnetrygd (child benefit). Spouse can work after work permit. Shorter PR timeline than other Nordic countries (3 years). Parent sponsorship limited. Norwegian language important. Extreme cost of living. Political stability exceptional (oil wealth buffer).",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": "Limited - accompanying family member of student; residence permit with work authorization possible",
+        "spouseCanWorkDuringPostStudy": false,
+        "spouseCanWorkDuringWorkPermit": true,
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 78,
+        "spouseRestrictions": "After skilled worker residence permit secured: spouse receives family immigration permit with full work authorization (no employer restrictions). Norwegian language B1+ significantly helps spouse employment (most Norwegian companies expect Norwegian; Oslo international tech companies more accessible). During job seeker permit (12 months): spouse accompanying with limited work rights.",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "FREE university tuition for residents; spouse can study at Norwegian universities; Norwegian language programs first step",
+        "estimatedIncomeOpportunityCostNOK": "400,000-600,000 NOK (job seeker phase, 12 months)",
+        "dualIncomeViability": "Good after work permit; Norwegian language barrier affects spouse initially"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on parent's residence permit (familieinnvandring)",
+        "freeSchooling": true,
+        "freeSchoolingNotes": "FREE public K-12 (barneskole 1-7, ungdomsskole 8-10, videregående skole 11-13). Good quality. Norwegian language instruction. University: FREE tuition (NOK 0 semester fee only ~NOK 600 = €55; extraordinary). Barnetrygd (child benefit): NOK 1,766/month per child under 18 (€157/month) - universal regardless of income after legal residence.",
+        "schoolingQualityScore": 87,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "FREE tuition at Norwegian public universities. Norwegian State Educational Loan Fund (Lånekassen): grants + loans for PR-holding students. NTNU, University of Oslo, Bergen, Tromsø - strong universities.",
+        "childcareAvailability": "Barnehage (nursery/kindergarten): max NOK 3,000/month per child (government price cap - extraordinary value); gratis kjernetid (free core time 20h/week for 1-6 year olds from low-income families). After PR: same rates apply. Remarkably affordable.",
+        "childcareCostScore": 88
+      },
+      "healthcareAccess": {
+        "score": 88,
+        "duringStudy": "Free GP (fastlege - assigned GP) with D-number then national identity number; hospital free after referral; prescription subsidy; emergency free; excellent quality",
+        "duringWorkPermit": "Full Norwegian healthcare; egenandel (copayment) max NOK 3,165/year then free (frikort); children under 16: free everything; mental health free (specialist referral); excellent quality",
+        "afterPR": "Same as Norwegian citizens; frikort (free card after NOK 3,165 copayments); all specialist care; dental: partial subsidy adults, free for children under 18; mental health comprehensive",
+        "estimatedFamilyCostNOK": "0-3,165/year (only copayments up to frikort limit; children under 16 free)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": false,
+        "availabilityNotes": "Norway does not have a general parent sponsorship program. Elderly/dependent parent immigration: extremely limited - full dependency, serious illness, no other support, AND sponsor must be Norwegian citizen or long-term PR with substantial income (NOK 280,000+ after tax). Very few approvals. Standard parent immigration not available.",
+        "parentVisaType": "Schengen tourist visa (90 days) OR national visa case-by-case for documented exceptional dependency",
+        "parentPRTimeline": "N/A",
+        "parentCanWork": false,
+        "parentHealthcareAccess": "Travel insurance mandatory; emergency access only",
+        "parentCitizenshipEligible": false,
+        "parentSponsorshipScore": 16,
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": false,
+        "birthrightNotes": "Norway does NOT grant birthright citizenship (no jus soli). Children of foreign parents not automatically Norwegian. Norwegian citizenship: parent is Norwegian citizen OR naturalization (7 years residence, Norwegian A2 language, civic knowledge, self-sufficient, clean record).",
+        "derivativeCitizenship": true,
+        "derivativeCitizenshipNotes": "Children naturalize with parents after 7 years residence. Norway ALLOWS dual citizenship (2020 law change) - keep Bangladeshi passport when naturalizing Norwegian. Major advantage.",
+        "citizenshipTimeline": "7 years legal residence → naturalization; dual citizenship ALLOWED (since 2020)",
+        "citizenshipForChildrenScore": 82
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsNOK": "3,500,000-6,000,000 NOK (extreme cost of living; highest globally)",
+        "keyFinancialAdvantages": "FREE K-12 + FREE university; barnehage max NOK 3,000/month; barnetrygd NOK 1,766/month per child; free healthcare (frikort after NOK 3,165); parental leave 49 weeks full pay; SHORT PR timeline 3 years; dual citizenship (keep Bangladeshi); political stability extreme (oil wealth)",
+        "keyFinancialChallenges": "EXTREME cost of living (Oslo globally #1-3 most expensive); groceries expensive (100-200% more than UK); Oslo rent NOK 12,000-25,000/month; high income tax (37-47%); Norwegian language needed; small job market",
+        "breakEvenPointYears": "Year 2-3 (work permit + spouse working; benefits apply; PR at 3 years)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Secure high salary (NOK 600,000-800,000 = €54,000-72,000) to offset extreme living costs. Bring family after work permit (spouse full work rights). Barnetrygd NOK 1,766/month automatic. Barnehage max NOK 3,000/month (excellent). Both working combined NOK 900,000-1,400,000. Short PR timeline 3 years → dual citizenship at 7 years (keep Bangladeshi). Parent visits on Schengen tourist visa only. Budget very carefully - Norway most expensive country globally for daily living.",
+        "worstScenario": "Cost of living shock (groceries, eating out, transport ALL extreme); single income in Oslo NOK 550,000 after tax barely covers family expenses; Norwegian language barrier isolates spouse; small job market limits spouse employment.",
+        "bestScenario": "High-salary Equinor/Telenor/DNB/Schibsted role (NOK 700,000-1,000,000 gross); both working combined NOK 1,000,000-1,500,000; barnehage €275/month; barnetrygd €157/month; free healthcare; PR at 3 years; citizenship at 7 years (dual - keep Bangladeshi). Extraordinary stability (oil wealth, NATO security, political consensus).",
+        "bangladeshiSpecificTips": [
+          "Very small Bangladeshi community in Norway (~5,000); Oslo mosques (Rabita Mosque Oslo, Central Jamaat-e Ahl-e Sunnat); halal food in Grønland district Oslo (multicultural area); significant isolation outside Oslo",
+          "Norskopplæring: free Norwegian language classes for immigrants (municipally funded); mandatory for residence permit holders; start immediately; aim for A2 for PR (B1 recommended for employment)",
+          "Barnetrygd: apply at NAV (Norwegian Labour and Welfare Administration) immediately; NOK 1,766/month per child under 18; automatic after residence registration",
+          "Barnehage application: apply at municipal barnehage coordinator immediately; Norwegian priority for spots but must apply early; max NOK 3,000/month is extraordinary value",
+          "Fødselsnummer (Norwegian national identity number): get after 6 months residence; before that D-number; fødselsnummer needed for full system access",
+          "Cost budgeting: budget NOK 25,000-40,000/month (€2,230-3,560) for family of 3-4 minimum in Oslo; Stavanger cheaper; Bergen moderate; smaller cities significantly cheaper",
+          "Dual citizenship since 2020: Norway changed law - Bangladeshi passport retained when naturalizing Norwegian; no need to choose; major advantage for family security",
+          "3-year PR: among shortest in Nordic region (vs. Denmark 8 years, Sweden 4 years); significant advantage for family planning"
+        ]
+      },
+      "overallFamilyRating": "Excellent family benefits (free K-12/university, barnehage €275/month max, barnetrygd €157/month/child, free healthcare, 49-week parental leave, SHORTEST Nordic PR at 3 years, dual citizenship allowed - keep Bangladeshi). Major challenges: EXTREME cost of living (Norway most expensive globally - groceries, rent, transport), small job market (Oslo-centric), Norwegian language needed for spouse employment, parent sponsorship unavailable, significant cultural isolation (small Bangladeshi community). Best for high-earning professionals (NOK 600,000+) who prioritize exceptional political stability, oil-wealth security, world-class social services, and fastest Nordic PR pathway. Not suitable for those unable to achieve high salaries to offset Norway's extraordinary cost of living.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "overallFamilyScore": 62,
+      "overallFamilyScoreConfidence": 78,
+      "overallFamilyScoreEvidence": "Switzerland has the highest salaries globally and excellent quality of life but VERY limited family immigration: non-EU graduates face extremely difficult work permit system (quota for non-EU), 6-month post-study search (shortest globally), PR takes 10 years, citizenship 10+ years (very difficult), must renounce Bangladeshi passport for Swiss citizenship, parent sponsorship unavailable, spouse work rights limited initially, school fees for foreigners, no universal healthcare. Beautiful country but essentially closed to non-EU settlement.",
+      "spouseRights": {
+        "spouseCanWork": true,
+        "spouseCanWorkDuringStudy": "Limited - family reunification possible but work permit additional process; quota-dependent",
+        "spouseCanWorkDuringPostStudy": false,
+        "spouseCanWorkDuringWorkPermit": "Conditional - spouse of Permit B (annual work permit) gets Permit B family reunification; work authorization depends on canton and employment situation; generally allowed but not automatic",
+        "spouseCanWorkAfterPR": true,
+        "spouseWorkScore": 55,
+        "spouseRestrictions": "Spouse of non-EU Permit B holder requires own work authorization (Permit B for employed family member); cantonal approval needed; quota affects spouse permit as well. Language requirements (German/French/Italian depending on canton) significant barrier for spouse employment. Much more complex than Canada/Germany.",
+        "spouseCanStudy": true,
+        "spouseStudyNotes": "University fees apply (CHF 1,000-5,000/semester; cheaper than US but not free like Germany/Sweden/Norway); German/French language required for most programs",
+        "estimatedIncomeOpportunityCostCHF": "Complex - quota and cantonal restrictions create significant uncertainty",
+        "dualIncomeViability": "Challenging - quota system, language barriers, cantonal restrictions"
+      },
+      "dependentChildren": {
+        "dependentChildrenAllowed": true,
+        "childrenVisaType": "Dependent on parent's Permit B (family reunification)",
+        "freeSchooling": false,
+        "freeSchoolingNotes": "Public schools: free for children with legal residence permits (included in cantonal school system). Quality excellent. Language of instruction varies by canton (German, French, Italian). Private international schools expensive (CHF 25,000-60,000/year per child - among most expensive globally). University: CHF 1,000-5,000/semester (cheaper than US but not free like Nordic countries); cantonal subsidies for residents.",
+        "schoolingQualityScore": 88,
+        "universityAccessAfterPR": true,
+        "universityAccessNotes": "Cantonal universities (ETH Zurich, EPFL, Basel, Zurich, Bern): CHF 1,000-2,000/semester for residents; additional cantonal subsidies possible. Outstanding quality - ETH Zurich, EPFL among world top-10.",
+        "childcareAvailability": "No universal childcare subsidy system; Kitas (private daycare): CHF 2,000-3,500/month per child (among most expensive globally); limited public subsidies; Kinderzulage (child allowance): CHF 200-250/month per child (cantonal variation) universal for residents",
+        "childcareCostScore": 22
+      },
+      "healthcareAccess": {
+        "score": 65,
+        "duringStudy": "Mandatory Swiss health insurance immediately upon residence (LAMal - Loi sur l'assurance maladie); CHF 300-500/month adult (individual); excellent coverage but EXPENSIVE; Prämienverbilligung (premium reduction) available for low income",
+        "duringWorkPermit": "Same mandatory Swiss health insurance; no employer contribution to premium (individual pays full premium); CHF 300-500/month per adult; family: CHF 800-1,500+/month; franchise (deductible) CHF 300-2,500/year; excellent quality",
+        "afterPR": "Same system; premium reductions available; extremely comprehensive coverage including dental; no deductibles for emergencies; best healthcare quality globally but most expensive system after USA",
+        "estimatedFamilyCostCHF": "800-1,500/month for family (health insurance premium alone; additional franchise/deductible on top)"
+      },
+      "parentSponsorship": {
+        "parentSponsorshipAvailable": false,
+        "availabilityNotes": "Switzerland does not have a parent sponsorship immigration program for adult immigrant children. Non-EU immigrants face quota restrictions even for themselves. Parent immigration for dependent elderly: exceptional cases only (serious health need, full dependency). Schengen tourist visa 90 days/180 days only realistic option.",
+        "parentVisaType": "Schengen tourist visa (90 days) OR national visa case-by-case",
+        "parentPRTimeline": "N/A",
+        "parentCanWork": false,
+        "parentHealthcareAccess": "Travel insurance mandatory; mandatory Swiss health insurance if staying 3+ months (very expensive for elderly)",
+        "parentCitizenshipEligible": false,
+        "parentSponsorshipScore": 8,
+        "grandparentSponsorshipAvailable": false
+      },
+      "citizenshipForChildren": {
+        "birthrightCitizenship": false,
+        "birthrightNotes": "Switzerland does NOT grant birthright citizenship (no jus soli). Child born in Switzerland to foreign parents does NOT automatically get citizenship. Swiss citizenship: parent is Swiss citizen (jus sanguinis) OR naturalization after 10 years residence + cantonal/municipal approval + language C1+ + integration + renounce previous citizenship.",
+        "derivativeCitizenship": "Very Limited",
+        "derivativeCitizenshipNotes": "Children can naturalize with parents after 10+ years residence. Cantonal naturalization committees apply extremely strict criteria (community integration, language mastery, local knowledge tested). Some communes historically voted on citizenship applications (now reformed but still cantonal committee). MUST renounce Bangladeshi citizenship (Switzerland generally does not allow dual citizenship except EU citizens and some limited exceptions). Extremely difficult process.",
+        "citizenshipTimeline": "10+ years legal residence (Swiss rule) + cantonal requirements (often additional years) → naturalization; requires renouncing Bangladeshi passport",
+        "citizenshipForChildrenScore": 38
+      },
+      "financialFamilyImpact": {
+        "estimatedTotalFamilyCostFirstFiveYearsCHF": "500,000-800,000 CHF (highest cost of living globally, expensive healthcare, no childcare subsidies, expensive schools)",
+        "keyFinancialAdvantages": "Highest salaries globally (CHF 90,000-150,000+ for STEM entry); low income tax compared to Nordic countries; excellent quality of life; world-class education (ETH, EPFL); strong child benefit (CHF 200-250/month)",
+        "keyFinancialChallenges": "Mandatory health insurance CHF 800-1,500+/month family; childcare CHF 2,000-3,500/month per child; rent CHF 1,500-4,000/month; groceries very expensive; 10-year PR timeline; must renounce Bangladeshi citizenship; quota for non-EU work permits (very difficult)",
+        "breakEvenPointYears": "Year 4-5 (if successfully through quota system and earning CHF 120,000+)"
+      },
+      "practicalFamilyAdvice": {
+        "optimalFamilyStrategy": "Switzerland is primarily a career opportunity for 3-5 years (highest salaries + savings potential) NOT a settlement destination for Bangladeshi families. IF committed long-term: earn CHF 120,000-200,000+, save aggressively, use 10-year PR pathway, but be prepared for language B1 (German/French) + C1 (German/French) requirements for naturalization (2-4 additional years), high costs, and strict quota system. Ideal for short-term high-income strategy, not long-term family settlement.",
+        "costSavingStrategies": "Live in border cantons (Geneva/Basel border areas) for cheaper living, use public transport (not necessary to own car in cities), cook at home (groceries expensive but less than restaurants), take advantage of CHF 200-250/month child benefit, use employer-sponsored wellness programs",
+        "integrationNotes": "Language acquisition essential (B1 needed for Permit B with family, C1+ for citizenship); cantonal integration committees extremely strict; community involvement (Vereine/clubs) valued; prepare for cultural differences (direct communication,punctuality obsession, reserved nature - very different from Bangladeshi culture)",
+        "riskMitigation": "Do NOT rely on parent sponsorship (not available), have 6-12 months expenses saved (mandatory for Permit B), secure employer-sponsored health insurance before arrival, factor in 3-5 year quota uncertainty, plan for renunciation of Bangladeshi citizenship before naturalization, research specific cantonal integration requirements (Zurich vs Geneva vs Basel very different)",
+        "familyStabilityScore": 42
+      }
+    }
+  }
+}

@@ -47,7 +47,7 @@ export default async function DashboardLayout({
             <h1 className="text-lg font-semibold text-foreground">Workspace</h1>
           </div>
           <div className="flex items-center gap-4">
-            <div className="text-xs text-muted-foreground">Target Intake: Sept 2028</div>
+            <div className="text-xs text-muted-foreground hidden sm:block">Target Intake: Sept 2028</div>
             <ThemeToggle />
           </div>
         </header>
