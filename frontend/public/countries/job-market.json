@@ -1,0 +1,1249 @@
+
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Job market analysis for Bangladeshi CS/AI/ML graduates planning 2027-2029 graduation and employment",
+    "targetProfile": "Bangladeshi student, STEM graduate (CS/AI/ML/Data Science), age 22-30, MSc/PhD holder",
+    "criticalNote": "Job market strength directly impacts PR eligibility, salary thresholds, visa sponsorship availability, and family reunification timeline",
+    "analysisScope": "Entry to mid-level positions for recent MSc/PhD graduates in AI/ML/CS domains",
+    "economicContext": "Post-2024 AI boom normalization, selective hiring, increased emphasis on practical ML engineering over pure research"
+  },
+  "jobMarkets": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "overallJobMarketScore": 78,
+      "demandLevel": "High",
+      "demandTrend": "Growing but competitive",
+      "marketSaturation": "Medium-High",
+      "averageTimeToJob": "2-4 months",
+      "averageTimeToJobDays": 75,
+      "jobOpeningsAnnual": 45000,
+      "aiMlSpecificOpenings": 12000,
+      "competitionLevel": 72,
+      "jobSecurityScore": 76,
+      "startupEcosystemScore": 81,
+      "researchPositionsScore": 74,
+      "remoteWorkCulture": 85,
+      "workLifeBalanceScore": 79,
+      "careerProgressionScore": 77,
+      "majorHubs": [
+        "Toronto",
+        "Vancouver",
+        "Montreal",
+        "Waterloo",
+        "Ottawa",
+        "Calgary"
+      ],
+      "topEmployers": [
+        "Shopify",
+        "Google Canada",
+        "Amazon Toronto",
+        "Microsoft Vancouver",
+        "Meta Montreal",
+        "Element AI",
+        "Coveo",
+        "OpenText",
+        "TD Bank AI Lab",
+        "RBC Borealis AI",
+        "Scotiabank Digital",
+        "Telus Digital",
+        "Vector Institute partners",
+        "Mila affiliated companies"
+      ],
+      "emergingCompanies": [
+        "Cohere",
+        "Ada Support",
+        "ApplyBoard",
+        "Dialogue",
+        "SnapCommerce",
+        "Properly"
+      ],
+      "skillsInDemand": [
+        "PyTorch/TensorFlow production deployment",
+        "MLOps and ML pipeline engineering",
+        "Large language model fine-tuning",
+        "Cloud ML (AWS SageMaker, Azure ML, GCP Vertex)",
+        "Data engineering at scale",
+        "Generative AI applications",
+        "Computer vision for retail/healthcare",
+        "NLP for bilingual applications (English/French advantage)",
+        "Recommendation systems",
+        "Applied ML engineering over pure research"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Financial Services & FinTech",
+          "demandScore": 88,
+          "salaryRange": "CAD 85,000-140,000",
+          "note": "Major banks heavily investing in AI; strong demand for fraud detection, risk modeling"
+        },
+        {
+          "sector": "E-commerce & Retail Tech",
+          "demandScore": 84,
+          "salaryRange": "CAD 80,000-135,000",
+          "note": "Shopify ecosystem, recommendation engines, supply chain optimization"
+        },
+        {
+          "sector": "Healthcare AI",
+          "demandScore": 79,
+          "salaryRange": "CAD 75,000-125,000",
+          "note": "Growing with public health digitization, medical imaging AI"
+        },
+        {
+          "sector": "Enterprise SaaS",
+          "demandScore": 82,
+          "salaryRange": "CAD 85,000-145,000",
+          "note": "Strong Canadian SaaS sector, AI-powered analytics and automation"
+        },
+        {
+          "sector": "Gaming & Entertainment",
+          "demandScore": 71,
+          "salaryRange": "CAD 70,000-120,000",
+          "note": "Montreal and Vancouver hubs, procedural content generation, NPC AI"
+        },
+        {
+          "sector": "Public Sector & Research",
+          "demandScore": 68,
+          "salaryRange": "CAD 65,000-105,000",
+          "note": "Government digital transformation, research positions at Vector/Mila/CIFAR"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Mid-sized SaaS companies, financial services rotational programs",
+        "hardestEntry": "Top-tier US tech giants (Google, Meta) - prefer Waterloo/UofT or US PhD",
+        "sweetSpot": "Series B-D startups with 50-300 employees, willing to sponsor work permits",
+        "bangladeshiPresence": "Moderate; established communities in Toronto, Vancouver; networking possible",
+        "biasLevel": "Low-Medium; diverse hiring culture but preference for Canadian education/experience"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 82,
+        "pospWpgpAdvantage": "Massive - most employers prefer candidates already on PGWP, no LMIA needed",
+        "studyPermitToPgwpSuccess": 94,
+        "sponsorshipCost": "Low (PGWP holders), Medium-High (LMIA for foreign workers)",
+        "note": "Post-graduation work permit (PGWP) is golden ticket; direct sponsorship from abroad very difficult"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "CAD 95,000-130,000",
+        "mscEntryLevel": "CAD 75,000-105,000",
+        "midLevel3to5yrs": "CAD 110,000-160,000",
+        "seniorLevel": "CAD 140,000-220,000",
+        "totalCompNote": "Canadian companies rarely offer US-style equity packages; expect 80-90% base salary"
+      },
+      "geographicVariation": {
+        "toronto": {
+          "jobDensity": 95,
+          "avgSalary": "CAD 95,000",
+          "costOfLivingIndex": 88,
+          "netBenefit": "High jobs but expensive housing; 1BR rent CAD 2,400+"
+        },
+        "vancouver": {
+          "jobDensity": 78,
+          "avgSalary": "CAD 90,000",
+          "costOfLivingIndex": 92,
+          "netBenefit": "Beautiful but most expensive; housing crisis severe; 1BR rent CAD 2,600+"
+        },
+        "montreal": {
+          "jobDensity": 81,
+          "avgSalary": "CAD 80,000",
+          "costOfLivingIndex": 68,
+          "netBenefit": "Best value; strong AI research; French required for PR/citizenship; 1BR rent CAD 1,500"
+        },
+        "waterloo": {
+          "jobDensity": 73,
+          "avgSalary": "CAD 88,000",
+          "costOfLivingIndex": 74,
+          "netBenefit": "Strong startup scene, lower cost than Toronto, limited city size"
+        },
+        "ottawa": {
+          "jobDensity": 65,
+          "avgSalary": "CAD 85,000",
+          "costOfLivingIndex": 72,
+          "netBenefit": "Government tech jobs, stable, bilingualism advantage"
+        },
+        "calgary": {
+          "jobDensity": 52,
+          "avgSalary": "CAD 82,000",
+          "costOfLivingIndex": 70,
+          "netBenefit": "Emerging tech scene, lower cost, smaller market"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 42,
+        "vacationDays": 15,
+        "sickLeaveDays": 10,
+        "parentalLeaveWeeks": 35,
+        "workFromHomeAcceptance": 88,
+        "diversityScore": 84,
+        "burnoutRisk": "Medium",
+        "culturalFit": "Generally welcoming to immigrants; professional culture; less intense than US"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years typical",
+        "pathToStaffPrincipal": "8-12 years",
+        "managementOpportunities": 74,
+        "technicalLadder": "Well-established in larger companies",
+        "entrepreneurshipSupport": 79,
+        "note": "Smaller market than US means fewer principal/distinguished roles; many Canadians move to US for peak career"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 95,
+        "topUsPhd": 92,
+        "topEuPhd": 86,
+        "bangladeshUndergrad": 65,
+        "note": "Canadian degree highly preferred; top global programs recognized; Canadian MSc/PhD is strong signal"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 48,
+        "trend": "Moderate; post-2024 tech correction stabilizing; AI hiring sustained but selective",
+        "protection": "Reasonable employment laws; severance typical; easier to find next job than US H1B holders"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 92,
+        "crsPointsFromJob": "50-200 depending on NOC, location, salary",
+        "provinceNominationBoost": "Very significant; Alberta, BC, Ontario, Saskatchewan tech streams",
+        "note": "Job is essential for Express Entry CRS points and Provincial Nominee Programs"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Strong; aging population, digital transformation, AI national priority",
+        "outlook2040": "Very strong; severe labor shortages expected, immigration essential to economy",
+        "riskFactors": "Housing affordability crisis may deter talent; brain drain to US; climate change strains"
+      },
+      "strategicAdvice": "Canada offers one of the best pathways for Bangladeshi students: study MSc (2yr for 3yr PGWP), work, apply PR within 1-2 years. Job market is strong but not exceptional; salaries lower than US but PR is realistic. Choose Montreal for best cost-value and AI research; Toronto for maximum jobs despite high cost. CRITICAL: Secure Canadian MSc/PhD for PGWP eligibility - this is the foundation of the entire pathway.",
+      "confidenceScore": 87,
+      "dataQuality": "High; strong labor market data, established immigration patterns, mature tech sector reporting"
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "overallJobMarketScore": 94,
+      "demandLevel": "Very High",
+      "demandTrend": "Extremely strong for AI/ML",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "1-3 months",
+      "averageTimeToJobDays": 60,
+      "jobOpeningsAnnual": 350000,
+      "aiMlSpecificOpenings": 95000,
+      "competitionLevel": 81,
+      "jobSecurityScore": 68,
+      "startupEcosystemScore": 98,
+      "researchPositionsScore": 96,
+      "remoteWorkCulture": 82,
+      "workLifeBalanceScore": 64,
+      "careerProgressionScore": 93,
+      "majorHubs": [
+        "San Francisco Bay Area",
+        "Seattle",
+        "New York City",
+        "Boston",
+        "Austin",
+        "Los Angeles",
+        "San Diego",
+        "Research Triangle NC",
+        "Chicago",
+        "Pittsburgh"
+      ],
+      "topEmployers": [
+        "Google/DeepMind",
+        "Meta AI Research (FAIR)",
+        "OpenAI",
+        "Anthropic",
+        "Microsoft Research",
+        "Amazon AWS AI",
+        "Apple ML",
+        "NVIDIA",
+        "Tesla AI",
+        "Databricks",
+        "Scale AI",
+        "Hugging Face",
+        "Cohere (US office)",
+        "Stripe",
+        "Airbnb",
+        "Uber ATG",
+        "LinkedIn",
+        "Salesforce",
+        "Adobe Research",
+        "IBM Research"
+      ],
+      "emergingCompanies": [
+        "Anthropic",
+        "Adept AI",
+        "Character.AI",
+        "Inflection AI",
+        "Runway",
+        "Stability AI (US)",
+        "Replit",
+        "Weights & Biases"
+      ],
+      "skillsInDemand": [
+        "Large-scale ML systems (billions of parameters)",
+        "Distributed training (multi-GPU, multi-node)",
+        "ML infrastructure and platforms",
+        "LLM alignment and RLHF",
+        "Generative AI (text, image, video, multimodal)",
+        "ML compiler optimization",
+        "Production ML at scale (millions of users)",
+        "Recommendation and ranking systems",
+        "Computer vision (autonomous vehicles, robotics)",
+        "ML for chip design and hardware",
+        "Reinforcement learning applications"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Big Tech (FAANG+)",
+          "demandScore": 96,
+          "salaryRange": "USD 150,000-400,000",
+          "note": "Highest compensation globally; equity packages significant; extremely competitive but highest reward"
+        },
+        {
+          "sector": "AI Research Labs",
+          "demandScore": 94,
+          "salaryRange": "USD 180,000-500,000+",
+          "note": "OpenAI, Anthropic, DeepMind - elite hiring, PhD often required, cutting-edge work"
+        },
+        {
+          "sector": "Cloud & Infrastructure",
+          "demandScore": 91,
+          "salaryRange": "USD 140,000-350,000",
+          "note": "AWS, Azure, GCP - building ML platforms, high demand for ML engineers"
+        },
+        {
+          "sector": "Autonomous Vehicles",
+          "demandScore": 82,
+          "salaryRange": "USD 150,000-380,000",
+          "note": "Tesla, Waymo, Cruise, Aurora - perception, planning, simulation"
+        },
+        {
+          "sector": "FinTech & Trading",
+          "demandScore": 88,
+          "salaryRange": "USD 160,000-450,000",
+          "note": "Quant firms, crypto, payment platforms - high comp, demanding hours"
+        },
+        {
+          "sector": "Healthcare & BioTech AI",
+          "demandScore": 79,
+          "salaryRange": "USD 120,000-280,000",
+          "note": "Drug discovery, medical imaging, genomics - meaningful work, slightly lower comp"
+        },
+        {
+          "sector": "Enterprise AI/SaaS",
+          "demandScore": 85,
+          "salaryRange": "USD 130,000-300,000",
+          "note": "Databricks, Snowflake, ServiceNow - strong growth, generous equity"
+        },
+        {
+          "sector": "Defense & National Security",
+          "demandScore": 45,
+          "salaryRange": "USD 110,000-220,000",
+          "note": "Requires US citizenship - not viable for Bangladeshi students initially"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Mid-tier tech companies, startups Series B+, consultancies (Deloitte AI, Accenture AI)",
+        "hardestEntry": "OpenAI, DeepMind, top quant firms - require top PhD + publications or exceptional track record",
+        "sweetSpot": "Established unicorns (Databricks, Scale AI), Big Tech rotational programs, PhD-focused research roles",
+        "bangladeshiPresence": "Very high in tech; large communities in Bay Area, Seattle, NYC; strong alumni networks from top US programs",
+        "biasLevel": "Low in tech sector; meritocratic hiring culture; top US PhD is golden ticket regardless of origin"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 73,
+        "optAdvantage": "Critical - OPT (1 year) + STEM OPT (24 months) = 3 years to secure H1B; employers heavily prefer OPT candidates",
+        "h1bLotteryOdds": 0.28,
+        "h1bLotteryNote": "~26-30% success rate in lottery (improved with US Master's quota but still uncertain)",
+        "sponsorshipCost": "USD 5,000-15,000 for H1B; employers factor this in",
+        "note": "OPT is essential bridge; H1B lottery is major risk; L1 transfer or O1 visa are alternatives for exceptional talent"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "USD 180,000-320,000 total comp",
+        "mscEntryLevel": "USD 130,000-220,000 total comp",
+        "midLevel3to5yrs": "USD 220,000-450,000 total comp",
+        "seniorLevel": "USD 350,000-800,000+ total comp",
+        "totalCompNote": "Total comp includes base + bonus + equity (RSUs); equity can be 30-50% of package; Big Tech L4/L5 typically 200-300K total"
+      },
+      "geographicVariation": {
+        "bayArea": {
+          "jobDensity": 100,
+          "avgSalary": "USD 185,000",
+          "costOfLivingIndex": 100,
+          "netBenefit": "Maximum opportunities and comp but extremely expensive; 1BR rent USD 3,200+; worth it for career acceleration"
+        },
+        "seattle": {
+          "jobDensity": 88,
+          "avgSalary": "USD 170,000",
+          "costOfLivingIndex": 82,
+          "netBenefit": "Amazon, Microsoft stronghold; no state income tax; better value than Bay; 1BR rent USD 2,400"
+        },
+        "nyc": {
+          "jobDensity": 85,
+          "avgSalary": "USD 165,000",
+          "costOfLivingIndex": 96,
+          "netBenefit": "Finance + tech; high pay but high cost and taxes; 1BR rent USD 3,500+"
+        },
+        "austin": {
+          "jobDensity": 72,
+          "avgSalary": "USD 145,000",
+          "costOfLivingIndex": 70,
+          "netBenefit": "Fast-growing; no state tax; Tesla, Oracle; good value; 1BR rent USD 1,800"
+        },
+        "boston": {
+          "jobDensity": 78,
+          "avgSalary": "USD 155,000",
+          "costOfLivingIndex": 84,
+          "netBenefit": "Research-heavy (MIT, Harvard ecosystem); strong biotech AI; 1BR rent USD 2,800"
+        },
+        "remoteUs": {
+          "jobDensity": 68,
+          "avgSalary": "USD 135,000",
+          "costOfLivingIndex": 55,
+          "netBenefit": "Increasingly viable post-COVID; some companies pay local-adjusted salaries; visa implications vary"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 48,
+        "vacationDays": 15,
+        "sickLeaveDays": 8,
+        "parentalLeaveWeeks": 12,
+        "workFromHomeAcceptance": 75,
+        "diversityScore": 79,
+        "burnoutRisk": "High",
+        "culturalFit": "Intense, results-driven; long hours expected especially in startups; less work-life balance than Canada/Europe"
+      },
+      "careerGrowth": {
+        "pathToSenior": "3-5 years",
+        "pathToStaffPrincipal": "6-10 years",
+        "managementOpportunities": 88,
+        "technicalLadder": "Best in world; clear IC track to Staff/Principal/Distinguished",
+        "entrepreneurshipSupport": 98,
+        "note": "Fastest career progression globally; meritocracy rewards results; entrepreneurship culture unmatched"
+      },
+      "foreignCredentialRecognition": {
+        "topUsPhd": 100,
+        "topUsMsc": 96,
+        "topEuPhd": 88,
+        "topAsiaPhd": 82,
+        "bangladeshUndergrad": 55,
+        "note": "US PhD from top-20 CS program is gold standard; strong MS from top-50 also excellent; undergrad matters less if graduate degree strong"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 62,
+        "trend": "Volatile; 2022-2023 corrections done; AI hiring strong but cyclical; H1B holders at higher risk (60-day rule)",
+        "protection": "At-will employment; minimal protection; but job market deep enough to recover; H1B 60-day grace period is critical risk"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "eb2NiwPossibility": 35,
+        "eb1aPossibility": 15,
+        "eb2eb3Reality": "Requires employer sponsorship; 10-20 year backlog for India/China; Bangladesh currently no backlog but uncertain",
+        "note": "Job is necessary but NOT sufficient; green card path is extremely difficult and uncertain; this is the critical weakness"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Excellent for jobs and career; uncertain for immigration; AI will remain global epicenter",
+        "outlook2040": "Continued AI leadership but immigration policy highly uncertain; depends on political cycles",
+        "riskFactors": "Immigration policy volatility; H1B lottery risk; green card uncertainty; political environment shifts"
+      },
+      "strategicAdvice": "USA offers the absolute best career growth, salary, and AI ecosystem globally - but immigration pathway is highly uncertain and risky. Ideal strategy: pursue top US PhD (fully funded, 5-6 years including OPT/STEM OPT = ~8 years to try green card), join Big Tech or elite AI lab, push for EB1A/EB2-NIW with publications, or treat US as 5-10 year career accelerator then transfer to Canada/UK/Australia via internal mobility (e.g., Google L5 in US -> Google Canada with strong CRS score). NOT recommended as sole immigration target; best combined with backup plan.",
+      "confidenceScore": 91,
+      "dataQuality": "Very High; extensive salary data, immigration statistics well-documented, large Bangladeshi professional community"
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "overallJobMarketScore": 81,
+      "demandLevel": "High",
+      "demandTrend": "Rapidly growing",
+      "marketSaturation": "Low-Medium",
+      "averageTimeToJob": "2-5 months",
+      "averageTimeToJobDays": 90,
+      "jobOpeningsAnnual": 38000,
+      "aiMlSpecificOpenings": 9500,
+      "competitionLevel": 64,
+      "jobSecurityScore": 89,
+      "startupEcosystemScore": 74,
+      "researchPositionsScore": 88,
+      "remoteWorkCulture": 71,
+      "workLifeBalanceScore": 88,
+      "careerProgressionScore": 72,
+      "majorHubs": [
+        "Munich",
+        "Berlin",
+        "Frankfurt",
+        "Hamburg",
+        "Stuttgart",
+        "Dresden",
+        "Cologne"
+      ],
+      "topEmployers": [
+        "BMW Group AI",
+        "Volkswagen Group",
+        "Bosch AI",
+        "SAP",
+        "Siemens",
+        "Mercedes-Benz",
+        "Deutsche Telekom",
+        "Allianz Technology",
+        "Zalando",
+        "Delivery Hero",
+        "N26",
+        "Google Munich",
+        "Microsoft Germany",
+        "Amazon Berlin",
+        "BASF Digital",
+        "Carl Zeiss",
+        "Infineon Technologies"
+      ],
+      "emergingCompanies": [
+        "Helsing",
+        "DeepL",
+        "Rows (ex-Germany)",
+        "Parloa",
+        "Luminovo",
+        "understand.ai"
+      ],
+      "skillsInDemand": [
+        "Industrial AI and robotics",
+        "Automotive AI (autonomous driving, ADAS)",
+        "Computer vision for manufacturing",
+        "Predictive maintenance ML",
+        "Enterprise ML platforms",
+        "MLOps and production deployment",
+        "Natural language processing (especially German language)",
+        "Supply chain optimization",
+        "Medical device AI",
+        "German language proficiency (B2+ highly valued for non-engineering roles)"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Automotive & Mobility",
+          "demandScore": 92,
+          "salaryRange": "EUR 55,000-95,000",
+          "note": "Germany's industrial strength; massive investment in EV and autonomous driving; stable long-term employers"
+        },
+        {
+          "sector": "Industrial Manufacturing & Engineering",
+          "demandScore": 87,
+          "salaryRange": "EUR 52,000-88,000",
+          "note": "Bosch, Siemens - Industry 4.0, digital twins, predictive maintenance; very stable"
+        },
+        {
+          "sector": "Enterprise Software (SAP ecosystem)",
+          "demandScore": 81,
+          "salaryRange": "EUR 50,000-85,000",
+          "note": "Large but slower-moving; good work-life balance; strong job security"
+        },
+        {
+          "sector": "FinTech & Banking",
+          "demandScore": 76,
+          "salaryRange": "EUR 55,000-95,000",
+          "note": "N26, Trade Republic, traditional banks digitalizing; Frankfurt hub"
+        },
+        {
+          "sector": "E-commerce & Delivery",
+          "demandScore": 79,
+          "salaryRange": "EUR 52,000-90,000",
+          "note": "Zalando, Delivery Hero - recommendation systems, logistics optimization"
+        },
+        {
+          "sector": "Research Institutes",
+          "demandScore": 84,
+          "salaryRange": "EUR 48,000-75,000",
+          "note": "Max Planck, Fraunhofer, DFKI - excellent research, lower pay, good work-life balance, path to industry"
+        },
+        {
+          "sector": "Healthcare & MedTech",
+          "demandScore": 73,
+          "salaryRange": "EUR 50,000-82,000",
+          "note": "Medical imaging, diagnostics - strict regulations, meaningful work"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Automotive companies, Fraunhofer institutes, mid-sized Mittelstand companies desperate for tech talent",
+        "hardestEntry": "Top US tech companies (Google Munich) - prefer German/EU degrees and language skills",
+        "sweetSpot": "Industrial AI roles at established companies (Bosch, Siemens, BMW) - good pay, stability, visa sponsorship willing",
+        "bangladeshiPresence": "Small but growing; established student communities; less networking than US/Canada",
+        "biasLevel": "Medium; preference for German speakers and EU degrees; but STEM talent shortage overrides bias"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 88,
+        "euBlueCardEligibility": 95,
+        "jobSeekerVisaOption": "Yes - 6 months to find job after graduation",
+        "sponsorshipCost": "Low; employer burden minimal",
+        "note": "Germany actively wants skilled immigrants; EU Blue Card pathway is straightforward; 18-month job seeker visa post-graduation"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "EUR 58,000-85,000",
+        "mscEntryLevel": "EUR 50,000-68,000",
+        "midLevel3to5yrs": "EUR 65,000-95,000",
+        "seniorLevel": "EUR 80,000-130,000",
+        "totalCompNote": "Mostly base salary; equity rare outside startups; focus on stability and benefits; 30 vacation days standard"
+      },
+      "geographicVariation": {
+        "munich": {
+          "jobDensity": 92,
+          "avgSalary": "EUR 62,000",
+          "costOfLivingIndex": 86,
+          "netBenefit": "Highest salaries, best jobs (automotive, Google), but expensive housing; 1BR rent EUR 1,400+"
+        },
+        "berlin": {
+          "jobDensity": 85,
+          "avgSalary": "EUR 55,000",
+          "costOfLivingIndex": 72,
+          "netBenefit": "Startup hub, international, good value; increasingly expensive; 1BR rent EUR 1,100"
+        },
+        "frankfurt": {
+          "jobDensity": 73,
+          "avgSalary": "EUR 60,000",
+          "costOfLivingIndex": 78,
+          "netBenefit": "FinTech, banking; smaller tech scene; 1BR rent EUR 1,200"
+        },
+        "stuttgart": {
+          "jobDensity": 79,
+          "avgSalary": "EUR 59,000",
+          "costOfLivingIndex": 75,
+          "netBenefit": "Automotive stronghold (Mercedes, Bosch); good balance; 1BR rent EUR 1,000"
+        },
+        "dresden": {
+          "jobDensity": 68,
+          "avgSalary": "EUR 52,000",
+          "costOfLivingIndex": 62,
+          "netBenefit": "Semiconductor, manufacturing; lower cost; growing tech scene; 1BR rent EUR 750"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 40,
+        "vacationDays": 30,
+        "sickLeaveDays": "Unlimited (paid, with medical certificate)",
+        "parentalLeaveWeeks": 58,
+        "workFromHomeAcceptance": 68,
+        "diversityScore": 72,
+        "burnoutRisk": "Low",
+        "culturalFit": "Punctual, direct communication, hierarchical in traditional companies; excellent work-life balance; less startup hustle culture"
+      },
+      "careerGrowth": {
+        "pathToSenior": "5-7 years",
+        "pathToStaffPrincipal": "10-15 years",
+        "managementOpportunities": 76,
+        "technicalLadder": "Less developed than US; focus on stable progression",
+        "entrepreneurshipSupport": 68,
+        "note": "Slower career progression than US/UK; but stable and predictable; entrepreneurship improving but not startup-first culture"
+      },
+      "foreignCredentialRecognition": {
+        "germanMasterPhd": 98,
+        "topEuPhd": 92,
+        "topUsPhd": 90,
+        "bangladeshUndergrad": 62,
+        "note": "German degree highly valued; Anabin database evaluates foreign credentials; top global programs recognized"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 32,
+        "trend": "Low; strong labor protections; difficult to fire employees; economic stability high",
+        "protection": "Excellent; Kündigungsschutz (dismissal protection), severance packages, works councils"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "euBlueCardToSettlement": "21-33 months with job and German B1/A2",
+        "regularWorkPermitToSettlement": "48 months",
+        "note": "Job is central but pathway is clear and reliable; language learning is critical investment"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Very strong; labor shortage acute, aging population, AI industrial strategy",
+        "outlook2040": "Excellent; demographic crisis will force continued immigration openness; industrial AI leader",
+        "riskFactors": "Bureaucracy, slower startup ecosystem growth, far-right political pressures (currently manageable)"
+      },
+      "strategicAdvice": "Germany is the sleeper hit for long-term immigration - often overlooked by Bangladeshi students who focus on US/Canada. Reality: easier job market entry than Canada (less competition), faster PR than Canada (21-33 months vs 1-3 years), excellent job security, perfect work-life balance, strong family benefits. Trade-off: lower salaries than US (but better purchasing power after tax/healthcare/education costs), language requirement is real (invest in German B2 during/after MSc). Best for: students prioritizing stability, family life, and guaranteed PR over maximum salary. Choose TU Munich, RWTH Aachen, or TU Berlin for MSc; focus on automotive/industrial AI; learn German seriously.",
+      "confidenceScore": 84,
+      "dataQuality": "High; transparent labor market data, clear immigration statistics, well-established processes"
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "overallJobMarketScore": 76,
+      "demandLevel": "High",
+      "demandTrend": "Growing steadily",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "2-4 months",
+      "averageTimeToJobDays": 80,
+      "jobOpeningsAnnual": 28000,
+      "aiMlSpecificOpenings": 6800,
+      "competitionLevel": 68,
+      "jobSecurityScore": 77,
+      "startupEcosystemScore": 69,
+      "researchPositionsScore": 79,
+      "remoteWorkCulture": 81,
+      "workLifeBalanceScore": 84,
+      "careerProgressionScore": 71,
+      "majorHubs": [
+        "Sydney",
+        "Melbourne",
+        "Brisbane",
+        "Canberra",
+        "Perth"
+      ],
+      "topEmployers": [
+        "Atlassian",
+        "Canva",
+        "Commonwealth Bank",
+        "NAB (National Australia Bank)",
+        "Westpac",
+        "ANZ Bank",
+        "Telstra",
+        "Optus",
+        "Cochlear",
+        "CSIRO",
+        "Google Australia",
+        "Amazon AWS Sydney",
+        "Microsoft Australia",
+        "Afterpay (Block)",
+        "REA Group",
+        "Seek",
+        "WiseTech Global"
+      ],
+      "emergingCompanies": [
+        "SafetyCulture",
+        "Seer Medical",
+        "Harrison.ai",
+        "Valiant",
+        "Hyper Anna"
+      ],
+      "skillsInDemand": [
+        "Cloud ML engineering (AWS, Azure)",
+        "MLOps and deployment pipelines",
+        "NLP and conversational AI",
+        "Computer vision for agriculture and mining",
+        "Fraud detection and risk modeling (finance)",
+        "Recommendation systems",
+        "Data engineering at scale",
+        "Healthcare AI and medical imaging",
+        "Geospatial ML",
+        "Time series forecasting"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Financial Services & FinTech",
+          "demandScore": 89,
+          "salaryRange": "AUD 90,000-150,000",
+          "note": "Big 4 banks heavily investing in AI; strong FinTech scene; Sydney-based"
+        },
+        {
+          "sector": "Enterprise SaaS",
+          "demandScore": 84,
+          "salaryRange": "AUD 95,000-160,000",
+          "note": "Atlassian, Canva - global companies HQ in Australia; competitive comp with equity"
+        },
+        {
+          "sector": "Telecommunications",
+          "demandScore": 76,
+          "salaryRange": "AUD 85,000-135,000",
+          "note": "Telstra, Optus - network optimization, customer analytics"
+        },
+        {
+          "sector": "Mining & Resources Tech",
+          "demandScore": 78,
+          "salaryRange": "AUD 95,000-155,000",
+          "note": "Automation, predictive maintenance, geological AI - unique to Australia; high pay"
+        },
+        {
+          "sector": "AgTech & Environmental",
+          "demandScore": 71,
+          "salaryRange": "AUD 75,000-125,000",
+          "note": "Precision agriculture, climate tech - growing sector, meaningful work"
+        },
+        {
+          "sector": "Healthcare & MedTech",
+          "demandScore": 74,
+          "salaryRange": "AUD 80,000-130,000",
+          "note": "Medical imaging, diagnostics - Cochlear, CSL, emerging startups"
+        },
+        {
+          "sector": "Government & Research",
+          "demandScore": 72,
+          "salaryRange": "AUD 75,000-115,000",
+          "note": "CSIRO, Defense (citizens only), universities - stable, lower pay"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Banks (graduate programs), consulting firms (Deloitte, PwC AI practices), mid-tier SaaS companies",
+        "hardestEntry": "Atlassian, Canva - highly selective, prefer Australian degrees",
+        "sweetSpot": "Financial services rotational programs, AWS/Microsoft/Google (good willingness to sponsor), mining tech companies",
+        "bangladeshiPresence": "Moderate; growing South Asian community in Sydney/Melbourne; established student networks",
+        "biasLevel": "Medium-Low; diverse society but preference for Australian education and local experience"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 81,
+        "temporaryGraduateVisa": "2-4 years depending on degree (MSc 2-3yr, PhD 4yr)",
+        "tss482Sponsorship": "Common for skilled roles; pathway to PR via 186/187",
+        "sponsorshipCost": "AUD 3,000-8,000; many employers willing",
+        "note": "Temporary Graduate visa (subclass 485) is critical bridge; employer sponsorship common in STEM; pathway to PR clearer than US"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "AUD 95,000-135,000",
+        "mscEntryLevel": "AUD 75,000-105,000",
+        "midLevel3to5yrs": "AUD 110,000-160,000",
+        "seniorLevel": "AUD 140,000-220,000",
+        "totalCompNote": "Mostly base; equity in startups/Atlassian/Canva; superannuation (retirement) 11% on top of salary; high base tax rate"
+      },
+      "geographicVariation": {
+        "sydney": {
+          "jobDensity": 91,
+          "avgSalary": "AUD 98,000",
+          "costOfLivingIndex": 89,
+          "netBenefit": "Most jobs, highest pay, but expensive housing; 1BR rent AUD 2,600+"
+        },
+        "melbourne": {
+          "jobDensity": 84,
+          "avgSalary": "AUD 92,000",
+          "costOfLivingIndex": 81,
+          "netBenefit": "Cultural capital, good tech scene, slightly cheaper; 1BR rent AUD 2,200"
+        },
+        "brisbane": {
+          "jobDensity": 68,
+          "avgSalary": "AUD 85,000",
+          "costOfLivingIndex": 74,
+          "netBenefit": "Emerging market, lower cost, good weather; 1BR rent AUD 1,900"
+        },
+        "canberra": {
+          "jobDensity": 62,
+          "avgSalary": "AUD 90,000",
+          "costOfLivingIndex": 76,
+          "netBenefit": "Government/research jobs; smaller market; 1BR rent AUD 1,800"
+        },
+        "perth": {
+          "jobDensity": 58,
+          "avgSalary": "AUD 88,000",
+          "costOfLivingIndex": 72,
+          "netBenefit": "Mining tech hub; isolated; 1BR rent AUD 1,700"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 40,
+        "vacationDays": 20,
+        "sickLeaveDays": 10,
+        "parentalLeaveWeeks": 26,
+        "workFromHomeAcceptance": 82,
+        "diversityScore": 81,
+        "burnoutRisk": "Low-Medium",
+        "culturalFit": "Relaxed, egalitarian, good work-life balance; 'flat white' culture; less intense than US"
+      },
+      "careerGrowth": {
+        "pathToSenior": "5-7 years",
+        "pathToStaffPrincipal": "10-14 years",
+        "managementOpportunities": 73,
+        "technicalLadder": "Developing; smaller market limits principal-level roles",
+        "entrepreneurshipSupport": 72,
+        "note": "Smaller market means slower progression; many Aussies go to US/UK for peak roles; local ceiling exists"
+      },
+      "foreignCredentialRecognition": {
+        "australianMasterPhd": 96,
+        "topUsUkPhd": 88,
+        "topAsiaPhd": 78,
+        "bangladeshUndergrad": 58,
+        "note": "Australian degree strongly preferred; Go8 universities highly valued; points-based system favors Australian study"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 44,
+        "trend": "Moderate; relatively stable economy; less volatile than US tech; visa holders at some risk",
+        "protection": "Fair Work Act provides reasonable protection; notice periods; severance typical"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skilledIndependentPossibility": 45,
+        "employerSponsorshipPathway": 85,
+        "stateNominationBoost": 78,
+        "note": "Job strongly preferred; TSS 482 -> 186 employer-sponsored PR is common pathway; points system favors young Australian graduates"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Strong; immigration-dependent economy, aging population, resource sector digitizing",
+        "outlook2040": "Very strong; severe labor shortages expected, especially in tech; climate challenges may drive migration",
+        "riskFactors": "Housing affordability crisis; political swings on immigration; geographic isolation from global tech hubs"
+      },
+      "strategicAdvice": "Australia offers a balanced pathway: better work-life balance than US/Canada, clearer PR pathway than US, faster than Canada, excellent quality of life. Trade-offs: smaller market (limited long-term career ceiling), high cost of living, geographic isolation. Best strategy: MSc at Go8 university (Melbourne, Sydney, ANU), secure graduate visa (2-3 years), join Big4 bank or Atlassian/Canva or mining tech, pursue employer sponsorship or state nomination. Cost is high but lifestyle and immigration certainty are strong. Salary lower than US but similar purchasing power to Canada after costs. Good for families seeking stability and outdoor lifestyle.",
+      "confidenceScore": 83,
+      "dataQuality": "High; transparent immigration data, clear labor market statistics, established pathways"
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "overallJobMarketScore": 79,
+      "demandLevel": "High",
+      "demandTrend": "Growing",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "2-4 months",
+      "averageTimeToJobDays": 75,
+      "jobOpeningsAnnual": 18000,
+      "aiMlSpecificOpenings": 4200,
+      "competitionLevel": 66,
+      "jobSecurityScore": 82,
+      "startupEcosystemScore": 83,
+      "researchPositionsScore": 86,
+      "remoteWorkCulture": 87,
+      "workLifeBalanceScore": 91,
+      "careerProgressionScore": 73,
+      "majorHubs": [
+        "Amsterdam",
+        "Eindhoven",
+        "Rotterdam",
+        "Utrecht",
+        "Delft"
+      ],
+      "topEmployers": [
+        "Booking.com",
+        "Adyen",
+        "ASML",
+        "Philips",
+        "ING",
+        "ABN AMRO",
+        "Rabobank",
+        "TomTom",
+        "Uber Amsterdam",
+        "Netflix Amsterdam",
+        "Google Netherlands",
+        "Microsoft Netherlands",
+        "Qualcomm Netherlands",
+        "NXP Semiconductors",
+        "Elastic",
+        "Datadog Europe"
+      ],
+      "emergingCompanies": [
+        "MessageBird",
+        "Mollie",
+        "Picnic",
+        "Miro",
+        "Sendcloud"
+      ],
+      "skillsInDemand": [
+        "Backend ML systems and APIs",
+        "Recommendation and personalization engines",
+        "Search and ranking algorithms",
+        "MLOps and infrastructure",
+        "NLP for multi-language applications",
+        "Computer vision",
+        "Fraud detection and security ML",
+        "Real-time ML systems",
+        "Distributed systems",
+        "Cloud-native ML (AWS, GCP, Azure)"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "FinTech & Payments",
+          "demandScore": 91,
+          "salaryRange": "EUR 55,000-95,000",
+          "note": "Adyen, Mollie - Amsterdam is European FinTech hub; competitive salaries; equity potential"
+        },
+        {
+          "sector": "Travel & E-commerce",
+          "demandScore": 85,
+          "salaryRange": "EUR 52,000-90,000",
+          "note": "Booking.com - massive ML org; good comp; international environment"
+        },
+        {
+          "sector": "Semiconductors & Hardware",
+          "demandScore": 82,
+          "salaryRange": "EUR 58,000-98,000",
+          "note": "ASML, NXP, Qualcomm - chip design AI, EDA tools; Eindhoven hub; cutting-edge"
+        },
+        {
+          "sector": "Banking & Finance",
+          "demandScore": 79,
+          "salaryRange": "EUR 50,000-85,000",
+          "note": "ING, ABN AMRO - digital transformation; stable; good benefits"
+        },
+        {
+          "sector": "US Tech European HQs",
+          "demandScore": 84,
+          "salaryRange": "EUR 60,000-105,000",
+          "note": "Uber, Netflix, Google, Datadog - European operations; higher comp; English-only possible"
+        },
+        {
+          "sector": "Healthcare & MedTech",
+          "demandScore": 76,
+          "salaryRange": "EUR 52,000-88,000",
+          "note": "Philips - medical imaging, diagnostics; strong R&D; stable employer"
+        },
+        {
+          "sector": "Research & Academia",
+          "demandScore": 81,
+          "salaryRange": "EUR 45,000-72,000",
+          "note": "TU Delft, CWI, Amsterdam universities - excellent research; pathway to industry"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Booking.com, Philips, banks - willing to sponsor, large orgs with immigration departments",
+        "hardestEntry": "Adyen (extremely selective), ASML (specialized hardware focus)",
+        "sweetSpot": "Mid-sized scale-ups, US tech European offices, FinTech companies - competitive but accessible",
+        "bangladeshiPresence": "Small; growing international community; most expats integrate into English-speaking tech bubble",
+        "biasLevel": "Low; highly international environment especially in Amsterdam; English widely used in tech"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 87,
+        "highlySkilled MigrantVisa": "Straightforward for MSc+ with job offer above EUR 40,000-45,000 threshold",
+        "searchYearVisa": "1 year for Dutch degree holders to find job",
+        "sponsorshipCost": "EUR 2,000-5,000; many companies sponsor readily",
+        "note": "One of easiest European countries for skilled immigration; fast processing; 30% tax ruling for expats is major benefit"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "EUR 60,000-88,000",
+        "mscEntryLevel": "EUR 48,000-68,000",
+        "midLevel3to5yrs": "EUR 65,000-95,000",
+        "seniorLevel": "EUR 85,000-130,000",
+        "totalCompNote": "Mostly base; some equity in startups; 30% tax ruling gives ~20-25% take-home boost for 5 years; significant benefit"
+      },
+      "geographicVariation": {
+        "amsterdam": {
+          "jobDensity": 94,
+          "avgSalary": "EUR 60,000",
+          "costOfLivingIndex": 88,
+          "netBenefit": "Maximum opportunities, international, but housing crisis severe; 1BR rent EUR 1,800+"
+        },
+        "eindhoven": {
+          "jobDensity": 79,
+          "avgSalary": "EUR 57,000",
+          "costOfLivingIndex": 72,
+          "netBenefit": "Hardware/semiconductor hub (ASML), better housing, smaller city; 1BR rent EUR 1,200"
+        },
+        "rotterdam": {
+          "jobDensity": 68,
+          "avgSalary": "EUR 54,000",
+          "costOfLivingIndex": 75,
+          "netBenefit": "Port logistics tech, cheaper than Amsterdam; 1BR rent EUR 1,300"
+        },
+        "utrecht": {
+          "jobDensity": 72,
+          "avgSalary": "EUR 56,000",
+          "costOfLivingIndex": 78,
+          "netBenefit": "Central location, good quality of life; 1BR rent EUR 1,400"
+        },
+        "delft": {
+          "jobDensity": 66,
+          "avgSalary": "EUR 53,000",
+          "costOfLivingIndex": 74,
+          "netBenefit": "University town, robotics/AI research, startup scene; 1BR rent EUR 1,200"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 38,
+        "vacationDays": 25,
+        "sickLeaveDays": "Unlimited (paid, employer obligation)",
+        "parentalLeaveWeeks": 22,
+        "workFromHomeAcceptance": 89,
+        "diversityScore": 86,
+        "burnoutRisk": "Very Low",
+        "culturalFit": "Direct communication, flat hierarchy, work-to-live mentality, bike culture, excellent English proficiency"
+      },
+      "careerGrowth": {
+        "pathToSenior": "5-7 years",
+        "pathToStaffPrincipal": "10-15 years",
+        "managementOpportunities": 75,
+        "technicalLadder": "Developing; smaller market than US/UK",
+        "entrepreneurshipSupport": 82,
+        "note": "Good progression in scale-ups; entrepreneurship-friendly; Amsterdam startup scene thriving"
+      },
+      "foreignCredentialRecognition": {
+        "dutchMasterPhd": 97,
+        "topEuPhd": 91,
+        "topUsPhd": 89,
+        "bangladeshUndergrad": 64,
+        "note": "Dutch degree valued; TU Delft, UvA, Leiden recognized; international degrees assessed fairly"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 38,
+        "trend": "Low-Medium; stable economy; strong labor protections; visa holders slightly more vulnerable",
+        "protection": "Strong; dismissal procedures, severance required, notice periods"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "pathTo Residence": "5 years continuous legal residence (includes student years partially)",
+        "euLongTermResident": "5 years work/residence",
+        "note": "Job on Highly Skilled Migrant visa essential; pathway clear but requires sustained employment"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Strong; hub for European operations of US tech companies, FinTech growth, semiconductor strength",
+        "outlook2040": "Very strong but housing crisis is existential risk; aging population, international talent essential",
+        "riskFactors": "Severe housing shortage, political tensions on immigration (though tech workers less affected), climate/flooding risks"
+      },
+      "strategicAdvice": "Netherlands is excellent for work-life balance, fast visa processing, and English-language work environment. The 30% tax ruling is a massive financial advantage (EUR 50K gross = EUR 40K+ net for 5 years). Housing in Amsterdam is the critical challenge - consider Eindhoven for better housing and ASML opportunities. Best strategy: MSc at TU Delft/Eindhoven, leverage 1-year search visa, target Booking/Adyen/ASML or US tech European offices. Dutch language not required for work but essential for integration and citizenship. Excellent for families (childcare, schools, safety, bike infrastructure). Treat as long-term base with European mobility.",
+      "confidenceScore": 85,
+      "dataQuality": "High; transparent salary data, clear immigration rules, established international workforce"
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "overallJobMarketScore": 84,
+      "demandLevel": "Very High",
+      "demandTrend": "Strong and sustained",
+      "marketSaturation": "Medium-High",
+      "averageTimeToJob": "1-3 months",
+      "averageTimeToJobDays": 50,
+      "jobOpeningsAnnual": 14000,
+      "aiMlSpecificOpenings": 3800,
+      "competitionLevel": 79,
+      "jobSecurityScore": 71,
+      "startupEcosystemScore": 88,
+      "researchPositionsScore": 83,
+      "remoteWorkCulture": 65,
+      "workLifeBalanceScore": 68,
+      "careerProgressionScore": 81,
+      "majorHubs": [
+        "Singapore (city-state)"
+      ],
+      "topEmployers": [
+        "Grab",
+        "Sea Group (Shopee, Garena)",
+        "ByteDance Singapore",
+        "TikTok",
+        "Google Singapore",
+        "Meta Singapore",
+        "Amazon Singapore",
+        "Microsoft Singapore",
+        "Salesforce",
+        "DBS Bank",
+        "OCBC",
+        "UOB",
+        "GIC (sovereign wealth)",
+        "Temasek",
+        "Razer",
+        "Lazada (Alibaba)",
+        "Goldman Sachs",
+        "JP Morgan"
+      ],
+      "emergingCompanies": [
+        "Nium",
+        "Carousell",
+        "Patsnap",
+        "StashAway",
+        "Endowus",
+        "Carro"
+      ],
+      "skillsInDemand": [
+        "Large-scale ML systems (millions of users across Southeast Asia)",
+        "Recommendation and ranking engines",
+        "Real-time fraud detection",
+        "NLP for multiple languages (English, Chinese, Malay, regional)",
+        "Computer vision for e-commerce and logistics",
+        "Financial ML and algorithmic trading",
+        "MLOps and platform engineering",
+        "Distributed systems at scale",
+        "Mobile ML and on-device AI",
+        "Graph ML and network analysis"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Super Apps & E-commerce",
+          "demandScore": 94,
+          "salaryRange": "SGD 70,000-140,000",
+          "note": "Grab, Sea, Lazada - Southeast Asian scale, massive ML problems, competitive comp + equity"
+        },
+        {
+          "sector": "Social Media & Content",
+          "demandScore": 88,
+          "salaryRange": "SGD 80,000-150,000",
+          "note": "ByteDance, TikTok - regional hub, cutting-edge ML, high compensation"
+        },
+        {
+          "sector": "Big Tech Regional HQs",
+          "demandScore": 91,
+          "salaryRange": "SGD 85,000-160,000",
+          "note": "Google, Meta, Amazon - regional operations, competitive with US (adjusted), equity"
+        },
+        {
+          "sector": "Banking & Finance",
+          "demandScore": 87,
+          "salaryRange": "SGD 75,000-135,000",
+          "note": "DBS, GIC, global banks - FinTech transformation, quant trading, stable + bonus"
+        },
+        {
+          "sector": "Gaming",
+          "demandScore": 79,
+          "salaryRange": "SGD 65,000-120,000",
+          "note": "Sea (Garena), Razer - game AI, player modeling, regional market"
+        },
+        {
+          "sector": "FinTech & Payments",
+          "demandScore": 83,
+          "salaryRange": "SGD 70,000-130,000",
+          "note": "Nium, StashAway, crypto platforms - fast-growing, equity upside"
+        },
+        {
+          "sector": "Research & Government",
+          "demandScore": 76,
+          "salaryRange": "SGD 60,000-100,000",
+          "note": "A*STAR, NUS, NTU - strong research funding, pathway to industry"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Banks (DBS, OCBC), consulting (Accenture, McKinsey Digital), research institutes",
+        "hardestEntry": "ByteDance/TikTok (very selective), GIC/Temasek (competitive)",
+        "sweetSpot": "Grab, Sea, Big Tech - actively hiring, willing to sponsor, value international talent",
+        "bangladeshiPresence": "Small; larger South Asian community (Indian), some Bangladeshi student networks",
+        "biasLevel": "Medium; preference for elite degrees (NUS/NTU or top global), meritocratic but competitive; some preference for Singaporean/PR"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 76,
+        "employmentPassEligibility": "MSc/PhD + salary above SGD 5,000-6,000 threshold (varies by age)",
+        "sPassOption": "Possible for lower salaries but harder PR pathway",
+        "sponsorshipCost": "SGD 3,000-8,000; larger companies sponsor readily, startups more selective",
+        "note": "Employment Pass fairly accessible for skilled roles but quota system limits some employers; Tech@SG pathway for specialized skills"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "SGD 85,000-125,000",
+        "mscEntryLevel": "SGD 65,000-95,000",
+        "midLevel3to5yrs": "SGD 95,000-160,000",
+        "seniorLevel": "SGD 130,000-250,000",
+        "totalCompNote": "Base + bonus + equity (in tech); expat packages less common for fresh grads; low taxation (~10-15% effective) boosts take-home significantly"
+      },
+      "geographicVariation": {
+        "singapore": {
+          "jobDensity": 100,
+          "avgSalary": "SGD 85,000",
+          "costOfLivingIndex": 91,
+          "netBenefit": "City-state - no geographic variation; high cost but high take-home due to low tax; 1BR rent SGD 2,800+"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 46,
+        "vacationDays": 14,
+        "sickLeaveDays": 14,
+        "parentalLeaveWeeks": 16,
+        "workFromHomeAcceptance": 63,
+        "diversityScore": 77,
+        "burnoutRisk": "Medium-High",
+        "culturalFit": "Fast-paced, results-driven, hierarchical in local companies, more relaxed in startups/tech; long hours expected; humid climate"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years",
+        "pathToStaffPrincipal": "8-12 years",
+        "managementOpportunities": 79,
+        "technicalLadder": "Developing; regional leadership roles available",
+        "entrepreneurshipSupport": 86,
+        "note": "Fast career growth especially in startups; regional scope (Southeast Asia) offers broader impact than pure domestic markets"
+      },
+      "foreignCredentialRecognition": {
+        "nusNtuPhd": 98,
+        "topUsPhd": 94,
+        "topUkPhd": 90,
+        "topAsiaPhd": 85,
+        "bangladeshUndergrad": 52,
+        "note": "NUS/NTU degree highly valued; top global programs recognized; tier of university matters significantly for EP and PR"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 58,
+        "trend": "Medium; economy tied to global trade and tech cycles; EP holders can stay 6 months to find new job",
+        "protection": "Moderate; at-will-like employment; notice period typical; EP allows 6-month grace period with long-term visit pass"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "prDifficulty": "High; selective PR approvals, especially post-2020s",
+        "pathToPr": "Typically 2-6 years on EP, depends on salary, education, age, family ties, national service consideration",
+        "note": "Job is necessary but PR approval uncertain; government limits PR grants; favors high earners, elite degrees, younger applicants"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Excellent for jobs; uncertain for permanent settlement; Singapore cementing role as Asian tech hub",
+        "outlook2040": "Strong for career; PR policy unknown - government balances talent needs vs population density",
+        "riskFactors": "PR uncertainty is critical weakness; small country limits market size; regional geopolitical tensions"
+      },
+      "strategicAdvice": "Singapore is outstanding for career acceleration, salary, and tax efficiency - but weak for permanent immigration certainty. Best strategy: Treat as 5-10 year career boost rather than forever home. Target Grab, Sea, or Big Tech for strong resume building and regional exposure. Save aggressively (low tax, high salary = excellent savings rate). After 3-5 years, leverage Singapore experience to move to Australia/Canada/UK with strong profile, or apply Singapore PR with realistic expectations (50-60% rejection for most). Alternatively, use Singapore as regional base while maintaining flexibility. Excellent for: young, single professionals prioritizing career and savings. Poor for: those prioritizing immigration certainty and family settlement.",
+      "confidenceScore": 86,
+      "dataQuality": "High; transparent employment data, clear visa thresholds, large expat community provides information"
+    }
+  ]
+}
