@@ -1,0 +1,654 @@
+
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Taxation analysis for Bangladeshi CS/AI/ML students and graduates across target countries, covering student phase, post-study work, and settled professional phases",
+    "targetProfile": "Bangladeshi student/graduate, CS/AI/ML field, age 22-32, planning 2027-2029 intake",
+    "criticalNote": "Tax burden directly determines net savings and PR timeline speed. A country with 40% tax but zero tuition may yield better net outcome than a country with 25% tax and USD 40,000 tuition. Always calculate NET after-tax savings, not gross salary.",
+    "bangladeshDoubleTaxNote": "Bangladesh has Double Taxation Avoidance Agreements (DTAA) with several countries including Germany, Japan, South Korea, China, France. This prevents being taxed twice on the same income. Students should register as non-resident in Bangladesh to avoid dual tax obligations."
+  },
+  "taxation": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "currency": "CAD",
+      "overallTaxScore": 55,
+      "confidenceScore": 88,
+      "taxSystemType": "Progressive federal + provincial",
+      "studentPhase": {
+        "taxResidencyNote": "Students on study permit become Canadian tax residents from Day 1; must file annual T1 return",
+        "tuitionTaxCredit": "Tuition fees generate non-refundable tax credits (15% federal); carry forward unused credits",
+        "stipendTaxability": "TA/RA stipends fully taxable as employment income; scholarships/bursaries partially exempt up to education amount",
+        "effectiveTaxOnStipend": "Typically 0-10% effective rate on CAD 20,000-30,000 annual stipend due to basic personal amount (CAD 15,705 tax-free 2026)"
+      },
+      "workingGraduatePhase": {
+        "federalTaxBrackets": [
+          { "bracket": "0-57,375", "rate": "15%", "currency": "CAD" },
+          { "bracket": "57,375-114,750", "rate": "20.5%", "currency": "CAD" },
+          { "bracket": "114,750-158,519", "rate": "26%", "currency": "CAD" },
+          { "bracket": "158,519-220,000", "rate": "29%", "currency": "CAD" },
+          { "bracket": "220,000+", "rate": "33%", "currency": "CAD" }
+        ],
+        "provincialTax": "Add 6-17% provincial tax on top of federal; Ontario 5.05-13.16%; Quebec 14-25.75%; Alberta 10% flat (lowest)",
+        "cpp": "Canada Pension Plan: 5.95% employee contribution up to CAD 73,200 earnings",
+        "ei": "Employment Insurance: 1.66% up to CAD 63,200 insurable earnings",
+        "effectiveTaxRate": {
+          "salary70k": "Approximately 28-32% combined federal+provincial+CPP+EI",
+          "salary100k": "Approximately 33-38% combined",
+          "salary150k": "Approximately 40-45% combined"
+        },
+        "netMonthlySalary": {
+          "grossCAD80k": { "netMonthly": "CAD 5,000-5,400", "usd": "3,700-4,000" },
+          "grossCAD110k": { "netMonthly": "CAD 6,500-7,000", "usd": "4,810-5,180" }
+        },
+        "albertaAdvantage": "Alberta has no provincial sales tax and lowest provincial income tax; Calgary tech scene growing; meaningful advantage"
+      },
+      "taxTreaty": { "withBangladesh": false, "note": "No Canada-Bangladesh DTAA; file as non-resident in Bangladesh to avoid dual filing" },
+      "gstHst": "5-15% on goods/services depending on province; Ontario 13% HST; Alberta 5% GST only",
+      "capitalGainsTax": "50% inclusion rate on capital gains (proposed increase to 67% for gains over CAD 250,000 in 2025 budget; monitor)",
+      "keyDeductions": ["RRSP contributions (reduce taxable income)", "Home office expenses", "Professional development", "Union/professional dues"],
+      "taxFilingDeadline": "April 30 annually; June 15 for self-employed",
+      "recommendation": "Alberta (Calgary/Edmonton) offers lowest total tax burden. Quebec offers generous family benefits offsetting higher taxes. Tax burden is significant but manageable with RRSP optimization."
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "currency": "AUD",
+      "overallTaxScore": 60,
+      "confidenceScore": 87,
+      "taxSystemType": "Progressive federal; no separate state income tax",
+      "studentPhase": {
+        "taxResidencyNote": "Students residing 6+ months become Australian tax residents; must lodge annual tax return",
+        "stipendTaxability": "RTP scholarship stipend is TAX-FREE (exempt from income tax under ITAA 1997); major advantage",
+        "partTimeWorkTax": "Part-time earnings taxed at standard rates; first AUD 18,200 tax-free (tax-free threshold)",
+        "tfn": "Tax File Number (TFN) required; without TFN employer withholds 47% - get TFN immediately on arrival"
+      },
+      "workingGraduatePhase": {
+        "incomeTaxBrackets": [
+          { "bracket": "0-18,200", "rate": "0%", "currency": "AUD" },
+          { "bracket": "18,201-45,000", "rate": "19%", "currency": "AUD" },
+          { "bracket": "45,001-120,000", "rate": "32.5%", "currency": "AUD" },
+          { "bracket": "120,001-180,000", "rate": "37%", "currency": "AUD" },
+          { "bracket": "180,001+", "rate": "45%", "currency": "AUD" }
+        ],
+        "medicareLevy": "2% Medicare Levy on all taxable income (covers public healthcare access)",
+        "superannuation": "11.5% employer contribution to superannuation (retirement fund); on top of salary; not deducted from take-home but employer cost",
+        "effectiveTaxRate": {
+          "salary80k": "Approximately 23-25% effective including Medicare",
+          "salary110k": "Approximately 28-31% effective",
+          "salary150k": "Approximately 34-37% effective"
+        },
+        "netMonthlySalary": {
+          "grossAUD85k": { "netMonthly": "AUD 5,600-5,900", "usd": "3,640-3,835" },
+          "grossAUD120k": { "netMonthly": "AUD 7,500-7,900", "usd": "4,875-5,135" }
+        },
+        "helpDebt": "HECS-HELP debt for domestic students; international students pay upfront; no HELP debt for international students"
+      },
+      "taxTreaty": { "withBangladesh": false, "note": "No Australia-Bangladesh DTAA; file as non-resident in Bangladesh" },
+      "gst": "10% GST on most goods and services",
+      "superannuationNote": "Superannuation 11.5% employer contribution is effectively deferred salary; accessible at preservation age (60); departing Australia superannuation payment (DASP) available when leaving permanently (35% tax on withdrawal for temporary residents)",
+      "keyDeductions": ["Work-related expenses", "Home office (post-COVID rules)", "Self-education expenses", "Professional memberships"],
+      "taxFilingDeadline": "October 31 (self-lodge) or May 15 via registered tax agent",
+      "recommendation": "RTP PhD stipend tax-free status is a significant advantage. Effective tax rates moderate by developed world standards. Superannuation is bonus savings. Medicare Levy buys healthcare access."
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "currency": "EUR",
+      "overallTaxScore": 52,
+      "confidenceScore": 90,
+      "taxSystemType": "Progressive federal; church tax optional; solidarity surcharge reduced",
+      "studentPhase": {
+        "taxResidencyNote": "Students with Anmeldung (registration) are German tax residents; tax return mandatory if any taxable income",
+        "stipendTaxability": "DAAD and DFG scholarships up to EUR 934/month: TAX-FREE; PhD employment contract (TVöD) salary is fully taxable",
+        "hiwi": "Student HiWi (Hilfswissenschaftler) earnings taxed; but Minijob under EUR 556/month is tax-free",
+        "taxClassNote": "Tax Class 1 for single unmarried; register at Finanzamt with Steueridentifikationsnummer",
+        "annualRefund": "Students often receive significant tax refund (Steuererstattung) due to education expenses; file Einkommensteuererklärung via ELSTER or Wundertax"
+      },
+      "workingGraduatePhase": {
+        "incomeTaxBrackets": [
+          { "bracket": "0-11,784", "rate": "0% (Grundfreibetrag 2026)", "currency": "EUR" },
+          { "bracket": "11,785-17,005", "rate": "14-24% progressive", "currency": "EUR" },
+          { "bracket": "17,006-66,760", "rate": "24-42% progressive", "currency": "EUR" },
+          { "bracket": "66,761-277,825", "rate": "42% (Spitzensteuersatz)", "currency": "EUR" },
+          { "bracket": "277,826+", "rate": "45% (Reichensteuersatz)", "currency": "EUR" }
+        ],
+        "solidaritySurcharge": "Soli abolished for most taxpayers since 2021; applies above EUR 18,130 annual tax liability only",
+        "churchTax": "8-9% of income tax if registered with church; register as 'keine Konfession' (no denomination) to avoid",
+        "socialContributions": {
+          "healthInsurance": "7.3% employee share (+ 1.7% average Zusatzbeitrag) = approximately 9% of gross",
+          "pensionInsurance": "9.3% employee share",
+          "unemploymentInsurance": "1.3% employee share",
+          "longTermCareInsurance": "1.7% employee share (childless: +0.6%)",
+          "totalSocialContributions": "Approximately 21-22% of gross salary"
+        },
+        "effectiveTaxRate": {
+          "salary55k": "Approximately 38-42% combined income tax + social contributions",
+          "salary80k": "Approximately 43-47% combined",
+          "note": "Germany's high gross-to-net deduction is the most significant financial planning factor"
+        },
+        "netMonthlySalary": {
+          "grossEUR55k": { "netMonthly": "EUR 2,800-3,000", "usd": "3,052-3,270" },
+          "grossEUR80k": { "netMonthly": "EUR 3,800-4,100", "usd": "4,142-4,469" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": true, "treatyNote": "Germany-Bangladesh DTAA signed; prevents double taxation on employment income; file Ansässigkeitsbescheinigung if needed" },
+      "vat": "19% standard VAT; 7% reduced rate on food, books, public transport",
+      "keyDeductions": ["Werbungskosten EUR 1,230 flat deduction", "Sonderausgaben (special expenses)", "Homeoffice Pauschale EUR 6/day up to EUR 1,260/year", "Pendlerpauschale (commuting allowance)"],
+      "taxFilingDeadline": "July 31 (self-lodge); November 30 (via Steuerberater/ELSTER)",
+      "bluecardTaxNote": "EU Blue Card holders file as regular tax residents; no special expatriate tax regime unlike Netherlands",
+      "recommendation": "Germany has Europe's highest tax+social contribution burden. Net salary significantly lower than gross. However zero tuition during study phase compensates massively. Optimize with Steuerberater (tax advisor) annually - typical refund EUR 1,000-3,000 for PhD students."
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "currency": "EUR",
+      "overallTaxScore": 58,
+      "confidenceScore": 82,
+      "taxSystemType": "Progressive; PAYE system; USC and PRSI additional",
+      "studentPhase": {
+        "taxResidencyNote": "Present 183+ days in Ireland = tax resident",
+        "stipendTaxability": "IRC/SFI research grants exempt from income tax (Income Tax Act exemption for bona fide research); TA income is taxable",
+        "ppsNumber": "PPS Number required for employment and tax; apply at Intreo centre"
+      },
+      "workingGraduatePhase": {
+        "incomeTaxBrackets": [
+          { "bracket": "0-42,000", "rate": "20%", "currency": "EUR" },
+          { "bracket": "42,001+", "rate": "40%", "currency": "EUR" }
+        ],
+        "usc": {
+          "description": "Universal Social Charge (USC) - additional levy",
+          "bands": [
+            { "bracket": "0-12,012", "rate": "0.5%" },
+            { "bracket": "12,013-25,760", "rate": "2%" },
+            { "bracket": "25,761-70,044", "rate": "4.5%" },
+            { "bracket": "70,045+", "rate": "8%" }
+          ]
+        },
+        "prsi": "Pay Related Social Insurance (PRSI): 4% employee on most earnings",
+        "effectiveTaxRate": {
+          "salary60k": "Approximately 35-38% combined income tax + USC + PRSI",
+          "salary90k": "Approximately 42-46% combined"
+        },
+        "netMonthlySalary": {
+          "grossEUR65k": { "netMonthly": "EUR 3,400-3,700", "usd": "3,706-4,033" },
+          "grossEUR90k": { "netMonthly": "EUR 4,500-4,900", "usd": "4,905-5,341" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": false },
+      "vat": "23% standard; 13.5% reduced; 0% on food and children's clothing",
+      "keyDeductions": ["Remote working relief", "Pension contributions", "Medical expenses over EUR 500", "Third-level fees (some cases)"],
+      "taxFilingDeadline": "October 31 (self-assessment); PAYE workers can claim via myAccount.revenue.ie",
+      "recommendation": "Ireland's tax is high especially above EUR 42k where 40% rate kicks in immediately. USC adds further burden. However major US tech companies have Irish headquarters meaning access to ESOP/RSU compensation which can significantly supplement salary."
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "currency": "EUR",
+      "overallTaxScore": 65,
+      "confidenceScore": 87,
+      "taxSystemType": "Progressive (Box 1/2/3 system); 30% ruling for expats",
+      "studentPhase": {
+        "taxResidencyNote": "Register at gemeente → automatic BSN (tax number) → tax resident",
+        "stipendTaxability": "NWO PhD employment salary fully taxable; student grants/scholarships generally exempt",
+        "zorgtoeslag": "Healthcare allowance (zorgtoeslag) available for low-income residents; approximately EUR 135/month subsidy"
+      },
+      "workingGraduatePhase": {
+        "incomeTaxBrackets2026": [
+          { "bracket": "0-75,518", "rate": "36.97% (Box 1 combined rate)", "currency": "EUR" },
+          { "bracket": "75,519+", "rate": "49.5%", "currency": "EUR" }
+        ],
+        "socialContributions": "Partially included in Box 1 rate above; AOW pension, healthcare",
+        "thirtyPercentRuling": {
+          "description": "30% of gross salary paid as tax-free expatriate allowance; dramatically reduces effective tax rate",
+          "eligibility": "Recruited from abroad with specific expertise; salary above EUR 46,107 (2026 threshold); application within 4 months of start",
+          "duration": "5 years (reduced from 8 years in 2024 reform)",
+          "impact": "Effective tax rate on EUR 80,000 salary drops from approximately 38% to approximately 26% with 30% ruling",
+          "bangladeshiApplicability": "Highly applicable for PhD graduates entering Dutch tech market from abroad; negotiate 30% ruling in employment contract"
+        },
+        "effectiveTaxRate": {
+          "salary70kWithout30Rule": "Approximately 36-40%",
+          "salary70kWith30Rule": "Approximately 24-28%",
+          "salary100kWithout30Rule": "Approximately 42-46%",
+          "salary100kWith30Rule": "Approximately 28-32%"
+        },
+        "netMonthlySalary": {
+          "grossEUR75k_with30rule": { "netMonthly": "EUR 4,200-4,500", "usd": "4,578-4,905" },
+          "grossEUR100k_with30rule": { "netMonthly": "EUR 5,500-6,000", "usd": "5,995-6,540" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": false },
+      "vat": "21% standard; 9% reduced on food, medicines, books",
+      "boxSystem": {
+        "box1": "Employment and home ownership income; progressive 36.97-49.5%",
+        "box2": "Substantial shareholding (5%+); 24.5-31%",
+        "box3": "Savings and investments; deemed return taxation; 36% on deemed 6.17% return on wealth above EUR 57,000"
+      },
+      "keyDeductions": ["Mortgage interest (eigen woning)", "Pension premiums", "Study costs (limited)", "Charitable donations"],
+      "taxFilingDeadline": "May 1 via Belastingdienst.nl; extension possible to September",
+      "recommendation": "30% ruling is THE critical tax optimization for Bangladeshi PhD graduates entering Dutch tech market. With 30% ruling, Netherlands becomes one of Europe's most tax-efficient destinations for skilled workers. Ensure employer applies for 30% ruling within 4 months of employment start."
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "currency": "SEK",
+      "overallTaxScore": 45,
+      "confidenceScore": 85,
+      "taxSystemType": "Progressive municipal + state income tax; among world's highest",
+      "studentPhase": {
+        "taxResidencyNote": "Register at Skatteverket with personnummer; tax resident from registration",
+        "stipendTaxability": "Doktorand (PhD employee) salary fully taxable; SI scholarship partly exempt (living allowance taxable in Sweden)",
+        "municipalTax": "Municipal tax approximately 32% on all income above SEK 24,238 (basic deduction 2026)"
+      },
+      "workingGraduatePhase": {
+        "incomeTaxStructure": {
+          "municipalTax": "Approximately 32% (varies by municipality; Stockholm 29.83%; varies nationally 29-35%)",
+          "stateTax": "20% additional on income above SEK 615,300 (approximately USD 59,000)",
+          "effectiveCombined": "32% up to threshold; 52% above"
+        },
+        "employerSocialContributions": "31.42% of gross salary paid by employer (not deducted from employee salary but total employer cost)",
+        "effectiveTaxRate": {
+          "salary480kSEK": "Approximately 30-33% effective (below state tax threshold)",
+          "salary700kSEK": "Approximately 40-44% effective"
+        },
+        "netMonthlySalary": {
+          "grossSEK45k": { "netMonthly": "SEK 29,000-31,000", "usd": "2,784-2,976" },
+          "grossSEK65k": { "netMonthly": "SEK 38,000-41,000", "usd": "3,648-3,936" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": false },
+      "vat": "25% standard; 12% on food and hotels; 6% on books and public transport",
+      "expertTaxRelief": {
+        "description": "Expert Tax Relief (Expertskatt): 25% of salary tax-free for 5 years for qualifying foreign experts",
+        "eligibility": "Monthly salary above SEK 112,900 (2026) OR specific expert classification",
+        "bangladeshiApplicability": "Senior AI/ML engineers may qualify; apply through employer",
+        "impact": "Effective tax rate drops from 32% to approximately 22% on qualifying salary"
+      },
+      "keyDeductions": ["ROT/RUT deductions (home repair/cleaning)", "Pension savings (IPS) up to SEK 35,000", "Union fees"],
+      "socialBenefits": "High tax funds: free healthcare, free university education, subsidized childcare (maxTaxa max SEK 1,572/month/child), 480 days parental leave at 80% salary",
+      "taxFilingDeadline": "May 2 via Skatteverket app (very streamlined; pre-filled digital return)",
+      "recommendation": "Sweden has among Europe's highest marginal tax but comprehensive social benefits in return. Expert Tax Relief applicable for senior AI engineers. Net salary lower than UK/Germany nominally but healthcare, childcare, and parental leave effectively add 15-20% to total compensation value. PhD doktorand income after 32% tax still livable comfortably."
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "currency": "EUR",
+      "overallTaxScore": 50,
+      "confidenceScore": 83,
+      "taxSystemType": "Progressive municipal + state income tax",
+      "studentPhase": {
+        "taxResidencyNote": "Register at Digital and Population Data Services Agency (DVV) for Finnish ID",
+        "stipendTaxability": "Academy of Finland PhD employment salary taxable; YTHS student healthcare is free/subsidized",
+        "municipalTax": "Municipal tax 16.5-23% depending on municipality; Helsinki 18.5%"
+      },
+      "workingGraduatePhase": {
+        "stateTaxBrackets": [
+          { "bracket": "0-20,500", "rate": "0%", "currency": "EUR" },
+          { "bracket": "20,501-30,500", "rate": "12.64%", "currency": "EUR" },
+          { "bracket": "30,501-50,400", "rate": "19.64%", "currency": "EUR" },
+          { "bracket": "50,401-88,200", "rate": "21.64%", "currency": "EUR" },
+          { "bracket": "88,201+", "rate": "31.64%", "currency": "EUR" }
+        ],
+        "municipalTax": "Add 16.5-23% municipal tax on top; effectively 35-45% combined for mid-range salaries",
+        "socialContributions": "Pension (7.15%), unemployment (1.5%), health insurance (2.04%) employee contributions",
+        "effectiveTaxRate": {
+          "salary50k": "Approximately 32-36% combined",
+          "salary75k": "Approximately 40-44% combined"
+        },
+        "netMonthlySalary": {
+          "grossEUR50k": { "netMonthly": "EUR 2,700-2,900", "usd": "2,943-3,161" },
+          "grossEUR70k": { "netMonthly": "EUR 3,600-3,900", "usd": "3,924-4,251" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": false },
+      "vat": "25.5% standard (increased 2024); 14% food; 10% books/medicines",
+      "keyRelief": "Key Employee Act: 32% flat tax for foreign key employees earning EUR 5,800+/month; applicable for senior AI roles; 4-year benefit",
+      "keyDeductions": ["Commuting deductions", "Work equipment", "Pension contributions", "Trade union fees"],
+      "taxFilingDeadline": "April-May; pre-filled return via vero.fi (very efficient digital system)",
+      "recommendation": "Finland's tax burden is high but Key Employee 32% flat tax regime benefits senior AI professionals significantly. Social benefits comprehensive including world-class childcare. Aalto area Espoo municipality has one of lower municipal tax rates. VAT increase to 25.5% in 2024 notably increased cost of living."
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "currency": "DKK",
+      "overallTaxScore": 42,
+      "confidenceScore": 86,
+      "taxSystemType": "Progressive with high rates; among world's highest income tax",
+      "studentPhase": {
+        "taxResidencyNote": "Register at borger.dk for CPR number; automatic tax resident",
+        "stipendTaxability": "PhD employment (stipend position) fully taxable from DKK 1; no tax-free threshold",
+        "su": "Danish SU grant for domestic/EU students; not applicable for Bangladeshi students on PhD employment"
+      },
+      "workingGraduatePhase": {
+        "incomeTaxStructure": {
+          "bottomBracket": "12.01% municipal + 8% AM-bidrag (labor market) on all income",
+          "topBracket": "Additional 15% state tax on income above DKK 588,900 (2026)",
+          "effective": "Approximately 37-42% effective on mid-range salaries; up to 52% marginal",
+          "amBidrag": "8% AM-bidrag deducted first from gross; remaining subject to income tax"
+        },
+        "effectiveTaxRate": {
+          "salary500kDKK": "Approximately 37-40% effective",
+          "salary700kDKK": "Approximately 43-47% effective"
+        },
+        "netMonthlySalary": {
+          "grossDKK45k": { "netMonthly": "DKK 27,000-29,000", "usd": "3,942-4,234" },
+          "grossDKK60k": { "netMonthly": "DKK 34,000-36,000", "usd": "4,964-5,256" }
+        },
+        "note": "Despite high tax, PhD stipend DKK 36,000/month gross yields DKK 24,000-26,000 net (USD 3,504-3,796) which covers living costs well"
+      },
+      "taxTreaty": { "withBangladesh": false },
+      "vat": "25% on all goods and services (no reduced rate for food)",
+      "researcherTaxScheme": {
+        "description": "Researcher Tax Scheme: 27% flat rate for 7 years for qualifying researchers/highly paid employees",
+        "eligibility": "Monthly salary minimum DKK 75,100 (2026); foreign researcher or employee recruited from abroad",
+        "bangladeshiApplicability": "Highly applicable for PhD graduates entering Danish industry; significant tax savings",
+        "impact": "27% flat vs 40%+ standard = substantial net income improvement"
+      },
+      "keyDeductions": ["A-kasse (unemployment insurance)", "Pension contributions", "Commuting deductions", "Charitable donations"],
+      "taxFilingDeadline": "May 1 via skat.dk (pre-filled; extremely user-friendly digital system)",
+      "recommendation": "Denmark nominally highest-tax country in this list but Researcher Tax Scheme at 27% flat is transformative for AI/CS graduates. PhD salary net income is among Europe's highest in absolute terms despite high tax. Negotiate Researcher Scheme eligibility from Day 1 of employment."
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "currency": "NOK",
+      "overallTaxScore": 58,
+      "confidenceScore": 82,
+      "taxSystemType": "Progressive with moderate rates; oil-funded welfare state",
+      "studentPhase": {
+        "taxResidencyNote": "Register at Folkeregisteret for D-number then national ID number",
+        "stipendTaxability": "NTNU Research Fellow (stipendiat) salary fully taxable; no scholarship exemption",
+        "startDeduction": "New residents receive Personfradrag (personal deduction) NOK 88,250 tax-free"
+      },
+      "workingGraduatePhase": {
+        "incomeTaxStructure": {
+          "flatRate": "22% flat income tax on general income",
+          "stepTax": "Additional progressive Trinnskatt on personal income",
+          "stepBrackets": [
+            { "bracket": "0-217,400", "rate": "0% Trinnskatt", "currency": "NOK" },
+            { "bracket": "217,401-306,050", "rate": "1.7% Trinnskatt" },
+            { "bracket": "306,051-697,150", "rate": "4% Trinnskatt" },
+            { "bracket": "697,151-942,400", "rate": "13.6% Trinnskatt" },
+            { "bracket": "942,401-1,410,750", "rate": "16.6% Trinnskatt" },
+            { "bracket": "1,410,751+", "rate": "17.6% Trinnskatt" }
+          ],
+          "combined": "Effective rate NOK 600k salary approximately 30-34%"
+        },
+        "nationalInsurance": "7.9% employee contribution on personal income",
+        "effectiveTaxRate": {
+          "salary600kNOK": "Approximately 30-34% combined",
+          "salary800kNOK": "Approximately 35-39% combined"
+        },
+        "netMonthlySalary": {
+          "grossNOK45k": { "netMonthly": "NOK 30,000-32,000", "usd": "2,850-3,040" },
+          "grossNOK65k": { "netMonthly": "NOK 41,000-43,000", "usd": "3,895-4,085" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": false },
+      "vat": "25% standard; 15% on food; 12% on transport and hotels",
+      "wealthTax": "0.85% on net wealth above NOK 1.7 million (approximately USD 162,000); notable for property owners",
+      "keyDeductions": ["Standard deduction (minstefradrag) 46% of income up to NOK 104,450", "Foreldrefradrag for childcare", "Pendlerfradrag for commuters"],
+      "taxFilingDeadline": "April 30 via skatteetaten.no (pre-filled; very digital)",
+      "recommendation": "Norway has moderate tax rates by Scandinavian standards. Combined with world's highest PhD salary (NOK 43,100/month gross) and comprehensive benefits, net financial position is strong. Wealth tax is a consideration for long-term property holders. Oil-funded state means exceptional public service quality."
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "currency": "CHF",
+      "overallTaxScore": 78,
+      "confidenceScore": 86,
+      "taxSystemType": "Three-tier: federal + cantonal + municipal; one of world's most favorable",
+      "studentPhase": {
+        "taxResidencyNote": "Register at Einwohnerkontrolle (residents' registration office) within 8-14 days of arrival",
+        "stipendTaxability": "ETH/EPFL PhD salary fully taxable; no special exemption",
+        "quellensteuer": "Source tax (Quellensteuer) withheld directly by employer for non-permit C holders; automatic withholding"
+      },
+      "workingGraduatePhase": {
+        "taxStructure": {
+          "federalTax": "0-11.5% maximum federal rate (very low)",
+          "cantonalMunicipal": "Varies enormously by canton; Zug 11-12%, Zurich 25-27%, Geneva 33-45%",
+          "totalEffective": "Zurich: approximately 28-32% total; Zug: approximately 15-20% total"
+        },
+        "cantonComparison": [
+          { "canton": "Zug", "effectiveRate": "15-20%", "note": "Lowest tax; limited tech jobs" },
+          { "canton": "Schwyz", "effectiveRate": "18-22%", "note": "Very low; commutable to Zurich" },
+          { "canton": "Zurich", "effectiveRate": "28-33%", "note": "Main tech hub; reasonable rate" },
+          { "canton": "Vaud (Lausanne/EPFL)", "effectiveRate": "30-36%", "note": "French-speaking; EPFL location" },
+          { "canton": "Geneva", "effectiveRate": "36-44%", "note": "Highest cantonal tax in Switzerland" }
+        ],
+        "socialContributions": "AHV/IV pension (5.3% employee), ALV unemployment (1.1%), total approximately 6.5% employee",
+        "pilarSystem": "Three-pillar pension: AHV (state), BVG (occupational), private; BVG automatically enrolled by employer",
+        "effectiveTaxRate": {
+          "salary120kZurich": "Approximately 28-32% income tax + 6.5% social = 34-38% total",
+          "salary150kZurich": "Approximately 31-35% + 6.5% = 37-41% total"
+        },
+        "netMonthlySalary": {
+          "grossCHF10k": { "netMonthly": "CHF 6,400-6,900", "usd": "7,232-7,797" },
+          "grossCHF13k": { "netMonthly": "CHF 8,000-8,700", "usd": "9,040-9,831" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": false },
+      "vat": "8.1% standard; 3.8% hotel; 2.5% food and medicines (among Europe's lowest VAT)",
+      "lumpSumTaxation": "Available for wealthy foreigners not working in Switzerland; not relevant for working AI professionals",
+      "keyDeductions": ["Professional expenses flat CHF 2,000 or actual", "Work-related education", "BVG voluntary contributions (pillar 3a)", "Commuting costs"],
+      "taxFilingDeadline": "March 31 (cantonal variation; extensions common); via cantonal tax portal",
+      "recommendation": "Switzerland offers Europe's best net salary for senior AI professionals. Low VAT, moderate income tax (especially Zurich vs Geneva), low social contributions. ETH/EPFL PhD net salary CHF 3,400+/month (USD 3,842+) covers living with savings. Live in canton Schwyz and work in Zurich for significant tax optimization (legal and common practice among Swiss professionals)."
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "currency": "USD",
+      "overallTaxScore": 65,
+      "confidenceScore": 89,
+      "taxSystemType": "Progressive federal + state income tax (varies enormously by state)",
+      "studentPhase": {
+        "taxResidencyNote": "F-1 students are non-resident aliens for tax purposes for first 5 years; different forms and rates apply",
+        "stipendTaxability": "PhD stipend/fellowship: first USD 5,000 may be exempt under US-Bangladesh tax treaty; remainder taxable at 14% for non-residents",
+        "sstaxExemption": "F-1 students EXEMPT from Social Security and Medicare taxes (FICA); saves 7.65% vs residents",
+        "taxForms": "Non-residents file Form 1040-NR; OPT/CPT workers also 1040-NR for 5 years",
+        "bangladeshTreaty": { "exists": true, "benefit": "Article 21 student exemption: first USD 5,000 of fellowship/scholarship exempt from US tax for first 2 years" }
+      },
+      "workingGraduatePhase": {
+        "federalTaxBrackets2026": [
+          { "bracket": "0-11,925", "rate": "10%", "currency": "USD" },
+          { "bracket": "11,926-48,475", "rate": "12%", "currency": "USD" },
+          { "bracket": "48,476-103,350", "rate": "22%", "currency": "USD" },
+          { "bracket": "103,351-197,300", "rate": "24%", "currency": "USD" },
+          { "bracket": "197,301-250,525", "rate": "32%", "currency": "USD" },
+          { "bracket": "250,526-626,350", "rate": "35%", "currency": "USD" },
+          { "bracket": "626,351+", "rate": "37%", "currency": "USD" }
+        ],
+        "stateTaxVariation": [
+          { "state": "Texas", "stateTax": "0%", "note": "No state income tax; Austin tech hub" },
+          { "state": "Washington", "stateTax": "0%", "note": "No state income tax; Seattle (Amazon/Microsoft)" },
+          { "state": "Florida", "stateTax": "0%", "note": "No state income tax; Miami tech growing" },
+          { "state": "New York", "stateTax": "4-10.9%", "note": "High; NYC adds 3.876% city tax on top" },
+          { "state": "California", "stateTax": "1-13.3%", "note": "Highest in US; San Francisco/LA" },
+          { "state": "Massachusetts", "stateTax": "5%", "note": "Flat; Boston/Cambridge" }
+        ],
+        "ficaTax": "Social Security 6.2% (up to USD 176,100) + Medicare 1.45% = 7.65% employee FICA",
+        "effectiveTaxRate": {
+          "salary120k_Texas": "Approximately 22-25% federal + FICA; no state",
+          "salary120k_California": "Approximately 22-25% federal + 9% state + FICA = 38-42% total",
+          "salary200k_Texas": "Approximately 28-32% federal + FICA; no state",
+          "salary200k_California": "Approximately 28-32% federal + 10.3% state + FICA = 45-48% total"
+        },
+        "netMonthlySalary": {
+          "gross120k_Texas": { "netMonthly": "USD 7,800-8,400" },
+          "gross120k_California": { "netMonthly": "USD 6,800-7,200" },
+          "gross200k_Texas": { "netMonthly": "USD 12,000-13,000" },
+          "gross200k_California": { "netMonthly": "USD 10,000-11,000" }
+        },
+        "rsuBonusNote": "Big Tech compensation includes RSU (stock grants) which are taxed as ordinary income at vesting; significant additional compensation but large tax event"
+      },
+      "taxTreaty": { "withBangladesh": true, "treatyNote": "US-Bangladesh Tax Treaty: Article 21 covers students; employment income not specially treated; standard US tax applies for workers" },
+      "stateTaxStrategy": "Texas, Washington, Florida = zero state income tax; massive advantage for high earners; Seattle (Amazon, Microsoft) and Austin (Tesla, Apple, Oracle) are optimal locations",
+      "keyDeductions": ["401k contributions up to USD 23,500 (2026)", "HSA health savings", "Student loan interest", "Home mortgage interest", "Charitable contributions"],
+      "keyOptimizations": ["Maximize 401k pre-tax contribution (reduces taxable income USD 23,500)", "HSA triple tax advantage if eligible HDHP plan", "Live in zero-income-tax state"],
+      "taxFilingDeadline": "April 15 via IRS; automatic extension to October 15 available",
+      "recommendation": "USA tax system highly geography-dependent. Seattle or Austin provide zero state income tax with world's highest AI salaries = maximum net savings. California's 13.3% top rate dramatically reduces savings. 401k optimization is critical. F-1 FICA exemption saves 7.65% during student/OPT phase - significant."
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "currency": "JPY",
+      "overallTaxScore": 60,
+      "confidenceScore": 83,
+      "taxSystemType": "Progressive national + local (resident) tax",
+      "studentPhase": {
+        "taxResidencyNote": "Register at local ward office (shiyakusho) within 14 days; mynumber (social security number) issued",
+        "stipendTaxability": "MEXT scholarship: national tax EXEMPT (government-designated scholarship); however resident tax may apply in second year",
+        "healthInsurance": "Students join National Health Insurance (Kokumin Kenko Hoken); income-based premium approximately JPY 2,000-5,000/month"
+      },
+      "workingGraduatePhase": {
+        "nationalTaxBrackets": [
+          { "bracket": "0-1,950,000", "rate": "5%", "currency": "JPY" },
+          { "bracket": "1,950,001-3,300,000", "rate": "10%" },
+          { "bracket": "3,300,001-6,950,000", "rate": "20%" },
+          { "bracket": "6,950,001-9,000,000", "rate": "23%" },
+          { "bracket": "9,000,001-18,000,000", "rate": "33%" },
+          { "bracket": "18,000,001-40,000,000", "rate": "40%" },
+          { "bracket": "40,000,001+", "rate": "45%" }
+        ],
+        "residentTax": "Approximately 10% flat on previous year income (delayed one year; first year in Japan no resident tax)",
+        "socialInsurance": {
+          "healthInsurance": "Approximately 5% employee share",
+          "pensionInsurance": "9.15% employee share (Kosei Nenkin)",
+          "employmentInsurance": "0.6% employee share",
+          "total": "Approximately 14-15% employee social contributions"
+        },
+        "effectiveTaxRate": {
+          "salary5MJPY": "Approximately 28-32% combined",
+          "salary8MJPY": "Approximately 33-37% combined",
+          "salary12MJPY": "Approximately 40-44% combined"
+        },
+        "netMonthlySalary": {
+          "grossJPY500k": { "netMonthly": "JPY 340,000-360,000", "usd": "2,278-2,412" },
+          "grossJPY800k": { "netMonthly": "JPY 510,000-540,000", "usd": "3,417-3,618" }
+        },
+        "jpyWeaknessNote": "JPY has depreciated 30%+ against USD since 2021; USD-denominated value of Japan salaries significantly reduced; monitor exchange rate"
+      },
+      "taxTreaty": { "withBangladesh": true, "treatyNote": "Japan-Bangladesh Tax Convention: covers employment income; prevents double taxation; students may benefit from Article on students and trainees" },
+      "consumptionTax": "10% on most goods; 8% reduced on food and non-alcoholic beverages",
+      "hspTaxBenefit": "Highly Skilled Professional (HSP) visa holders: special income deduction available; consult tax specialist",
+      "keyDeductions": ["Furusato Nozei (hometown tax donation) - significant reduction and gifts", "Medical expenses over JPY 100,000", "iDeCo personal pension contributions", "Life insurance premiums"],
+      "yearEndAdjustment": "Most employed workers have year-end tax adjustment (nenmatsu chosei) done by employer; simple process",
+      "taxFilingDeadline": "March 15 via e-Tax or tax office; employer handles most adjustments",
+      "recommendation": "MEXT scholarship tax exemption is a major advantage during study phase. Working phase tax is moderate but JPY weakness significantly reduces USD-denominated savings. Furusato Nozei is a unique Japanese tax optimization tool providing significant effective tax reduction plus regional gifts. Target foreign tech companies (Google, Amazon Japan) which pay significantly more than Japanese domestic firms."
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "currency": "KRW",
+      "overallTaxScore": 63,
+      "confidenceScore": 82,
+      "taxSystemType": "Progressive national income tax + local income tax",
+      "studentPhase": {
+        "taxResidencyNote": "Register at immigration office; foreigner registration certificate issued",
+        "stipendTaxability": "KGSP scholarship: TAX-EXEMPT; KAIST RA stipend: taxable as earned income",
+        "nhis": "National Health Insurance mandatory; student rate significantly subsidized approximately KRW 60,000/month"
+      },
+      "workingGraduatePhase": {
+        "nationalTaxBrackets": [
+          { "bracket": "0-14,000,000", "rate": "6%", "currency": "KRW" },
+          { "bracket": "14,000,001-50,000,000", "rate": "15%" },
+          { "bracket": "50,000,001-88,000,000", "rate": "24%" },
+          { "bracket": "88,000,001-150,000,000", "rate": "35%" },
+          { "bracket": "150,000,001-300,000,000", "rate": "38%" },
+          { "bracket": "300,000,001-500,000,000", "rate": "40%" },
+          { "bracket": "500,000,001+", "rate": "42-45%" }
+        ],
+        "localIncomeTax": "10% of national income tax amount",
+        "socialContributions": {
+          "nationalPension": "4.5% employee",
+          "healthInsurance": "3.545% employee",
+          "longTermCare": "0.455% employee",
+          "employmentInsurance": "0.9% employee",
+          "total": "Approximately 9.4% employee contributions"
+        },
+        "effectiveTaxRate": {
+          "salary50MKRW": "Approximately 18-22% combined",
+          "salary80MKRW": "Approximately 24-28% combined",
+          "salary120MKRW": "Approximately 30-34% combined"
+        },
+        "netMonthlySalary": {
+          "grossKRW5M": { "netMonthly": "KRW 3,900,000-4,100,000", "usd": "2,847-2,993" },
+          "grossKRW8M": { "netMonthly": "KRW 5,900,000-6,200,000", "usd": "4,307-4,526" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": true, "treatyNote": "Korea-Bangladesh Tax Treaty in force; employment income covered; prevents double taxation" },
+      "vat": "10% on most goods and services",
+      "foreignerFlatTax": {
+        "description": "Foreign workers may elect 19% flat tax rate on employment income for first 5 years",
+        "benefit": "If effective rate would exceed 19%, flat rate is significantly lower; highly beneficial for mid-to-high earners",
+        "bangladeshiApplicability": "Very applicable for KAIST graduates entering Samsung/Kakao/Naver; elect this option through employer at year-end"
+      },
+      "keyDeductions": ["National pension contributions", "Healthcare premiums", "Credit card expenditure deduction", "Housing rental income deduction"],
+      "taxFilingDeadline": "May 31 via Hometax (홈택스); employer typically handles year-end settlement",
+      "recommendation": "Korea's flat 19% foreign worker tax option is highly valuable - elect this through employer. KGSP scholarship tax exemption excellent during study phase. Combined with relatively low cost of living, net savings potential is good. Korea-Bangladesh tax treaty prevents dual taxation."
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "currency": "CNY",
+      "overallTaxScore": 62,
+      "confidenceScore": 78,
+      "taxSystemType": "Progressive individual income tax (IIT); reformed 2019",
+      "studentPhase": {
+        "taxResidencyNote": "Foreigners residing 183+ days/year are Chinese tax residents",
+        "stipendTaxability": "CSC scholarship stipend: TAX-EXEMPT as educational grant; university salary/RA is taxable",
+        "foreignerExemption": "Foreign scholars' lecture/research grants may qualify for specific IIT exemptions"
+      },
+      "workingGraduatePhase": {
+        "incomeTaxBrackets": [
+          { "bracket": "0-36,000", "rate": "3%", "currency": "CNY" },
+          { "bracket": "36,001-144,000", "rate": "10%" },
+          { "bracket": "144,001-300,000", "rate": "20%" },
+          { "bracket": "300,001-420,000", "rate": "25%" },
+          { "bracket": "420,001-660,000", "rate": "30%" },
+          { "bracket": "660,001-960,000", "rate": "35%" },
+          { "bracket": "960,001+", "rate": "45%" }
+        ],
+        "socialInsurance": "Approximately 10.5% employee contribution (pension 8%, medical 2%, unemployment 0.5%)",
+        "foreignerPreferences2026": {
+          "housingAllowance": "Foreign employee housing/meal/children's education allowances EXEMPT from IIT (extended to 2027)",
+          "annualBonus": "One-time annual bonus taxed separately at lower effective rate",
+          "note": "Foreign expert benefits being phased out progressively; confirm current status annually"
+        },
+        "effectiveTaxRate": {
+          "salary300kCNY": "Approximately 18-22% effective IIT + 10.5% social = 28-32% total",
+          "salary600kCNY": "Approximately 28-32% effective IIT + 10.5% social = 38-42% total"
+        },
+        "netMonthlySalary": {
+          "grossCNY30k": { "netMonthly": "CNY 22,000-23,500", "usd": "3,036-3,243" },
+          "grossCNY60k": { "netMonthly": "CNY 39,000-42,000", "usd": "5,382-5,796" }
+        }
+      },
+      "taxTreaty": { "withBangladesh": true, "treatyNote": "China-Bangladesh Avoidance of Double Taxation Agreement in force; comprehensive coverage of employment income" },
+      "vat": "13% standard; 9% on food, utilities, transport; 6% on services",
+      "capitalControls": "SAFE regulations limit annual personal foreign currency remittance to USD 50,000; significant for repatriating savings to Bangladesh or transferring to third country",
+      "keyDeductions": ["Children's education CNY 2,000/month/child", "Elder care CNY 3,000/month", "Housing loan interest CNY 1,000/month", "Continuing education CNY 400/month"],
+      "taxFilingDeadline": "March 1 - June 30 annual comprehensive settlement via personal income tax app",
+      "recommendation": "China's IIT rates moderate but capital controls limit USD remittance (USD 50,000/year cap). Tax-exempt CSC scholarship excellent for study phase. Foreign employee housing allowance exemption reduces effective tax significantly while it lasts. China-Bangladesh DTAA prevents double taxation. Main risk: capital controls complicate wealth transfer for future country transition."
+    }
+  ],
+  "comparativeTaxSummary": {
+    "lowestEffectiveTaxBurden": ["Switzerland (Zurich 28-32%)", "South Korea with 19% flat option", "USA (Texas/Washington 22-25% effective)"],
+    "highestEffectiveTaxBurden": ["Denmark (37-47%)", "Sweden (32-52%)", "Finland (35-45%)", "Ireland (35-46%)"],
+    "bestNetSalaryAbsolute": ["USA (Texas) → Switzerland → Denmark → Norway"],
+    "bestStudentPhaseScholarshipTaxBenefit": ["Australia (RTP tax-free)", "Japan (MEXT exempt)", "South Korea (KGSP exempt)", "China (CSC exempt)", "Netherlands (NWO PhD employment)"],
+    "bestExpatTaxSchemes": [
+      { "country": "Netherlands", "scheme": "30% Ruling", "benefit": "30% salary tax-free for 5 years" },
+      { "country": "Denmark", "scheme": "Researcher Tax Scheme", "benefit": "27% flat rate for 7 years" },
+      { "country": "Sweden", "scheme": "Expert Tax Relief", "benefit": "25% salary tax-free for 5 years" },
+      { "country": "Finland", "scheme": "Key Employee Act", "benefit": "32% flat for 4 years" },
+      { "country": "South Korea", "scheme": "Foreign Worker Flat Tax", "benefit": "19% flat for 5 years" }
+    ],
+    "taxTreatyWithBangladesh": {
+      "yes": ["Germany", "Japan", "South Korea", "China", "USA (limited)"],
+      "no": ["Canada", "Australia", "Ireland", "Netherlands", "Sweden", "Finland", "Denmark", "Norway", "Switzerland"]
+    },
+    "strategicRecommendation": "For maximum lifetime net income: USA (Texas/Seattle) for peak earnings phase → Netherlands (30% ruling) or Switzerland for European career → Canada/Australia for final settlement. Key insight: expat tax schemes in Netherlands (30% ruling), Denmark (researcher scheme), and Sweden (expert relief) make these countries significantly more tax-efficient than headline rates suggest. Always negotiate expat tax scheme eligibility on Day 1 of employment."
+  }
+}

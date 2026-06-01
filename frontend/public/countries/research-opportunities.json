@@ -1,0 +1,774 @@
+
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Research opportunities for Bangladeshi CS/AI/ML students pursuing MSc/PhD (2027-2029)",
+    "targetProfile": "Bangladeshi student, CS/AI/ML/Data Science/Robotics, seeking research-oriented graduate programs",
+    "criticalNote": "Research quality and funding availability are key differentiators - PhD positions in AI/ML are highly competitive globally"
+  },
+  "researchOpportunities": [
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "researchQualityScore": 98,
+      "researchFundingScore": 96,
+      "accessibilityScore": 72,
+      "topUniversities": [
+        "MIT - CSAIL, Brain and Cognitive Sciences",
+        "Stanford - AI Lab, HAI",
+        "CMU - Robotics Institute, ML Department",
+        "UC Berkeley - BAIR, EECS",
+        "Princeton - CS Department",
+        "University of Washington - Allen School",
+        "Georgia Tech - ML Center",
+        "UT Austin - ML Lab",
+        "UIUC - CS, Autonomous Systems",
+        "Caltech - CMS, AI"
+      ],
+      "topResearchLabs": [
+        "OpenAI",
+        "Google DeepMind (US offices)",
+        "Meta AI Research (FAIR)",
+        "Microsoft Research",
+        "Anthropic",
+        "Allen Institute for AI",
+        "IBM Research",
+        "NVIDIA Research"
+      ],
+      "governmentFunding": "NSF, DARPA, NIH, DOE - billions in AI research funding",
+      "industryCollaboration": 98,
+      "phdPositionsAvailable": "Very high - ~2,000+ CS/AI PhD admits annually at top-50 programs",
+      "fundingForPhd": 95,
+      "keyResearchAreas": [
+        "Large language models and foundation models",
+        "Reinforcement learning and robotics",
+        "Computer vision and multimodal AI",
+        "AI safety and alignment",
+        "Autonomous systems",
+        "ML theory and optimization",
+        "Healthcare AI and computational biology",
+        "Quantum ML"
+      ],
+      "publicationOpportunities": "Highest globally - NeurIPS, ICML, ICLR, CVPR heavily US-dominated",
+      "internationalCollaboration": 92,
+      "bangladeshiAccessibility": {
+        "score": 68,
+        "challenges": "Very competitive admissions; GRE, TOEFL, strong research experience required; need publications or top-tier undergrad",
+        "advantages": "Meritocratic selection; many Bangladeshi PhD students at top programs; alumni networks strong",
+        "successRate": "Low-Medium for top-20; Medium for top-50"
+      },
+      "averageAdmissionRate": "2-8% for top programs, 10-20% for top-50",
+      "typicalPhdDuration": "5-6 years",
+      "stipendAdequacy": 88,
+      "postPhdProspects": "Excellent - industry, academia, or startup options; highest ROI globally",
+      "researchCulture": "Publish-or-perish; intensive; cutting-edge; collaborative but competitive",
+      "strategicAdvice": "Target top-30 programs for best funding and outcomes; emphasize research experience and publications in application; consider MSc at top-tier only or skip directly to PhD",
+      "confidenceScore": 94
+    },
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "researchQualityScore": 89,
+      "researchFundingScore": 84,
+      "accessibilityScore": 76,
+      "topUniversities": [
+        "University of Toronto - Vector Institute affiliates",
+        "University of British Columbia",
+        "McGill University",
+        "University of Alberta - Amii",
+        "University of Waterloo",
+        "Mila - Quebec AI Institute (UdeM, McGill, Polytechnique)",
+        "Simon Fraser University"
+      ],
+      "topResearchLabs": [
+        "Vector Institute (Toronto)",
+        "Mila (Montreal)",
+        "Alberta Machine Intelligence Institute (Amii)",
+        "CIFAR AI chairs across universities",
+        "Borealis AI (RBC)",
+        "Element AI"
+      ],
+      "governmentFunding": "NSERC, CIFAR Pan-Canadian AI Strategy - CAD 443M+ invested",
+      "industryCollaboration": 84,
+      "phdPositionsAvailable": "High - strong AI research expansion; ~500-700 AI-related PhD positions annually",
+      "fundingForPhd": 82,
+      "keyResearchAreas": [
+        "Deep learning foundations (Montreal school)",
+        "Reinforcement learning",
+        "NLP and language models",
+        "Computer vision",
+        "ML for healthcare",
+        "Robotics and autonomous systems",
+        "Responsible AI and fairness"
+      ],
+      "publicationOpportunities": "Very high - strong presence at top conferences; Hinton, Bengio legacy",
+      "internationalCollaboration": 88,
+      "bangladeshiAccessibility": {
+        "score": 78,
+        "challenges": "Competitive but more accessible than US; strong academic credentials required",
+        "advantages": "Post-graduation work permit pathway; established Bangladeshi community; clearer immigration",
+        "successRate": "Medium for top programs; High for mid-tier"
+      },
+      "averageAdmissionRate": "8-15% for top programs, 20-35% for others",
+      "typicalPhdDuration": "4-5 years",
+      "stipendAdequacy": 72,
+      "postPhdProspects": "Very good - strong academic market; growing industry; easier PR than US",
+      "researchCulture": "Collaborative; less pressure than US; strong work-life balance",
+      "strategicAdvice": "Target Vector/Mila/Amii affiliated supervisors; apply for NSERC if eligible later; leverage for PR pathway",
+      "confidenceScore": 88
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "researchQualityScore": 86,
+      "researchFundingScore": 88,
+      "accessibilityScore": 82,
+      "topUniversities": [
+        "TU Munich - Munich Center for ML",
+        "RWTH Aachen",
+        "TU Berlin",
+        "University of Tübingen - Max Planck Institute",
+        "Karlsruhe Institute of Technology (KIT)",
+        "University of Freiburg",
+        "Heidelberg University",
+        "Saarland University"
+      ],
+      "topResearchLabs": [
+        "Max Planck Institute for Intelligent Systems",
+        "German Research Center for AI (DFKI)",
+        "Fraunhofer Institutes (IAIS, IIS)",
+        "Cyber Valley (Stuttgart-Tübingen)",
+        "Bosch AI Center",
+        "BMW AI Lab",
+        "SAP ML Research"
+      ],
+      "governmentFunding": "DFG, BMBF - EUR 5B+ in AI strategy; strong public research funding",
+      "industryCollaboration": 91,
+      "phdPositionsAvailable": "Very high - PhD as salaried employment; ~1,000+ positions annually in CS/AI",
+      "fundingForPhd": 92,
+      "keyResearchAreas": [
+        "Industrial AI and robotics",
+        "Automotive AI and autonomous driving",
+        "ML theory and probabilistic models",
+        "Computer vision for manufacturing",
+        "Explainable AI",
+        "Federated and privacy-preserving ML",
+        "ML for engineering and physics"
+      ],
+      "publicationOpportunities": "Very high - strong ICML, NeurIPS, CVPR presence",
+      "internationalCollaboration": 86,
+      "bangladeshiAccessibility": {
+        "score": 84,
+        "challenges": "German language beneficial for integration; application process varies by professor",
+        "advantages": "Structured PhD contracts; no tuition; generous stipend; straightforward immigration",
+        "successRate": "Medium-High for strong applicants"
+      },
+      "averageAdmissionRate": "15-30% depending on lab and funding",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 86,
+      "postPhdProspects": "Excellent - strong industrial AI sector; EU Blue Card to PR pathway",
+      "researchCulture": "Structured; good work-life balance; strong industry ties; less publish pressure than US",
+      "strategicAdvice": "Email professors directly with CV and research proposal; target Cyber Valley and Max Planck; learn German for better integration",
+      "confidenceScore": 87
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "researchQualityScore": 94,
+      "researchFundingScore": 93,
+      "accessibilityScore": 68,
+      "topUniversities": [
+        "ETH Zurich - AI Center, Learning & Adaptive Systems",
+        "EPFL - Machine Learning Lab, CLAIRE",
+        "University of Zurich",
+        "University of Bern"
+      ],
+      "topResearchLabs": [
+        "Swiss AI Lab IDSIA",
+        "Max Planck ETH Center",
+        "CLAIRE (pan-European but Swiss-led)",
+        "ABB Corporate Research",
+        "Google Zurich",
+        "Disney Research Zurich"
+      ],
+      "governmentFunding": "Swiss National Science Foundation - generous funding; competitive grants",
+      "industryCollaboration": 88,
+      "phdPositionsAvailable": "Medium - smaller system but high quality; ~150-200 AI PhD positions annually",
+      "fundingForPhd": 95,
+      "keyResearchAreas": [
+        "ML theory and optimization",
+        "Computer vision and graphics",
+        "Robotics and control",
+        "Privacy-preserving ML",
+        "Computational neuroscience",
+        "NLP and language models"
+      ],
+      "publicationOpportunities": "Exceptional - top-tier publications expected and achieved",
+      "internationalCollaboration": 91,
+      "bangladeshiAccessibility": {
+        "score": 62,
+        "challenges": "Extremely competitive; prefer top-tier candidates; limited positions",
+        "advantages": "If admitted, excellent funding and quality; strong post-PhD prospects",
+        "successRate": "Low - highly selective"
+      },
+      "averageAdmissionRate": "3-8% for top labs",
+      "typicalPhdDuration": "4-5 years",
+      "stipendAdequacy": 94,
+      "postPhdProspects": "Excellent - top academic and industry options globally; Swiss work permit",
+      "researchCulture": "High standards; excellent mentorship; international environment; work-life balance",
+      "strategicAdvice": "Only apply if top-tier profile; emphasize publications; ETH/EPFL are elite-tier - treat like MIT/Stanford in selectivity",
+      "confidenceScore": 85
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "researchQualityScore": 84,
+      "researchFundingScore": 85,
+      "accessibilityScore": 79,
+      "topUniversities": [
+        "TU Delft - AI Institute",
+        "University of Amsterdam - AMLab, QUVA Lab",
+        "Eindhoven University of Technology",
+        "Utrecht University",
+        "Leiden University",
+        "VU Amsterdam"
+      ],
+      "topResearchLabs": [
+        "CLAIRE Amsterdam",
+        "Centrum Wiskunde & Informatica (CWI)",
+        "ICAI Labs (industry partnership)",
+        "Qualcomm AI Research",
+        "Booking.com Research"
+      ],
+      "governmentFunding": "NWO grants; national AI coalition ELSA - EUR 376M investment",
+      "industryCollaboration": 87,
+      "phdPositionsAvailable": "High - PhD as salaried position; ~300-400 AI positions annually",
+      "fundingForPhd": 90,
+      "keyResearchAreas": [
+        "Deep learning and representation learning",
+        "Computer vision",
+        "Reinforcement learning",
+        "AI for social good",
+        "Trustworthy and explainable AI",
+        "ML for healthcare",
+        "Algorithmic fairness"
+      ],
+      "publicationOpportunities": "High - strong NeurIPS, ICML, ICLR presence",
+      "internationalCollaboration": 89,
+      "bangladeshiAccessibility": {
+        "score": 81,
+        "challenges": "Competitive for top labs; English sufficient but Dutch helps for life",
+        "advantages": "Structured PhD contracts; excellent work conditions; easy visa; international environment",
+        "successRate": "Medium-High"
+      },
+      "averageAdmissionRate": "10-20% for advertised positions",
+      "typicalPhdDuration": "4 years",
+      "stipendAdequacy": 88,
+      "postPhdProspects": "Very good - strong tech sector; EU opportunities; PR pathway clear",
+      "researchCulture": "Collaborative; flat hierarchy; good work-life balance; strong publication focus",
+      "strategicAdvice": "Apply to advertised positions on university websites; TU Delft and UvA strongest for AI; leverage for EU opportunities",
+      "confidenceScore": 86
+    },
+    {
+      "country": "United Kingdom",
+      "countryCode": "GB",
+      "researchQualityScore": 92,
+      "researchFundingScore": 81,
+      "accessibilityScore": 71,
+      "topUniversities": [
+        "University of Cambridge - ML Group",
+        "University of Oxford - AI Lab",
+        "Imperial College London",
+        "UCL - DARK, Gatsby",
+        "University of Edinburgh - ILCC",
+        "University of Manchester"
+      ],
+      "topResearchLabs": [
+        "Google DeepMind London",
+        "Alan Turing Institute",
+        "Cambridge-Oxford-DeepMind partnership",
+        "Microsoft Research Cambridge",
+        "PROWLER.io"
+      ],
+      "governmentFunding": "UKRI, EPSRC - GBP 2.5B AI sector deal but Brexit impacted EU funding",
+      "industryCollaboration": 90,
+      "phdPositionsAvailable": "High - ~800-1,000 CS/AI positions annually",
+      "fundingForPhd": 74,
+      "keyResearchAreas": [
+        "Deep learning and neural networks (DeepMind heritage)",
+        "Probabilistic ML and Bayesian methods",
+        "Reinforcement learning",
+        "Natural language understanding",
+        "AI safety and ethics",
+        "Healthcare AI"
+      ],
+      "publicationOpportunities": "Exceptional - DeepMind collaboration boosts output",
+      "internationalCollaboration": 85,
+      "bangladeshiAccessibility": {
+        "score": 69,
+        "challenges": "Post-study work visa only 2 years; difficult PR pathway; expensive tuition without funding",
+        "advantages": "World-class research; English language; established Bangladeshi community",
+        "successRate": "Medium"
+      },
+      "averageAdmissionRate": "5-12% for top programs",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 68,
+      "postPhdProspects": "Excellent research-wise but immigration uncertainty limits appeal",
+      "researchCulture": "High standards; publish or perish; international; expensive living",
+      "strategicAdvice": "Target if aiming for top-tier research and publications; immigration pathway weak - treat as career boost then relocate",
+      "confidenceScore": 82,
+      "note": "Not in original country list but included as major research destination"
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "researchQualityScore": 82,
+      "researchFundingScore": 84,
+      "accessibilityScore": 73,
+      "topUniversities": [
+        "KTH Royal Institute of Technology",
+        "Chalmers University of Technology",
+        "Lund University",
+        "Uppsala University",
+        "Stockholm University"
+      ],
+      "topResearchLabs": [
+        "Wallenberg AI, Autonomous Systems and Software Program (WASP)",
+        "RISE Research Institutes",
+        "Ericsson Research",
+        "Spotify Research",
+        "Zenuity (autonomous driving)"
+      ],
+      "governmentFunding": "WASP - SEK 5.6B largest research program; Vinnova grants",
+      "industryCollaboration": 85,
+      "phdPositionsAvailable": "Medium-High - ~200-300 AI PhD positions annually",
+      "fundingForPhd": 88,
+      "keyResearchAreas": [
+        "Autonomous systems and robotics",
+        "ML for telecommunications",
+        "Computer vision",
+        "Music and audio AI",
+        "Trustworthy AI",
+        "Industrial AI"
+      ],
+      "publicationOpportunities": "High - strong conference presence",
+      "internationalCollaboration": 87,
+      "bangladeshiAccessibility": {
+        "score": 74,
+        "challenges": "Smaller number of positions; high cost of living if unfunded",
+        "advantages": "Salaried PhD; excellent quality of life; English-friendly",
+        "successRate": "Medium"
+      },
+      "averageAdmissionRate": "12-20%",
+      "typicalPhdDuration": "4-5 years",
+      "stipendAdequacy": 82,
+      "postPhdProspects": "Good - strong tech sector; Nordic opportunities; PR pathway clear",
+      "researchCulture": "Collaborative; work-life balance excellent; flat hierarchy",
+      "strategicAdvice": "Target WASP-funded positions; KTH and Chalmers strongest; apply early as positions fill quickly",
+      "confidenceScore": 83
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "researchQualityScore": 79,
+      "researchFundingScore": 81,
+      "accessibilityScore": 76,
+      "topUniversities": [
+        "Aalto University - Finnish Center for AI (FCAI)",
+        "University of Helsinki - FCAI",
+        "University of Oulu",
+        "Tampere University"
+      ],
+      "topResearchLabs": [
+        "Finnish Center for Artificial Intelligence (FCAI)",
+        "VTT Technical Research Centre",
+        "Nokia Bell Labs Finland",
+        "Supercell (gaming AI)",
+        "Rovio (gaming AI)"
+      ],
+      "governmentFunding": "Academy of Finland; Business Finland - focus on applied AI",
+      "industryCollaboration": 83,
+      "phdPositionsAvailable": "Medium - ~120-180 AI positions annually",
+      "fundingForPhd": 85,
+      "keyResearchAreas": [
+        "Probabilistic ML and Bayesian methods",
+        "Gaming AI and procedural generation",
+        "Healthcare AI and medical imaging",
+        "NLP (especially Finnish language)",
+        "Industrial IoT and AI",
+        "Telecommunications AI"
+      ],
+      "publicationOpportunities": "Good - strong UAI, AISTATS presence",
+      "internationalCollaboration": 84,
+      "bangladeshiAccessibility": {
+        "score": 78,
+        "challenges": "Smaller research community; cold climate",
+        "advantages": "Affordable living; good funding; easy visa; quality of life",
+        "successRate": "Medium-High"
+      },
+      "averageAdmissionRate": "15-25%",
+      "typicalPhdDuration": "4 years",
+      "stipendAdequacy": 83,
+      "postPhdProspects": "Good - growing startup scene; Nordic mobility; PR straightforward",
+      "researchCulture": "Pragmatic; applied focus; excellent work-life balance; collaborative",
+      "strategicAdvice": "Aalto FCAI is top choice; strong in probabilistic ML; good stepping stone for Nordic career",
+      "confidenceScore": 80
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "researchQualityScore": 78,
+      "researchFundingScore": 83,
+      "accessibilityScore": 75,
+      "topUniversities": [
+        "Norwegian University of Science and Technology (NTNU)",
+        "University of Oslo",
+        "University of Bergen"
+      ],
+      "topResearchLabs": [
+        "Norwegian AI Research Consortium",
+        "SINTEF (contract research)",
+        "Simula Research Laboratory",
+        "DNV AI Lab"
+      ],
+      "governmentFunding": "Research Council of Norway - substantial funding; oil fund supports research",
+      "industryCollaboration": 79,
+      "phdPositionsAvailable": "Medium - ~100-150 AI positions annually; smaller system",
+      "fundingForPhd": 91,
+      "keyResearchAreas": [
+        "AI for energy and offshore",
+        "Maritime autonomous systems",
+        "Climate and environmental AI",
+        "Healthcare AI",
+        "Aquaculture and fisheries AI"
+      ],
+      "publicationOpportunities": "Moderate - smaller output volume but good quality",
+      "internationalCollaboration": 82,
+      "bangladeshiAccessibility": {
+        "score": 76,
+        "challenges": "Small research community; fewer positions; cold climate; expensive",
+        "advantages": "Excellent salary as PhD; no tuition; great quality of life; easy PR",
+        "successRate": "Medium"
+      },
+      "averageAdmissionRate": "15-25%",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 92,
+      "postPhdProspects": "Good stability and quality of life; smaller job market",
+      "researchCulture": "Balanced; less publication pressure; applied focus; excellent work conditions",
+      "strategicAdvice": "Best for those prioritizing quality of life and stability over research prestige; NTNU is top choice",
+      "confidenceScore": 78
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "researchQualityScore": 81,
+      "researchFundingScore": 84,
+      "accessibilityScore": 74,
+      "topUniversities": [
+        "Technical University of Denmark (DTU)",
+        "University of Copenhagen - DIKU",
+        "Aarhus University",
+        "Aalborg University"
+      ],
+      "topResearchLabs": [
+        "Pioneer Centre for AI (P1)",
+        "Danish Data Science Academy",
+        "Novo Nordisk AI research",
+        "Maersk AI Lab"
+      ],
+      "governmentFunding": "Innovation Fund Denmark - DKK 2B+ in digitalization; strong public research",
+      "industryCollaboration": 86,
+      "phdPositionsAvailable": "Medium - ~120-160 AI positions annually",
+      "fundingForPhd": 89,
+      "keyResearchAreas": [
+        "Healthcare and biotech AI",
+        "Green tech and sustainability AI",
+        "Logistics and shipping AI",
+        "Generative models",
+        "ML for drug discovery"
+      ],
+      "publicationOpportunities": "Good - solid conference presence",
+      "internationalCollaboration": 85,
+      "bangladeshiAccessibility": {
+        "score": 75,
+        "challenges": "Expensive living; competitive positions; smaller community",
+        "advantages": "Excellent PhD salary; strong industry; good work-life balance",
+        "successRate": "Medium"
+      },
+      "averageAdmissionRate": "12-22%",
+      "typicalPhdDuration": "3 years",
+      "stipendAdequacy": 88,
+      "postPhdProspects": "Very good - strong biotech and green tech sectors; Nordic opportunities",
+      "researchCulture": "Collaborative; industry-focused; good work-life balance",
+      "strategicAdvice": "DTU and Pioneer Centre (P1) are top choices; strong in applied ML for biotech and green tech",
+      "confidenceScore": 81
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "researchQualityScore": 83,
+      "researchFundingScore": 76,
+      "accessibilityScore": 72,
+      "topUniversities": [
+        "Australian National University",
+        "University of Melbourne",
+        "University of Sydney - USYD AI Institute",
+        "UNSW Sydney",
+        "University of Queensland",
+        "Monash University"
+      ],
+      "topResearchLabs": [
+        "CSIRO Data61",
+        "Australian Institute for Machine Learning (Adelaide)",
+        "Gradient Institute",
+        "NICTA successor labs"
+      ],
+      "governmentFunding": "ARC grants competitive; government AI Action Plan AUD 124M",
+      "industryCollaboration": 77,
+      "phdPositionsAvailable": "Medium-High - ~400-500 AI positions annually",
+      "fundingForPhd": 68,
+      "keyResearchAreas": [
+        "Computer vision",
+        "Healthcare AI and medical imaging",
+        "Mining and resources AI",
+        "Agricultural AI",
+        "NLP",
+        "Trustworthy AI"
+      ],
+      "publicationOpportunities": "Good - decent conference presence",
+      "internationalCollaboration": 80,
+      "bangladeshiAccessibility": {
+        "score": 71,
+        "challenges": "Funding competitive (RTP scholarships limited); expensive if unfunded",
+        "advantages": "Post-study work visa; clearer PR pathway; English language; timezone works for Asia",
+        "successRate": "Medium"
+      },
+      "averageAdmissionRate": "10-20% for funded positions",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 74,
+      "postPhdProspects": "Good - growing AI sector; PR pathway viable; quality of life excellent",
+      "researchCulture": "Relaxed; good work-life balance; less publish pressure than US/UK",
+      "strategicAdvice": "Target RTP scholarship aggressively; Go8 universities preferred; good for immigration-focused pathway",
+      "confidenceScore": 79
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "researchQualityScore": 78,
+      "researchFundingScore": 75,
+      "accessibilityScore": 70,
+      "topUniversities": [
+        "Trinity College Dublin",
+        "University College Dublin",
+        "Dublin City University",
+        "University of Galway"
+      ],
+      "topResearchLabs": [
+        "ADAPT Centre (digital content)",
+        "Insight Centre for Data Analytics",
+        "Lero (software research)",
+        "Google AI Dublin",
+        "Microsoft Ireland AI"
+      ],
+      "governmentFunding": "Science Foundation Ireland; Irish Research Council - moderate funding",
+      "industryCollaboration": 84,
+      "phdPositionsAvailable": "Medium - ~150-200 AI positions annually",
+      "fundingForPhd": 72,
+      "keyResearchAreas": [
+        "NLP and text analytics",
+        "Data analytics",
+        "AI for digital content",
+        "Healthcare AI",
+        "Edge AI"
+      ],
+      "publicationOpportunities": "Moderate - growing presence",
+      "internationalCollaboration": 81,
+      "bangladeshiAccessibility": {
+        "score": 72,
+        "challenges": "Housing crisis in Dublin; funding competitive; smaller research community",
+        "advantages": "English language; EU location; Big Tech presence; 2-year post-study work visa",
+        "successRate": "Medium"
+      },
+      "averageAdmissionRate": "15-25%",
+      "typicalPhdDuration": "4 years",
+      "stipendAdequacy": 66,
+      "postPhdProspects": "Good - Big Tech jobs available; EU opportunities; PR pathway exists but slow",
+      "researchCulture": "Collaborative; industry-connected; good balance",
+      "strategicAdvice": "Best as gateway to EU Big Tech roles; research quality moderate; prioritize if wanting English-speaking EU base",
+      "confidenceScore": 76
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "researchQualityScore": 85,
+      "researchFundingScore": 87,
+      "accessibilityScore": 68,
+      "topUniversities": [
+        "University of Tokyo",
+        "Kyoto University",
+        "Tokyo Institute of Technology",
+        "Osaka University",
+        "NAIST (Nara Institute)",
+        "Tohoku University"
+      ],
+      "topResearchLabs": [
+        "RIKEN Center for AI",
+        "National Institute of Informatics",
+        "ATR (Advanced Telecommunications Research)",
+        "Preferred Networks",
+        "Sony AI",
+        "Toyota Research Institute"
+      ],
+      "governmentFunding": "JST, NEDO - significant AI funding; Society 5.0 initiative",
+      "industryCollaboration": 89,
+      "phdPositionsAvailable": "High - ~600-800 AI positions annually; many in robotics",
+      "fundingForPhd": 82,
+      "keyResearchAreas": [
+        "Robotics and embodied AI",
+        "Human-robot interaction",
+        "Computer vision and image processing",
+        "Natural language processing (Japanese focus)",
+        "Healthcare AI and medical robotics",
+        "Industrial AI and manufacturing"
+      ],
+      "publicationOpportunities": "High - strong CVPR, ICRA, IROS presence",
+      "internationalCollaboration": 76,
+      "bangladeshiAccessibility": {
+        "score": 66,
+        "challenges": "Japanese language essential for daily life and integration; cultural adjustment; slower publication pace",
+        "advantages": "MEXT scholarship accessible; unique robotics research; aging population creates opportunities",
+        "successRate": "Medium with MEXT; Low-Medium direct admission"
+      },
+      "averageAdmissionRate": "20-35% for international students",
+      "typicalPhdDuration": "3 years",
+      "stipendAdequacy": 76,
+      "postPhdProspects": "Good in robotics/automotive; immigration gradually opening; Japanese language critical for career",
+      "researchCulture": "Hierarchical; respect-based; slower pace; strong industry connections; robotics focus",
+      "strategicAdvice": "Best for robotics and embodied AI; learn Japanese seriously; MEXT scholarship is key; immigration improving but still challenging",
+      "confidenceScore": 81
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "researchQualityScore": 82,
+      "researchFundingScore": 84,
+      "accessibilityScore": 70,
+      "topUniversities": [
+        "KAIST - AI Graduate School",
+        "Seoul National University",
+        "POSTECH",
+        "Korea University",
+        "Yonsei University",
+        "UNIST"
+      ],
+      "topResearchLabs": [
+        "NAVER AI Lab",
+        "Kakao Brain",
+        "Samsung AI Research",
+        "LG AI Research",
+        "ETRI (government research institute)"
+      ],
+      "governmentFunding": "National Research Foundation - KRW 2.2T AI strategy; strong government support",
+      "industryCollaboration": 91,
+      "phdPositionsAvailable": "High - ~400-600 AI positions annually",
+      "fundingForPhd": 80,
+      "keyResearchAreas": [
+        "Computer vision and image processing",
+        "NLP (Korean language focus)",
+        "Generative AI and GANs",
+        "Semiconductor AI and hardware",
+        "Mobile and edge AI",
+        "Gaming AI",
+        "E-commerce AI"
+      ],
+      "publicationOpportunities": "High - strong CVPR, ICCV, NeurIPS presence",
+      "internationalCollaboration": 74,
+      "bangladeshiAccessibility": {
+        "score": 72,
+        "challenges": "Korean language important for integration; hierarchical culture; long work hours",
+        "advantages": "GKS scholarship available; strong tech sector; growing opportunities",
+        "successRate": "Medium with GKS; Medium for KAIST direct"
+      },
+      "averageAdmissionRate": "15-30%",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 78,
+      "postPhdProspects": "Good in tech sector; immigration challenging long-term; Korean language essential for career",
+      "researchCulture": "Intense; publication-focused; hierarchical; strong industry ties; cutting-edge in certain areas",
+      "strategicAdvice": "KAIST AI School is top tier; GKS scholarship recommended; learn Korean; best for computer vision and NLP; immigration uncertain",
+      "confidenceScore": 80
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "researchQualityScore": 88,
+      "researchFundingScore": 92,
+      "accessibilityScore": 82,
+      "topUniversities": [
+        "Tsinghua University - IIIS, AI Institute",
+        "Peking University",
+        "Zhejiang University",
+        "Shanghai Jiao Tong University",
+        "University of Science and Technology of China",
+        "Fudan University",
+        "Nanjing University"
+      ],
+      "topResearchLabs": [
+        "BAAI (Beijing Academy of AI)",
+        "Shanghai AI Lab",
+        "ByteDance AI Lab",
+        "Alibaba DAMO Academy",
+        "Tencent AI Lab",
+        "Huawei Noah's Ark",
+        "SenseTime",
+        "Megvii"
+      ],
+      "governmentFunding": "Massive state investment - CNY 150B+ in AI; national priority",
+      "industryCollaboration": 94,
+      "phdPositionsAvailable": "Very high - ~3,000+ AI PhD positions annually",
+      "fundingForPhd": 85,
+      "keyResearchAreas": [
+        "Computer vision and facial recognition",
+        "Large language models (Chinese)",
+        "Generative AI",
+        "Autonomous vehicles",
+        "Smart cities and surveillance",
+        "E-commerce AI and recommendation",
+        "Fintech AI",
+        "Hardware-software co-design"
+      ],
+      "publicationOpportunities": "Very high - massive output volume; top conferences well-represented",
+      "internationalCollaboration": 68,
+      "bangladeshiAccessibility": {
+        "score": 85,
+        "challenges": "Language barrier for daily life; internet restrictions; cultural adaptation",
+        "advantages": "CSC scholarship widely available; affordable; large international student community; cutting-edge AI research",
+        "successRate": "High for CSC scholarship; Medium-High for direct admission"
+      },
+      "averageAdmissionRate": "25-40% for international students",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 72,
+      "postPhdProspects": "Excellent in China tech sector; weak immigration pathway; best as research training then relocate",
+      "researchCulture": "Intense; high publication volume; competitive; strong industry integration; rapid development",
+      "strategicAdvice": "Excellent for research training and publications; Tsinghua/Peking top tier; leverage for global career; immigration weak - treat as stepping stone",
+      "confidenceScore": 84,
+      "criticalNote": "Top-tier research quality and funding but immigration limitations; best for building research credentials then moving to US/Canada/Europe"
+    }
+  ],
+  "summaryComparison": {
+    "topResearchQuality": ["USA", "Switzerland", "UK", "Canada", "China"],
+    "bestFunding": ["Germany", "Norway", "Switzerland", "China", "Netherlands"],
+    "easiestAccess": ["China", "Germany", "Netherlands", "Finland", "Canada"],
+    "bestForRobotics": ["Japan", "USA", "Switzerland", "Germany", "South Korea"],
+    "bestForNLP": ["USA", "Canada", "China", "Germany", "South Korea"],
+    "bestForCV": ["USA", "China", "Switzerland", "South Korea", "Germany"],
+    "bestImmigrationAfterPhd": ["Canada", "Germany", "Netherlands", "Australia", "Norway"],
+    "strategicRecommendations": {
+      "maxResearchImpact": "USA top-20 programs, but immigration uncertain",
+      "balancedPath": "Canada (Toronto/Montreal) or Germany (Munich/Tübingen) - good research + clear immigration",
+      "fundingPriority": "Germany, Norway, Netherlands, China - salaried PhD positions",
+      "immigrationPriority": "Canada, Germany, Australia, Netherlands - clear PR pathways post-PhD",
+      "publicationMaximization": "USA, China, Switzerland, UK - highest output expectations and opportunities"
+    }
+  }
+}
