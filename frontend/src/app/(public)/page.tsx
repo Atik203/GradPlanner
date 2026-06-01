@@ -3,7 +3,6 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { authClient } from "@/lib/auth-client";
 import { ArrowRight, Sparkles, School, GraduationCap, FolderGit2, BarChart2 } from "lucide-react";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -19,62 +18,13 @@ export default async function LandingPage() {
   const isLoggedIn = !!session;
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-between bg-background text-foreground overflow-hidden font-sans selection:bg-primary/20">
+    <>
       {/* Dynamic Background Gradients */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-[-10%] left-1/4 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] dark:bg-primary/20 animate-pulse duration-10000" />
         <div className="absolute bottom-[-10%] right-1/4 translate-x-1/2 w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[120px] dark:bg-blue-500/20" />
       </div>
 
-      {/* Navbar */}
-      <header className="z-10 sticky top-0 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl">
-        <div className="flex h-16 items-center justify-between px-6 max-w-7xl mx-auto">
-          <Link href="/" className="flex items-center gap-3 font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">
-            <div className="flex items-center justify-center h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-blue-600 text-white font-extrabold text-sm shadow-lg shadow-primary/20">
-              GP
-            </div>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-              GradPlanner
-            </span>
-          </Link>
-          
-          {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-            <Link href="#features" className="hover:text-primary transition-colors">Features</Link>
-            <Link href="/universities" className="flex items-center gap-2 hover:text-primary transition-colors group">
-              <School className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              University Rankings
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-            {isLoggedIn ? (
-              <Link 
-                href="/dashboard" 
-                className={cn(buttonVariants({ variant: "default" }), "rounded-full shadow-lg hover:shadow-primary/25 transition-all")}
-              >
-                Dashboard
-              </Link>
-            ) : (
-              <>
-                <Link 
-                  href="/login" 
-                  className={cn(buttonVariants({ variant: "ghost" }), "hidden sm:inline-flex rounded-full")}
-                >
-                  Sign In
-                </Link>
-                <Link 
-                  href="/register" 
-                  className={cn(buttonVariants({ variant: "default" }), "rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 transition-all duration-300")}
-                >
-                  Get Started
-                </Link>
-              </>
-            )}
-          </div>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <main className="z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-20 max-w-5xl mx-auto space-y-10">
@@ -166,25 +116,6 @@ export default async function LandingPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="z-10 mt-auto border-t border-border/40 bg-background/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
-            <div className="h-6 w-6 rounded-md bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white font-bold text-[10px]">
-              GP
-            </div>
-            <span className="font-semibold text-foreground/80 text-sm">GradPlanner</span>
-          </div>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Contact</Link>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} GradPlanner. Designed for ML & AI aspirants.
-          </p>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
