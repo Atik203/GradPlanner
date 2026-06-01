@@ -92,7 +92,7 @@ export default function CountryIntelligencePage({ params }: { params: Promise<{ 
                     <p className="font-semibold text-foreground text-sm">{doc.name}</p>
                     <p className="text-xs text-muted-foreground">{doc.type}</p>
                   </div>
-                  <StatusBadge status={doc.status} type="document" />
+                  <StatusBadge status={doc.status} />
                 </CardContent>
               </Card>
             ))}
@@ -168,7 +168,7 @@ export default function CountryIntelligencePage({ params }: { params: Promise<{ 
                     <FundingStatusBadge status={prof.fundingStatus} />
                   </div>
                   <div className="mt-4 flex items-center justify-between">
-                    <StatusBadge status={prof.status} type="professor" />
+                    <StatusBadge status={prof.status} />
                     {prof.researchFitScore && (
                       <span className="text-xs font-semibold text-primary">Fit: {prof.researchFitScore}/10</span>
                     )}
