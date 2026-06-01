@@ -80,8 +80,9 @@ export default function UniversitiesPage() {
     const delayDebounceFn = setTimeout(async () => {
       setSearching(true);
       try {
-        const results = await fetchApi(`/api/v1/rankings?q=${encodeURIComponent(searchQuery)}&limit=10`);
-        setSearchResults(results);
+        const response = await fetchApi(`/api/v1/rankings?q=${encodeURIComponent(searchQuery)}&limit=10`);
+        // Backend now returns paginated object { data: [], total, ... }
+        setSearchResults(Array.isArray(response) ? response : (response.data ?? []));
       } catch (err) {
         console.error(err);
       } finally {
@@ -254,11 +255,11 @@ export default function UniversitiesPage() {
               <Card key={uni.id} className="border-border bg-card/30 hover:border-border/80 transition-all flex flex-col justify-between">
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between gap-4">
-                    <div>
+                    <div className="flex-1 min-w-0">
                       <CardTitle className="text-sm font-bold text-foreground line-clamp-1">{uni.name}</CardTitle>
                       <CardDescription className="text-xs text-muted-foreground">{uni.country}</CardDescription>
                     </div>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                    <span className={`shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full ${
                       uni.tier === "DREAM" ? "bg-[var(--tier-dream-bg)] text-[var(--tier-dream)]" :
                       uni.tier === "MATCH" ? "bg-[var(--tier-match-bg)] text-[var(--tier-match)]" :
                       "bg-[var(--tier-safety-bg)] text-[var(--tier-safety)]"
