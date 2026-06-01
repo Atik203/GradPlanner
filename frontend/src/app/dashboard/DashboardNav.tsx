@@ -10,6 +10,7 @@ import {
   FileText, 
   FolderGit2, 
   Globe,
+  BarChart3,
   Menu,
   X,
   ChevronLeft,
@@ -29,6 +30,7 @@ const trackingItems: NavItem[] = [
   { name: "Professors", href: "/dashboard/professors", icon: GraduationCap },
   { name: "Applications", href: "/dashboard/applications", icon: FolderGit2 },
   { name: "Documents", href: "/dashboard/documents", icon: FileText },
+  { name: "Rankings", href: "/dashboard/rankings", icon: BarChart3 },
 ];
 
 const countryItems: { name: string; href: string }[] = [
