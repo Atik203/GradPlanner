@@ -1,0 +1,2429 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Comprehensive housing market analysis for Bangladeshi CS/AI/ML students and graduates planning 2027-2029, covering student rental phase, post-graduation working phase, and long-term property considerations",
+    "targetProfile": "Bangladeshi student/graduate, CS/AI/ML field, age 22-30, single or with spouse/family, planning MSc/PhD abroad",
+    "currency": "USD",
+    "criticalNote": "Housing is the single largest expense and most unpredictable risk factor for international students. A country with excellent scholarships and salaries can be rendered financially unviable by housing market failure. Always secure accommodation BEFORE travel. Never assume availability upon arrival.",
+    "dataSource": "Aggregated from Numbeo Housing Index 2026, national statistics offices, university accommodation offices, Eurostat Housing Data 2025, OECD Affordable Housing Database 2025, local property portals, student union housing surveys, and GradPlanner field research",
+    "housingCrisisScale": {
+      "CRITICAL": "Vacancy below 1%; students frequently cannot find housing; university warns applicants proactively",
+      "SEVERE": "Vacancy 1-2%; significant difficulty; prices rising 10%+ annually; requires months of searching",
+      "HIGH": "Vacancy 2-3%; competitive market; prices rising 5-10% annually; plan well in advance",
+      "MODERATE": "Vacancy 3-5%; manageable with planning; stable or moderate price growth",
+      "LOW": "Vacancy above 5%; relatively easy to find housing; prices stable or declining"
+    }
+  },
+  "housingMarkets": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "currency": "CAD",
+      "usdExchangeRate": 0.74,
+      "overallHousingScore": 42,
+      "confidenceScore": 90,
+      "housingCrisisLevel": "SEVERE to CRITICAL depending on city",
+      "evidenceSummary": "Canada's housing crisis is structural and multi-year. Federal immigration targets of 400,000-500,000 annual newcomers clashed with construction capacity of 200,000-220,000 new units per year. Government announced international student cap in 2024 reducing study permit approvals by 35%. Despite this, the housing deficit accumulated over 2018-2025 will not resolve before 2030. Toronto and Vancouver are the worst affected. Montreal and Calgary remain viable. Federal housing plan aims to build 3.87 million new homes by 2031 but construction labor shortages threaten delivery.",
+
+      "cityBreakdown": [
+        {
+          "city": "Toronto",
+          "province": "Ontario",
+          "housingCrisisLevel": "CRITICAL",
+          "vacancyRate": "1.5%",
+          "averageRentTrend": "+6% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 1200, "usd": 888, "note": "3-4 person shared apartment; highly competitive" },
+            "privateRoom": { "localCurrency": 1800, "usd": 1332, "note": "Extremely hard to find; often requires 6-12 months search" },
+            "studio1BR": { "localCurrency": 2500, "usd": 1850, "note": "Average 1BR Toronto proper; Scarborough/Etobicoke CAD 1,800-2,100" },
+            "onCampus": { "localCurrency": 1400, "usd": 1036, "note": "UofT residence; waitlist 12-18 months; apply day of admission" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2500, "usd": 1850 },
+            "2BR": { "localCurrency": 3400, "usd": 2516, "note": "Sharing with roommate common strategy" },
+            "buyingMarketMedianPrice": { "localCurrency": 1100000, "usd": 814000, "note": "Median detached home Toronto; condos CAD 650,000-750,000" }
+          },
+          "recommendationForBangladeshiStudents": "AVOID unless attending UofT with guaranteed on-campus housing or fully funded with high stipend. Financial stress risk very high.",
+          "bangladeshiCommunityPresence": "Very strong - Brampton, Scarborough, Mississauga have large Bangladeshi diaspora. Halal food everywhere."
+        },
+        {
+          "city": "Vancouver",
+          "province": "British Columbia",
+          "housingCrisisLevel": "CRITICAL",
+          "vacancyRate": "0.9%",
+          "averageRentTrend": "+8% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 1300, "usd": 962, "note": "One of the most expensive rental markets globally" },
+            "privateRoom": { "localCurrency": 2000, "usd": 1480 },
+            "studio1BR": { "localCurrency": 2800, "usd": 2072, "note": "Average; downtown Vancouver CAD 3,200+" },
+            "onCampus": { "localCurrency": 1200, "usd": 888, "note": "UBC Gage Towers etc.; extremely competitive; guaranteed housing lottery" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2800, "usd": 2072 },
+            "2BR": { "localCurrency": 3800, "usd": 2812 },
+            "buyingMarketMedianPrice": { "localCurrency": 1350000, "usd": 999000, "note": "Median detached; condos CAD 750,000-900,000" }
+          },
+          "recommendationForBangladeshiStudents": "AVOID for financial sustainability. Only consider with fully funded PhD and confirmed campus housing.",
+          "bangladeshiCommunityPresence": "Moderate; growing South Asian community in Surrey and Burnaby."
+        },
+        {
+          "city": "Montreal",
+          "province": "Quebec",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "2.2%",
+          "averageRentTrend": "+5% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 700, "usd": 518, "note": "Montreal significantly more affordable; best value major city in Canada" },
+            "privateRoom": { "localCurrency": 1100, "usd": 814 },
+            "studio1BR": { "localCurrency": 1500, "usd": 1110, "note": "McGill/Concordia/UdeM areas; Plateau arrondissement" },
+            "onCampus": { "localCurrency": 900, "usd": 666 }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1600, "usd": 1184 },
+            "2BR": { "localCurrency": 2200, "usd": 1628 },
+            "buyingMarketMedianPrice": { "localCurrency": 550000, "usd": 407000, "note": "Far more affordable than Toronto/Vancouver" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED among Canadian cities. French language requirement (Quebec has own immigration system) is a consideration but English-language programs exist at McGill and Concordia.",
+          "bangladeshiCommunityPresence": "Growing; halal food available; multicultural city."
+        },
+        {
+          "city": "Ottawa",
+          "province": "Ontario",
+          "housingCrisisLevel": "MODERATE-HIGH",
+          "vacancyRate": "2.8%",
+          "averageRentTrend": "+4% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 800, "usd": 592 },
+            "privateRoom": { "localCurrency": 1200, "usd": 888 },
+            "studio1BR": { "localCurrency": 1700, "usd": 1258 },
+            "onCampus": { "localCurrency": 1000, "usd": 740 }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1800, "usd": 1332 },
+            "2BR": { "localCurrency": 2400, "usd": 1776 },
+            "buyingMarketMedianPrice": { "localCurrency": 650000, "usd": 481000 }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED. Carleton University and uOttawa are strong. Government tech sector nearby. Better affordability than Toronto.",
+          "bangladeshiCommunityPresence": "Small but present; halal food available."
+        },
+        {
+          "city": "Calgary",
+          "province": "Alberta",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.5%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 750, "usd": 555 },
+            "privateRoom": { "localCurrency": 1100, "usd": 814 },
+            "studio1BR": { "localCurrency": 1600, "usd": 1184 },
+            "onCampus": { "localCurrency": 950, "usd": 703 }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1700, "usd": 1258 },
+            "2BR": { "localCurrency": 2200, "usd": 1628 },
+            "buyingMarketMedianPrice": { "localCurrency": 580000, "usd": 429200, "note": "Alberta has no provincial income tax - significant advantage" }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED. University of Calgary strong in CS. No provincial tax. Growing tech sector. Good Bangladeshi community in northeast Calgary.",
+          "bangladeshiCommunityPresence": "Strong and growing; northeast Calgary has large South Asian community."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply for on-campus housing the same day admission offer is received. Do not wait.",
+        "priority2": "Join Facebook groups specific to your university for sublets and room shares before arrival.",
+        "priority3": "Contact university international student office for guaranteed housing programs.",
+        "priority4": "Consider homestay (CAD 800-1200/month including meals) as safe first-year option.",
+        "priority5": "Arrive in January (winter intake) rather than September for better availability.",
+        "warningNote": "Multiple cases of Bangladeshi students arriving in Toronto/Vancouver without housing confirmed in 2024-2025. This is a real crisis, not an exaggeration."
+      },
+
+      "propertyOwnershipForPR":  {
+        "feasibility": "Possible after 3-5 years with stable income; requires minimum 5-20% down payment",
+        "firstTimeBuyerIncentives": "Federal First Home Savings Account (FHSA) - CAD 40,000 lifetime contribution room; First Home Buyers Tax Credit",
+        "foreignBuyersBan": "Prohibits non-PR/citizens from buying until 2027; relaxing expected post-2027",
+        "mortgageRates2026": "5.5-6.5% variable; 5.0-6.0% 5-year fixed; highest since 2008",
+        "affordabilityTimeline": "Realistically 5-8 years post-graduation to qualify for mortgage in major city"
+      },
+
+      "overallHousingRisk": "HIGH",
+      "forecast2027to2029": "Marginal improvement in secondary cities; Toronto/Vancouver remain critical. Federal housing plan effects will not materialize at scale before 2029.",
+      "recommendation": "Canada housing situation requires strategic city selection. Montreal and Calgary are the viable choices for Bangladeshi students. On-campus housing must be secured before travel. Housing costs in Toronto/Vancouver can consume 60-70% of student budget making it financially unsustainable."
+    },
+
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "currency": "AUD",
+      "usdExchangeRate": 0.65,
+      "overallHousingScore": 40,
+      "confidenceScore": 88,
+      "housingCrisisLevel": "SEVERE",
+      "evidenceSummary": "Australia's housing crisis is well-documented and politically prominent. Net overseas migration reached record 547,000 in 2022-23, far outpacing housing construction of 173,000 units. Government announced international student caps at 270,000 for 2025 and enrollment limits per institution. Despite this, structural housing deficit will persist through 2028-2030. Sydney and Melbourne are worst affected. Adelaide and Brisbane emerging as viable alternatives with government investment.",
+
+      "cityBreakdown": [
+        {
+          "city": "Sydney",
+          "state": "New South Wales",
+          "housingCrisisLevel": "CRITICAL",
+          "vacancyRate": "1.0%",
+          "averageRentTrend": "+10% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 1100, "usd": 715, "note": "3-4 bedroom share house Inner West/Western Sydney" },
+            "privateRoom": { "localCurrency": 1800, "usd": 1170, "note": "Private room very hard to find" },
+            "studio1BR": { "localCurrency": 2800, "usd": 1820, "note": "Sydney average; Inner city AUD 3,200+" },
+            "onCampus": { "localCurrency": 1400, "usd": 910, "note": "UNSW Village, USyd Colleges; waitlist required" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2800, "usd": 1820 },
+            "2BR": { "localCurrency": 3800, "usd": 2470 },
+            "buyingMarketMedianPrice": { "localCurrency": 1450000, "usd": 942500, "note": "Median Sydney house; units AUD 750,000-900,000" }
+          },
+          "recommendationForBangladeshiStudents": "AVOID unless attached to UNSW/USyd with confirmed campus housing. Financial pressure extreme.",
+          "bangladeshiCommunityPresence": "Strong in Lakemba, Auburn, Merrylands. Halal food widely available. Large South Asian community."
+        },
+        {
+          "city": "Melbourne",
+          "state": "Victoria",
+          "housingCrisisLevel": "SEVERE",
+          "vacancyRate": "1.2%",
+          "averageRentTrend": "+9% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 950, "usd": 618 },
+            "privateRoom": { "localCurrency": 1600, "usd": 1040 },
+            "studio1BR": { "localCurrency": 2300, "usd": 1495 },
+            "onCampus": { "localCurrency": 1300, "usd": 845, "note": "UniMelb colleges; Monash accommodation" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2300, "usd": 1495 },
+            "2BR": { "localCurrency": 3200, "usd": 2080 },
+            "buyingMarketMedianPrice": { "localCurrency": 950000, "usd": 617500, "note": "More affordable than Sydney but still severe" }
+          },
+          "recommendationForBangladeshiStudents": "Proceed with caution. Secure accommodation before arrival. Western suburbs (Sunshine, Footscray) cheaper but longer commute.",
+          "bangladeshiCommunityPresence": "Growing in Dandenong, Noble Park. Halal food accessible."
+        },
+        {
+          "city": "Brisbane",
+          "state": "Queensland",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "1.8%",
+          "averageRentTrend": "+7% annually 2024-2026",
+          "note": "2032 Olympics construction driving some improvement in infrastructure; also adding cost pressure",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 750, "usd": 488 },
+            "privateRoom": { "localCurrency": 1200, "usd": 780 },
+            "studio1BR": { "localCurrency": 1900, "usd": 1235 },
+            "onCampus": { "localCurrency": 1100, "usd": 715, "note": "UQ St Lucia campus housing; QUT options" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2000, "usd": 1300 },
+            "2BR": { "localCurrency": 2700, "usd": 1755 },
+            "buyingMarketMedianPrice": { "localCurrency": 900000, "usd": 585000, "note": "Rising but still below Sydney/Melbourne" }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED. UQ and QUT both strong for CS/AI. Growing tech scene. Better affordability. 2032 Olympics investment improving city infrastructure.",
+          "bangladeshiCommunityPresence": "Growing in Logan, Sunnybank. Halal food available."
+        },
+        {
+          "city": "Adelaide",
+          "state": "South Australia",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "2.8%",
+          "averageRentTrend": "+4% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 600, "usd": 390 },
+            "privateRoom": { "localCurrency": 950, "usd": 618 },
+            "studio1BR": { "localCurrency": 1500, "usd": 975 },
+            "onCampus": { "localCurrency": 900, "usd": 585 }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1600, "usd": 1040 },
+            "2BR": { "localCurrency": 2100, "usd": 1365 },
+            "buyingMarketMedianPrice": { "localCurrency": 700000, "usd": 455000, "note": "Most affordable major Australian city" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. University of Adelaide and Flinders University solid for CS. Defense and tech industries growing. Adelaide ranked most liveable Australian city for international students in 2025.",
+          "bangladeshiCommunityPresence": "Small but growing. Halal food increasingly available."
+        },
+        {
+          "city": "Canberra",
+          "state": "ACT",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "2.5%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 700, "usd": 455 },
+            "privateRoom": { "localCurrency": 1100, "usd": 715 },
+            "studio1BR": { "localCurrency": 1800, "usd": 1170 },
+            "onCampus": { "localCurrency": 1000, "usd": 650, "note": "ANU on-campus housing; apply early" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1900, "usd": 1235 },
+            "2BR": { "localCurrency": 2500, "usd": 1625 },
+            "buyingMarketMedianPrice": { "localCurrency": 850000, "usd": 552500 }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED for ANU specifically. ANU is world-ranked and strong for CS/AI research. Government sector jobs available post-graduation.",
+          "bangladeshiCommunityPresence": "Small. Halal food available."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply for university accommodation simultaneously with submitting application - not after offer.",
+        "priority2": "Use official university accommodation portals; avoid Facebook Marketplace scams targeting international students.",
+        "priority3": "Consider homestay for first semester (AUD 800-1,200/month including meals) for safety and community connection.",
+        "priority4": "International students report spending 3-6 months on housing waitlists in Sydney/Melbourne.",
+        "priority5": "Flatmates.com.au is the primary legitimate platform for shared housing search.",
+        "warningNote": "Australian Senate Select Committee on Cost of Living (2024) formally found international student housing situation as 'crisis level'. Not exaggerated."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Possible after 3-5 years working; Foreign Investment Review Board (FIRB) approval required for non-citizens/PRs",
+        "firstTimeBuyerIncentives": "First Home Owner Grant (FHOG) varies by state; Home Guarantee Scheme for eligible buyers",
+        "foreignBuyersRestrictions": "Non-residents pay additional stamp duty surcharge 7-8% depending on state; FIRB fee AUD 13,200-26,500",
+        "mortgageRates2026": "6.0-7.0% variable; RBA hiking cycle impact still felt",
+        "affordabilityTimeline": "6-10 years post-graduation realistically in Sydney/Melbourne; 3-5 years in Adelaide/Brisbane"
+      },
+
+      "overallHousingRisk": "HIGH",
+      "forecast2027to2029": "Structural deficit continues. Government housing targets (1.2 million new homes by 2029) running significantly behind pace. Adelaide and Brisbane better trajectory than Sydney/Melbourne.",
+      "recommendation": "Adelaide and Brisbane are the strategic choices. Sydney and Melbourne require confirmed accommodation before travel. RTP PhD scholarship often includes accommodation assistance - leverage this. The housing crisis is real and documented. Do not assume you will find housing upon arrival in Sydney or Melbourne."
+    },
+
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "overallHousingScore": 62,
+      "confidenceScore": 88,
+      "housingCrisisLevel": "MODERATE to HIGH depending on city",
+      "evidenceSummary": "Germany faces a housing construction shortfall. New government building target is 400,000 units per year; actual completions in 2024-2025 were approximately 220,000-240,000 due to high construction costs and interest rates. Berlin and Munich are severely affected. Smaller university cities (Aachen, Kaiserslautern, Magdeburg, Chemnitz, Dresden) remain very affordable. The Studentenwerk (student welfare organizations) manage significant student housing stock at subsidized rates but waitlists are long in major cities.",
+
+      "cityBreakdown": [
+        {
+          "city": "Munich",
+          "state": "Bavaria",
+          "housingCrisisLevel": "SEVERE",
+          "vacancyRate": "0.8%",
+          "averageRentTrend": "+5% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 800, "usd": 872, "note": "WG room Munich; extreme competition" },
+            "privateRoom": { "localCurrency": 1200, "usd": 1308 },
+            "studio1BR": { "localCurrency": 1900, "usd": 2071, "note": "Munich highest rents in Germany" },
+            "studentenwerk": { "localCurrency": 380, "usd": 414, "note": "Studentenwerk München; waitlist 12-18 months; apply day one" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2000, "usd": 2180 },
+            "2BR": { "localCurrency": 2800, "usd": 3052 },
+            "buyingMarketMedianPrice": { "localCurrency": 8500, "usd": 9265, "note": "EUR per sqm; 80sqm apartment EUR 680,000; extremely expensive" }
+          },
+          "recommendationForBangladeshiStudents": "AVOID unless attached to TUM/LMU with guaranteed Studentenwerk application submitted immediately. High salary compensates somewhat but housing stress significant.",
+          "bangladeshiCommunityPresence": "Small. Halal food available in city centre."
+        },
+        {
+          "city": "Berlin",
+          "state": "Berlin",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "1.5%",
+          "averageRentTrend": "+7% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 700, "usd": 763, "note": "WG room; extremely competitive; use WG-Gesucht.de immediately" },
+            "privateRoom": { "localCurrency": 1000, "usd": 1090 },
+            "studio1BR": { "localCurrency": 1400, "usd": 1526, "note": "Berlin rising rapidly; Mitte/Prenzlauer Berg expensive; Neukölln/Wedding cheaper" },
+            "studentenwerk": { "localCurrency": 320, "usd": 349, "note": "Studierendenwerk Berlin; 12+ month waitlist; apply immediately" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1500, "usd": 1635 },
+            "2BR": { "localCurrency": 2200, "usd": 2398 },
+            "buyingMarketMedianPrice": { "localCurrency": 5500, "usd": 5995, "note": "EUR per sqm; slightly deflated from 2022 peak due to interest rates; some buying opportunity" }
+          },
+          "recommendationForBangladeshiStudents": "MANAGEABLE with advance planning. Apply for Studentenwerk immediately. WG-Gesucht.de and Facebook groups critical. Neukölln and Wedding districts offer better affordability. Strong tech startup scene makes post-graduation employment excellent.",
+          "bangladeshiCommunityPresence": "Good presence in Neukölln, Wedding. Halal food very accessible. Diverse multicultural city."
+        },
+        {
+          "city": "Hamburg",
+          "state": "Hamburg",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "1.8%",
+          "averageRentTrend": "+5% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 650, "usd": 709 },
+            "privateRoom": { "localCurrency": 950, "usd": 1036 },
+            "studio1BR": { "localCurrency": 1400, "usd": 1526 },
+            "studentenwerk": { "localCurrency": 340, "usd": 371, "note": "Studierendenwerk Hamburg; 8-12 month waitlist" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1500, "usd": 1635 },
+            "2BR": { "localCurrency": 2100, "usd": 2289 },
+            "buyingMarketMedianPrice": { "localCurrency": 6200, "usd": 6758, "note": "EUR per sqm" }
+          },
+          "recommendationForBangladeshiStudents": "Manageable. University of Hamburg and HAW Hamburg strong options.",
+          "bangladeshiCommunityPresence": "Small but present."
+        },
+        {
+          "city": "Aachen",
+          "state": "North Rhine-Westphalia",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.2%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 420, "usd": 458, "note": "Very affordable; RWTH Aachen student city" },
+            "privateRoom": { "localCurrency": 600, "usd": 654 },
+            "studio1BR": { "localCurrency": 850, "usd": 927 },
+            "studentenwerk": { "localCurrency": 280, "usd": 305, "note": "Studierendenwerk Aachen; shorter waitlist than major cities" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 950, "usd": 1036 },
+            "2BR": { "localCurrency": 1300, "usd": 1417 },
+            "buyingMarketMedianPrice": { "localCurrency": 3500, "usd": 3815, "note": "EUR per sqm; accessible" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. RWTH Aachen world-class for engineering/CS. Affordable housing. Close to Netherlands and Belgium for career opportunities. Manageable city size.",
+          "bangladeshiCommunityPresence": "Small but present in university context."
+        },
+        {
+          "city": "Dresden",
+          "state": "Saxony",
+          "housingCrisisLevel": "LOW",
+          "vacancyRate": "4.5%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 350, "usd": 382, "note": "Very affordable eastern German city" },
+            "privateRoom": { "localCurrency": 500, "usd": 545 },
+            "studio1BR": { "localCurrency": 700, "usd": 763 },
+            "studentenwerk": { "localCurrency": 220, "usd": 240, "note": "Studentenwerk Dresden; reasonable availability" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 750, "usd": 818 },
+            "2BR": { "localCurrency": 1000, "usd": 1090 },
+            "buyingMarketMedianPrice": { "localCurrency": 2800, "usd": 3052, "note": "EUR per sqm; very affordable" }
+          },
+          "recommendationForBangladeshiStudents": "EXCELLENT VALUE. TU Dresden strong research institution. Bosch, Infineon, Volkswagen tech nearby. Growing semiconductor industry (Intel fab planned). Lower salary than Munich but cost offset makes it viable.",
+          "bangladeshiCommunityPresence": "Very small. Requires more cultural self-sufficiency."
+        }
+      ],
+
+      "studentenWerkSystem": {
+        "description": "Germany's Studentenwerk is a network of student welfare organizations managing subsidized student housing across all university cities",
+        "typicalRentRange": { "localCurrency": "200-450/month", "usd": "218-491/month" },
+        "includesUtilities": true,
+        "internetIncluded": true,
+        "waitlistTimeline": "3-18 months depending on city; major cities longer",
+        "applicationStrategy": "Apply to Studentenwerk immediately upon receiving university admission letter. Do not wait for visa. The application can be made from Bangladesh.",
+        "websiteStrategy": "Each city has its own Studentenwerk website; search 'Studentenwerk [city name]'",
+        "importanceRating": "CRITICAL - securing Studentenwerk housing transforms Germany financial viability"
+      },
+
+      "studentHousingStrategies": {
+        "priority1": "Apply to Studentenwerk the day you receive admission letter. This is non-negotiable.",
+        "priority2": "Use WG-Gesucht.de (Germany's primary flat-share platform) to find WG rooms as backup.",
+        "priority3": "Join university Facebook groups and Bangladeshi student groups in Germany for housing leads.",
+        "priority4": "Consider smaller university cities (Aachen, Dresden, Magdeburg) over Munich and Berlin for housing accessibility.",
+        "priority5": "Many PhD employers (TVöD contracts) have institutional connections to faster Studentenwerk allocation.",
+        "warningNote": "Germany's housing crisis is real but manageable compared to Canada/Australia/Ireland. The Studentenwerk system is a genuine safety net that does not exist in most other countries."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Possible after Blue Card + PR (5 years); mortgage market accessible for residents",
+        "firstTimeBuyerIncentives": "Baukindergeld (child housing subsidy) available; KfW low-interest green construction loans",
+        "foreignBuyersRestrictions": "No restrictions for EU Blue Card holders or PR holders",
+        "mortgageRates2026": "3.8-4.5% fixed 10-year; significantly more affordable than UK/Australia",
+        "affordabilityTimeline": "5-8 years post-graduation in major cities; 3-5 years in secondary cities; buying meaningful long-term wealth builder in Germany"
+      },
+
+      "overallHousingRisk": "MODERATE (significantly better than Canada/Australia/Ireland)",
+      "forecast2027to2029": "Construction shortfall continues but smaller university cities remain accessible. Studentenwerk system provides crucial buffer. Major cities will remain tight.",
+      "recommendation": "Germany's housing situation is challenging in major cities but uniquely manageable through the Studentenwerk system. Strategic city selection (Aachen, Dresden, Karlsruhe, Kaiserslautern) dramatically improves housing accessibility. The key action is applying to Studentenwerk immediately upon admission - this single step transforms the Germany housing experience."
+    },
+
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "overallHousingScore": 28,
+      "confidenceScore": 92,
+      "housingCrisisLevel": "CRITICAL",
+      "evidenceSummary": "Ireland's housing crisis is widely described as a national emergency. Dublin vacancy rates below 1%. Average room rent in Dublin exceeded EUR 1,500/month in 2026 - higher than many capitals' full apartment rent. Multiple Irish universities issued formal warnings to prospective international students about inability to guarantee housing. Threshold (housing charity) reports international students spending EUR 1,000-1,600/month just for a room in shared accommodation. Government Housing for All plan significantly behind schedule.",
+
+      "cityBreakdown": [
+        {
+          "city": "Dublin",
+          "housingCrisisLevel": "CRITICAL - National Emergency Level",
+          "vacancyRate": "0.6%",
+          "averageRentTrend": "+8% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 1300, "usd": 1417, "note": "Standard Dublin shared room 2026; some reports of EUR 1,600-1,800 in prime areas" },
+            "privateRoom": { "localCurrency": 2000, "usd": 2180, "note": "Studio/private room extremely scarce" },
+            "studio1BR": { "localCurrency": 2500, "usd": 2725, "note": "1BR Dublin average; city centre EUR 3,000+" },
+            "onCampus": { "localCurrency": 900, "usd": 981, "note": "Trinity, UCD campus accommodation; oversubscribed; priority given to first-years" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2600, "usd": 2834 },
+            "2BR": { "localCurrency": 3500, "usd": 3815 },
+            "buyingMarketMedianPrice": { "localCurrency": 450000, "usd": 490500, "note": "Dublin median home; apartments EUR 350,000-420,000" }
+          },
+          "recommendationForBangladeshiStudents": "HIGH RISK. Only proceed if on-campus housing CONFIRMED before travel, or if you have family/community contacts who can provide accommodation. Do not travel to Dublin without secured housing.",
+          "bangladeshiCommunityPresence": "Small South Asian community growing. Halal food increasingly available."
+        },
+        {
+          "city": "Cork",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "1.4%",
+          "averageRentTrend": "+6% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 800, "usd": 872, "note": "Significantly better than Dublin" },
+            "privateRoom": { "localCurrency": 1200, "usd": 1308 },
+            "studio1BR": { "localCurrency": 1700, "usd": 1853 },
+            "onCampus": { "localCurrency": 750, "usd": 818, "note": "UCC campus accommodation; apply immediately" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1800, "usd": 1962 },
+            "2BR": { "localCurrency": 2400, "usd": 2616 },
+            "buyingMarketMedianPrice": { "localCurrency": 380000, "usd": 414200 }
+          },
+          "recommendationForBangladeshiStudents": "VIABLE ALTERNATIVE TO DUBLIN. UCC strong for CS/AI. Apple, Dell, Amazon EMEA operations in Cork. Growing tech scene. Better affordability than Dublin.",
+          "bangladeshiCommunityPresence": "Very small but growing tech worker community."
+        },
+        {
+          "city": "Galway",
+          "housingCrisisLevel": "MODERATE-HIGH",
+          "vacancyRate": "1.8%",
+          "averageRentTrend": "+4% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 700, "usd": 763 },
+            "privateRoom": { "localCurrency": 1000, "usd": 1090 },
+            "studio1BR": { "localCurrency": 1500, "usd": 1635 },
+            "onCampus": { "localCurrency": 700, "usd": 763, "note": "NUI Galway campus housing" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1600, "usd": 1744 },
+            "2BR": { "localCurrency": 2100, "usd": 2289 },
+            "buyingMarketMedianPrice": { "localCurrency": 320000, "usd": 348800 }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED for NUI Galway. Med-tech and tech industry present. Better cost balance. Smaller city but manageable.",
+          "bangladeshiCommunityPresence": "Very small."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Secure on-campus accommodation BEFORE accepting the university offer if possible - negotiate this as a condition.",
+        "priority2": "Consider deferring entry by one semester to get on the accommodation waitlist earlier.",
+        "priority3": "Contact Irish Bangladeshi student societies directly for housing networks and sublet opportunities.",
+        "priority4": "Daft.ie is the primary Irish property portal; set alerts immediately upon application.",
+        "priority5": "Homestay in Dublin (EUR 1,000-1,400/month including meals) is safer first-year option than private market.",
+        "warningNote": "Irish universities TCD, UCD, DCU have formally published notices that they cannot guarantee student housing. Multiple student welfare organizations called this an 'international student trap'. This is the most severe housing risk in Europe."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Long-term PR holders can access mortgage market; significant stamp duty 1% on first EUR 1M",
+        "firstTimeBuyerIncentives": "Help to Buy scheme: 10% rebate on new property up to EUR 30,000; First Home Scheme shared equity",
+        "foreignBuyersRestrictions": "No formal restrictions for residents; practical constraint is supply shortage",
+        "mortgageRates2026": "4.0-5.0% variable; ECB rate cuts beginning to filter through",
+        "affordabilityTimeline": "7-12 years post-graduation realistically in Dublin; Cork/Galway more accessible"
+      },
+
+      "overallHousingRisk": "VERY HIGH - highest in Europe among analyzed countries",
+      "forecast2027to2029": "No meaningful relief expected. Government target of 40,000 new units per year chronically underdelivered at 29,000-32,000. Structural crisis continuing through at least 2030.",
+      "recommendation": "Ireland housing is the most serious financial and logistical risk in this analysis. Proceed ONLY with: confirmed on-campus housing OR significant financial buffer (EUR 6,000-10,000 emergency fund) OR verified accommodation through community networks. Cork and Galway are materially better than Dublin. English language advantage and tech job market are genuine strengths - but only accessible if housing problem is solved first."
+    },
+
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "overallHousingScore": 38,
+      "confidenceScore": 87,
+      "housingCrisisLevel": "SEVERE",
+      "evidenceSummary": "The Netherlands faces one of Europe's most acute student housing crises. Multiple Dutch universities (University of Amsterdam, Radboud, Maastricht) temporarily paused international student recruitment specifically citing housing inability. Vacancy rates nationally below 1%. The Dutch government's Housing Minister declared housing shortage of 390,000 units in 2025. Social housing waitlists in Amsterdam average 12-15 years. Private rental market liberalization (Wet Betaalbare Huur 2024) created new rent control rules but also caused many landlords to exit student market.",
+
+      "cityBreakdown": [
+        {
+          "city": "Amsterdam",
+          "housingCrisisLevel": "CRITICAL",
+          "vacancyRate": "0.5%",
+          "averageRentTrend": "+5% annually 2024-2026 (rent control dampening growth)",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 900, "usd": 981, "note": "Free market room; SSH housing waitlist 2+ years for Amsterdam" },
+            "privateRoom": { "localCurrency": 1500, "usd": 1635, "note": "Very scarce" },
+            "studio1BR": { "localCurrency": 2200, "usd": 2398, "note": "Under new rent control law; many landlords selling rather than renting" },
+            "sshHousing": { "localCurrency": 450, "usd": 491, "note": "SSH student housing; waitlist 2 years; essentially unavailable for new internationals" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2000, "usd": 2180, "note": "New rent control caps some prices; reduced supply" },
+            "2BR": { "localCurrency": 2800, "usd": 3052 },
+            "buyingMarketMedianPrice": { "localCurrency": 550000, "usd": 599500, "note": "Amsterdam apartment; fully recovered from 2023 dip" }
+          },
+          "recommendationForBangladeshiStudents": "AVOID. The University of Amsterdam itself recommends students consider other cities. UvA housing guarantee essentially non-existent.",
+          "bangladeshiCommunityPresence": "South Asian community in Amsterdam Southeast. Halal food widely available."
+        },
+        {
+          "city": "Eindhoven",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "2.0%",
+          "averageRentTrend": "+4% annually 2024-2026",
+          "note": "ASML and Brainport Eindhoven ecosystem driving demand but also investment in housing",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 600, "usd": 654, "note": "TU/e student city; better than Amsterdam/Utrecht" },
+            "privateRoom": { "localCurrency": 900, "usd": 981 },
+            "studio1BR": { "localCurrency": 1300, "usd": 1417 },
+            "sshHousing": { "localCurrency": 400, "usd": 436, "note": "SSH Eindhoven; shorter waitlist; apply immediately on admission" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1400, "usd": 1526 },
+            "2BR": { "localCurrency": 1900, "usd": 2071 },
+            "buyingMarketMedianPrice": { "localCurrency": 380000, "usd": 414200 }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. TU/e world-class for CS/AI/Data Science. ASML (world's most important semiconductor company) nearby for internships and jobs. Better housing market than Amsterdam/Utrecht/Delft. Brainport ecosystem growing.",
+          "bangladeshiCommunityPresence": "Small. Growing tech worker community. Halal food available in city."
+        },
+        {
+          "city": "Delft",
+          "housingCrisisLevel": "SEVERE",
+          "vacancyRate": "1.1%",
+          "averageRentTrend": "+5% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 700, "usd": 763, "note": "TU Delft student city; intense competition" },
+            "privateRoom": { "localCurrency": 1000, "usd": 1090 },
+            "studio1BR": { "localCurrency": 1500, "usd": 1635 },
+            "sshHousing": { "localCurrency": 430, "usd": 469, "note": "SSH Delft; 12-18 month waitlist" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1600, "usd": 1744 },
+            "2BR": { "localCurrency": 2200, "usd": 2398 },
+            "buyingMarketMedianPrice": { "localCurrency": 450000, "usd": 490500 }
+          },
+          "recommendationForBangladeshiStudents": "Proceed with caution. TU Delft world-class (robotics, AI). Proximity to The Hague and Rotterdam for employment. SSH waitlist critical path.",
+          "bangladeshiCommunityPresence": "Small."
+        },
+        {
+          "city": "Groningen",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.0%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 450, "usd": 491 },
+            "privateRoom": { "localCurrency": 700, "usd": 763 },
+            "studio1BR": { "localCurrency": 1000, "usd": 1090 },
+            "sshHousing": { "localCurrency": 350, "usd": 382, "note": "ACLO/SSH student housing; better availability" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1100, "usd": 1199 },
+            "2BR": { "localCurrency": 1500, "usd": 1635 },
+            "buyingMarketMedianPrice": { "localCurrency": 280000, "usd": 305200, "note": "Most affordable major Dutch city" }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED for University of Groningen (AIML program strong). Most affordable Dutch major city. SSH housing more accessible. Job market smaller but Dutch work permit allows working anywhere in NL.",
+          "bangladeshiCommunityPresence": "Very small. University environment diverse."
+        }
+      ],
+
+      "sshHousingSystem": {
+        "description": "SSH (Student Housing Netherlands) is the primary non-profit student housing provider across Dutch university cities",
+        "typicalRentRange": { "localCurrency": "350-600/month", "usd": "382-654/month" },
+        "includesUtilities": "Usually yes",
+        "waitlistTimeline": "Amsterdam 24+ months; Delft 12-18 months; Eindhoven 6-12 months; Groningen 3-6 months",
+        "applicationStrategy": "Register at SSH the moment you start your application to the university. Do not wait for formal admission. Registration date determines queue position.",
+        "importanceRating": "CRITICAL - SSH housing is the only financially viable option for many students"
+      },
+
+      "rentControlLaw2024": {
+        "lawName": "Wet Betaalbare Huur (Affordable Rent Act)",
+        "effectiveDate": "July 2024",
+        "impact": "Capped rent for homes with points value under 186 (WWS system) at approximately EUR 1,157/month. Homes under 144 points capped at approximately EUR 900/month.",
+        "unintendedConsequence": "Many landlords sold properties rather than rent at capped rates; reduced private rental supply by estimated 15-20% in 2024-2025",
+        "netEffect": "Reduces rent IF you find housing; further reduces available supply; contradictory for students"
+      },
+
+      "studentHousingStrategies": {
+        "priority1": "Register at SSH student housing for your city IMMEDIATELY - same day as university application submission.",
+        "priority2": "Eindhoven and Groningen over Amsterdam, Utrecht, and Delft for housing accessibility.",
+        "priority3": "Facebook groups 'Housing for International Students [city]' are primary community resource.",
+        "priority4": "Kamernet.nl and Pararius.nl are legitimate platforms; avoid advance fee scams.",
+        "priority5": "PhD employment contracts in Netherlands often come with university housing assistance - check with supervisor.",
+        "warningNote": "University of Amsterdam (UvA) published official statement in 2024 that it cannot guarantee housing for international students and recommended prospective students 'reconsider' if housing cannot be arranged independently."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Possible with 5-year permit; competitive market with mortgage accessibility",
+        "firstTimeBuyerIncentives": "NHG (Nationale Hypotheek Garantie) mortgage guarantee; starter homes exemption from transfer tax",
+        "foreignBuyersRestrictions": "Geen; residents with valid permit can buy",
+        "mortgageRates2026": "4.0-4.8% 10-year fixed; improving from 2023 peak",
+        "affordabilityTimeline": "6-10 years in Amsterdam/Utrecht; 4-6 years in Eindhoven/Groningen"
+      },
+
+      "overallHousingRisk": "VERY HIGH in Amsterdam/Utrecht; HIGH in Delft; MODERATE in Eindhoven/Groningen",
+      "forecast2027to2029": "Government building programs increasing but structural deficit persists. Eindhoven Brainport area receiving targeted housing investment. 2027-2029 marginally improving outside Amsterdam/Utrecht.",
+      "recommendation": "Eindhoven is the strategic choice combining world-class AI research (TU/e), excellent tech employment (ASML, Philips, NXP), and manageable housing compared to Randstad cities. Register with SSH immediately. PhD employment route in NL comes with better housing access through institutional networks."
+    },
+
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "currency": "SEK",
+      "usdExchangeRate": 0.096,
+      "overallHousingScore": 48,
+      "confidenceScore": 84,
+      "housingCrisisLevel": "SEVERE in Stockholm; MODERATE in university cities",
+      "evidenceSummary": "Sweden's housing market is characterized by extreme dichotomy. Stockholm social housing queue averages 10-20 years. Private market is liberalized but expensive. Smaller university cities (Lund, Linköping, Uppsala) have functional student housing through AF Bostäder and Studentstaden. The Swedish housing model of controlled rents and long queues means international students must use private market, which is expensive. Construction sector downturn in 2023-2025 reduced new supply further.",
+
+      "cityBreakdown": [
+        {
+          "city": "Stockholm",
+          "housingCrisisLevel": "SEVERE",
+          "vacancyRate": "0.9%",
+          "averageRentTrend": "+4% annually 2024-2026 (rent control limits official figures; private market higher)",
+          "socialHousingQueue": "10-20 years; effectively not available for international students",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 6000, "usd": 576, "note": "Private market corridor room" },
+            "privateRoom": { "localCurrency": 9000, "usd": 864 },
+            "studio1BR": { "localCurrency": 15000, "usd": 1440, "note": "Private market Stockholm; Blocket.se secondary market" },
+            "studentCorridors": { "localCurrency": 4500, "usd": 432, "note": "SSSB student housing Stockholm; waitlist 1-2 years; register at birth essentially" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 14000, "usd": 1344 },
+            "2BR": { "localCurrency": 20000, "usd": 1920 },
+            "buyingMarketMedianPrice": { "localCurrency": 5500000, "usd": 528000, "note": "Median Stockholm apartment; slightly corrected from 2022 peak" }
+          },
+          "recommendationForBangladeshiStudents": "DIFFICULT. KTH Royal Institute of Technology is world-class for CS/AI. Only viable with: (a) PhD doktorand employment contract (better housing access), or (b) confirmed student housing secured 12-18 months in advance.",
+          "bangladeshiCommunityPresence": "Small. Multicultural city. Halal food available in Rinkeby, Tensta areas."
+        },
+        {
+          "city": "Lund",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.5%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 4500, "usd": 432, "note": "AF Bostäder student housing; manageable availability" },
+            "privateRoom": { "localCurrency": 6500, "usd": 624 },
+            "studio1BR": { "localCurrency": 9000, "usd": 864 },
+            "afBostader": { "localCurrency": 3800, "usd": 365, "note": "AF Bostäder Lund; primary student housing; apply immediately" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 9500, "usd": 912 },
+            "2BR": { "localCurrency": 13000, "usd": 1248 },
+            "buyingMarketMedianPrice": { "localCurrency": 2800000, "usd": 268800 }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED. Lund University world-class (strong AI and CS). Malmö proximity (15 min) for broader job market. Better housing than Stockholm. Manageable student city.",
+          "bangladeshiCommunityPresence": "Small but diverse university environment."
+        },
+        {
+          "city": "Linköping",
+          "housingCrisisLevel": "LOW-MODERATE",
+          "vacancyRate": "4.2%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 4000, "usd": 384 },
+            "privateRoom": { "localCurrency": 5500, "usd": 528 },
+            "studio1BR": { "localCurrency": 8000, "usd": 768 },
+            "studentBostader": { "localCurrency": 3500, "usd": 336, "note": "Studentbostäder i Linköping; reasonable availability" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 8500, "usd": 816 },
+            "2BR": { "localCurrency": 11000, "usd": 1056 },
+            "buyingMarketMedianPrice": { "localCurrency": 2200000, "usd": 211200 }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. Linköping University excellent for CS/AI (Department of Computer and Information Science strong). Saab, Ericsson nearby. Most accessible housing in Sweden for students. Very safe city.",
+          "bangladeshiCommunityPresence": "Very small but growing international student community."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Register with student housing organizations immediately upon applying to university: SSSB (Stockholm), AF Bostäder (Lund), Studentbostäder (Linköping).",
+        "priority2": "Linköping and Lund strongly preferred over Stockholm for housing accessibility.",
+        "priority3": "PhD doktorand employment typically provides better housing priority access through university institutional connections.",
+        "priority4": "Blocket.se is the primary secondary market platform for private rentals.",
+        "priority5": "Social housing (bostadskö) queue is irrelevant for international students - focus on student housing organizations only.",
+        "warningNote": "Stockholm social housing queue of 10-20 years means it is zero help for international students. Private market in Stockholm is genuinely very expensive."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Possible after PR (permanent residence 5 years); competitive market",
+        "firstTimeBuyerIncentives": "ROT-avdrag (renovation tax deduction); transfer tax low (1.5% stamp duty)",
+        "foreignBuyersRestrictions": "No restrictions for residents; practical constraint is market competition",
+        "mortgageRates2026": "3.5-4.5% variable; Riksbank cutting rates; market recovering from 2022-2023 correction",
+        "affordabilityTimeline": "Stockholm 8-15 years post-graduation; Linköping/Lund 5-8 years"
+      },
+
+      "overallHousingRisk": "HIGH in Stockholm; MODERATE in Lund/Linköping",
+      "forecast2027to2029": "Stockholm remains constrained. Secondary cities improving. Construction sector recovering after 2023-2024 downturn. Linköping and Lund good prospects.",
+      "recommendation": "Linköping or Lund are strategic choices for Sweden. Excellent universities, manageable housing, strong tech employment. Stockholm only if PhD at KTH with institutional housing support. Register with student housing organizations immediately upon first application submission."
+    },
+
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "overallHousingScore": 65,
+      "confidenceScore": 82,
+      "housingCrisisLevel": "MODERATE in Helsinki; LOW in other university cities",
+      "evidenceSummary": "Finland's housing market is significantly more manageable than other Nordic and Western European capitals. HOAS (Helsingin seudun opiskelija-asuntosäätiö) and TOAS (Tampere student housing foundation) provide genuinely functional student housing at affordable rates with reasonable wait times. Helsinki private market tightening but still manageable. The Finnish system of student housing foundations is effective and accessible for international students with advance planning.",
+
+      "cityBreakdown": [
+        {
+          "city": "Helsinki/Espoo",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "2.5%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "note": "Aalto University in Espoo (Otaniemi campus); separate from Helsinki center",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 500, "usd": 545, "note": "HOAS shared room; Espoo private market" },
+            "privateRoom": { "localCurrency": 750, "usd": 818 },
+            "studio1BR": { "localCurrency": 1200, "usd": 1308, "note": "Helsinki 1BR; Espoo EUR 1,000-1,100" },
+            "hoasStudentHousing": { "localCurrency": 380, "usd": 414, "note": "HOAS student housing; apply 3-6 months before; faster than Stockholm SSSB" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1300, "usd": 1417 },
+            "2BR": { "localCurrency": 1800, "usd": 1962 },
+            "buyingMarketMedianPrice": { "localCurrency": 5000, "usd": 5450, "note": "EUR per sqm; Helsinki apartment median; correcting from 2022 peak" }
+          },
+          "recommendationForBangladeshiStudents": "VIABLE with advance planning. Aalto University world-class for AI and design thinking. HOAS application manageable if done 3-6 months early. Nokia, Wärtsilä, Rovio, Supercell nearby.",
+          "bangladeshiCommunityPresence": "Small but present. Helsinki multicultural and inclusive."
+        },
+        {
+          "city": "Tampere",
+          "housingCrisisLevel": "LOW-MODERATE",
+          "vacancyRate": "3.8%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 380, "usd": 414 },
+            "privateRoom": { "localCurrency": 550, "usd": 600 },
+            "studio1BR": { "localCurrency": 800, "usd": 872 },
+            "toasHousing": { "localCurrency": 300, "usd": 327, "note": "TOAS student housing; reasonable availability; highly recommended" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 850, "usd": 927 },
+            "2BR": { "localCurrency": 1200, "usd": 1308 },
+            "buyingMarketMedianPrice": { "localCurrency": 3200, "usd": 3488, "note": "EUR per sqm; very affordable" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. Tampere University excellent for CS. Nokia HQ nearby. TOAS housing genuinely accessible. Low cost of living. Safe city.",
+          "bangladeshiCommunityPresence": "Very small but growing international student community."
+        },
+        {
+          "city": "Oulu",
+          "housingCrisisLevel": "LOW",
+          "vacancyRate": "5.0%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "note": "Growing semiconductor hub; Nokia, Bittium, Oulun teknologiakylä; national semiconductor investment",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 300, "usd": 327 },
+            "privateRoom": { "localCurrency": 450, "usd": 491 },
+            "studio1BR": { "localCurrency": 650, "usd": 709 },
+            "opiskelija-asunnot": { "localCurrency": 260, "usd": 283, "note": "Student housing foundation Oulu; good availability" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 700, "usd": 763 },
+            "2BR": { "localCurrency": 950, "usd": 1036 },
+            "buyingMarketMedianPrice": { "localCurrency": 2200, "usd": 2398, "note": "EUR per sqm; very affordable; buy vs rent highly favorable" }
+          },
+          "recommendationForBangladeshiStudents": "GOOD VALUE OPTION. University of Oulu strong in CS and wireless technology. Growing semiconductor industry (EU Chips Act investment). Very affordable. Cold climate consideration (can reach -30°C in winter).",
+          "bangladeshiCommunityPresence": "Very small."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply to HOAS (Helsinki), TOAS (Tampere), or city-specific student housing foundation immediately upon university application.",
+        "priority2": "Finland's student housing foundations are genuinely functional - earlier application yields better room selection.",
+        "priority3": "Tampere and Oulu dramatically easier for housing than Helsinki. Strong universities make them viable.",
+        "priority4": "Vuokraovi.com and Oikotie.fi are Finnish rental platforms for private market.",
+        "priority5": "Many Finnish universities partner with housing foundations for international student priority slots.",
+        "warningNote": "Helsinki housing market tightening but remains manageable compared to Stockholm, Amsterdam, Dublin. Finland is relatively well-managed."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Finland housing prices have declined 10-15% from 2022 peak; creating buying opportunities",
+        "firstTimeBuyerIncentives": "ASP (Asuntosäästöpalkkio) savings scheme for first buyers; 3.5% stamp duty exemption",
+        "foreignBuyersRestrictions": "No restrictions for residents",
+        "mortgageRates2026": "3.5-4.5% variable + margin; ECB cuts improving affordability",
+        "affordabilityTimeline": "5-8 years post-graduation in Helsinki; 3-5 years in Tampere/Oulu"
+      },
+
+      "overallHousingRisk": "LOW-MODERATE",
+      "forecast2027to2029": "Finland housing market stable to improving. Demographic decline reduces pressure in smaller cities. Helsinki moderate pressure continuing. Good outlook for international students.",
+      "recommendation": "Finland offers one of the most manageable housing situations among the analyzed countries. Tampere is the strategic choice - world-class university, accessible student housing, growing Nokia/tech ecosystem, very affordable living. Apply to TOAS student housing at same time as university application."
+    },
+
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "currency": "DKK",
+      "usdExchangeRate": 0.146,
+      "overallHousingScore": 52,
+      "confidenceScore": 81,
+      "housingCrisisLevel": "HIGH in Copenhagen; MODERATE in Aarhus",
+      "evidenceSummary": "Denmark's housing system is complex with highly regulated social housing (almene boliger) with multi-year waitlists and a private market. Copenhagen student housing is challenging. Aarhus and Aalborg are significantly more accessible. The Danish housing benefit (boligstøtte) can assist low-income renters including students. PhD salaries in Denmark are world-highest making housing costs proportionally manageable.",
+
+      "cityBreakdown": [
+        {
+          "city": "Copenhagen",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "1.1%",
+          "averageRentTrend": "+3% annually 2024-2026 (rent regulation applies to older buildings)",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 5000, "usd": 730, "note": "Kollegie (student hall) or private share" },
+            "privateRoom": { "localCurrency": 8000, "usd": 1168 },
+            "studio1BR": { "localCurrency": 12000, "usd": 1752, "note": "Copenhagen unregulated private market" },
+            "kollegie": { "localCurrency": 3000, "usd": 438, "note": "State-supported student housing; KAB and other foundations; waitlist 6-18 months" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 12000, "usd": 1752 },
+            "2BR": { "localCurrency": 17000, "usd": 2482 },
+            "buyingMarketMedianPrice": { "localCurrency": 50000, "usd": 7300, "note": "DKK per sqm; Copenhagen apartment; recovering from 2023 correction" }
+          },
+          "recommendationForBangladeshiStudents": "MANAGEABLE for PhD recipients. DTU (Technical University of Denmark) world-class in CS/AI. PhD salary DKK 35,000-42,000/month gross covers Copenhagen housing comfortably. For MSc self-funded: high financial pressure.",
+          "bangladeshiCommunityPresence": "Small but growing. Halal food available in Nørrebro, Valby areas."
+        },
+        {
+          "city": "Aarhus",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "2.8%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 3500, "usd": 511 },
+            "privateRoom": { "localCurrency": 5500, "usd": 803 },
+            "studio1BR": { "localCurrency": 7000, "usd": 1022 },
+            "studenbolig": { "localCurrency": 2800, "usd": 409, "note": "Student housing Aarhus; better availability than Copenhagen" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 7500, "usd": 1095 },
+            "2BR": { "localCurrency": 10000, "usd": 1460 },
+            "buyingMarketMedianPrice": { "localCurrency": 35000, "usd": 5110, "note": "DKK per sqm; significantly more affordable than Copenhagen" }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED. Aarhus University strong in CS/AI. Second largest city with growing tech scene. Housing more accessible. Cheaper living than Copenhagen with proportionally similar PhD salaries.",
+          "bangladeshiCommunityPresence": "Very small."
+        },
+        {
+          "city": "Aalborg",
+          "housingCrisisLevel": "LOW",
+          "vacancyRate": "4.5%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 2800, "usd": 409 },
+            "privateRoom": { "localCurrency": 4000, "usd": 584 },
+            "studio1BR": { "localCurrency": 5500, "usd": 803 },
+            "studenbolig": { "localCurrency": 2200, "usd": 321, "note": "AAU student housing; good availability" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 6000, "usd": 876 },
+            "2BR": { "localCurrency": 8000, "usd": 1168 },
+            "buyingMarketMedianPrice": { "localCurrency": 18000, "usd": 2628, "note": "DKK per sqm; very affordable for ownership" }
+          },
+          "recommendationForBangladeshiStudents": "GOOD VALUE. Aalborg University (AAU) strong in CS and AI. Problem-based learning model excellent. Most affordable Danish housing. Smaller job market but remote work and Copenhagen proximity manageable.",
+          "bangladeshiCommunityPresence": "Very small."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply to kollegie (student housing) through Studieboliger.dk or university housing portal immediately upon application.",
+        "priority2": "Aarhus and Aalborg substantially better than Copenhagen for housing accessibility.",
+        "priority3": "PhD doktorand position: contact supervisor about institutional housing connections.",
+        "priority4": "BoligPortal.dk and Lejebolig.dk are primary private market platforms.",
+        "priority5": "Boligstøtte (housing benefit) application: eligible low-income renters including some students can receive DKK 500-2,000/month subsidy.",
+        "warningNote": "Danish housing system complex for foreigners. Private rental contracts must be registered with Huslejenævnet (rent tribunal) to have legal protection. Ensure formal rental contract before paying deposit."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "PR holders access full mortgage market; Denmark housing corrected 15-20% from 2022 peak creating opportunities",
+        "firstTimeBuyerIncentives": "No stamp duty for most residential purchases; mortgage interest tax deductible",
+        "foreignBuyersRestrictions": "Permanent residence required for property purchase; EU citizens can acquire after 5 years residency",
+        "mortgageRates2026": "4.0-5.0% 30-year fixed; Danish covered bond mortgage system unique globally",
+        "affordabilityTimeline": "Copenhagen 8-12 years; Aarhus 5-7 years; Aalborg 4-6 years"
+      },
+
+      "overallHousingRisk": "HIGH in Copenhagen; MODERATE in Aarhus; LOW in Aalborg",
+      "forecast2027to2029": "Danish market stabilizing post-2023 correction. Aarhus and Aalborg improving. Copenhagen constrained but PhD salaries compensate.",
+      "recommendation": "Denmark's world-highest PhD salaries make even Copenhagen housing manageable for funded researchers. Aarhus strongly preferred for balance of research quality, housing access, and lifestyle. Apply to student housing kollegie immediately upon university application."
+    },
+
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "currency": "NOK",
+      "usdExchangeRate": 0.095,
+      "overallHousingScore": 55,
+      "confidenceScore": 80,
+      "housingCrisisLevel": "HIGH in Oslo; MODERATE in Trondheim/Bergen",
+      "evidenceSummary": "Norway has Europe's most expensive housing in absolute terms but also the highest wages and PhD stipends proportionally compensate. Oslo private rental market is extremely expensive. Trondheim (NTNU), Bergen (UiB), and Tromsø offer substantially better value. Student welfare organizations (Sit, SiO) manage subsidized housing. Research Fellow (PhD) employment contracts include better institutional housing access.",
+
+      "cityBreakdown": [
+        {
+          "city": "Oslo",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "2.0%",
+          "averageRentTrend": "+4% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 8000, "usd": 760, "note": "SiO student housing shared; private market higher" },
+            "privateRoom": { "localCurrency": 12000, "usd": 1140 },
+            "studio1BR": { "localCurrency": 18000, "usd": 1710, "note": "Oslo private 1BR; one of world's most expensive" },
+            "sioHousing": { "localCurrency": 5500, "usd": 523, "note": "SiO student housing; apply immediately; waitlist 3-6 months" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 18000, "usd": 1710 },
+            "2BR": { "localCurrency": 25000, "usd": 2375 },
+            "buyingMarketMedianPrice": { "localCurrency": 75000, "usd": 7125, "note": "NOK per sqm; Oslo apartment" }
+          },
+          "recommendationForBangladeshiStudents": "CHALLENGING but manageable for PhD at UiO with research stipend NOK 38,000-48,000/month gross. SiO housing critical to secure.",
+          "bangladeshiCommunityPresence": "Small but growing. Halal food available in Grønland area."
+        },
+        {
+          "city": "Trondheim",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.2%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 6000, "usd": 570, "note": "SiT student housing or private; better than Oslo" },
+            "privateRoom": { "localCurrency": 8500, "usd": 808 },
+            "studio1BR": { "localCurrency": 12000, "usd": 1140 },
+            "sitHousing": { "localCurrency": 4800, "usd": 456, "note": "Sit (Studentsamskipnaden i Trondheim); functional; apply early" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 12500, "usd": 1188 },
+            "2BR": { "localCurrency": 17000, "usd": 1615 },
+            "buyingMarketMedianPrice": { "localCurrency": 55000, "usd": 5225, "note": "NOK per sqm; more affordable than Oslo" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. NTNU Trondheim is Norway's premier technical university (engineering, CS, AI). Research Fellow salary NOK 38,000-48,000/month gross covers living comfortably. Sit housing accessible with advance application.",
+          "bangladeshiCommunityPresence": "Very small international student community. NTNU internationally diverse."
+        },
+        {
+          "city": "Bergen",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.0%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 6500, "usd": 618 },
+            "privateRoom": { "localCurrency": 9000, "usd": 855 },
+            "studio1BR": { "localCurrency": 13000, "usd": 1235 },
+            "sibHousing": { "localCurrency": 5000, "usd": 475, "note": "SiB student housing Bergen" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 13500, "usd": 1283 },
+            "2BR": { "localCurrency": 18000, "usd": 1710 },
+            "buyingMarketMedianPrice": { "localCurrency": 58000, "usd": 5510, "note": "NOK per sqm" }
+          },
+          "recommendationForBangladeshiStudents": "VIABLE. University of Bergen strong in CS. Marine/energy tech industry. Better affordability than Oslo.",
+          "bangladeshiCommunityPresence": "Very small."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply to Sit (Trondheim), SiO (Oslo), or SiB (Bergen) student housing immediately upon university application.",
+        "priority2": "Trondheim strongly preferred over Oslo for housing accessibility combined with NTNU research quality.",
+        "priority3": "Research Fellow (PhD stipendiat) positions often provide better housing access through NTNU/UiO institutional networks.",
+        "priority4": "Finn.no is Norway's primary property portal for private rental market.",
+        "priority5": "Norwegian student housing organizations prioritize international students with advance application - use this advantage.",
+        "warningNote": "Oslo private rental market is among the world's most expensive in absolute terms. PhD stipend covers it but barely in Oslo. Trondheim offers far better cost-to-stipend ratio."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Norway has no restrictions on property ownership for residents; prices very high",
+        "firstTimeBuyerIncentives": "BSU (Boligsparing for Ungdom) savings account with tax benefit; target NOK 300,000 savings",
+        "foreignBuyersRestrictions": "No formal restrictions; practically challenging without Norwegian credit history initially",
+        "mortgageRates2026": "5.0-6.0% variable; Norges Bank holding rates high; expected to cut 2026-2027",
+        "affordabilityTimeline": "Oslo 10-15 years PhD; Trondheim 7-10 years; Bergen 8-12 years"
+      },
+
+      "overallHousingRisk": "HIGH in Oslo; MODERATE in Trondheim/Bergen",
+      "forecast2027to2029": "Norges Bank cutting rates 2026-2027 will ease mortgage market. Construction recovering. Trondheim outlook improving. Oslo remains expensive.",
+      "recommendation": "NTNU Trondheim is the Norwegian strategic choice. World-class research, manageable housing via Sit, excellent PhD salaries, growing tech scene. Norway's sovereign wealth fund ensures long-term economic stability that justifies long-term planning here. Apply to Sit housing immediately upon applying to NTNU."
+    },
+
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "currency": "CHF",
+      "usdExchangeRate": 1.13,
+      "overallHousingScore": 35,
+      "confidenceScore": 85,
+      "housingCrisisLevel": "EXTREME in Zurich/Geneva; HIGH in Lausanne/Basel",
+      "evidenceSummary": "Switzerland consistently ranks as the world's most expensive housing market in absolute terms. Zurich vacancy rate 0.07% in 2025 - effectively zero. Geneva vacancy 0.4%. The strict building regulations (Bundesgesetz über die Raumplanung), referendum-based building approvals, and geographic constraints (mountains) create permanent structural supply constraints. ETH/EPFL PhD salaries (CHF 4,000-5,500/month) are calibrated to cover Swiss living costs and do cover them, but barely for those not in institutional housing. PhD dormitory access is critical.",
+
+      "cityBreakdown": [
+        {
+          "city": "Zurich",
+          "housingCrisisLevel": "EXTREME",
+          "vacancyRate": "0.07%",
+          "averageRentTrend": "+4% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 1000, "usd": 1130, "note": "WG room Zurich; requires months of searching and Swiss references" },
+            "privateRoom": { "localCurrency": 1600, "usd": 1808 },
+            "studio1BR": { "localCurrency": 2800, "usd": 3164, "note": "Zurich 1BR; world's most expensive rental market" },
+            "ethDormitory": { "localCurrency": 800, "usd": 904, "note": "ETH Zurich housing; critical to apply immediately; limited capacity" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 3000, "usd": 3390 },
+            "2BR": { "localCurrency": 4200, "usd": 4746 },
+            "buyingMarketMedianPrice": { "localCurrency": 15000, "usd": 16950, "note": "CHF per sqm; world's most expensive real estate" }
+          },
+          "recommendationForBangladeshiStudents": "ONLY WITH FULL ETH FUNDING AND CONFIRMED DORMITORY. Self-funding in Zurich is financially catastrophic. ETH PhD with dormitory: financially manageable. ETH PhD without dormitory: very tight even on CHF 4,500/month.",
+          "bangladeshiCommunityPresence": "Very small. Expensive city limits diaspora accumulation. English widely spoken in research."
+        },
+        {
+          "city": "Lausanne",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "0.4%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 800, "usd": 904, "note": "EPFL area; better than Zurich" },
+            "privateRoom": { "localCurrency": 1300, "usd": 1469 },
+            "studio1BR": { "localCurrency": 2200, "usd": 2486 },
+            "epflHousing": { "localCurrency": 700, "usd": 791, "note": "EPFL campus housing (Foenarts, Balélec); apply immediately on admission" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2400, "usd": 2712 },
+            "2BR": { "localCurrency": 3400, "usd": 3842 },
+            "buyingMarketMedianPrice": { "localCurrency": 12000, "usd": 13560, "note": "CHF per sqm" }
+          },
+          "recommendationForBangladeshiStudents": "PREFERRED OVER ZURICH for EPFL. EPFL campus housing slightly more accessible than ETH. EPFL is top 15 globally for CS/AI. French language context. EPFL campus is self-contained and manageable.",
+          "bangladeshiCommunityPresence": "Very small. International research community diverse."
+        },
+        {
+          "city": "Basel",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "0.8%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 750, "usd": 848 },
+            "privateRoom": { "localCurrency": 1100, "usd": 1243 },
+            "studio1BR": { "localCurrency": 1800, "usd": 2034 },
+            "studentHousing": { "localCurrency": 650, "usd": 735, "note": "University of Basel student housing foundation" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1900, "usd": 2147 },
+            "2BR": { "localCurrency": 2700, "usd": 3051 },
+            "buyingMarketMedianPrice": { "localCurrency": 9000, "usd": 10170, "note": "CHF per sqm; more affordable than Zurich/Geneva but still high" }
+          },
+          "recommendationForBangladeshiStudents": "VIABLE for University of Basel PhD. Pharmaceutical industry (Novartis, Roche HQ) nearby for AI/data science roles. French-German border provides cross-border options.",
+          "bangladeshiCommunityPresence": "Very small."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply to ETH housing or EPFL housing immediately upon receiving admission offer. This is the most critical single action.",
+        "priority2": "WG-Zimmer.ch and Homegate.ch are primary Swiss rental platforms. Competition is extreme.",
+        "priority3": "ETH/EPFL PhD supervisor can sometimes facilitate housing through lab or departmental connections.",
+        "priority4": "Consider Basel for University of Basel PhD as more accessible housing market.",
+        "priority5": "Swiss rental system requires 2-3 months rent deposit (Mietkaution) in blocked bank account; prepare CHF 4,000-8,000 upfront.",
+        "warningNote": "Switzerland housing is not just expensive - it is literally among the world's most constrained markets. Zero vacancy. Without institutional housing, even CHF 4,500/month PhD salary will not comfortably cover private market rent + other costs in Zurich."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Swiss C Permit (after 5-10 years) required for mortgage; extremely expensive market",
+        "firstTimeBuyerIncentives": "Pillar 3a (third pension pillar) can be used for property purchase downpayment",
+        "foreignBuyersRestrictions": "Lex Koller legislation restricts non-EU foreign nationals from buying Swiss residential property for investment; exceptions for owner-occupied with C permit",
+        "mortgageRates2026": "2.0-3.0% fixed; SNB maintaining relatively low rates; most favorable in Europe",
+        "affordabilityTimeline": "Property ownership in Switzerland realistically 15-20 years post-graduation for most immigrants"
+      },
+
+      "overallHousingRisk": "EXTREME in Zurich; VERY HIGH in Lausanne/Geneva; HIGH in Basel",
+      "forecast2027to2029": "No structural relief possible given geographic and regulatory constraints. ETH/EPFL institutional housing remains the only viable path for students.",
+      "recommendation": "Switzerland housing is only viable through institutional ETH/EPFL housing. This must be secured as first priority after admission. The PhD salary is generous enough to cover costs if institutional housing is obtained. Without it, Switzerland is financially unviable. Apply for housing the same day admission is received."
+    },
+
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "overallHousingScore": 68,
+      "confidenceScore": 78,
+      "housingCrisisLevel": "MODERATE in Vienna; LOW in other cities",
+      "evidenceSummary": "Austria has a well-functioning Gemeindebau (municipal social housing) system in Vienna that houses 60% of Viennese residents. This is one of Europe's most effective social housing programs. Private market in Vienna rising but still more affordable than Munich, Amsterdam, or Dublin. Graz and Linz offer excellent affordability. Student housing foundations (ÖH, OeAD) provide affordable options.",
+
+      "cityBreakdown": [
+        {
+          "city": "Vienna",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "2.8%",
+          "averageRentTrend": "+4% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 550, "usd": 600, "note": "WG room Vienna; more affordable than Western European capitals" },
+            "privateRoom": { "localCurrency": 800, "usd": 872 },
+            "studio1BR": { "localCurrency": 1300, "usd": 1417, "note": "Vienna private market; regulated older buildings cheaper" },
+            "studentDorm": { "localCurrency": 380, "usd": 414, "note": "ÖH/OeAD student dormitories; apply early; waitlist 2-4 months" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1400, "usd": 1526 },
+            "2BR": { "localCurrency": 1900, "usd": 2071 },
+            "buyingMarketMedianPrice": { "localCurrency": 6000, "usd": 6540, "note": "EUR per sqm; Vienna correcting from 2022 peak; some opportunity" }
+          },
+          "recommendationForBangladeshiStudents": "VIABLE AND RECOMMENDED. Vienna University of Technology (TU Wien) excellent for CS/AI. Vienna is culturally rich, safe, multicultural. Annual public transport pass EUR 365. Gemeindebau system means even private market regulated in old buildings.",
+          "bangladeshiCommunityPresence": "Small but present. Halal food increasingly available. Muslim community in Ottakring, Favoriten."
+        },
+        {
+          "city": "Graz",
+          "housingCrisisLevel": "LOW-MODERATE",
+          "vacancyRate": "4.0%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 380, "usd": 414 },
+            "privateRoom": { "localCurrency": 550, "usd": 600 },
+            "studio1BR": { "localCurrency": 800, "usd": 872 },
+            "studentDorm": { "localCurrency": 320, "usd": 349, "note": "Steirische Studienförderungsgesellschaft housing" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 850, "usd": 927 },
+            "2BR": { "localCurrency": 1200, "usd": 1308 },
+            "buyingMarketMedianPrice": { "localCurrency": 4000, "usd": 4360, "note": "EUR per sqm; accessible" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. TU Graz excellent for CS/robotics/AI. AVL (largest private automotive engineering company), Anton Paar, Magna nearby. Affordable housing. High quality of life.",
+          "bangladeshiCommunityPresence": "Small. Growing international student community."
+        },
+        {
+          "city": "Linz",
+          "housingCrisisLevel": "LOW",
+          "vacancyRate": "5.0%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 350, "usd": 382 },
+            "privateRoom": { "localCurrency": 500, "usd": 545 },
+            "studio1BR": { "localCurrency": 750, "usd": 818 },
+            "studentDorm": { "localCurrency": 300, "usd": 327 }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 800, "usd": 872 },
+            "2BR": { "localCurrency": 1100, "usd": 1199 },
+            "buyingMarketMedianPrice": { "localCurrency": 3200, "usd": 3488, "note": "EUR per sqm; very affordable" }
+          },
+          "recommendationForBangladeshiStudents": "GOOD VALUE. JKU Linz strong in AI (Institute for Machine Learning). voestalpine, FACC, Siemens Austria presence. Very affordable. 1.5 hours from Vienna.",
+          "bangladeshiCommunityPresence": "Very small."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply to OeAD student housing immediately upon university application. OeAD manages housing for international students across Austria.",
+        "priority2": "Graz and Linz offer excellent research universities with near-zero housing stress.",
+        "priority3": "WG-Gesucht.at and Willhaben.at are primary Austrian rental platforms.",
+        "priority4": "Vienna's Gemeindebau (social housing) waitlist: not accessible for new arrivals but regulates overall market positively.",
+        "priority5": "Austrian student housing is genuinely affordable - this is an underappreciated advantage.",
+        "warningNote": "Political shifts toward right-wing governance (FPÖ election results 2024) warrant monitoring for immigration policy changes. Currently no direct impact on existing student/work permits."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Red-White-Red Card plus PR pathway accessible; mortgage market open to residents",
+        "firstTimeBuyerIncentives": "Wohnbauförderung (housing construction subsidy) varies by state; low-interest state loans available",
+        "foreignBuyersRestrictions": "No formal restrictions for residents; some states restrict agricultural land",
+        "mortgageRates2026": "3.5-4.5% variable; ECB rate cuts benefiting Austrian market",
+        "affordabilityTimeline": "Vienna 7-10 years; Graz 4-6 years; Linz 3-5 years"
+      },
+
+      "overallHousingRisk": "MODERATE in Vienna; LOW in Graz/Linz",
+      "forecast2027to2029": "Austria housing market one of Europe's most stable. Gemeindebau system buffers extreme volatility. Graz and Linz outlook excellent.",
+      "recommendation": "Austria is significantly underrated in international student consciousness. TU Graz and JKU Linz offer world-quality research at very affordable living costs. Vienna is manageable with OeAD housing. Apply to OeAD immediately. Monitor political developments but current environment remains viable for skilled immigrants."
+    },
+
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "currency": "EUR",
+      "usdExchangeRate": 1.09,
+      "overallHousingScore": 66,
+      "confidenceScore": 79,
+      "housingCrisisLevel": "MODERATE",
+      "evidenceSummary": "Belgium's housing market is more stable than most Western European peers. The student kot (room) system in Leuven and Ghent is well-organized and reasonably priced. Brussels as an EU capital is more expensive but still manageable. KU Leuven's strong institutional housing network is a significant advantage. Belgian property tax and transaction costs are very high but renting market is functional.",
+
+      "cityBreakdown": [
+        {
+          "city": "Leuven",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.5%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 450, "usd": 491, "note": "Kot (student room); Leuven student city par excellence" },
+            "privateRoom": { "localCurrency": 650, "usd": 709 },
+            "studio1BR": { "localCurrency": 950, "usd": 1036 },
+            "kuLeuvenHousing": { "localCurrency": 380, "usd": 414, "note": "KU Leuven student residence; apply immediately" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1000, "usd": 1090 },
+            "2BR": { "localCurrency": 1400, "usd": 1526 },
+            "buyingMarketMedianPrice": { "localCurrency": 3800, "usd": 4142, "note": "EUR per sqm; Leuven area" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. KU Leuven top 50 globally. Excellent AI research (IMEC, Leuven.AI). Reasonable housing. VLIR-UOS scholarship specifically targets developing country students including Bangladesh.",
+          "bangladeshiCommunityPresence": "Small university community. Leuven is compact and walkable."
+        },
+        {
+          "city": "Ghent",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.2%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 420, "usd": 458 },
+            "privateRoom": { "localCurrency": 600, "usd": 654 },
+            "studio1BR": { "localCurrency": 900, "usd": 981 },
+            "ugentHousing": { "localCurrency": 360, "usd": 392, "note": "Ghent University student housing" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 950, "usd": 1036 },
+            "2BR": { "localCurrency": 1300, "usd": 1417 },
+            "buyingMarketMedianPrice": { "localCurrency": 3500, "usd": 3815, "note": "EUR per sqm" }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED. Ghent University strong CS department. Growing tech scene. Affordable. Connected to Brussels 30 minutes for employment.",
+          "bangladeshiCommunityPresence": "Small. Growing Muslim community."
+        },
+        {
+          "city": "Brussels",
+          "housingCrisisLevel": "MODERATE-HIGH",
+          "vacancyRate": "2.5%",
+          "averageRentTrend": "+4% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 600, "usd": 654 },
+            "privateRoom": { "localCurrency": 900, "usd": 981 },
+            "studio1BR": { "localCurrency": 1400, "usd": 1526, "note": "EU quarter more expensive; student areas like Ixelles more reasonable" },
+            "studentHousing": { "localCurrency": 450, "usd": 491 }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1500, "usd": 1635 },
+            "2BR": { "localCurrency": 2100, "usd": 2289 },
+            "buyingMarketMedianPrice": { "localCurrency": 4200, "usd": 4578, "note": "EUR per sqm; EU institutions inflate price in certain areas" }
+          },
+          "recommendationForBangladeshiStudents": "VIABLE for working phase. VUB and ULB in Brussels. EU institutions employment opportunity for tech graduates. Better as employment city post-Leuven/Ghent study.",
+          "bangladeshiCommunityPresence": "Moderate. Large Muslim community in Molenbeek, Schaerbeek. Halal food widely available."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply to KU Leuven student residence or UGhent student housing within days of application submission.",
+        "priority2": "Leuven and Ghent preferred over Brussels for student housing accessibility and affordability.",
+        "priority3": "Immoweb.be and Zimmo.be are primary Belgian property platforms.",
+        "priority4": "Belgian kot system (student room) is well-developed and organized - specifically designed for student market.",
+        "priority5": "KU Leuven International Student Office provides specific housing assistance for international students.",
+        "warningNote": "Belgium's federalism (Flanders, Wallonia, Brussels-Capital) creates complexity in social systems but student housing itself is relatively straightforward."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Belgium has one of Europe's highest property transfer costs (registration rights 3-12% depending on region)",
+        "firstTimeBuyerIncentives": "Klein Beschrijf (Flanders): reduced registration rights for purchases under EUR 220,000 (3% instead of 12%)",
+        "foreignBuyersRestrictions": "No formal restrictions for residents",
+        "mortgageRates2026": "3.8-4.8% fixed; ECB cuts filtering through",
+        "affordabilityTimeline": "Leuven 6-9 years; Brussels 8-12 years; Ghent 6-8 years"
+      },
+
+      "overallHousingRisk": "MODERATE",
+      "forecast2027to2029": "Belgium housing market stable. VLIR-UOS scholarship stream provides pathway that bypasses some financial pressure. KU Leuven institutional housing network effective.",
+      "recommendation": "Belgium and specifically KU Leuven is an underrated destination. Strong research, reasonable housing, and the VLIR-UOS scholarship is specifically designed for students from developing countries including Bangladesh. Apply to student housing immediately upon KU Leuven application."
+    },
+
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "currency": "NZD",
+      "usdExchangeRate": 0.61,
+      "overallHousingScore": 55,
+      "confidenceScore": 77,
+      "housingCrisisLevel": "HIGH in Auckland; MODERATE in Wellington/Christchurch",
+      "evidenceSummary": "New Zealand experienced a housing boom 2020-2022 that significantly outpaced wages. 2023-2025 saw price corrections of 15-25% from peak. Government housing programs and interest rate normalization are gradually improving accessibility. Auckland remains challenging. Wellington and Christchurch are more viable. The small population and geographic isolation limit supply-side pressures compared to Australia or Canada.",
+
+      "cityBreakdown": [
+        {
+          "city": "Auckland",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "2.0%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 900, "usd": 549, "note": "Shared house; multiple areas of Auckland" },
+            "privateRoom": { "localCurrency": 1400, "usd": 854 },
+            "studio1BR": { "localCurrency": 2200, "usd": 1342 },
+            "onCampus": { "localCurrency": 1100, "usd": 671, "note": "UoA campus accommodation; limited" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 2300, "usd": 1403 },
+            "2BR": { "localCurrency": 3200, "usd": 1952 },
+            "buyingMarketMedianPrice": { "localCurrency": 950000, "usd": 579500, "note": "Corrected from 2022 peak of NZD 1.2M; some buying opportunity" }
+          },
+          "recommendationForBangladeshiStudents": "CAUTION. UoA good but Auckland housing expensive. Bangladeshi community is largest in Auckland (South Asian community) which is an advantage.",
+          "bangladeshiCommunityPresence": "Strong in Otahuhu, Papatoetoe, Mangere. Halal food widely available."
+        },
+        {
+          "city": "Wellington",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.0%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 750, "usd": 458 },
+            "privateRoom": { "localCurrency": 1100, "usd": 671 },
+            "studio1BR": { "localCurrency": 1700, "usd": 1037 },
+            "onCampus": { "localCurrency": 950, "usd": 580, "note": "VUW campus accommodation" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1800, "usd": 1098 },
+            "2BR": { "localCurrency": 2400, "usd": 1464 },
+            "buyingMarketMedianPrice": { "localCurrency": 750000, "usd": 457500 }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED. Victoria University of Wellington (VUW) decent CS program. Government tech sector employment nearby. Better housing than Auckland. Capital city advantages.",
+          "bangladeshiCommunityPresence": "Small but growing."
+        },
+        {
+          "city": "Christchurch",
+          "housingCrisisLevel": "LOW-MODERATE",
+          "vacancyRate": "3.8%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "note": "Post-earthquake reconstruction created significant new housing stock",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 650, "usd": 397 },
+            "privateRoom": { "localCurrency": 950, "usd": 580 },
+            "studio1BR": { "localCurrency": 1500, "usd": 915 },
+            "onCampus": { "localCurrency": 900, "usd": 549, "note": "University of Canterbury campus accommodation" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1600, "usd": 976 },
+            "2BR": { "localCurrency": 2100, "usd": 1281 },
+            "buyingMarketMedianPrice": { "localCurrency": 650000, "usd": 396500, "note": "Most affordable major NZ city for property" }
+          },
+          "recommendationForBangladeshiStudents": "GOOD VALUE. University of Canterbury solid for CS. New tech sector emerging post-rebuild. Most affordable major NZ city. Clean slate urban planning post-earthquake.",
+          "bangladeshiCommunityPresence": "Small. Growing."
+        },
+        {
+          "city": "Dunedin",
+          "housingCrisisLevel": "LOW",
+          "vacancyRate": "5.0%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 500, "usd": 305 },
+            "privateRoom": { "localCurrency": 750, "usd": 458 },
+            "studio1BR": { "localCurrency": 1200, "usd": 732 },
+            "studentHousing": { "localCurrency": 600, "usd": 366, "note": "University of Otago campus" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1300, "usd": 793 },
+            "2BR": { "localCurrency": 1700, "usd": 1037 },
+            "buyingMarketMedianPrice": { "localCurrency": 500000, "usd": 305000 }
+          },
+          "recommendationForBangladeshiStudents": "AFFORDABLE OPTION. University of Otago strong research university. Very affordable. Cold climate. Limited tech industry locally but remote work increasingly viable.",
+          "bangladeshiCommunityPresence": "Very small."
+        }
+      ],
+
+      "studentHousingStrategies": {
+        "priority1": "Apply to university accommodation as first action after admission offer.",
+        "priority2": "Trade Me Property (trademe.co.nz) is NZ's primary rental platform.",
+        "priority3": "Wellington and Christchurch preferred over Auckland for cost-effective study.",
+        "priority4": "Homestay option (NZD 700-1,000/month including meals) is safe and community-building for first year.",
+        "priority5": "Bangladeshi community networks in Auckland are strong for housing leads.",
+        "warningNote": "NZ housing corrected significantly from 2022 peak. Market more accessible in 2026-2029 window than it was 2020-2022. This is a relatively good entry point."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "PR holders can purchase freely; market correction creates opportunity",
+        "firstTimeBuyerIncentives": "First Home Grant up to NZD 10,000; First Home Loan with 5% deposit",
+        "foreignBuyersRestrictions": "Non-residents banned from purchasing existing homes (Overseas Investment Act 2018); PR exempt",
+        "mortgageRates2026": "5.5-6.5% 1-year fixed; RBNZ cutting rates; 2026-2027 expected to reach 5.0-5.5%",
+        "affordabilityTimeline": "Auckland 6-9 years; Wellington 5-7 years; Christchurch 4-6 years; Dunedin 3-5 years"
+      },
+
+      "overallHousingRisk": "HIGH in Auckland; MODERATE in Wellington/Christchurch; LOW in Dunedin",
+      "forecast2027to2029": "NZ housing market recovering but at lower level than 2022 peak. RBNZ rate cuts improving affordability. Better window for students than 2020-2023 period.",
+      "recommendation": "New Zealand is most compelling as a lifestyle and PR destination rather than career maximization. Wellington and Christchurch offer manageable housing. The PR pathway is genuinely straightforward. For tech career ceiling, NZ is limited but quality of life is exceptional."
+    },
+
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "currency": "USD",
+      "usdExchangeRate": 1.0,
+      "overallHousingScore": 50,
+      "confidenceScore": 88,
+      "housingCrisisLevel": "EXTREME in coastal tech hubs; MODERATE in secondary tech cities",
+      "evidenceSummary": "US housing varies dramatically by city. San Francisco Bay Area and New York represent some of the world's most expensive markets. Pittsburgh, Atlanta, Austin, and Raleigh represent genuinely affordable major tech cities with strong university CS programs. Graduate student stipends in top CS PhD programs are calibrated for city costs partially but remain tight in expensive cities. Post-COVID tech layoffs reduced some coastal market pressure but structural undersupply persists.",
+
+      "cityBreakdown": [
+        {
+          "city": "San Francisco Bay Area",
+          "state": "California",
+          "housingCrisisLevel": "EXTREME",
+          "vacancyRate": "6.4% (elevated post-tech layoffs 2022-2024; some recovery 2025-2026)",
+          "averageRentTrend": "+3% annually 2024-2026 (recovering from 2022-2023 dip)",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 1500, "usd": 1500, "note": "Shared room in tech hub area; Berkeley slightly cheaper" },
+            "privateRoom": { "localCurrency": 2500, "usd": 2500 },
+            "studio1BR": { "localCurrency": 3500, "usd": 3500, "note": "SF 1BR average; San Jose slightly lower" },
+            "gradHousing": { "localCurrency": 1200, "usd": 1200, "note": "Stanford/Berkeley on-campus grad housing; lottery system; waitlist 1-2 years" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 3500, "usd": 3500 },
+            "2BR": { "localCurrency": 5000, "usd": 5000 },
+            "buyingMarketMedianPrice": { "localCurrency": 1300000, "usd": 1300000, "note": "SF median home; San Jose USD 1.4M; Palo Alto USD 3M+" }
+          },
+          "recommendationForBangladeshiStudents": "HIGH RISK financially but career ceiling highest globally. Stanford/Berkeley PhD: the prestige and FAANG employment justify extreme costs. Total compensation at FAANG (USD 200,000-400,000+) makes it manageable for working phase. During PhD: tight on stipend USD 2,500-3,200/month.",
+          "bangladeshiCommunityPresence": "Growing in Fremont, Union City. Halal food available in Bay Area. Significant South Asian tech worker community."
+        },
+        {
+          "city": "Boston/Cambridge",
+          "state": "Massachusetts",
+          "housingCrisisLevel": "HIGH",
+          "vacancyRate": "2.5%",
+          "averageRentTrend": "+5% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 1200, "usd": 1200, "note": "Somerville, Allston, Jamaica Plain shared rooms" },
+            "privateRoom": { "localCurrency": 1800, "usd": 1800 },
+            "studio1BR": { "localCurrency": 3000, "usd": 3000, "note": "Cambridge/Somerville 1BR; Boston proper USD 2,800-3,200" },
+            "gradHousing": { "localCurrency": 1100, "usd": 1100, "note": "MIT/Harvard grad housing; limited; priority for funded students" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 3200, "usd": 3200 },
+            "2BR": { "localCurrency": 4200, "usd": 4200 },
+            "buyingMarketMedianPrice": { "localCurrency": 750000, "usd": 750000, "note": "Boston metro median; Cambridge condos USD 1M+" }
+          },
+          "recommendationForBangladeshiStudents": "CHALLENGING but world-class. MIT and Harvard CS PhD are globally transformative. MIT stipend USD 2,800-3,400/month; tight in Boston but manageable with careful budgeting. Biotech and tech employment excellent.",
+          "bangladeshiCommunityPresence": "Growing in Somerville, Cambridge. Large South Asian community."
+        },
+        {
+          "city": "Pittsburgh",
+          "state": "Pennsylvania",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "4.5%",
+          "averageRentTrend": "+3% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 700, "usd": 700, "note": "Squirrel Hill, Shadyside shared housing; excellent value" },
+            "privateRoom": { "localCurrency": 1000, "usd": 1000 },
+            "studio1BR": { "localCurrency": 1500, "usd": 1500, "note": "Significantly more affordable than coastal cities" },
+            "gradHousing": { "localCurrency": 900, "usd": 900, "note": "CMU grad housing; Morewood Gardens etc." }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1600, "usd": 1600 },
+            "2BR": { "localCurrency": 2200, "usd": 2200 },
+            "buyingMarketMedianPrice": { "localCurrency": 220000, "usd": 220000, "note": "Highly affordable; one of most affordable major US cities" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED for CMU. Carnegie Mellon University is world's best CS program. Pittsburgh is extremely affordable. CMU PhD stipend USD 2,800-3,500/month covers living comfortably. Robotics Institute, ML Department, Language Technologies Institute world-leading.",
+          "bangladeshiCommunityPresence": "Small but growing. South Asian community present. Halal food available."
+        },
+        {
+          "city": "Atlanta",
+          "state": "Georgia",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "5.0%",
+          "averageRentTrend": "+2% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 750, "usd": 750 },
+            "privateRoom": { "localCurrency": 1100, "usd": 1100 },
+            "studio1BR": { "localCurrency": 1600, "usd": 1600, "note": "Midtown/Decatur areas; Georgia Tech proximity" },
+            "gradHousing": { "localCurrency": 900, "usd": 900, "note": "Georgia Tech graduate apartments" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1700, "usd": 1700 },
+            "2BR": { "localCurrency": 2300, "usd": 2300 },
+            "buyingMarketMedianPrice": { "localCurrency": 380000, "usd": 380000 }
+          },
+          "recommendationForBangladeshiStudents": "RECOMMENDED. Georgia Tech is top 10 CS program. Atlanta growing tech hub (Microsoft, Google, NCR). No state income tax on first USD 12,000 standard deduction advantage. Affordable. Delta Airlines hub for international travel.",
+          "bangladeshiCommunityPresence": "Growing. Strong South Asian community in Alpharetta, Duluth, Smyrna."
+        },
+        {
+          "city": "Austin",
+          "state": "Texas",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "8.5% (overbuilt 2021-2024; significant correction)",
+          "averageRentTrend": "-3% annually 2024-2026 (rare US city with falling rents due to overbuilding)",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 800, "usd": 800 },
+            "privateRoom": { "localCurrency": 1200, "usd": 1200 },
+            "studio1BR": { "localCurrency": 1600, "usd": 1600, "note": "Corrected significantly from 2022 peak of USD 2,200+" },
+            "gradHousing": { "localCurrency": 950, "usd": 950, "note": "UT Austin campus housing" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 1700, "usd": 1700 },
+            "2BR": { "localCurrency": 2300, "usd": 2300 },
+            "buyingMarketMedianPrice": { "localCurrency": 500000, "usd": 500000, "note": "Corrected from 2022 peak of USD 680,000" }
+          },
+          "recommendationForBangladeshiStudents": "EXCELLENT WINDOW 2027-2029. UT Austin CS strong and growing. Texas no state income tax - significant advantage. Tesla, Apple, Google, Meta major Austin offices. Falling rents create opportunity. Growing Bangladeshi/South Asian community.",
+          "bangladeshiCommunityPresence": "Growing rapidly with tech worker influx."
+        }
+      ],
+
+      "graduateStudentHousingCrisis": {
+        "nationwide": "National study (NHC 2025) found 65% of graduate students spend over 30% of stipend on housing. Universities failing to build enough on-campus housing.",
+        "otpStatus": "OPT period allows full-time work; housing constraints ease significantly with full employment income",
+        "h1bLottery": "Housing stability contingent on H-1B approval; failed lottery = forced departure; creates unique housing insecurity"
+      },
+
+      "studentHousingStrategies": {
+        "priority1": "Choose city strategically based on university ranking AND housing cost. Pittsburgh/Atlanta/Austin offer CMU/GaTech/UT Austin (top programs) with genuinely affordable housing.",
+        "priority2": "Apply for on-campus grad housing immediately upon admission. Many programs have 2-year waitlists for campus housing.",
+        "priority3": "Bangladeshi student associations at major universities maintain housing Facebook groups and WhatsApp networks - join immediately.",
+        "priority4": "Zillow, Apartments.com, and Craigslist are primary US rental platforms. Craigslist has scam risk - verify in person.",
+        "priority5": "Roommate sharing is standard practice. Living with fellow Bangladeshi/South Asian grad students is economically and culturally practical.",
+        "warningNote": "US housing varies more than ANY other country in this analysis. San Francisco vs Pittsburgh comparison shows 2x cost difference for similar quality. City choice is arguably the most important financial decision in the US context."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Green Card holders fully access mortgage market; no restrictions",
+        "firstTimeBuyerIncentives": "FHA loans: 3.5% downpayment; various state-level programs; mortgage interest tax deduction",
+        "foreignBuyersRestrictions": "Non-residents face FIRPTA tax on sale; some states restricting foreign nationals (Texas, Florida) for agricultural land; residential unrestricted",
+        "mortgageRates2026": "6.5-7.5% 30-year fixed; Fed rate cuts beginning; expected 6.0-6.5% by 2027",
+        "affordabilityTimeline": "Pittsburgh/Atlanta 4-6 years; Austin/Seattle 5-8 years; Boston 8-12 years; SF/NYC 12-20 years"
+      },
+
+      "overallHousingRisk": "EXTREME in coastal tech hubs; MODERATE in secondary tech cities",
+      "forecast2027to2029": "Secondary tech cities (Pittsburgh, Atlanta, Austin, Raleigh) seeing continued affordability. Coastal cities recovering from brief 2022-2023 dip but remaining expensive. Fed rate cuts improving mortgage accessibility.",
+      "recommendation": "Strategic city selection is the paramount housing decision for the US. CMU Pittsburgh provides world's best CS education at genuinely affordable housing cost. Georgia Tech Atlanta provides similar value. Use US for career acceleration and savings through OPT years, then consider exit strategy for PR given immigration uncertainty."
+    },
+
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "currency": "JPY",
+      "usdExchangeRate": 0.0067,
+      "overallHousingScore": 76,
+      "confidenceScore": 82,
+      "housingCrisisLevel": "LOW nationally; MODERATE in Tokyo for foreigners",
+      "evidenceSummary": "Japan has the counterintuitive situation of having 13.8% national housing vacancy rate (akiya - vacant homes) while still having a competitive rental market in Tokyo and other major cities. The vacancy is concentrated in rural and suburban areas. Urban rental market is functional but foreigners face discrimination barriers (guarantor requirements, reluctance of landlords). MEXT scholarship students typically receive university dormitory access which resolves the primary challenge. JPY weakness makes Japan remarkably affordable for foreigners earning in other currencies.",
+
+      "cityBreakdown": [
+        {
+          "city": "Tokyo",
+          "housingCrisisLevel": "MODERATE for foreigners",
+          "vacancyRate": "5.2% but effective vacancy lower for foreigner-accessible units",
+          "averageRentTrend": "+2% annually 2024-2026 (modest by global standards)",
+          "foreignerBarriers": {
+            "guarantorRequirement": "Traditional system requires Japanese guarantor (hoshounin). Foreigner-owned properties and guarantee companies (hoshou kaisha) are workaround.",
+            "guaranteeCompanyCost": "Typically 1 month rent upfront; EUR 50-100/month ongoing",
+            "discriminationIssue": "Estimated 30-40% of Japanese landlords decline foreign tenants",
+            "solution": "University dormitory, Leo Palace, Sakura House (gaijin-friendly networks)"
+          },
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 35000, "usd": 235, "note": "Share house (foreigners welcome); Leo Palace, Sakura House" },
+            "privateRoom": { "localCurrency": 60000, "usd": 402, "note": "1K/1R apartment Tokyo outskirts" },
+            "studio1BR": { "localCurrency": 90000, "usd": 603, "note": "1K apartment 20-25sqm Shinjuku/Shibuya area" },
+            "universityDorm": { "localCurrency": 25000, "usd": 168, "note": "International student dormitory; CRITICAL to secure; apply immediately with MEXT application" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 85000, "usd": 570, "note": "1K apartment Tokyo; company housing (shakunai jutaku) common at Japanese companies" },
+            "2BR": { "localCurrency": 130000, "usd": 871 },
+            "buyingMarketMedianPrice": { "localCurrency": 700000, "usd": 4690, "note": "JPY per sqm Tokyo; condominiums rising due to yen weakness and foreign investment" }
+          },
+          "recommendationForBangladeshiStudents": "VIABLE WITH MEXT SCHOLARSHIP AND DORMITORY. University of Tokyo, Tokyo Institute of Technology world-class. MEXT stipend covers costs comfortably in dormitory setting. Language acquisition essential.",
+          "bangladeshiCommunityPresence": "Small. Mosques in Tokyo (Camii mosque in Yoyogi). Halal food increasingly available especially near Shinjuku, Shibuya."
+        },
+        {
+          "city": "Osaka/Kyoto",
+          "housingCrisisLevel": "LOW-MODERATE",
+          "vacancyRate": "7.5%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 28000, "usd": 188 },
+            "privateRoom": { "localCurrency": 45000, "usd": 302 },
+            "studio1BR": { "localCurrency": 65000, "usd": 436 },
+            "universityDorm": { "localCurrency": 22000, "usd": 147, "note": "Osaka University, Kyoto University dormitories" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 68000, "usd": 456 },
+            "2BR": { "localCurrency": 100000, "usd": 670 },
+            "buyingMarketMedianPrice": { "localCurrency": 500000, "usd": 3350, "note": "JPY per sqm; more affordable than Tokyo" }
+          },
+          "recommendationForBangladeshiStudents": "EXCELLENT CHOICE. Osaka University world-class. Kyoto University top 10 globally. More affordable than Tokyo. Osaka tech ecosystem growing. Panasonic, Sharp, OMRON HQs.",
+          "bangladeshiCommunityPresence": "Very small. Halal food available in Nipponbashi, Namba areas of Osaka."
+        },
+        {
+          "city": "Nagoya",
+          "housingCrisisLevel": "LOW",
+          "vacancyRate": "9.0%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 25000, "usd": 168 },
+            "privateRoom": { "localCurrency": 40000, "usd": 268 },
+            "studio1BR": { "localCurrency": 55000, "usd": 369 },
+            "universityDorm": { "localCurrency": 20000, "usd": 134, "note": "Nagoya University dormitory" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 58000, "usd": 389 },
+            "2BR": { "localCurrency": 85000, "usd": 570 },
+            "buyingMarketMedianPrice": { "localCurrency": 400000, "usd": 2680, "note": "JPY per sqm; very affordable" }
+          },
+          "recommendationForBangladeshiStudents": "GOOD VALUE. Nagoya University strong CS research. Toyota, Denso, Bosch Japan nearby for automotive AI. Very affordable. Less competitive rental market than Tokyo.",
+          "bangladeshiCommunityPresence": "Very small."
+        }
+      ],
+
+      "foreignerHousingBarriers": {
+        "guarantorSystem": "Traditional shiki-kin (security deposit 1-2 months), reikin (gift money 1-2 months), guarantor requirement creates 3-6 months rent upfront barrier",
+        "reikinReform": "Increasingly phased out in major cities; many properties now zero reikin",
+        "guaranteeCompanyAlternative": "Foreigner-friendly guarantee companies: Guarantor Japan, Global Trust Networks",
+        "solutionPath": "MEXT university dormitory → 1 year to learn Japanese + build landlord trust → private apartment",
+        "companyHousing": "Japanese companies often provide subsidized company housing (shakunai jutaku); major benefit for working phase"
+      },
+
+      "studentHousingStrategies": {
+        "priority1": "Apply for MEXT scholarship and university dormitory simultaneously. Dormitory allocation is tied to MEXT application.",
+        "priority2": "Sakura House and Leo Palace 21 are foreigner-friendly national networks for those without dormitory.",
+        "priority3": "Learn Japanese JLPT N4 minimum before arrival; N3 dramatically improves private market access.",
+        "priority4": "Suumo.jp and Athome.co.jp are major Japanese rental portals; Gaijinpot Housing for English-language listings.",
+        "priority5": "Company housing is a massive benefit in Japan; prioritize employers offering shakunai jutaku during job search.",
+        "warningNote": "Foreigner rental discrimination in Japan is real but decreasing, especially in university cities and major urban areas. University dormitory access through MEXT scholarship effectively bypasses this barrier entirely."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "Foreigners can freely purchase Japanese property; no restrictions; akiya (vacant home) programs offer very cheap rural properties",
+        "firstTimeBuyerIncentives": "Housing loan tax deduction (juutaku loan genzei); very low mortgage rates",
+        "foreignBuyersRestrictions": "Zero restrictions on foreigners buying Japanese property",
+        "mortgageRates2026": "1.0-2.5% variable; Bank of Japan gradually raising rates from near-zero; still world's lowest",
+        "affordabilityTimeline": "Tokyo urban apartment 8-12 years; Osaka/Nagoya 5-8 years; rural property potentially immediately affordable"
+      },
+
+      "akiyaVacantHomeOpportunity": {
+        "description": "8.5 million vacant homes (akiya) in Japan as of 2025; government actively promoting foreign buyer programs",
+        "pricing": "Rural akiya sometimes available for JPY 100,000-1,000,000 (USD 670-6,700); some gifted for free with renovation commitment",
+        "caveat": "Renovation costs often JPY 5-20 million; rural location limits employment access; suited for remote work",
+        "relevance": "Long-term settlement opportunity for those with established remote work career"
+      },
+
+      "overallHousingRisk": "LOW nationally; MODERATE for foreigners in competitive urban markets",
+      "forecast2027to2029": "Japan housing market stable. Yen normalization (BOJ rate hikes) may slightly increase mortgage costs but rental market remains affordable. Government immigration expansion will gradually improve foreigner rental market access.",
+      "recommendation": "Japan is among the most affordable of the analyzed countries for housing costs. The primary barrier is not cost but access (foreigner discrimination, guarantor requirements). MEXT scholarship dormitory access completely resolves this for the study phase. University dormitory → Japanese language acquisition → private rental is the practical path. An outstanding value proposition overall."
+    },
+
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "currency": "KRW",
+      "usdExchangeRate": 0.00073,
+      "overallHousingScore": 72,
+      "confidenceScore": 79,
+      "housingCrisisLevel": "MODERATE in Seoul; LOW in Daejeon/Busan",
+      "evidenceSummary": "South Korea's housing market is characterized by the unique jeonse (전세) deposit system where tenants pay a large lump sum (50-80% of property value) instead of monthly rent. For foreigners this is complex and financially inaccessible initially. Monthly rent (wolse 월세) is the practical option. KAIST provides comprehensive dormitory access for international students. Seoul private market rising sharply 2021-2023 but correcting 2024-2026. Daejeon (KAIST location) remains very affordable.",
+
+      "cityBreakdown": [
+        {
+          "city": "Seoul",
+          "housingCrisisLevel": "MODERATE",
+          "vacancyRate": "3.5%",
+          "averageRentTrend": "+2% annually 2024-2026 (correcting from 2021-2023 peak)",
+          "jeonseVsWolse": {
+            "jeonse": "Deposit KRW 300,000,000-500,000,000 (USD 219,000-365,000) for 33sqm apartment; no monthly rent; complex for foreigners",
+            "wolse": "Deposit KRW 5,000,000-20,000,000 + monthly KRW 400,000-1,500,000; practical for international students",
+            "jibanReform": "Jeonse fraud cases (2023 bubble) led to government reform; monthly rent preference increasing"
+          },
+          "studentRentalMarket": {
+            "goshiwon": { "localCurrency": 300000, "usd": 219, "note": "Study room; basic but cheap; most common for frugal students" },
+            "sharedRoom": { "localCurrency": 500000, "usd": 365, "note": "Shared apartment near SNU/Yonsei/Korea University" },
+            "privateRoom": { "localCurrency": 700000, "usd": 511, "note": "Private officetell/studio" },
+            "universityDorm": { "localCurrency": 250000, "usd": 183, "note": "University international dorm; priority for international students; very competitive" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 700000, "usd": 511, "note": "Officetell (오피스텔) monthly; most common for singles" },
+            "2BR": { "localCurrency": 1200000, "usd": 876 },
+            "buyingMarketMedianPrice": { "localCurrency": 1000000000, "usd": 730000, "note": "KRW per 33sqm apartment Seoul; correcting from 2021 peak" }
+          },
+          "recommendationForBangladeshiStudents": "MANAGEABLE. SNU, Yonsei, KAIST Seoul campus strong programs. University dormitory critical. Korean language acquisition important for private rental access.",
+          "bangladeshiCommunityPresence": "Small. Itaewon area has halal food (Al-Madina, others). Mosque in Itaewon."
+        },
+        {
+          "city": "Daejeon",
+          "housingCrisisLevel": "LOW",
+          "vacancyRate": "6.0%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "note": "KAIST main campus in Daedeok Science Town; Korea's Silicon Valley equivalent",
+          "studentRentalMarket": {
+            "goshiwon": { "localCurrency": 200000, "usd": 146 },
+            "sharedRoom": { "localCurrency": 350000, "usd": 256 },
+            "privateRoom": { "localCurrency": 450000, "usd": 329 },
+            "kaistDorm": { "localCurrency": 220000, "usd": 161, "note": "KAIST dormitory; strongly recommended; priority for international students" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 500000, "usd": 365 },
+            "2BR": { "localCurrency": 700000, "usd": 511 },
+            "buyingMarketMedianPrice": { "localCurrency": 350000000, "usd": 255500, "note": "Very affordable by Korean standards" }
+          },
+          "recommendationForBangladeshiStudents": "STRONGLY RECOMMENDED. KAIST is one of Asia's top 5 AI/CS universities. Daejeon is extremely affordable. ETRI (Electronics and Telecommunications Research Institute) nearby for internships. KAIST PhD stipend KRW 1,200,000-2,000,000/month covers living very comfortably.",
+          "bangladeshiCommunityPresence": "Very small. KAIST internationally diverse."
+        },
+        {
+          "city": "Busan",
+          "housingCrisisLevel": "LOW-MODERATE",
+          "vacancyRate": "5.0%",
+          "averageRentTrend": "+1% annually 2024-2026",
+          "studentRentalMarket": {
+            "sharedRoom": { "localCurrency": 350000, "usd": 256 },
+            "privateRoom": { "localCurrency": 500000, "usd": 365 },
+            "studio1BR": { "localCurrency": 600000, "usd": 438 },
+            "universityDorm": { "localCurrency": 230000, "usd": 168, "note": "POSTECH dormitory" }
+          },
+          "workingGraduateMarket": {
+            "studio1BR": { "localCurrency": 650000, "usd": 475 },
+            "2BR": { "localCurrency": 900000, "usd": 657 },
+            "buyingMarketMedianPrice": { "localCurrency": 400000000, "usd": 292000 }
+          },
+          "recommendationForBangladeshiStudents": "GOOD VALUE. POSTECH (Pohang in nearby city; Busan metro accessible) world-class for AI and materials science. Busan growing tech scene. Samsung Heavy Industries nearby.",
+          "bangladeshiCommunityPresence": "Very small. Growing foreign worker community."
+        }
+      ],
+
+      "jeonseSystemExplained": {
+        "howItWorks": "Tenant deposits 50-80% of property value (KRW 200-500M for Seoul apartment). Landlord uses as investment. No monthly rent. Deposit fully returned at lease end (typically 2 years).",
+        "foreignerPracticality": "Requires massive capital upfront; not practical for new arrivals",
+        "recentFraud": "2023 jeonse fraud crisis where landlords couldn't return deposits caused government intervention",
+        "trendTowardWolse": "Monthly rent (wolse) increasingly preferred post-2023; better for foreigners"
+      },
+
+      "studentHousingStrategies": {
+        "priority1": "Apply for KAIST/university dormitory immediately upon admission. Priority given to international students at KAIST.",
+        "priority2": "Daejeon KAIST is the ideal setup - dorm on campus + research institute ecosystem + affordable city.",
+        "priority3": "NAVER Real Estate (land.naver.com) and Zigbang are primary Korean real estate platforms.",
+        "priority4": "Korean language (TOPIK 2) dramatically improves private rental market access and landlord comfort.",
+        "priority5": "Many Korean professors help new international students with initial housing connections - don't hesitate to ask.",
+        "warningNote": "Jeonse system fraud in 2023 affected confidence in Korean rental market. Ensure all rental contracts registered with local government office (확정일자 - hwagjeon ilcha) for legal protection."
+      },
+
+      "propertyOwnershipForPR": {
+        "feasibility": "F-5 visa (permanent residence) holders can purchase freely; mortgage rates historically low",
+        "firstTimeBuyerIncentives": "Youth housing loan (청년 전세자금대출) available; LH public housing purchase programs",
+        "foreignBuyersRestrictions": "No formal restrictions for residents; reporting requirement to Ministry of Land",
+        "mortgageRates2026": "3.5-5.0% variable; Bank of Korea normalizing after COVID-era cuts",
+        "affordabilityTimeline": "Daejeon 5-7 years; Seoul 10-15 years"
+      },
+
+      "overallHousingRisk": "LOW in Daejeon/Busan; MODERATE in Seoul",
+      "forecast2027to2029": "Korea housing market stabilizing post-2021-2023 boom-bust. Government F-5 visa pathway actively promoted for AI talent. KAIST area (Daedeok) seeing significant tech investment. Good 2027-2029 entry window.",
+      "recommendation": "KAIST Daejeon is the optimal Korea strategy. World-class AI research, comprehensive dormitory access, extremely affordable city, growing tech ecosystem. Korean language investment (TOPIK 4) is important for long-term settlement success. GKS (Global Korea Scholarship) is the funding path to pursue."
+    },
+
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "currency": "SGD",
+      "usdExchangeRate": 0.75,
+      "overallHousingScore": 35,
+      "confidenceScore": 86,
+      "housingCrisisLevel": "EXTREME structural supply constraint",
+      "evidenceSummary": "Singapore has the world's most controlled housing market through the HDB (Housing Development Board) system which houses 80% of citizens and PRs. However, this system is closed to non-residents. International students and EP (Employment Pass) holders must rent in the private market which is among the world's most expensive. The government deliberately manages housing as a citizenship benefit. Private rental spiked 30%+ in 2022-2023 and remains elevated. Company housing allowances are common at major tech employers and partially offset costs.",
+
+      "cityBreakdown": [
+        {
+          "city": "Singapore (entire city-state)",
+          "housingCrisisLevel": "EXTREME for non-residents",
+          "vacancyRate": "Less than 1% private market",
+          "averageRentTrend": "+3% annually 2024-2026 (moderating from 30% spike 2022-2023)",
+          "hdbVsPrivate": {
+            "hdbSystem": "Available to citizens and PRs only; heavily subsidized; 2-5 room flat SGD 350,000-600,000 BTO price",
+            "privateCondoRental": "Mandatory for non-PR/citizens; expensive; SGD 3,500-8,000/month for 1-2BR",
+            "hdbSublet": "PR/citizens can sublet HDB room; some foreigner access possible; SGD 800-1,500/room"
+          },
+          "studentRentalMarket": {
+            "hdbSharedRoom": { "localCurrency": 1000, "usd": 750, "note": "HDB room shared with citizen/PR family; most affordable option" },
+            "condoSharedRoom": { "localCurrency": 1500, "usd": 1125, "note": "Shared condominium with other students" },
+            "studio1BR": { "localCurrency": 3500, "usd": 2625, "note": "Private studio; extremely expensive" },
+            "campusHall": { "localCurrency": 600, "usd": 450, "note": "NUS/NTU on-campus hall; scholarship recipients prioritized; heavily subsidized" }
+          },
+          "workingGraduateMarket": {
+            "hdbRoom": { "localCurrency": 1200, "usd": 900, "note": "Renting room from HDB flat owner" },
+            "studio1BR": { "localCurrency": 4000, "usd": 3000, "note": "Private condo 1BR; varies by location" },
+            "2BR": { "localCurrency": 5500, "usd": 4125, "note": "Private condo 2BR; couples" },
+            "companyHousingAllowance": { "localCurrency": "1500-4000/month", "usd": "1125-3000/month", "note": "Major tech companies (Google, Meta, Grab) provide housing allowance; effectively covers significant portion" }
+          },
+          "buyingMarketForPR": {
+            "hdbBTO": { "localCurrency": "350000-600000", "usd": "262500-450000", "note": "Subsidized new BTO flat; requires PR + Singapore citizen spouse or PR 3 years wait" },
+            "hdbResale": { "localCurrency": "500000-900000", "usd": "375000-675000", "note": "Resale HDB; PRs can buy after 3 years PR" },
+            "privateCondo": { "localCurrency": "1200000-3000000", "usd": "900000-2250000", "note": "Private condo 1-2BR; foreigners pay 60% Additional Buyers Stamp Duty" }
+          },
+          "recommendationForBangladeshiStudents": "VIABLE WITH NUS/NTU SCHOLARSHIP AND CAMPUS HALL. NUS Research Scholarship covers full tuition + SGD 2,000-2,500/month stipend; campus hall access is critical component. Private market in Singapore without institutional housing support is very expensive.",
+          "bangladeshiCommunityPresence": "Significant South Asian community in Little India, Geylang, Jurong. Halal food universally available. Muslim-friendly city."
+        }
+      ],
+
+      "hdbSystemForPR": {
+        "eligibility": "Singapore PR (SPR) required; minimum 3 years as SPR to buy resale HDB",
+        "btoProcedure": "PR married to Singapore citizen: eligible for BTO (new flat) application",
+        "resaleHDB": "After 3 years PR: can buy resale HDB; most PRs take this path",
+        "hdbAdvantage": "Once PR achieved, housing costs drop dramatically from private market to highly subsidized HDB",
+        "motivation": "HDB access is a major motivator for Singapore PR application; lifestyle dramatically improves post-PR"
+      },
+
+      "studentHousingStrategies": {
+        "priority1": "Apply for NUS/NTU on-campus hall immediately upon scholarship confirmation. Research scholarship holders get priority.",
+        "priority2": "PropertyGuru.com.sg and 99.co are primary Singapore property platforms.",
+        "priority3": "HDB room rental (from citizen/PR families) via Carousell or PropertyGuru; most affordable for non-scholarship students.",
+        "priority4": "Jurong West, Woodlands, Sengkang offer cheaper HDB rental rooms with good MRT connectivity.",
+        "priority5": "Negotiate housing allowance as part of employment package; most major tech employers in Singapore provide this.",
+        "warningNote": "Singapore's 30% ABSD (Additional Buyer Stamp Duty) for foreigners purchasing private property makes buying essentially impossible until PR is secured. The path is: scholarship hall → working with housing allowance → PR → HDB resale."
+      },
+
+      "propertyOwnershipAfterPR": {
+        "foreignerBuyingRestrictions": "60% ABSD on private property for non-residents; effectively prohibitive",
+        "prPathToHDB": "After 3 years PR: resale HDB accessible; transformative for cost of living",
+        "mortgageRates2026": "3.5-4.5% floating; SIBOR-pegged; competitive",
+        "affordabilityTimeline": "Private property: extremely difficult. HDB after PR: 5-7 years post-graduation achievable"
+      },
+
+      "overallHousingRisk": "EXTREME financial risk without institutional housing; manageable with NUS/NTU hall + employment allowance",
+      "forecast2027to2029": "Singapore private rental market moderating but structurally expensive. Government cooling measures maintaining HDB affordability for PRs/citizens. 2027-2029 window no significant change expected.",
+      "recommendation": "Singapore housing is exclusively viable through institutional channel: NUS/NTU scholarship hall + employment allowance package. Treat Singapore as a 5-7 year wealth accumulation phase with zero tax advantage, then transition to a country where housing is more accessible (Canada, Australia, Germany). Singapore PR is genuinely difficult and housing costs without PR status are extreme."
+    },
+
+   {
+  "country": "China",
+  "countryCode": "CN",
+  "currency": "CNY",
+  "usdExchangeRate": 0.138,
+  "overallHousingScore": 75,
+  "confidenceScore": 78,
+  "housingCrisisLevel": "LOW-MODERATE; property market correction creating opportunities",
+  "evidenceSummary": "China's property market underwent a significant correction following the Evergrande collapse (2021-2023) and continued developer defaults through 2024-2025. This has paradoxically made rental markets more accessible and affordable in major cities. Foreigners can rent freely but face bureaucratic registration requirements. Property purchase by foreigners is permitted with conditions but practically complex. University dormitories for international students are mandatory at many institutions and are the most practical student housing solution. Beijing, Shanghai, and Shenzhen remain the core AI/tech hubs with reasonable rental markets by global standards.",
+
+  "cityBreakdown": [
+    {
+      "city": "Beijing",
+      "housingCrisisLevel": "LOW-MODERATE; market softening",
+      "vacancyRate": "Estimated 12-15% including investment properties sitting vacant",
+      "averageRentTrend": "-2% to +1% annually 2024-2026; stable to slight decline following property crisis",
+      "districtBreakdown": {
+        "haidian": {
+          "note": "Primary university district; Tsinghua, Peking University, Beihang; student-dense area",
+          "averageRoomRent": { "localCurrency": "2000-3500/month", "usd": "276-483/month" },
+          "averageStudio": { "localCurrency": "4000-6000/month", "usd": "552-828/month" }
+        },
+        "chaoyang": {
+          "note": "Business and embassy district; more expensive; international community concentrated",
+          "averageRoomRent": { "localCurrency": "3000-5000/month", "usd": "414-690/month" },
+          "averageStudio": { "localCurrency": "6000-10000/month", "usd": "828-1380/month" }
+        },
+        "tongzhou": {
+          "note": "Emerging eastern district; affordable; further from universities",
+          "averageRoomRent": { "localCurrency": "1500-2500/month", "usd": "207-345/month" },
+          "averageStudio": { "localCurrency": "3000-4500/month", "usd": "414-621/month" }
+        }
+      },
+      "studentRentalMarket": {
+        "internationalDormitory": { "localCurrency": 800, "usd": 110, "note": "Per month; basic shared or private room in university international dormitory; mandatory at many Beijing universities" },
+        "offCampusShared": { "localCurrency": 2000, "usd": 276, "note": "Shared apartment near Haidian university district" },
+        "privateRoom": { "localCurrency": 3000, "usd": 414 },
+        "studio1BR": { "localCurrency": 4500, "usd": 621 }
+      },
+      "workingGraduateMarket": {
+        "sharedRoom": { "localCurrency": 2500, "usd": 345 },
+        "studio1BR": { "localCurrency": 5000, "usd": 690 },
+        "2BR": { "localCurrency": 8000, "usd": 1104, "note": "Comfortable for working professional or couple" },
+        "serviced": { "localCurrency": 12000, "usd": 1656, "note": "International-grade serviced apartment; some companies provide" }
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqM": { "localCurrency": 50000, "usd": 6900, "note": "Central Beijing; fell 15-20% from 2021 peak" },
+        "foreignerPurchaseRules": "Foreigners can buy one property in China after 1 year of employment or study; restrictions apply; mortgage access difficult for non-residents",
+        "practicalNote": "Most international professionals rent rather than buy; property market uncertainty post-crisis makes buying risky"
+      },
+      "recommendationForBangladeshiStudents": "Beijing is best approached via university international dormitory (mandatory and affordable). Haidian district is the natural base for university life. Property market correction means private rentals are more accessible than 2019-2021 peaks."
+    },
+    {
+      "city": "Shanghai",
+      "housingCrisisLevel": "LOW-MODERATE",
+      "vacancyRate": "Estimated 10-13% including investment properties",
+      "averageRentTrend": "-1% to +2% annually 2024-2026",
+      "districtBreakdown": {
+        "pudong": {
+          "note": "Financial and tech district; Lujiazui; Zhangjiang Hi-Tech Park (major AI hub); Fudan and SJTU campuses nearby",
+          "averageRoomRent": { "localCurrency": "2500-4000/month", "usd": "345-552/month" },
+          "averageStudio": { "localCurrency": "5000-8000/month", "usd": "690-1104/month" }
+        },
+        "minhang": {
+          "note": "University district; Jiao Tong University main campus; student-oriented",
+          "averageRoomRent": { "localCurrency": "2000-3000/month", "usd": "276-414/month" },
+          "averageStudio": { "localCurrency": "4000-6000/month", "usd": "552-828/month" }
+        },
+        "jing_an": {
+          "note": "Central; premium; international community; expensive",
+          "averageRoomRent": { "localCurrency": "4000-6000/month", "usd": "552-828/month" },
+          "averageStudio": { "localCurrency": "8000-14000/month", "usd": "1104-1932/month" }
+        }
+      },
+      "studentRentalMarket": {
+        "internationalDormitory": { "localCurrency": 1000, "usd": 138, "note": "SJTU/Fudan dormitory; slightly higher than Beijing due to city cost premium" },
+        "offCampusShared": { "localCurrency": 2500, "usd": 345 },
+        "privateRoom": { "localCurrency": 3500, "usd": 483 },
+        "studio1BR": { "localCurrency": 5500, "usd": 759 }
+      },
+      "workingGraduateMarket": {
+        "sharedRoom": { "localCurrency": 3000, "usd": 414 },
+        "studio1BR": { "localCurrency": 6000, "usd": 828 },
+        "2BR": { "localCurrency": 10000, "usd": 1380 },
+        "serviced": { "localCurrency": 15000, "usd": 2070 }
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqM": { "localCurrency": 55000, "usd": 7590, "note": "Central Shanghai; correction from CNY 70,000+ peak in 2021" },
+        "foreignerPurchaseRules": "Same as Beijing; 1 year residency requirement; complex mortgage access",
+        "practicalNote": "Shanghai has the most international-friendly rental market in China with many English-language listings"
+      },
+      "recommendationForBangladeshiStudents": "Shanghai has China's most international-friendly environment. Zhangjiang AI district in Pudong is where major tech companies cluster. Good English usage reduces language barrier friction."
+    },
+    {
+      "city": "Shenzhen",
+      "housingCrisisLevel": "LOW; significant new construction",
+      "vacancyRate": "Estimated 8-10%",
+      "averageRentTrend": "-3% to 0% annually 2024-2026; market correction most visible here",
+      "districtBreakdown": {
+        "nanshan": {
+          "note": "Primary tech district; Huawei, Tencent, DJI headquarters; top choice for AI professionals",
+          "averageRoomRent": { "localCurrency": "2000-3500/month", "usd": "276-483/month" },
+          "averageStudio": { "localCurrency": "4000-7000/month", "usd": "552-966/month" }
+        },
+        "longhua": {
+          "note": "Affordable; good metro access; growing tech presence",
+          "averageRoomRent": { "localCurrency": "1500-2500/month", "usd": "207-345/month" },
+          "averageStudio": { "localCurrency": "2500-4000/month", "usd": "345-552/month" }
+        },
+        "futian": {
+          "note": "CBD; financial center; mix of residential and commercial",
+          "averageRoomRent": { "localCurrency": "2500-4000/month", "usd": "345-552/month" },
+          "averageStudio": { "localCurrency": "5000-8000/month", "usd": "690-1104/month" }
+        }
+      },
+      "studentRentalMarket": {
+        "note": "Shenzhen has limited top-tier universities; SUSTech (Southern University of Science and Technology) growing rapidly for AI/CS",
+        "sustech_dormitory": { "localCurrency": 600, "usd": 83, "note": "SUSTech international dormitory; very affordable; heavily subsidized" },
+        "offCampusShared": { "localCurrency": 1800, "usd": 248 },
+        "studio1BR": { "localCurrency": 4000, "usd": 552 }
+      },
+      "workingGraduateMarket": {
+        "sharedRoom": { "localCurrency": 2200, "usd": 304, "note": "Nanshan tech area shared apartment" },
+        "studio1BR": { "localCurrency": 4500, "usd": 621 },
+        "2BR": { "localCurrency": 7000, "usd": 966 },
+        "companyHousing": { "localCurrency": "Huawei/Tencent provide dormitory or allowance", "usd": "Varies by employer" }
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqM": { "localCurrency": 55000, "usd": 7590, "note": "Shenzhen; fell significantly from CNY 80,000+ peak; Nanshan premium" },
+        "foreignerPurchaseRules": "Same national rules apply; Shenzhen has experimented with pilot housing reforms",
+        "practicalNote": "Shenzhen is the most dynamic city for AI/tech professionals in China; younger, more international culture"
+      },
+      "recommendationForBangladeshiStudents": "Shenzhen is the operational AI industry hub of China. SUSTech for academia, Nanshan for industry. Lower living costs than Beijing/Shanghai with highest tech density. Huawei, DJI, Tencent for industry exposure."
+    }
+  ],
+
+  "dormitorySystem": {
+    "mandatory": true,
+    "note": "Most Chinese universities REQUIRE international students to live in designated international student dormitories, at least for first year. Some universities mandate it throughout the degree.",
+    "quality": "Basic to moderate; private or shared rooms; shared bathrooms common; AC standard in south China; heating in north",
+    "costRange": { "localCurrency": "600-1500/month", "usd": "83-207/month", "note": "Cheapest student housing globally among quality university destinations" },
+    "application": "Apply simultaneously with university admission; some universities guarantee dormitory for scholarship recipients",
+    "offCampusTransition": "After first year, most international students can choose to live off-campus; requires police registration within 24 hours of moving"
+  },
+
+  "registrationRequirements": {
+    "policeRegistration": "Mandatory within 24 hours of arriving at any new address in China; residence registration at local public security bureau (PSB)",
+    "landlordRequirement": "Landlord must hold registration permit for housing foreigners; many private landlords refuse foreigners due to administrative burden",
+    "platformNote": "Use Ziroom (自如), Lianjia (链家), or Anjuke (安居客) apps for property search; filter for foreigner-accepted listings",
+    "agencyFees": "Typically 50-100% of one month rent as agent fee; negotiate on long-term leases"
+  },
+
+  "foreignerHousingChallenges": {
+    "landlordRefusals": "Many private landlords refuse to rent to foreigners due to police registration complexity; university areas more foreigner-friendly",
+    "languageBarrier": "Most listings and landlords communicate in Mandarin only; WeChat translation helps but Mandarin basics essential",
+    "vpnConsideration": "VPN required for Google, WhatsApp, international social media; must be set up before arriving in China; affects housing search platforms too",
+    "depositNorms": "Typically 1-3 months deposit plus 1-2 months advance rent",
+    "leaseTerms": "Minimum 3-6 month leases standard; annual leases preferred by landlords"
+  },
+
+  "propertyPurchaseForLongTermResidents": {
+    "eligibility": "Foreigners with 1+ year continuous residence permit (study or work) can purchase one residential property",
+    "restrictions": "One property only; cannot purchase commercial property; mortgage from Chinese banks difficult for non-residents",
+    "practicalReality": "Given China's property market correction and uncertain long-term settlement prospects, purchasing is generally NOT recommended for international AI professionals. Renting is standard practice.",
+    "capitalControlsNote": "Transferring property sale proceeds abroad subject to strict capital controls; major consideration for any property investment"
+  },
+
+  "islamicLivingConsiderations": {
+    "halalFood": "Available in major cities; Beijing Niujie Muslim quarter; Shanghai has halal restaurants; Shenzhen limited but growing; Xinjiang restaurants (Uyghur cuisine) are halal and common",
+    "mosqueAccess": "Major cities have mosques; Beijing Niujie Mosque historic and active; Shanghai South Mosque; Shenzhen mosques present",
+    "ramadanNote": "Observing Ramadan is personally unrestricted; workplaces generally accommodating for prayer times"
+  },
+
+  "studentHousingPlatforms": [
+    { "platform": "Ziroom (自如)", "type": "Long-term rental; professionally managed; foreigner-friendly in major cities", "language": "Chinese; app with limited English" },
+    { "platform": "Lianjia (链家)", "type": "Real estate agency; large inventory; major cities", "language": "Chinese" },
+    { "platform": "Anjuke (安居客)", "type": "Property aggregator; buy and rent listings", "language": "Chinese" },
+    { "platform": "SmartShanghai", "type": "English-language platform for Shanghai; foreigner-focused", "language": "English" },
+    { "platform": "theBeijinger.com", "type": "English listings for Beijing; expat community resource", "language": "English" }
+  ],
+
+  "overallHousingRisk": "LOW financial risk; MODERATE administrative complexity; LOW crisis level due to property market correction",
+  "forecast2027to2029": "China's property market expected to stabilize 2026-2027 following government stimulus and developer restructuring. Rental markets likely remain affordable. New construction overhang suppresses rent increases. International students benefit from most affordable university city housing globally.",
+  "recommendation": "China offers some of the world's most affordable student housing when combined with university dormitory system. CSC scholarship recipients have the simplest path: dormitory accommodation covered or heavily subsidized, living stipend covers costs comfortably. Private market accessible but requires Mandarin language skills and navigation of foreigner restrictions. Treat housing in China as a temporary phase; do not invest in property. Use low living costs to maximize savings for future transition to settlement-friendly country."
+},
+
+{
+  "country": "France",
+  "countryCode": "FR",
+  "currency": "EUR",
+  "usdExchangeRate": 1.09,
+  "overallHousingScore": 62,
+  "confidenceScore": 82,
+  "housingCrisisLevel": "SEVERE in Paris; MODERATE in Lyon/Grenoble/Toulouse; MANAGEABLE in smaller university cities",
+  "evidenceSummary": "France has a dual housing market: Paris faces a critical shortage with vacancy rates below 1% and rent inflation that has outpaced salary growth for a decade, while provincial university cities remain significantly more affordable. The CROUS (Centre Régional des Oeuvres Universitaires et Scolaires) student housing system provides subsidized accommodation but waitlists are long and supply severely insufficient. The CAF (Caisse d'Allocations Familiales) housing benefit (APL) partially subsidizes rent for low-income students and is accessible to international students with long-stay visa. France's Encadrement des loyers (rent control) in Paris and some other cities helps moderate private market rent growth but has not solved the structural shortage.",
+
+  "cityBreakdown": [
+    {
+      "city": "Paris (Île-de-France)",
+      "housingCrisisLevel": "SEVERE",
+      "vacancyRate": "0.8% in Paris proper; effectively zero for affordable units",
+      "averageRentTrend": "+3-5% annually 2024-2026; rent control (encadrement des loyers) theoretically caps increases",
+      "arrondissementBreakdown": {
+        "centralParis1to8": {
+          "note": "Premium central arrondissements; tourist zone; least accessible for students",
+          "studio": { "localCurrency": "1800-3000/month", "usd": "1962-3270/month" }
+        },
+        "studentZones5th6th13th": {
+          "note": "Latin Quarter (5th/6th); Sorbonne area; 13th near Paris Cité university; classic student areas",
+          "studio": { "localCurrency": "1400-2200/month", "usd": "1526-2398/month" },
+          "room": { "localCurrency": "700-1200/month", "usd": "763-1308/month" }
+        },
+        "outerParis18th19th20th": {
+          "note": "More affordable outer arrondissements; reasonable transit access",
+          "studio": { "localCurrency": "1100-1700/month", "usd": "1199-1853/month" },
+          "room": { "localCurrency": "600-900/month", "usd": "654-981/month" }
+        },
+        "petiteCouronne": {
+          "note": "Inner suburbs (92, 93, 94 departments); Paris metro accessible; 15-30 min commute; significantly cheaper",
+          "studio": { "localCurrency": "800-1300/month", "usd": "872-1417/month" },
+          "room": { "localCurrency": "450-700/month", "usd": "491-763/month" }
+        }
+      },
+      "studentRentalMarket": {
+        "crousRoom": { "localCurrency": 250, "usd": 273, "note": "CROUS student residence; heavily subsidized; waitlist 1-2 years; apply immediately via SVE (Services en Ligne pour les Étudiants)" },
+        "privateStudentResidence": { "localCurrency": 700, "usd": 763, "note": "Nexity Studéa, Reside Études, ARPEJ managed student residences; private but regulated" },
+        "colocRoom": { "localCurrency": 700, "usd": 763, "note": "Colocation (shared apartment); most common practical solution; Paris average" },
+        "studio": { "localCurrency": 1400, "usd": 1526, "note": "Studio meublé (furnished); minimum viable independent option" }
+      },
+      "workingGraduateMarket": {
+        "colocRoom": { "localCurrency": 900, "usd": 981 },
+        "studio": { "localCurrency": 1600, "usd": 1744 },
+        "1BR": { "localCurrency": 2200, "usd": 2398 },
+        "2BR": { "localCurrency": 3200, "usd": 3488, "note": "For couple or sharing with partner" }
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqM": { "localCurrency": 9500, "usd": 10355, "note": "Paris intra-muros average; fell from EUR 11,000+ peak in 2022 due to interest rate rises" },
+        "mortgage2026": "3.8-4.5% fixed rate; affordability improved from 2024 peak rates",
+        "foreignerRestrictions": "No restrictions on foreigners buying property in France; mortgage available with French residence and employment",
+        "practicalNote": "Paris property buying accessible after 2-3 years employment with stable income; market correction 2022-2025 created relative buying opportunity"
+      },
+      "cafHousingBenefit": {
+        "aplEligibility": "International students on titre de séjour étudiant eligible for APL (Aide Personnalisée au Logement)",
+        "typicalMonthlyBenefit": { "localCurrency": "100-300/month", "usd": "109-327/month", "note": "Varies by income, rent level, and location; partially offsets rent" },
+        "application": "Apply via caf.fr within 3 months of rental start; requires French bank account (BNP/Société Générale student account)"
+      },
+      "recommendationForBangladeshiStudents": "Paris is the most challenging French city for housing. Strategy: apply for CROUS SVE housing list immediately upon university application (before admission confirmation), simultaneously prepare colocation search on SeLoger, Leboncoin, Appartager. Petite Couronne suburbs (Boulogne-Billancourt, Saint-Denis, Ivry) with Metro/RER access are most practical for budget management. Eiffel Scholarship students should contact university international office for housing assistance."
+    },
+    {
+      "city": "Grenoble",
+      "housingCrisisLevel": "MODERATE",
+      "vacancyRate": "3.5%",
+      "averageRentTrend": "+2% annually 2024-2026",
+      "universityContext": "Grenoble-INP, Université Grenoble Alpes; INRIA Grenoble; CEA research center; major AI and quantum computing research hub",
+      "studentRentalMarket": {
+        "crousRoom": { "localCurrency": 200, "usd": 218, "note": "CROUS Grenoble more accessible than Paris; apply SVE early" },
+        "colocRoom": { "localCurrency": 400, "usd": 436, "note": "Shared apartment; very manageable" },
+        "studio": { "localCurrency": 650, "usd": 709 },
+        "1BR": { "localCurrency": 850, "usd": 927 }
+      },
+      "workingGraduateMarket": {
+        "studio": { "localCurrency": 750, "usd": 818 },
+        "1BR": { "localCurrency": 950, "usd": 1036 },
+        "2BR": { "localCurrency": 1300, "usd": 1417 }
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqM": { "localCurrency": 3200, "usd": 3488, "note": "Very affordable by French standards; Alps proximity premium in some areas" }
+      },
+      "recommendationForBangladeshiStudents": "HIGHEST RECOMMENDED French city for CS/AI. INRIA Grenoble is world-class AI research. Living costs dramatically lower than Paris. Mountains, nature, excellent quality of life. PhD at Grenoble-INP or UGA with INRIA affiliation is ideal combination."
+    },
+    {
+      "city": "Lyon",
+      "housingCrisisLevel": "MODERATE",
+      "vacancyRate": "2.8%",
+      "averageRentTrend": "+3% annually 2024-2026; encadrement des loyers being discussed",
+      "universityContext": "Université Claude Bernard Lyon 1, INSA Lyon, Centrale Lyon; growing tech ecosystem; second largest city in France",
+      "studentRentalMarket": {
+        "crousRoom": { "localCurrency": 220, "usd": 240 },
+        "colocRoom": { "localCurrency": 450, "usd": 491 },
+        "studio": { "localCurrency": 700, "usd": 763 },
+        "1BR": { "localCurrency": 900, "usd": 981 }
+      },
+      "workingGraduateMarket": {
+        "studio": { "localCurrency": 800, "usd": 872 },
+        "1BR": { "localCurrency": 1000, "usd": 1090 },
+        "2BR": { "localCurrency": 1400, "usd": 1526 }
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqM": { "localCurrency": 4500, "usd": 4905, "note": "Lyon has appreciated but correction underway; Villeurbanne suburb more affordable at EUR 3,500/sqm" }
+      },
+      "recommendationForBangladeshiStudents": "Lyon is excellent balance of job market (second largest French tech hub), university quality, and affordability. INSA Lyon strong for engineering/CS. Better long-term career prospects than smaller cities while maintaining reasonable costs."
+    },
+    {
+      "city": "Toulouse",
+      "housingCrisisLevel": "MODERATE",
+      "vacancyRate": "2.5%",
+      "averageRentTrend": "+3-4% annually; tech sector growth driving demand",
+      "universityContext": "Université Toulouse III Paul Sabatier, ISAE-SUPAERO, INSA Toulouse; aerospace and AI intersection; Airbus AI center",
+      "studentRentalMarket": {
+        "crousRoom": { "localCurrency": 210, "usd": 229 },
+        "colocRoom": { "localCurrency": 400, "usd": 436 },
+        "studio": { "localCurrency": 600, "usd": 654 },
+        "1BR": { "localCurrency": 800, "usd": 872 }
+      },
+      "workingGraduateMarket": {
+        "studio": { "localCurrency": 700, "usd": 763 },
+        "1BR": { "localCurrency": 900, "usd": 981 },
+        "2BR": { "localCurrency": 1300, "usd": 1417 }
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqM": { "localCurrency": 3800, "usd": 4142 }
+      },
+      "recommendationForBangladeshiStudents": "Toulouse suits aerospace-AI intersection. Lower costs than Paris/Lyon. Growing tech scene around Airbus and space industry AI applications."
+    },
+    {
+      "city": "Sophia Antipolis (Nice area)",
+      "housingCrisisLevel": "MODERATE-HIGH due to Côte d'Azur tourism premium",
+      "vacancyRate": "2.0%",
+      "universityContext": "Université Côte d'Azur; Inria Sophia Antipolis (largest Inria center); major tech park with IBM, SAP, Amazon offices",
+      "studentRentalMarket": {
+        "colocRoom": { "localCurrency": 600, "usd": 654, "note": "Higher than inland cities due to Mediterranean premium" },
+        "studio": { "localCurrency": 900, "usd": 981 }
+      },
+      "workingGraduateMarket": {
+        "studio": { "localCurrency": 1100, "usd": 1199 },
+        "1BR": { "localCurrency": 1400, "usd": 1526 }
+      },
+      "recommendationForBangladeshiStudents": "Sophia Antipolis is excellent for INRIA research with tech industry proximity. Higher cost than Grenoble but Mediterranean quality of life. Worth considering for specific research groups."
+    }
+  ],
+
+  "crousSystem": {
+    "description": "CROUS (Centre Régional des Oeuvres Universitaires et Scolaires) manages student housing, restaurants (RU), and social services across France",
+    "applicationProcess": "Apply via SVE (Services en Ligne pour les Étudiants) at trouverunlogement.lescrous.fr; applications open in February for following September",
+    "costRange": { "localCurrency": "150-400/month", "usd": "164-436/month", "note": "Some residences older; newly renovated premium at EUR 400-600" },
+    "waitlistReality": "Paris CROUS: 18-24 month wait typical. Lyon/Grenoble: 3-6 months. Toulouse: 2-4 months.",
+    "roomTypes": "Shared corridor (chambre en résidence universitaire), single room with shared bathroom, or newer studio units",
+    "allocation": "Priority given to scholarship holders (boursiers); Eiffel Scholarship recipients get housing priority assistance",
+    "strategicAdvice": "Apply to CROUS the moment you begin your university application, even before admission confirmation. Attach scholarship documentation."
+  },
+
+  "cafHousingBenefit": {
+    "aplDescription": "Aide Personnalisée au Logement; means-tested rent subsidy available to students and workers",
+    "internationalEligibility": "International students on long-stay student visa with titre de séjour are eligible",
+    "monthlyAmount": { "localCurrency": "100-350/month", "usd": "109-382/month", "note": "Varies by city, rent, income; simulation at caf.fr" },
+    "applicationTimeline": "Apply within 3 months of moving in; requires bank account, lease contract, visa documentation",
+    "importantNote": "APL is calculated on rent and location; higher rent cities give higher APL but not proportionally. Paris APL caps limit benefit. Provincial cities give better net APL-to-rent ratio."
+  },
+
+  "colocPlatforms": [
+    { "platform": "Appartager.com", "type": "Colocation specialist; French market leader", "language": "French" },
+    { "platform": "SeLoger.com", "type": "Full rental market; largest French property portal", "language": "French" },
+    { "platform": "Leboncoin.fr", "type": "Classifieds including rooms and apartments; direct from owners", "language": "French" },
+    { "platform": "Studapart.com", "type": "Student-focused; international student friendly; some English", "language": "French/English" },
+    { "platform": "Nexity Studéa", "type": "Private student residence operator; managed residences nationally", "language": "French" },
+    { "platform": "Facebook Groupes", "type": "Bangladeshi/South Asian community groups in Paris/Lyon share housing tips", "language": "French/English" }
+  ],
+
+  "garantieDocuments": {
+    "note": "French landlords require extensive guarantor documentation; international students without French guarantor face barriers",
+    "visalegaution": "Visale (by Action Logement) - free government-backed rent guarantee for students under 30; replaces personal guarantor; apply at visale.fr before signing lease",
+    "visaleRecommendation": "CRITICAL: Bangladeshi students should apply for Visale guarantee before any apartment search; it makes you a competitive tenant without a French guarantor",
+    "documentsRequired": ["Passport + visa", "University enrollment certificate", "Last 3 months bank statements", "Scholarship letter if applicable", "Visale guarantee certificate"],
+    "practicalNote": "Landlords in France legally cannot discriminate but in practice prefer tenants with French guarantors or Visale certification"
+  },
+
+  "islamicLivingConsiderations": {
+    "muslimCommunity": "France has Europe's largest Muslim population (5-6 million); significant North African diaspora",
+    "halalFood": "Widely available throughout France in ethnic grocery stores; Halal butchers in all major cities; specific Muslim quarters in major cities (Belleville in Paris, Guillotière in Lyon)",
+    "mosqueAccess": "Major mosques in all large cities; Grande Mosquée de Paris historic and active; Lyon Grand Mosque; Friday prayers easily accessible",
+    "ramadanNote": "France respects religious freedom; Ramadan observed freely; iftar community gatherings active in cities",
+    "bangladeshiCommunity": "Growing Bangladeshi community particularly in Paris 10th and 18th arrondissements; community associations active"
+  },
+
+  "propertyOwnershipPathway": {
+    "foreignerRights": "Full property purchase rights for foreigners; no restrictions",
+    "mortgageEligibility": "After 2+ years stable employment in France; CDI (permanent contract) strongly preferred by banks",
+    "firstTimeBuyerAid": "PTZ (Prêt à Taux Zéro) zero interest loan for first buyers; available to legal residents regardless of nationality",
+    "typicalTimeline": "Graduate 2029 → Work 2029-2032 → PR/Carte de Résident 2034 → Property purchase feasible 2031-2034",
+    "marketOutlook": "French property market correction 2022-2025 improved affordability; rates stabilizing 2026; buyer's market in provincial cities"
+  },
+
+  "overallHousingRisk": "HIGH in Paris; MODERATE in Lyon/Toulouse; LOW in Grenoble/Sophia Antipolis",
+  "forecast2027to2029": "Paris housing shortage structural and unlikely to resolve by 2027-2029. Government Grand Paris Express expansion improving outer suburb connectivity. Provincial university cities stable. Grenoble and Lyon remain best value propositions. CAF APL benefit and Visale system provide meaningful support infrastructure for international students.",
+  "recommendation": "France housing strategy: (1) Apply CROUS SVE immediately upon university application. (2) Obtain Visale guarantee certification before housing search. (3) Apply for CAF APL within 3 months of lease signing. (4) Prioritize Grenoble for AI research value and housing affordability combination. (5) Paris viable but only with CROUS housing or confirmed colocation arranged before travel. (6) Eiffel Scholarship recipients should leverage university international office housing assistance. French housing market has strong legal protections for tenants once housed; the challenge is initial access."
+},
+
+{
+  "country": "United Arab Emirates",
+  "countryCode": "AE",
+  "currency": "AED",
+  "usdExchangeRate": 0.272,
+  "overallHousingScore": 38,
+  "confidenceScore": 83,
+  "housingCrisisLevel": "HIGH and structurally inflating due to global wealth influx and limited land",
+  "evidenceSummary": "The UAE real estate market, particularly Dubai, experienced extraordinary rental inflation of 20-30% in 2022-2023 as global capital, COVID-delayed demand, and wealthy migrant influx converged. While pace has moderated to 8-12% annually in 2024-2026, prices remain dramatically elevated compared to pre-2022 levels. Abu Dhabi is somewhat more stable. The UAE has no rent control equivalent in Dubai (DLD rules limit annual increase based on RERA index but enforcement complex). Sharjah has stricter rent control. For students, the MBZUAI scholarship model (which covers accommodation) is the only financially viable pathway. For professionals, company housing allowance is a critical negotiation component. Zero income tax means high gross salaries but housing consumes significant portion of net income.",
+
+  "cityBreakdown": [
+    {
+      "city": "Dubai",
+      "housingCrisisLevel": "HIGH; ongoing inflation",
+      "vacancyRate": "4.5% overall but affordable segment near zero vacancy",
+      "averageRentTrend": "+8-12% annually 2024-2026; pace moderating from 25-30% spike 2022-2023",
+      "areaBreakdown": {
+        "downtownBurjKhalifa": {
+          "note": "Premium; tourist zone; not recommended for students or junior professionals",
+          "studio": { "localCurrency": "10000-18000/month", "usd": "2720-4896/month" },
+          "1BR": { "localCurrency": "15000-30000/month", "usd": "4080-8160/month" }
+        },
+        "dubaiSiliconOasis": {
+          "note": "Tech-focused free zone; many IT companies; more affordable; relevant for AI professionals",
+          "studio": { "localCurrency": "5000-7000/month", "usd": "1360-1904/month" },
+          "1BR": { "localCurrency": "7000-10000/month", "usd": "1904-2720/month" },
+          "2BR": { "localCurrency": "10000-14000/month", "usd": "2720-3808/month" }
+        },
+        "jumerahVillagCircle": {
+          "note": "Popular mid-range area; family friendly; growing community",
+          "studio": { "localCurrency": "4500-6500/month", "usd": "1224-1768/month" },
+          "1BR": { "localCurrency": "6500-9000/month", "usd": "1768-2448/month" },
+          "2BR": { "localCurrency": "9000-13000/month", "usd": "2448-3536/month" }
+        },
+        "internationalCity": {
+          "note": "Most affordable Dubai area; significant South Asian community including Bangladeshi; but aging infrastructure",
+          "studio": { "localCurrency": "2500-4000/month", "usd": "680-1088/month" },
+          "1BR": { "localCurrency": "3500-5500/month", "usd": "952-1496/month" }
+        },
+        "alQuoz": {
+          "note": "Industrial/mixed area; very affordable rooms; labor accommodation style; not recommended for professionals",
+          "room": { "localCurrency": "800-1500/month", "usd": "218-408/month", "note": "Shared room; labor camp style; not suitable for tech professionals" }
+        },
+        "businessBayDIFC": {
+          "note": "Financial district; premium; relevant for senior tech professionals",
+          "studio": { "localCurrency": "8000-12000/month", "usd": "2176-3264/month" },
+          "1BR": { "localCurrency": "12000-18000/month", "usd": "3264-4896/month" }
+        }
+      },
+      "studentRentalMarket": {
+        "note": "Dubai has limited traditional student housing; MBZUAI is the primary AI graduate school and handles accommodation via scholarship",
+        "mbzuaiCampus": { "localCurrency": "Covered by scholarship", "usd": "Fully covered", "note": "MBZUAI students receive accommodation allowance or campus housing within generous scholarship package" },
+        "sharedRoomBangladeshiCommunity": { "localCurrency": 1800, "usd": 490, "note": "Sharing with other South Asians; International City or Discovery Gardens" },
+        "privateRoomSharedFlat": { "localCurrency": 3000, "usd": 816, "note": "Decent area; Dubai Silicon Oasis or JVC" }
+      },
+      "workingGraduateMarket": {
+        "sharedRoom": { "localCurrency": 2000, "usd": 544, "note": "Sharing 2-3BR apartment; International City or Discovery Gardens" },
+        "studio": { "localCurrency": 5500, "usd": 1496, "note": "Budget studio; JVC or Silicon Oasis" },
+        "1BR": { "localCurrency": 8000, "usd": 2176, "note": "Independent 1BR; mid-range area" },
+        "2BR": { "localCurrency": 12000, "usd": 3264, "note": "For couple or two professionals splitting costs" },
+        "companyHousingAllowance": { "localCurrency": "3000-8000/month", "usd": "816-2176/month", "note": "Standard in tech company packages; Google, Microsoft, G42, Careem all provide; NEGOTIATE this as part of offer" }
+      },
+      "rentPaymentSystem": {
+        "chequeSystem": "Dubai standard practice is paying rent by post-dated cheques; 1, 2, 4, or 6 cheques per year; 1 cheque (full annual payment upfront) gets 10-15% discount",
+        "bankAccountRequirement": "UAE bank account required for cheque payment; open immediately upon visa activation",
+        "dldRegistration": "All leases must be registered with DLD (Dubai Land Department) via Ejari system; tenant responsible; AED 160 fee",
+        "depositNorm": "5% of annual rent as security deposit; returned within 30 days of vacating",
+        "agencyFee": "5% of annual rent as agency commission; one-time; standard practice"
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqFt": { "localCurrency": 1200, "usd": 326, "note": "Dubai average 2026; significant variation; Downtown at AED 2,500+/sqft" },
+        "foreignerOwnership": "100% foreign ownership permitted in designated freehold zones (Downtown, Marina, Palm, JVC, DSO, etc.)",
+        "goldenVisaProperty": "Property purchase AED 2,000,000+ qualifies for 10-year Golden Visa; popular investment route",
+        "offPlanMarket": "Strong off-plan market; developers offer payment plans; 40-60% post-handover payments common",
+        "mortgageForNonResident": "Mortgages available for non-residents; maximum 50% LTV; 25-year maximum term; UAE bank or international bank",
+        "practicalNote": "Dubai property investment popular globally but requires significant capital and carries market risk; rental yield 5-7% competitive globally"
+      },
+      "recommendationForBangladeshiStudents": "Dubai viable ONLY with MBZUAI scholarship package or confirmed tech employment with housing allowance. Self-funded student housing in Dubai private market is extremely expensive. Large Bangladeshi community in International City, Discovery Gardens, and Deira provides community support and shared housing options. Negotiate housing allowance into employment package as absolute priority."
+    },
+    {
+      "city": "Abu Dhabi",
+      "housingCrisisLevel": "MODERATE; more stable than Dubai",
+      "vacancyRate": "6.5%; more balanced supply-demand",
+      "averageRentTrend": "+5-8% annually 2024-2026; more moderate than Dubai",
+      "areaBreakdown": {
+        "khalidiyah": {
+          "note": "Central residential; government employees common; quality area",
+          "studio": { "localCurrency": "4000-6000/month", "usd": "1088-1632/month" },
+          "1BR": { "localCurrency": "6000-9000/month", "usd": "1632-2448/month" }
+        },
+        "saadiyatIsland": {
+          "note": "Cultural district; NYU Abu Dhabi; premium residential; relevant for academic community",
+          "studio": { "localCurrency": "7000-10000/month", "usd": "1904-2720/month" },
+          "1BR": { "localCurrency": "10000-15000/month", "usd": "2720-4080/month" }
+        },
+        "musaffah": {
+          "note": "Industrial/affordable; large South Asian community; very affordable shared rooms",
+          "room": { "localCurrency": 800, "usd": 218, "note": "Shared room; basic accommodation; South Asian worker community" },
+          "studio": { "localCurrency": 2500, "usd": 680 }
+        },
+        "alReem": {
+          "note": "Modern island development; popular with expat professionals; mid-range",
+          "studio": { "localCurrency": 5000, "usd": 1360 },
+          "1BR": { "localCurrency": 7000, "usd": 1904 },
+          "2BR": { "localCurrency": 10000, "usd": 2720 }
+        }
+      },
+      "mbzuaiContext": {
+        "location": "Mohamed bin Zayed University of Artificial Intelligence; Masdar City, Abu Dhabi",
+        "housingCoverage": "MBZUAI scholarship covers accommodation in university facilities or provides housing allowance of AED 8,000-12,000/month",
+        "masdarCity": "Planned sustainable city; pleasant environment; dedicated university community; shuttle bus to Abu Dhabi city center",
+        "campusQuality": "World-class facilities; purpose-built AI research university; all modern amenities"
+      },
+      "workingGraduateMarket": {
+        "sharedRoom": { "localCurrency": 1500, "usd": 408, "note": "Shared apartment; more affordable than Dubai equivalent" },
+        "studio": { "localCurrency": 4500, "usd": 1224 },
+        "1BR": { "localCurrency": 7000, "usd": 1904 },
+        "2BR": { "localCurrency": 10000, "usd": 2720 },
+        "g42AlgorithmiaHousingNote": "G42 and Algorithmia (major Abu Dhabi AI employers) typically provide housing allowance or company accommodation for senior hires"
+      },
+      "buyingMarketContext": {
+        "averagePricePerSqFt": { "localCurrency": 900, "usd": 245, "note": "Abu Dhabi average; less appreciation than Dubai" },
+        "foreignerOwnership": "Designated investment zones for foreign ownership; expanding post-2019 reforms",
+        "practicalNote": "Abu Dhabi property market more stable than Dubai; government-dominated economy reduces volatility"
+      },
+      "recommendationForBangladeshiStudents": "Abu Dhabi is the STRATEGIC CHOICE for AI academics via MBZUAI. Masdar City campus is excellent. Abu Dhabi more stable, less frantic than Dubai. G42 AI company is one of world's most ambitious AI ventures and recruits MBZUAI graduates directly. Housing via scholarship is comprehensive."
+    },
+    {
+      "city": "Sharjah",
+      "housingCrisisLevel": "LOW-MODERATE; rent-controlled market",
+      "vacancyRate": "8%; more supply available",
+      "averageRentTrend": "+3-5% annually; rent control more strictly applied",
+      "note": "Many Dubai tech workers live in Sharjah for 40-60% lower rent and commute (30-60 minutes depending on traffic); practical for cost-conscious professionals",
+      "studentRentalMarket": {
+        "sharedRoom": { "localCurrency": 800, "usd": 218 },
+        "studio": { "localCurrency": 2000, "usd": 544 },
+        "1BR": { "localCurrency": 3000, "usd": 816 }
+      },
+      "workingGraduateMarket": {
+        "sharedRoom": { "localCurrency": 1000, "usd": 272 },
+        "studio": { "localCurrency": 2500, "usd": 680 },
+        "1BR": { "localCurrency": 4000, "usd": 1088 },
+        "note": "Significant commute time to Dubai; factor in traffic (Sheikh Zayed Road can be 60-90 minutes peak hours)"
+      },
+      "recommendationForBangladeshiStudents": "Sharjah is the budget-conscious option for those working in Dubai but cannot afford Dubai rent. Strong South Asian community. Significant Bangladeshi population. Halal food universally available. Trade-off is commute time."
+    }
+  ],
+
+  "mbzuaiScholarshipHousingDetails": {
+    "universityName": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+    "location": "Masdar City, Abu Dhabi",
+    "scholarshipHousingCoverage": "Full accommodation in university facilities OR housing allowance AED 8,000-12,000/month for Masters; AED 12,000-18,000/month for PhD",
+    "campusFacilities": "On-campus housing, dining, gym, recreation; modern purpose-built facilities; high quality",
+    "shuttleService": "University shuttle to Abu Dhabi city center; MasdarCity has internal PRT (Personal Rapid Transit) system",
+    "strategicNote": "MBZUAI scholarship is one of world's most generous AI programs; housing, tuition, stipend all covered; makes UAE financially accessible for Bangladeshi students who otherwise could not afford UAE living costs"
+  },
+
+  "halalAndIslamicConsiderations": {
+    "halalFood": "UNIVERSALLY available throughout UAE; halal is the default; no search required; every restaurant and supermarket stocks halal",
+    "mosques": "Mosques on every few blocks; Friday prayer extremely accessible; prayer rooms in malls, airports, offices",
+    "ramadan": "UAE officially observes Ramadan; working hours reduced by law; strong community spirit; iftar gatherings widely available",
+    "islamicFinance": "Sharia-compliant home financing available from Emirates Islamic, Abu Dhabi Islamic Bank, Dubai Islamic Bank; relevant for future property purchase",
+    "bangladeshiCommunity": "Very large Bangladeshi community; estimated 700,000-1,000,000 Bangladeshis in UAE (second largest foreign community); strong social networks; community associations; Bangladeshi restaurants and groceries widely available"
+  },
+
+  "goldenVisaHousingImplication": {
+    "goldenVisa10Year": "Property purchase AED 2,000,000+ OR salary AED 30,000+/month for senior professionals OR outstanding talent (AI researchers qualify)",
+    "housingStabilityWithGoldenVisa": "Golden Visa provides 10-year renewable residency; eliminates employer-tied visa dependency; allows long-term housing commitment",
+    "propertyInvestmentPath": "Some AI professionals use UAE savings to purchase AED 2M+ property as dual investment/Golden Visa qualification",
+    "importantLimitation": "Golden Visa is NOT citizenship; NOT equivalent to PR in Western countries; can be revoked; no voting rights or passport; purely residency permit"
+  },
+
+  "employerHousingNormsByCompany": {
+    "g42": "Major Abu Dhabi AI company; provides housing allowance or company accommodation for senior hires; very competitive packages",
+    "microsoft": "Microsoft UAE (Dubai/Abu Dhabi offices); standard housing allowance in package; AED 4,000-8,000/month typical",
+    "google": "Google UAE; competitive housing allowance; senior engineers receive comprehensive relocation package",
+    "careem": "Dubai-based ride-hailing/fintech; standard UAE tech package with housing component",
+    "talabat": "Dubai-based delivery platform (Delivery Hero subsidiary); UAE standard packages",
+    "negotiationAdvice": "ALWAYS negotiate housing allowance explicitly in UAE job offers. In UAE culture, compensation packages are expected to be negotiated. A tech graduate from MBZUAI or top global university can realistically negotiate AED 4,000-8,000/month housing allowance addition."
+  },
+
+  "rentPaymentPlatforms": [
+    { "platform": "Bayut.com", "type": "UAE's largest property portal; buy and rent; very comprehensive" },
+    { "platform": "PropertyFinder.ae", "type": "Premium listings; verified agents; strong search filters" },
+    { "platform": "Dubizzle.com", "type": "Classifieds including rooms; direct from owners sometimes; cheaper finds" },
+    { "platform": "Housing.com UAE", "type": "Indian-owned platform with UAE expansion; South Asian community friendly" },
+    { "platform": "Facebook Groups", "type": "Bangladeshi community UAE groups actively share housing leads; most practical for community referrals" }
+  ],
+
+  "overallHousingRisk": "EXTREME without institutional support; MANAGEABLE with MBZUAI scholarship or employer housing allowance",
+  "forecast2027to2029": "Dubai rental market expected to continue 5-10% annual increases through 2027-2029 as government Expo legacy, Golden Visa attraction of global wealth, and limited geographic expansion continue to drive demand. Abu Dhabi moderating. New supply entering market (off-plan deliveries 2025-2027) may provide slight relief in mid-market. Sharjah remains the budget alternative. For MBZUAI students entering 2027-2029, scholarship housing coverage provides full insulation from market volatility.",
+  "recommendation": "UAE housing strategy for Bangladeshi AI students and professionals: (1) MBZUAI scholarship is the ONLY financially viable student path - private market is prohibitively expensive without institutional support. (2) For post-graduation employment, negotiate housing allowance as non-negotiable part of offer before accepting. (3) Live in Sharjah or International City/JVC in Dubai to maximize savings. (4) Join Bangladeshi UAE community networks immediately upon arrival - housing referrals through community are most reliable. (5) Use UAE's zero-tax salary advantage and low housing (via community sharing) to maximize savings for 5-7 years. (6) Exit to settlement-friendly country (Canada, Australia, Germany) with substantial capital for property purchase and family establishment. UAE is wealth accumulation phase; not final destination."
+}
+
+  ]
+}
