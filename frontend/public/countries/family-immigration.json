@@ -882,6 +882,577 @@
         "riskMitigation": "Do NOT rely on parent sponsorship (not available), have 6-12 months expenses saved (mandatory for Permit B), secure employer-sponsored health insurance before arrival, factor in 3-5 year quota uncertainty, plan for renunciation of Bangladeshi citizenship before naturalization, research specific cantonal integration requirements (Zurich vs Geneva vs Basel very different)",
         "familyStabilityScore": 42
       }
-    }
-  }
+    },{
+  "country": "Austria",
+  "countryCode": "AT",
+  "overallFamilyScore": 76,
+  "overallFamilyScoreConfidence": 80,
+  "overallFamilyScoreEvidence": "Austria offers decent family policy: spouse can work after Red-White-Red Card secured, free K-12, good healthcare, Familienbeihilfe (family allowance €138-165/month per child). Parent sponsorship essentially unavailable. German language critical for integration and PR. Must renounce Bangladeshi citizenship for Austrian (except limited exceptions under 2024 reforms). Bureaucracy (MA35 Vienna) challenging. Vienna quality of life high but expensive. 10-year citizenship timeline.",
+  "spouseRights": {
+    "spouseCanWork": true,
+    "spouseCanWorkDuringStudy": "Limited - spouse of student can apply for residence permit; work authorization case-by-case",
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": true,
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 68,
+    "spouseRestrictions": "During 12-month job seeker visa: spouse accompanying with limited work rights. After Red-White-Red Card secured: spouse receives Red-White-Red Card Plus (Rot-Weiß-Rot Karte Plus) with FULL unrestricted work authorization. During primary's RWR Card first year: spouse gets dependent permit which may require own work permit application. German language barrier significantly affects spouse employment in Austria - most employers expect B1-B2 German.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Austrian universities; fees apply (non-EU: €726-1,500/semester until EU-equivalent status after PR); German language needed for most programs",
+    "estimatedIncomeOpportunityCostEUR": "25,000-45,000 (job seeker visa phase 12 months + Red-White-Red Card processing 2-4 months)",
+    "dualIncomeViability": "Moderate after RWR Card; German language barrier affects spouse employment significantly"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "Dependent on parent's residence permit (Familiennachzug)",
+    "freeSchooling": true,
+    "freeSchoolingNotes": "FREE public K-12 (Volksschule, Hauptschule/AHS). Quality generally good. German language instruction mandatory; integration support (Deutschförderklassen) for non-German speakers. University: nominal fees (€363/semester for non-EU students until residency established; EU-equivalent after long-term residence = €363/semester standard; very affordable vs. US/UK). Familienbeihilfe (family allowance): €138/month per child under 3; €150 for 3-9; €158 for 10-18; €165 for 19-24 in education - universal after legal residence.",
+    "schoolingQualityScore": 82,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "Nominal fees (€363/semester) at public Austrian universities for PR holders. Excellent universities: TU Wien, University of Vienna, Graz TU, JKU Linz - strong STEM programs. Studienbeihilfe (student grant) available for qualifying residents.",
+    "childcareAvailability": "Kinderbetreuung: subsidized by Länder (provinces); Vienna: free kindergarten (3-6 years) for all children registered in Vienna (extraordinary - €0 full day); other provinces: €100-400/month; Kinderbetreuungsgeld (childcare allowance): €14-33/day (income-based or flat rate) for up to 30 months per parent after birth - available for all residence permit holders",
+    "childcareCostScore": 80
+  },
+  "healthcareAccess": {
+    "score": 82,
+    "duringStudy": "Mandatory health insurance (ÖGK - Österreichische Gesundheitskasse) for employed students; student insurance ~€65/month; comprehensive coverage (GP, specialist referral, hospital free)",
+    "duringWorkPermit": "Mandatory ÖGK social insurance (contribution ~7.65% of salary, employer also contributes); comprehensive coverage - GP, specialist, hospital, maternity, dental (partial), mental health; family co-insured FREE if not working (major advantage - spouse co-insured at no additional cost if not employed)",
+    "afterPR": "Same ÖGK coverage; same quality as Austrian citizens; dental: partial subsidy; children fully covered; mental health included; prescription: Rezeptgebühr €7.10/prescription (waived for low income)",
+    "estimatedFamilyCostEUR": "0-200/month (employee contribution already deducted from salary; spouse/children co-insured FREE if not separately employed)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "Austria does NOT have a general parent sponsorship program for adult immigrants. Elderly dependent parent immigration: possible in exceptional cases under § 46 NAG (Settlement Permit - Family Member) IF: parent over 65, fully dependent, seriously ill, no other family support in Bangladesh, sponsor demonstrates sufficient income + housing space. Extremely restrictive in practice. Standard parent immigration not available.",
+    "parentVisaType": "Schengen tourist visa (90 days/180 days) OR National Visa D case-by-case for documented medical/dependency situations",
+    "parentPRTimeline": "N/A - not available except exceptional dependency",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "Travel insurance required (mandatory for Schengen visa); no access to ÖGK public health system on tourist visits",
+    "parentCitizenshipEligible": false,
+    "financialSponsorshipRequired": true,
+    "financialSponsorshipNotes": "If exceptional dependency visa granted: must provide Haftungserklärung (financial guarantee) covering all costs including health insurance €400-800/month for elderly parent",
+    "parentSponsorshipScore": 14,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "Austria does NOT grant birthright citizenship (no jus soli). Child born in Austria to foreign parents does NOT automatically get Austrian citizenship unless one parent is Austrian citizen. Austrian citizenship: parent is Austrian OR naturalization after 10 years legal residence + German B2 language + integration + renounce previous citizenship (limited exceptions after 2024 reforms).",
+    "derivativeCitizenship": true,
+    "derivativeCitizenshipNotes": "Children naturalize with parents after 10 years residence. Dual citizenship: Austria has historically required renouncing Bangladeshi citizenship (strict dual citizenship prohibition except: born Austrian, marriage to Austrian for 6+ years, or specific EU cases). 2024 reform discussions but as of June 2026, Bangladesh-Austria dual citizenship generally NOT permitted - must choose one. Major limitation vs. Sweden/Norway/Denmark/Finland/Canada.",
+    "citizenshipTimeline": "10 years legal residence → naturalization; must renounce Bangladeshi citizenship (generally); 6 years if exceptional integration",
+    "citizenshipForChildrenScore": 58
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsEUR": "180,000-280,000",
+    "keyFinancialAdvantages": "Free K-12; Vienna free kindergarten (€0/day, extraordinary); Familienbeihilfe €138-165/month per child; spouse co-insured FREE on primary's ÖGK (healthcare); affordable university (€363/semester); Kinderbetreuungsgeld (childcare allowance up to 30 months); Vienna quality of life globally ranked top",
+    "keyFinancialChallenges": "10-year citizenship timeline (must renounce Bangladeshi); German language barrier for spouse employment; bureaucracy (MA35 appointments very scarce); parent sponsorship unavailable; Vienna rent rising (€800-1,500/month 1-bed); 12-month job seeker visa phase spouse limited",
+    "breakEvenPointYears": "Year 2-3 (RWR Card secured, spouse working, benefits applying)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "Secure Red-White-Red Card quickly (within 12-month job seeker phase). Bring family after RWR Card: spouse gets RWR Card Plus (full work rights), Vienna free kindergarten (€0), Familienbeihilfe immediately, spouse co-insured free on primary's health insurance. Both working (combined €60,000-100,000). Learn German as family (free Integrationskurs via ÖIF). PR at 5 years (Niederlassungserlaubnis - Daueraufenthalt). Citizenship at 10 years (must renounce Bangladeshi - major decision). Parent visits: Schengen tourist only (90 days/180 days).",
+    "worstScenario": "Cannot meet RWR Card points threshold (salary + language + education points required: 55+ points); MA35 (Vienna immigration authority) appointments extremely scarce (months wait); dual citizenship renunciation of Bangladeshi passport culturally and practically very difficult; German language progression slow affecting spouse employment.",
+    "bestScenario": "Vienna tech role (Erste Digital, Raiffeisen, TU Wien spin-off: €50,000-75,000); spouse in Vienna's international environment (English-friendly companies growing); Vienna free kindergarten (€0/day, best in Europe for childcare cost); Familienbeihilfe €150/month; RWR Card → Daueraufenthalt at 5 years; Graz/Linz/Salzburg cheaper alternatives to Vienna.",
+    "bangladeshiSpecificTips": [
+      "Small Bangladeshi community in Vienna (~2,000-3,000); Islamic Centre Vienna (Floridsdorf), Islamische Glaubensgemeinschaft Austria mosques; halal food in Vienna (Turkish/Arab supermarkets widely available); community smaller than Germany/UK",
+      "Vienna FREE kindergarten (Wiener Kindergarten): applies to all children 2.5-6 years registered in Vienna regardless of immigration status - €0 for 5 hours/day; extraordinary advantage for family cost reduction",
+      "Familienbeihilfe: apply at Finanzamt (tax office) immediately after receiving residence permit; backdated to arrival date; €138-165/month per child is automatic",
+      "ÖGK co-insurance: register spouse and children as co-insured (mitversichert) on primary's health insurance immediately - FREE if not separately employed; saves €200-400/month vs. individual insurance",
+      "German language: ÖIF (Österreichischer Integrationsfonds) provides subsidized integration courses; Deutsch-Integrationskurs (A1-A2 minimum mandatory for family reunification visa); progress to B1-B2 for employment and PR",
+      "MA35 (Vienna immigration authority): book appointments months in advance via website; bring ALL documents (originals, certified translations by court-certified translator, notarized copies); processes take 3-6 months; patience essential",
+      "Dual citizenship reality: as of June 2026, must renounce Bangladeshi passport for Austrian citizenship (10-year process) - this is a MAJOR life decision; confirm with immigration lawyer before committing; 2024 reform discussions ongoing but not implemented",
+      "Consider Graz (Styria): cheaper than Vienna (€600-1,000/month rent), TU Graz excellent, AVL List, Anton Paar, Magna Steyr tech employers, less bureaucratic than Vienna MA35",
+      "Kinderbetreuungsgeld: apply at Finanzamt immediately after child birth or arrival; up to €33/day for up to 12 months (flat rate) or income-based; available regardless of citizenship"
+    ]
+  },
+  "overallFamilyRating": "Moderate-good family policy: free K-12, Vienna extraordinary free kindergarten (€0), Familienbeihilfe €138-165/month, spouse co-insured free on ÖGK health insurance, affordable university, Vienna quality of life globally top-ranked. Significant challenges: must renounce Bangladeshi citizenship for Austrian (10-year process - very difficult decision), parent sponsorship unavailable, German language essential for spouse employment and integration, MA35 bureaucracy notorious, 10-year citizenship timeline (6 if exceptional). Better than Switzerland/Singapore for family settlement; not as good as Canada/Germany/Sweden. Best suited for families committed to Vienna/Austria long-term who can accept Bangladeshi citizenship renunciation for Austrian after 10 years.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Belgium",
+  "countryCode": "BE",
+  "overallFamilyScore": 74,
+  "overallFamilyScoreConfidence": 78,
+  "overallFamilyScoreEvidence": "Belgium offers reasonable family benefits: free K-12, generous child allowance (groeipakket/allocations familiales up to €165/month), good healthcare (mutuelle/ziekenfonds), spouse can work after work permit. But complex multilingual landscape (Dutch/French/German community different rules), extreme bureaucracy, parent sponsorship unavailable, dual citizenship possible but complex, high income taxes (50% marginal). Brussels EU institutional environment adds unique opportunity but also complexity.",
+  "spouseRights": {
+    "spouseCanWork": true,
+    "spouseCanWorkDuringStudy": "Limited - family reunification during study; work permit additional process",
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": true,
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 65,
+    "spouseRestrictions": "After Single Permit (work permit for employees) or Professional Card secured: spouse receives family reunification residence permit with work authorization. During job search visa (12 months): spouse accompanying with limited work rights. Language requirement critical: Dutch for Flanders employment, French for Wallonia, bilingual for Brussels. Without language, spouse employment very limited except Brussels international sector (English-acceptable).",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Belgian universities; fees for non-EU (€900-5,000/year depending on institution and community); free/reduced after 5 years legal residence in some communities",
+    "estimatedIncomeOpportunityCostEUR": "25,000-45,000 (job search phase 12 months limited)",
+    "dualIncomeViability": "Moderate after work permit; language barrier in Flanders/Wallonia; Brussels more accessible for English-speakers"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "Dependent on parent's residence permit (gezinshereniging/regroupement familial)",
+    "freeSchooling": true,
+    "freeSchoolingNotes": "FREE public K-12 in all communities (Flemish, French, German). Quality generally good. Language by region: Dutch (Flanders), French (Wallonia), German (Ost-Belgie), bilingual (Brussels). Groeipakket/Allocations familiales (child benefit): Flanders: up to €165/month for first child + supplements (income-based, need-based, age-based); Wallonia: up to €159/month; Brussels: own system similar rates. Universal for all legally resident children regardless of income. University: €835-1,000/year public university after legal residence (KU Leuven, ULB, UGent, VUB - affordable vs. US/UK).",
+    "schoolingQualityScore": 78,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "Belgian public university fees: €835-1,000/year for legal residents (extraordinary value). KU Leuven, UGent, ULB (Brussels), VUB - internationally recognized. Study grants (studietoelage/bourse d'études) available for qualifying residents.",
+    "childcareAvailability": "Kind en Gezin (Flanders) / ONE (Wallonia): subsidized daycare. IKT (Inkomensgerelateerd Kindertarief) in Flanders: €2.04-34.10/day income-based (extraordinary subsidy). Brussels and Wallonia similar income-based subsidies. Waiting lists common in Brussels. Groeipakket additional benefits: school bonus, annual school allowance, birth grant (€1,142).",
+    "childcareCostScore": 78
+  },
+  "healthcareAccess": {
+    "score": 80,
+    "duringStudy": "Mutuelle/Ziekenfonds (health insurance fund) mandatory after residence registration; enrollment required within 3 months; contribution ~€100-150/year + small per-visit copayment; comprehensive coverage (GP, specialist referral, hospital, dental partial, mental health partial)",
+    "duringWorkPermit": "Full Belgian social security health coverage via mutuelle/ziekenfonds; employee contribution ~3.55% of salary; employer also contributes; excellent coverage; copayments small (tickets modérateurs/remgeld): €2-12 for GP; hospital significant own contribution (personal share); leefloon (supplementary assistance) if low income; children under 18 reduced copayments",
+    "afterPR": "Same mutuelle/ziekenfonds system as Belgian citizens; excellent comprehensive coverage; BIM/OMNIO status (preferential rate) if low income = near-zero copayments; dental: annual ceiling €300-400 own contribution; orthodontics children covered; mental health improving coverage",
+    "estimatedFamilyCostEUR": "200-500/year (copayments; insurance contribution from salary)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "Belgium does NOT have a general parent sponsorship program. Family reunification limited to nuclear family (spouse/partner + children). Parent immigration: only possible for dependent elderly parents who meet strict criteria (legally dependent on Belgian sponsor, cannot care for themselves, no other support in home country, sponsor has sufficient income). Extremely restrictive. Schengen 90-day tourist visa most realistic option.",
+    "parentVisaType": "Schengen tourist visa (90 days/180 days) OR national visa D case-by-case for documented dependency",
+    "parentPRTimeline": "N/A",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "Travel insurance mandatory for Schengen visa; no access to Belgian mutuelle/ziekenfonds on tourist visits; emergency hospital care expensive",
+    "parentCitizenshipEligible": false,
+    "financialSponsorshipRequired": true,
+    "parentSponsorshipScore": 12,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": "Conditional",
+    "birthrightNotes": "Belgium has limited birthright citizenship. Child born in Belgium to foreign parents does NOT automatically get Belgian citizenship UNLESS: child would otherwise be stateless AND one parent has been legally resident in Belgium for 5+ years before birth. New immigrants: children born in Belgium are NOT automatically Belgian. Belgian citizenship for children: naturalization (born in Belgium + resident since birth + 5 years parent residence = simplified naturalization from age 18, or earlier if parent naturalizes).",
+    "derivativeCitizenship": true,
+    "derivativeCitizenshipNotes": "Children naturalize with parents (declaration procedure after 5 years legal residence + Dutch/French B1 language + integration + work/study proof + social integration). Belgium ALLOWS dual citizenship in most cases - keep Bangladeshi passport when naturalizing Belgian. Belgian law allows multiple nationalities. Major advantage.",
+    "citizenshipTimeline": "5 years legal residence → naturalization declaration; dual citizenship ALLOWED (keep Bangladeshi passport)",
+    "citizenshipForChildrenScore": 72
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsEUR": "200,000-320,000",
+    "keyFinancialAdvantages": "FREE K-12; groeipakket/allocations up to €165/month per child + supplements; heavily subsidized daycare (€2-34/day income-based); good mutuelle healthcare; affordable university €835-1,000/year; dual citizenship allowed (keep Bangladeshi); Brussels EU career opportunities; birth grant €1,142",
+    "keyFinancialChallenges": "HIGH income taxes (up to 50% marginal + additional social charges = effective rate 40-55% on salary €50,000+); language complexity (Dutch vs. French employment markets separate); extreme bureaucracy (commune administration slow); parent sponsorship unavailable; Brussels housing rising (€900-1,800/month 1-bed)",
+    "breakEvenPointYears": "Year 2-3 (work permit secured, spouse working, groeipakket and childcare subsidies applying)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "Brussels strategy best for English-speaking Bangladeshi families: EU institutions (European Commission contractors, NATO support, EU agencies - English primary language), tech MNCs (Microsoft, Oracle, SAP Brussels), financial sector (ING, KBC, Belfius). After Single Permit/Professional Card: bring family, spouse can work in Brussels international environment, groeipakket child benefits immediately, subsidized daycare IKT (income-based €2-34/day), free K-12. 5 years → naturalization (dual citizenship - keep Bangladeshi). Flanders strategy: Dutch language essential (KU Leuven/Ghent area - tech companies, pharma Janssen/UCB); higher economic output region. Wallonia: French language, weaker economy. Parent visits: Schengen only.",
+    "worstScenario": "Belgian income tax shock (€60,000 gross → ~€38,000 net = 37% effective tax); bureaucracy (some communes take 6+ months for basic permits); language choice wrong (learned Dutch for Flanders role, job market moves to Brussels English); extreme bureaucratic complexity across commune/region/federal levels.",
+    "bestScenario": "Brussels-based EU institutions contractor role (€60,000-90,000 gross; EU salary scale tax-advantaged for officials); spouse in English-friendly Brussels tech company; groeipakket €165/month + subsidized daycare; free schooling; European Schools (EU institution employee benefit - multilingual education, excellent); dual citizenship at 5 years (keep Bangladeshi).",
+    "bangladeshiSpecificTips": [
+      "Bangladeshi community in Brussels (~3,000-5,000), Antwerp (~1,500), Liège (~500); Brussels mosques (Grande Mosquée de Bruxelles, several smaller mosques); halal food in Molenbeek, Ixelles, Schaerbeek areas Brussels; limited vs. Germany/UK",
+      "Language strategy critical: assess job target FIRST, then commit to language. Brussels = English viable for EU/MNC sector. Flanders = Dutch essential (but stronger economy, Ghent/Leuven excellent tech). Wallonia = French (weaker economy but cheaper living - Namur, Charleroi).",
+      "Groeipakket (Flanders)/Allocations familiales (Wallonia)/Brussels benefits: apply at respective community agency immediately after residence established; €138-165/month per child PLUS income supplements, school bonuses, annual school allowance (August), birth grant €1,142 per child",
+      "IKT childcare subsidy (Flanders): apply at Kind en Gezin; income-based €2.04-34.10/day per child; waiting lists so register immediately; ONE (Wallonia) similar system; Brussels has own subsidized system",
+      "Commune registration (gemeente/commune): register at local commune immediately (Anmeldung equivalent); get national register number; needed for everything; different communes have dramatically different service quality - Brussels communes notorious for slowness",
+      "High tax reality: Belgian income tax 25-50% + communal tax 6-9% + social security 13.07% employee = total burden 40-55% on income above €45,000; negotiate gross salary accordingly (target €65,000-85,000 gross for comfortable net); EU institution contracts often tax-exempt under EU protocol (huge advantage for EU sector roles)",
+      "European Schools: if working for EU institution and children enrolled in European School (Laeken, Uccle, Woluwe) = FREE, multilingual education (native language + French + English from young age) - extraordinary advantage for Bangladeshi families in Brussels EU sector",
+      "Dual citizenship Belgian + Bangladeshi: verify current Belgian law (dual citizenship generally allowed since 2008 except some specific cases); confirm with notary (notaris/notaire) before naturalization; generally no need to renounce Bangladeshi passport when naturalizing Belgian - major advantage"
+    ]
+  },
+  "overallFamilyRating": "Moderate-good family policy: free K-12, subsidized daycare (€2-34/day IKT), groeipakket €165/month child benefit, affordable university (€835/year), good healthcare, dual citizenship allowed (keep Bangladeshi), 5-year citizenship pathway. Significant challenges: high income taxes (effectively 40-55%), complex multilingual landscape (Dutch/French language choice critical for career), extreme bureaucracy (commune-level administration variable quality), parent sponsorship unavailable, Brussels housing rising. Best suited for Brussels-focused careers (EU institutions, English-friendly MNCs) where language barrier minimized. Flanders (Dutch) offers stronger economy but language requirement high. Overall moderate choice - better than Switzerland/Singapore/UAE for family settlement; not as good as Canada/Germany/Sweden.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "New Zealand",
+  "countryCode": "NZ",
+  "overallFamilyScore": 86,
+  "overallFamilyScoreConfidence": 88,
+  "overallFamilyScoreEvidence": "New Zealand has excellent family immigration: spouse full work rights on post-study work visa and skilled migrant visa, children free public K-12 after PR, family tax credits, universal healthcare (ACC accident compensation, public health), parent sponsorship available (Parent Resident Visa - expensive but viable), birthright citizenship conditional, Trans-Tasman advantage (NZ citizenship = Australia work rights). Main challenges: high cost of living (Auckland), moderate salaries, small job market, policy volatility.",
+  "spouseRights": {
+    "spouseCanWork": true,
+    "spouseCanWorkDuringStudy": true,
+    "spouseCanWorkDuringPostStudy": true,
+    "spouseCanWorkDuringWorkPermit": true,
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 88,
+    "spouseRestrictions": "MINIMAL. Spouse of student visa holder can work up to 20 hours/week (full-time during scheduled holidays). Spouse of post-study work visa (subclass open): partner gets open work visa with FULL unrestricted work rights (any employer, any hours). Spouse of skilled migrant resident: full PR work rights. Very strong policy - similar to Canada/Australia.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study; international fees apply until PR (NZD 20,000-35,000/year); domestic fees after PR (NZD 6,000-9,000/year)",
+    "estimatedIncomeOpportunityCostNZD": "Minimal - full work rights during post-study work visa phase",
+    "dualIncomeViability": "Excellent from post-study work visa phase onwards"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "Dependent on parent's visa (student dependent, work visa dependent, resident dependent)",
+    "freeSchooling": true,
+    "freeSchoolingNotes": "FREE public K-12 for PR holders and residents (domestic student status). For temporary visa holders (student, post-study work): school fees apply (NZD 10,000-15,000/year per child for international students at public schools - varies by school, some schools free for children of workers on certain visas). FREE after PR. Quality good (PISA moderate). University: domestic fees after PR (NZD 6,000-9,000/year NZQA programs with StudyLink loans); significantly cheaper than international (NZD 25,000-40,000/year).",
+    "schoolingQualityScore": 80,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "Domestic tuition after PR with StudyLink loans (repay when earning NZD 22,828+/year). University of Auckland, Victoria, Canterbury, Otago - solid universities. Student allowance (up to NZD 345/week) for qualifying PR students.",
+    "childcareAvailability": "20 Hours ECE (Early Childhood Education): FREE 20 hours/week for children 3-5 years (all residents including those on work visas). Working for Families Tax Credits: up to NZD 5,878/year per child for low-moderate income families after PR. Paid Parental Leave: 26 weeks at NZD 712/week maximum (for employees). Best Start payment: NZD 73/week for first year after birth (universal). Childcare fees: NZD 250-450/week before subsidies.",
+    "childcareCostScore": 72
+  },
+  "healthcareAccess": {
+    "score": 78,
+    "duringStudy": "International students require private health insurance (NZIIS - New Zealand International Insurance Scheme or private); costs NZD 500-800/year; limited public healthcare access (emergency only for some visa types)",
+    "duringPostStudy": "Open work visa holders have access to publicly funded healthcare if working and paying taxes (enrolled with GP - free or low-cost); ACC (Accident Compensation Corporation) covers all accidents for everyone in NZ regardless of visa status (extraordinary - no-fault accident insurance); maternity care free for all residents",
+    "afterPR": "Full public healthcare: enrolled GP (Community Services Card for low income = free GP visits; otherwise NZD 15-60/visit); public hospital free after referral; specialist waiting lists (6-18 months common); ACC comprehensive accident coverage; maternity: Lead Maternity Carer (LMC) free; dental: not covered publicly except emergency (significant gap); mental health: improving but waiting lists",
+    "estimatedFamilyCostNZD": "500-2,000/year (GP visits + some dental; hospital free; ACC included)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": true,
+    "availabilityNotes": "New Zealand has a Parent Resident Visa - expensive but viable option. Requires: primary is NZ citizen or PR for 3+ years, Balance of Family Test (half of adult children in NZ), sufficient income, acceptable offer of accommodation, medical and character checks. Visa fee: NZD 3,170 (2026) + NZD 520 per additional applicant. Waiting list exists. OR: Parent Retirement Resident Visa (if parent can invest NZD 1M for 4 years) - expensive but alternative.",
+    "parentVisaType": "Parent Resident Visa (permanent); OR Visitor Visa (3 months + 3 months extension); OR Parent Retirement Resident Visa (investment NZD 1M)",
+    "parentPRTimeline": "1-3 years after application (waiting list and processing); primary must be PR 3+ years first",
+    "parentCanWork": false,
+    "parentCanWorkNotes": "Parent Resident Visa: NO work rights initially (unlike Canada PGP); parent on resident visa but work not permitted; can apply for work visa separately if needed",
+    "parentHealthcareAccess": "Full public healthcare after Parent Resident Visa granted; ACC accident coverage from Day 1 in NZ (all visitors); public GP (NZD 15-60/visit or free with CSC); hospital free after PR",
+    "parentCitizenshipEligible": true,
+    "parentCitizenshipTimeline": "5 years as PR (including 1 year as citizen or permanent resident of at least 4 years) → eligible for citizenship (total ~8-12 years from primary's arrival)",
+    "financialSponsorshipRequired": true,
+    "financialSponsorshipNotes": "Must demonstrate ability to accommodate and support parents; no formal income threshold but must show sustainability; Assurance of Support may be required",
+    "parentSponsorshipScore": 58,
+    "parentVisaCostNZD": "NZD 3,170 application fee per primary applicant (2026)",
+    "grandparentSponsorshipAvailable": true,
+    "grandparentSponsorshipNotes": "Grandparents of NZ citizen/PR eligible under same Parent Resident Visa policy (Balance of Family Test applies)",
+    "transAbsolutionNote": "Parent Retirement Resident Visa: NZD 1,000,000 investment for 4 years → PR; NZD 500,000 in acceptable investments; full PR rights after 4 years; no work rights initially. Very expensive alternative."
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": "Conditional",
+    "birthrightNotes": "New Zealand modified birthright citizenship 2006. Child born in NZ is NOT automatically NZ citizen unless at least one parent is NZ citizen or entitled to reside in NZ indefinitely (i.e., PR/resident status). For new immigrants on temporary visas: children born in NZ are NOT automatically citizens. Child gets parents' nationality. Children of PR holders born in NZ ARE NZ citizens (by birth to parents with indefinite right to reside).",
+    "derivativeCitizenship": true,
+    "derivativeCitizenshipNotes": "Children naturalize with parents or independently after qualifying residence. NZ ALLOWS dual citizenship - keep Bangladeshi passport when naturalizing NZ. No need to choose. Trans-Tasman bonus: NZ citizens have right to live and work in Australia permanently (Trans-Tasman Travel Arrangement) - children with NZ citizenship automatically have Australian work/residence rights.",
+    "citizenshipTimeline": "5 years as PR (including 1 year as citizen) → naturalization; conditional birthright for children of PR holders; dual citizenship ALLOWED; Trans-Tasman Australian work rights with NZ citizenship",
+    "citizenshipForChildrenScore": 85
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsNZD": "400,000-700,000 (Auckland extreme; smaller cities more manageable)",
+    "keyFinancialAdvantages": "Spouse full work rights from post-study work visa; 20 hours free ECE for children 3-5 years; Working for Families Tax Credits up to NZD 5,878/year; Best Start NZD 73/week first year; ACC accident compensation (extraordinary - no-fault, no cost); paid parental leave 26 weeks; parent sponsorship viable (though expensive); dual citizenship (keep Bangladeshi); Trans-Tasman advantage (NZ citizen = Australian work rights)",
+    "keyFinancialChallenges": "Auckland housing crisis (rent NZD 2,500-4,500/month; house prices still elevated); school fees for children during temporary visa phase (NZD 10,000-15,000/year); moderate NZ salaries (NZD 60,000-90,000 entry STEM = €36,000-54,000 vs. AUD equivalents ~20% higher); parent visa expensive (NZD 3,170) and primary must be 3+ years PR first",
+    "breakEvenPointYears": "Year 3-4 (after PR: free schooling, full healthcare, Working for Families, parent visa pathway opens)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "Bring family from Day 1 of post-study work visa (spouse full open work rights, 20 hours free ECE for children 3-5). Both work, accumulate savings. Target regional NZ (Wellington, Christchurch, Hamilton, Dunedin - cheaper housing, better quality of life, state nomination possible) over Auckland (expensive). PR via Skilled Migrant Category after 12+ months work. After PR: free K-12, full healthcare, Working for Families tax credits. After 3 years PR: apply Parent Resident Visa for parents. NZ citizenship at 5 years (keep Bangladeshi) → Trans-Tasman bonus (children can work in Australia with NZ passport).",
+    "worstScenario": "Auckland housing crisis (rent NZD 3,000-4,500/month unsustainable on moderate NZ tech salary NZD 70,000-90,000); school fees during temporary phase (NZD 10,000-15,000/year per child drain savings); Parent Resident Visa requires 3 years PR first then processing (6-8 years total); NZ salaries lower than Australia (~20% gap causes talent drain to Australia).",
+    "bestScenario": "Wellington (tech, government, Weta Digital) or Christchurch (post-rebuild, cheaper, growing tech scene) - rent NZD 1,500-2,500/month; both working NZD 130,000-180,000 combined; 20 hours free ECE; Working for Families; PR in 2-3 years; parent visa after 3 years PR; NZ citizenship at 5 years → family Trans-Tasman mobile (NZ + Australian work rights). Children dual NZ-Bangladeshi citizenship.",
+    "bangladeshiSpecificTips": [
+      "Bangladeshi community in Auckland (~5,000-7,000), Wellington (~1,000), Christchurch (~800); mosques (Ponsonby Road Mosque Auckland, Wellington Islamic Centre, Christchurch Masjid An-Nur rebuilt); halal food available in Auckland (Sandringham Road, Papatoetoe); Bangladesh Association of New Zealand (BANZ) - active community organization",
+      "20 Hours ECE: apply at any licensed early childhood education provider; FREE 20 hours/week for children 3 years old to school age; significant saving (childcare NZD 350-450/week → free 20 hours → net cost NZD 100-200/week)",
+      "Working for Families Tax Credits: apply at IRD (Inland Revenue Department) after PR and employment; up to NZD 5,878/year (Family Tax Credit) + In-Work Tax Credit + Minimum Family Tax Credit for lower income; apply online via myIR portal",
+      "Best Start payment: NZD 73/week for all newborns (first 12 months universal; 12-36 months income-tested); apply at IRD within 2 months of birth",
+      "IRD number: get immediately upon arrival - needed for work, tax, benefits; apply at IRD with passport + visa",
+      "Trans-Tasman strategy: NZ citizenship at 5 years → children automatically NZ citizens → entire family can live and work in Australia WITHOUT Australian PR/visa (Trans-Tasman Travel Arrangement). Use NZ as easier PR path → leverage for Australia access. Strategic if Australian points too competitive.",
+      "Auckland vs. regional: STRONGLY consider Wellington (government + Weta Digital + Victoria University tech), Christchurch (cheaper, quality of life improving post-rebuild, Lincoln University, University of Canterbury), Hamilton (Waikato University, AgriTech, cheaper), Dunedin (Otago University, smaller market) - all significantly cheaper than Auckland and qualify for state bonus points",
+      "Parent Resident Visa planning: start saving NZD 5,000-10,000 for fees + accommodation preparation; ensure Balance of Family Test met (majority of adult children in NZ); apply immediately after 3 years PR eligibility",
+      "ACC (Accident Compensation Corporation): covers ALL medical costs for accidents (not illness) for everyone in NZ from Day 1 regardless of visa status - extraordinary benefit; no need for accident insurance separately"
+    ]
+  },
+  "overallFamilyRating": "Very good family immigration: spouse full work rights from post-study work visa, free K-12 after PR, 20 hours free ECE (children 3-5), ACC universal accident compensation, Working for Families tax credits, parent sponsorship viable (though 3+ years PR required + fees), dual citizenship allowed (keep Bangladeshi), Trans-Tasman bonus (NZ citizenship = Australian work rights for entire family). Main challenges: Auckland housing crisis (consider Wellington/Christchurch), moderate salaries vs. Australia (~20% gap), school fees during temporary phase, parent visa requires significant wait. Excellent strategic value: NZ as easier PR path + Trans-Tasman access to Australia. Third-best English-speaking country for Bangladeshi families after Canada (best) and Australia (second).",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Japan",
+  "countryCode": "JP",
+  "overallFamilyScore": 58,
+  "overallFamilyScoreConfidence": 72,
+  "overallFamilyScoreEvidence": "Japan has improving but still limited family immigration. Spouse can work part-time on dependent visa (28 hours/week). Free public K-12 but intense and Japanese-only. Universal healthcare (National Health Insurance excellent and affordable). Child allowance (kodomo teate) available. Parent sponsorship essentially unavailable. Japanese citizenship requires near-native language (JLPT N1), must renounce Bangladeshi passport, culturally very difficult. Aging society creating structural need for immigrants but social integration extremely challenging. Homogeneous society.",
+  "spouseRights": {
+    "spouseCanWork": true,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": "Partial - spouse on dependent visa can apply for 'Permission to Engage in Activity Other than That Permitted' (shikatsu shogyo kyoka) allowing work up to 28 hours/week in permitted occupations; professional work (matching primary's field) possible; service industry generally allowed",
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 48,
+    "spouseRestrictions": "Spouse on Dependent Visa (huyou visa): can work MAXIMUM 28 hours/week with shikatsu shogyo kyoka (activity permission stamp in passport). Full-time professional employment not permitted on dependent visa alone. After Permanent Residence (PR): spouse full unlimited work rights - Permanent Resident visa has no work restrictions. Japanese language (JLPT N2+) essentially required for any professional employment in Japan. English-only roles extremely limited. Massive limitation vs. Canada/Germany/Australia.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Japanese universities and language schools; fees apply (¥500,000-2,000,000/year = €3,100-12,500); MEXT scholarship highly competitive for international students",
+    "estimatedIncomeOpportunityCostJPY": "Significant - 28h/week limit + Japanese language barrier = spouse effectively very limited income",
+    "dualIncomeViability": "Poor until PR obtained; Japanese language barrier severe for spouse"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "Dependent visa (huyou visa) - children of work visa holder",
+    "freeSchooling": true,
+    "freeSchoolingNotes": "FREE public compulsory education (shogakko elementary 6 years + chugakko middle 3 years = 9 years). Quality good. ENTIRELY in Japanese - very challenging for non-Japanese speaking children (integration support varies by school). High school (koko 3 years): not compulsory but nearly universal; public fees ¥100,000-200,000/year (€625-1,250); largely free after income-based exemptions. University: ¥500,000-800,000/year (€3,125-5,000) public universities + living costs; JASSO scholarship available. International schools: ¥1,500,000-3,000,000/year (€9,375-18,750) - only English-language option for struggling children.",
+    "schoolingQualityScore": 82,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "Public university fees ¥535,800/year (€3,350) for all residents. Excellent universities: University of Tokyo, Kyoto, Osaka, Tohoku, NAIST. JASSO scholarships available. Primarily Japanese-language instruction (limited English programs).",
+    "childcareAvailability": "Kodomo teate (child allowance): ¥15,000/month per child under 3 (€94); ¥10,000/month for 3 to junior high school age (€63); universal for all residents with valid permits. Hoikuen (daycare): heavily subsidized income-based (¥0-80,000/month = €0-500 depending on income); waiting lists in major cities (hoikuen shortage crisis in Tokyo). School meals: subsidized ¥4,000-5,000/month (€25-31).",
+    "childcareCostScore": 72
+  },
+  "healthcareAccess": {
+    "score": 85,
+    "duringStudy": "National Health Insurance (Kokumin Kenko Hoken - NHI): mandatory for students 6+ months; premium ¥15,000-40,000/year (€94-250) for low-income students; 70% coverage (patient pays 30%); comprehensive coverage at remarkably affordable premiums",
+    "duringWorkPermit": "Employment Insurance + National Health Insurance (or Shakai Hoken for company employees - better coverage): employee pays ~5% of salary; 70-80% coverage (20-30% patient copayment); annual copayment ceiling ¥80,100+/month then free (limit on catastrophic costs); children 0-15: free in many municipalities; excellent quality private and public hospitals",
+    "afterPR": "Same healthcare system; no change in coverage or access after PR; extraordinary value: ¥3,000 GP visit (€19), ¥10,000 specialist (€63) with 30% copayment; major illness: catastrophic cost protection; preventive care excellent",
+    "estimatedFamilyCostJPY": "¥100,000-300,000/year for family (premiums + copayments; very affordable by global standards)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "Japan does NOT have a parent sponsorship program for adult immigrants. Parent immigration: only possible via Dependent Visa (huyou) in exceptional circumstances IF parent is completely dependent on Japanese resident child (medically certified), AND child has Permanent Resident status or higher (not just work visa). Practical option is Temporary Visitor Visa (tanki taizai) 15-90 days; extensions case-by-case. Japan extremely restrictive on parent immigration.",
+    "parentVisaType": "Temporary Visitor Visa (tanki taizai) 15-90 days; possible extension for documented dependency - case-by-case, no PR pathway",
+    "parentPRTimeline": "N/A - not available",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "Travel insurance mandatory for visitors; emergency care expensive without NHI; temporary visitors access emergency services (bills full cost)",
+    "parentCitizenshipEligible": false,
+    "parentSponsorshipScore": 8,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "Japan does NOT grant birthright citizenship (strict jus sanguinis). Child born in Japan to foreign parents does NOT automatically get Japanese citizenship - child gets parents' nationality (Bangladeshi). Japanese citizenship: parent must be Japanese citizen OR naturalization (5+ years continuous residence + domicile, must renounce Bangladeshi citizenship, JLPT N1 effective language requirement through interview, lifestyle/character review, Ministry of Justice approval).",
+    "derivativeCitizenship": "Very Limited",
+    "derivativeCitizenshipNotes": "Children can apply for naturalization individually after qualifying residence. Japan generally does NOT allow dual citizenship (must renounce Bangladeshi passport for Japanese - strict single nationality policy under Japanese Nationality Act Article 16). Exception: children under 22 holding Japanese citizenship by descent must renounce foreign nationality by age 22. Extremely restrictive - one of the strictest globally.",
+    "citizenshipTimeline": "5+ years continuous residence with PR → naturalization; must renounce Bangladeshi citizenship; Japanese language near-native (N1) required for interview; Ministry of Justice discretionary approval",
+    "citizenshipForChildrenScore": 32
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsJPY": "¥15,000,000-25,000,000 (€93,750-156,250) - moderate by developed world standards",
+    "keyFinancialAdvantages": "Affordable healthcare (NHI ¥15,000-40,000/year premium, low copayments); kodomo teate ¥10,000-15,000/month per child; subsidized hoikuen daycare; free compulsory education K-9; relatively affordable cost of living vs. Zurich/Oslo/London; excellent public transport",
+    "keyFinancialChallenges": "Spouse 28h/week work limit (massive income limitation); Japanese language investment required (both spouses); MUST renounce Bangladeshi citizenship for Japanese; parent sponsorship unavailable; 10+ year PR timeline (5 years Highly Skilled Professional); international school ¥1,500,000-3,000,000/year if children struggle with Japanese school; cultural integration extremely difficult (homogeneous society)",
+    "breakEvenPointYears": "Year 5-7 (after PR: spouse full work rights, language achieved, stable employment)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "LONG-TERM COMMITTED STRATEGY ONLY. Both spouses must commit to Japanese language (JLPT N2 minimum, N1 for career/citizenship). Bring family after work visa secured. Children in Japanese public schools (integrate faster - ages 5-12 best). Spouse works 28h/week on dependent visa (convenience, service, or English-teaching roles available). Primary accumulates Highly Skilled Professional (HSP) points (advanced degree + high salary ¥4-6M+/year = €25,000-37,500 = good chance for 70+ points → 5-year PR track vs. 10-year standard). After PR: spouse full work rights. Citizenship at 5+ years PR (renounce Bangladeshi - major irreversible decision). Parent visits: tourist visa only (90 days max, renewable if medical need). Key question: is lifetime commitment to Japan worth the integration cost?",
+    "worstScenario": "Spouse cannot find professional work (28h/week limit + language barrier = ¥800,000-1,200,000/year = €5,000-7,500 maximum); children struggle with Japanese school (culture shock, bullying of foreign students documented); PR takes 10 years (standard track); citizenship requires JLPT N1 + renouncing Bangladeshi passport; social isolation in homogeneous society; parent cannot come to Japan.",
+    "bestScenario": "Primary in Preferred Networks/Mercari/Recruit/Sony AI role (¥5,000,000-8,000,000/year = €31,250-50,000); HSP 70+ points → 5-year PR; spouse Japanese N2+ → English-teaching or professional role under 28h/week limit; children fully bilingual (Japanese + Bengali/English) by age 10; citizenship at Year 5-6 (renounce Bangladeshi, accept as permanent trade-off); extraordinary quality of life (safety, food, culture) if language mastered.",
+    "bangladeshiSpecificTips": [
+      "JLPT N2 minimum before family arrives: invest in Japanese language before bringing family; children learn fastest (immersion in Japanese school effective for ages 5-12); adult spouse language acquisition harder (2-3 years intensive study required)",
+      "Kodomo teate application: apply at ward/city office (kuyakusho) immediately after child dependent visa granted and registered at address; ¥10,000-15,000/month per child automatic",
+      "Hoikuen (daycare) application: apply at ward office immediately upon arrival; waiting lists in Tokyo notorious (8+ months); register at multiple facilities simultaneously; approved application = monthly fee ¥0-80,000 income-based",
+      "National Health Insurance (NHI): register at ward office within 14 days of arrival; premium based on previous year income (first year often very low - ¥15,000-20,000/year for family); comprehensive coverage from Day 1",
+      "School enrollment: municipal Board of Education (kyoiku iinkai) at ward office; compulsory school enrollment for resident children regardless of nationality; Japanese classes (nihongo shido) provided in many schools for non-Japanese speakers; expect cultural adjustment period 6-18 months",
+      "Very small Bangladeshi community in Japan (~20,000 total); Tokyo Camii (largest mosque in Japan, Yoyogi-Uehara), Otsuka Masjid; halal restaurants in Tokyo (Roppongi, Shinjuku Okubo area); halal supermarkets (Tokyo Mosque area, some major supermarkets with halal sections); growing but limited infrastructure; Arabic/South Asian Muslim community in Tokyo provides some support",
+      "Citizenship reality check: Japanese citizenship requires renouncing Bangladeshi passport PERMANENTLY (Japan's strict single-nationality policy); think very carefully - this means losing Bangladeshi travel rights, property rights, future Bangladesh business rights; only advisable if absolutely certain of permanent Japan life (20-30+ year horizon)",
+      "HSP points calculator: use Ministry of Justice HSP points calculator online; PhD adds 30 points; high salary ¥10M+/year adds significant points; age under 30 adds 10 points; Japanese N1 language adds 15 points; prestigious university adds 10 points; target 70+ for 5-year PR (vs. 80+ for 3-year PR)"
+    ]
+  },
+  "overallFamilyRating": "Limited for family immigration: spouse 28h/week work limit (severe financial constraint), Japanese language barrier throughout (2-3 years N2 investment for family), parent sponsorship unavailable, citizenship requires renouncing Bangladeshi passport (must choose one), no birthright citizenship, homogeneous society creates social integration challenges. Positive aspects: affordable universal healthcare (NHI remarkably cheap), kodomo teate child allowance, free K-9 education, excellent safety and quality of life, subsidized daycare, Japan's stability. Only suitable for families deeply committed to Japanese language mastery AND long-term life in Japan AND willing to eventually renounce Bangladeshi citizenship. NOT recommended for those prioritizing spouse work rights, parent sponsorship, quick PR, or cultural diversity. Aging population creating future opportunities but current family immigration framework remains restrictive.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "South Korea",
+  "countryCode": "KR",
+  "overallFamilyScore": 60,
+  "overallFamilyScoreConfidence": 74,
+  "overallFamilyScoreEvidence": "South Korea has improving but still limited family immigration. Spouse can work part-time on F-3 dependent visa (limited occupations). Free public K-12 but Korean language instruction only. National Health Insurance (excellent quality, affordable). Child allowance (a동수당) ₩100,000/month per child under 8. Parent sponsorship unavailable. Korean citizenship requires TOPIK 5+ and must renounce Bangladeshi passport. Extreme work culture challenge. Aging population creating structural need but social integration very difficult (homogeneous society, 98% ethnic Korean).",
+  "spouseRights": {
+    "spouseCanWork": true,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": "Partial - F-3 dependent visa allows work with additional Work Permit endorsement (취업활동허가); limited occupations allowed; professional employment very difficult without separate E-7 work visa + Korean language TOPIK 4+",
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 45,
+    "spouseRestrictions": "F-3 (Dependent) visa spouse: can obtain work permit for limited occupations (service, manufacturing, agriculture, food service more accessible; professional roles require E-7 separately). Korean language TOPIK 4+ effectively required for any professional employment. Most spouses on F-3 find professional work extremely difficult without 2-3 years intensive Korean language. After F-5 (Permanent Resident): full unrestricted work rights. Very restrictive during early years.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Korean universities and language institutes (TOPIK preparation); fees ¥3,000,000-8,000,000/year (€2,000-5,400) for university; Korean language institute (어학당): ₩1,500,000/semester (€1,025)",
+    "estimatedIncomeOpportunityCostKRW": "Massive - F-3 work limitation + Korean language barrier = effectively very limited professional income early years",
+    "dualIncomeViability": "Poor until F-5 PR + Korean language mastered; typically 5-8 years"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "F-3 dependent visa (children of E-7 or other work visa holder)",
+    "freeSchooling": true,
+    "freeSchoolingNotes": "FREE public K-12 (초등학교 elementary, 중학교 middle, 고등학교 high school). Korean language instruction only (일 Korean education system very intensive). Integration classes (한국어 수업) available for foreign students initially. Education quality high but extremely competitive (hagwon culture - private tutoring ₩500,000-2,000,000/month per child; significant pressure). International schools: ₩20,000,000-40,000,000/year (€13,700-27,400) - very expensive. University: ₩4,000,000-8,000,000/year (€2,740-5,480) public universities after PR; world-class universities: SNU, KAIST, POSTECH, Yonsei, Korea University.",
+    "schoolingQualityScore": 85,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "Domestic fees ₩4,000,000-8,000,000/year after F-2/F-5. Korea Scholarship (GKS) for outstanding students. SNU, KAIST, POSTECH globally recognized (especially STEM). Korean language proficiency required for most programs.",
+    "childcareAvailability": "아동수당 (Adong sudo - Child Allowance): ₩100,000/month (€68) per child under 8 (universal for all residents); 부모급여 (Bumogeupyeo - Parental Benefit): ₩700,000/month (€478) for children 0-11 months; ₩350,000 for 12-23 months - massive improvement 2023+. Eolinijib (어린이집 - daycare): heavily subsidized; government voucher covers ₩200,000-500,000/month per child; income-based additional subsidy. Extraordinary childcare subsidy expansion 2023-2026.",
+    "childcareCostScore": 80
+  },
+  "healthcareAccess": {
+    "score": 83,
+    "duringStudy": "National Health Insurance (NHI - 국민건강보험) mandatory for D-2 (student visa) holders after 6 months; premium ₩90,000-130,000/month (€61-89) for student; 20-30% copayment; comprehensive coverage; excellent quality public and private hospitals",
+    "duringWorkPermit": "NHI mandatory for all E-7 work visa holders; employee contribution ~3.495% of salary + employer match; 20% copayment (대형병원 tertiary hospital) to 30% (clinic); annual copayment ceiling for catastrophic costs (본인부담상한제); children under 18: reduced copayments; dental: limited coverage (major procedures separate); mental health: improving coverage 2024-2026",
+    "afterPR": "Same NHI system; no change after F-5; extraordinary quality and affordability: ₩2,000-5,000 GP visit (€1.40-3.40); ₩50,000-200,000 specialist + tests (€34-137); hospital internationally competitive quality (Seoul Asan Medical Center, Severance, Samsung Medical Center world-class)",
+    "estimatedFamilyCostKRW": "₩1,500,000-3,000,000/year for family (premiums + copayments)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "South Korea does NOT have a parent sponsorship immigration program. Parent immigration: theoretically possible under F-1 dependent visa for parents of Korean citizen or long-term resident (F-5 PR or above), but criteria extremely restrictive (parent must be fully dependent, primary must demonstrate financial capacity to fully support). In practice, F-1 for parents rarely granted. Most realistic option: visitor visa (B-2) 90 days or C-3 visa 30-90 days; multiple entry possible with application.",
+    "parentVisaType": "C-3 or B-2 Visitor Visa (30-90 days); F-1 Family Visit theoretically possible but very difficult",
+    "parentPRTimeline": "N/A - practically unavailable",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "Travel insurance mandatory for visitor visa; emergency care expensive without NHI; NHI not accessible on C-3/B-2 visitor visa",
+    "parentCitizenshipEligible": false,
+    "parentSponsorshipScore": 10,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "South Korea does NOT grant birthright citizenship (jus sanguinis system). Child born in Korea to foreign parents does NOT automatically get Korean citizenship. Korean citizenship: parent must be Korean citizen OR naturalization after 5+ years continuous residence + TOPIK 5 language + Korean civic knowledge + must renounce Bangladeshi citizenship (Korea strictly prohibits dual nationality for naturalized citizens; ethnic Koreans/gyopo have some exceptions).",
+    "derivativeCitizenship": "Very Limited",
+    "derivativeCitizenshipNotes": "Children of F-5 (PR) holders can apply for F-5 PR. Korean citizenship via naturalization: 5 years lawful residence + F-2 permit + TOPIK 5 (near-native Korean) + comprehensive knowledge of Korean history, culture, society (interview in Korean) + renounce Bangladeshi citizenship + Ministry of Justice review. VERY difficult for non-ethnic Koreans.",
+    "citizenshipTimeline": "5+ years continuous residence → naturalization; TOPIK 5 required; must renounce Bangladeshi citizenship; Korea does not allow dual citizenship for naturalized citizens (ethnic Korean exceptions apply - not relevant for Bangladeshi applicants)",
+    "citizenshipForChildrenScore": 35
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsKRW": "₩200,000,000-350,000,000 (€136,986-239,726)",
+    "keyFinancialAdvantages": "Excellent NHI healthcare (low cost, high quality); 부모급여 ₩700,000/month (€478) for infants; 아동수당 ₩100,000/month per child under 8; heavily subsidized daycare voucher; free K-12; affordable university ₩4-8M/year; lower cost of living vs. Tokyo/Singapore (Seoul moderate)",
+    "keyFinancialChallenges": "Spouse extremely limited work rights (F-3: limited occupations + Korean language barrier = very low income early years); Korean education INTENSE (hagwon private tutoring ₩500,000-2,000,000/month significant pressure); parent sponsorship unavailable; TOPIK 5 + renounce Bangladeshi citizenship required for naturalization; intense work culture (996 equivalent pressure in tech); social integration very difficult",
+    "breakEvenPointYears": "Year 5-7 (F-5 PR + Korean language + spouse professional work)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "ONLY suitable for those committed to Korean language mastery (TOPIK 4 minimum, TOPIK 5-6 for career/PR/citizenship). Primary MUST invest 2-3 years achieving TOPIK 4. Bring family after E-7 work visa secured. Children in Korean public schools (integrate faster than adults - ages 5-10 best; public school provides Korean language support). Spouse studies Korean intensively (어학당 language institute). Accumulate F-2 points (TOPIK 4 + salary ₩40M+/year + education + age). F-5 after 5 years F-2 (10 years total from arrival). Citizenship: Korean language TOPIK 5 + renounce Bangladeshi - major irreversible decision. Use 부모급여 and childcare subsidies to offset family costs. Parent visits: C-3 visitor visa 90 days only.",
+    "worstScenario": "Spouse finds zero professional work for 5+ years (F-3 restrictions + Korean language barrier); children in highly competitive Korean school system (extreme academic pressure, hagwon costs ₩500,000-2,000,000/month); TOPIK 5 for citizenship + renouncing Bangladeshi passport = culturally very difficult; 996 work culture (9am-9pm, 6 days/week) in tech startups affects family time; social isolation (Korea 98% ethnic Korean, foreigner integration very challenging).",
+    "bestScenario": "Samsung AI/Naver AI/Kakao role (₩60,000,000-80,000,000/year = €41,000-54,800); TOPIK 4-5 for primary, spouse achieves TOPIK 3 (can teach English or work in international company); 부모급여 ₩700,000/month for infant; free school; F-2 → F-5 at 5 years; citizenship at TOPIK 5 + 10 years total; children bilingual Korean-Bengali (extraordinary long-term asset for South/East Asia careers).",
+    "bangladeshiSpecificTips": [
+      "TOPIK language investment: TOPIK 4 minimum for professional work (TOPIK 5-6 for management, citizenship); invest 2-3 years FULL commitment; without TOPIK 4, career ceiling very low; topik.go.kr registration; language institutes (어학당) at Yonsei, Korea University, Sogang best reputation",
+      "아동수당 (Child allowance): apply at community service center (주민센터) or online (복지로 bokjiro.go.kr) immediately after F-3 registration; ₩100,000/month per child under 8 automatic",
+      "부모급여 (Parental benefit): ₩700,000/month for 0-11 months, ₩350,000 for 12-23 months; apply at 주민센터 within 1 month of birth or arrival; transferable to childcare center voucher if using daycare",
+      "어린이집 daycare subsidy: apply at 주민센터; government voucher (보육료 바우처) covers ₩200,000-500,000/month per child; additional income-based subsidy; register at multiple facilities (waiting lists common in Gangnam, Mapo, Yongsan - choose less competitive districts)",
+      "Small Bangladeshi community in South Korea (~20,000-25,000, mostly Seoul/Gyeonggi); Seoul Central Masjid (Itaewon - largest mosque in Korea); Ansan has significant South Asian Muslim community (mosque + halal market); Korean Muslim convert community supportive; Itaewon area most multicultural with halal restaurants",
+      "Work culture shock: Korean tech work culture still intense (improving with 52-hour work week law enforcement from 2024-2026 but 야근 overtime common); family time vs. work expectations requires explicit negotiation; smaller startups often worse; larger corporates (Samsung, LG, SK) improving",
+      "Korean public school system: extremely competitive (수능 CSAT exam culture from primary); hagwon (학원) private academy culture expected (math, English, science); budget ₩500,000-2,000,000/month per child for hagwon; significant pressure; children of PR holders can access most school programs including gifted education",
+      "Alien Registration Card (외국인등록증): get within 90 days of arrival; needed for banking, NHI registration, everything; apply at local immigration office (출입국사무소)",
+      "Dual nationality reality: Korean citizenship = must renounce Bangladeshi. This is a permanent, irreversible legal action affecting your property rights, travel, and identity. DO NOT proceed without consulting immigration attorney AND deeply considering implications. Only advisable after 10+ year commitment to Korea as permanent home."
+    ]
+  },
+  "overallFamilyRating": "Limited family immigration: spouse severely restricted work rights (F-3: limited occupations + Korean language barrier = very limited income early years), parent sponsorship unavailable, Korean citizenship requires TOPIK 5 + renouncing Bangladeshi passport, no birthright citizenship, intense Korean education system pressure (hagwon costs ₩500,000-2,000,000/month per child), homogeneous society (integration extremely challenging). Positive aspects: excellent affordable NHI healthcare, generous 부모급여 ₩700,000/month for infants, subsidized daycare, free K-12. Only suitable for families deeply committed to Korean language mastery (TOPIK 4+ for both spouses ideally) and long-term life in Korea. NOT recommended for those prioritizing spouse work rights, parent sponsorship, cultural diversity, or manageable school system for children. Rapidly aging population creates future structural need for immigrants but current family immigration framework remains restrictive and integration culturally very difficult.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Singapore",
+  "countryCode": "SG",
+  "overallFamilyScore": 52,
+  "overallFamilyScoreConfidence": 78,
+  "overallFamilyScoreEvidence": "Singapore has severely limited family immigration: spouse on Dependant's Pass (DP) requires LOC (Letter of Consent) to work - discretionary, often denied for lower-salary EP holders; no free public school for non-residents; no universal healthcare for dependents; NO pathway to PR or citizenship for most; parent sponsorship unavailable; extremely expensive family life (education SGD 30,000-50,000/year per child at international school). Treat Singapore as temporary high-income phase ONLY, NOT family settlement destination.",
+  "spouseRights": {
+    "spouseCanWork": false,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": "Conditional and difficult - Dependant's Pass (DP) requires EP holder to earn SGD 6,000+/month for dependent eligibility; spouse then needs Letter of Consent (LOC) from MOM (Ministry of Manpower) to work - discretionary approval; easier if primary earns SGD 12,000+/month; LOC allows work for specific employer only; Long-Term Visit Pass (LTVP) spouse even more restricted",
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 35,
+    "spouseRestrictions": "Dependant's Pass (DP): granted only if EP holder earns SGD 6,000+/month (€4,100+). Spouse on DP needs SEPARATE LOC to work - not automatic; MOM assessment considers company size, industry, salary offered; rejection common for lower-level jobs. If primary earns SGD 12,000-15,000+/month: LOC more likely approved; spouse can work for specific employer. LTVP (if primary earns less than SGD 6,000 or not eligible for DP): spouse CANNOT work without separate work pass (extremely difficult). After Singapore PR: full work rights. Reality: spouse work rights in Singapore are among the most restricted of all developed countries analyzed.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Singapore universities; fees apply (international rates SGD 15,000-30,000/year = €10,275-20,550); MOE-subsidized rates not available until PR",
+    "estimatedIncomeOpportunityCostSGD": "100,000-300,000+ (depends on whether LOC approved or not; if not approved, complete income loss for 2-5+ years)",
+    "dualIncomeViability": "Very Poor unless primary earns SGD 12,000+/month and LOC approved; generally treat as single income"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": "Conditional - DP eligibility requires EP holder earning SGD 6,000+/month",
+    "childrenVisaType": "Dependant's Pass or Long-Term Visit Pass (if primary salary below DP threshold)",
+    "freeSchooling": false,
+    "freeSchoolingNotes": "NO free public education for non-resident dependent children. Public primary/secondary: International Student fee SGD 550-750/month (€376-513/month = SGD 6,600-9,000/year per child). MOE schools (heavily subsidized for citizens/PR) charge full international fees for DP holders. International schools: SGD 25,000-55,000/year (€17,100-37,650) - most expatriate families use these. FREE only after PR. University: domestic rates (SGD 8,000-15,000/year) after PR vs. international (SGD 25,000-45,000/year) - massive difference.",
+    "schoolingQualityScore": 90,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "NUS, NTU, SMU - world-class (NUS top-10 globally 2024-2026); domestic subsidized fees after PR. Outstanding education quality. Highly competitive Singapore system (PSLE pressure from age 12 intense).",
+    "childcareAvailability": "Baby Bonus: SGD 11,000 per child for citizens; SGD 11,000 for PR; ZERO for non-citizens/DP holders. Child Development Account (CDA): citizen/PR children receive government co-matching. DP holders: no Baby Bonus, no CDA, no childcare subsidies (ECDA subsidies for citizens/PR only). Childcare: SGD 1,200-2,500/month (€820-1,710) market rate without subsidy. Extraordinary gap between citizen/PR families and dependent permit holders.",
+    "childcareCostScore": 15
+  },
+  "healthcareAccess": {
+    "score": 55,
+    "duringStudy": "No public healthcare access for most temporary passes; private health insurance mandatory; employer-provided EP insurance may cover EP holder but NOT dependents automatically",
+    "duringWorkPermit": "EP holder: employer-provided insurance typically covers EP holder only; Dependant's Pass holders: no MediShield Life (Singapore's national health insurance); must purchase PRIVATE health insurance (Integrated Shield Plan if available, or international insurance); costs SGD 2,000-6,000/year per adult (€1,370-4,110); children: additional private insurance SGD 500-2,000/year (€342-1,370); emergency care expensive without coverage",
+    "afterPR": "MediShield Life mandatory (government health insurance): premiums SGD 200-600/year per adult (affordable); Medisave CPF account: employer contributes 37% total CPF (17% employer + 20% employee) with Medisave sub-account for medical use; Medishield + Integrated Shield Plan + Medisave = comprehensive at affordable cost; public hospital subsidized (B2/C ward significantly cheaper than private). Quality world-class.",
+    "estimatedFamilyCostSGD": "4,000-12,000/year private insurance for family (non-PR); near-free after PR with MediShield Life + Medisave"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "Singapore does NOT have ANY parent sponsorship program. Long-Term Visit Pass (LTVP) for parents: theoretically possible for parents of Singapore PR or citizen; MOM grants on case-by-case discretionary basis; very limited approvals; no PR pathway; 1-5 year validity; no work rights. Social Visit Pass (tourist): 30-90 days only. For 99% of cases, parent immigration to Singapore is NOT possible.",
+    "parentVisaType": "Long-Term Visit Pass (LTVP) case-by-case (parent of citizen/PR only, not DP holder); Social Visit Pass 30-90 days",
+    "parentPRTimeline": "N/A - no pathway",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "NO MediShield Life access on LTVP; must purchase private insurance (very expensive for elderly); emergency care charged at full unsubsidized rate (SGD 3,000-20,000+ for hospitalization)",
+    "parentCitizenshipEligible": false,
+    "parentSponsorshipScore": 5,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "Singapore does NOT grant birthright citizenship (jus sanguinis). Child born in Singapore to non-citizen parents does NOT get Singapore citizenship. Child gets parents' nationality (Bangladeshi). Singapore citizenship: parent must be Singapore citizen OR naturalization (PR for several years, application to ICA, discretionary approval, very limited for non-Malaysians/non-ethnic-Chinese).",
+    "derivativeCitizenship": "Extremely Limited",
+    "derivativeCitizenshipNotes": "Singapore citizenship by naturalization extremely rare for non-Malaysians/non-ethnic-Singaporeans (<0.5% of PR applications result in citizenship invitation). Singapore citizenship: must renounce ALL other citizenships; must serve National Service (2 years military) for male children; ICA discretionary with no published criteria; typically requires 5+ years PR + significant economic contribution + no criminal record + demonstrated commitment to Singapore. Male children face National Service obligation (2 years) upon citizenship - significant consideration.",
+    "citizenshipTimeline": "Effectively unavailable for most Bangladeshi applicants; if PR obtained (very difficult), citizenship invitation after 5+ years PR at ICA discretion; male children: National Service 2 years mandatory upon citizenship",
+    "citizenshipForChildrenScore": 18
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsSGD": "600,000-1,200,000 (€411,000-822,000) - among highest globally for expatriate families",
+    "keyFinancialChallenges": "International school SGD 25,000-55,000/year per child; no childcare subsidies for DP holders; private health insurance SGD 4,000-12,000/year family; spouse work restricted (LOC required, often limited); no Baby Bonus/CDA for children of non-citizens; housing SGD 3,000-8,000/month; car ownership prohibitive (COE SGD 80,000-100,000+); no PR realistic; no citizenship realistic",
+    "keyFinancialAdvantages": "Zero income tax on first SGD 20,000; low tax rates (11% on SGD 120,000); high tech salaries (SGD 100,000-200,000/year for senior STEM = €68,500-137,000); English-speaking environment (no language barrier for primary); world-class infrastructure and safety; CPF contribution after PR (employer match = forced savings)",
+    "breakEvenPointYears": "NO break-even for family settlement - Singapore is a wealth-accumulation platform only; must relocate for PR/citizenship/family benefits"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "SINGAPORE IS NOT A FAMILY SETTLEMENT DESTINATION. Optimal use: PRIMARY ALONE for 3-5 years (maximum savings: salary SGD 100,000-200,000+ tax-efficient, living frugally SGD 2,000-3,000/month, save SGD 60,000-100,000+/year). Then relocate to Canada/Australia/Germany for PR with capital + Singapore experience. If bringing family ONLY IF: (1) primary earns SGD 15,000+/month (DP eligibility for spouse + LOC approval likely + international school feasible), (2) children are NOT school-age (avoid international school fees), (3) committed to only 3-5 year stay. NEVER bring family planning permanent settlement.",
+    "worstScenario": "Primary earns SGD 8,000/month: DP eligible but LOC for spouse likely denied; international school SGD 35,000/year (one child); private health insurance SGD 6,000/year family; rent SGD 3,500/month (modest); net spendable after tax/savings nearly zero; forced to dip into savings monthly; financial stress severe.",
+    "bestScenario": "Primary senior AI engineer FAANG Singapore: SGD 180,000-250,000/year tax-efficient (effective tax 12-15%); spouse LOC approved for tech role SGD 80,000; international school pre-negotiated on employer package; save SGD 150,000-200,000/year for 3 years → SGD 450,000-600,000 accumulated → relocate to Canada (Express Entry - Singapore work experience + capital for house); entire family PR in Canada within 2 years of arrival.",
+    "bangladeshiSpecificTips": [
+      "Very large Bangladeshi diaspora in Singapore (~60,000 total) BUT mostly blue-collar (construction, services); very small professional Bangladeshi tech community; social infrastructure (mosques Sultan Mosque, Masjid Jamae, Masjid Abdul Gafoor; halal food ubiquitous; remittance infrastructure excellent) but professional networking limited",
+      "International school CRITICAL consideration: no free public school for DP holder children; international school SGD 25,000-55,000/year per child (€17,100-37,650) = the single largest expense; if bringing school-age children, total cost per child approaches PRIMARY's annual income in moderate-salary scenarios; only viable if employer provides school fee allowance or primary earns SGD 15,000+/month",
+      "Dependant's Pass eligibility: primary must earn SGD 6,000+/month (as of 2026; threshold may increase); salary directly determines family's legal status in Singapore; negotiate salary aggressively with this in mind",
+      "LOC strategy: to maximize LOC approval probability, ensure primary earns SGD 12,000+/month AND target large well-known sponsor companies (Google, Amazon, MNCs - MOM more confident with established employers); spouse should apply for professional roles (not just any job); LOC application at mom.gov.sg",
+      "CPF strategy (after PR): CPF (Central Provident Fund) employer 17% + employee 20% = 37% of salary saved (Ordinary Account for housing; Special Account for retirement; Medisave for healthcare); on PR, CPF becomes forced savings - withdrawable upon leaving Singapore permanently; significant asset after 3-5 years",
+      "Singapore as Canada prep: save aggressively (SGD 60,000-100,000+/year at senior levels), maintain Canadian Express Entry profile (claim maximum CRS points for Singaporean work experience = Canadian NOC TEER 0/1 role in major company), target Express Entry draws (STEM category draws); accumulate capital for Canadian house down payment (CAD 100,000-200,000 needed for Toronto/Vancouver); Singapore → Canada is proven optimal path for wealth + PR",
+      "Male children citizenship warning: if child somehow obtains Singapore citizenship (via PR path + discretionary citizenship), male child MUST serve 2 years National Service (army, police, SCDF) upon turning 18. This obligation follows child even if family subsequently relocates internationally. Serious long-term consideration for sons."
+    ]
+  },
+  "overallFamilyRating": "POOR for family immigration. Singapore is definitively NOT a family settlement destination: spouse work rights severely restricted (LOC discretionary, salary-dependent), no free education (international school SGD 25,000-55,000/year per child), no subsidized healthcare for dependents, no childcare subsidies for non-citizens, no PR pathway realistic (<5% approval, opaque, quota-limited), no citizenship realistic, no parent sponsorship, male children face National Service if somehow citizenship obtained. The ONLY family scenario that makes financial sense: primary earns SGD 15,000+/month AND family commits to 3-5 year wealth accumulation only, then relocates to Canada/Australia/Germany for real family settlement. For ALL other scenarios: leave family in Bangladesh or Canada/Australia during Singapore stint, maximize savings, then reunite in PR-friendly country. Treat Singapore purely as career accelerator + tax-efficient wealth accumulation phase.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "China",
+  "countryCode": "CN",
+  "overallFamilyScore": 48,
+  "overallFamilyScoreConfidence": 65,
+  "overallFamilyScoreEvidence": "China has very limited family immigration: spouse CANNOT work on S1 dependent visa (must obtain own Work Permit separately - difficult), no universal healthcare for foreigners (expensive international insurance required), no practical PR pathway (<1% approval), no citizenship for non-ethnic Chinese, parent sponsorship unavailable, geopolitical risks real. Some benefits: lower cost of living vs. Singapore/Switzerland, LGBTQ restrictions different cultural context, large Bangladeshi trading community (Guangzhou). Treat as career opportunity ONLY, not family destination.",
+  "spouseRights": {
+    "spouseCanWork": false,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": false,
+    "spouseCanWorkAfterPR": "N/A - PR essentially unavailable for non-ethnic Chinese",
+    "spouseWorkScore": 18,
+    "spouseRestrictions": "S1 Dependent Visa: spouse CANNOT work. To work in China, spouse needs INDEPENDENT Work Permit (Category A/B) requiring: own job offer from Chinese employer + qualification recognition + 2+ years experience (waived for Chinese graduates) + employer sponsorship. Process is separate and just as difficult as primary's work permit. In practice, spouse employment in China for Bangladeshi families = extremely difficult. Only if spouse is independently highly qualified AND finds Chinese employer willing to sponsor. No mechanism for 'accompanying spouse work permit' like Canada/Germany/Australia.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Chinese universities on X1/X2 student visa; fees ¥20,000-60,000/year (€2,500-7,500); HSK Chinese language required for most programs; English-taught programs limited",
+    "estimatedIncomeOpportunityCostCNY": "Complete income loss for spouse in most scenarios",
+    "dualIncomeViability": "Essentially unavailable - dual income requires spouse's own independent Work Permit (separate, difficult process)"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "S1 or S2 dependent visa (children of Work Permit holder)",
+    "freeSchooling": false,
+    "freeSchoolingNotes": "NO free public school for foreign children (public schools technically allow foreigners but instruction 100% Chinese, no accommodation, practically very difficult for non-Chinese speaking children). International schools: ¥100,000-300,000/year per child (€12,500-37,500) - necessary for English-speaking children; Beijing, Shanghai, Shenzhen have many international schools. Local Chinese private schools: ¥50,000-150,000/year. University: ¥20,000-60,000/year public Chinese universities + ¥50,000-150,000/year for international university campuses in China (NYU Shanghai, Duke Kunshan, CUHK Shenzhen - high quality but expensive).",
+    "schoolingQualityScore": 65,
+    "universityAccessAfterPR": false,
+    "universityAccessNotes": "PR essentially unavailable (<1% approval). For long-term residents: some universities accept foreign students at international rates; Chinese language required for public universities. MOFCOM, CSC scholarships available for eligible international students.",
+    "childcareAvailability": "No government childcare subsidies for foreign children. International nursery/kindergarten: ¥100,000-200,000/year (€12,500-25,000). Local Chinese kindergarten: ¥30,000-80,000/year; language barrier significant. No government child allowance for foreign residents.",
+    "childcareCostScore": 30
+  },
+  "healthcareAccess": {
+    "score": 45,
+    "duringStudy": "Social insurance (social security) contribution mandatory for students on scholarship at some universities; otherwise private international health insurance recommended: USD 1,500-4,000/year per person; Chinese public hospitals: quality variable (excellent tier-1 hospitals, poor rural/small city); language barrier significant",
+    "duringWorkPermit": "Social insurance contribution mandatory (employer + employee; healthcare component: 6-10% employer + 2% employee); access to Chinese public healthcare system via social insurance card; quality tier-1 hospitals good; language barrier; foreigners often use international hospitals: USD 200-500/GP visit; international insurance additional USD 3,000-8,000/year family if using international hospitals",
+    "afterPR": "Same social insurance; no improvement over work permit status (since PR essentially unavailable); long-term residents use combination of Chinese public (cheaper, language barrier) and international private (expensive but English, better quality, foreign medicine available)",
+    "estimatedFamilyCostCNY": "¥30,000-80,000+/year (social insurance + international insurance supplement; family with international hospital access)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "China has NO parent sponsorship immigration program for adult immigrant workers. Parent visits: tourist L visa (30-60 days, extendable sometimes); family visit S2 visa (short-term) possible if child is long-term legal resident. No PR pathway for parents. Older parents visiting China face healthcare concerns (expensive without insurance) and no access to Chinese public health system on tourist visa.",
+    "parentVisaType": "L Tourist Visa (30-60 days) or S2 Family Visit Visa (short-term); no PR pathway",
+    "parentPRTimeline": "N/A",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "NO public healthcare access on tourist visa; private international hospital SGD 300-1,000/visit; travel insurance mandatory; very expensive for elderly parents without Chinese health system access",
+    "parentCitizenshipEligible": false,
+    "parentSponsorshipScore": 5,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "China does NOT grant birthright citizenship to children of foreign parents. Child born in China to both Bangladeshi parents does NOT get Chinese citizenship (strict jus sanguinis). Chinese citizenship: must be ethnically Chinese (one parent Chinese citizen) OR naturalization (extremely rare - essentially only available to ethnic Chinese returnees, spouses of Chinese citizens, or extraordinary contributors; standard naturalization NOT available for non-ethnic Chinese immigrants).",
+    "derivativeCitizenship": false,
+    "derivativeCitizenshipNotes": "Chinese citizenship essentially unavailable for non-ethnic Chinese regardless of years of residence. China does not naturalize non-ethnic foreign nationals except extremely exceptional cases (humanitarian/extraordinary contribution basis - fewer than 100 granted to non-ethnic Chinese in history). Children of Bangladeshi parents in China remain Bangladeshi citizens regardless of birth location or residence duration.",
+    "citizenshipTimeline": "Effectively unavailable - China does not naturalize non-ethnic-Chinese nationals",
+    "citizenshipForChildrenScore": 5
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsCNY": "¥800,000-1,500,000 (€100,000-187,500) - international school costs dominate",
+    "keyFinancialChallenges": "Spouse CANNOT work (complete income loss); international school ¥100,000-300,000/year per child; international insurance USD 3,000-8,000/year family; no childcare subsidies; no PR or citizenship; geopolitical risk (US-China tensions, Great Firewall); VPN legally gray area; parent sponsorship unavailable",
+    "keyFinancialAdvantages": "Lower cost of living vs. Singapore/Switzerland (Beijing/Shanghai rent ¥6,000-15,000/month = €750-1,875 - affordable); salary ¥400,000-800,000/year (€50,000-100,000) at senior STEM level; low social insurance contribution rates (relative); travel within China easy and inexpensive; food excellent and affordable",
+    "breakEvenPointYears": "No family break-even achievable (spouse cannot work, international school expensive, no PR/citizenship, no long-term stability)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "CHINA IS NOT A FAMILY SETTLEMENT DESTINATION. Optimal use: Primary ALONE for 3-7 years (Baidu AI, ByteDance, Tencent - world-class AI resume; high savings at ¥400,000-800,000 salary with moderate living costs ¥100,000-150,000/year = savings ¥250,000-650,000/year = €31,250-81,250). Then relocate family to Canada/Australia for PR with capital + China experience (valuable globally, especially for Asia tech roles). If MUST bring family: (1) primary earns ¥500,000+/year, (2) children under school age (avoid international school fees), (3) commit to ONLY 3-5 year stay, (4) spouse does NOT work (single income), (5) understand geopolitical risk and VPN dependency for family communication.",
+    "worstScenario": "US-China tech decoupling escalates (US chip sanctions, company restrictions, potential Bangladesh-China diplomatic complications); Great Firewall isolation (Google, WhatsApp, YouTube blocked - family communication disrupted without reliable VPN); spouse isolated (cannot work, Mandarin barrier, homogeneous society); children in expensive international school ¥200,000+/year; air pollution health concerns for family; sudden job loss = 30-day deportation risk with entire family.",
+    "bestScenario": "ByteDance/Baidu/Tencent AI senior role: ¥700,000-1,000,000/year (€87,500-125,000); living costs ¥120,000/year (€15,000) frugal = savings ¥580,000-880,000/year (€72,500-110,000); 3-year China stint = ¥1.5M-2.5M savings (€187,500-312,500); relocate to Canada → house purchase; China AI experience = global career premium (ByteDance, Baidu, Tencent on resume opens doors globally). THIS is the optimal China strategy: career + savings accelerator → use capital for Canada/Australia PR + house.",
+    "bangladeshiSpecificTips": [
+      "VPN setup before arrival: ExpressVPN, Astrill, or NordVPN (¥500-1,000/year = €63-125); install on ALL devices including spouse/children devices; WhatsApp, Google, YouTube, Instagram blocked in China; use WeChat (微信) for China communication; set up VPN BEFORE entering China (harder to download inside China)",
+      "Guangzhou: large Bangladeshi trading community (estimated 30,000-50,000 Bangladeshi businesspeople and workers in Guangzhou/Guangdong; focused on garment, electronics trade); mosques (Huaisheng Mosque Guangzhou oldest in China, others); halal food; Bengali community infrastructure - most developed Bangladeshi infrastructure in China BUT professional tech community separate from trading community; Beijing/Shanghai more appropriate for AI/tech roles (smaller Bangladeshi community but more professional)",
+      "Air quality: Beijing winter AQI commonly 150-300+ (unhealthy/very unhealthy); invest in IQAir or Blueair air purifiers for home (¥2,000-6,000 = €250-750); 3M N95 masks for outdoor; Shenzhen/Guangzhou/Shanghai better air quality; factor into family health planning especially for children",
+      "International school application: apply 6-12 months in advance (waiting lists common); request employer support (expat packages often include school fee allowance; NEGOTIATE this before accepting job); typical packages: employer pays ¥150,000-250,000/year per child school fees; without employer support, avoid bringing school-age children to China",
+      "Mandarin for spouse: ½ year basic Mandarin (HSK 2-3) dramatically improves daily life quality (shopping, medical appointments, navigating city); Pleco app + HelloChinese app excellent; community language exchanges (expat WeChat groups organize mandarin exchange); ¥3,000-8,000 for formal HSK courses at Chinese universities",
+      "Geopolitical exit strategy: always maintain valid Bangladeshi passport + Bangladesh bank account + international financial assets (USD, Wise account, international brokerage) OUTSIDE China; in case of sudden visa issues, political tensions, or company closures (not uncommon in China), family needs immediate exit capability and financial resources outside China; do NOT become financially dependent on China banking exclusively"
+    ]
+  },
+  "overallFamilyRating": "Very poor for family settlement: spouse CANNOT work on S1 dependent visa (complete income loss), no free education (international school ¥100,000-300,000/year per child), expensive international health insurance required, no PR realistic (<1% approval), no citizenship for non-ethnic Chinese (effectively unavailable), no parent sponsorship, geopolitical risks (US-China tensions, Great Firewall, political risk, air quality). The ONLY justification for bringing family to China: primary earns ¥600,000+/year AND employer provides school fee package AND committed to ONLY 3-5 year wealth accumulation. For ALL other scenarios: individual China stint (primary alone) → save aggressively → relocate family to Canada/Australia/Germany for proper family settlement with capital + China AI career experience. China is uniquely valuable for AI career acceleration but uniquely poor for family immigration.",
+  "lastUpdated": "2026-06-01"
+}
+]
+
+
 }
