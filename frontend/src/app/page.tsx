@@ -4,8 +4,9 @@ import { headers } from "next/headers";
 import { authClient } from "@/lib/auth-client";
 import { ArrowRight, Sparkles, School, GraduationCap, FolderGit2, BarChart2 } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 export default async function LandingPage() {
   const reqHeaders = await headers();
@@ -49,19 +50,26 @@ export default async function LandingPage() {
           <div className="flex items-center gap-4">
             <ThemeToggle />
             {isLoggedIn ? (
-              <Button asChild className="rounded-full shadow-lg hover:shadow-primary/25 transition-all">
-                <Link href="/dashboard">
-                  Dashboard
-                </Link>
-              </Button>
+              <Link 
+                href="/dashboard" 
+                className={cn(buttonVariants({ variant: "default" }), "rounded-full shadow-lg hover:shadow-primary/25 transition-all")}
+              >
+                Dashboard
+              </Link>
             ) : (
               <>
-                <Button variant="ghost" asChild className="hidden sm:inline-flex rounded-full">
-                  <Link href="/login">Sign In</Link>
-                </Button>
-                <Button asChild className="rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 transition-all duration-300">
-                  <Link href="/register">Get Started</Link>
-                </Button>
+                <Link 
+                  href="/login" 
+                  className={cn(buttonVariants({ variant: "ghost" }), "hidden sm:inline-flex rounded-full")}
+                >
+                  Sign In
+                </Link>
+                <Link 
+                  href="/register" 
+                  className={cn(buttonVariants({ variant: "default" }), "rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:scale-105 transition-all duration-300")}
+                >
+                  Get Started
+                </Link>
               </>
             )}
           </div>
@@ -88,23 +96,26 @@ export default async function LandingPage() {
 
         <div className="flex flex-col sm:flex-row gap-5 pt-4 w-full sm:w-auto">
           {isLoggedIn ? (
-            <Button size="lg" asChild className="h-14 px-8 text-base rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300">
-              <Link href="/dashboard">
-                Enter Workspace <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Link 
+              href="/dashboard" 
+              className={cn(buttonVariants({ variant: "default", size: "lg" }), "h-14 px-8 text-base rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300")}
+            >
+              Enter Workspace <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           ) : (
             <>
-              <Button size="lg" asChild className="h-14 px-8 text-base rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 group">
-                <Link href="/register">
-                  Start for Free <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="h-14 px-8 text-base rounded-full border-border/60 hover:bg-muted/50 hover:border-border transition-all duration-300">
-                <Link href="/login">
-                  Sign In
-                </Link>
-              </Button>
+              <Link 
+                href="/register" 
+                className={cn(buttonVariants({ variant: "default", size: "lg" }), "h-14 px-8 text-base rounded-full shadow-xl shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 group")}
+              >
+                Start for Free <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link 
+                href="/login" 
+                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-14 px-8 text-base rounded-full border-border/60 hover:bg-muted/50 hover:border-border transition-all duration-300")}
+              >
+                Sign In
+              </Link>
             </>
           )}
         </div>
