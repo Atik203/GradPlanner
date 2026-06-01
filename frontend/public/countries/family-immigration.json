@@ -1452,6 +1452,553 @@
   "overallFamilyRating": "Very poor for family settlement: spouse CANNOT work on S1 dependent visa (complete income loss), no free education (international school ¥100,000-300,000/year per child), expensive international health insurance required, no PR realistic (<1% approval), no citizenship for non-ethnic Chinese (effectively unavailable), no parent sponsorship, geopolitical risks (US-China tensions, Great Firewall, political risk, air quality). The ONLY justification for bringing family to China: primary earns ¥600,000+/year AND employer provides school fee package AND committed to ONLY 3-5 year wealth accumulation. For ALL other scenarios: individual China stint (primary alone) → save aggressively → relocate family to Canada/Australia/Germany for proper family settlement with capital + China AI career experience. China is uniquely valuable for AI career acceleration but uniquely poor for family immigration.",
   "lastUpdated": "2026-06-01"
 }
+,{
+  "country": "France",
+  "countryCode": "FR",
+  "overallFamilyScore": 82,
+  "overallFamilyScoreConfidence": 85,
+  "overallFamilyScoreEvidence": "France has strong family benefits: free K-12 and effectively free university (€200-400/year admin fees), excellent Sécurité Sociale healthcare, comprehensive CAF allowances (PAJE, Allocations Familiales, CMG, allocation de rentrée). Spouse gains full work rights after Passeport Talent/Salarié permit via Vie Privée et Familiale permit. Parent sponsorship not available (family reunification restricted to spouse and minor children only). French language B1-B2 critical. Dual citizenship generally allowed (keep Bangladeshi). 5-year citizenship pathway. Province cities (Toulouse, Lyon, Bordeaux) significantly more affordable than Paris.",
+  "spouseRights": {
+    "spouseCanWork": true,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": true,
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 72,
+    "spouseRestrictions": "During APS (12-24 months post-study): spouse has no automatic work authorization. After primary's Passeport Talent or Salarié permit secured: spouse receives Vie Privée et Familiale (VPF) permit via family reunification with FULL unrestricted work authorization. Family reunification (regroupement familial) requires: primary legally resident 18 months + stable housing meeting minimum sqm + income minimum SMIC (€1,766/month gross 2026). Processing time 3-6 months. French language B1+ significantly helps spouse employment; international companies in Paris more English-accessible.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at French universities; administrative fees €200-400/year after legal residence (effectively free); French language required for most undergraduate programs; English-language Master's programs available at grandes écoles",
+    "estimatedIncomeOpportunityCostEUR": "40,000-70,000 (APS phase + family reunification processing = 1-2 years without spouse income)",
+    "dualIncomeViability": "Good after Passeport Talent + family reunification (typically Year 2-3); French language barrier affects spouse job search in early years"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "Included in family reunification (regroupement familial) permit; children under 18 eligible",
+    "freeSchooling": true,
+    "freeSchoolingNotes": "FREE public K-12 (école primaire, collège, lycée). Quality good overall; varies by area (ZEP zones vs. better districts). French language support for newly arrived children (UPE2A intensive classes available in most schools). University: effectively FREE at public institutions (€200-400/year administrative fees ONLY for licence, master, doctorat). Grandes écoles (Polytechnique, ENS, CentraleSupélec) near-free. Allocation de rentrée scolaire: €370-405/year per school-age child (annual back-to-school payment from CAF).",
+    "schoolingQualityScore": 80,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "Effectively FREE tuition at public French universities for all legal residents (€200-400/year). CROUS student housing and restaurants (€1/meal canteen for scholarship recipients). Bourses sur critères sociaux (means-tested grants up to €700/month) available for qualifying students after PR. Outstanding universities: Sorbonne, Paris-Saclay, École Polytechnique, ENS, CentraleSupélec, Télécom Paris, Grenoble INP.",
+    "childcareAvailability": "CAF comprehensive system: Prestation d'Accueil du Jeune Enfant (PAJE): birth grant €977 + monthly supplement. Complément de Libre Choix du Mode de Garde (CMG): up to €700/month reimbursement for approved childcare. Crèche (municipal daycare): income-based quotient familial (QF) system = €50-600/month per child depending on income. Allocations Familiales: monthly allowance per child (from 1st child after 2024 reform with lower amounts; from 2nd child main allocation). Full CAF benefits active after legal residence established and CAF registration.",
+    "childcareCostScore": 82
+  },
+  "healthcareAccess": {
+    "score": 88,
+    "duringStudy": "Student health insurance (Sécurité Étudiante) mandatory; ~€94/year for students under 26; GP visit €25 (70% reimbursed = €7.50 copay). Mutuelle complémentaire recommended: €30-80/month for full coverage. Emergency fully covered.",
+    "duringWorkPermit": "Full Sécurité Sociale enrollment via employer; employee contribution ~6.5-10% of salary; GP visit €25 reimbursed 70% (copay €7.50); specialist €28-150 partially reimbursed; mutuelle complémentaire via employer often free/subsidized; spouse and children insured FREE as co-insured (ayants droit) if not independently insured; maternité 100% covered; mental health (psychologue conventionné) Mon Psy program subsidized",
+    "afterPR": "Same Sécurité Sociale as French citizens. CSS (Complémentaire Santé Solidaire) free mutuelle for low income. PMI (Protection Maternelle et Infantile) free preventive care for children under 6. Dental: Reste à Charge 0 (RAC 0) for essential prosthetics. Vision: regulated prices. Extraordinary comprehensive coverage.",
+    "estimatedFamilyCostEUR": "0-100/month (Sécurité Sociale employer contributions + employer mutuelle often free; family co-insured at no extra cost)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "France's family reunification (regroupement familial) is legally restricted to SPOUSE and MINOR CHILDREN UNDER 18 only. Parents of adult legal residents CANNOT apply for family reunification in France. No parent sponsorship immigration program exists. Options for parent visits: (1) Schengen tourist visa C (90 days/180 days); (2) Long-stay national visa D for documented exceptional medical/dependency cases (very rare, extensive medical documentation required, no PR pathway). France is more restrictive than Australia/Canada on parent immigration.",
+    "parentVisaType": "Schengen tourist C visa (90 days/180 days) OR National D visa case-by-case exceptional dependency",
+    "parentPRTimeline": "N/A - not available for standard cases",
+    "parentCanWork": false,
+    "parentCanWorkNotes": "No work authorization on tourist or national dependency visa",
+    "parentHealthcareAccess": "Private travel insurance mandatory for Schengen visa; no access to Sécurité Sociale on tourist visa; emergency care available but expensive without coverage; comprehensive travel insurance essential (~€200-400/year for adequate coverage)",
+    "parentCitizenshipEligible": false,
+    "financialSponsorshipRequired": true,
+    "financialSponsorshipNotes": "For D visa exceptional cases: must provide hébergement (accommodation) proof, attestation d'accueil from mairie, proof of financial support for parents' entire stay",
+    "parentSponsorshipScore": 12,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": "Conditional - Double Jus Soli",
+    "birthrightNotes": "France applies double jus soli (not automatic single jus soli like US/Canada). Child born in France to foreign parents: NOT automatically French at birth. Pathways: (1) Double jus soli: if child born in France AND at least one parent also born in France = French at birth (unlikely for new Bangladeshi immigrants). (2) Child born in France can claim French nationality at age 13 if habitually resident in France for 5+ years since age 8 (parents can claim on child's behalf). (3) Automatic French nationality at age 18 if child born in France AND habitually resident in France for 5+ years since age 11. For children born in France who grow up there: path to French citizenship exists but not immediate at birth.",
+    "derivativeCitizenship": true,
+    "derivativeCitizenshipNotes": "Children naturalize with parents after 5 years legal residence (1 year as carte de résident). France ALLOWS dual citizenship in most cases (French law does not generally require renouncing other nationalities). Bangladesh NRB (Non-Resident Bangladeshi) status provides protections for dual nationals; however Bangladesh does not formally recognize dual citizenship the same way France does. Practical reality: most Bangladeshi-French dual nationals retain Bangladeshi passport. Strongly recommended to consult both Bangladesh Embassy Paris and French immigration attorney to verify specific situation.",
+    "citizenshipTimeline": "5 years legal residence + 1 year carte de résident → naturalization eligible; children born in France get nationality at age 13 (with request) or automatically at 18 if 5+ years resident since age 11; dual citizenship generally allowed",
+    "citizenshipForChildrenScore": 78
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsEUR": "180,000-300,000 (Paris expensive; province 30-40% cheaper)",
+    "keyFinancialAdvantages": "Free K-12 + effectively free university (€200-400/year); CAF comprehensive allowances (€300-700/month combined for young family); crèche €50-600/month income-based (vs. €1,500-2,000/month unsubsidized UK); Sécurité Sociale excellent and affordable (family insured free on primary contributions); 35-hour work week + 5+ weeks vacation; dual citizenship generally allowed (keep Bangladeshi); province cities dramatically cheaper (Lyon, Toulouse, Bordeaux 30-40% lower cost than Paris)",
+    "keyFinancialChallenges": "Paris rent expensive (€900-1,800/month 1-bed; family €1,200-2,500/month); spouse limited during APS phase (1-2 years without income); French language investment for entire family (1-2 years intensive study); préfecture bureaucracy extreme (appointment scarcity, documentation requirements); Passeport Talent salary threshold €53,836/year (2026) - must be met; parent sponsorship unavailable (major limitation for Bangladeshi extended family culture)",
+    "breakEvenPointYears": "Year 2-3 (Passeport Talent + family reunification + spouse working + CAF benefits fully active)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "Phase 1 (APS 12-24 months): Primary works, learns French intensively, saves. Phase 2 (Passeport Talent secured): Apply family reunification immediately for spouse + children. Spouse receives VPF permit with full work rights (3-6 month processing). Register with CAF immediately for all allowances. Enroll children in French school (UPE2A language support available). Phase 3 (both working, Year 2-3): Combined income €70,000-120,000. CAF benefits active. Crèche income-based. Phase 4 (Year 5): Carte de résident → 10-year PR. Phase 5 (citizenship possible at 5 years + 1 year carte de résident): Naturalize. Province strategy strongly recommended: Toulouse (Airbus AI, Thales, CNES space agency - aerospace AI hub; rent €500-900/month; excellent quality of life), Lyon (biotech, digital health, Dassault Systèmes; rent €600-1,000/month), Bordeaux (growing tech ecosystem; rent €600-1,000/month; exceptional quality of life and climate).",
+    "worstScenario": "Primary cannot meet Passeport Talent salary threshold (€53,836/year 2026) → must use Salarié permit requiring labor market test (employer must prove no French/EU candidate = significant additional barrier and time delay). Paris housing crisis: acceptable family accommodation €1,500-2,500/month + long search. French bureaucracy causing residence permit delays (préfecture Paris notorious for delays of 6-12 months). Spouse cannot find work for 2+ years (French language barrier). Parent visits limited to 90-day tourist visa with no path to longer stay.",
+    "bestScenario": "Toulouse strategy: Airbus AI or Thales DTIS (Digital Technologies and Information Systems) role meeting Passeport Talent threshold. Family in Toulouse (rent €700-1,100/month family apartment vs. Paris €1,500-2,500). Both working Year 2 (combined €80,000-120,000). CAF: crèche €150-300/month (income-based), allocations familiales, allocation de rentrée. Children fluent French within 18 months. Free université at Toulouse Capitole/INPT later. Dual citizenship at Year 6 (keep Bangladeshi passport). EU freedom of travel with French carte de résident.",
+    "bangladeshiSpecificTips": [
+      "Paris Bangladeshi community concentrated in 18th arrondissement (Château Rouge, Barbès area - known informally as 'Banglatown'), 10th arrondissement (La Chapelle, Gare du Nord area), and 19th arrondissement; estimated 15,000-20,000 Bangladeshi residents in Paris; extensive infrastructure: mosques (Grande Mosquée de Paris founded 1926, Mosquée Adda'wa 19th arr., many smaller mosques), halal food everywhere in these areas, Bengali restaurants, Bangladeshi grocery stores, community associations (Association Franco-Bangladaise, BFA France, CHABAB)",
+      "CAF registration: register at caf.fr IMMEDIATELY after residence permit and family reunification approved; claim all applicable benefits: PAJE (birth grant + monthly CMG for childcare), Allocations Familiales (from 1st or 2nd child depending on reform), Allocation de rentrée scolaire (€370-405/year per school child), APL (housing benefit - income-based, can be €100-400/month); CAF system complex but very worthwhile; visit local CAF office in person if online confusing",
+      "Crèche application: apply at mairie (city hall) of commune IMMEDIATELY after arrival; municipal crèche using quotient familial (QF) = income-based fee €50-600/month per child; private crèche more expensive (€800-1,500/month before CMG reimbursement); apply early (waiting lists significant in Paris; shorter in province cities - another reason to consider Toulouse/Lyon)",
+      "UPE2A schools: ask school principal (directeur/directrice) about UPE2A (Unités Pédagogiques pour Élèves Allophones Arrivants) for newly arrived non-French speaking children; dedicated French language intensive classes alongside regular school; children typically conversational French within 6-12 months (young children), 12-24 months (adolescents)",
+      "Dual citizenship practical advice: French law permits dual nationality; when applying for naturalization, France does not require you to explicitly renounce other citizenship in the ceremony. Bangladesh law is more restrictive but NRB (Non-Resident Bangladeshi) framework provides some protections. In practice, many Bangladeshi-French dual nationals hold both passports. STRONGLY recommend consulting: (1) Bangladesh Embassy in Paris (01 56 02 83 00) regarding NRB status, (2) French immigration attorney regarding naturalization process. This situation is navigable for most but requires professional legal advice.",
+      "Province advantage calculation: Toulouse example - primary earns €55,000 gross vs. Paris €65,000 gross required for same lifestyle; Toulouse rent €800/month vs. Paris €1,500/month family apartment; saves €700/month rent PLUS lower salary requirement = €15,000+ annual advantage favoring Toulouse; Airbus (global HQ Toulouse), Thales Alenia Space, CNES (French NASA), Thalès DTIS, Dassault Aviation, Continental, Motorola Solutions, Continental all in Toulouse employing AI/ML/CS professionals",
+      "Sécu (Sécurité Sociale) registration: via CPAM (Caisse Primaire d'Assurance Maladie); after work permit and employment started, employer registers you via URSSAF; get Carte Vitale (green health card) - essential for GP visits and reimbursements; process can take 1-3 months; get attestation de droits from ameli.fr for interim coverage; children added to primary holder's Carte Vitale account",
+      "Transport: Paris public transport Navigo Toutes Zones €86.40/month unlimited (train, metro, bus, RER) - essential; TGV to UK 2h15, Belgium 1h22, Netherlands 3h20, Spain 2h30 (when high-speed connections operational); European travel exceptionally accessible once carte de résident obtained (Schengen free movement)"
+    ]
+  },
+  "overallFamilyRating": "Strong family policy with excellent long-term benefits: free K-12 + effectively free university (€200-400/year - exceptional vs. Anglophone countries), Sécurité Sociale comprehensive healthcare (family insured free on primary's contributions), CAF system generous (€300-700/month combined benefits for young family), subsidized crèche (€50-600/month income-based), 5-year citizenship pathway (one of Europe's shorter timelines), dual citizenship generally allowed (keep Bangladeshi passport). Key challenges: spouse work rights limited during APS phase (1-2 years), French language investment essential for entire family (B1 minimum, B2 for full integration), préfecture bureaucracy notorious for delays and documentation complexity, Paris housing expensive (province solution: Toulouse/Lyon/Bordeaux 30-40% cheaper with strong STEM ecosystems), parent sponsorship unavailable (significant limitation for Bangladeshi extended family culture), Passeport Talent salary threshold (€53,836/year) must be met for optimal pathway. Overall: excellent for families committed to French language learning and willing to consider province cities; comparable to Germany but with shorter citizenship timeline and more accessible dual nationality; significantly better than Ireland/Netherlands/Switzerland for long-term family settlement.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "United Arab Emirates",
+  "countryCode": "AE",
+  "overallFamilyScore": 38,
+  "overallFamilyScoreConfidence": 82,
+  "overallFamilyScoreEvidence": "UAE has the WORST family immigration profile among all 20 analyzed countries for long-term settlement: no PR pathway, no citizenship pathway, spouse cannot work without own visa, children's education extremely expensive (AED 40,000-90,000/year per child), no universal healthcare, job loss = family deportation in 30 days, no parent sponsorship for settlement. Zero income tax advantage partially offset by extremely high family costs. Golden Visa (10 years renewable) is closest to long-term security but NOT permanent residence. UAE is a temporary career opportunity NOT a family settlement destination.",
+  "spouseRights": {
+    "spouseCanWork": false,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": false,
+    "spouseCanWorkAfterPR": false,
+    "spouseWorkScore": 22,
+    "spouseRestrictions": "Spouse on Dependent Visa CANNOT work. To work, spouse must obtain their own Employment Visa (requires separate job offer + employer sponsorship - entirely separate process). Requirements for dependent visa: primary must earn minimum AED 4,000-10,000+/month (varies by emirate; Abu Dhabi AED 5,000 minimum; Dubai AED 4,000 minimum for family sponsorship). Spouse freelance permit available separately but expensive (AED 15,000-25,000/year = €3,675-6,125 + additional fees). No automatic work rights for dependents under any circumstances. Major limitation vs. ALL Western countries analyzed.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at UAE universities (MBZUAI, Khalifa University, UAE University) but fees apply (AED 20,000-80,000/year = €4,900-19,600); no fee subsidies for dependents",
+    "estimatedIncomeOpportunityCostAED": "200,000-400,000 AED/year (€49,000-98,000) if spouse would otherwise be working - massive opportunity cost of dependent status",
+    "dualIncomeViability": "Only if spouse actively secures own Employment Visa independently (entirely separate process); not guaranteed; culturally and legally challenging"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "Dependent visa (sponsored by primary employment visa holder)",
+    "freeSchooling": false,
+    "freeSchoolingNotes": "NO free public education for expatriate children. Public schools: theoretically available but effectively restricted to Emirati citizens and some Arab nationals in practice (limited expatriate access; Arabic instruction; curriculum not internationally recognized for university admission). International schools MANDATORY for expatriate children effectively: AED 30,000-90,000/year per child (€7,350-22,050/year). British curriculum, American curriculum, IB - all available but ALL expensive. KHDA (Knowledge and Human Development Authority) regulates Dubai schools. ADEK regulates Abu Dhabi schools. No subsidies for expatriate children. Annual fee increases ~5-10%. This is THE major financial burden for expatriate families in UAE.",
+    "schoolingQualityScore": 72,
+    "universityAccessAfterPR": false,
+    "universityAccessNotes": "No PR exists in UAE. University access for children: MBZUAI (fully funded AI university - competitive), NYUAD (selective, some scholarships), Khalifa University, UAE University (limited expatriate access), American University Dubai, American University Sharjah - all charge full fees (AED 50,000-120,000/year = €12,250-29,400). No domestic student equivalent rates for expatriates.",
+    "childcareAvailability": "Private nurseries and daycares only: AED 2,000-5,000/month per child (€490-1,225/month). No government childcare subsidies for expatriates. No child benefit payments. No universal maternity/parental leave entitlements beyond minimum labor law (45-60 days maternity leave legally mandated; paternity leave 5 days). Entirely market-driven childcare costs.",
+    "childcareCostScore": 12
+  },
+  "healthcareAccess": {
+    "score": 52,
+    "duringStudy": "MBZUAI students: comprehensive health insurance provided (university covers students). Other university students: own private insurance required (AED 3,000-8,000/year per person = €735-1,960). Quality of care in private hospitals excellent; public hospitals less accessible for expatriates.",
+    "duringWorkPermit": "Employer-mandated basic health insurance required by law (UAE Federal Law + Emirate regulations: Dubai DHA mandatory since 2016; Abu Dhabi mandatory; Sharjah mandatory). Basic employer package: covers emergency + GP + basic outpatient; may not cover dependents or cover inadequately. Enhanced family coverage: employer provides OR employee pays AED 5,000-15,000+/year (€1,225-3,675). International hospitals: Cleveland Clinic Abu Dhabi, American Hospital Dubai, Mediclinic - world-class but expensive if uncovered.",
+    "afterPR": "No traditional PR exists. Golden Visa holders: same private insurance requirement. No universal public healthcare equivalent to Europe/Canada/Australia. Healthcare quality excellent in private sector but 100% insurance-dependent; no safety net if uninsured. Major vulnerability if employment (and thus employer insurance) lost.",
+    "estimatedFamilyCostAED": "10,000-25,000/year (€2,450-6,125) for comprehensive family health insurance; significant ongoing expense"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "UAE does NOT have a parent sponsorship immigration program. Parents can be brought as long-term dependents ONLY IF primary earns AED 20,000+/month (€4,900+) and signs full financial guarantee for parents' medical expenses. Even then: parents receive residence visa as dependent (not PR, not citizenship pathway). Visa valid as long as primary maintains employment and income threshold. If primary loses job: parents' visa also cancelled. Parents cannot work. Medical insurance mandatory for parents (VERY expensive for elderly: AED 8,000-20,000+/year = €1,960-4,900+ for basic coverage; comprehensive AED 20,000-40,000+/year for elderly with pre-existing conditions). This is NOT parent sponsorship in the immigration sense - it is temporary dependent residence with no long-term security.",
+    "parentVisaType": "Dependent residence visa (temporary, tied to primary's employment visa; NOT PR pathway)",
+    "parentPRTimeline": "N/A - no PR or citizenship pathway for parents or anyone in UAE (except rare Emirati citizenship grant)",
+    "parentCanWork": false,
+    "parentCanWorkNotes": "Absolutely no work rights for elderly dependent parents",
+    "parentHealthcareAccess": "Mandatory private health insurance required (AED 8,000-25,000+/year for elderly = €1,960-6,125+); access to world-class private hospitals if insured; public hospital access limited for expatriates; major financial burden",
+    "parentCitizenshipEligible": false,
+    "financialSponsorshipRequired": true,
+    "financialSponsorshipNotes": "Must earn AED 20,000+/month, sign financial guarantee for all parent medical expenses, provide accommodation, pay medical insurance. Extremely expensive commitment.",
+    "parentSponsorshipScore": 20,
+    "grandparentSponsorshipAvailable": false,
+    "alternativeSolutionNote": "Parents can visit on tourist visa (30-day on arrival, renewable up to 90 days typically; overstay fines strict AED 50-100/day). For longer visits: apply for UAE tourist visa extensions at travel agencies (AED 500-1,000). No long-term secure solution beyond the expensive dependent visa described above."
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "UAE grants citizenship by birth ONLY if FATHER is UAE citizen (strict jus sanguinis through paternal line). Children of foreign parents born in UAE are NOT UAE citizens regardless of where born. No birthright citizenship for expatriates. Children get parents' nationality (Bangladeshi in this case). UAE citizenship essentially unavailable for non-Emiratis (fewer than 200 naturalizations ever granted historically, reserved for extraordinary contributions - athletes, scientists of global eminence, or marriage to Emirati with strict conditions).",
+    "derivativeCitizenship": false,
+    "derivativeCitizenshipNotes": "No pathway to UAE citizenship through parent naturalization (because parent naturalization itself essentially unavailable). UAE citizenship for non-Emiratis: Presidential Decree required, case-by-case, reserved for exceptional global-level contributions. Realistic probability for Bangladeshi immigrant: essentially 0%.",
+    "citizenshipTimeline": "N/A - citizenship essentially unavailable for non-ethnic Emiratis",
+    "citizenshipForChildrenScore": 5
+  },
+  "goldenVisaAnalysis": {
+    "available": true,
+    "description": "UAE Golden Visa (5-year or 10-year renewable residence) is the closest mechanism to long-term stay for expatriates. NOT traditional PR and NOT citizenship pathway.",
+    "eligibilityCriteria": [
+      "PhD holders from accredited universities",
+      "Specialized professionals (doctors, engineers, scientists, artists, athletes) with significant experience",
+      "Investors: AED 2,000,000+ property investment OR AED 2,000,000+ business investment",
+      "Entrepreneurs: approved startup with AED 500,000+ capital",
+      "Outstanding students: top of class from UAE university or top-10 global university",
+      "Researchers: approved research contribution"
+    ],
+    "goldenVisaBenefits": [
+      "10-year renewable residence (no annual renewal anxiety)",
+      "Not tied to employer (can change jobs freely without visa cancellation)",
+      "Can sponsor family members without income threshold requirement",
+      "Can remain outside UAE for up to 6 months without visa cancellation",
+      "Self-sponsorship (no employer dependency)"
+    ],
+    "goldenVisaLimitations": [
+      "Still NOT permanent residence (can be revoked for criminal record, security concerns, non-renewal)",
+      "Still NO pathway to citizenship",
+      "Still requires private health insurance",
+      "Children still pay full international school fees",
+      "If country becomes hostile to certain nationalities, visa remains revocable",
+      "Requires continuous renewal (10-year, not permanent)",
+      "Does NOT confer any civil/political rights"
+    ],
+    "goldenVisaCostAED": "3,000-5,000 AED (~€735-1,225) for Golden Visa application; property investment AED 2,000,000+ (€490,000+) if investor route",
+    "applicabilityForBangladeshiSTEM": "PhD holders from top universities (MBZUAI PhD graduates automatic eligibility) OR senior AI/tech professionals with 10+ years experience AND significant salary (AED 30,000+/month = €7,350) may qualify. Most fresh graduates will NOT qualify initially but can work toward PhD Golden Visa eligibility through MBZUAI or similar.",
+    "overallGoldenVisaScore": 45
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsAED": "1,500,000-2,500,000 AED (€367,000-612,000) for family of 4 in UAE",
+    "keyFinancialBreakdown": {
+      "internationalSchoolPerChildPerYear": "AED 40,000-90,000 (€9,800-22,050)",
+      "familyHealthInsurancePerYear": "AED 10,000-25,000 (€2,450-6,125)",
+      "familyRentPerMonth": "AED 6,000-18,000 (€1,470-4,410) depending on emirate and property type",
+      "childcarePerChildPerMonth": "AED 2,000-5,000 (€490-1,225)"
+    },
+    "zeroTaxAdvantage": "Zero income tax saves: 25-45% of gross salary vs. European/Canadian alternatives. Example: AED 300,000 salary (€73,500) = 100% take-home vs. €43,000-54,000 take-home after tax in Germany/Canada. Tax savings: €20,000-30,000/year. Partially offsets family costs but often not fully.",
+    "netSavingsPotentialAssessment": "Single person: exceptional (save 50-70% of salary). Couple both working: very good (save 40-60% combined). Family with 1 child in school: moderate (save 20-35% after school fees). Family with 2+ children in school: poor (school fees AED 80,000-180,000/year = €19,600-44,100 eliminates most tax advantage). Critical insight: UAE financially optimal ONLY for singles or couples without school-age children.",
+    "breakEvenPointYears": "N/A for settlement - UAE is not a settlement destination. For wealth accumulation: 3-5 years single/no-children scenario. Family scenario: marginal financial advantage over European alternatives when school fees factored."
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "CRITICAL STRATEGIC RECOMMENDATION: UAE is NOT suitable as primary family settlement destination for Bangladeshi STEM graduates with long-term family planning goals. OPTIMAL USE: (1) Go to UAE single or as couple without children for 3-5 years to maximize savings (zero tax, high STEM salaries AED 180,000-360,000/year = €44,100-88,200 tax-free). (2) Save aggressively (target AED 500,000-1,000,000 = €122,500-245,000 in 3-5 years). (3) Use savings as capital for PR application in Canada/Australia (proof of funds advantage), business in new country, or property down payment. (4) DO NOT bring school-age children to UAE unless earning AED 40,000+/month (€9,800+) and committed to 5+ year stay. (5) If bringing children: Abu Dhabi generally slightly cheaper for schooling than Dubai; Sharjah cheapest emirate overall.",
+    "worstScenario": "Family of 4 with 2 school-age children in Dubai: international school fees AED 100,000-160,000/year (€24,500-39,200), rent AED 120,000-200,000/year (€29,400-49,000), healthcare AED 25,000/year (€6,125), childcare eliminated by school age. Total: AED 245,000-385,000/year (€60,025-94,325) in expenses BEFORE food, transport, clothing, entertainment. Primary salary AED 240,000/year (€58,800) barely covers expenses. Zero savings. Job loss = 30-day deadline for entire family to leave UAE. Catastrophic risk exposure.",
+    "bestScenario": "Single or couple (no children) earning AED 30,000-50,000/month (€7,350-12,250). Rent shared accommodation AED 3,000-5,000/month. Save AED 20,000-35,000/month. Accumulate AED 1,000,000-1,500,000 (€245,000-367,000) in 4-5 years TAX-FREE. Use capital to: buy property in Canada/Germany as investment, have proof-of-funds for PR applications, start business in PR-destination country. Simultaneously build world-class AI CV (MBZUAI research, G42, TII Falcon LLM experience) for global career leverage.",
+    "bangladeshiSpecificTips": [
+      "Largest Bangladeshi diaspora abroad: 700,000+ Bangladeshis in UAE (300,000+ in Dubai alone); strongest community support globally among Bangladeshi diaspora destinations; however majority are blue-collar workers in construction/hospitality - professional tech community smaller but growing",
+      "Community infrastructure: mosques in every area (Al Farooq Omar Bin Al Khattab Mosque Dubai, Abu Dhabi Grand Mosque open to all, many smaller mosques in Deira, Bur Dubai serving Bangladeshi community); halal food ubiquitous (entire UAE is halal-dominant); Bengali restaurants in Deira, Al Quoz, International City (Dragon Mart area); Bangladeshi grocery stores; Bangladesh Consulate Dubai (Al Hamriya area) and Bangladesh Embassy Abu Dhabi",
+      "Salary negotiation tip: UAE explicitly practices nationality-based salary discrimination - Western expatriates often paid 20-40% more than South Asian expatriates for identical roles. NEGOTIATE FIRMLY based on skills, not nationality. Emphasize globally competitive qualifications. Target MNCs (Microsoft, Amazon, Google) which more consistently apply global salary bands rather than UAE companies which more openly practice nationality discrimination",
+      "Medical insurance critical: ensure employer-provided insurance covers FAMILY (spouse + children) comprehensively - not just basic. Review policy carefully: some employers provide basic employee coverage but exclude dependents or provide inadequate dependent coverage. Upgrade to comprehensive family plan if needed (negotiate as part of employment package - more valuable than base salary increase in UAE)",
+      "International school research: Dubai school ratings on KHDA inspection reports (khda.gov.ae); Abu Dhabi on ADEK (adek.gov.ae). Target GOOD rated schools (not Outstanding which charge premium). GEMS schools, Greenfield, Jumeirah English Speaking School, Dubai College (selective but excellent). Admissions competitive - apply early (waiting lists common). Sharjah schools 30-40% cheaper than Dubai equivalents.",
+      "Emergency fund absolute requirement: maintain minimum 6-months full family expenses as liquid emergency fund (AED 150,000-300,000 = €36,750-73,500 for family). Job loss = 30 days to reemploy or depart country. This is non-negotiable for family security in UAE.",
+      "Exit strategy planning from Day 1: set specific savings target (e.g., AED 800,000 = €196,000 in 4 years) and specific exit trigger (savings target met OR school fees starting to bite OR Golden Visa not achievable). Apply for Canada Express Entry or Australia SkillSelect profile SIMULTANEOUSLY while in UAE (UAE work experience counts for points; UAE savings = excellent proof of funds). Do NOT let UAE become comfortable trap that prevents strategic relocation to PR-friendly country."
+    ]
+  },
+  "overallFamilyRating": "POOREST family immigration destination among all 20 analyzed countries for Bangladeshi STEM graduates with long-term settlement goals. No PR pathway, no citizenship pathway (essentially impossible), spouse cannot work without own visa (massive income loss), international school fees AED 40,000-90,000/year per child (eliminates tax advantage for families), no universal healthcare (private insurance burden), job loss triggers 30-day family deportation countdown, no child benefits, no subsidized childcare, parent sponsorship only via expensive dependent visa with no security. The ONLY advantages: zero income tax (highest value for singles/childless couples), high STEM salaries, MBZUAI world-class AI university (fully funded), large Bangladeshi community (700,000+), familiar Islamic/halal environment. STRATEGIC VERDICT: UAE is excellent as a 3-5 year individual career accelerator and wealth accumulation tool BEFORE relocating to PR-friendly country (Canada, Australia, Germany). It is inappropriate as a primary destination for Bangladeshi students whose goal includes PR, citizenship, family settlement, and intergenerational stability. Never treat UAE as endpoint - always treat as stepping stone.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Japan",
+  "countryCode": "JP",
+  "overallFamilyScore": 65,
+  "overallFamilyScoreConfidence": 80,
+  "overallFamilyScoreEvidence": "Japan has improving but still limited family immigration policy: spouse can work part-time on dependent visa (28h/week), free public K-12 education (Japanese language instruction), universal public healthcare (excellent quality, low cost), child allowance (kodomo teate ¥15,000/month per child under 3, ¥10,000/month 3-12). However: PR extremely difficult (10 years standard, 5 years HSP points), citizenship very difficult (language N1, cultural assimilation, must renounce Bangladeshi passport, 15+ year timeline), Japanese language absolutely critical for integration, small Bangladeshi community (cultural isolation), spouse 28-hour work limit on dependent visa is significant restriction. Parent sponsorship essentially unavailable.",
+  "spouseRights": {
+    "spouseCanWork": true,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": true,
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 48,
+    "spouseRestrictions": "Spouse on Dependent Visa (Kazoku Taizai) CAN work BUT only with additional Permission to Engage in Activity Other than Permitted (Shikaku gai katsudo kyoka) - maximum 28 HOURS PER WEEK. Cannot work full-time. For full-time work: spouse must obtain own work visa (Engineer/Specialist in Humanities visa) requiring separate job offer and employer sponsorship. After PR (Permanent Residence): spouse gets PR simultaneously if included in application; full unrestricted work rights. Japanese language (JLPT N2+) critical for spouse employment even within 28-hour limit.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Japanese universities; fees apply (¥500,000-1,000,000/year = €3,130-6,260); Japanese language N2+ generally required for undergraduate; English-language graduate programs available at some universities",
+    "estimatedIncomeOpportunityCostJPY": "6,000,000-10,000,000 JPY/year (€37,500-62,500) compared to full-time employment potential if unrestricted",
+    "dualIncomeViability": "Limited - 28h/week restriction = maximum ~€15,000-20,000/year spouse income; full dual income only achievable if spouse secures own Engineer visa independently"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "Dependent visa (Kazoku Taizai) after primary's work visa secured",
+    "freeSchooling": true,
+    "freeSchoolingNotes": "FREE public K-12 (shōgakkō 1-6, chūgakkō 7-9 compulsory; kōkō 10-12 near-free with modest fees). Japanese language instruction throughout - children MUST learn Japanese. Schools provide some support for non-Japanese speaking children (JSL - Japanese as Second Language) but immersion is primary method. Quality very high. University: ¥500,000-1,000,000/year (€3,130-6,260) national universities; private universities ¥1,000,000-2,000,000/year (€6,260-12,520) - affordable by global standards but not free. International schools: ¥2,000,000-3,000,000/year (€12,520-18,780) - very expensive; primarily for short-term expatriates, not recommended for long-term residents.",
+    "schoolingQualityScore": 88,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "National university fees ¥500,000-1,000,000/year (€3,130-6,260); JASSO (Japan Student Services Organization) scholarships available for PR-holding students; Monbukagakusho (MEXT) graduate scholarships. Quality exceptional: University of Tokyo, Kyoto, Osaka, Tohoku, Nagoya - world-class.",
+    "childcareAvailability": "Kodomo Teate (child allowance): ¥15,000/month per child under 3 (€94/month); ¥10,000/month per child 3-12 (€63/month) - universal for residents. Hoikuen (nursery daycare): heavily subsidized income-based (0-3 age group); ¥0-50,000/month (€0-313) depending on income; availability crisis in cities (waiting lists - 'nursery waiting children' problem). Yōchien (kindergarten 3-6): various types; public subsidized. Free kindergarten (yōchien/hoikuen) for 3-5 year olds: government fully subsidized since 2019 reform - significant benefit.",
+    "childcareCostScore": 70
+  },
+  "healthcareAccess": {
+    "score": 87,
+    "duringStudy": "National Health Insurance (Kokumin Kenkō Hoken) mandatory for international students after residence registration; ~¥2,000-3,000/month (€12.50-18.75); covers 70% of all medical costs; copayment 30%; excellent quality at low cost; student insurance associations (gakusei hoken kumiai) reduce burden further",
+    "duringWorkPermit": "Shakai Hoken (Social Health Insurance via employer): employee pays ~5% of salary; employer pays ~5%; comprehensive coverage (70% of costs covered; patient pays 30%); dependent family members (spouse, children) insured under same policy FREE; dental partially covered; mental health covered; maternity fully covered; high-quality universal system",
+    "afterPR": "Same Shakai Hoken or Kokumin Kenkō Hoken; 30% copayment (3-year-olds and under: FREE; 6-15 year olds: FREE in most municipalities via Jidō Iryōhi supplement; elderly 70+: reduced 10-20%). Excellent preventive care (health checkups subsidized). Pharmaceutical costs very low (Kosei-shō drug pricing regulation).",
+    "estimatedFamilyCostJPY": "20,000-60,000/year in copayments total for family (extremely low); monthly premium ~¥10,000-20,000 shared employer-employee (family covered free)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "Japan does NOT have a parent sponsorship immigration program. Parents can apply for: (1) Temporary Visitor visa (tanki taizai) - 15 days to 90 days per visit, extendable once = maximum 6 months per year. (2) Long-stay visa for elderly parents: extremely limited, requires documented medical dependency, full financial guarantee from child, no work rights, no PR pathway. Japan is historically very closed to immigration for non-work purposes. Elderly parent long-term residence essentially unavailable for typical cases.",
+    "parentVisaType": "Temporary Visitor Visa (90 days, renewable once = 6 months) OR exceptional long-stay for documented elderly dependency",
+    "parentPRTimeline": "N/A",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "Travel insurance mandatory for visits; Japan's NHI not available for short-term visitors; medical costs VERY expensive without insurance in Japan (world-class hospitals but unsubsidized prices for non-insured); comprehensive travel insurance essential",
+    "parentCitizenshipEligible": false,
+    "parentSponsorshipScore": 10,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "Japan does NOT grant birthright citizenship (no jus soli). Strict jus sanguinis (blood right): Japanese citizenship only if at least one parent is Japanese citizen. Child born in Japan to foreign parents gets parents' nationality (Bangladeshi). Exception: if child would otherwise be stateless, Japan may grant citizenship. For Bangladeshi children: no birthright citizenship in Japan under any normal circumstances.",
+    "derivativeCitizenship": true,
+    "derivativeCitizenshipNotes": "Children can naturalize with parents after required residence period (primary 5+ years, Highly Skilled Professional potentially less). CRITICAL: Japan requires renouncing ALL other citizenships upon naturalization (Japan DOES NOT allow dual citizenship officially - among strictest globally). Must renounce Bangladeshi passport to become Japanese citizen. This is a major consideration for Bangladeshi families. Some dual nationals (Japan-US, Japan-other) exist in legal gray area but Japan Ministry of Justice actively asks nationals to renounce other citizenship upon reaching adulthood.",
+    "citizenshipTimeline": "5 years legal residence minimum → naturalization; MUST renounce Bangladeshi passport; no dual citizenship officially",
+    "citizenshipForChildrenScore": 45
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsJPY": "25,000,000-40,000,000 JPY (€156,000-250,000) - Tokyo-centric estimate",
+    "keyFinancialAdvantages": "Universal healthcare (family covered cheaply); free K-12 (compulsory education); free childcare ages 3-5 (2019 reform); Kodomo Teate ¥15,000/month per child under 3; affordable national university tuition (€3,130-6,260/year); company benefits often include housing allowance, family allowance supplements; safe, efficient society; aging population = increasing demand for STEM workers",
+    "keyFinancialChallenges": "Spouse 28-hour work limit (vs. unlimited in Canada/Germany); Japanese language investment for entire family (2-3 years minimum); small Bangladeshi community (cultural isolation); waiting lists for nursery daycare (major issue in Tokyo, Osaka, Nagoya); must renounce Bangladeshi passport for citizenship; Tokyo rent ¥100,000-200,000+/month (€625-1,250); long PR timeline (10 years standard); intense education pressure (juken - exam preparation from early age)",
+    "breakEvenPointYears": "Year 4-5 (work established, family settled, Japanese language functional, subsidies fully accessible)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "Phase 1 (Years 1-2): Primary establishes Japanese career (JLPT N2 minimum before arrival). Begin family reunification after stable work visa. Entire family enrolled in Japanese language programs. Children in Japanese public school (fastest language acquisition). Phase 2 (Years 2-5): Spouse maximizes 28-hour work allowance (or pursues own Engineer visa if possible). Accumulate Highly Skilled Professional (HSP) points aggressively (target 70+ points for 5-year PR track). Register for nursery daycare ASAP (waiting list in cities). Phase 3 (HSP 5 years or standard 10 years): Apply for PR. PR = spouse full work rights (major income increase). Phase 4 (citizenship - optional): Seriously consider whether to naturalize (requires renouncing Bangladeshi passport). Many long-term residents in Japan choose to remain PRs without naturalizing to keep original nationality.",
+    "worstScenario": "Japanese language inadequate for job advancement (glass ceiling without N1); spouse unable to find meaningful work within 28-hour limit; nursery daycare waiting list means no childcare for 1-2 years; cultural isolation (small Bangladeshi community, homogeneous Japanese society); must renounce Bangladeshi passport for citizenship (major psychological and practical challenge); intense academic pressure on children (juken system); 10-year PR wait without HSP points.",
+    "bestScenario": "Highly Skilled Professional route: PhD + high salary (¥6,000,000+/year = €37,500+) + age under 35 = 70+ HSP points = 5-year PR track. Spouse with JLPT N2 secures own part-time IT work within 28-hour limit. Children excel in Japanese school system. Free childcare ages 3-5. PR at 5 years. Spouse gets PR simultaneously = full work rights. Remain as PRs without naturalizing (keep Bangladeshi passport). World-class safe society. AI career at Sony AI, Toyota AI, Rakuten, or research at Tokyo University.",
+    "bangladeshiSpecificTips": [
+      "Japanese language is THE gatekeeper: JLPT N2 is absolute minimum for professional employment; N1 for management and citizenship. Family members must also learn Japanese: spouse for employment (even within 28h limit, N2+ needed for most jobs), children in school (immersion learning fastest for children), primary for career advancement. Invest in Japanese language from Day 1 (free NHK Web Easy, Genki textbooks, Anki flashcards; formal classes at Japanese-language schools ¥50,000-150,000/semester)",
+      "Very small Bangladeshi community in Japan (estimated 15,000-20,000 total; mostly Tokyo, Osaka). Tokyo Camii (Yoyogi-Uehara mosque - largest in Japan, beautiful Ottoman architecture) is main Islamic center. Otsuka Mosque, Koenji Mosque smaller alternatives. Halal food increasingly available in Tokyo (Shinjuku, Asakusa; halal ramen, halal sushi; growing market). But expect significantly less cultural infrastructure than Canada/UK/US destinations. Japanese Muslim community small (estimated 100,000-200,000 nationally, mostly foreign residents).",
+      "Nursery daycare (hoikuen) crisis: apply IMMEDIATELY after arrival (some municipalities accept applications from pregnant women). Waiting lists 6-18 months in Tokyo, Osaka, Nagoya. Nursery lottery system (申し込み - mōshikomi). Consider areas with shorter waiting lists: Saitama, Chiba, Kanagawa suburbs of Tokyo. Yōchien (kindergarten 3-6 age) now free (government subsidy since 2019) - less waiting list than nursery.",
+      "Kodomo Teate (child allowance): apply at ward office (shiyakusho/kuyakusho) after child's residency registration; ¥15,000/month per child under 3 (€94/month); ¥10,000/month per child 3-12 (€63/month); ¥0 if annual income exceeds ¥9,600,000 (€60,000) - high threshold rarely hit for new immigrants. Multiple children: higher rates.",
+      "HSP points strategy (critical for 5-year PR): maximize by: PhD degree (30 points) + high salary ¥6M+ (40 points) + age under 30 (15 points) + JLPT N1 (15 points) + Japanese university education (10 points) + research achievements (publications) = easily exceed 100 points. 70+ points = 5-year PR (vs. standard 10 years). 80+ points = 3-year PR. Use immigration attorney to audit HSP point calculation accurately.",
+      "Shūkatsu (job hunting system): Japanese annual mass recruitment system very different from Western job applications. Large companies (Sony, Toyota, NTT, Rakuten, SoftBank, Line, Mercari) recruit through campus events, company seminars, 企業説明会 (kigyō setsumeikai). International students must participate in shūkatsu: OB/OG visits, group discussions (GD), multiple interview rounds. Start 12-18 months before graduation. Professor introduction (教授推薦 - kyōju suisen) can bypass some steps. Foreign-friendly companies (外資系企業 - gaishikei kigyō): Goldman Sachs, Google Japan, Microsoft Japan, McKinsey, IBM Japan - more English-accessible, merit-based hiring.",
+      "My Number Card (マイナンバーカード): apply immediately after address registration; needed for taxes, social insurance, many government services; increasingly required for banking (2026+); the Japanese national ID system. Essential document."
+    ]
+  },
+  "overallFamilyRating": "Moderate family destination with improving prospects. Strengths: universal healthcare (family insured cheaply), free K-12 (Japanese language), free childcare ages 3-5 (2019 reform), Kodomo Teate child allowance, very safe society, excellent education quality, affordable national university tuition (€3,130/year), Highly Skilled Professional 5-year PR track. Significant challenges: spouse 28-hour work limit (major income restriction vs. Canada/Germany), Japanese language critical for ALL family members (2-3 year investment minimum), very small Bangladeshi community (cultural isolation significant), must renounce Bangladeshi passport for citizenship (no dual nationality), nursery daycare waiting lists crisis, intense academic pressure on children, long PR timeline (10 years standard, 5 years HSP). Best for: Bangladeshi STEM graduates who are deeply committed to Japanese language/culture, comfortable with homogeneous society, willing to invest 5-10 years for long-term stability, and prioritize world-class safety and social services over cultural diversity and community support. Not suitable for those unable to invest in Japanese language or expecting quick PR or dual citizenship.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "South Korea",
+  "countryCode": "KR",
+  "overallFamilyScore": 62,
+  "overallFamilyScoreConfidence": 78,
+  "overallFamilyScoreEvidence": "South Korea has improving but still limited family immigration: spouse on F-3 dependent visa can work with additional permit (limited occupations, case-by-case), free compulsory K-9 education, national health insurance (excellent quality, low cost), child support allowances (Aiding Children and Families program). However: PR extremely difficult (F-2 points system + 5 years F-5, strict criteria), citizenship very difficult (TOPIK 6 language requirement, must renounce Bangladeshi passport, cultural assimilation interviews), Korean language absolutely critical, very intense education culture (hagwon system pressure), small Bangladeshi community, aging population creating future opportunity but current immigration culture still conservative.",
+  "spouseRights": {
+    "spouseCanWork": true,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": "Conditional",
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 42,
+    "spouseRestrictions": "F-3 (dependent visa) spouses CAN apply for work permission (취업활동허가 - chwieop hwaldong heoga) but this is NOT automatic - requires separate application to Korea Immigration Service, approval is discretionary, limited to certain occupations (professional, specialist roles preferred; unskilled work restricted), maximum hours may apply. In practice: Korean language (TOPIK 3-4 minimum) is de facto requirement for most Korean employers even with work permission. After F-2 (long-term residence) or F-5 (PR): full unrestricted work rights. After F-2 points accumulation (3-5 years on E-7 visa): spouse included in F-2 application.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Korean universities; fees apply (₩3,000,000-8,000,000/year = €2,030-5,420); Korean language required for most programs; English-language programs available at KAIST, POSTECH, SNU, Yonsei, Korea University graduate level",
+    "estimatedIncomeOpportunityCostKRW": "30,000,000-50,000,000 KRW/year (€20,370-33,950) limited vs. full-time employment",
+    "dualIncomeViability": "Poor during E-7 work visa phase; improves after F-2; full after F-5 PR"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "F-3 dependent visa (after primary's work visa secured)",
+    "freeSchooling": true,
+    "freeSchoolingNotes": "FREE compulsory education K-9 (초등학교 elementary + 중학교 middle school). 고등학교 (high school) near-free with nominal fees. Korean language instruction throughout. Schools provide multicultural family education support (다문화가족지원센터 - multicultural family support centers) including Korean language classes for immigrant children. MAJOR CHALLENGE: intense education culture (hagwon after-school academies: ₩500,000-2,000,000/month = €340-1,360/month PER CHILD for math/English/Korean/science academies - considered essential by Korean parents; enormous additional cost). University: ₩3,000,000-8,000,000/year (€2,030-5,420) at national universities (Seoul National University, KAIST, POSTECH - excellent); scholarships available for PR-holding students.",
+    "schoolingQualityScore": 85,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "National universities affordable (₩3,000,000-6,000,000/year = €2,030-4,070). KAIST, POSTECH offer full scholarships for top students. Korea Student Aid Foundation (KOSAF) loans/grants for PR-holding students. Private universities more expensive. Korean language required for most programs.",
+    "childcareAvailability": "Eoulim Bo육지원 (childcare support): government subsidized 어린이집 (eolinijip - daycare centers) for children under 5; income-based subsidy up to 90% of costs; basic childcare voucher (보육료 바우처): covers ₩300,000-500,000/month of daycare costs for all children under 5 regardless of income; 유치원 (yuchiwon - kindergarten 3-5): subsidized. Aida (아이돌봄) home care service subsidized. Comprehensive system though quality varies.",
+    "childcareCostScore": 72
+  },
+  "healthcareAccess": {
+    "score": 85,
+    "duringStudy": "National Health Insurance (국민건강보험 - Gukmin Geongang Boheom) for international students after 6 months enrollment OR after local registration: ₩100,000-150,000/month (€68-102); comprehensive 70% coverage; copayment 30%; family can be enrolled as dependents for additional premium",
+    "duringWorkPermit": "Full NHI mandatory: employee pays ~3.5% of salary, employer pays ~3.5%; comprehensive coverage for all medical care (30% copayment for outpatient, less for inpatient); dependents (spouse, children) insured under primary's NHI at no additional premium if not separately employed; dental: basic coverage; mental health: limited coverage; quality excellent and affordable",
+    "afterPR": "Same NHI as Korean citizens; extraordinary value (30% copayment system means expensive treatments affordable); Medical Aid (의료급여 - Uiryo Geubyeo) for very low income; Long-term care insurance (노인장기요양보험) for elderly care; Cancer and 4 major diseases: 5% copayment",
+    "estimatedFamilyCostKRW": "0-300,000/year in copayments (family of 4; extremely low); monthly premium shared employer-employee"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "South Korea does NOT have a parent sponsorship immigration program for adult foreign nationals. Parents can apply for: (1) C-3 temporary visitor visa (90 days, extendable in country); (2) F-1 family visit visa (for close relatives of registered foreign residents) - up to 1 year, renewable; no work rights, no PR pathway. Korea Immigration Act does not provide for parent permanent residence via adult child sponsorship.",
+    "parentVisaType": "C-3 tourist visa (90 days) OR F-1 family visit visa (up to 1 year for relatives of foreign residents)",
+    "parentPRTimeline": "N/A",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "Not covered by NHI on F-1 or C-3 visa; private travel insurance essential; medical care expensive without NHI coverage; Korea has excellent hospitals (Samsung Medical Center, Asan Medical Center) but costly for uninsured",
+    "parentCitizenshipEligible": false,
+    "parentSponsorshipScore": 18,
+    "f1VisaNote": "F-1 family visit visa (장기체류 가족방문 - long-stay family visit): available for parents/siblings of registered foreign residents; up to 1 year residence; renewable; no work rights; better than tourist visa for longer parental visits. More accessible than most countries for extended family visits (though still no PR pathway).",
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "South Korea applies strict jus sanguinis (nationality by blood). Children of foreign parents born in Korea are NOT Korean citizens. Korean citizenship: at least one parent must be Korean citizen at time of birth. Exception: foundlings found in Korea with unknown parents may receive citizenship. No birthright citizenship for Bangladeshi parents.",
+    "derivativeCitizenship": true,
+    "derivativeCitizenshipNotes": "Children can naturalize with parents after required residence (F-5 PR → apply for citizenship). CRITICAL: Korea generally does NOT allow dual citizenship for adult naturalized citizens. Must renounce Bangladeshi passport upon naturalization (except in very limited circumstances: Korean government exempts naturalized citizens over 65 from renunciation requirement, and children under 22 born of mixed Korean-foreign parentage may retain dual nationality temporarily). For Bangladeshi graduates naturalizing as adults: must renounce Bangladeshi citizenship. Major consideration.",
+    "citizenshipTimeline": "5-7 years legal residence → F-5 PR → additional 5 years as PR → naturalization eligible; must renounce Bangladeshi passport; long total timeline 10-15 years",
+    "citizenshipForChildrenScore": 42
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsKRW": "200,000,000-350,000,000 KRW (€135,800-237,700) - Seoul-centric",
+    "keyFinancialAdvantages": "Universal NHI healthcare (family cheaply insured); free compulsory K-9 education; childcare voucher ₩300,000-500,000/month; affordable national university tuition (€2,030-4,070/year); F-1 family visit visa (1-year renewable for parents - better than most countries for visits); AI/tech sector booming (Samsung AI, Naver, Kakao - competitive salaries); aging population = growing immigration need",
+    "keyFinancialChallenges": "Hagwon (private academy) culture: ₩500,000-2,000,000/month per child (€340-1,360) considered necessary by parents - enormous hidden education cost; spouse work restrictions (F-3 limited); TOPIK language investment for entire family (TOPIK 4+ minimum, TOPIK 5-6 for PR); intense education competition (suneung college entrance exam pressure); must renounce Bangladeshi passport for citizenship; Seoul rent expensive (₩1,000,000-2,000,000+/month = €680-1,360); long PR/citizenship timeline",
+    "breakEvenPointYears": "Year 3-5 (E-7 work established, Korean language functional, F-2 points accumulating, NHI fully accessible)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "Phase 1 (Years 1-2): Primary on E-7 work visa. Bring family after work visa stable. Both spouses learn Korean intensively (TOPIK 4+ for primary career advancement, TOPIK 3+ for spouse work permission). Children in Korean school (fastest language acquisition). Register for childcare voucher immediately. Phase 2 (Years 2-5): Accumulate F-2 points (salary ₩40M+/year = €27,200+, TOPIK 4-5, age, degree). F-2 application: spouse included = spouse full work rights after F-2. Phase 3 (F-5 PR after 5 years): PR for entire family. Phase 4 (citizenship - carefully consider): Requires TOPIK 6, cultural assimilation interview, renouncing Bangladeshi passport - many long-term residents choose to remain F-5 PRs rather than naturalize. Parents on F-1 family visit visa (1 year renewable) for extended visits - better than most non-Asian countries.",
+    "worstScenario": "Hagwon culture shock: children's private academy expenses ₩1,000,000-2,000,000/month per child (€680-1,360) becoming unavoidable social pressure; Korean suneung (college exam) system causing extreme stress on children; spouse unable to find meaningful work within F-3 restrictions; Korean language barrier severe for spouse (employment and daily life); cultural assimilation challenges in relatively homogeneous Korean society; must renounce Bangladeshi passport for citizenship.",
+    "bestScenario": "Samsung AI Lab or Naver AI/HyperCLOVA team role (₩80,000,000-150,000,000/year = €54,500-102,000). Both spouses with TOPIK 4+ working in Seoul tech sector. F-2 points achieved at Year 3. F-5 PR at Year 5. NHI family healthcare excellent and cheap. Free K-9 education. Children bilingual Korean-English (competitive advantage). F-1 visa for parents to visit annually. Seoul's world-class infrastructure and safety. Keep F-5 PR status (no need to naturalize if Bangladeshi passport retention priority).",
+    "bangladeshiSpecificTips": [
+      "Small Bangladeshi community in South Korea (estimated 20,000-25,000 total; mostly Seoul/Gyeonggi province, Ansan city - known as 'multicultural hub'). Seoul Central Masjid (이태원 이슬람 사원 - Itaewon Central Mosque) is main mosque, architecturally significant. Ansan Mosque serves larger Muslim community (Bangladeshi, Pakistani, Indonesian workers). Halal food in Itaewon (multicultural district, Seoul) improving significantly; Korean halal market growing (Muslim tourist boom 2023-2026). Bengali restaurants in Ansan, limited in Seoul. Significant cultural isolation expected outside multicultural areas.",
+      "TOPIK (한국어능력시험 - Test of Proficiency in Korean) strategy: invest in TOPIK 4 (intermediate-high) as MINIMUM for professional employment and F-2 points. TOPIK study: free materials at topik.go.kr; TTMIK (Talk To Me In Korean) excellent resource; King Sejong Institute (세종학당) free Korean classes globally AND in Korea; university Korean language programs. TOPIK 4 realistically achievable in 2-3 years intensive study for Bengali speakers.",
+      "Hagwon (학원) reality check: Korean children attend hagwon (private academies) for math (수학), English (영어), Korean (국어), science (과학), coding after school AND on weekends. Average Korean family spends ₩500,000-1,000,000/month per child (€340-680) minimum. Social pressure to send children is extreme. Bangladeshi parents should be aware: (1) this is OPTIONAL (public school provides adequate education), (2) resisting hagwon culture saves significant money, (3) children without hagwon can still succeed but may face social peer pressure. Setting boundaries early important.",
+      "Childcare voucher (보육료 바우처): applies to 어린이집 (daycare centers) for children under 5; basic voucher covers ₩300,000-500,000/month regardless of income; additional income-based subsidies available; apply at 주민센터 (Juminsenteo - community service center) in your district immediately after Alien Registration Card obtained",
+      "Alien Registration Card (외국인등록증 - Oegukin Deungnokcheung): apply within 90 days of entering Korea; ABSOLUTELY ESSENTIAL for banking, phone plan, NHI registration, school enrollment, everything. Apply at local Immigration Office or Hi Korea (hikorea.go.kr) portal. Without ARC, daily life essentially impossible in Korea.",
+      "F-2 points calculation audit: hire Korean immigration attorney (행정사 - haengjeongsa or 변호사 - byeonhosa specializing in immigration) to accurately calculate your F-2 point score. Points: education (PhD=30), Korean language TOPIK (TOPIK 6=20, TOPIK 5=15, TOPIK 4=10), salary (₩40M+ = points), age (younger = more points), income tax compliance, volunteer activities, Korean culture/history knowledge. Target 80+ points for comfortable F-2 eligibility.",
+      "Samsung/Naver/Kakao recruitment: these top Korean tech companies increasingly recruit globally for AI roles. Samsung Research (삼성리서치), Naver CLOVA (now HyperCLOVA), Kakao Brain have competitive international hiring programs. Apply through company career portals. LinkedIn effective for Korean tech companies. Annual hiring season: biannual large recruitment (상반기 June, 하반기 November) for large corporations; startups year-round. Korean resume format (이력서) different from Western CV - research before applying."
+    ]
+  },
+  "overallFamilyRating": "Moderate-to-low family destination with improving prospects driven by demographic crisis (0.7 birthrate - lowest globally 2024). Strengths: excellent affordable universal healthcare (NHI family insured cheaply), free compulsory K-9 education, childcare voucher system, F-1 family visit visa (1-year renewable for parents - better than most for family visits), aging population creating genuine immigration need, booming AI ecosystem (Samsung, Naver, Kakao). Significant challenges: spouse F-3 work restrictions (limited occupations, discretionary approval), Korean language CRITICAL for family integration (TOPIK 4-6 required at various stages), hagwon culture adds ₩500,000-2,000,000/month per child in hidden education costs, must renounce Bangladeshi passport for citizenship (no dual nationality for most naturalized adults), extremely difficult PR (F-2 points + F-5 conditions) and citizenship (TOPIK 6, cultural assimilation interview), intense education competition pressure on children, small and isolated Bangladeshi community. Best for: Bangladeshi STEM graduates deeply committed to Korean language (TOPIK 4+ minimum), able to work in booming Korean AI sector (Samsung AI, Naver HyperCLOVA, Kakao Brain), comfortable with homogeneous society, and treating Korea as 5-10 year career opportunity rather than permanent citizenship destination. Many will optimally achieve F-5 PR (keep Bangladeshi passport as F-5 holder) rather than naturalizing to avoid renunciation requirement.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Singapore",
+  "countryCode": "SG",
+  "overallFamilyScore": 45,
+  "overallFamilyScoreConfidence": 85,
+  "overallFamilyScoreEvidence": "Singapore has poor family immigration profile for long-term settlement: NO PR or citizenship pathway for most, spouse work rights limited and conditional (Dependant's Pass requires LOC - Letter of Consent, discretionary approval), children's international education extremely expensive (SGD 30,000-50,000/year), high cost of living, job loss means family deportation within 30 days, parent sponsorship unavailable. EP (Employment Pass) salary requirements rising annually. Golden visa equivalent doesn't exist in same form as UAE. Treat exclusively as career acceleration tool, NOT family settlement destination.",
+  "spouseRights": {
+    "spouseCanWork": false,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": "Conditional",
+    "spouseCanWorkAfterPR": true,
+    "spouseWorkScore": 30,
+    "spouseRestrictions": "Dependant's Pass (DP) requires: primary EP holder earns SGD 6,000+/month (2026) for DP eligibility. Spouse work rights: Letter of Consent (LOC) from MOM required - discretionary approval. LOC easier if primary earns SGD 12,000+/month (€8,220+). LTVP (Long-Term Visit Pass - if primary earns SGD 4,000-5,999) does NOT come with work rights at all. Spouse practically cannot work in Singapore unless primary earns high salary AND MOM approves LOC. Major financial restriction. After Singapore PR: spouse included in PR application; full work rights as PR holder.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Singapore universities; full international fees apply (SGD 15,000-40,000/year = €10,300-27,500); no subsidies for dependent pass holders; NUS, NTU, SMU, SUTD - world-class but expensive for non-subsidized",
+    "estimatedIncomeOpportunityCostSGD": "40,000-80,000 SGD/year (€27,450-54,900) if spouse would otherwise work - significant lost income",
+    "dualIncomeViability": "Poor - only achievable if primary earns SGD 12,000+/month AND MOM approves LOC; most families single income in one of world's most expensive cities"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "Long-Term Visit Pass (LTVP) for children of EP holders if primary earns SGD 6,000+/month; Dependant's Pass for married children under 21",
+    "freeSchooling": false,
+    "freeSchoolingNotes": "No free public education for expatriate children. Government schools: limited access for foreigners (Singapore Citizens and PRs priority; expatriates accepted only if space available AND typically pay higher fees - SGD 600-1,300/month = €412-893/month per child). Most expatriate families use international schools: SGD 30,000-50,000/year per child (€20,580-34,300/year) - extremely expensive. Some 'local' international schools moderately cheaper: SGD 15,000-25,000/year (€10,290-17,150). No subsidies for non-PR children. Second major cost driver after housing.",
+    "schoolingQualityScore": 88,
+    "universityAccessAfterPR": true,
+    "universityAccessNotes": "After Singapore PR: eligible for subsidized university fees (SGD 8,000-15,000/year = €5,490-10,290 vs. full international SGD 25,000-45,000/year = €17,150-30,870). NUS, NTU - consistently top-20 globally. Singapore government tuition grant for PR holders (obligation to work in Singapore 3 years after graduation). Significant savings after PR for children.",
+    "childcareAvailability": "No government childcare subsidies for non-citizens/non-PRs. Private infant care: SGD 1,500-3,000/month (€1,030-2,060). Childcare centers: SGD 1,000-2,000/month (€687-1,374). Baby Bonus Scheme (BBs), CDA (Child Development Account), Medisave grants: ONLY for Singapore citizens and PRs. Expatriates on employment visas receive NONE of Singapore's extensive family support schemes.",
+    "childcareCostScore": 10
+  },
+  "healthcareAccess": {
+    "score": 60,
+    "duringStudy": "Student insurance from university typically required; MediShield Life NOT available for non-PRs; private integrated shield plans possible; public hospital access: subsidized rates only for citizens/PRs (Class B2/C wards); expatriates pay private rates (3-5x more expensive); SGD 5,000-15,000 for hospital stay without insurance",
+    "duringWorkPermit": "Employer-mandated insurance required by MOM (basic: SGD 15,000 inpatient coverage minimum). MediShield Life: NOT available for EP/S Pass holders. Most employers provide additional private integrated shield plan; comprehensive family coverage: SGD 3,000-8,000/year (€2,060-5,490) employer may or may not cover dependents. Public hospital access: private/unsubsidized rates for non-citizens/non-PRs (expensive without comprehensive insurance).",
+    "afterPR": "MediShield Life (mandatory, portable healthcare insurance) available after PR; subsidized healthcare in public hospitals (B2/C wards); Medisave CPF contributions (employer + employee) for medical savings; CareShield Life for long-term disability; quality public healthcare excellent when subsidized (after PR). Major improvement vs. employment visa phase.",
+    "estimatedFamilyCostSGD": "5,000-12,000/year (private insurance family; public healthcare full private rates without PR)"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "Singapore does NOT have a parent sponsorship immigration program for adult expatriate workers. Parents of Singapore citizens (NOT PRs or EP holders) can apply for Long-Term Visit Pass (LTVP) if primary is Singapore citizen only. For EP/PR holders: parents can visit on social visit pass (30 days on arrival for most nationalities, extendable to 90 days at ICA). No mechanism for parents of non-citizen EP holders to stay long-term. ICA (Immigration and Checkpoints Authority) at their discretion may extend social visit passes but no formal program.",
+    "parentVisaType": "Social Visit Pass (30-90 days) for parents of EP holders; LTVP only for parents of Singapore citizens (not EP holders)",
+    "parentPRTimeline": "N/A for EP holders",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "Travel insurance mandatory; no public healthcare access on social visit pass (all private rates, very expensive in Singapore hospitals); comprehensive travel insurance with minimum SGD 50,000 coverage essential",
+    "parentCitizenshipEligible": false,
+    "parentSponsorshipScore": 8,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "Singapore does NOT grant birthright citizenship (no jus soli). Child born in Singapore gets citizenship only if at least one parent is Singapore citizen. Children of PR parents are also not automatic citizens (must register). Children of EP holders born in Singapore: NOT Singapore citizens. They get Bangladeshi nationality (parents' nationality).",
+    "derivativeCitizenship": "Extremely Difficult",
+    "derivativeCitizenshipNotes": "Singapore citizenship for children follows parents. If parent naturalized (extremely rare and difficult for non-Malaysians - <1% approval rate, opaque criteria, typically requires: PR for several years, demonstrating strong ties to Singapore, Singapore citizen family member, national service contribution for male children). Singapore DOES allow dual citizenship for children ONLY until age 21 (if born to Singapore citizen parent). For Bangladeshi families naturalizing: must renounce other citizenships (Singapore does not allow dual citizenship for adults).",
+    "citizenshipTimeline": "PR extremely difficult (2-6 years work + approval <5%) → Citizenship even harder (additional years as PR + strict criteria); must renounce Bangladeshi passport; realistic for very few Bangladeshi nationals",
+    "citizenshipForChildrenScore": 22
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsSGD": "800,000-1,500,000 SGD (€549,000-1,030,000) for family of 4 in Singapore - one of the most expensive family destinations globally",
+    "keyFinancialChallenges": "International school: SGD 30,000-50,000/year per child (€20,580-34,300); housing: SGD 3,500-8,000/month rental (€2,400-5,490); healthcare: private SGD 5,000-12,000/year family; NO child benefits/subsidies as EP holder; NO childcare subsidies; NO MediShield Life; no free schooling; spouse typically cannot work; job loss = 30-day family deportation deadline",
+    "keyFinancialAdvantages": "Low income tax (11% on SGD 120,000 = €82,400; 0% on first SGD 20,000); high STEM salaries (SGD 6,000-15,000/month = €4,120-10,300); English-speaking; efficient city; excellent private schools (if can afford); strategic career location; CPF contributions employer (returned upon leaving Singapore)",
+    "costOfOnSchoolAgeFamilyPerYear": "SGD 150,000-250,000+ (€103,000-172,000) for all expenses including school fees - most net salaries insufficient for this",
+    "breakEvenPointYears": "Never for family with school-age children unless primary earns SGD 25,000+/month (€17,150+)"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "CRITICAL RECOMMENDATION: DO NOT bring school-age children to Singapore unless primary earns SGD 20,000+/month (€13,730+). Even then: financial strain extreme. OPTIMAL USE: Single or couple (no children) for 3-5 years maximum → aggressive savings (save SGD 200,000-500,000 = €137,000-344,000 in 3-5 years) → relocate to Canada/Australia for PR with capital. If family situation unavoidable: (1) target government school registration immediately (limited expatriate spots but dramatically cheaper: SGD 300-1,000/month vs. international school SGD 2,500-4,200/month); (2) spouse pursues own EP independently (separate job, separate employer); (3) minimize Singapore stay (3-4 years max); (4) apply Canada Express Entry simultaneously (Singapore work experience + savings = excellent application).",
+    "worstScenario": "EP salary SGD 6,000 (minimum for DP); international school SGD 35,000/year per child (1 child); HDB rental SGD 3,500/month; healthcare SGD 8,000/year family; spouse LOC not approved (cannot work); total expenses SGD 100,000/year vs. take-home SGD 64,000 (after 11% tax) = SGD 36,000 deficit annually. Financially impossible. Would deplete savings entirely within 2-3 years. Many Bangladeshi families in this trap - avoid.",
+    "bestScenario": "Single person in Google Singapore, Microsoft Azure, or Sea Group earning SGD 15,000-25,000/month (€10,300-17,150). Save SGD 8,000-15,000/month after expenses. Accumulate SGD 400,000-700,000 (€275,000-481,000) in 4 years TAX-EFFICIENTLY (11% income tax vs. 30-45% in Europe/Canada). Use as: down payment on Canadian property, proof of funds for PR applications, startup capital, global investment portfolio. Leave Singapore after 4-5 years. Excellent career credentials (Google/Meta/Sea/Grab Singapore experience = global premium).",
+    "bangladeshiSpecificTips": [
+      "Singapore Bangladeshi community: estimated 40,000-60,000 professional-class Bangladeshis in Singapore (significantly more blue-collar construction workers, often on S-Pass or Work Permit - different situation). Sultan Mosque (Kampong Glam area - historic, beautiful), Malabar Mosque, Al-Abrar Mosque, Hajjah Fatimah Mosque. Halal food ubiquitous (Singapore is officially halal-friendly; many certified restaurants; even food courts have halal stalls). Bengali restaurants in Little India area (Serangoon Road). Bangladeshi professional community active on LinkedIn, expat forums, community WhatsApp groups.",
+      "CPF (Central Provident Fund) for EP holders: employer contributes CPF ONLY for Singapore citizens and PRs (NOT EP holders). However: upon leaving Singapore permanently, check if any Singapore savings or investments can be withdrawn. No CPF for EP holders = no retirement savings via Singapore system. Plan retirement savings independently (global investment accounts: Interactive Brokers, Tiger Brokers Singapore office accessible).",
+      "Government schools for children: if bringing children, register for government school IMMEDIATELY via MOE (Ministry of Education) School Registration Exercise. Primary school registration: up to 2 years in advance for Phase 2B/2C (expatriates). School enrollment via StudentiLink portal. Government schools significantly cheaper: SGD 300-600/month for primary vs. international school SGD 2,000-4,000/month. Quality excellent (Singapore's PISA scores among world's highest). Note: curriculum in English primarily; good for language but competition intense (PSLE, O-levels, A-levels pressure).",
+      "EP renewal and COMPASS framework (since 2023): employer scored on diversity (percentage of same-nationality employees vs. MOM benchmarks), qualifications, salary relative to peers. If employer has too many Bangladeshi employees already, your EP renewal may be rejected regardless of individual qualifications. Diversify employer base consideration: large MNCs (Microsoft, Google, Amazon, Shopify) more compliant with COMPASS diversity requirements than smaller companies with concentrated South Asian workforce.",
+      "Exit strategy with Singapore experience: Singapore work experience (especially MNC regional HQ experience, fintech, tech sector) is HIGHLY VALUED globally for: (1) Canada Express Entry - adds CRS points for foreign work experience; Singapore work experience = strong profile; (2) Australia SkillSelect - Singapore regional hub experience valued; (3) UK Global Talent Visa - Singapore tech experience demonstrates global competitiveness; (4) Germany EU Blue Card with Singapore-earned savings covering cost differences. Plan exit 3-5 years from entry with specific financial target (SGD 300,000-500,000 savings minimum).",
+      "Healthcare: always purchase comprehensive private integrated shield plan (not just employer's basic coverage). Recommended insurers: AIA, Great Eastern, Prudential, NTUC Income. Comprehensive plan: SGD 1,500-3,000/year per adult (family coverage SGD 4,000-8,000/year total). Mount Elizabeth, Gleneagles, Raffles Medical = world-class private hospitals. If uninsured and hospitalized: SGD 5,000-30,000+ bills possible. Non-negotiable expense."
+    ]
+  },
+  "overallFamilyRating": "POOR family immigration destination for Bangladeshi STEM graduates with long-term family settlement goals. Key failures: no PR pathway for most (< 5% approval, opaque criteria), no citizenship practically, spouse cannot work without discretionary LOC (requires high primary salary SGD 12,000+), NO free public education (international school SGD 30,000-50,000/year per child), no government childcare or child benefit subsidies as EP holder, no MediShield Life, parent sponsorship unavailable, job loss = 30-day family deportation. The only advantage is zero/low income tax enabling savings - but school fees eliminate this advantage for families. VERDICT: Excellent for single person or childless couple seeking 3-5 year wealth accumulation and career acceleration via world-class MNC exposure. Completely unsuitable as family settlement destination. Treat Singapore as an elite internship for your CV and bank account, then relocate to Canada/Australia/Germany for actual family life.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "China",
+  "countryCode": "CN",
+  "overallFamilyScore": 42,
+  "overallFamilyScoreConfidence": 72,
+  "overallFamilyScoreEvidence": "China has very poor family immigration profile for settlement: NO traditional PR (Green Card) for virtually all foreigners, NO citizenship for non-ethnic Chinese, spouse cannot work (dependent visa prohibits employment), children's international school extremely expensive (¥150,000-300,000/year per child), Great Firewall restricts internet access, authoritarian governance with censorship and surveillance, geopolitical risk, air pollution significant in major cities, small Bangladeshi community. However: low cost of living relative to salary, long-term residence permits (5-10 year) improving, excellent healthcare in tier-1 cities, and China's AI ecosystem is world-class second only to USA. Treat as 5-10 year career opportunity for ambitious AI professionals, NOT family settlement destination.",
+  "spouseRights": {
+    "spouseCanWork": false,
+    "spouseCanWorkDuringStudy": false,
+    "spouseCanWorkDuringPostStudy": false,
+    "spouseCanWorkDuringWorkPermit": false,
+    "spouseCanWorkAfterPR": "N/A - PR essentially unavailable",
+    "spouseWorkScore": 18,
+    "spouseRestrictions": "Spouse on S1 dependent residence permit CANNOT work. Must obtain entirely separate Work Permit and Work-type Residence Permit (requires own job offer, employer sponsorship, meets Work Permit category criteria independently - 2+ years experience normally required). In practice: for Bangladeshi spouse to work in China, entirely separate visa process needed. No exceptions for dependent visa holders. Mandarin Chinese language (HSK 5+) essentially required for any meaningful employment. Major restriction vs. all other analyzed countries.",
+    "spouseCanStudy": true,
+    "spouseStudyNotes": "Spouse can study at Chinese universities; fees apply (¥20,000-60,000/year = €2,570-7,720); Mandarin language required for most programs; English-language programs limited to some graduate programs at Tsinghua, PKU, Fudan, SJTU; tuition cheaper than Western countries but language barrier significant",
+    "estimatedIncomeOpportunityCostCNY": "200,000-400,000 CNY/year (€25,740-51,480) if spouse would otherwise be employed",
+    "dualIncomeViability": "Very poor unless spouse independently qualifies for Chinese work permit (separate lengthy process); effectively single income household in most cases"
+  },
+  "dependentChildren": {
+    "dependentChildrenAllowed": true,
+    "childrenVisaType": "S2 dependent visa (child of Work Permit holder) → Dependent Residence Permit",
+    "freeSchooling": false,
+    "freeSchoolingNotes": "Chinese public schools: technically accessible for foreign children in some cities with additional fees (¥10,000-30,000/year = €1,287-3,861) but taught entirely in Mandarin, follows Chinese national curriculum (patriotic education included), very limited support for non-Mandarin speakers, not internationally recognized for university admissions abroad. International schools EFFECTIVELY MANDATORY for children wishing to maintain international academic standards and future abroad: ¥150,000-300,000/year (€19,300-38,600) per child - extremely expensive. Beijing (ISB, WAB, BISS, Harrow Beijing), Shanghai (SAS, SHIS, Concordia), Shenzhen international schools. Major financial burden.",
+    "schoolingQualityScore": 65,
+    "universityAccessAfterPR": "N/A - PR essentially unavailable",
+    "universityAccessNotes": "No PR-equivalent for most foreigners. If staying long-term: children can potentially apply to Chinese universities (requiring Chinese language proficiency + gaokao or alternative entrance exams); Chinese universities increasingly English-program offerings. Foreign children effectively limited to international schools for internationally-recognized qualifications.",
+    "childcareAvailability": "Private international kindergartens: ¥10,000-25,000/month (€1,287-3,218) per child. Local Chinese kindergartens: ¥1,000-5,000/month (€129-644) but Mandarin only, extremely competitive (government subsidized spots for Chinese children first). No government subsidies for foreign children's childcare. Child benefit: national program (Child Allowance Yingjier Buzhu) being introduced but targets Chinese citizens only.",
+    "childcareCostScore": 22
+  },
+  "healthcareAccess": {
+    "score": 62,
+    "duringStudy": "University-affiliated hospitals available for students; basic coverage through university health insurance scheme; quality variable; major cities have international hospitals (Beijing United Family, Shanghai United Family) = excellent quality but expensive without insurance",
+    "duringWorkPermit": "Social insurance mandatory (employer + employee contribute to medical insurance fund - ¥200-500/month combined); covers basic care at local Chinese hospitals (70-80% reimbursement for within-network); dependent family members (spouse, children) can be added with additional contribution. HOWEVER: for foreigners, quality of Chinese public hospitals variable (language barrier, different standards of care especially outside tier-1 cities); most expat families use international hospitals (¥3,000-5,000/visit for GP; ¥10,000-50,000/night hospitalization without insurance); comprehensive international health insurance ESSENTIAL: ¥30,000-60,000/year (€3,861-7,723) for family",
+    "afterPR": "N/A for most (PR unavailable). Long-term residents (5-10 year residence permits): same social insurance system access as work permit holders. International hospitals: Beijing United Family, Raffles Medical Beijing, Shanghai United Family, Parkway Health Shanghai - world-class but expensive without insurance.",
+    "estimatedFamilyCostCNY": "30,000-60,000/year for comprehensive international health insurance (€3,861-7,723) + social insurance contributions"
+  },
+  "parentSponsorship": {
+    "parentSponsorshipAvailable": false,
+    "availabilityNotes": "China does NOT have a parent sponsorship immigration program for foreigners. Parents can apply for: (1) Tourist/business visa (M, L visa) - 30-90 days typically; (2) S2 short-term family visit visa (for parents of Work Permit holders) - up to 180 days; (3) S1 long-term family visa only for immediate family (spouse + children under 18 - NOT parents). Parents of foreign work permit holders in China: limited to tourist/business visas. No mechanism for long-term parent residence.",
+    "parentVisaType": "L tourist visa (30-90 days) OR S2 family visit visa (for immediate dependent family only - parents NOT included in standard S2 definition for most visa categories)",
+    "parentPRTimeline": "N/A",
+    "parentCanWork": false,
+    "parentHealthcareAccess": "No access to Chinese medical insurance system on tourist visa; must purchase travel insurance; tier-1 city international hospitals excellent quality if insured; public hospitals: language barrier, different standards, but very cheap; medical costs very low in China even private vs. Western countries",
+    "parentCitizenshipEligible": false,
+    "parentSponsorshipScore": 5,
+    "grandparentSponsorshipAvailable": false
+  },
+  "citizenshipForChildren": {
+    "birthrightCitizenship": false,
+    "birthrightNotes": "China applies strict jus sanguinis. Children born in China to foreign parents are NOT Chinese citizens. Chinese citizenship only if at least one parent is Chinese national. Child born in China to Bangladeshi parents: gets Bangladeshi nationality. Very rare exception: foundlings or truly stateless cases. China has NO birthright citizenship for foreigners.",
+    "derivativeCitizenship": false,
+    "derivativeCitizenshipNotes": "Chinese citizenship for non-ethnic Chinese: essentially unavailable (requires Presidential Decree equivalent; fewer than 10,000 total foreigners ever naturalized as Chinese citizens throughout history; reserved for extraordinary global-level contributions or marriage to Chinese national for specific criteria). Children of foreign nationals: cannot naturalize as Chinese citizens regardless of residence period. Permanent residence (Green Card / 绿卡) itself only ~10,000 granted total historically - essentially unavailable. New 'long-term residence permits' (2023+, 5-10 year validity) are the practical maximum for most foreigners.",
+    "citizenshipTimeline": "Not realistic. Long-term residence permit (5-10 year renewable) is maximum realistic outcome for most Bangladeshi nationals in China.",
+    "citizenshipForChildrenScore": 5
+  },
+  "longTermResidencePermitAnalysis": {
+    "description": "China introduced 5-year and 10-year long-term residence permits (2023-2024 pilot, expanding 2024-2026) for high-skilled foreigners as alternative to extremely difficult Permanent Residence Card. More accessible than traditional PR but still NOT PR.",
+    "eligibility": [
+      "Category A (High-talent): PhD from recognized university OR internationally recognized expert",
+      "High salary (typically ¥400,000+/year = €51,480+ in tier-1 cities)",
+      "Working in strategic sectors (AI, semiconductors, new energy, biotech, aerospace)",
+      "Clean record",
+      "5+ years work in China (varies by category)"
+    ],
+    "benefits": [
+      "5-year or 10-year validity (vs. annual renewal of work residence permit)",
+      "Reduced administrative burden (less frequent renewals)",
+      "Can change employers more easily (within same field)",
+      "Some cities: additional benefits (housing, school access)"
+    ],
+    "limitations": [
+      "Still NOT Permanent Residence (can be revoked)",
+      "Still NO citizenship pathway",
+      "Spouse STILL cannot work (dependent permit only)",
+      "Children still pay international school fees",
+      "Subject to Great Firewall, censorship, surveillance",
+      "Geopolitical risk remains (US-China tensions, potential sanctions)",
+      "Not standardized nationally - varies by city (Beijing, Shanghai, Shenzhen, Guangzhou more accessible)"
+    ],
+    "overallScore": 40
+  },
+  "financialFamilyImpact": {
+    "estimatedTotalFamilyCostFirstFiveYearsCNY": "2,000,000-4,000,000 CNY (€257,400-514,800) for family of 4 in Beijing/Shanghai",
+    "keyFinancialAdvantages": "LOW cost of living relative to salary: ¥400,000/year (€51,480) goes FAR in China vs. equivalent salary in US/UK; rent: ¥8,000-20,000/month (€1,030-2,574) for comfortable family apartment in Beijing/Shanghai; food cheap (¥30-100/meal restaurant); transport very cheap (DiDi, metro); domestic travel excellent (high-speed rail); healthcare at local hospitals extremely cheap even without insurance",
+    "keyFinancialChallenges": "International school: ¥150,000-300,000/year per child (€19,300-38,600) - eliminates cost advantage; comprehensive international health insurance: ¥30,000-60,000/year (€3,861-7,723); spouse cannot work (single income household); Great Firewall VPN costs and productivity loss; geopolitical risk affecting career continuity; no traditional PR or citizenship; air pollution health costs (medical, air purifiers, outdoor activity limitation)",
+    "netAssessment": "Single without children: China financially excellent (save ¥150,000-250,000/year = €19,300-32,175). Family with school-age children: international school fees dramatically reduce advantage. Family without school-age children: still good savings potential (¥100,000-200,000/year = €12,870-25,740).",
+    "breakEvenPointYears": "N/A for settlement - treat as 5-10 year career opportunity"
+  },
+  "practicalFamilyAdvice": {
+    "optimalFamilyStrategy": "CRITICAL RECOMMENDATION: China is NOT appropriate as primary family settlement destination for Bangladeshi STEM graduates. OPTIMAL USE: 5-10 years individual/couple career in world-class AI (Baidu, ByteDance, Tencent, Alibaba DAMO, DJI) → accumulate experience + savings → relocate to PR-friendly country. If bringing family: (1) only if primary earns ¥500,000+/year (€64,350+) to comfortably cover international school + insurance + living; (2) bring children BEFORE school age or AFTER completing international education elsewhere; (3) accept Great Firewall reality and prepare psychologically (VPN essential but legally gray); (4) emergency exit plan essential (political risk).",
+    "worstScenario": "Political crisis (US-China relations deteriorating rapidly, potential sanctions on Chinese AI sector, Bangladesh-China-India regional tensions shifting); work permit cancelled; 30 days to leave China with family; school year interrupted for children; assets difficult to transfer internationally; Great Firewall causing professional isolation; air quality (PM2.5 exposure) causing chronic health issues for children.",
+    "bestScenario": "Beijing or Shenzhen AI role at Baidu Research, ByteDance AI Lab, or Huawei AI (¥600,000-1,200,000/year = €77,220-154,440). Family in Shenzhen (better air quality than Beijing, more international). Both expat community and growing international school quality. 5-10 year stay with aggressive savings (¥200,000-400,000/year = €25,740-51,480 savings after expenses). Build world-class AI CV. Exit to Canada/Australia with proven expertise + capital. Or achieve 10-year long-term residence permit (new program) and stay comfortably as recognized AI expert.",
+    "bangladeshiSpecificTips": [
+      "Bangladeshi community in China: approximately 5,000-8,000 total (Beijing, Shanghai, Guangzhou predominantly; Guangzhou has larger South Asian trading community including Bangladeshis). Beijing: small professional community, limited mosque access (Beijing Islamic Association mosques available but formal Islamic infrastructure limited vs. Malaysia/UAE). Shanghai: Xujiahui and Pudong areas have some Muslim-friendly restaurants (halal certified increasing). Guangzhou: largest South Asian/Muslim community in China; Xiaobei area (Guangzhou's 'Little Africa'/'Chocolate City') has significant Muslim community with mosques and halal restaurants. OVERALL: expect significant Islamic/halal infrastructure limitations in most Chinese cities; prepare psychologically.",
+      "Great Firewall reality: Google services (Gmail, Drive, Maps, YouTube, Chrome sync), WhatsApp, Facebook, Instagram, Twitter, LINE, Telegram, most Western news sites ALL blocked in China. VPN (Virtual Private Network) REQUIRED: ExpressVPN, Astrill, NordVPN (¥500-1,000/year = €64-129); legally gray area (technically prohibited but widely tolerated for foreign professionals; avoid Chinese-market VPNs). Family members must also use VPN for WhatsApp communication, video calls with Bangladesh family. Prepare alternative communication solutions. WeChat and QQ (Chinese equivalents) dominate locally - essential to learn. Baidu (not Google), DiDi (not Uber), Alipay/WeChat Pay (not PayPal/Stripe) - entire digital ecosystem different from global norm.",
+      "Air quality management (critical for children): Beijing particulate matter (PM2.5) frequently 100-300 AQI (hazardous >150). Purchase: (1) high-quality air purifiers for home (IQAir, Blueair, Xiaomi with HEPA - ¥1,500-8,000 = €193-1,030); (2) N95 masks for outdoor use when AQI >100; (3) monitor AQI via AirVisual app (works with VPN). Shenzhen (south, subtropical) generally better air quality than Beijing/Xi'an/Chengdu. Shanghai intermediate. Health impact on children of extended particulate matter exposure documented - factor into family decision.",
+      "Geopolitical risk assessment: US-China technological decoupling accelerating (2024-2026: export controls on advanced chips affecting AI companies, restrictions on US-China research collaboration, potential future sanction expansion). If working for US-listed company in China or working with US technology stack, may face complications. Bangladeshi-specific: Bangladesh historically balanced China-India-US relations; in extreme deterioration scenario, Bangladeshi nationals less targeted than US/EU nationals but still affected by broader restrictions. Maintain emergency fund (USD 10,000-20,000 liquid outside China), keep passport/documents accessible, exit strategy reviewed annually.",
+      "Banking for foreigners: open Bank of China (中国银行), ICBC (工商银行), or HSBC China account with passport + residence permit. UnionPay card issuance from Chinese bank. Alipay and WeChat Pay now allow foreigners to link international cards (Visa/Mastercard) - significant improvement 2023-2024 making daily transactions easier. International transfers: SWIFT transfers from Chinese bank accounts subject to capital controls (maximum $50,000/year equivalent for individuals; employer can remit salary abroad; consult compliance). Keep money in multiple currencies/locations given capital control risk.",
+      "Long-term residence permit (new program): if planning 7+ year China career, pursue 5-year or 10-year residence permit as strategic milestone (more stable than annual work permit renewals; easier job mobility; better status for school applications). Apply through employer's HR or immigration consultant after meeting requirements. Currently available in Beijing, Shanghai, Guangzhou, Shenzhen, Hangzhou - expanding nationally 2024-2026."
+    ]
+  },
+  "overallFamilyRating": "POOR family immigration destination for long-term settlement. Critical failures: no PR pathway (essentially 0 chance), no citizenship for non-ethnic Chinese, spouse cannot work on dependent visa (single income household), international school fees ¥150,000-300,000/year per child (eliminates cost advantage), Great Firewall restricts internet freedom (professional and personal isolation), authoritarian governance (censorship, surveillance), air pollution health risk for children, geopolitical uncertainty (US-China tensions, potential disruption to career/assets), parent sponsorship unavailable, minimal Bangladeshi/Islamic infrastructure. Financial advantage (low cost of living relative to high AI salaries) partially compensates but only for childless situations. VERDICT: China appropriate ONLY for single/childless ambitious AI professionals seeking 5-10 year world-class AI experience (Baidu, ByteDance, Tencent, Alibaba DAMO are genuinely frontier institutions) + aggressive savings → then MANDATORY relocation to PR-friendly country. Never treat as permanent home. Geopolitical risk requires annual exit strategy review. New long-term residence permits (5-10 year) improve administrative stability but fundamentally do not address settlement impossibility.",
+  "lastUpdated": "2026-06-01"
+}
+
 ]
 
 

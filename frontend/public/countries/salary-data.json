@@ -1,0 +1,969 @@
+
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Salary data for Bangladeshi CS/AI/ML graduates in target countries (2027-2029 employment)",
+    "targetProfile": "Bangladeshi student, MSc/PhD in CS/AI/ML/Data Science, entry to senior level",
+    "criticalNote": "All figures in local currency and USD equivalent (2026 rates). Consider tax, purchasing power, and total compensation (base + bonus + equity)",
+    "currencyRates": {
+      "CAD": 0.73,
+      "AUD": 0.66,
+      "EUR": 1.09,
+      "USD": 1.00,
+      "GBP": 1.27,
+      "CHF": 1.13,
+      "SEK": 0.095,
+      "NOK": 0.093,
+      "DKK": 0.146,
+      "JPY": 0.0067,
+      "KRW": 0.00075,
+      "SGD": 0.74,
+      "CNY": 0.138
+    }
+  },
+  "salaryData": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "currency": "CAD",
+      "salaryScore": 74,
+      "purchasingPowerScore": 68,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 75000,
+          "median": 90000,
+          "max": 110000,
+          "usdEquivalent": 65700,
+          "afterTax": 66000,
+          "note": "Big Tech/FinTech pays top range; SMEs and public sector lower"
+        },
+        "phdGraduate": {
+          "min": 90000,
+          "median": 110000,
+          "max": 135000,
+          "usdEquivalent": 80300,
+          "afterTax": 78000,
+          "note": "Research-heavy roles and AI labs pay premium for PhD"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 100000,
+        "median": 125000,
+        "max": 165000,
+        "usdEquivalent": 91250,
+        "afterTax": 88000,
+        "note": "Senior engineer at scale-ups or mid-level at FAANG"
+      },
+      "seniorLevel": {
+        "min": 130000,
+        "median": 165000,
+        "max": 230000,
+        "usdEquivalent": 120450,
+        "afterTax": 115000,
+        "note": "Staff/Principal level or ML lead roles"
+      },
+      "totalCompensationNote": "Equity modest in Canadian companies (5-15% of total comp); US companies in Canada offer better packages",
+      "taxRate": {
+        "effective": "26-33%",
+        "provincial": "Varies by province; Quebec highest, Alberta lowest"
+      },
+      "geographicVariation": {
+        "toronto": "+10-15% salary premium but +40% cost of living",
+        "vancouver": "+5-10% salary but +45% cost of living",
+        "montreal": "-10% salary but -25% cost of living (best value)",
+        "calgary": "0% adjustment, lower cost"
+      },
+      "industryPremium": {
+        "bigTech": "+25-40%",
+        "finTech": "+15-30%",
+        "startups": "-10% to +20% (equity dependent)",
+        "publicSector": "-20-30%"
+      },
+      "benefits": {
+        "healthInsurance": "Employer-provided dental/vision; provincial health free",
+        "retirement": "RRSP matching 3-6%",
+        "vacation": "15-20 days",
+        "parentalLeave": "18 months job protection"
+      },
+      "salaryGrowth": "5-8% annually with job changes; 2-4% within same company",
+      "negotiationPower": "Medium; less than US but better than Europe",
+      "confidenceScore": 88
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "currency": "USD",
+      "salaryScore": 96,
+      "purchasingPowerScore": 82,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 120000,
+          "median": 160000,
+          "max": 240000,
+          "usdEquivalent": 160000,
+          "afterTax": 110000,
+          "note": "Total comp including equity; Big Tech L3/L4; varies widely by company and location"
+        },
+        "phdGraduate": {
+          "min": 160000,
+          "median": 220000,
+          "max": 380000,
+          "usdEquivalent": 220000,
+          "afterTax": 145000,
+          "note": "AI research labs (OpenAI, DeepMind, Anthropic) pay top range"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 200000,
+        "median": 280000,
+        "max": 500000,
+        "usdEquivalent": 280000,
+        "afterTax": 175000,
+        "note": "L5/E5 level at FAANG; significant equity component"
+      },
+      "seniorLevel": {
+        "min": 320000,
+        "median": 480000,
+        "max": 900000,
+        "usdEquivalent": 480000,
+        "afterTax": 285000,
+        "note": "Staff/Principal/L6+; equity can be 40-50% of package"
+      },
+      "totalCompensationNote": "Equity (RSUs) 30-50% of total comp; refreshers annual; signing bonuses 10-50K common",
+      "taxRate": {
+        "effective": "28-37%",
+        "stateTax": "0% (WA, TX) to 13% (CA); significant impact"
+      },
+      "geographicVariation": {
+        "bayArea": "Highest comp but offset by 100 cost index; median 200K total comp entry",
+        "seattle": "-5-10% vs Bay but no state tax; net positive",
+        "nyc": "-5% vs Bay but high state/city tax; expensive",
+        "austin": "-15-20% vs Bay but low tax and cost; good value",
+        "remote": "-20-30% location adjustment increasingly common"
+      },
+      "industryPremium": {
+        "aiResearchLabs": "+40-80%",
+        "bigTech": "+30-50%",
+        "finTech": "+20-40%",
+        "trading": "+50-100%",
+        "startups": "-20% to +30% (equity lottery)"
+      },
+      "benefits": {
+        "healthInsurance": "$300-800/month employee cost",
+        "retirement": "401k match 3-6%",
+        "vacation": "15-20 days (low by global standards)",
+        "parentalLeave": "12-16 weeks (better at tech companies)"
+      },
+      "salaryGrowth": "10-20% annually with job changes; equity appreciation significant factor",
+      "negotiationPower": "Very High; competitive market favors candidates",
+      "confidenceScore": 92
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "currency": "EUR",
+      "salaryScore": 68,
+      "purchasingPowerScore": 72,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 48000,
+          "median": 58000,
+          "max": 72000,
+          "usdEquivalent": 63220,
+          "afterTax": 37000,
+          "note": "Automotive and industrial companies pay mid-to-high range"
+        },
+        "phdGraduate": {
+          "min": 55000,
+          "median": 68000,
+          "max": 88000,
+          "usdEquivalent": 74120,
+          "afterTax": 42000,
+          "note": "Research positions and automotive AI roles"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 62000,
+        "median": 78000,
+        "max": 105000,
+        "usdEquivalent": 85020,
+        "afterTax": 50000,
+        "note": "Senior engineer at established companies"
+      },
+      "seniorLevel": {
+        "min": 80000,
+        "median": 105000,
+        "max": 145000,
+        "usdEquivalent": 114450,
+        "afterTax": 65000,
+        "note": "Team lead or principal engineer"
+      },
+      "totalCompensationNote": "Mostly base salary; equity rare; focus on stability, benefits, and work-life balance",
+      "taxRate": {
+        "effective": "35-42%",
+        "includes": "Health, pension, unemployment insurance in tax burden"
+      },
+      "geographicVariation": {
+        "munich": "+8-12% but highest cost",
+        "berlin": "-5-8% but lower cost; startup scene",
+        "stuttgart": "+5% automotive premium",
+        "frankfurt": "+5-8% finance premium"
+      },
+      "industryPremium": {
+        "automotive": "+10-20%",
+        "ustech": "+25-35%",
+        "industrial": "+5-15%",
+        "consulting": "+15-25%"
+      },
+      "benefits": {
+        "healthInsurance": "Public insurance ~8% of salary; comprehensive",
+        "retirement": "Pension contributions mandatory",
+        "vacation": "30 days standard",
+        "parentalLeave": "14 months paid at 67% salary"
+      },
+      "salaryGrowth": "3-6% annually; slower but stable progression",
+      "negotiationPower": "Medium-Low; structured salary bands",
+      "confidenceScore": 86
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "currency": "AUD",
+      "salaryScore": 76,
+      "purchasingPowerScore": 69,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 70000,
+          "median": 88000,
+          "max": 115000,
+          "usdEquivalent": 58080,
+          "afterTax": 64000,
+          "note": "Banks and Big Tech pay upper range; plus 11% superannuation"
+        },
+        "phdGraduate": {
+          "min": 85000,
+          "median": 108000,
+          "max": 140000,
+          "usdEquivalent": 71280,
+          "afterTax": 78000,
+          "note": "Research roles and specialized AI positions"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 105000,
+        "median": 135000,
+        "max": 175000,
+        "usdEquivalent": 89100,
+        "afterTax": 95000,
+        "note": "Senior engineer or ML specialist"
+      },
+      "seniorLevel": {
+        "min": 140000,
+        "median": 180000,
+        "max": 240000,
+        "usdEquivalent": 118800,
+        "afterTax": 125000,
+        "note": "Principal or engineering manager"
+      },
+      "totalCompensationNote": "11% superannuation on top; equity in Atlassian/Canva competitive; mostly base elsewhere",
+      "taxRate": {
+        "effective": "25-32%",
+        "includes": "Medicare levy 2%"
+      },
+      "geographicVariation": {
+        "sydney": "+8-12% but expensive housing",
+        "melbourne": "+3-7% good balance",
+        "brisbane": "-5-8% lower cost emerging market",
+        "perth": "0-5% mining tech premium"
+      },
+      "industryPremium": {
+        "bigTech": "+20-35%",
+        "finTech": "+15-25%",
+        "banking": "+10-20%",
+        "mining": "+15-30%"
+      },
+      "benefits": {
+        "healthInsurance": "Medicare free; private optional",
+        "retirement": "11% superannuation mandatory",
+        "vacation": "20 days + public holidays",
+        "parentalLeave": "18 weeks government + employer top-up"
+      },
+      "salaryGrowth": "5-8% with job changes; 3-5% internal",
+      "negotiationPower": "Medium; smaller market than US",
+      "confidenceScore": 84
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "currency": "EUR",
+      "salaryScore": 72,
+      "purchasingPowerScore": 74,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 45000,
+          "median": 58000,
+          "max": 75000,
+          "usdEquivalent": 63220,
+          "afterTax": 42000,
+          "note": "30% tax ruling adds 10-15K net for first 5 years"
+        },
+        "phdGraduate": {
+          "min": 55000,
+          "median": 70000,
+          "max": 92000,
+          "usdEquivalent": 76300,
+          "afterTax": 51000,
+          "note": "ASML and Big Tech pay top range"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 65000,
+        "median": 82000,
+        "max": 110000,
+        "usdEquivalent": 89380,
+        "afterTax": 60000,
+        "note": "With 30% ruling net is significantly higher"
+      },
+      "seniorLevel": {
+        "min": 85000,
+        "median": 110000,
+        "max": 155000,
+        "usdEquivalent": 119900,
+        "afterTax": 75000,
+        "note": "Principal or senior staff positions"
+      },
+      "totalCompensationNote": "30% tax ruling is massive benefit for 5 years (20-25% net boost); equity in startups/scale-ups",
+      "taxRate": {
+        "effective": "35-42%",
+        "with30ruling": "22-30% effective for 5 years"
+      },
+      "geographicVariation": {
+        "amsterdam": "+5-10% but housing crisis severe",
+        "eindhoven": "0-5% ASML premium, better housing",
+        "rotterdam": "-5% lower cost",
+        "utrecht": "0-3% central location premium"
+      },
+      "industryPremium": {
+        "semiconductors": "+15-25%",
+        "finTech": "+10-20%",
+        "ustech": "+20-30%",
+        "booking": "+15-25%"
+      },
+      "benefits": {
+        "healthInsurance": "~€120/month mandatory private",
+        "retirement": "Pension built in",
+        "vacation": "25+ days",
+        "parentalLeave": "16 weeks paid"
+      },
+      "salaryGrowth": "4-7% with job changes; 2-4% internal",
+      "negotiationPower": "Medium; structured but flexible",
+      "confidenceScore": 87
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "currency": "CHF",
+      "salaryScore": 91,
+      "purchasingPowerScore": 76,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 85000,
+          "median": 105000,
+          "max": 130000,
+          "usdEquivalent": 118650,
+          "afterTax": 88000,
+          "note": "Highest absolute salaries in Europe; cost also high"
+        },
+        "phdGraduate": {
+          "min": 100000,
+          "median": 125000,
+          "max": 155000,
+          "usdEquivalent": 141250,
+          "afterTax": 103000,
+          "note": "ETH/EPFL PhDs command premium"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 120000,
+        "median": 150000,
+        "max": 190000,
+        "usdEquivalent": 169500,
+        "afterTax": 122000,
+        "note": "Senior engineer positions"
+      },
+      "seniorLevel": {
+        "min": 160000,
+        "median": 200000,
+        "max": 280000,
+        "usdEquivalent": 226000,
+        "afterTax": 158000,
+        "note": "Principal/Staff or management"
+      },
+      "totalCompensationNote": "Mostly base; equity rare; focus on high base salary and stability",
+      "taxRate": {
+        "effective": "15-25%",
+        "cantonal": "Varies significantly by canton; Zug/Schwyz lowest"
+      },
+      "geographicVariation": {
+        "zurich": "+5-10% highest salaries and costs",
+        "geneva": "+5-8% international orgs premium",
+        "basel": "+3-5% pharma hub",
+        "zug": "0-5% crypto valley, low tax"
+      },
+      "industryPremium": {
+        "banking": "+15-30%",
+        "pharma": "+10-20%",
+        "bigTech": "+20-35%",
+        "crypto": "+15-40%"
+      },
+      "benefits": {
+        "healthInsurance": "CHF 300-500/month mandatory private",
+        "retirement": "Pension pillar system",
+        "vacation": "25 days",
+        "parentalLeave": "14 weeks maternity; paternity limited"
+      },
+      "salaryGrowth": "3-6% annually; stable market",
+      "negotiationPower": "Medium; high baseline limits room",
+      "confidenceScore": 85
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "currency": "SEK",
+      "salaryScore": 69,
+      "purchasingPowerScore": 70,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 420000,
+          "median": 520000,
+          "max": 650000,
+          "usdEquivalent": 49400,
+          "afterTax": 320000,
+          "note": "Spotify, Klarna, Ericsson competitive"
+        },
+        "phdGraduate": {
+          "min": 500000,
+          "median": 620000,
+          "max": 780000,
+          "usdEquivalent": 58900,
+          "afterTax": 380000,
+          "note": "Research and specialized roles"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 600000,
+        "median": 750000,
+        "max": 950000,
+        "usdEquivalent": 71250,
+        "afterTax": 460000,
+        "note": "Senior engineer level"
+      },
+      "seniorLevel": {
+        "min": 800000,
+        "median": 1000000,
+        "max": 1300000,
+        "usdEquivalent": 95000,
+        "afterTax": 600000,
+        "note": "Staff/Principal or manager"
+      },
+      "totalCompensationNote": "Equity in scale-ups (Spotify, Klarna); compressed salary distribution philosophy",
+      "taxRate": {
+        "effective": "38-48%",
+        "includes": "High but comprehensive welfare state benefits"
+      },
+      "geographicVariation": {
+        "stockholm": "+5-10% most opportunities",
+        "gothenburg": "-5% Volvo/Ericsson hub",
+        "malmo": "-8-10% smaller market"
+      },
+      "industryPremium": {
+        "gaming": "+10-20%",
+        "finTech": "+15-25%",
+        "ustech": "+25-35%",
+        "telecom": "+5-15%"
+      },
+      "benefits": {
+        "healthInsurance": "Free public healthcare",
+        "retirement": "Generous state pension",
+        "vacation": "25 days minimum",
+        "parentalLeave": "480 days shared at 80% salary"
+      },
+      "salaryGrowth": "3-5% annually; egalitarian culture limits variance",
+      "negotiationPower": "Low-Medium; collective agreements influence",
+      "confidenceScore": 82
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "currency": "NOK",
+      "salaryScore": 73,
+      "purchasingPowerScore": 71,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 520000,
+          "median": 620000,
+          "max": 750000,
+          "usdEquivalent": 57660,
+          "afterTax": 400000,
+          "note": "Oil/energy tech and finance pay well"
+        },
+        "phdGraduate": {
+          "min": 600000,
+          "median": 720000,
+          "max": 880000,
+          "usdEquivalent": 66960,
+          "afterTax": 460000,
+          "note": "Research institutes and specialized roles"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 700000,
+        "median": 850000,
+        "max": 1050000,
+        "usdEquivalent": 79050,
+        "afterTax": 540000,
+        "note": "Senior positions"
+      },
+      "seniorLevel": {
+        "min": 900000,
+        "median": 1100000,
+        "max": 1400000,
+        "usdEquivalent": 102300,
+        "afterTax": 680000,
+        "note": "Principal/Lead roles"
+      },
+      "totalCompensationNote": "High base, minimal equity culture; focus on security and quality of life",
+      "taxRate": {
+        "effective": "35-42%",
+        "includes": "Comprehensive social benefits"
+      },
+      "geographicVariation": {
+        "oslo": "+8-12% most jobs and highest cost",
+        "bergen": "-5% oil industry hub",
+        "trondheim": "-8% tech/research smaller market"
+      },
+      "industryPremium": {
+        "oilGas": "+15-30%",
+        "finance": "+10-20%",
+        "consulting": "+15-25%",
+        "shipping": "+10-20%"
+      },
+      "benefits": {
+        "healthInsurance": "Free universal healthcare",
+        "retirement": "State pension generous",
+        "vacation": "25 days + generous holidays",
+        "parentalLeave": "49 weeks at 100% or 59 weeks at 80%"
+      },
+      "salaryGrowth": "3-5% annually; stable progression",
+      "negotiationPower": "Low-Medium; collective bargaining",
+      "confidenceScore": 80
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "currency": "DKK",
+      "salaryScore": 71,
+      "purchasingPowerScore": 73,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 380000,
+          "median": 470000,
+          "max": 580000,
+          "usdEquivalent": 68620,
+          "afterTax": 280000,
+          "note": "Novo Nordisk, Maersk, Vestas tech roles"
+        },
+        "phdGraduate": {
+          "min": 450000,
+          "median": 560000,
+          "max": 700000,
+          "usdEquivalent": 81760,
+          "afterTax": 330000,
+          "note": "Research and biotech AI premium"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 550000,
+        "median": 680000,
+        "max": 850000,
+        "usdEquivalent": 99280,
+        "afterTax": 400000,
+        "note": "Senior engineer roles"
+      },
+      "seniorLevel": {
+        "min": 750000,
+        "median": 920000,
+        "max": 1150000,
+        "usdEquivalent": 134320,
+        "afterTax": 530000,
+        "note": "Principal/Staff positions"
+      },
+      "totalCompensationNote": "Strong base; equity minimal; pension contributions significant (often 12-17% employer)",
+      "taxRate": {
+        "effective": "38-52%",
+        "includes": "Highest in region but excellent public services"
+      },
+      "geographicVariation": {
+        "copenhagen": "+10-15% most opportunities, expensive",
+        "aarhus": "-5-8% growing tech scene",
+        "odense": "-10% robotics/biotech hub"
+      },
+      "industryPremium": {
+        "biotech": "+15-25%",
+        "greenTech": "+10-20%",
+        "shipping": "+10-18%",
+        "finance": "+12-22%"
+      },
+      "benefits": {
+        "healthInsurance": "Free universal healthcare",
+        "retirement": "Generous pension schemes",
+        "vacation": "25 days + 5 weeks standard",
+        "parentalLeave": "52 weeks shared generous pay"
+      },
+      "salaryGrowth": "3-6% annually; stable labor market",
+      "negotiationPower": "Medium; union influence but tech more flexible",
+      "confidenceScore": 81
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "currency": "EUR",
+      "salaryScore": 65,
+      "purchasingPowerScore": 71,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 40000,
+          "median": 50000,
+          "max": 63000,
+          "usdEquivalent": 54500,
+          "afterTax": 32000,
+          "note": "Nokia, gaming companies competitive"
+        },
+        "phdGraduate": {
+          "min": 48000,
+          "median": 60000,
+          "max": 75000,
+          "usdEquivalent": 65400,
+          "afterTax": 38000,
+          "note": "Research roles and specialized positions"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 58000,
+        "median": 72000,
+        "max": 92000,
+        "usdEquivalent": 78480,
+        "afterTax": 46000,
+        "note": "Senior engineer level"
+      },
+      "seniorLevel": {
+        "min": 75000,
+        "median": 95000,
+        "max": 125000,
+        "usdEquivalent": 103550,
+        "afterTax": 60000,
+        "note": "Principal or lead positions"
+      },
+      "totalCompensationNote": "Lower salaries offset by low cost of living, free education, healthcare; quality of life focus",
+      "taxRate": {
+        "effective": "32-42%",
+        "includes": "Comprehensive welfare benefits"
+      },
+      "geographicVariation": {
+        "helsinki": "+8-12% most jobs",
+        "espoo": "+5-10% tech hub (Nokia, gaming)",
+        "tampere": "-5-8% growing tech scene",
+        "oulu": "-10-12% smaller market"
+      },
+      "industryPremium": {
+        "gaming": "+15-30%",
+        "telecom": "+10-20%",
+        "consulting": "+12-20%",
+        "industrial": "+5-15%"
+      },
+      "benefits": {
+        "healthInsurance": "Free public healthcare",
+        "retirement": "State and occupational pension",
+        "vacation": "25 days + summer premium",
+        "parentalLeave": "164 days each parent"
+      },
+      "salaryGrowth": "3-5% annually; slow but stable",
+      "negotiationPower": "Low-Medium; collective agreements",
+      "confidenceScore": 79
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "currency": "EUR",
+      "salaryScore": 79,
+      "purchasingPowerScore": 71,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 45000,
+          "median": 58000,
+          "max": 78000,
+          "usdEquivalent": 63220,
+          "afterTax": 40000,
+          "note": "Big Tech European HQs pay top range"
+        },
+        "phdGraduate": {
+          "min": 55000,
+          "median": 72000,
+          "max": 95000,
+          "usdEquivalent": 78480,
+          "afterTax": 50000,
+          "note": "Research and specialized AI roles"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 70000,
+        "median": 90000,
+        "max": 120000,
+        "usdEquivalent": 98100,
+        "afterTax": 62000,
+        "note": "Senior at Big Tech or fintech"
+      },
+      "seniorLevel": {
+        "min": 95000,
+        "median": 125000,
+        "max": 170000,
+        "usdEquivalent": 136250,
+        "afterTax": 80000,
+        "note": "Staff/Principal at major companies"
+      },
+      "totalCompensationNote": "US companies offer equity; domestic companies mostly base; RSU packages competitive",
+      "taxRate": {
+        "effective": "30-48%",
+        "usc": "Universal Social Charge adds burden on high earners"
+      },
+      "geographicVariation": {
+        "dublin": "+10-15% but severe housing crisis",
+        "cork": "-5-8% Apple, pharma hub",
+        "galway": "-10-12% smaller market, lower cost",
+        "limerick": "-8-10% emerging tech"
+      },
+      "industryPremium": {
+        "bigTech": "+25-40%",
+        "finTech": "+15-30%",
+        "pharma": "+10-20%",
+        "consulting": "+15-25%"
+      },
+      "benefits": {
+        "healthInsurance": "Employer-provided private common",
+        "retirement": "Pension matching 5-10%",
+        "vacation": "20-25 days",
+        "parentalLeave": "26 weeks maternity"
+      },
+      "salaryGrowth": "6-10% with job changes; competitive market",
+      "negotiationPower": "Medium-High; competitive especially Big Tech",
+      "confidenceScore": 84
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "currency": "JPY",
+      "salaryScore": 64,
+      "purchasingPowerScore": 68,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 5000000,
+          "median": 6500000,
+          "max": 9000000,
+          "usdEquivalent": 43550,
+          "afterTax": 4200000,
+          "note": "Foreign tech companies pay significantly more than Japanese traditional companies"
+        },
+        "phdGraduate": {
+          "min": 6500000,
+          "median": 8500000,
+          "max": 12000000,
+          "usdEquivalent": 56950,
+          "afterTax": 5500000,
+          "note": "Research positions and AI labs competitive"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 8000000,
+        "median": 11000000,
+        "max": 16000000,
+          "usdEquivalent": 73700,
+        "afterTax": 7200000,
+        "note": "Senior engineer at foreign companies or lead at domestic"
+      },
+      "seniorLevel": {
+        "min": 12000000,
+        "median": 16000000,
+        "max": 25000000,
+        "usdEquivalent": 107200,
+        "afterTax": 10500000,
+        "note": "Management or principal roles"
+      },
+      "totalCompensationNote": "Seniority-based raises in Japanese companies; foreign tech offers equity; bonus culture (2-4 months)",
+      "taxRate": {
+        "effective": "25-35%",
+        "includes": "National + local taxes, social insurance"
+      },
+      "geographicVariation": {
+        "tokyo": "+15-20% most opportunities but expensive",
+        "osaka": "-5-8% lower cost",
+        "kyoto": "-8-10% smaller tech market",
+        "fukuoka": "-10-15% emerging startup scene"
+      },
+      "industryPremium": {
+        "foreignTech": "+40-80%",
+        "gaming": "+20-35%",
+        "automotive": "+10-20%",
+        "robotics": "+15-30%",
+        "traditionalIT": "-10-20%"
+      },
+      "benefits": {
+        "healthInsurance": "National health insurance ~5% salary",
+        "retirement": "Pension system mandatory",
+        "vacation": "10-20 days (low) but many holidays",
+        "parentalLeave": "52 weeks available, uptake low culturally"
+      },
+      "salaryGrowth": "2-5% in Japanese companies; 8-15% with job changes at foreign companies",
+      "negotiationPower": "Low in domestic firms; Medium in foreign tech",
+      "confidenceScore": 77
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "currency": "KRW",
+      "salaryScore": 66,
+      "purchasingPowerScore": 69,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 45000000,
+          "median": 58000000,
+          "max": 80000000,
+          "usdEquivalent": 43500,
+          "afterTax": 38000000,
+          "note": "Samsung, Naver, Kakao pay competitively"
+        },
+        "phdGraduate": {
+          "min": 60000000,
+          "median": 78000000,
+          "max": 110000000,
+          "usdEquivalent": 58500,
+          "afterTax": 52000000,
+          "note": "Research institutes and AI labs"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 70000000,
+        "median": 95000000,
+        "max": 140000000,
+        "usdEquivalent": 71250,
+        "afterTax": 63000000,
+        "note": "Senior roles at tech companies"
+      },
+      "seniorLevel": {
+        "min": 100000000,
+        "median": 140000000,
+        "max": 220000000,
+        "usdEquivalent": 105000,
+        "afterTax": 92000000,
+        "note": "Principal or management positions"
+      },
+      "totalCompensationNote": "Strong base + performance bonuses (up to 100-200% at Samsung); stock options in startups; long work hours expected",
+      "taxRate": {
+        "effective": "20-35%",
+        "includes": "Progressive national + local taxes"
+      },
+      "geographicVariation": {
+        "seoul": "+10-15% Gangnam tech hub, expensive",
+        "pangyo": "+5-10% Silicon Valley of Korea",
+        "busan": "-10-15% smaller market",
+        "daejeon": "-8-12% research hub lower cost"
+      },
+      "industryPremium": {
+        "semiconductors": "+20-40%",
+        "gaming": "+15-30%",
+        "ecommerce": "+10-25%",
+        "chaebols": "+15-30%",
+        "startups": "-10% to +20%"
+      },
+      "benefits": {
+        "healthInsurance": "National health insurance affordable",
+        "retirement": "Pension + severance pay culture",
+        "vacation": "15 days legal minimum, limited use culturally",
+        "parentalLeave": "52 weeks but cultural barriers"
+      },
+      "salaryGrowth": "5-10% annually at tech companies; slower at traditional companies",
+      "negotiationPower": "Medium; improving in tech sector vs traditional hierarchical culture",
+      "confidenceScore": 75
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "currency": "CNY",
+      "salaryScore": 68,
+      "purchasingPowerScore": 73,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 250000,
+          "median": 350000,
+          "max": 550000,
+          "usdEquivalent": 48300,
+          "afterTax": 210000,
+          "note": "ByteDance, Alibaba, Tencent competitive; 996 culture common"
+        },
+        "phdGraduate": {
+          "min": 350000,
+          "median": 500000,
+          "max": 800000,
+          "usdEquivalent": 69000,
+          "afterTax": 320000,
+          "note": "AI research labs and top tech companies"
+        }
+      },
+      "midLevel3to5yrs": {
+        "min": 450000,
+        "median": 650000,
+        "max": 1000000,
+        "usdEquivalent": 89700,
+        "afterTax": 430000,
+        "note": "Senior engineer at BAT companies"
+      },
+      "seniorLevel": {
+        "min": 700000,
+        "median": 1100000,
+        "max": 2000000,
+        "usdEquivalent": 151800,
+        "afterTax": 720000,
+        "note": "Principal/Staff at major tech companies"
+      },
+      "totalCompensationNote": "Base + annual bonus (2-6 months) + stock in public companies; housing allowances common; very long hours (996 in tech)",
+      "taxRate": {
+        "effective": "20-35%",
+        "includes": "Progressive tax with social insurance"
+      },
+      "geographicVariation": {
+        "beijing": "+15-20% highest salaries, AI hub, expensive",
+        "shanghai": "+10-15% finance + tech, international",
+        "shenzhen": "+12-18% hardware/tech hub, competitive",
+        "hangzhou": "+8-12% Alibaba ecosystem",
+        "tier2cities": "-20-30% lower cost and salaries"
+      },
+      "industryPremium": {
+        "bigTech": "+30-60%",
+        "aiLabs": "+25-50%",
+        "finTech": "+20-40%",
+        "ecommerce": "+15-35%",
+        "stateOwned": "-20-40%"
+      },
+      "benefits": {
+        "healthInsurance": "Basic public + employer supplemental",
+        "retirement": "Social insurance mandatory",
+        "vacation": "5-15 days (low, often unused)",
+        "parentalLeave": "98 days maternity; paternity limited"
+      },
+      "salaryGrowth": "8-15% annually in tech sector; rapid for high performers; unstable with crackdowns",
+      "negotiationPower": "Medium-High in tech; competitive market for AI talent",
+      "confidenceScore": 72,
+      "criticalNote": "Market volatility post-2021 tech crackdowns; salary growth slowing; layoffs increasing; 996 culture intense; consider work-life balance carefully"
+    }
+  ]
+}

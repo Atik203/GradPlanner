@@ -1,0 +1,786 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Funding opportunities for Bangladeshi CS/AI/ML students pursuing MSc/PhD abroad (2027-2029)",
+    "targetProfile": "Bangladeshi student, CS/AI/ML/Data Science, seeking fully-funded or partially-funded graduate programs",
+    "criticalNote": "PhD programs typically offer full funding; MSc funding highly competitive and varies by country. Apply to multiple funding sources simultaneously."
+  },
+  "fundingOpportunities": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "overallFundingScore": 78,
+      "fundingAvailability": "Good for PhD, competitive for MSc",
+      "mscFundingChance": 45,
+      "phdFundingChance": 82,
+      "governmentScholarships": [
+        {
+          "name": "Vanier Canada Graduate Scholarships",
+          "amount": "CAD 50,000/year for 3 years",
+          "eligibility": "PhD only, top 1% candidates",
+          "applicationDeadline": "November annually",
+          "competitiveness": "Extremely high",
+          "bangladeshiSuccess": "Very low, 5-10 awarded globally per year to developing countries"
+        },
+        {
+          "name": "NSERC Postgraduate Scholarships",
+          "amount": "CAD 21,000-35,000/year",
+          "eligibility": "Canadian citizens/PR only",
+          "bangladeshiEligible": false
+        },
+        {
+          "name": "Mitacs Globalink Research Internship",
+          "amount": "CAD 12,000 stipend",
+          "eligibility": "Undergrad research internship pathway",
+          "bangladeshiSuccess": "Moderate, good stepping stone"
+        }
+      ],
+      "universityFunding": {
+        "availability": "High for PhD, medium for MSc",
+        "typicalPackage": {
+          "phd": "CAD 20,000-30,000/year stipend + tuition waiver",
+          "msc": "CAD 15,000-22,000/year (partial funding common)"
+        },
+        "fundingSources": [
+          "Research assistantships (RA)",
+          "Teaching assistantships (TA)",
+          "University fellowships",
+          "Supervisor grants"
+        ],
+        "topFundedUniversities": [
+          "University of Toronto - Vector Institute affiliates",
+          "University of British Columbia",
+          "McGill University",
+          "University of Alberta - Amii",
+          "University of Waterloo"
+        ],
+        "fundingNote": "Most PhD positions in AI/ML are funded if accepted by supervisor with active grants; MSc often requires self-funding or competitive scholarships"
+      },
+      "externalFellowships": [
+        {
+          "name": "Commonwealth Scholarships (Canada-Commonwealth)",
+          "amount": "Full tuition + living costs",
+          "eligibility": "Commonwealth citizens including Bangladesh",
+          "competitiveness": "High",
+          "applicationWindow": "October-December"
+        }
+      ],
+      "livingStipendAdequacy": "Tight in Toronto/Vancouver; adequate in Montreal/smaller cities",
+      "averageMonthlyStipend": "CAD 1,800-2,500",
+      "averageMonthlyCost": "CAD 1,200-2,200",
+      "selfFundingCost": {
+        "mscTotal": "CAD 60,000-90,000 (2 years)",
+        "phdTotal": "CAD 120,000-180,000 (4-5 years, rarely needed)"
+      },
+      "workWhileStudying": "20 hours/week during term, full-time during breaks",
+      "realisticStrategy": "Apply for fully-funded PhD positions with AI labs; for MSc, target smaller universities with better funding ratios or plan partial self-funding with part-time work",
+      "confidenceScore": 84
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "overallFundingScore": 85,
+      "fundingAvailability": "Excellent for PhD, very limited for MSc",
+      "mscFundingChance": 15,
+      "phdFundingChance": 88,
+      "governmentScholarships": [
+        {
+          "name": "Fulbright Foreign Student Program",
+          "amount": "Full tuition + stipend + health insurance",
+          "eligibility": "Bangladeshi citizens, MSc/PhD",
+          "competitiveness": "Extremely high, 10-15 from Bangladesh annually",
+          "applicationDeadline": "May annually",
+          "bangladeshiSuccess": "Very competitive but possible with strong profile"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Very high for PhD, minimal for MSc",
+        "typicalPackage": {
+          "phd": "USD 28,000-45,000/year stipend + full tuition waiver + health insurance",
+          "msc": "Typically self-funded; rare RA/TA positions"
+        },
+        "fundingSources": [
+          "Research assistantships (primary for STEM PhD)",
+          "Teaching assistantships",
+          "Fellowships",
+          "NSF/NIH/DARPA grants (citizens/PR priority)"
+        ],
+        "topFundedUniversities": [
+          "MIT - full funding guarantee for PhD",
+          "Stanford - full funding for AI PhD",
+          "Carnegie Mellon - full funding standard",
+          "UC Berkeley",
+          "University of Washington",
+          "Georgia Tech",
+          "UT Austin"
+        ],
+        "fundingNote": "Top CS PhD programs nearly always fully funded; MSc programs are cash cows - expect to self-fund"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Tight in Bay Area/NYC/Boston; comfortable in Texas/Midwest",
+      "averageMonthlyStipend": "USD 2,300-3,800",
+      "averageMonthlyCost": "USD 1,500-3,500",
+      "selfFundingCost": {
+        "mscTotal": "USD 80,000-180,000 (2 years) - prohibitively expensive",
+        "phdTotal": "Rarely needed if admitted to top programs"
+      },
+      "workWhileStudying": "On-campus 20 hours/week on F1; CPT for internships",
+      "realisticStrategy": "Target PhD at top-50 programs with guaranteed funding; avoid MSc unless from wealthy background or employer-sponsored. Focus on research experience and publications for PhD admits.",
+      "confidenceScore": 90
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "overallFundingScore": 92,
+      "fundingAvailability": "Excellent - low/no tuition + scholarships",
+      "mscFundingChance": 70,
+      "phdFundingChance": 90,
+      "governmentScholarships": [
+        {
+          "name": "DAAD Scholarships",
+          "amount": "EUR 934/month (MSc), EUR 1,300/month (PhD) + benefits",
+          "eligibility": "All international students including Bangladesh",
+          "competitiveness": "Moderate-High",
+          "applicationDeadline": "Varies by program, typically September-November",
+          "bangladeshiSuccess": "Good - many Bangladeshi recipients annually"
+        },
+        {
+          "name": "Deutschlandstipendium",
+          "amount": "EUR 300/month",
+          "eligibility": "Merit-based, all students",
+          "competitiveness": "Medium",
+          "bangladeshiSuccess": "Moderate"
+        },
+        {
+          "name": "Erasmus+ (for select programs)",
+          "amount": "EUR 1,000-1,400/month",
+          "eligibility": "Joint European programs",
+          "bangladeshiSuccess": "Low-Medium"
+        }
+      ],
+      "universityFunding": {
+        "availability": "High - public universities charge minimal fees",
+        "typicalPackage": {
+          "phd": "EUR 2,500-3,500/month as research employee (TV-L E13 contract)",
+          "msc": "Low tuition (EUR 0-3,000/year) allows self-funding feasibility"
+        },
+        "fundingSources": [
+          "Research assistant contracts (PhD standard)",
+          "DAAD scholarships",
+          "University-specific scholarships",
+          "Industry partnerships (Bosch, BMW, SAP)"
+        ],
+        "topFundedUniversities": [
+          "TU Munich - strong industry ties",
+          "RWTH Aachen",
+          "KIT Karlsruhe",
+          "TU Berlin",
+          "University of Freiburg"
+        ],
+        "fundingNote": "PhD positions are salaried jobs (3-4 year contracts); MSc has low tuition so even without scholarship, part-time work makes it affordable"
+      },
+      "externalFellowships": [
+        {
+          "name": "Heinrich Böll Foundation",
+          "amount": "EUR 850-1,350/month",
+          "eligibility": "Developing country students with social commitment",
+          "bangladeshiSuccess": "Moderate"
+        }
+      ],
+      "livingStipendAdequacy": "Good - stipends match cost of living",
+      "averageMonthlyStipend": "EUR 850-1,300 (MSc scholarship), EUR 2,500-3,500 (PhD salary)",
+      "averageMonthlyCost": "EUR 850-1,200",
+      "selfFundingCost": {
+        "mscTotal": "EUR 20,000-35,000 (2 years) - very feasible with part-time work",
+        "phdTotal": "Rarely needed - salaried positions"
+      },
+      "workWhileStudying": "120 full days or 240 half days per year",
+      "realisticStrategy": "Apply for DAAD scholarship; even without it, low tuition makes self-funding viable with student jobs (EUR 12-15/hour). PhD positions are salaried - apply directly to professors with funding.",
+      "confidenceScore": 91
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "overallFundingScore": 68,
+      "fundingAvailability": "Limited for MSc, good for PhD",
+      "mscFundingChance": 25,
+      "phdFundingChance": 65,
+      "governmentScholarships": [
+        {
+          "name": "Australia Awards Scholarships",
+          "amount": "Full tuition + AUD 34,000/year stipend",
+          "eligibility": "Bangladesh priority country",
+          "competitiveness": "Very high - 20-30 awards/year for Bangladesh",
+          "applicationDeadline": "April-May annually",
+          "bangladeshiSuccess": "Low but possible with development sector focus"
+        },
+        {
+          "name": "Research Training Program (RTP)",
+          "amount": "Tuition waiver + AUD 32,000/year stipend",
+          "eligibility": "PhD and research MSc",
+          "competitiveness": "High",
+          "bangladeshiSuccess": "Moderate for strong applicants"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Medium for PhD, low for coursework MSc",
+        "typicalPackage": {
+          "phd": "AUD 30,000-35,000/year + tuition waiver (RTP or university scholarship)",
+          "msc": "Rare - mostly self-funded"
+        },
+        "fundingSources": [
+          "RTP scholarships",
+          "University-specific scholarships",
+          "Industry PhD programs (CSIRO, NICTA)"
+        ],
+        "topFundedUniversities": [
+          "University of Melbourne",
+          "Australian National University",
+          "University of Sydney",
+          "UNSW Sydney",
+          "University of Queensland"
+        ],
+        "fundingNote": "Coursework MSc rarely funded; Research MSc/PhD competitive for RTP; Go8 universities have most funding"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Tight in Sydney/Melbourne, adequate elsewhere",
+      "averageMonthlyStipend": "AUD 2,600-2,900",
+      "averageMonthlyCost": "AUD 2,000-3,000",
+      "selfFundingCost": {
+        "mscTotal": "AUD 90,000-130,000 (2 years) - expensive",
+        "phdTotal": "AUD 140,000-200,000 (3-4 years) if unfunded"
+      },
+      "workWhileStudying": "48 hours/fortnight during session, unlimited during breaks (as of 2024 reforms)",
+      "realisticStrategy": "Target PhD with RTP scholarship; MSc requires significant self-funding - consider if family can support or if planning to work part-time extensively",
+      "confidenceScore": 79
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "overallFundingScore": 74,
+      "fundingAvailability": "Moderate - tuition required but scholarships available",
+      "mscFundingChance": 35,
+      "phdFundingChance": 85,
+      "governmentScholarships": [
+        {
+          "name": "Holland Scholarship",
+          "amount": "EUR 5,000 one-time",
+          "eligibility": "Non-EEA students including Bangladesh",
+          "competitiveness": "Medium",
+          "bangladeshiSuccess": "Moderate - helps but doesn't cover full costs"
+        },
+        {
+          "name": "Orange Knowledge Programme",
+          "amount": "Full tuition + EUR 1,000-1,200/month",
+          "eligibility": "Developing countries with development focus",
+          "competitiveness": "High",
+          "bangladeshiSuccess": "Low-Medium"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Very high for PhD, low-medium for MSc",
+        "typicalPackage": {
+          "phd": "EUR 2,500-3,000/month as salaried employee + benefits",
+          "msc": "Partial tuition waivers or EUR 5,000-15,000 scholarships"
+        },
+        "fundingSources": [
+          "PhD positions (salaried 4-year contracts)",
+          "University excellence scholarships",
+          "Faculty-specific funding",
+          "Industry partnerships"
+        ],
+        "topFundedUniversities": [
+          "TU Delft - strong AI funding",
+          "University of Amsterdam",
+          "Eindhoven University of Technology",
+          "Utrecht University",
+          "Leiden University"
+        ],
+        "fundingNote": "PhD is a job with salary and benefits; MSc tuition EUR 15,000-20,000/year - scholarships reduce but rarely cover fully"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Adequate with PhD salary; tight for self-funded MSc",
+      "averageMonthlyStipend": "EUR 2,500-3,000 (PhD)",
+      "averageMonthlyCost": "EUR 900-1,400",
+      "selfFundingCost": {
+        "mscTotal": "EUR 35,000-55,000 (2 years)",
+        "phdTotal": "Not applicable - salaried"
+      },
+      "workWhileStudying": "16 hours/week",
+      "realisticStrategy": "PhD is fully salaried - excellent option. MSc requires funding plan: apply for Holland Scholarship + university scholarships + budget for part-time work.",
+      "confidenceScore": 82
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "overallFundingScore": 71,
+      "fundingAvailability": "Moderate for MSc, excellent for PhD",
+      "mscFundingChance": 30,
+      "phdFundingChance": 92,
+      "governmentScholarships": [
+        {
+          "name": "Swedish Institute Scholarships for Global Professionals (SISGP)",
+          "amount": "Full tuition + SEK 10,000/month + travel",
+          "eligibility": "Developing countries including Bangladesh",
+          "competitiveness": "Very high - ~5-10 Bangladesh recipients/year",
+          "applicationDeadline": "February",
+          "bangladeshiSuccess": "Very low"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Excellent for PhD, limited for MSc",
+        "typicalPackage": {
+          "phd": "SEK 32,000-38,000/month as salaried employee (4-5 years)",
+          "msc": "Rare - university-specific scholarships cover tuition partially"
+        },
+        "fundingSources": [
+          "PhD employment contracts",
+          "University scholarships (10-50% tuition reduction)",
+          "Research council grants"
+        ],
+        "topFundedUniversities": [
+          "KTH Royal Institute of Technology",
+          "Chalmers University",
+          "Lund University",
+          "Uppsala University",
+          "Stockholm University"
+        ],
+        "fundingNote": "PhD positions are salaried jobs with full benefits; MSc tuition SEK 140,000-180,000/year - very expensive for non-EU"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Good for PhD salary; challenging for self-funded MSc",
+      "averageMonthlyStipend": "SEK 32,000-38,000 (PhD)",
+      "averageMonthlyCost": "SEK 9,000-12,000",
+      "selfFundingCost": {
+        "mscTotal": "SEK 450,000-650,000 (2 years, ~USD 60,000-88,000) - very expensive",
+        "phdTotal": "Not applicable - salaried"
+      },
+      "workWhileStudying": "No formal limit but must not interfere with studies",
+      "realisticStrategy": "PhD is excellent - fully salaried. MSc very expensive; only pursue if SI scholarship or wealthy family. Otherwise skip MSc and apply directly to PhD.",
+      "confidenceScore": 78
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "overallFundingScore": 76,
+      "fundingAvailability": "Moderate for MSc, excellent for PhD",
+      "mscFundingChance": 35,
+      "phdFundingChance": 88,
+      "governmentScholarships": [
+        {
+          "name": "Finnish Government Scholarship Pool",
+          "amount": "EUR 1,500/month",
+          "eligibility": "Doctoral students",
+          "competitiveness": "High",
+          "bangladeshiSuccess": "Low"
+        }
+      ],
+      "universityFunding": {
+        "availability": "High for PhD, medium for MSc",
+        "typicalPackage": {
+          "phd": "EUR 2,500-3,200/month as salaried researcher (4 years)",
+          "msc": "University scholarships EUR 6,000-12,000/year"
+        },
+        "fundingSources": [
+          "PhD employment contracts",
+          "University tuition waivers",
+          "Academy of Finland grants",
+          "Industry partnerships (Nokia, gaming companies)"
+        ],
+        "topFundedUniversities": [
+          "Aalto University - best AI funding",
+          "University of Helsinki",
+          "University of Oulu",
+          "Tampere University"
+        ],
+        "fundingNote": "PhD is salaried employment; MSc tuition EUR 12,000-18,000/year but scholarships often cover 50-100%"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Good - Finland relatively affordable compared to Nordics",
+      "averageMonthlyStipend": "EUR 2,500-3,200 (PhD)",
+      "averageMonthlyCost": "EUR 800-1,100",
+      "selfFundingCost": {
+        "mscTotal": "EUR 30,000-50,000 (2 years)",
+        "phdTotal": "Not applicable - salaried"
+      },
+      "workWhileStudying": "25 hours/week",
+      "realisticStrategy": "Apply for Aalto MSc scholarships (50-100% tuition waiver possible); PhD positions are salaried and well-paid relative to cost of living",
+      "confidenceScore": 81
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "overallFundingScore": 69,
+      "fundingAvailability": "Limited for MSc, excellent for PhD",
+      "mscFundingChance": 25,
+      "phdFundingChance": 90,
+      "governmentScholarships": [],
+      "universityFunding": {
+        "availability": "Excellent for PhD, low for MSc",
+        "typicalPackage": {
+          "phd": "DKK 30,000-35,000/month as salaried employee (3 years)",
+          "msc": "Rare scholarships, mostly self-funded"
+        },
+        "fundingSources": [
+          "PhD industrial contracts (common with Novo Nordisk, Maersk, Vestas)",
+          "University scholarships (limited)",
+          "Innovation Fund Denmark"
+        ],
+        "topFundedUniversities": [
+          "Technical University of Denmark (DTU)",
+          "University of Copenhagen",
+          "Aarhus University",
+          "Aalborg University"
+        ],
+        "fundingNote": "PhD positions are salaried jobs with excellent benefits; MSc tuition DKK 90,000-120,000/year - expensive"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Good for PhD; challenging for self-funded MSc",
+      "averageMonthlyStipend": "DKK 30,000-35,000 (PhD)",
+      "averageMonthlyCost": "DKK 8,000-12,000",
+      "selfFundingCost": {
+        "mscTotal": "DKK 350,000-500,000 (2 years, ~USD 60,000-85,000) - expensive",
+        "phdTotal": "Not applicable - salaried"
+      },
+      "workWhileStudying": "20 hours/week",
+      "realisticStrategy": "PhD is excellent - well-paid and often industry-linked. MSc expensive; pursue only if wealthy or skip to PhD applications.",
+      "confidenceScore": 77
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "overallFundingScore": 88,
+      "fundingAvailability": "Excellent - no tuition + good scholarships",
+      "mscFundingChance": 55,
+      "phdFundingChance": 95,
+      "governmentScholarships": [
+        {
+          "name": "Norwegian State Educational Loan Fund (Lånekassen)",
+          "amount": "Loans convertible to grants for developing countries",
+          "eligibility": "Various criteria",
+          "bangladeshiSuccess": "Moderate"
+        },
+        {
+          "name": "Quota Scheme Scholarships",
+          "amount": "Full coverage",
+          "eligibility": "Developing countries",
+          "competitiveness": "High",
+          "bangladeshiSuccess": "Low-Medium"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Excellent - no tuition fees",
+        "typicalPackage": {
+          "phd": "NOK 35,000-42,000/month as salaried employee (3-4 years)",
+          "msc": "No tuition + possible living stipend scholarships"
+        },
+        "fundingSources": [
+          "PhD employment contracts (standard)",
+          "University living cost grants",
+          "Research Council of Norway"
+        ],
+        "topFundedUniversities": [
+          "Norwegian University of Science and Technology (NTNU)",
+          "University of Oslo",
+          "University of Bergen"
+        ],
+        "fundingNote": "Public universities charge no tuition (only NOK 600-900 semester fee); PhD is salaried; key challenge is living costs"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Excellent for PhD; MSc needs savings or part-time work",
+      "averageMonthlyStipend": "NOK 35,000-42,000 (PhD)",
+      "averageMonthlyCost": "NOK 11,000-14,000",
+      "selfFundingCost": {
+        "mscTotal": "NOK 250,000-350,000 (2 years living costs only, ~USD 30,000-42,000) - manageable",
+        "phdTotal": "Not applicable - salaried"
+      },
+      "workWhileStudying": "20 hours/week",
+      "realisticStrategy": "No tuition is huge advantage; save USD 20,000-25,000 for first year MSc living costs, work part-time. PhD is excellently paid.",
+      "confidenceScore": 86
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "overallFundingScore": 81,
+      "fundingAvailability": "Good for PhD, limited for MSc",
+      "mscFundingChance": 20,
+      "phdFundingChance": 88,
+      "governmentScholarships": [
+        {
+          "name": "Swiss Government Excellence Scholarships",
+          "amount": "CHF 1,920/month + tuition + benefits",
+          "eligibility": "Postgraduate researchers and PhD",
+          "competitiveness": "Extremely high",
+          "bangladeshiSuccess": "Very low - 1-2/year from Bangladesh"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Excellent for PhD, minimal for MSc",
+        "typicalPackage": {
+          "phd": "CHF 47,000-55,000/year as salaried researcher (4 years)",
+          "msc": "Tuition CHF 1,500/year but living costs very high"
+        },
+        "fundingSources": [
+          "PhD employment contracts",
+          "Swiss National Science Foundation",
+          "ETH/EPFL research grants"
+        ],
+        "topFundedUniversities": [
+          "ETH Zurich - top for AI PhD funding",
+          "EPFL - excellent funding",
+          "University of Zurich",
+          "University of Geneva"
+        ],
+        "fundingNote": "Low tuition but extreme living costs (CHF 1,800-2,200/month); PhD salaries adequate but MSc self-funding challenging"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Good for PhD salary; very challenging for unfunded MSc",
+      "averageMonthlyStipend": "CHF 3,900-4,600 (PhD)",
+      "averageMonthlyCost": "CHF 1,600-2,200",
+      "selfFundingCost": {
+        "mscTotal": "CHF 50,000-70,000 (1.5-2 years, ~USD 65,000-90,000) - very expensive",
+        "phdTotal": "Not applicable - salaried"
+      },
+      "workWhileStudying": "15 hours/week",
+      "realisticStrategy": "Target ETH/EPFL PhD with full salary; MSc only if wealthy background. PhD positions highly competitive but well-compensated.",
+      "confidenceScore": 83
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "overallFundingScore": 66,
+      "fundingAvailability": "Limited for MSc, good for PhD",
+      "mscFundingChance": 20,
+      "phdFundingChance": 70,
+      "governmentScholarships": [
+        {
+          "name": "Government of Ireland International Education Scholarships",
+          "amount": "EUR 10,000 for one year",
+          "eligibility": "Non-EU students",
+          "competitiveness": "Very high",
+          "bangladeshiSuccess": "Very low"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Good for PhD, very limited for MSc",
+        "typicalPackage": {
+          "phd": "EUR 18,500-22,000/year stipend + tuition waiver (4 years)",
+          "msc": "Rare scholarships"
+        },
+        "fundingSources": [
+          "Irish Research Council scholarships",
+          "Science Foundation Ireland",
+          "University scholarships",
+          "Industry partnerships (Google, Amazon, Microsoft)"
+        ],
+        "topFundedUniversities": [
+          "Trinity College Dublin",
+          "University College Dublin",
+          "University of Galway",
+          "Dublin City University"
+        ],
+        "fundingNote": "PhD funding competitive but available; MSc tuition EUR 18,000-25,000/year - mostly self-funded"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Tight due to Dublin housing crisis",
+      "averageMonthlyStipend": "EUR 1,540-1,830 (PhD)",
+      "averageMonthlyCost": "EUR 1,200-1,800",
+      "selfFundingCost": {
+        "mscTotal": "EUR 50,000-75,000 (1-2 years) - expensive",
+        "phdTotal": "EUR 80,000-120,000 if unfunded"
+      },
+      "workWhileStudying": "20 hours/week",
+      "realisticStrategy": "PhD with IRC or SFI funding viable; MSc requires significant self-funding - high tuition + Dublin housing costs make it expensive",
+      "confidenceScore": 74
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "overallFundingScore": 82,
+      "fundingAvailability": "Excellent - MEXT scholarship is comprehensive",
+      "mscFundingChance": 40,
+      "phdFundingChance": 75,
+      "governmentScholarships": [
+        {
+          "name": "MEXT Scholarship (Japanese Government)",
+          "amount": "JPY 144,000/month (MSc), JPY 145,000/month (PhD) + tuition waiver",
+          "eligibility": "All international students",
+          "competitiveness": "Medium-High",
+          "applicationDeadline": "April-May annually",
+          "bangladeshiSuccess": "Moderate - 30-50 Bangladeshi recipients/year across all fields"
+        },
+        {
+          "name": "JASSO Scholarships",
+          "amount": "JPY 48,000-60,000/month",
+          "eligibility": "International students",
+          "competitiveness": "Medium",
+          "bangladeshiSuccess": "Good"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Good with MEXT or university scholarships",
+        "typicalPackage": {
+          "phd": "JPY 150,000-200,000/month (MEXT or RA positions)",
+          "msc": "Tuition waiver + JPY 80,000-144,000/month"
+        },
+        "fundingSources": [
+          "MEXT scholarships (primary pathway)",
+          "University tuition waivers (30-100%)",
+          "Research assistant positions",
+          "Corporate scholarships (Toyota, Sony, NTT)"
+        ],
+        "topFundedUniversities": [
+          "University of Tokyo",
+          "Kyoto University",
+          "Tokyo Institute of Technology",
+          "Osaka University",
+          "Tohoku University"
+        ],
+        "fundingNote": "MEXT is most comprehensive pathway; university RA positions also available; tuition ~JPY 535,800/year at national universities"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Adequate in most cities; tight in Tokyo",
+      "averageMonthlyStipend": "JPY 144,000-200,000",
+      "averageMonthlyCost": "JPY 100,000-150,000",
+      "selfFundingCost": {
+        "mscTotal": "JPY 3,000,000-5,000,000 (2 years, ~USD 22,000-37,000)",
+        "phdTotal": "JPY 5,000,000-8,000,000 (3 years, ~USD 37,000-60,000)"
+      },
+      "workWhileStudying": "28 hours/week",
+      "realisticStrategy": "Apply for MEXT scholarship via embassy or university; high success rate for STEM. Even without MEXT, tuition reasonable and part-time work viable. Learn basic Japanese.",
+      "confidenceScore": 85
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "overallFundingScore": 79,
+      "fundingAvailability": "Very good - GKS scholarship comprehensive",
+      "mscFundingChance": 45,
+      "phdFundingChance": 72,
+      "governmentScholarships": [
+        {
+          "name": "Global Korea Scholarship (GKS/KGSP)",
+          "amount": "KRW 900,000-1,000,000/month + tuition + Korean language training",
+          "eligibility": "All international students under 40",
+          "competitiveness": "Medium-High",
+          "applicationDeadline": "September-October",
+          "bangladeshiSuccess": "Good - 50-80 Bangladeshi recipients/year"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Good at top universities",
+        "typicalPackage": {
+          "phd": "KRW 1,200,000-1,800,000/month (RA positions) + tuition waiver",
+          "msc": "50-100% tuition waiver + possible stipend"
+        },
+        "fundingSources": [
+          "GKS scholarships (primary)",
+          "University scholarships (KAIST, SNU, POSTECH offer generous funding)",
+          "Research assistant positions",
+          "Brain Korea 21 funding"
+        ],
+        "topFundedUniversities": [
+          "KAIST - nearly all grad students funded",
+          "Seoul National University",
+          "POSTECH",
+          "Korea University",
+          "Yonsei University"
+        ],
+        "fundingNote": "KAIST guarantees funding for all admitted PhD students; GKS is generous and includes Korean language training"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Good - Korea relatively affordable",
+      "averageMonthlyStipend": "KRW 900,000-1,500,000",
+      "averageMonthlyCost": "KRW 700,000-1,000,000",
+      "selfFundingCost": {
+        "mscTotal": "KRW 40,000,000-60,000,000 (2 years, ~USD 30,000-45,000)",
+        "phdTotal": "KRW 80,000,000-120,000,000 if unfunded"
+      },
+      "workWhileStudying": "20 hours/week",
+      "realisticStrategy": "GKS is excellent comprehensive scholarship - apply via embassy. KAIST/SNU also offer direct admission with funding. Korean language requirement for GKS is 1 year training included.",
+      "confidenceScore": 83
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "overallFundingScore": 85,
+      "fundingAvailability": "Excellent - CSC scholarship widely available",
+      "mscFundingChance": 65,
+      "phdFundingChance": 80,
+      "governmentScholarships": [
+        {
+          "name": "Chinese Government Scholarship (CSC)",
+          "amount": "CNY 3,000-3,500/month (MSc), CNY 3,500/month (PhD) + tuition waiver + accommodation",
+          "eligibility": "All international students",
+          "competitiveness": "Medium",
+          "applicationDeadline": "January-April",
+          "bangladeshiSuccess": "Very high - hundreds of Bangladeshi recipients annually"
+        },
+        {
+          "name": "Confucius Institute Scholarship",
+          "amount": "Full coverage for Chinese language + degree",
+          "eligibility": "International students",
+          "bangladeshiSuccess": "High"
+        }
+      ],
+      "universityFunding": {
+        "availability": "Very good especially at top universities",
+        "typicalPackage": {
+          "phd": "CNY 3,500-6,000/month + tuition waiver + accommodation",
+          "msc": "CNY 3,000-4,000/month + tuition waiver"
+        },
+        "fundingSources": [
+          "CSC scholarships (most common)",
+          "Provincial government scholarships",
+          "University scholarships (Tsinghua, Peking offer generous packages)",
+          "Belt and Road Initiative scholarships"
+        ],
+        "topFundedUniversities": [
+          "Tsinghua University - excellent funding for AI",
+          "Peking University",
+          "Zhejiang University",
+          "Shanghai Jiao Tong University",
+          "University of Science and Technology of China"
+        ],
+        "fundingNote": "CSC widely available; stipend covers basic living; top universities offer additional allowances; many programs taught in English"
+      },
+      "externalFellowships": [],
+      "livingStipendAdequacy": "Adequate - China relatively affordable",
+      "averageMonthlyStipend": "CNY 3,000-5,000",
+      "averageMonthlyCost": "CNY 2,500-4,000",
+      "selfFundingCost": {
+        "mscTotal": "CNY 80,000-150,000 (2-3 years, ~USD 12,000-22,000) - very affordable",
+        "phdTotal": "CNY 150,000-250,000 if unfunded (~USD 22,000-37,000)"
+      },
+      "workWhileStudying": "Limited - need work permit",
+      "realisticStrategy": "CSC scholarship easiest to obtain among all countries - high acceptance rate for Bangladeshi students. Strong option for fully-funded study with good AI research, but consider long-term immigration limitations.",
+      "confidenceScore": 87,
+      "criticalNote": "Excellent for education and funding; weak for permanent immigration pathway"
+    }
+  ],
+  "summaryComparison": {
+    "easiestToFund": [
+      "China (CSC scholarship high acceptance)",
+      "Germany (low tuition + DAAD)",
+      "Norway (no tuition)",
+      "Japan (MEXT)",
+      "South Korea (GKS)"
+    ],
+    "mostDifficultToFund": [
+      "USA MSc (self-funded ~USD 150K)",
+      "Switzerland MSc (high living costs)",
+      "Sweden MSc (high tuition for non-EU)",
+      "Denmark MSc (high tuition + living)",
+      "Australia MSc (high tuition)"
+    ],
+    "bestPhdFunding": [
+      "Norway (95% chance, high salary)",
+      "Sweden (92% chance, salaried)",
+      "Germany (90% chance, salaried)",
+      "Denmark (90% chance, high salary)",
+      "USA top programs (88% chance, high stipend)"
+    ],
+    "strategicAdvice": "PhD almost always funded at top programs - apply directly. MSc requires strategy: target Germany/Norway for low tuition, or China/Japan/Korea for government scholarships, or self-fund in expensive countries only if wealthy or planning high-salary jobs to recoup costs quickly."
+  }
+}
