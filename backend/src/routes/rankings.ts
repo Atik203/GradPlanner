@@ -23,7 +23,10 @@ router.get("/", async (req: Request, res: Response) => {
     }
 
     if (countryFilter && countryFilter !== "all") {
-      where.country = { equals: countryFilter, mode: "insensitive" as const };
+      const countries = countryFilter.split(",").map(c => c.trim()).filter(Boolean);
+      if (countries.length > 0) {
+        where.country = { in: countries, mode: "insensitive" as const };
+      }
     }
 
     const orderBy = [
@@ -52,6 +55,24 @@ router.get("/", async (req: Request, res: Response) => {
   } catch (error) {
     console.error("GET /rankings error:", error);
     res.status(500).json({ error: "Failed to search rankings" });
+  }
+});
+
+// GET /api/v1/rankings/countries — get unique list of countries
+router.get("/countries", async (req: Request, res: Response) => {
+  try {
+    const countries = await prisma.universityRanking.findMany({
+      select: { country: true },
+      distinct: ['country'],
+      orderBy: { country: 'asc' },
+    });
+    
+    // Extract just the strings
+    const countryNames = countries.map(c => c.country).filter(Boolean);
+    res.json(countryNames);
+  } catch (error) {
+    console.error("GET /rankings/countries error:", error);
+    res.status(500).json({ error: "Failed to fetch countries" });
   }
 });
 

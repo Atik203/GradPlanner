@@ -6,29 +6,10 @@ import { fetchApi } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, Loader2, ChevronLeft, ChevronRight, BarChart3, Star, ExternalLink, Filter } from "lucide-react";
+import { MultiSelect } from "@/components/ui/multi-select";
+import { Search, Loader2, ChevronLeft, ChevronRight, BarChart3, Star, ExternalLink } from "lucide-react";
 import { UniversityRanking } from "@/types";
 import { useDebounce } from "@/hooks/use-debounce";
-
-const COUNTRIES = [
-  "all",
-  "United States of America",
-  "United Kingdom",
-  "Canada",
-  "Australia",
-  "Germany",
-  "Ireland",
-  "Sweden",
-  "Netherlands",
-  "Switzerland",
-  "Finland",
-  "Japan",
-  "China (Mainland)",
-  "Republic of Korea",
-  "Singapore",
-  "Hong Kong SAR, China"
-];
 
 interface PaginatedResponse {
   data: UniversityRanking[];
@@ -42,7 +23,8 @@ const ITEMS_PER_PAGE = 50;
 
 export default function DashboardRankingsPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [countryFilter, setCountryFilter] = useState("all");
+  const [countryFilter, setCountryFilter] = useState<string[]>([]);
+  const [availableCountries, setAvailableCountries] = useState<string[]>([]);
   const debouncedQuery = useDebounce(searchQuery, 350);
   const [results, setResults] = useState<UniversityRanking[]>([]);
   const [total, setTotal] = useState(0);
@@ -51,7 +33,7 @@ export default function DashboardRankingsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const loadData = useCallback(async (page: number, query: string, country: string) => {
+  const loadData = useCallback(async (page: number, query: string, countries: string[]) => {
     setLoading(true);
     setError(null);
     try {
@@ -60,7 +42,7 @@ export default function DashboardRankingsPage() {
         page: String(page),
       });
       if (query.trim()) params.set("q", query.trim());
-      if (country !== "all") params.set("country", country);
+      if (countries.length > 0) params.set("country", countries.join(","));
 
       const response: PaginatedResponse = await fetchApi(`/api/v1/rankings?${params.toString()}`);
       setResults(response.data);
@@ -73,6 +55,19 @@ export default function DashboardRankingsPage() {
     } finally {
       setLoading(false);
     }
+  }, []);
+
+  // Fetch countries on mount
+  useEffect(() => {
+    async function loadCountries() {
+      try {
+        const data = await fetchApi("/api/v1/rankings/countries");
+        setAvailableCountries(data);
+      } catch (err) {
+        console.error("Failed to load countries", err);
+      }
+    }
+    loadCountries();
   }, []);
 
   useEffect(() => {
@@ -127,21 +122,12 @@ export default function DashboardRankingsPage() {
 
             {/* Country Filter */}
             <div className="w-full sm:w-[220px]">
-              <Select value={countryFilter} onValueChange={setCountryFilter}>
-                <SelectTrigger className="h-11 bg-background border-border rounded-md shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <Filter className="h-4 w-4 text-muted-foreground" />
-                    <SelectValue placeholder="All Countries" />
-                  </div>
-                </SelectTrigger>
-                <SelectContent>
-                  {COUNTRIES.map((c) => (
-                    <SelectItem key={c} value={c}>
-                      {c === "all" ? "All Countries" : c}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <MultiSelect
+                options={availableCountries}
+                selected={countryFilter}
+                onChange={setCountryFilter}
+                placeholder="All Countries"
+              />
             </div>
           </div>
 

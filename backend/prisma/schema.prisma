@@ -110,6 +110,8 @@ model University {
 
   professors   Professor[]
   application  Application?
+  rankingId    String?
+  ranking      UniversityRanking? @relation(fields: [rankingId], references: [id])
 }
 
 model Professor {
@@ -184,6 +186,8 @@ model UniversityRanking {
   institutionName String
   country         String
   region          String?
+
+  universities    University[]
 
   // Which ranking lists this university appears in
   inQs            Boolean @default(false)
