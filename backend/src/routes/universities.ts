@@ -16,7 +16,6 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       },
       include: {
         application: true,
-        ranking: true,
         professors: {
           where: { deletedAt: null },
         },

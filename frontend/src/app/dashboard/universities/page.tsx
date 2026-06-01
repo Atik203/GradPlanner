@@ -267,26 +267,6 @@ export default function UniversitiesPage() {
                       {uni.tier}
                     </span>
                   </div>
-                  {/* Ranking badges — shown if university is linked to a ranking */}
-                  {(uni as University & { ranking?: UniversityRanking | null }).ranking && (
-                    <div className="flex flex-wrap gap-1.5 mt-2">
-                      {(uni as University & { ranking?: UniversityRanking | null }).ranking?.qs2026Rank ? (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 font-bold text-[10px] border border-purple-500/20">
-                          QS #{(uni as University & { ranking?: UniversityRanking | null }).ranking?.qs2026RankDisplay || (uni as University & { ranking?: UniversityRanking | null }).ranking?.qs2026Rank}
-                        </span>
-                      ) : null}
-                      {(uni as University & { ranking?: UniversityRanking | null }).ranking?.the2026Rank ? (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold text-[10px] border border-blue-500/20">
-                          THE #{(uni as University & { ranking?: UniversityRanking | null }).ranking?.the2026RankDisplay || (uni as University & { ranking?: UniversityRanking | null }).ranking?.the2026Rank}
-                        </span>
-                      ) : null}
-                      {(uni as University & { ranking?: UniversityRanking | null }).ranking?.arwu2025Rank ? (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-[10px] border border-emerald-500/20">
-                          ARWU #{(uni as University & { ranking?: UniversityRanking | null }).ranking?.arwu2025Rank}
-                        </span>
-                      ) : null}
-                    </div>
-                  )}
                 </CardHeader>
                 <CardContent className="space-y-3 pb-4">
                   {uni.program && (
