@@ -60,6 +60,7 @@ export type UniversityMinAggregateOutputType = {
   deletedAt: Date | null
   createdAt: Date | null
   updatedAt: Date | null
+  rankingId: string | null
 }
 
 export type UniversityMaxAggregateOutputType = {
@@ -84,6 +85,7 @@ export type UniversityMaxAggregateOutputType = {
   deletedAt: Date | null
   createdAt: Date | null
   updatedAt: Date | null
+  rankingId: string | null
 }
 
 export type UniversityCountAggregateOutputType = {
@@ -108,6 +110,7 @@ export type UniversityCountAggregateOutputType = {
   deletedAt: number
   createdAt: number
   updatedAt: number
+  rankingId: number
   _all: number
 }
 
@@ -146,6 +149,7 @@ export type UniversityMinAggregateInputType = {
   deletedAt?: true
   createdAt?: true
   updatedAt?: true
+  rankingId?: true
 }
 
 export type UniversityMaxAggregateInputType = {
@@ -170,6 +174,7 @@ export type UniversityMaxAggregateInputType = {
   deletedAt?: true
   createdAt?: true
   updatedAt?: true
+  rankingId?: true
 }
 
 export type UniversityCountAggregateInputType = {
@@ -194,6 +199,7 @@ export type UniversityCountAggregateInputType = {
   deletedAt?: true
   createdAt?: true
   updatedAt?: true
+  rankingId?: true
   _all?: true
 }
 
@@ -305,6 +311,7 @@ export type UniversityGroupByOutputType = {
   deletedAt: Date | null
   createdAt: Date
   updatedAt: Date
+  rankingId: string | null
   _count: UniversityCountAggregateOutputType | null
   _avg: UniversityAvgAggregateOutputType | null
   _sum: UniversitySumAggregateOutputType | null
@@ -352,9 +359,11 @@ export type UniversityWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"University"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"University"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"University"> | Date | string
+  rankingId?: Prisma.StringNullableFilter<"University"> | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   professors?: Prisma.ProfessorListRelationFilter
   application?: Prisma.XOR<Prisma.ApplicationNullableScalarRelationFilter, Prisma.ApplicationWhereInput> | null
+  ranking?: Prisma.XOR<Prisma.UniversityRankingNullableScalarRelationFilter, Prisma.UniversityRankingWhereInput> | null
 }
 
 export type UniversityOrderByWithRelationInput = {
@@ -379,9 +388,11 @@ export type UniversityOrderByWithRelationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  rankingId?: Prisma.SortOrderInput | Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
   professors?: Prisma.ProfessorOrderByRelationAggregateInput
   application?: Prisma.ApplicationOrderByWithRelationInput
+  ranking?: Prisma.UniversityRankingOrderByWithRelationInput
 }
 
 export type UniversityWhereUniqueInput = Prisma.AtLeast<{
@@ -409,9 +420,11 @@ export type UniversityWhereUniqueInput = Prisma.AtLeast<{
   deletedAt?: Prisma.DateTimeNullableFilter<"University"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"University"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"University"> | Date | string
+  rankingId?: Prisma.StringNullableFilter<"University"> | string | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   professors?: Prisma.ProfessorListRelationFilter
   application?: Prisma.XOR<Prisma.ApplicationNullableScalarRelationFilter, Prisma.ApplicationWhereInput> | null
+  ranking?: Prisma.XOR<Prisma.UniversityRankingNullableScalarRelationFilter, Prisma.UniversityRankingWhereInput> | null
 }, "id">
 
 export type UniversityOrderByWithAggregationInput = {
@@ -436,6 +449,7 @@ export type UniversityOrderByWithAggregationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  rankingId?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.UniversityCountOrderByAggregateInput
   _avg?: Prisma.UniversityAvgOrderByAggregateInput
   _max?: Prisma.UniversityMaxOrderByAggregateInput
@@ -468,6 +482,7 @@ export type UniversityScalarWhereWithAggregatesInput = {
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"University"> | Date | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"University"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"University"> | Date | string
+  rankingId?: Prisma.StringNullableWithAggregatesFilter<"University"> | string | null
 }
 
 export type UniversityCreateInput = {
@@ -494,6 +509,7 @@ export type UniversityCreateInput = {
   user: Prisma.UserCreateNestedOneWithoutUniversitiesInput
   professors?: Prisma.ProfessorCreateNestedManyWithoutUniversityInput
   application?: Prisma.ApplicationCreateNestedOneWithoutUniversityInput
+  ranking?: Prisma.UniversityRankingCreateNestedOneWithoutUniversitiesInput
 }
 
 export type UniversityUncheckedCreateInput = {
@@ -518,6 +534,7 @@ export type UniversityUncheckedCreateInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  rankingId?: string | null
   professors?: Prisma.ProfessorUncheckedCreateNestedManyWithoutUniversityInput
   application?: Prisma.ApplicationUncheckedCreateNestedOneWithoutUniversityInput
 }
@@ -546,6 +563,7 @@ export type UniversityUpdateInput = {
   user?: Prisma.UserUpdateOneRequiredWithoutUniversitiesNestedInput
   professors?: Prisma.ProfessorUpdateManyWithoutUniversityNestedInput
   application?: Prisma.ApplicationUpdateOneWithoutUniversityNestedInput
+  ranking?: Prisma.UniversityRankingUpdateOneWithoutUniversitiesNestedInput
 }
 
 export type UniversityUncheckedUpdateInput = {
@@ -570,6 +588,7 @@ export type UniversityUncheckedUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  rankingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   professors?: Prisma.ProfessorUncheckedUpdateManyWithoutUniversityNestedInput
   application?: Prisma.ApplicationUncheckedUpdateOneWithoutUniversityNestedInput
 }
@@ -596,6 +615,7 @@ export type UniversityCreateManyInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  rankingId?: string | null
 }
 
 export type UniversityUpdateManyMutationInput = {
@@ -643,6 +663,7 @@ export type UniversityUncheckedUpdateManyInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  rankingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UniversityListRelationFilter = {
@@ -677,6 +698,7 @@ export type UniversityCountOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  rankingId?: Prisma.SortOrder
 }
 
 export type UniversityAvgOrderByAggregateInput = {
@@ -707,6 +729,7 @@ export type UniversityMaxOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  rankingId?: Prisma.SortOrder
 }
 
 export type UniversityMinOrderByAggregateInput = {
@@ -731,6 +754,7 @@ export type UniversityMinOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  rankingId?: Prisma.SortOrder
 }
 
 export type UniversitySumOrderByAggregateInput = {
@@ -825,6 +849,48 @@ export type UniversityUpdateOneRequiredWithoutApplicationNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UniversityUpdateToOneWithWhereWithoutApplicationInput, Prisma.UniversityUpdateWithoutApplicationInput>, Prisma.UniversityUncheckedUpdateWithoutApplicationInput>
 }
 
+export type UniversityCreateNestedManyWithoutRankingInput = {
+  create?: Prisma.XOR<Prisma.UniversityCreateWithoutRankingInput, Prisma.UniversityUncheckedCreateWithoutRankingInput> | Prisma.UniversityCreateWithoutRankingInput[] | Prisma.UniversityUncheckedCreateWithoutRankingInput[]
+  connectOrCreate?: Prisma.UniversityCreateOrConnectWithoutRankingInput | Prisma.UniversityCreateOrConnectWithoutRankingInput[]
+  createMany?: Prisma.UniversityCreateManyRankingInputEnvelope
+  connect?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+}
+
+export type UniversityUncheckedCreateNestedManyWithoutRankingInput = {
+  create?: Prisma.XOR<Prisma.UniversityCreateWithoutRankingInput, Prisma.UniversityUncheckedCreateWithoutRankingInput> | Prisma.UniversityCreateWithoutRankingInput[] | Prisma.UniversityUncheckedCreateWithoutRankingInput[]
+  connectOrCreate?: Prisma.UniversityCreateOrConnectWithoutRankingInput | Prisma.UniversityCreateOrConnectWithoutRankingInput[]
+  createMany?: Prisma.UniversityCreateManyRankingInputEnvelope
+  connect?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+}
+
+export type UniversityUpdateManyWithoutRankingNestedInput = {
+  create?: Prisma.XOR<Prisma.UniversityCreateWithoutRankingInput, Prisma.UniversityUncheckedCreateWithoutRankingInput> | Prisma.UniversityCreateWithoutRankingInput[] | Prisma.UniversityUncheckedCreateWithoutRankingInput[]
+  connectOrCreate?: Prisma.UniversityCreateOrConnectWithoutRankingInput | Prisma.UniversityCreateOrConnectWithoutRankingInput[]
+  upsert?: Prisma.UniversityUpsertWithWhereUniqueWithoutRankingInput | Prisma.UniversityUpsertWithWhereUniqueWithoutRankingInput[]
+  createMany?: Prisma.UniversityCreateManyRankingInputEnvelope
+  set?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+  disconnect?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+  delete?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+  connect?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+  update?: Prisma.UniversityUpdateWithWhereUniqueWithoutRankingInput | Prisma.UniversityUpdateWithWhereUniqueWithoutRankingInput[]
+  updateMany?: Prisma.UniversityUpdateManyWithWhereWithoutRankingInput | Prisma.UniversityUpdateManyWithWhereWithoutRankingInput[]
+  deleteMany?: Prisma.UniversityScalarWhereInput | Prisma.UniversityScalarWhereInput[]
+}
+
+export type UniversityUncheckedUpdateManyWithoutRankingNestedInput = {
+  create?: Prisma.XOR<Prisma.UniversityCreateWithoutRankingInput, Prisma.UniversityUncheckedCreateWithoutRankingInput> | Prisma.UniversityCreateWithoutRankingInput[] | Prisma.UniversityUncheckedCreateWithoutRankingInput[]
+  connectOrCreate?: Prisma.UniversityCreateOrConnectWithoutRankingInput | Prisma.UniversityCreateOrConnectWithoutRankingInput[]
+  upsert?: Prisma.UniversityUpsertWithWhereUniqueWithoutRankingInput | Prisma.UniversityUpsertWithWhereUniqueWithoutRankingInput[]
+  createMany?: Prisma.UniversityCreateManyRankingInputEnvelope
+  set?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+  disconnect?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+  delete?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+  connect?: Prisma.UniversityWhereUniqueInput | Prisma.UniversityWhereUniqueInput[]
+  update?: Prisma.UniversityUpdateWithWhereUniqueWithoutRankingInput | Prisma.UniversityUpdateWithWhereUniqueWithoutRankingInput[]
+  updateMany?: Prisma.UniversityUpdateManyWithWhereWithoutRankingInput | Prisma.UniversityUpdateManyWithWhereWithoutRankingInput[]
+  deleteMany?: Prisma.UniversityScalarWhereInput | Prisma.UniversityScalarWhereInput[]
+}
+
 export type UniversityCreateWithoutUserInput = {
   id?: string
   name: string
@@ -848,6 +914,7 @@ export type UniversityCreateWithoutUserInput = {
   updatedAt?: Date | string
   professors?: Prisma.ProfessorCreateNestedManyWithoutUniversityInput
   application?: Prisma.ApplicationCreateNestedOneWithoutUniversityInput
+  ranking?: Prisma.UniversityRankingCreateNestedOneWithoutUniversitiesInput
 }
 
 export type UniversityUncheckedCreateWithoutUserInput = {
@@ -871,6 +938,7 @@ export type UniversityUncheckedCreateWithoutUserInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  rankingId?: string | null
   professors?: Prisma.ProfessorUncheckedCreateNestedManyWithoutUniversityInput
   application?: Prisma.ApplicationUncheckedCreateNestedOneWithoutUniversityInput
 }
@@ -926,6 +994,7 @@ export type UniversityScalarWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"University"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"University"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"University"> | Date | string
+  rankingId?: Prisma.StringNullableFilter<"University"> | string | null
 }
 
 export type UniversityCreateWithoutProfessorsInput = {
@@ -951,6 +1020,7 @@ export type UniversityCreateWithoutProfessorsInput = {
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutUniversitiesInput
   application?: Prisma.ApplicationCreateNestedOneWithoutUniversityInput
+  ranking?: Prisma.UniversityRankingCreateNestedOneWithoutUniversitiesInput
 }
 
 export type UniversityUncheckedCreateWithoutProfessorsInput = {
@@ -975,6 +1045,7 @@ export type UniversityUncheckedCreateWithoutProfessorsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  rankingId?: string | null
   application?: Prisma.ApplicationUncheckedCreateNestedOneWithoutUniversityInput
 }
 
@@ -1017,6 +1088,7 @@ export type UniversityUpdateWithoutProfessorsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutUniversitiesNestedInput
   application?: Prisma.ApplicationUpdateOneWithoutUniversityNestedInput
+  ranking?: Prisma.UniversityRankingUpdateOneWithoutUniversitiesNestedInput
 }
 
 export type UniversityUncheckedUpdateWithoutProfessorsInput = {
@@ -1041,6 +1113,7 @@ export type UniversityUncheckedUpdateWithoutProfessorsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  rankingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   application?: Prisma.ApplicationUncheckedUpdateOneWithoutUniversityNestedInput
 }
 
@@ -1067,6 +1140,7 @@ export type UniversityCreateWithoutApplicationInput = {
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutUniversitiesInput
   professors?: Prisma.ProfessorCreateNestedManyWithoutUniversityInput
+  ranking?: Prisma.UniversityRankingCreateNestedOneWithoutUniversitiesInput
 }
 
 export type UniversityUncheckedCreateWithoutApplicationInput = {
@@ -1091,6 +1165,7 @@ export type UniversityUncheckedCreateWithoutApplicationInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  rankingId?: string | null
   professors?: Prisma.ProfessorUncheckedCreateNestedManyWithoutUniversityInput
 }
 
@@ -1133,6 +1208,7 @@ export type UniversityUpdateWithoutApplicationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutUniversitiesNestedInput
   professors?: Prisma.ProfessorUpdateManyWithoutUniversityNestedInput
+  ranking?: Prisma.UniversityRankingUpdateOneWithoutUniversitiesNestedInput
 }
 
 export type UniversityUncheckedUpdateWithoutApplicationInput = {
@@ -1157,7 +1233,86 @@ export type UniversityUncheckedUpdateWithoutApplicationInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  rankingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   professors?: Prisma.ProfessorUncheckedUpdateManyWithoutUniversityNestedInput
+}
+
+export type UniversityCreateWithoutRankingInput = {
+  id?: string
+  name: string
+  country: string
+  tier: $Enums.Tier
+  program?: string | null
+  tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
+  deadline?: string | null
+  intake?: string | null
+  website?: string | null
+  notes?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  user: Prisma.UserCreateNestedOneWithoutUniversitiesInput
+  professors?: Prisma.ProfessorCreateNestedManyWithoutUniversityInput
+  application?: Prisma.ApplicationCreateNestedOneWithoutUniversityInput
+}
+
+export type UniversityUncheckedCreateWithoutRankingInput = {
+  id?: string
+  userId: string
+  name: string
+  country: string
+  tier: $Enums.Tier
+  program?: string | null
+  tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
+  deadline?: string | null
+  intake?: string | null
+  website?: string | null
+  notes?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  professors?: Prisma.ProfessorUncheckedCreateNestedManyWithoutUniversityInput
+  application?: Prisma.ApplicationUncheckedCreateNestedOneWithoutUniversityInput
+}
+
+export type UniversityCreateOrConnectWithoutRankingInput = {
+  where: Prisma.UniversityWhereUniqueInput
+  create: Prisma.XOR<Prisma.UniversityCreateWithoutRankingInput, Prisma.UniversityUncheckedCreateWithoutRankingInput>
+}
+
+export type UniversityCreateManyRankingInputEnvelope = {
+  data: Prisma.UniversityCreateManyRankingInput | Prisma.UniversityCreateManyRankingInput[]
+  skipDuplicates?: boolean
+}
+
+export type UniversityUpsertWithWhereUniqueWithoutRankingInput = {
+  where: Prisma.UniversityWhereUniqueInput
+  update: Prisma.XOR<Prisma.UniversityUpdateWithoutRankingInput, Prisma.UniversityUncheckedUpdateWithoutRankingInput>
+  create: Prisma.XOR<Prisma.UniversityCreateWithoutRankingInput, Prisma.UniversityUncheckedCreateWithoutRankingInput>
+}
+
+export type UniversityUpdateWithWhereUniqueWithoutRankingInput = {
+  where: Prisma.UniversityWhereUniqueInput
+  data: Prisma.XOR<Prisma.UniversityUpdateWithoutRankingInput, Prisma.UniversityUncheckedUpdateWithoutRankingInput>
+}
+
+export type UniversityUpdateManyWithWhereWithoutRankingInput = {
+  where: Prisma.UniversityScalarWhereInput
+  data: Prisma.XOR<Prisma.UniversityUpdateManyMutationInput, Prisma.UniversityUncheckedUpdateManyWithoutRankingInput>
 }
 
 export type UniversityCreateManyUserInput = {
@@ -1181,6 +1336,7 @@ export type UniversityCreateManyUserInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  rankingId?: string | null
 }
 
 export type UniversityUpdateWithoutUserInput = {
@@ -1206,6 +1362,7 @@ export type UniversityUpdateWithoutUserInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   professors?: Prisma.ProfessorUpdateManyWithoutUniversityNestedInput
   application?: Prisma.ApplicationUpdateOneWithoutUniversityNestedInput
+  ranking?: Prisma.UniversityRankingUpdateOneWithoutUniversitiesNestedInput
 }
 
 export type UniversityUncheckedUpdateWithoutUserInput = {
@@ -1229,12 +1386,114 @@ export type UniversityUncheckedUpdateWithoutUserInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  rankingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   professors?: Prisma.ProfessorUncheckedUpdateManyWithoutUniversityNestedInput
   application?: Prisma.ApplicationUncheckedUpdateOneWithoutUniversityNestedInput
 }
 
 export type UniversityUncheckedUpdateManyWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
+  program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  rankingId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+}
+
+export type UniversityCreateManyRankingInput = {
+  id?: string
+  userId: string
+  name: string
+  country: string
+  tier: $Enums.Tier
+  program?: string | null
+  tuitionPerYr?: string | null
+  livingCostPerYr?: string | null
+  scholarshipsAvailable?: boolean
+  minCgpa?: number | null
+  minIelts?: number | null
+  acceptanceRate?: number | null
+  fundingAvailable?: boolean
+  prPathwayQuality?: string | null
+  deadline?: string | null
+  intake?: string | null
+  website?: string | null
+  notes?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type UniversityUpdateWithoutRankingInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
+  program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  user?: Prisma.UserUpdateOneRequiredWithoutUniversitiesNestedInput
+  professors?: Prisma.ProfessorUpdateManyWithoutUniversityNestedInput
+  application?: Prisma.ApplicationUpdateOneWithoutUniversityNestedInput
+}
+
+export type UniversityUncheckedUpdateWithoutRankingInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
+  program?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  tuitionPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  livingCostPerYr?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scholarshipsAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  minCgpa?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  minIelts?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  acceptanceRate?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  fundingAvailable?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  prPathwayQuality?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deadline?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  intake?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  website?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  professors?: Prisma.ProfessorUncheckedUpdateManyWithoutUniversityNestedInput
+  application?: Prisma.ApplicationUncheckedUpdateOneWithoutUniversityNestedInput
+}
+
+export type UniversityUncheckedUpdateManyWithoutRankingInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  userId?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   country?: Prisma.StringFieldUpdateOperationsInput | string
   tier?: Prisma.EnumTierFieldUpdateOperationsInput | $Enums.Tier
@@ -1309,9 +1568,11 @@ export type UniversitySelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  rankingId?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   professors?: boolean | Prisma.University$professorsArgs<ExtArgs>
   application?: boolean | Prisma.University$applicationArgs<ExtArgs>
+  ranking?: boolean | Prisma.University$rankingArgs<ExtArgs>
   _count?: boolean | Prisma.UniversityCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["university"]>
 
@@ -1337,7 +1598,9 @@ export type UniversitySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  rankingId?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  ranking?: boolean | Prisma.University$rankingArgs<ExtArgs>
 }, ExtArgs["result"]["university"]>
 
 export type UniversitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1362,7 +1625,9 @@ export type UniversitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  rankingId?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  ranking?: boolean | Prisma.University$rankingArgs<ExtArgs>
 }, ExtArgs["result"]["university"]>
 
 export type UniversitySelectScalar = {
@@ -1387,20 +1652,24 @@ export type UniversitySelectScalar = {
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  rankingId?: boolean
 }
 
-export type UniversityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "country" | "tier" | "program" | "tuitionPerYr" | "livingCostPerYr" | "scholarshipsAvailable" | "minCgpa" | "minIelts" | "acceptanceRate" | "fundingAvailable" | "prPathwayQuality" | "deadline" | "intake" | "website" | "notes" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["university"]>
+export type UniversityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "name" | "country" | "tier" | "program" | "tuitionPerYr" | "livingCostPerYr" | "scholarshipsAvailable" | "minCgpa" | "minIelts" | "acceptanceRate" | "fundingAvailable" | "prPathwayQuality" | "deadline" | "intake" | "website" | "notes" | "deletedAt" | "createdAt" | "updatedAt" | "rankingId", ExtArgs["result"]["university"]>
 export type UniversityInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   professors?: boolean | Prisma.University$professorsArgs<ExtArgs>
   application?: boolean | Prisma.University$applicationArgs<ExtArgs>
+  ranking?: boolean | Prisma.University$rankingArgs<ExtArgs>
   _count?: boolean | Prisma.UniversityCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UniversityIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  ranking?: boolean | Prisma.University$rankingArgs<ExtArgs>
 }
 export type UniversityIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  ranking?: boolean | Prisma.University$rankingArgs<ExtArgs>
 }
 
 export type $UniversityPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1409,6 +1678,7 @@ export type $UniversityPayload<ExtArgs extends runtime.Types.Extensions.Internal
     user: Prisma.$UserPayload<ExtArgs>
     professors: Prisma.$ProfessorPayload<ExtArgs>[]
     application: Prisma.$ApplicationPayload<ExtArgs> | null
+    ranking: Prisma.$UniversityRankingPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1432,6 +1702,7 @@ export type $UniversityPayload<ExtArgs extends runtime.Types.Extensions.Internal
     deletedAt: Date | null
     createdAt: Date
     updatedAt: Date
+    rankingId: string | null
   }, ExtArgs["result"]["university"]>
   composites: {}
 }
@@ -1829,6 +2100,7 @@ export interface Prisma__UniversityClient<T, Null = never, ExtArgs extends runti
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   professors<T extends Prisma.University$professorsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.University$professorsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProfessorPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   application<T extends Prisma.University$applicationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.University$applicationArgs<ExtArgs>>): Prisma.Prisma__ApplicationClient<runtime.Types.Result.GetResult<Prisma.$ApplicationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  ranking<T extends Prisma.University$rankingArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.University$rankingArgs<ExtArgs>>): Prisma.Prisma__UniversityRankingClient<runtime.Types.Result.GetResult<Prisma.$UniversityRankingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1879,6 +2151,7 @@ export interface UniversityFieldRefs {
   readonly deletedAt: Prisma.FieldRef<"University", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"University", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"University", 'DateTime'>
+  readonly rankingId: Prisma.FieldRef<"University", 'String'>
 }
     
 
@@ -2320,6 +2593,25 @@ export type University$applicationArgs<ExtArgs extends runtime.Types.Extensions.
    */
   include?: Prisma.ApplicationInclude<ExtArgs> | null
   where?: Prisma.ApplicationWhereInput
+}
+
+/**
+ * University.ranking
+ */
+export type University$rankingArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UniversityRanking
+   */
+  select?: Prisma.UniversityRankingSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the UniversityRanking
+   */
+  omit?: Prisma.UniversityRankingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UniversityRankingInclude<ExtArgs> | null
+  where?: Prisma.UniversityRankingWhereInput
 }
 
 /**
