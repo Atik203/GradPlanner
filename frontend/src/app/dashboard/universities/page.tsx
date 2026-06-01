@@ -80,8 +80,9 @@ export default function UniversitiesPage() {
     const delayDebounceFn = setTimeout(async () => {
       setSearching(true);
       try {
-        const results = await fetchApi(`/api/v1/rankings?q=${encodeURIComponent(searchQuery)}&limit=10`);
-        setSearchResults(results);
+        const response = await fetchApi(`/api/v1/rankings?q=${encodeURIComponent(searchQuery)}&limit=10`);
+        // Backend now returns paginated object { data: [], total, ... }
+        setSearchResults(Array.isArray(response) ? response : (response.data ?? []));
       } catch (err) {
         console.error(err);
       } finally {
@@ -254,11 +255,11 @@ export default function UniversitiesPage() {
               <Card key={uni.id} className="border-border bg-card/30 hover:border-border/80 transition-all flex flex-col justify-between">
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between gap-4">
-                    <div>
+                    <div className="flex-1 min-w-0">
                       <CardTitle className="text-sm font-bold text-foreground line-clamp-1">{uni.name}</CardTitle>
                       <CardDescription className="text-xs text-muted-foreground">{uni.country}</CardDescription>
                     </div>
-                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                    <span className={`shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full ${
                       uni.tier === "DREAM" ? "bg-[var(--tier-dream-bg)] text-[var(--tier-dream)]" :
                       uni.tier === "MATCH" ? "bg-[var(--tier-match-bg)] text-[var(--tier-match)]" :
                       "bg-[var(--tier-safety-bg)] text-[var(--tier-safety)]"
@@ -266,6 +267,26 @@ export default function UniversitiesPage() {
                       {uni.tier}
                     </span>
                   </div>
+                  {/* Ranking badges — shown if university is linked to a ranking */}
+                  {(uni as University & { ranking?: UniversityRanking | null }).ranking && (
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {(uni as University & { ranking?: UniversityRanking | null }).ranking?.qs2026Rank ? (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 font-bold text-[10px] border border-purple-500/20">
+                          QS #{(uni as University & { ranking?: UniversityRanking | null }).ranking?.qs2026RankDisplay || (uni as University & { ranking?: UniversityRanking | null }).ranking?.qs2026Rank}
+                        </span>
+                      ) : null}
+                      {(uni as University & { ranking?: UniversityRanking | null }).ranking?.the2026Rank ? (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold text-[10px] border border-blue-500/20">
+                          THE #{(uni as University & { ranking?: UniversityRanking | null }).ranking?.the2026RankDisplay || (uni as University & { ranking?: UniversityRanking | null }).ranking?.the2026Rank}
+                        </span>
+                      ) : null}
+                      {(uni as University & { ranking?: UniversityRanking | null }).ranking?.arwu2025Rank ? (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-[10px] border border-emerald-500/20">
+                          ARWU #{(uni as University & { ranking?: UniversityRanking | null }).ranking?.arwu2025Rank}
+                        </span>
+                      ) : null}
+                    </div>
+                  )}
                 </CardHeader>
                 <CardContent className="space-y-3 pb-4">
                   {uni.program && (
