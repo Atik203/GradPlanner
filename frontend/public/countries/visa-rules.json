@@ -1,0 +1,704 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Student and post-study visa rules for Bangladeshi CS/AI/ML students",
+    "note": "Rules accurate as of June 2026. Immigration rules change frequently. Always verify with official government sources."
+  },
+  "visaRules": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "studentVisa": {
+        "visaName": "Study Permit",
+        "processingTime": "4-16 weeks",
+        "applicationFee": 150,
+        "applicationFeeCurrency": "CAD",
+        "financialRequirement": "Tuition + CAD 10,000 per year for living costs",
+        "englishRequirement": "IELTS 6.5 overall or TOEFL 88+",
+        "requiresBiometrics": true,
+        "requiresMedical": true,
+        "spousePermitIncluded": "Open Work Permit if enrolled in 16+ month program at DLI",
+        "workRightsDuringStudy": "20 hours/week during semester, full-time during breaks",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "High due to ties to home country requirement and financial documentation scrutiny",
+        "tips": "Strong bank statements for last 6 months, Letter of Explanation, proof of strong ties to Bangladesh critical",
+        "onlineApplication": true,
+        "officialUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html"
+      },
+      "postStudyVisa": {
+        "visaName": "Post-Graduation Work Permit (PGWP)",
+        "duration": "Up to 3 years for programs 2+ years",
+        "eligiblePrograms": "Full-time programs at Designated Learning Institutions (DLI)",
+        "minimumStudyDuration": "8 months",
+        "applicationWindow": "90 days after receiving final marks",
+        "spouseEligibility": "Open Work Permit for spouse",
+        "pathwayToPR": true,
+        "restrictedFields": "None for CS/AI/ML",
+        "renewalPossible": false,
+        "notes": "PGWP duration tied to program length. Changes proposed post-2024 to restrict to high-demand NOC codes. Monitor IRCC announcements.",
+        "difficultyLevel": "Low if enrolled in eligible DLI program"
+      },
+      "workVisa": {
+        "visaName": "Temporary Foreign Worker Program / International Mobility Program",
+        "pathways": ["LMIA-based", "LMIA-exempt (IMP)", "Intra-company transfer"],
+        "h1bEquivalent": "No lottery - employer-driven",
+        "sponsorRequired": true
+      }
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "studentVisa": {
+        "visaName": "Student Visa (Subclass 500)",
+        "processingTime": "4-6 weeks",
+        "applicationFee": 710,
+        "applicationFeeCurrency": "AUD",
+        "financialRequirement": "AUD 24,505 for first year (2025 rate) plus tuition",
+        "englishRequirement": "IELTS 6.0 overall minimum (varies by institution)",
+        "requiresBiometrics": true,
+        "requiresMedical": true,
+        "spousePermitIncluded": "Dependent can apply as secondary applicant",
+        "workRightsDuringStudy": "48 hours per fortnight during study, unlimited during breaks",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate-High",
+        "tips": "Genuine Temporary Entrant (GTE) requirement critical. Strong academic record and clear study plan needed.",
+        "onlineApplication": true,
+        "officialUrl": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500"
+      },
+      "postStudyVisa": {
+        "visaName": "Temporary Graduate Visa (Subclass 485)",
+        "duration": "2-6 years depending on study level and location",
+        "streams": [
+          {
+            "stream": "Graduate Work Stream",
+            "duration": "18 months",
+            "requirement": "Skills and qualification in occupation on skilled list"
+          },
+          {
+            "stream": "Post-Study Work Stream",
+            "duration": "2 years bachelor, 3 years masters, 4 years PhD",
+            "requirement": "Studied 2+ years in Australia"
+          },
+          {
+            "stream": "Second Post-Study Work visa",
+            "duration": "2 years additional",
+            "requirement": "STEM degree from regional institution, 485 holder"
+          }
+        ],
+        "spouseEligibility": "Included as secondary applicant",
+        "pathwayToPR": true,
+        "difficultyLevel": "Low"
+      },
+      "workVisa": {
+        "visaName": "Skills in Demand Visa (Subclass 482)",
+        "streams": ["Core Skills", "Specialist Skills", "Essential Workers"],
+        "sponsorRequired": true,
+        "pathwayToPR": true,
+        "notes": "Replaced TSS visa November 2024. Core Skills stream includes ICT roles."
+      }
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "studentVisa": {
+        "visaName": "Studienvisum (Student Visa)",
+        "processingTime": "6-12 weeks",
+        "applicationFee": 75,
+        "applicationFeeCurrency": "EUR",
+        "financialRequirement": "EUR 11,208 per year in blocked account (Sperrkonto) as of 2025",
+        "englishRequirement": "IELTS 6.0-6.5 or German B2/C1 depending on program language",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Spouse can apply for dependent visa with limited work rights initially",
+        "workRightsDuringStudy": "120 full days or 240 half days per year",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "tips": "Blocked account mandatory. University admission letter required. Financial proof very strict.",
+        "onlineApplication": false,
+        "officialUrl": "https://www.make-it-in-germany.com/en/visa-residence/types/studying"
+      },
+      "postStudyVisa": {
+        "visaName": "Job Seeker Visa (post-study residence permit for job search)",
+        "duration": "18 months job search period after graduation",
+        "eligiblePrograms": "German or EU university degree",
+        "workRightsDuringSearch": "Part-time while searching",
+        "pathwayToPR": true,
+        "notes": "After finding job can convert to skilled worker residence permit. No quota or lottery.",
+        "difficultyLevel": "Low-Moderate"
+      },
+      "workVisa": {
+        "visaName": "Fachkräfte-Einwanderungsgesetz (Skilled Immigration Act)",
+        "pathways": [
+          "EU Blue Card (salary threshold EUR 43,800 for shortage occupations incl. IT 2024)",
+          "Skilled Worker Visa - Qualification recognition",
+          "Chancenkarte (Opportunity Card) - points-based without job offer"
+        ],
+        "sponsorRequired": false,
+        "pathwayToPR": true,
+        "notes": "EU Blue Card is fastest PR pathway. Chancenkarte allows job search without employment"
+      }
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "studentVisa": {
+        "visaName": "Study Visa (Category D Study Visa)",
+        "processingTime": "8-12 weeks",
+        "applicationFee": 60,
+        "applicationFeeCurrency": "EUR",
+        "financialRequirement": "EUR 7,000 for first year plus tuition",
+        "englishRequirement": "IELTS 6.0-6.5 depending on institution",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Spouse can apply for joining visa with Stamp 3 (limited work rights)",
+        "workRightsDuringStudy": "20 hours/week during term, 40 hours during holiday periods",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate-High",
+        "tips": "Strong financial documentation. Genuine student intent critical. Accommodation proof often required.",
+        "onlineApplication": true,
+        "officialUrl": "https://www.irishimmigration.ie"
+      },
+      "postStudyVisa": {
+        "visaName": "Third Level Graduate Programme (Stay Back Option)",
+        "duration": "12 months bachelor/masters, 24 months PhD",
+        "eligiblePrograms": "Full-time degree programs at Irish HEIs",
+        "pathwayToPR": true,
+        "notes": "Can apply for Critical Skills Employment Permit after finding qualifying job during stay-back period",
+        "difficultyLevel": "Low-Moderate"
+      },
+      "workVisa": {
+        "visaName": "Critical Skills Employment Permit",
+        "salaryThreshold": "EUR 32,000 for critical skills list occupations (CS/AI included)",
+        "sponsorRequired": true,
+        "pathwayToPR": true,
+        "notes": "Critical Skills list includes software engineers, data scientists, AI specialists. Fastest PR route in Ireland."
+      }
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "studentVisa": {
+        "visaName": "MVV + Residence Permit for Study",
+        "processingTime": "2-8 weeks via Nuffic/university sponsorship",
+        "applicationFee": 210,
+        "applicationFeeCurrency": "EUR",
+        "financialRequirement": "EUR 11,400 per year for living costs",
+        "englishRequirement": "IELTS 6.0-6.5 or institutional test",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Spouse can join with dependent residence permit, limited work rights",
+        "workRightsDuringStudy": "16 hours/week or full-time in June, July, August",
+        "difficultyLevel": "Low-Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "tips": "University acts as sponsor which simplifies process. Financial proof required.",
+        "onlineApplication": true,
+        "officialUrl": "https://ind.nl/en"
+      },
+      "postStudyVisa": {
+        "visaName": "Orientation Year Permit (Zoekjaar)",
+        "duration": "12 months",
+        "eligiblePrograms": "Dutch university degree holders",
+        "workRightsDuringSearch": "Full work rights",
+        "pathwayToPR": true,
+        "notes": "Can work full time during orientation year. After finding job can apply for Highly Skilled Migrant (Kennismigrant) permit.",
+        "difficultyLevel": "Low"
+      },
+      "workVisa": {
+        "visaName": "Highly Skilled Migrant (Kennismigrant)",
+        "salaryThreshold": "EUR 4,752/month for under 30 (2024), EUR 6,245 for 30+ (2024)",
+        "processingTime": "2-4 weeks via recognized sponsor",
+        "pathwayToPR": true,
+        "notes": "30% tax ruling (reduced from 2024 to 30% capped at EUR 233,000 income) still provides tax benefit"
+      }
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "studentVisa": {
+        "visaName": "Residence Permit for Studies",
+        "processingTime": "4-8 weeks",
+        "applicationFee": 1500,
+        "applicationFeeCurrency": "SEK",
+        "financialRequirement": "SEK 8,514/month (2025)",
+        "englishRequirement": "IELTS 6.5 typically, institutional variation",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Accompanying family members residence permit available",
+        "workRightsDuringStudy": "No formal limit for non-EU students with valid permit",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "tips": "Proof of funds, admission letter, and accommodation evidence required",
+        "onlineApplication": true,
+        "officialUrl": "https://www.migrationsverket.se"
+      },
+      "postStudyVisa": {
+        "visaName": "Residence Permit for Job Seeking after Studies",
+        "duration": "12 months",
+        "eligiblePrograms": "Swedish higher education institutions",
+        "pathwayToPR": true,
+        "difficultyLevel": "Low-Moderate"
+      },
+      "workVisa": {
+        "visaName": "Work Residence Permit (Skilled Worker)",
+        "requirements": "Job offer, union-standard salary, employer SWEA notification",
+        "pathwayToPR": true,
+        "notes": "Sweden does not use points system for work permits. Union involvement in salary verification is unique feature."
+      }
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "studentVisa": {
+        "visaName": "Residence Permit for Studies",
+        "processingTime": "4-8 weeks",
+        "applicationFee": 450,
+        "applicationFeeCurrency": "EUR",
+        "financialRequirement": "EUR 560/month minimum",
+        "englishRequirement": "IELTS 6.0-6.5 for English programs",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Family member residence permit available",
+        "workRightsDuringStudy": "25 hours/week during study, full-time during holidays",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "tips": "Financial proof and admission letter mandatory. Finnish tuition for non-EU students (introduced 2017) is now EUR 8,000-15,000/year for most programs.",
+        "onlineApplication": true,
+        "officialUrl": "https://migri.fi/en"
+      },
+      "postStudyVisa": {
+        "visaName": "Residence Permit for Job Seeking",
+        "duration": "12 months (extendable)",
+        "pathwayToPR": true,
+        "difficultyLevel": "Low-Moderate"
+      },
+      "workVisa": {
+        "visaName": "Residence Permit for Employee - Specialist",
+        "requirements": "Job offer with at least EUR 3,000/month gross salary",
+        "pathwayToPR": true
+      }
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "studentVisa": {
+        "visaName": "Residence Permit for Studies",
+        "processingTime": "4-8 weeks",
+        "applicationFee": 0,
+        "applicationFeeCurrency": "DKK",
+        "financialRequirement": "DKK 6,243/month",
+        "englishRequirement": "IELTS 6.5 typically",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Spouse can apply for family reunification with right to work",
+        "workRightsDuringStudy": "20 hours/week during semester, full-time June-August",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "officialUrl": "https://www.nyidanmark.dk/en-GB"
+      },
+      "postStudyVisa": {
+        "visaName": "Job-Seeking Residence Permit",
+        "duration": "6 months",
+        "pathwayToPR": true,
+        "notes": "Relatively short job-seeking period. Aim to secure job before graduation if possible.",
+        "difficultyLevel": "Moderate"
+      },
+      "workVisa": {
+        "visaName": "Pay Limit Scheme / Positive List",
+        "payLimitThreshold": "DKK 465,000/year (2024)",
+        "positiveListIncludes": ["Software engineers", "AI specialists", "Data scientists", "System architects"],
+        "pathwayToPR": true
+      }
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "studentVisa": {
+        "visaName": "Residence Permit for Students",
+        "processingTime": "4-8 weeks",
+        "applicationFee": 6200,
+        "applicationFeeCurrency": "NOK",
+        "financialRequirement": "NOK 133,669/year",
+        "englishRequirement": "IELTS 6.5 for English programs",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Family members can apply for accompanying permit",
+        "workRightsDuringStudy": "20 hours/week",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "officialUrl": "https://www.udi.no/en"
+      },
+      "postStudyVisa": {
+        "visaName": "Job-Seeking Residence Permit",
+        "duration": "12 months",
+        "pathwayToPR": true,
+        "difficultyLevel": "Low-Moderate"
+      },
+      "workVisa": {
+        "visaName": "Skilled Worker Residence Permit",
+        "requirements": "Relevant qualifications and job offer or concrete job offer",
+        "pathwayToPR": true
+      }
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "studentVisa": {
+        "visaName": "Student Visa / Residence Permit B",
+        "processingTime": "8-12 weeks",
+        "applicationFee": 65,
+        "applicationFeeCurrency": "CHF",
+        "financialRequirement": "CHF 21,000/year minimum",
+        "englishRequirement": "IELTS 6.5 for English programs, German/French for local programs",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Spouse can apply for dependent permit",
+        "workRightsDuringStudy": "15 hours/week",
+        "difficultyLevel": "High",
+        "rejectionRiskBangladesh": "High",
+        "notes": "Non-EU student quota per canton. ETH Zurich and EPFL outside cantonal quota for research positions.",
+        "officialUrl": "https://www.sem.admin.ch/sem/en/home.html"
+      },
+      "postStudyVisa": {
+        "visaName": "Job Seeker Residence Permit",
+        "duration": "6 months",
+        "pathwayToPR": true,
+        "notes": "Short window. Highly competitive. Non-EU quota applies to work permits.",
+        "difficultyLevel": "High"
+      },
+      "workVisa": {
+        "visaName": "Work Permit B / L",
+        "notes": "Non-EU workers subject to annual quota (approximately 4,500 B permits per year total for non-EU). Competition extremely high.",
+        "quotaSystem": true,
+        "pathwayToPR": true
+      }
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "studentVisa": {
+        "visaName": "Visum D / Aufenthaltstitel Studierender",
+        "processingTime": "6-10 weeks",
+        "applicationFee": 120,
+        "applicationFeeCurrency": "EUR",
+        "financialRequirement": "EUR 11,208/year",
+        "englishRequirement": "IELTS 6.0 for English programs, German B2 for German programs",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Family reunification permit available after 3 months",
+        "workRightsDuringStudy": "20 hours/week",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "officialUrl": "https://www.migration.gv.at/en"
+      },
+      "postStudyVisa": {
+        "visaName": "Aufenthaltstitel Arbeit suchend",
+        "duration": "12 months",
+        "pathwayToPR": true,
+        "difficultyLevel": "Moderate"
+      },
+      "workVisa": {
+        "visaName": "Rot-Weiß-Rot Karte (Red-White-Red Card)",
+        "type": "Points-based",
+        "streams": ["Very Highly Qualified Workers", "Skilled Workers in Shortage Occupations", "Graduates from Austrian Universities"],
+        "pathwayToPR": true
+      }
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "studentVisa": {
+        "visaName": "Type D Student Visa",
+        "processingTime": "4-8 weeks",
+        "applicationFee": 180,
+        "applicationFeeCurrency": "EUR",
+        "financialRequirement": "EUR 900/month",
+        "englishRequirement": "IELTS 6.0-6.5",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Family reunification possible",
+        "workRightsDuringStudy": "20 hours/week",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "officialUrl": "https://dofi.ibz.be/en"
+      },
+      "postStudyVisa": {
+        "visaName": "Job-Seeking Stay",
+        "duration": "12 months",
+        "pathwayToPR": true,
+        "difficultyLevel": "Moderate"
+      },
+      "workVisa": {
+        "visaName": "Single Permit (Gecombineerde vergunning/Permis unique)",
+        "notes": "Combines work and residence permit. Regional authority competence (Flanders, Wallonia, Brussels).",
+        "pathwayToPR": true
+      }
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "studentVisa": {
+        "visaName": "Student Visa",
+        "processingTime": "4-8 weeks",
+        "applicationFee": 375,
+        "applicationFeeCurrency": "NZD",
+        "financialRequirement": "NZD 15,000/year plus tuition",
+        "englishRequirement": "IELTS 6.0-6.5",
+        "requiresBiometrics": true,
+        "requiresMedical": true,
+        "spousePermitIncluded": "Partner eligible for open work visa if student enrolled in 2+ year degree",
+        "workRightsDuringStudy": "20 hours/week during term, full-time during holidays",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "officialUrl": "https://www.immigration.govt.nz"
+      },
+      "postStudyVisa": {
+        "visaName": "Post Study Work Visa",
+        "duration": "Up to 3 years depending on study level and location",
+        "pathwayToPR": true,
+        "difficultyLevel": "Low"
+      },
+      "workVisa": {
+        "visaName": "Green List Visa / Skilled Migrant Category",
+        "notes": "Green List Straight to Residence for tech roles. Efficient pathway.",
+        "pathwayToPR": true
+      }
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "studentVisa": {
+        "visaName": "F-1 Student Visa",
+        "processingTime": "3-8 weeks",
+        "applicationFee": 185,
+        "applicationFeeCurrency": "USD",
+        "financialRequirement": "Full tuition plus USD 12,000-25,000/year cost of attendance proof",
+        "englishRequirement": "TOEFL 80-100+ or IELTS 6.5-7.0 depending on institution",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "F-2 visa for spouse - NO work rights",
+        "workRightsDuringStudy": "20 hours/week on-campus only during semester",
+        "difficultyLevel": "High",
+        "rejectionRiskBangladesh": "High",
+        "tips": "Strong financial documentation, test scores, statement of purpose critical. Visa interview required at US Embassy Dhaka. Appointment wait times can be 6-12 months.",
+        "onlineApplication": false,
+        "officialUrl": "https://travel.state.gov/content/travel/en/us-visas/study.html"
+      },
+      "postStudyVisa": {
+        "visaName": "OPT + STEM OPT Extension",
+        "duration": "12 months OPT + 24 months STEM OPT extension = 36 months total",
+        "eligiblePrograms": "STEM designated degree programs",
+        "requirement": "Authorized by USCIS via DSO",
+        "pathwayToPR": "Only via H-1B lottery or EB sponsorship",
+        "notes": "STEM OPT requires employer with E-Verify enrollment. H-4 EAD for spouse has been subject to political restrictions under current administration.",
+        "difficultyLevel": "Moderate"
+      },
+      "workVisa": {
+        "visaName": "H-1B Specialty Occupation Visa",
+        "lotterySystem": true,
+        "lotteryOdds": "~35-40% annual selection rate (varies with registrations)",
+        "quota": 85000,
+        "processingTime": "3-6 months regular, 15 days premium",
+        "spouseWorkRights": "H-4 EAD - currently restricted under 2025 executive orders",
+        "pathwayToPR": "EB-2/EB-3 with employer sponsorship but Bangladeshi nationals face 50-100+ year backlog due to per-country cap",
+        "alternativePathways": ["EB-1A Extraordinary Ability (no per-country wait for approval but still backlogged)", "O-1 Visa"],
+        "notes": "Most critical immigration challenge for Bangladeshi students targeting US PR. Per-country cap reform has been debated for years without resolution."
+      }
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "studentVisa": {
+        "visaName": "Student Visa (留学ビザ)",
+        "processingTime": "2-6 weeks",
+        "applicationFee": 3000,
+        "applicationFeeCurrency": "JPY",
+        "financialRequirement": "JPY 2,000,000/year or scholarship coverage",
+        "englishRequirement": "IELTS 6.5 for English programs or JLPT N2 for Japanese programs",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Dependent visa available, limited work rights (28 hours/week)",
+        "workRightsDuringStudy": "28 hours/week (資格外活動許可)",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "tips": "Certificate of Eligibility (COE) obtained by university or language school makes process smoother.",
+        "officialUrl": "https://www.moj.go.jp/isa/index.html"
+      },
+      "postStudyVisa": {
+        "visaName": "Designated Activities Visa - Job Seeking",
+        "duration": "12 months (extendable once to 24 months total with legitimate job search evidence)",
+        "pathwayToPR": true,
+        "notes": "J-Find visa (2023) allows 2-year job search for graduates of top universities globally. Can work part-time during search.",
+        "difficultyLevel": "Moderate"
+      },
+      "workVisa": {
+        "visaName": "Engineer/Specialist in Humanities/International Services Visa",
+        "requirements": "Job offer from Japanese company, relevant degree",
+        "pathwayToPR": true,
+        "notes": "Highly Skilled Professional (HSP) visa with points system. 70+ points for HSP-1. PR possible in 1 year with 80+ points or 3 years with 70+ points."
+      }
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "studentVisa": {
+        "visaName": "D-2 Student Visa",
+        "processingTime": "2-4 weeks",
+        "applicationFee": 60000,
+        "applicationFeeCurrency": "KRW",
+        "financialRequirement": "KRW 20,000,000 in bank account or scholarship proof",
+        "englishRequirement": "IELTS 5.5-6.5 for English programs or TOPIK Level 3+ for Korean programs",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "F-3 dependent visa with limited work rights",
+        "workRightsDuringStudy": "20 hours/week with permission (알바 가능)",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "officialUrl": "https://www.hikorea.go.kr"
+      },
+      "postStudyVisa": {
+        "visaName": "D-10 Job Seeker Visa",
+        "duration": "6 months (extendable)",
+        "pathwayToPR": true,
+        "difficultyLevel": "Moderate"
+      },
+      "workVisa": {
+        "visaName": "E-7 Special Designation Activities",
+        "notes": "For AI, software, and tech occupations. Points-based F-2 visa for skilled professionals.",
+        "pathwayToPR": true
+      }
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "studentVisa": {
+        "visaName": "Student Pass",
+        "processingTime": "4-8 weeks",
+        "applicationFee": 30,
+        "applicationFeeCurrency": "SGD",
+        "financialRequirement": "Sufficient funds for tuition and living (no fixed minimum stated)",
+        "englishRequirement": "IELTS 6.5 for NUS/NTU",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Dependent Pass possible",
+        "workRightsDuringStudy": "16 hours/week for full-time students with LOC from ICA",
+        "difficultyLevel": "Moderate-High",
+        "rejectionRiskBangladesh": "Moderate-High",
+        "officialUrl": "https://www.ica.gov.sg"
+      },
+      "postStudyVisa": {
+        "visaName": "Employment Pass / Tech.Pass",
+        "duration": "Tied to employment",
+        "notes": "No formal post-study job search visa. Must secure employment. Tech.Pass for established tech professionals.",
+        "difficultyLevel": "High"
+      },
+      "workVisa": {
+        "visaName": "Employment Pass (EP)",
+        "salaryThreshold": "SGD 5,000/month minimum for tech sector (2025)",
+        "pathwayToPR": "Competitive. Not guaranteed.",
+        "notes": "Complementarity Assessment Framework (COMPASS) scoring for EP. Points for salary, nationality diversity, education, firm support."
+      }
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "studentVisa": {
+        "visaName": "X1/X2 Student Visa",
+        "processingTime": "2-4 weeks",
+        "applicationFee": 140,
+        "applicationFeeCurrency": "USD",
+        "financialRequirement": "CNY 20,000-30,000/year or scholarship proof",
+        "englishRequirement": "IELTS 6.0 for English programs or HSK 4+ for Chinese programs",
+        "requiresBiometrics": true,
+        "requiresMedical": true,
+        "spousePermitIncluded": "S1 dependent visa available",
+        "workRightsDuringStudy": "Limited, requires separate permit",
+        "difficultyLevel": "Low-Moderate",
+        "rejectionRiskBangladesh": "Low",
+        "officialUrl": "https://www.csc.edu.cn"
+      },
+      "postStudyVisa": {
+        "visaName": "Work Permit for Foreigners",
+        "duration": "Tied to employment contract",
+        "notes": "Work permit (外国人工作许可证) required. Separate from residence permit.",
+        "difficultyLevel": "Moderate"
+      },
+      "workVisa": {
+        "visaName": "Work Permit + Z Visa",
+        "notes": "Type A (high-end), B (professional), C (general). AI professionals can qualify for Type A or B.",
+        "pathwayToPR": "Extremely limited. Permanent Residence (中国绿卡) practically inaccessible."
+      }
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "studentVisa": {
+        "visaName": "VLS-TS Étudiant (Long-stay student visa)",
+        "processingTime": "3-8 weeks via Campus France",
+        "applicationFee": 99,
+        "applicationFeeCurrency": "EUR",
+        "financialRequirement": "EUR 7,380/year",
+        "englishRequirement": "IELTS 6.0-6.5 for English programs, DELF B2/C1 for French programs",
+        "requiresBiometrics": true,
+        "requiresMedical": false,
+        "spousePermitIncluded": "Family visa available for spouses",
+        "workRightsDuringStudy": "964 hours/year (approximately 20 hours/week)",
+        "difficultyLevel": "Moderate",
+        "rejectionRiskBangladesh": "Moderate",
+        "tips": "Campus France interview required for Bangladeshi applicants (Etudes en France procedure).",
+        "officialUrl": "https://www.campusfrance.org"
+      },
+      "postStudyVisa": {
+        "visaName": "APS (Autorisation Provisoire de Séjour)",
+        "duration": "12 months",
+        "eligiblePrograms": "Bac+5 or above (Masters/PhD)",
+        "pathwayToPR": true,
+        "difficultyLevel": "Low-Moderate"
+      },
+      "workVisa": {
+        "visaName": "Talent Passport (Passeport Talent)",
+        "streams": ["Employee of an innovative company", "Researcher", "Startup founder", "Economic Project"],
+        "duration": "Up to 4 years",
+        "pathwayToPR": true,
+        "notes": "Efficient pathway for skilled tech workers. No labor market test."
+      }
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "studentVisa": {
+        "visaName": "Student Residence Visa",
+        "processingTime": "1-3 weeks",
+        "applicationFee": 1000,
+        "applicationFeeCurrency": "AED",
+        "financialRequirement": "Proof of financial support",
+        "englishRequirement": "IELTS 6.0+ depending on institution",
+        "requiresBiometrics": true,
+        "requiresMedical": true,
+        "spousePermitIncluded": "Dependent visa available if student meets income threshold",
+        "workRightsDuringStudy": "Part-time permitted with NOC from institution",
+        "difficultyLevel": "Low-Moderate",
+        "rejectionRiskBangladesh": "Low",
+        "officialUrl": "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas"
+      },
+      "postStudyVisa": {
+        "visaName": "Job Seeker Visa",
+        "duration": "3-12 months",
+        "pathwayToPR": false,
+        "notes": "No formal PR pathway. Golden Visa is not PR.",
+        "difficultyLevel": "Low"
+      },
+      "workVisa": {
+        "visaName": "Employment Visa / Golden Visa",
+        "goldenVisa": {
+          "duration": "10 years renewable",
+          "eligibility": "Monthly salary AED 30,000+ for specialists, researchers, AI professionals",
+          "isActualPR": false,
+          "canBeCancelled": true
+        },
+        "pathwayToPR": false,
+        "notes": "Zero income tax. Golden Visa is long-stay renewable visa not equivalent to PR or citizenship."
+      }
+    }
+  ]
+}

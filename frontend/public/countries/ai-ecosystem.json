@@ -1,0 +1,2766 @@
+{
+  "metadata": {
+    "file": "ai-ecosystem.json",
+    "version": "2.0.0",
+    "generatedDate": "2026-06-01",
+    "targetUsers": "Bangladeshi CS/AI/ML/DS/SE/Robotics students",
+    "planningYears": [2027, 2028, 2029],
+    "dataSource": "Compiled by GradPlanner AI/ML Career Advisor, Economist, Labor Market Analyst, Long-Term Geopolitical Risk Analyst",
+    "scoringScale": "1-100"
+  },
+  "countries": [
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "aiMarketScore": 98,
+      "aiMarketScoreConfidence": 97,
+      "aiMarketEvidence": "Home to OpenAI, Google DeepMind, Meta AI, Anthropic, Microsoft Research, NVIDIA HQ. US federal and private AI investment exceeds $200B annually as of 2025-2026. Leads global AI patent filings, publications, and talent concentration.",
+      "topCompanies": [
+        {
+          "name": "Google DeepMind",
+          "location": "Mountain View, CA",
+          "focus": "AGI, NLP, Reinforcement Learning, AlphaFold",
+          "hires": "PhD researchers, ML engineers, Research Scientists"
+        },
+        {
+          "name": "OpenAI",
+          "location": "San Francisco, CA",
+          "focus": "Large Language Models, AGI Safety, Multimodal AI",
+          "hires": "Research Scientists, ML Engineers, Safety Researchers"
+        },
+        {
+          "name": "Meta AI (FAIR)",
+          "location": "Menlo Park, CA / New York, NY",
+          "focus": "Computer Vision, NLP, Robotics, Open-source AI",
+          "hires": "Research Scientists, Software Engineers"
+        },
+        {
+          "name": "Microsoft Research",
+          "location": "Redmond, WA / Cambridge, MA",
+          "focus": "AI Infrastructure, Azure AI, Responsible AI",
+          "hires": "Applied Scientists, ML Engineers, Researchers"
+        },
+        {
+          "name": "NVIDIA",
+          "location": "Santa Clara, CA",
+          "focus": "GPU Computing, AI Chips, CUDA, DGX Systems",
+          "hires": "Hardware Engineers, CUDA Developers, ML Systems"
+        },
+        {
+          "name": "Anthropic",
+          "location": "San Francisco, CA",
+          "focus": "AI Safety, Constitutional AI, Claude Models",
+          "hires": "Researchers, Safety Engineers, Interpretability Experts"
+        },
+        {
+          "name": "Apple AI/ML",
+          "location": "Cupertino, CA",
+          "focus": "On-device AI, Siri, Computer Vision",
+          "hires": "ML Engineers, Research Scientists"
+        },
+        {
+          "name": "Amazon AWS AI",
+          "location": "Seattle, WA",
+          "focus": "Cloud AI, Alexa, SageMaker, Bedrock",
+          "hires": "Applied Scientists, ML Engineers"
+        },
+        {
+          "name": "Tesla AI",
+          "location": "Austin, TX",
+          "focus": "Autonomous Driving, Dojo Supercomputer, Robotics",
+          "hires": "AI Engineers, Computer Vision, Robotics"
+        },
+        {
+          "name": "IBM Research",
+          "location": "Yorktown Heights, NY",
+          "focus": "Quantum AI, Enterprise AI, Watson",
+          "hires": "Research Scientists, Quantum ML"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "MIT",
+          "location": "Cambridge, MA",
+          "aiStrength": 100,
+          "notableLabs": ["CSAIL", "MIT-IBM Watson AI Lab", "Media Lab"],
+          "fundingLevel": "Exceptional"
+        },
+        {
+          "name": "Stanford University",
+          "location": "Stanford, CA",
+          "aiStrength": 100,
+          "notableLabs": ["Stanford AI Lab (SAIL)", "HAI", "SNAP"],
+          "fundingLevel": "Exceptional"
+        },
+        {
+          "name": "Carnegie Mellon University",
+          "location": "Pittsburgh, PA",
+          "aiStrength": 98,
+          "notableLabs": ["Robotics Institute", "Language Technologies", "Machine Learning Dept"],
+          "fundingLevel": "Exceptional"
+        },
+        {
+          "name": "UC Berkeley",
+          "location": "Berkeley, CA",
+          "aiStrength": 97,
+          "notableLabs": ["BAIR", "RISELab", "Sky Computing Lab"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "University of Washington",
+          "location": "Seattle, WA",
+          "aiStrength": 93,
+          "notableLabs": ["Paul G. Allen School", "UW NLP", "RAIVN Lab"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Caltech",
+          "location": "Pasadena, CA",
+          "aiStrength": 91,
+          "notableLabs": ["Computational Vision", "DOLCIT"],
+          "fundingLevel": "High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "200B+",
+        "keyPrograms": ["CHIPS and Science Act", "National AI Initiative", "NSF AI Institutes", "DARPA AI Programs", "NIH AI for Health"],
+        "federalAgencies": ["NSF", "DARPA", "NIH", "DOE", "DOD"],
+        "aiNationalStrategy": "Executive Order on Safe AI (Oct 2023), updated 2025",
+        "publicPrivatePartnership": "Strong - Silicon Valley alignment with federal contracts",
+        "investmentTrend": "Increasing aggressively through 2030"
+      },
+      "startupEcosystem": {
+        "score": 100,
+        "vcFundingUSD": "80B+ annually in AI startups",
+        "keyHubs": ["San Francisco Bay Area", "New York City", "Boston", "Seattle", "Austin"],
+        "unicorns": "50+ AI unicorns as of 2026",
+        "accelerators": ["Y Combinator", "Andreessen Horowitz", "Sequoia Capital", "Lightspeed"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "High for non-H1B holders - difficult startup founding without status"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "800M+",
+        "darpaAnnual": "4B+ across AI programs",
+        "industryLabFunding": "Tens of billions",
+        "phdStipendRange": "$2,500 - $4,500/month",
+        "fellowships": ["NSF GRFP", "DOE CSGF", "Hertz Fellowship", "NVIDIA Fellowship"],
+        "bangladeshiEligibility": "Eligible for most NSF grants as enrolled students"
+      },
+      "aiFutureOutlook2035": {
+        "score": 99,
+        "narrative": "USA will remain the dominant global AI superpower through 2035. AGI development, AI safety research, AI chips, and AI-native software will be centered primarily in the US. Massive talent demand will continue but immigration pathways remain constrained. AI salary inflation expected to continue. Geopolitical competition with China strengthens US investment further.",
+        "expectedJobGrowth": "45-60% increase in AI/ML roles",
+        "salaryGrowthProjection": "15-25% real wage growth in AI fields",
+        "riskFactors": ["H1B cap constraints", "Political shifts on immigration", "AI regulation uncertainty"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 97,
+        "narrative": "By 2045, the US AI ecosystem will have transformed entire economic sectors. AI-native infrastructure, autonomous systems, and brain-computer interfaces will be mainstream. The US will likely maintain global leadership but faces growing competition from China and EU. Immigration policy is the single biggest variable for international talent access.",
+        "expectedJobGrowth": "AI augments 70% of white-collar work",
+        "dominantSectors": ["AGI Research", "AI Safety", "Biotech AI", "Defense AI", "Quantum AI"],
+        "riskFactors": ["AI-induced job displacement", "Regulatory fragmentation", "Geopolitical instability"]
+      },
+      "importantIndustries": [
+        "Semiconductors & AI Chips",
+        "Cloud Computing",
+        "Autonomous Vehicles",
+        "Healthcare AI",
+        "Defense & National Security AI",
+        "Fintech AI",
+        "Biotech & Drug Discovery AI",
+        "Robotics",
+        "Foundation Models",
+        "AI Safety Research"
+      ],
+      "bangladeshiStudentNotes": "USA offers the world's best AI ecosystem but immigration is the critical bottleneck. H1B lottery is random (roughly 30% chance per year). Green Card wait for Bangladeshis under EB-2/EB-3 is 8-15+ years due to per-country caps. O-1A visa is a viable alternative for exceptional talent. Students should plan for 5-10 year immigration uncertainty. Salary is highest globally which compensates for uncertainty for many. PhD students typically get full funding with stipend.",
+      "visaDifficulty": "Very High",
+      "prDifficulty": "Extremely High for Bangladeshis"
+    },
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "aiMarketScore": 82,
+      "aiMarketScoreConfidence": 88,
+      "aiMarketEvidence": "Canada has strong AI research clusters in Toronto, Montreal, Edmonton. Hosts Vector Institute, Mila, Amii. Government committed C$2.4B to AI in 2024 budget. Growing but smaller market than US. Many companies are US subsidiaries or use Canada as AI R&D base.",
+      "topCompanies": [
+        {
+          "name": "Google Brain (Canada)",
+          "location": "Toronto, ON / Montreal, QC",
+          "focus": "NLP, Deep Learning Research",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Microsoft AI (Canada)",
+          "location": "Vancouver, BC / Toronto, ON",
+          "focus": "Azure AI, Bing AI, Productivity AI",
+          "hires": "ML Engineers, Applied Scientists"
+        },
+        {
+          "name": "DeepMind (Canada Office)",
+          "location": "Toronto, ON / Edmonton, AB",
+          "focus": "Reinforcement Learning, Health AI",
+          "hires": "Research Scientists"
+        },
+        {
+          "name": "Cohere",
+          "location": "Toronto, ON",
+          "focus": "Enterprise NLP, LLMs",
+          "hires": "ML Engineers, Research Scientists"
+        },
+        {
+          "name": "Borealis AI (RBC)",
+          "location": "Toronto, ON / Edmonton, AB",
+          "focus": "Fintech AI, NLP, Reinforcement Learning",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Element AI (now ServiceNow)",
+          "location": "Montreal, QC",
+          "focus": "Enterprise AI",
+          "hires": "ML Engineers"
+        },
+        {
+          "name": "Ada",
+          "location": "Toronto, ON",
+          "focus": "Conversational AI, Customer Service AI",
+          "hires": "ML Engineers, NLP Engineers"
+        },
+        {
+          "name": "Layer6 AI (TD Bank)",
+          "location": "Toronto, ON",
+          "focus": "Financial AI, Personalization",
+          "hires": "ML Researchers, Data Scientists"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "University of Toronto",
+          "location": "Toronto, ON",
+          "aiStrength": 94,
+          "notableLabs": ["Vector Institute", "Toronto Machine Learning Group", "Robarts Research"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "McGill University / Mila",
+          "location": "Montreal, QC",
+          "aiStrength": 93,
+          "notableLabs": ["Mila - Quebec AI Institute", "RLLAB", "NLP Group"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "University of Alberta",
+          "location": "Edmonton, AB",
+          "aiStrength": 89,
+          "notableLabs": ["Amii", "Alberta Machine Intelligence Institute", "Reinforcement Learning Group"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of British Columbia",
+          "location": "Vancouver, BC",
+          "aiStrength": 87,
+          "notableLabs": ["CAIDA", "Laboratory for Computational Intelligence"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Université de Montréal",
+          "location": "Montreal, QC",
+          "aiStrength": 91,
+          "notableLabs": ["Mila Partner", "DIRO", "IVADO"],
+          "fundingLevel": "High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "1.8B CAD (2024 AI Strategy)",
+        "keyPrograms": ["Pan-Canadian AI Strategy Phase 2", "CIFAR AI Chairs", "NSERC AI grants", "NRC IRAP AI"],
+        "federalAgencies": ["CIFAR", "NSERC", "NRC", "Innovation Canada"],
+        "aiNationalStrategy": "Pan-Canadian AI Strategy launched 2017, expanded 2022, C$2.4B committed 2024",
+        "publicPrivatePartnership": "Moderate - strong university-industry links, weaker VC than US",
+        "investmentTrend": "Growing but facing fiscal pressure due to housing crisis funding demands"
+      },
+      "startupEcosystem": {
+        "score": 74,
+        "vcFundingUSD": "3-5B CAD annually in tech/AI",
+        "keyHubs": ["Toronto", "Montreal", "Vancouver", "Waterloo"],
+        "unicorns": "10-15 AI-adjacent companies",
+        "accelerators": ["MaRS Discovery District", "Communitech", "District3", "Volta"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Low - Start-up Visa program available, PR pathway easier than US"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "NSERC Discovery Grants C$500M+",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "C$1B+ from Google, Microsoft, Amazon partnerships",
+        "phdStipendRange": "C$18,000 - C$35,000/year (varies by university and supervisor)",
+        "fellowships": ["NSERC CGS-D", "Vanier Canada Graduate Scholarships", "CIFAR AI Chairs (for faculty)"],
+        "bangladeshiEligibility": "Eligible for most internal university fellowships; NSERC open to Canadian PRs/citizens only"
+      },
+      "aiFutureOutlook2035": {
+        "score": 79,
+        "narrative": "Canada will remain a top-5 global AI research hub through 2035, anchored by the Mila-Toronto-Alberta triangle. However, talent retention is a significant challenge as many top researchers move to US for higher salaries. Government investment is strong but fiscal constraints post-2025 could slow growth. PR pathway remains one of the easiest globally which is Canada's biggest advantage for international talent.",
+        "expectedJobGrowth": "30-40% increase in AI roles",
+        "salaryGrowthProjection": "10-18% real wage growth in AI (lower than US)",
+        "riskFactors": ["Brain drain to US", "Housing crisis affecting talent attraction", "Immigration policy tightening 2024-2027", "Fiscal deficit pressure"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 76,
+        "narrative": "By 2045, Canada will face acute aging population pressures making AI and immigration critical national priorities. Aging demographics will actually drive immigration-friendly policies long-term. Canada's AI ecosystem may consolidate around health AI, climate AI, and resource sector AI. Quality of life will keep it competitive for talent even if salaries lag the US.",
+        "expectedJobGrowth": "AI deeply embedded in healthcare, agriculture, energy, finance",
+        "dominantSectors": ["Healthcare AI", "Climate Tech AI", "Financial AI", "Resource Sector AI", "Government AI"],
+        "riskFactors": ["Population aging", "US proximity causing brain drain", "Housing unaffordability", "Indigenous land rights complexity"]
+      },
+      "importantIndustries": [
+        "Financial Services AI",
+        "Healthcare & Biotech AI",
+        "Climate & Clean Energy AI",
+        "Natural Resources AI",
+        "Autonomous Vehicles (Waterloo ecosystem)",
+        "Retail AI",
+        "Government & Public Sector AI",
+        "Cybersecurity AI"
+      ],
+      "bangladeshiStudentNotes": "Canada is the #1 recommended country for Bangladeshi students seeking a clear PR and citizenship pathway combined with solid AI research. Express Entry has become more competitive in 2024-2026 but remains the most accessible PR system globally. Toronto and Montreal are strong AI hubs. Salary is 40-60% lower than US but PR within 3-5 years is the tradeoff. Housing costs in Toronto/Vancouver are severe - consider Montreal or smaller cities. PGWP gives 3-year post-study work. Spouse can work immediately on open work permit.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate (becoming harder 2025-2027 due to policy tightening)"
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "aiMarketScore": 79,
+      "aiMarketScoreConfidence": 85,
+      "aiMarketEvidence": "Germany has strong industrial AI applications (automotive, manufacturing, logistics). Government committed €5B to AI through 2025 National AI Strategy. Strong research through Max Planck, Fraunhofer, DFKI. Largest economy in EU. Critical weakness is language barrier and slower startup culture compared to US/UK.",
+      "topCompanies": [
+        {
+          "name": "SAP SE",
+          "location": "Walldorf / Berlin",
+          "focus": "Enterprise AI, Business Process AI, Cloud",
+          "hires": "ML Engineers, Data Scientists, AI Consultants"
+        },
+        {
+          "name": "Siemens AI Lab",
+          "location": "Munich / Berlin",
+          "focus": "Industrial AI, IoT AI, Smart Manufacturing",
+          "hires": "AI Engineers, Industrial ML Specialists"
+        },
+        {
+          "name": "BMW AI Research",
+          "location": "Munich",
+          "focus": "Autonomous Driving, Computer Vision, Predictive Maintenance",
+          "hires": "Computer Vision Engineers, ML Engineers"
+        },
+        {
+          "name": "Aleph Alpha",
+          "location": "Heidelberg",
+          "focus": "European Sovereign LLM, NLP",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "DeepL",
+          "location": "Cologne",
+          "focus": "Neural Machine Translation, NLP",
+          "hires": "ML Engineers, NLP Researchers"
+        },
+        {
+          "name": "Celonis",
+          "location": "Munich",
+          "focus": "Process Mining AI, Business Intelligence",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Bosch AI",
+          "location": "Stuttgart / Renningen",
+          "focus": "Embedded AI, Automotive AI, IoT",
+          "hires": "Embedded ML Engineers, Computer Vision"
+        },
+        {
+          "name": "Amazon AWS (Berlin)",
+          "location": "Berlin",
+          "focus": "Cloud AI, E-commerce AI",
+          "hires": "Applied Scientists, SDE"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Technical University of Munich (TUM)",
+          "location": "Munich, Bavaria",
+          "aiStrength": 90,
+          "notableLabs": ["TUM School of CIT", "Munich Center for Machine Learning", "MCML"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Max Planck Institute for Intelligent Systems",
+          "location": "Tübingen & Stuttgart",
+          "aiStrength": 93,
+          "notableLabs": ["Empirical Inference", "Robotics", "Perceiving Systems"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "DFKI - German Research Center for AI",
+          "location": "Kaiserslautern / Berlin / Saarbrücken",
+          "aiStrength": 88,
+          "notableLabs": ["Innovative Factory Systems", "Multilinguality & Language Technology", "Robotics Innovation Center"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Saarland University / MPI-SWS",
+          "location": "Saarbrücken",
+          "aiStrength": 85,
+          "notableLabs": ["MPI for Software Systems", "Computational Biology"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "KIT (Karlsruhe Institute of Technology)",
+          "location": "Karlsruhe, Baden-Württemberg",
+          "aiStrength": 84,
+          "notableLabs": ["Institute for AI", "Autonomous Systems"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "LMU Munich",
+          "location": "Munich, Bavaria",
+          "aiStrength": 86,
+          "notableLabs": ["Statistics Department", "MCML partner"],
+          "fundingLevel": "High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "€5B through 2025 National AI Strategy; additional €3B announced for 2026-2030",
+        "keyPrograms": ["National AI Strategy", "KI-Transferzentren", "Mittelstand-Digital", "Fraunhofer AI network"],
+        "federalAgencies": ["BMBF", "BMWK", "DFG", "Fraunhofer Gesellschaft"],
+        "aiNationalStrategy": "National AI Strategy 2019, updated 2023 - focus on industrial AI and sovereign European AI",
+        "publicPrivatePartnership": "Strong in industrial sector, weaker in consumer/startup AI",
+        "investmentTrend": "Stable to growing, focus on industrial and manufacturing AI applications"
+      },
+      "startupEcosystem": {
+        "score": 68,
+        "vcFundingUSD": "€5-8B annually total VC (AI subset ~€2-3B)",
+        "keyHubs": ["Berlin", "Munich", "Hamburg", "Frankfurt"],
+        "unicorns": "8-12 AI-adjacent companies",
+        "accelerators": ["Rocket Internet", "High-Tech Gründerfonds", "Unternehmertum"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Moderate - Chancenkarte/Opportunity Card and Job Seeker Visa available; language can be barrier for founding"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "DFG Excellence Initiative + individual grants €1B+",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Fraunhofer, Helmholtz, Max Planck combined €3B+",
+        "phdStipendRange": "€1,500 - €2,000/month (TV-L E13 50-67% contract)",
+        "fellowships": ["DAAD Scholarships", "Deutschlandstipendium", "Heinrich Böll Stiftung", "Konrad-Adenauer-Stiftung"],
+        "bangladeshiEligibility": "DAAD fully open to Bangladeshis - one of the best scholarship programs globally"
+      },
+      "aiFutureOutlook2035": {
+        "score": 81,
+        "narrative": "Germany will be Europe's industrial AI powerhouse through 2035. Automation of manufacturing, automotive electrification AI, and EU-sovereign AI infrastructure will drive demand. Critical labor shortage (Germany needs 400,000+ skilled workers annually) means immigration-friendly policies will continue expanding. German language proficiency becomes less critical in English-speaking international companies but remains important for integration and PR.",
+        "expectedJobGrowth": "35-50% increase in AI/technical roles",
+        "salaryGrowthProjection": "12-20% real wage growth in AI",
+        "riskFactors": ["Language integration challenge", "Bureaucratic slowness", "Aging industrial base needing transformation", "Energy costs post-Ukraine"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 78,
+        "narrative": "By 2045, Germany will have undergone significant demographic transformation with immigration being a structural necessity. The 'Industrie 4.0 / 5.0' transformation will be AI-driven. Germany will be the EU anchor for industrial AI. English increasingly accepted in tech but German integration remains rewarded. Second-generation immigrant children will be fully integrated citizens.",
+        "expectedJobGrowth": "AI essential to manufacturing, logistics, healthcare, automotive",
+        "dominantSectors": ["Industrial AI", "Automotive AI", "Healthcare AI", "Logistics AI", "Energy Transition AI"],
+        "riskFactors": ["Demographic aging", "Political shift (AfD immigration concerns)", "EU regulatory burden on AI"]
+      },
+      "importantIndustries": [
+        "Automotive & Mobility AI",
+        "Industrial Manufacturing AI (Industry 4.0)",
+        "Healthcare & Pharma AI",
+        "Logistics & Supply Chain AI",
+        "Financial Services AI",
+        "Energy & Sustainability AI",
+        "Government & Public Services AI",
+        "Agricultural AI"
+      ],
+      "bangladeshiStudentNotes": "Germany offers tuition-free or near-free public university education even for international students (most states). DAAD scholarships are excellent and open to Bangladeshis. Post-study work rights are 18 months. Chancenkarte (Opportunity Card) introduced 2024 allows job search without prior offer. Labor shortage means job finding is realistic within 6-12 months of graduation. German language (B1 minimum for PR, B2 recommended) is the primary integration challenge. Blue Card EU provides faster settlement. Salary is lower than US/Switzerland but higher than most of Asia. PR achievable in 3-5 years, citizenship possible in 5 years from 2024 reform.",
+      "visaDifficulty": "Low to Moderate",
+      "prDifficulty": "Moderate (language is key barrier)"
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "aiMarketScore": 74,
+      "aiMarketScoreConfidence": 82,
+      "aiMarketEvidence": "Australia has a growing AI ecosystem centered in Sydney and Melbourne. Government committed A$2.2B to quantum and AI technology under National Science and Research Priority. Strong university AI research. Job market is driven by financial services, mining, and healthcare AI. Smaller market than US/EU but excellent for quality of life and PR.",
+      "topCompanies": [
+        {
+          "name": "Atlassian",
+          "location": "Sydney, NSW",
+          "focus": "AI-powered collaboration tools, Jira AI, Confluence AI",
+          "hires": "ML Engineers, AI Product Engineers"
+        },
+        {
+          "name": "Canva AI",
+          "location": "Sydney, NSW",
+          "focus": "Generative AI for design, Text-to-image, Creative AI",
+          "hires": "ML Engineers, Computer Vision"
+        },
+        {
+          "name": "Google Australia",
+          "location": "Sydney, NSW",
+          "focus": "AI Research, Maps AI, Cloud AI",
+          "hires": "Research Scientists, SWE"
+        },
+        {
+          "name": "Amazon AWS (Australia)",
+          "location": "Sydney, NSW",
+          "focus": "Cloud AI services, Government Cloud",
+          "hires": "Applied Scientists, Solutions Architects"
+        },
+        {
+          "name": "Commonwealth Bank AI",
+          "location": "Sydney, NSW",
+          "focus": "Financial AI, Fraud Detection, Customer AI",
+          "hires": "Data Scientists, ML Engineers"
+        },
+        {
+          "name": "CSIRO Data61",
+          "location": "Multiple cities",
+          "focus": "National AI Research, Industrial AI, Cybersecurity AI",
+          "hires": "Research Scientists, Data Engineers"
+        },
+        {
+          "name": "Macquarie Group AI",
+          "location": "Sydney, NSW",
+          "focus": "Investment AI, Quantitative Finance",
+          "hires": "Quantitative Analysts, ML Engineers"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "University of Melbourne",
+          "location": "Melbourne, VIC",
+          "aiStrength": 83,
+          "notableLabs": ["Melbourne School of Engineering", "Centre for AI and Digital Ethics"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of Sydney",
+          "location": "Sydney, NSW",
+          "aiStrength": 81,
+          "notableLabs": ["Sydney AI Centre", "Computer Vision Group"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "ANU - Australian National University",
+          "location": "Canberra, ACT",
+          "aiStrength": 82,
+          "notableLabs": ["ML Group", "Robotics & Intelligent Systems"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "UNSW Sydney",
+          "location": "Sydney, NSW",
+          "aiStrength": 80,
+          "notableLabs": ["UNSW AI Institute", "Data Science Hub"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of Queensland",
+          "location": "Brisbane, QLD",
+          "aiStrength": 77,
+          "notableLabs": ["UQ AI Research", "Robotics"],
+          "fundingLevel": "Moderate-High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "A$2.2B National Science & Technology Priority + A$1.9B Quantum & AI initiative",
+        "keyPrograms": ["Australia's AI Ethics Framework", "National AI Centre (NAIC)", "SmartSat CRC", "CSIRO AI Roadmap"],
+        "federalAgencies": ["CSIRO", "ARC (Australian Research Council)", "DISR"],
+        "aiNationalStrategy": "Australia's AI Action Plan 2021, updated with National AI Centre 2024",
+        "publicPrivatePartnership": "Moderate - growing but smaller than US/EU",
+        "investmentTrend": "Gradually increasing with focus on critical technology and sovereign capability"
+      },
+      "startupEcosystem": {
+        "score": 69,
+        "vcFundingUSD": "A$3-4B annually in tech (AI subset growing)",
+        "keyHubs": ["Sydney", "Melbourne", "Brisbane", "Perth"],
+        "unicorns": "5-8 tech unicorns (Canva, Atlassian prominent)",
+        "accelerators": ["Startmate", "Blackbird", "Square Peg Capital", "Antler Australia"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Low - business visa options, PR pathway well-defined"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "ARC Discovery Projects A$300M+",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "CSIRO Data61 + industry partnerships A$500M+",
+        "phdStipendRange": "A$28,854/year (RTP stipend 2025) - no tuition for domestic-equivalent PhD",
+        "fellowships": ["Australia Awards Scholarships", "RTP (Research Training Program)", "Endeavour Scholarships"],
+        "bangladeshiEligibility": "Australia Awards fully open to Bangladeshis - covers tuition + living + airfare"
+      },
+      "aiFutureOutlook2035": {
+        "score": 76,
+        "narrative": "Australia will benefit from its proximity to Asia and strong institutions. Mining sector AI, healthcare AI, and fintech will drive most growth. Strong English-language environment and clear PR pathway make it highly attractive for Bangladeshi students. However, smaller population (27M) limits total market size. Growing defense AI partnership with AUKUS (US, UK) will add research opportunities.",
+        "expectedJobGrowth": "30-40% increase in AI roles",
+        "salaryGrowthProjection": "10-15% real wage growth in AI",
+        "riskFactors": ["Smaller market than US/EU", "Climate risk (fires, floods)", "Housing affordability in Sydney/Melbourne", "Immigration policy volatility"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 73,
+        "narrative": "Australia by 2045 will face significant climate adaptation challenges requiring AI solutions. An aging population will make immigration structurally necessary. Strong trade relationships with Asia will support AI services export. Quality of life will remain very high. The country will need sustained immigration of skilled tech workers.",
+        "expectedJobGrowth": "AI critical for mining automation, climate adaptation, healthcare",
+        "dominantSectors": ["Mining & Resources AI", "Healthcare AI", "Agricultural AI", "Climate Adaptation AI", "Financial AI"],
+        "riskFactors": ["Climate extremes", "Dependency on mining/resources", "Geographic isolation from major AI hubs"]
+      },
+      "importantIndustries": [
+        "Financial Services & Banking AI",
+        "Mining & Resources Automation",
+        "Healthcare & Medical AI",
+        "Agricultural & Food Tech AI",
+        "Defense & Security AI (AUKUS)",
+        "Government & Public Services AI",
+        "Retail & E-commerce AI",
+        "Climate & Environment AI"
+      ],
+      "bangladeshiStudentNotes": "Australia is excellent for Bangladeshi students who prioritize quality of life, English-language environment, and clear PR pathway. Australia Awards Scholarships are among the most generous globally and specifically target developing nations including Bangladesh. Post-study work rights are 2-6 years depending on degree level and location. PR is achievable in 3-5 years via skilled migration. Salary is high in AUD but cost of living in Sydney/Melbourne is very high. Consider Brisbane, Adelaide, or Perth for better lifestyle value. Spouse can work on dependent visa.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate"
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "aiMarketScore": 76,
+      "aiMarketScoreConfidence": 83,
+      "aiMarketEvidence": "Ireland punches far above its weight (population 5.1M) as a global tech hub. Dublin hosts European HQs of Google, Meta, Microsoft, Apple, Amazon, Salesforce. Strong IDA Ireland incentives attract multinationals. Growing AI R&D presence. Biggest advantage is EU access from English-speaking country.",
+      "topCompanies": [
+        {
+          "name": "Google (EMEA HQ)",
+          "location": "Dublin, Leinster",
+          "focus": "AI Research, Cloud AI, Search AI",
+          "hires": "Research Scientists, ML Engineers, SWE"
+        },
+        {
+          "name": "Meta (EMEA HQ)",
+          "location": "Dublin, Leinster",
+          "focus": "AI Content Moderation, NLP, Computer Vision",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Microsoft (EMEA HQ)",
+          "location": "Dublin, Leinster",
+          "focus": "Azure AI, Copilot, Teams AI",
+          "hires": "Applied Scientists, ML Engineers, SWE"
+        },
+        {
+          "name": "Amazon (EMEA HQ)",
+          "location": "Dublin, Leinster",
+          "focus": "AWS AI, Alexa (EMEA), E-commerce AI",
+          "hires": "Applied Scientists, SWE"
+        },
+        {
+          "name": "Apple (EMEA HQ)",
+          "location": "Cork, Munster",
+          "focus": "On-device AI, Siri (EMEA)",
+          "hires": "ML Engineers"
+        },
+        {
+          "name": "Salesforce",
+          "location": "Dublin, Leinster",
+          "focus": "CRM AI, Einstein AI",
+          "hires": "ML Engineers, AI Product Managers"
+        },
+        {
+          "name": "Stripe",
+          "location": "Dublin, Leinster",
+          "focus": "Fintech AI, Fraud Detection",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Accenture AI",
+          "location": "Dublin",
+          "focus": "Enterprise AI Consulting",
+          "hires": "AI Consultants, ML Engineers"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Trinity College Dublin (TCD)",
+          "location": "Dublin",
+          "aiStrength": 82,
+          "notableLabs": ["ADAPT Centre", "KDEG", "Statistics & Computer Science"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University College Dublin (UCD)",
+          "location": "Dublin",
+          "aiStrength": 79,
+          "notableLabs": ["Insight SFI Research Centre", "CASL", "ML Group"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of Galway (NUIG)",
+          "location": "Galway",
+          "aiStrength": 76,
+          "notableLabs": ["Insight @ Galway", "DeCIDE Centre"],
+          "fundingLevel": "Moderate-High"
+        },
+        {
+          "name": "Dublin City University (DCU)",
+          "location": "Dublin",
+          "aiStrength": 74,
+          "notableLabs": ["ADAPT Centre", "National Language Processing Centre"],
+          "fundingLevel": "Moderate"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "€200M+ through Science Foundation Ireland (SFI) annually; €1B National AI Strategy",
+        "keyPrograms": ["SFI Research Centres", "ADAPT (AI for Content)", "Insight (Data Analytics)", "IDA Ireland AI investment grants"],
+        "federalAgencies": ["Science Foundation Ireland (SFI)", "Enterprise Ireland", "IDA Ireland"],
+        "aiNationalStrategy": "National AI Strategy 2021 'AI - Here for Good'",
+        "publicPrivatePartnership": "Very Strong - best in class EMEA due to multinational presence",
+        "investmentTrend": "Strong and increasing, driven by EU AI Act compliance needs and EMEA hub strategy"
+      },
+      "startupEcosystem": {
+        "score": 71,
+        "vcFundingUSD": "€1-2B annually in Irish tech startups",
+        "keyHubs": ["Dublin", "Cork", "Galway"],
+        "unicorns": "5-8 (Stripe HQ nominally Irish)",
+        "accelerators": ["NDRC", "Dogpatch Labs", "Enterprise Ireland New Frontiers"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Moderate - Start-up Entrepreneur Programme available"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "SFI grants €200M+",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Google, Meta, Microsoft fund research chairs at TCD, UCD",
+        "phdStipendRange": "€18,500/year stipend + fees covered (SFI funded positions)",
+        "fellowships": ["Government of Ireland Postgraduate Scholarship", "SFI PhD fellowships", "Marie Curie Fellowships (EU)"],
+        "bangladeshiEligibility": "Government of Ireland International Scholarships open to Bangladeshis"
+      },
+      "aiFutureOutlook2035": {
+        "score": 78,
+        "narrative": "Ireland's position as Europe's English-language tech hub for US multinationals gives it unique durability. EU AI Act compliance will drive more AI R&D to be located in Dublin specifically. Housing crisis is the primary constraint on growth. Small population means labor shortage is structural and immigration-friendly policies will continue. EU passport eligibility after 5 years of residence is exceptional.",
+        "expectedJobGrowth": "35-45% increase in AI roles in EMEA hub companies",
+        "salaryGrowthProjection": "12-18% real wage growth in AI (high due to MNC competition)",
+        "riskFactors": ["Severe housing crisis in Dublin", "Over-dependence on US multinationals", "Brexit impact on UK talent flow", "Potential US tech company restructuring"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 75,
+        "narrative": "By 2045, Ireland will continue as an EU English-language bridge. EU AI ecosystem will mature and Ireland will remain a key node. Aging Irish population will necessitate continued immigration. Climate risk (flooding) is manageable. EU citizenship after 5 years remains the single biggest long-term advantage over UK for international students.",
+        "expectedJobGrowth": "Sustained EMEA hub role for AI services and compliance",
+        "dominantSectors": ["Cloud AI (AWS, Azure, Google Cloud EMEA)", "Financial Services AI", "Life Sciences AI", "Legal AI (AI Act compliance)"],
+        "riskFactors": ["Housing unaffordability", "Small domestic market", "Dependence on MNC decisions"]
+      },
+      "importantIndustries": [
+        "Cloud Computing & AI Services",
+        "Pharmaceutical & Life Sciences AI",
+        "Financial Services & Fintech AI",
+        "E-commerce AI",
+        "Social Media AI Content",
+        "Cybersecurity AI",
+        "Legal Tech AI (EU AI Act compliance)"
+      ],
+      "bangladeshiStudentNotes": "Ireland is increasingly popular with Bangladeshi CS students because of English language, strong job market from MNCs, and direct access to EU citizenship after 5 years. Post-study work rights are 2 years (Stamp 1G). Housing is the biggest challenge - Dublin rents are among the highest in Europe. Salary is excellent by EU standards due to MNC presence. PR is straightforward at 5 years; citizenship also at 5 years. Spouse can work on dependent visa without restrictions.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate"
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "aiMarketScore": 77,
+      "aiMarketScoreConfidence": 84,
+      "aiMarketEvidence": "Netherlands is a top European tech hub with strong AI research (Amsterdam Machine Learning, TU Delft). Home to Philips, ASML, Booking.com, TomTom. Amsterdam is a major EU tech hub. Highly international work environment with 90%+ English proficiency. Eindhooven tech corridor growing rapidly.",
+      "topCompanies": [
+        {
+          "name": "ASML",
+          "location": "Eindhoven, North Brabant",
+          "focus": "EUV Lithography for AI chips, Semiconductor AI",
+          "hires": "ML Engineers, Systems Engineers, Physics + CS"
+        },
+        {
+          "name": "Booking.com",
+          "location": "Amsterdam, North Holland",
+          "focus": "Recommendation AI, NLP, Personalization",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Philips AI",
+          "location": "Amsterdam / Eindhoven",
+          "focus": "Health Tech AI, Medical Imaging AI",
+          "hires": "ML Engineers, Medical AI Researchers"
+        },
+        {
+          "name": "TomTom",
+          "location": "Amsterdam",
+          "focus": "Navigation AI, Autonomous Driving Maps, Generative AI",
+          "hires": "ML Engineers, Computer Vision"
+        },
+        {
+          "name": "Microsoft (Netherlands)",
+          "location": "Schiphol",
+          "focus": "Azure AI, Enterprise AI",
+          "hires": "ML Engineers, Solution Architects"
+        },
+        {
+          "name": "Adyen",
+          "location": "Amsterdam",
+          "focus": "Payments AI, Fraud Detection",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "bol.com",
+          "location": "Utrecht",
+          "focus": "E-commerce AI, Recommendation Systems",
+          "hires": "ML Engineers, Data Scientists"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "TU Delft",
+          "location": "Delft, South Holland",
+          "aiStrength": 85,
+          "notableLabs": ["DCSC", "Intelligent Electrical Power Grids", "Pattern Recognition"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of Amsterdam",
+          "location": "Amsterdam",
+          "aiStrength": 88,
+          "notableLabs": ["Amsterdam Machine Learning Lab", "AMLab", "QUVA Lab"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Eindhoven University of Technology (TU/e)",
+          "location": "Eindhoven",
+          "aiStrength": 82,
+          "notableLabs": ["EAISI", "Data Science Centre", "Robotics"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Vrije Universiteit Amsterdam (VU)",
+          "location": "Amsterdam",
+          "aiStrength": 78,
+          "notableLabs": ["Network Institute", "AI & Cognition"],
+          "fundingLevel": "Moderate-High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "€276M National AI programme (AiNed) + EU AI funding",
+        "keyPrograms": ["AiNed Programme", "ICAI - Innovation Center for AI", "NWO AI grants", "ELSA Labs"],
+        "federalAgencies": ["NWO (Dutch Research Council)", "RVO", "AI Coalition Netherlands"],
+        "aiNationalStrategy": "Dutch National AI Strategy 2019, AiNed 2022-2025",
+        "publicPrivatePartnership": "Strong - ASML, Philips, AKZO link with universities",
+        "investmentTrend": "Stable, with EU AI funding boosting national programs"
+      },
+      "startupEcosystem": {
+        "score": 74,
+        "vcFundingUSD": "€3-4B annually in Dutch tech",
+        "keyHubs": ["Amsterdam", "Eindhoven", "Delft", "Utrecht"],
+        "unicorns": "8-12 Dutch tech unicorns",
+        "accelerators": ["Rockstart", "YES!Delft", "High Tech Campus Eindhoven", "UtrechtInc"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Low - Dutch Startup Visa, Highly Skilled Migrant Visa"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "NWO grants €400M+ including AI-specific programs",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "ASML, Philips, Shell fund substantial research",
+        "phdStipendRange": "€2,200 - €2,800/month (Dutch PhD as employee, tax deductions apply)",
+        "fellowships": ["NWO Talent Scheme (Veni/Vidi/Vici)", "Holland Scholarship", "Huygens Scholarship Programme"],
+        "bangladeshiEligibility": "Holland Scholarship and Huygens open to Bangladeshis"
+      },
+      "aiFutureOutlook2035": {
+        "score": 80,
+        "narrative": "Netherlands will remain a top European AI hub through 2035. ASML's critical role in AI chip supply chain gives the Netherlands unique geopolitical importance. Amsterdam's international environment and Eindhoven's industrial tech cluster make it highly competitive. Dutch work culture (part-time, work-life balance) is appealing for family planning.",
+        "expectedJobGrowth": "30-40% increase in AI roles",
+        "salaryGrowthProjection": "12-18% real wage growth",
+        "riskFactors": ["Housing crisis in Amsterdam region", "Nitrogen crisis limiting construction", "Political shift (anti-immigration parties gaining)", "High cost of living"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 77,
+        "narrative": "By 2045, Netherlands will remain a logistics and technology hub of global importance. ASML alone gives it strategic irreplaceability in AI chip production. Aging population will sustain immigration need. Climate risk (sea level) is being actively managed and is not an existential near-term risk due to world-class water management. EU integration ensures stability.",
+        "expectedJobGrowth": "AI critical for logistics, port automation, agriculture, healthcare",
+        "dominantSectors": ["Semiconductor AI", "Healthcare AI", "Agriculture Tech AI", "Logistics AI", "Fintech AI"],
+        "riskFactors": ["Sea level rise (managed)", "Political populism", "Housing unaffordability"]
+      },
+      "importantIndustries": [
+        "Semiconductor & Chip Technology (ASML ecosystem)",
+        "Healthcare & Medical Tech AI",
+        "Logistics & Port AI",
+        "Agriculture & Food Tech AI",
+        "Financial Services AI",
+        "Aerospace AI",
+        "E-commerce AI"
+      ],
+      "bangladeshiStudentNotes": "Netherlands is excellent for Bangladeshi CS students due to high English proficiency (virtually all tech companies operate in English), strong AI research, and good PR pathway via Highly Skilled Migrant route. The DAFT (Dutch American Friendship Treaty equivalent) doesn't apply but Highly Skilled Migrant Visa is excellent. PhD students are employees and receive full salary (€2,200+/month). Housing in Amsterdam is very expensive; Delft, Eindhoven, or Utrecht are more affordable. Spouse can work immediately on dependent visa. PR possible in 5 years.",
+      "visaDifficulty": "Low to Moderate",
+      "prDifficulty": "Moderate"
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "aiMarketScore": 78,
+      "aiMarketScoreConfidence": 83,
+      "aiMarketEvidence": "Sweden has an exceptional tech ecosystem relative to population size (10.5M). Home to Ericsson, Spotify, Klarna, King. Strong AI research at KTH, Chalmers, Stockholm University. Government committed SEK 1.3B to AI through WASP program. High English proficiency. High taxes but excellent public services.",
+      "topCompanies": [
+        {
+          "name": "Spotify",
+          "location": "Stockholm",
+          "focus": "Music recommendation AI, NLP, Audio AI",
+          "hires": "ML Engineers, Research Scientists"
+        },
+        {
+          "name": "Klarna AI",
+          "location": "Stockholm",
+          "focus": "Fintech AI, Fraud Detection, Shopping AI",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Ericsson AI",
+          "location": "Stockholm",
+          "focus": "Telecom AI, 5G AI, Network Optimization",
+          "hires": "ML Engineers, AI Researchers"
+        },
+        {
+          "name": "Kry (Livi)",
+          "location": "Stockholm",
+          "focus": "Health Tech AI, Digital Healthcare",
+          "hires": "ML Engineers, Health AI"
+        },
+        {
+          "name": "King (Activision Blizzard)",
+          "location": "Stockholm / Malmö",
+          "focus": "Game AI, Player Behavior Modeling",
+          "hires": "ML Engineers, Game AI"
+        },
+        {
+          "name": "H&M Group AI",
+          "location": "Stockholm",
+          "focus": "Fashion AI, Supply Chain AI, Trend Prediction",
+          "hires": "Data Scientists, ML Engineers"
+        },
+        {
+          "name": "Volvo Cars AI",
+          "location": "Gothenburg",
+          "focus": "Autonomous Driving, Safety AI, Predictive Maintenance",
+          "hires": "Computer Vision, ML Engineers"
+        },
+        {
+          "name": "Einride",
+          "location": "Stockholm",
+          "focus": "Autonomous Electric Freight, Logistics AI",
+          "hires": "Robotics Engineers, ML Engineers"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "KTH Royal Institute of Technology",
+          "location": "Stockholm",
+          "aiStrength": 87,
+          "notableLabs": ["RPL (Robotics, Perception, Learning)", "Division of Speech, Music and Hearing", "Data Science Lab"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Chalmers University of Technology",
+          "location": "Gothenburg",
+          "aiStrength": 84,
+          "notableLabs": ["AI Research Centre (CHAIR)", "Data Science and AI division"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Stockholm University",
+          "location": "Stockholm",
+          "aiStrength": 79,
+          "notableLabs": ["Department of Computer and Systems Sciences", "Stockholm AI Platform"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Uppsala University",
+          "location": "Uppsala",
+          "aiStrength": 78,
+          "notableLabs": ["UDBL", "Statistics and AI"],
+          "fundingLevel": "Moderate-High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "SEK 1.3B WASP program + SEK 400M WASP-HS; total ~€200M equivalent in AI research",
+        "keyPrograms": ["WASP (Wallenberg AI, Autonomous Systems and Software Program)", "AI Sweden", "Vinnova AI grants", "WASP-HS (AI & Humanities)"],
+        "federalAgencies": ["Vinnova", "Swedish Research Council (VR)", "AI Sweden"],
+        "aiNationalStrategy": "National AI Strategy 2018, AI Sweden launched 2019",
+        "publicPrivatePartnership": "Excellent - Wallenberg Foundation is Europe's largest private research funder for AI",
+        "investmentTrend": "Sustained strong, WASP is one of Europe's largest AI programs per capita"
+      },
+      "startupEcosystem": {
+        "score": 79,
+        "vcFundingUSD": "SEK 20-30B annually in Swedish startups (one of highest per capita in Europe)",
+        "keyHubs": ["Stockholm", "Gothenburg", "Malmö"],
+        "unicorns": "15+ Swedish unicorns (Klarna, Spotify, Mojang etc.)",
+        "accelerators": ["EQT Ventures", "Industrifonden", "Almi", "The Nordic Web"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Moderate - EU Blue Card and self-employed options available"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "VR + Vinnova €150M+ for AI research",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "WASP = SEK 1.3B (2015-2031) privately funded by Wallenberg",
+        "phdStipendRange": "SEK 30,000 - 38,000/month (PhD as employee, fully salaried)",
+        "fellowships": ["WASP PhD programs (funded)", "VR Grants", "Erasmus+ (EU)", "Knut and Alice Wallenberg Foundation"],
+        "bangladeshiEligibility": "WASP PhD positions open to international applicants; highly competitive"
+      },
+      "aiFutureOutlook2035": {
+        "score": 81,
+        "narrative": "Sweden's combination of exceptional research (WASP), globally known tech companies, and excellent quality of life makes it a strong destination through 2035. Aging population will drive healthcare AI demand and immigration need. High taxes are offset by world-class public services. English-language work environment virtually guaranteed in tech sector. Housing in Stockholm is competitive.",
+        "expectedJobGrowth": "30-40% increase in AI roles",
+        "salaryGrowthProjection": "10-15% real wage growth (taxes reduce take-home impact)",
+        "riskFactors": ["High tax burden", "Housing shortage in Stockholm", "Swedish language needed for social integration", "Rising cost of living"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 79,
+        "narrative": "Sweden by 2045 will be among the world's most AI-integrated economies. Autonomous transport (Einride, Volvo), AI-driven healthcare, and sustainable AI manufacturing will define the economy. Demographic aging will make Sweden strongly pro-immigration. Climate stability (Nordic location) gives long-term resilience. EU membership provides stability.",
+        "expectedJobGrowth": "AI central to healthcare, transport, manufacturing, climate",
+        "dominantSectors": ["Autonomous Transport AI", "Healthcare AI", "Sustainability AI", "Telecom AI", "Gaming AI"],
+        "riskFactors": ["High cost of living", "Swedish language integration for citizenship"]
+      },
+      "importantIndustries": [
+        "Telecom & 5G AI",
+        "Automotive & Autonomous Transport",
+        "Music & Entertainment AI",
+        "Fintech AI",
+        "Healthcare & MedTech AI",
+        "Gaming AI",
+        "Industrial & Manufacturing AI",
+        "Sustainability & Climate AI"
+      ],
+      "bangladeshiStudentNotes": "Sweden is highly recommended for Bangladeshi students who prioritize research quality and quality of life. PhD students are employees receiving full Swedish salary (SEK 30,000+/month) - this is exceptional. WASP programs offer some of Europe's best-funded AI PhD positions. Post-study work rights are 1 year after graduation. Housing in Stockholm is competitive. Swedish language (SFI courses free) helps for social integration though not strictly required for tech jobs. PR after 5 years; citizenship after 5 years of PR. Sweden is NATO member from 2024 - strong security.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate"
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "aiMarketScore": 74,
+      "aiMarketScoreConfidence": 80,
+      "aiMarketEvidence": "Finland has a strong per-capita AI ecosystem. Nokia, Rovio, Supercell, Wolt. Strong university AI research at Aalto and University of Helsinki. Government's 'Elements of AI' course is a globally recognized AI literacy initiative. Aging population creates structural immigration need. Small but high-quality market.",
+      "topCompanies": [
+        {
+          "name": "Nokia Bell Labs",
+          "location": "Espoo, Uusimaa",
+          "focus": "Telecom AI, Network AI, 6G Research",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Wolt (DoorDash)",
+          "location": "Helsinki",
+          "focus": "Delivery AI, Logistics Optimization, Recommendation",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Varjo",
+          "location": "Helsinki",
+          "focus": "XR (VR/AR) AI, Spatial Computing",
+          "hires": "Computer Vision, ML Engineers"
+        },
+        {
+          "name": "Supercell",
+          "location": "Helsinki",
+          "focus": "Game AI, Procedural Generation",
+          "hires": "ML Engineers, Game AI Researchers"
+        },
+        {
+          "name": "Reaktor",
+          "location": "Helsinki",
+          "focus": "AI Consulting, Applied AI, Data Science",
+          "hires": "Data Scientists, ML Engineers"
+        },
+        {
+          "name": "Futurice",
+          "location": "Helsinki",
+          "focus": "AI strategy, Applied ML, Industrial AI",
+          "hires": "ML Engineers, AI Consultants"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Aalto University",
+          "location": "Espoo (Helsinki metro)",
+          "aiStrength": 84,
+          "notableLabs": ["FCAI - Finnish Center for AI", "Machine Learning group", "Probabilistic ML group"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of Helsinki",
+          "location": "Helsinki",
+          "aiStrength": 82,
+          "notableLabs": ["FCAI co-host", "Department of CS", "Elements of AI initiative"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Tampere University",
+          "location": "Tampere",
+          "aiStrength": 74,
+          "notableLabs": ["CIVIT", "Signal Processing"],
+          "fundingLevel": "Moderate"
+        },
+        {
+          "name": "University of Turku",
+          "location": "Turku",
+          "aiStrength": 71,
+          "notableLabs": ["TurkuNLP", "Bioinformatics"],
+          "fundingLevel": "Moderate"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "€257M national AI program + EU funding",
+        "keyPrograms": ["FCAI (Finnish Center for AI)", "Elements of AI (national AI literacy)", "Business Finland AI grants", "Aurora AI (government AI)"],
+        "federalAgencies": ["Business Finland", "Academy of Finland", "FCAI"],
+        "aiNationalStrategy": "Finland's Age of Artificial Intelligence program 2019; updated 2023",
+        "publicPrivatePartnership": "Strong - Nokia, Microsoft Finland, Google partner with universities",
+        "investmentTrend": "Sustained, with strong per-capita investment relative to size"
+      },
+      "startupEcosystem": {
+        "score": 69,
+        "vcFundingUSD": "€1-2B annually in Finnish tech startups",
+        "keyHubs": ["Helsinki", "Espoo", "Tampere"],
+        "unicorns": "5-8 (Wolt, Supercell, Rovio)",
+        "accelerators": ["Slush (world's leading startup event)", "Maria01", "Kiuas"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Moderate - Startup Permit available for business founders"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "Academy of Finland €150M+ for CS and AI",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Nokia, Microsoft Finland co-fund research",
+        "phdStipendRange": "€2,200 - €3,000/month (PhD as employee in Finland)",
+        "fellowships": ["FCAI PhD programs", "Academy of Finland Postdoc", "Erasmus+ EU"],
+        "bangladeshiEligibility": "Open international applications for FCAI positions"
+      },
+      "aiFutureOutlook2035": {
+        "score": 76,
+        "narrative": "Finland will continue to punch above its weight in AI. Aging population (critical by 2030s) will drive aggressive immigration policy favorable to skilled tech workers. Finnish AI ecosystem is built around quality over quantity. English proficiency in Helsinki tech ecosystem is near-universal. Slush positions Helsinki as a major European startup gateway.",
+        "expectedJobGrowth": "25-35% increase in AI roles",
+        "salaryGrowthProjection": "10-15% real wage growth",
+        "riskFactors": ["Small market size", "Finnish/Swedish language for social integration", "Cold climate (lifestyle preference)", "Cost of living rising"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 74,
+        "narrative": "By 2045, Finland's aging population crisis will be acute, making immigration structurally essential. Finland will be among the most AI-dependent economies per capita. Strong Nordic social safety net will be maintained through AI productivity gains and skilled immigration. EU membership and NATO security provide stability.",
+        "expectedJobGrowth": "AI critical for elderly care, telecom, defense, gaming",
+        "dominantSectors": ["Healthcare AI (aging population)", "Telecom AI (Nokia/6G)", "Gaming AI", "Defense AI (NATO)", "Sustainability AI"],
+        "riskFactors": ["Aging population dependency ratio", "Small domestic market", "Russian border proximity (managed)"]
+      },
+      "importantIndustries": [
+        "Telecom & Network AI",
+        "Gaming & Entertainment AI",
+        "Healthcare & Elderly Care AI",
+        "Defense & Security AI",
+        "Industrial & Manufacturing AI",
+        "XR & Spatial Computing",
+        "EdTech AI"
+      ],
+      "bangladeshiStudentNotes": "Finland is underrated by Bangladeshi students. Aalto University and FCAI offer excellent AI PhD positions. PhD students are employees with Finnish salary. Tuition is free for PhD students. For Masters, tuition fees apply for non-EU students (€10,000-15,000/year). Finnish language is needed for full social integration but not for tech jobs (English-first in companies). PR after 4 years of continuous residence; citizenship after 5 years. Aging population means Finland will increasingly welcome skilled immigrants. Very safe country, excellent public services, free healthcare. Spouse can work on residence permit.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate"
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "aiMarketScore": 75,
+      "aiMarketScoreConfidence": 81,
+      "aiMarketEvidence": "Denmark has a compact but high-quality AI ecosystem. Strong pharmaceutical AI (Novo Nordisk, Leo Pharma), wind energy AI, and maritime AI. Copenhagen is growing as a Nordic tech hub. Government's Digital Strategy and AI strategy are ambitious. High English proficiency. Small population (6M) limits scale but income per capita is very high.",
+      "topCompanies": [
+        {
+          "name": "Novo Nordisk AI",
+          "location": "Copenhagen / Bagsværd",
+          "focus": "Drug Discovery AI, Clinical Trial AI, GLP-1 optimization",
+          "hires": "Computational Biologists, ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Vestas AI",
+          "location": "Aarhus",
+          "focus": "Wind Energy AI, Predictive Maintenance, Energy Optimization",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Maersk AI",
+          "location": "Copenhagen",
+          "focus": "Logistics AI, Supply Chain AI, Port AI",
+          "hires": "Data Scientists, ML Engineers"
+        },
+        {
+          "name": "Ørsted AI",
+          "location": "Fredericia",
+          "focus": "Renewable Energy AI, Grid Optimization",
+          "hires": "ML Engineers, Energy Data Scientists"
+        },
+        {
+          "name": "Zendesk",
+          "location": "Copenhagen",
+          "focus": "Customer Service AI, NLP",
+          "hires": "ML Engineers"
+        },
+        {
+          "name": "Vivino",
+          "location": "Copenhagen",
+          "focus": "Wine recommendation AI, Computer Vision",
+          "hires": "ML Engineers"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Technical University of Denmark (DTU)",
+          "location": "Kongens Lyngby (Copenhagen area)",
+          "aiStrength": 82,
+          "notableLabs": ["Section for Cognitive Systems", "AI Lab DTU", "Biosequence Analysis"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of Copenhagen (UCPH)",
+          "location": "Copenhagen",
+          "aiStrength": 80,
+          "notableLabs": ["DIKU - Department of Computer Science", "Center for Health Data Science"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Aarhus University",
+          "location": "Aarhus",
+          "aiStrength": 76,
+          "notableLabs": ["Center for Digitalisation, Big Data and Data Analytics (DIGIT)"],
+          "fundingLevel": "Moderate-High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "DKK 4B+ Digital Strategy; AI subset ~€200M",
+        "keyPrograms": ["National Strategy for AI", "Pioneer Centre for AI (P1)", "Innovation Fund Denmark", "Digital Tech Summit"],
+        "federalAgencies": ["Innovation Fund Denmark", "Danish Research Councils", "Digitalization Agency"],
+        "aiNationalStrategy": "National Strategy for Artificial Intelligence 2019; Pioneer Centre launched 2022",
+        "publicPrivatePartnership": "Strong - Novo Nordisk Foundation is Europe's largest private funder of life sciences AI",
+        "investmentTrend": "Strong and increasing, particularly in life sciences and green energy AI"
+      },
+      "startupEcosystem": {
+        "score": 70,
+        "vcFundingUSD": "DKK 8-10B annually in Danish startups",
+        "keyHubs": ["Copenhagen", "Aarhus"],
+        "unicorns": "5-8 (Zendesk, Too Good To Go)",
+        "accelerators": ["DTU Skylab", "CBS Accelerate", "StartupDenmark"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Moderate"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "Innovation Fund Denmark DKK 2B+ annually",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Novo Nordisk Foundation provides billions for life sciences and AI research",
+        "phdStipendRange": "DKK 28,000 - 34,000/month (PhD as employee - exceptional)",
+        "fellowships": ["Pioneer Centre PhD fellowships", "Innovation Fund industrial PhD", "Danish Government Scholarships (few slots)"],
+        "bangladeshiEligibility": "Limited government scholarships; primarily rely on position-based funding"
+      },
+      "aiFutureOutlook2035": {
+        "score": 77,
+        "narrative": "Denmark's AI future is strongly linked to pharmaceutical (Novo Nordisk's obesity drug success is funding massive AI investment), renewable energy, and logistics. Pioneer Centre for AI is a flagship EU-level research institution. High salaries and excellent quality of life. Small population means immigration will be structurally needed.",
+        "expectedJobGrowth": "28-38% increase in AI roles",
+        "salaryGrowthProjection": "12-18% real wage growth",
+        "riskFactors": ["Very high cost of living", "Danish language needed for PR and social integration", "Small labor market", "High tax burden"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 75,
+        "narrative": "Denmark by 2045 will be a world leader in green AI and pharmaceutical AI. Novo Nordisk's continued dominance in drug discovery AI will create significant research and engineering jobs. Aging population will drive healthcare AI demand and immigration. EU membership provides stability and market access.",
+        "expectedJobGrowth": "Life sciences AI, green energy AI, maritime AI",
+        "dominantSectors": ["Pharmaceutical & Drug Discovery AI", "Green Energy & Wind AI", "Maritime & Logistics AI", "Health Data AI"],
+        "riskFactors": ["Very small domestic market", "Language integration requirement for citizenship", "High cost of living"]
+      },
+      "importantIndustries": [
+        "Pharmaceutical & Biotech AI",
+        "Renewable Energy & Wind AI",
+        "Maritime & Shipping AI",
+        "Agriculture AI",
+        "Financial AI",
+        "Gaming AI"
+      ],
+      "bangladeshiStudentNotes": "Denmark offers excellent PhD salaries (among Europe's highest) as PhDs are employees. Novo Nordisk's massive success (funding 20%+ of Danish GDP) has created extraordinary opportunities in life sciences AI. Danish language (required for permanent residency points system) is the primary integration challenge. Post-study work rights are 2 years. PR requires A2 Danish language and passing integration requirements. Highly recommended for those interested in pharmaceutical AI or green energy AI. Very high cost of living but very high salary compensates.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate-Hard (language requirement)"
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "aiMarketScore": 71,
+      "aiMarketScoreConfidence": 78,
+      "aiMarketEvidence": "Norway has exceptional economic stability due to sovereign wealth fund (world's largest at $1.7T+). Strong oil & gas AI, maritime AI, fisheries AI. Growing tech sector in Oslo. Smaller AI ecosystem than Sweden/Denmark but very high quality of life and salaries. Long-term stability is unmatched globally.",
+      "topCompanies": [
+        {
+          "name": "Equinor AI",
+          "location": "Stavanger / Oslo",
+          "focus": "Oil & Gas AI, Subsurface Modeling, Digital Oilfield",
+          "hires": "ML Engineers, Petroleum Data Scientists"
+        },
+        {
+          "name": "Kongsberg AI",
+          "location": "Kongsberg",
+          "focus": "Maritime AI, Defense AI, Autonomous Systems",
+          "hires": "ML Engineers, Robotics Engineers"
+        },
+        {
+          "name": "Telenor AI",
+          "location": "Oslo / Fornebu",
+          "focus": "Telecom AI, Network Optimization, Customer AI",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "DNB AI",
+          "location": "Oslo",
+          "focus": "Banking AI, Fraud Detection",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Pexip",
+          "location": "Oslo",
+          "focus": "Video Conferencing AI",
+          "hires": "ML Engineers"
+        },
+        {
+          "name": "Kahoot!",
+          "location": "Oslo",
+          "focus": "EdTech AI, Learning Analytics",
+          "hires": "ML Engineers"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Norwegian University of Science and Technology (NTNU)",
+          "location": "Trondheim",
+          "aiStrength": 79,
+          "notableLabs": ["IDI - Dept of Computer Science", "Signal Processing", "Robotics"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of Oslo",
+          "location": "Oslo",
+          "aiStrength": 76,
+          "notableLabs": ["Language Technology Group", "SIRIUS Centre", "Big Insight"],
+          "fundingLevel": "High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "NOK 2.5B+ AI strategy; significant additional from sovereign wealth fund-linked initiatives",
+        "keyPrograms": ["Norwegian AI Strategy", "Research Council of Norway AI grants", "NTNU AI lab investment"],
+        "federalAgencies": ["Research Council of Norway", "Innovation Norway", "Norsk AI"],
+        "aiNationalStrategy": "National Strategy for AI 2020",
+        "publicPrivatePartnership": "Moderate - oil sector companies drive most industrial AI",
+        "investmentTrend": "Stable with oil wealth buffering any economic downturns"
+      },
+      "startupEcosystem": {
+        "score": 64,
+        "vcFundingUSD": "NOK 8-10B annually in Norwegian startups",
+        "keyHubs": ["Oslo", "Trondheim", "Bergen"],
+        "unicorns": "3-5 (Kahoot, Pexip)",
+        "accelerators": ["StartupLab Oslo", "Spark NTNU", "Bergen Innovation"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Moderate"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "Research Council of Norway NOK 1B+ for CS/AI",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Equinor, Kongsberg fund significant research",
+        "phdStipendRange": "NOK 490,000 - 560,000/year (PhD as employee - among world's highest)",
+        "fellowships": ["Research Council PhD positions", "NTNU specific fellowships"],
+        "bangladeshiEligibility": "Open to international PhD candidates"
+      },
+      "aiFutureOutlook2035": {
+        "score": 74,
+        "narrative": "Norway's extraordinary wealth from sovereign fund provides unmatched long-term stability. Oil sector transition to renewables will drive significant AI demand. Maritime autonomous systems (Kongsberg) is a world leader. Small job market but extremely high salaries and quality of life. Norwegian language is important for long-term integration though English is widely used in tech.",
+        "expectedJobGrowth": "22-32% increase in AI roles",
+        "salaryGrowthProjection": "10-15% real wage growth",
+        "riskFactors": ["Small labor market", "Norwegian language important for PR", "High cost of living (Oslo among world's most expensive)", "Oil dependency transition risk"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 72,
+        "narrative": "By 2045, Norway will have largely transitioned from oil to renewable energy, with AI central to this transition. Sovereign wealth fund guarantees fiscal stability for decades. Aging population will require immigration. Very high quality of life. The challenge is the small market size limiting career ceiling compared to US or Germany.",
+        "expectedJobGrowth": "AI central to energy transition, maritime, fisheries, healthcare",
+        "dominantSectors": ["Renewable Energy AI", "Maritime & Offshore AI", "Healthcare AI", "Fisheries & Aquaculture AI"],
+        "riskFactors": ["Small market", "Oil transition", "Norwegian language integration requirement"]
+      },
+      "importantIndustries": [
+        "Oil & Gas / Energy Transition AI",
+        "Maritime & Shipping AI",
+        "Fisheries & Aquaculture AI",
+        "Defense AI",
+        "Telecom AI",
+        "Financial AI"
+      ],
+      "bangladeshiStudentNotes": "Norway offers the world's highest PhD stipends (NOK ~490,000/year = ~$45,000+) as all PhDs are government employees with full benefits. Exceptional quality of life and safety (NATO member). Norwegian language (B1) required for permanent residency. Oslo is very expensive. Smaller AI job market means competition for specific roles. Best for those interested in energy sector AI, maritime AI, or pursuing research careers. Family benefits are exceptional - parental leave, free healthcare, free education. Long-term stability is unmatched globally due to sovereign wealth fund.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate (language required)"
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "aiMarketScore": 88,
+      "aiMarketScoreConfidence": 87,
+      "aiMarketEvidence": "Switzerland has one of the world's densest concentrations of AI talent per capita. ETH Zurich is consistently ranked #1 in Europe and top 5 globally in CS/AI. EPFL is world-class. Highest AI researcher salaries in Europe. Home to Google Brain Zurich, DeepMind Zurich, IBM Research Zurich, Disney Research, Microsoft Research. Financial hub (banking AI). Pharma AI (Roche, Novartis). Critical weakness is immigration pathway - Switzerland is NOT in EU and has strict immigration quotas.",
+      "topCompanies": [
+        {
+          "name": "Google Brain Zurich",
+          "location": "Zurich",
+          "focus": "Deep Learning Research, NLP, Computer Vision",
+          "hires": "Research Scientists (highly competitive)"
+        },
+        {
+          "name": "DeepMind Zurich",
+          "location": "Zurich",
+          "focus": "AGI Research, Reinforcement Learning",
+          "hires": "Research Scientists (extremely competitive)"
+        },
+        {
+          "name": "IBM Research Europe (Zurich)",
+          "location": "Rüschlikon",
+          "focus": "Quantum AI, Neuro-symbolic AI, Trust AI",
+          "hires": "Research Scientists, PhD interns"
+        },
+        {
+          "name": "Microsoft Research (Zurich)",
+          "location": "Zurich",
+          "focus": "Systems AI, Privacy-preserving AI",
+          "hires": "Research Scientists"
+        },
+        {
+          "name": "Roche AI",
+          "location": "Basel",
+          "focus": "Pharmaceutical AI, Drug Discovery, Medical Imaging",
+          "hires": "Computational Scientists, ML Engineers"
+        },
+        {
+          "name": "Novartis AI",
+          "location": "Basel",
+          "focus": "Drug Discovery AI, Clinical AI",
+          "hires": "Computational Biologists, ML Engineers"
+        },
+        {
+          "name": "UBS AI Lab",
+          "location": "Zurich",
+          "focus": "Financial AI, Risk Modeling, Quantitative AI",
+          "hires": "Quantitative Analysts, ML Engineers"
+        },
+        {
+          "name": "ABB AI Research",
+          "location": "Baden / Zurich",
+          "focus": "Industrial AI, Robotics, Power Grid AI",
+          "hires": "Robotics Engineers, ML Engineers"
+        },
+        {
+          "name": "Disney Research Zurich",
+          "location": "Zurich",
+          "focus": "Computer Vision, Animation AI, Computer Graphics",
+          "hires": "Research Scientists"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "ETH Zurich",
+          "location": "Zurich",
+          "aiStrength": 98,
+          "notableLabs": ["ETH AI Center", "Learning & Adaptive Systems (LAS)", "Computational Robotics Lab", "Institute for Machine Learning"],
+          "fundingLevel": "Exceptional"
+        },
+        {
+          "name": "EPFL",
+          "location": "Lausanne",
+          "aiStrength": 96,
+          "notableLabs": ["IDIAP Research Institute", "Machine Learning and Optimization Lab", "Biomedical AI"],
+          "fundingLevel": "Exceptional"
+        },
+        {
+          "name": "University of Zurich",
+          "location": "Zurich",
+          "aiStrength": 84,
+          "notableLabs": ["Department of Informatics AI group"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "University of Bern",
+          "location": "Bern",
+          "aiStrength": 77,
+          "notableLabs": ["AI in Medicine", "Machine Learning group"],
+          "fundingLevel": "Moderate-High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "CHF 450M+ Swiss National Science Foundation AI programs; ETH Domain funding CHF 10B+ over 4 years (includes AI)",
+        "keyPrograms": ["Swiss AI Initiative", "SNSF National Research Programmes", "Innosuisse AI grants", "ETH Domain Excellence"],
+        "federalAgencies": ["Swiss National Science Foundation (SNSF)", "Innosuisse", "SERI"],
+        "aiNationalStrategy": "Swiss Federal Council AI Strategy 2020; ETH AI Center as national anchor",
+        "publicPrivatePartnership": "Exceptional - highest industry-research collaboration in Europe",
+        "investmentTrend": "Sustained at very high levels; Switzerland invests highest % of GDP in R&D in Europe"
+      },
+      "startupEcosystem": {
+        "score": 83,
+        "vcFundingUSD": "CHF 3-5B annually in Swiss startups",
+        "keyHubs": ["Zurich", "Basel", "Lausanne", "Geneva"],
+        "unicorns": "10-15 Swiss unicorns",
+        "accelerators": ["ETH Entrepreneur Club", "EPFL Innovation Park", "Venturelab", "MassChallenge Switzerland"],
+        "bangladeshiFounderFriendly": "Moderate - difficult immigration for founders without employment",
+        "visaBarrier": "High - strict quota system for non-EU nationals"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "SNSF CHF 400M+ for CS/AI/engineering",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Google, Microsoft, IBM, Roche, Novartis fund massive research programs",
+        "phdStipendRange": "CHF 4,000 - 5,500/month (highest in world for PhD students)",
+        "fellowships": ["Swiss Government Excellence Scholarships", "ETH Excellence Scholarships", "EPFL excellence fellowships"],
+        "bangladeshiEligibility": "Swiss Government Excellence Scholarships open to Bangladeshis (MOFA funded)"
+      },
+      "aiFutureOutlook2035": {
+        "score": 91,
+        "narrative": "Switzerland will remain Europe's premium AI research and innovation hub through 2035. ETH Zurich and EPFL will continue attracting world's best researchers. Industry-academia collaboration is the best in the world. Critical warning: Switzerland's immigration system (EU priority, quota for non-EU) means PR is genuinely difficult and takes longer. Swiss salaries are the highest in Europe for AI roles. Quality of life is exceptional but extremely expensive.",
+        "expectedJobGrowth": "30-40% increase in AI roles",
+        "salaryGrowthProjection": "12-20% real wage growth (already highest in Europe)",
+        "riskFactors": ["Non-EU immigration quota system", "Extremely high cost of living", "PR difficulty for non-EU", "Housing expensive in Zurich/Geneva", "Language integration (German/French)"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 89,
+        "narrative": "By 2045, Switzerland will maintain its position as the premium AI research hub due to institutional excellence and political stability (neutral nation, direct democracy). Pharmaceutical AI, financial AI, and precision manufacturing AI will dominate. Aging population will force gradual immigration liberalization but EU citizens will always have priority. Highest quality of life globally.",
+        "expectedJobGrowth": "AI embedded in pharma, finance, precision manufacturing",
+        "dominantSectors": ["Pharmaceutical AI", "Financial AI", "Precision Manufacturing AI", "Biomedical AI", "Climate AI"],
+        "riskFactors": ["EU bilateral treaty uncertainties", "Immigration quota constraints", "High cost of living"]
+      },
+      "importantIndustries": [
+        "Pharmaceutical & Drug Discovery AI",
+        "Financial Services & Banking AI",
+        "Precision Manufacturing & Robotics AI",
+        "Medical Technology AI",
+        "Research & Academic AI",
+        "Luxury Goods & Retail AI",
+        "Energy & Climate AI"
+      ],
+      "bangladeshiStudentNotes": "Switzerland is the dream destination for AI researchers but immigration is genuinely difficult. PhD salaries (CHF 4,000-5,500/month) are the world's highest for PhD students. Swiss Government Excellence Scholarships are available for Bangladeshis. However, non-EU nationals face strict immigration quotas. After PhD, finding a job is possible (work permit B) but PR (C permit) takes 10 years for non-EU. Family reunification is possible. The tradeoff: world's best research, highest salary, but very slow PR. Best for those who genuinely want a research career and can tolerate long PR timelines. Swiss citizenship requires language (German/French/Italian) and is culturally based - integration expected.",
+      "visaDifficulty": "High (quota-based for non-EU)",
+      "prDifficulty": "Very High (10 years for non-EU)"
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "aiMarketScore": 68,
+      "aiMarketScoreConfidence": 77,
+      "aiMarketEvidence": "Austria has a growing AI ecosystem, strongest in Vienna. Home to ISTA (Institute of Science and Technology Austria), TU Wien, Vienna University. Strong industrial AI (Voestalpine, Siemens Austria). EU Blue Card pathway is excellent. German-language integration important. Smaller scale than Germany but excellent quality of life.",
+      "topCompanies": [
+        {
+          "name": "Bitpanda",
+          "location": "Vienna",
+          "focus": "Crypto AI, Fintech AI",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Runtastic (Adidas)",
+          "location": "Linz / Vienna",
+          "focus": "Health & Fitness AI, Wearable AI",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Catalysts",
+          "location": "Vienna / Linz",
+          "focus": "AI Consulting, Enterprise AI",
+          "hires": "ML Engineers, AI Consultants"
+        },
+        {
+          "name": "Siemens Austria AI",
+          "location": "Vienna",
+          "focus": "Industrial AI, Smart Buildings",
+          "hires": "ML Engineers"
+        },
+        {
+          "name": "Dynatrace",
+          "location": "Linz",
+          "focus": "Observability AI, DevOps AI",
+          "hires": "ML Engineers, Data Scientists"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "TU Wien (Vienna University of Technology)",
+          "location": "Vienna",
+          "aiStrength": 79,
+          "notableLabs": ["Logic and Computation", "Computer Vision Lab", "Data Intelligence"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "ISTA (Institute of Science and Technology Austria)",
+          "location": "Klosterneuburg",
+          "aiStrength": 87,
+          "notableLabs": ["Machine Learning & Statistics", "Computational Biology", "Theoretical CS"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "University of Vienna",
+          "location": "Vienna",
+          "aiStrength": 74,
+          "notableLabs": ["Data Mining group", "Natural Language Processing"],
+          "fundingLevel": "Moderate-High"
+        },
+        {
+          "name": "JKU Linz",
+          "location": "Linz",
+          "aiStrength": 76,
+          "notableLabs": ["LIT AI Lab", "Institute for Machine Learning"],
+          "fundingLevel": "Moderate-High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "€160M Austrian AI Roadmap; FFG (Austrian Research Promotion Agency) AI grants",
+        "keyPrograms": ["Artificial Intelligence Mission Austria 2030", "FFG AI grants", "WWTF AI grants (Vienna)"],
+        "federalAgencies": ["FFG", "FWF", "WWTF"],
+        "aiNationalStrategy": "Artificial Intelligence Mission Austria 2030 (AIM AT 2030)",
+        "publicPrivatePartnership": "Moderate - growing through Vienna as EU AI safety hub",
+        "investmentTrend": "Moderate, growing with EU AI Act compliance driving Vienna's role"
+      },
+      "startupEcosystem": {
+        "score": 62,
+        "vcFundingUSD": "€500M - 1B annually",
+        "keyHubs": ["Vienna", "Linz", "Graz"],
+        "unicorns": "3-5 (Bitpanda)",
+        "accelerators": ["Wayra Austria", "INiTS", "AWS Gründerfonds"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Moderate - Red-White-Red Card (skilled worker)"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "FWF €100M+ for AI and CS",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Modest - primarily public funded",
+        "phdStipendRange": "€2,000 - €2,500/month (TV-L equivalent)",
+        "fellowships": ["OeAD Austrian Government Scholarships", "Ernst Mach Grant", "ISTA graduate fellowships"],
+        "bangladeshiEligibility": "OeAD scholarships open to Bangladeshis"
+      },
+      "aiFutureOutlook2035": {
+        "score": 70,
+        "narrative": "Austria, particularly Vienna, is positioning itself as the EU AI governance and safety hub, leveraging its role as a major UN city. Dynatrace's global success from Linz shows Austrian deep tech can scale globally. Labor shortage in IT is significant. Red-White-Red Card makes immigration easier than many EU countries. German language remains important for integration.",
+        "expectedJobGrowth": "25-35% increase in AI roles",
+        "salaryGrowthProjection": "10-15% real wage growth",
+        "riskFactors": ["German language requirement", "Smaller market than Germany", "Rising housing costs in Vienna", "Political complexity (coalition government)"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 68,
+        "narrative": "Austria by 2045 will benefit from its position in the heart of Central Europe and as a major EU/UN center. Industrial AI will be critical for Austrian manufacturing. Aging population will drive healthcare AI and immigration need. Vienna's quality of life will continue to attract global talent.",
+        "expectedJobGrowth": "AI in manufacturing, healthcare, finance, logistics",
+        "dominantSectors": ["Industrial AI", "Healthcare AI", "Financial AI", "Logistics AI", "Tourism AI"],
+        "riskFactors": ["German language integration", "Smaller market", "Aging population"]
+      },
+      "importantIndustries": [
+        "Industrial & Manufacturing AI",
+        "Financial Services AI",
+        "Tourism & Hospitality AI",
+        "Healthcare AI",
+        "Logistics AI",
+        "Observability & DevOps AI"
+      ],
+      "bangladeshiStudentNotes": "Austria is a good option for Bangladeshi students who want EU access with lower tuition costs than many EU countries (€726/semester for EU, ~€1,500 for non-EU at public universities). Vienna is consistently rated one of the world's most livable cities. Red-White-Red Card for highly skilled workers facilitates employment. German language (B2 level) is important for full integration and PR application. ISTA has exceptional PhD programs with full funding. OeAD scholarships available for Bangladeshis.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate (language important)"
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "aiMarketScore": 69,
+      "aiMarketScoreConfidence": 78,
+      "aiMarketEvidence": "Belgium hosts the EURA (European AI regulatory center via Brussels EU institutions). KU Leuven is a top European university for AI. Strong pharmaceutical sector (UCB, Janssen) driving life sciences AI. Strategic location in EU. English widely spoken in tech. Multiple language communities (French, Dutch, German) create complexity but also opportunity.",
+      "topCompanies": [
+        {
+          "name": "Collibra",
+          "location": "Brussels / New York",
+          "focus": "Data Governance AI, Data Intelligence",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "UCB AI",
+          "location": "Brussels",
+          "focus": "Pharmaceutical AI, Neuroscience AI",
+          "hires": "Computational Scientists, ML Engineers"
+        },
+        {
+          "name": "Odoo AI",
+          "location": "Louvain-la-Neuve / Ghent",
+          "focus": "ERP AI, Business Process AI",
+          "hires": "ML Engineers, AI Developers"
+        },
+        {
+          "name": "Proximus AI",
+          "location": "Brussels",
+          "focus": "Telecom AI, Network Optimization",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Engie AI",
+          "location": "Brussels",
+          "focus": "Energy AI, Grid Optimization",
+          "hires": "Data Scientists, ML Engineers"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "KU Leuven",
+          "location": "Leuven, Flemish Brabant",
+          "aiStrength": 85,
+          "notableLabs": ["DTAI (Declarative Languages and AI)", "PSI Sector", "ESAT-STADIUS"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Université Libre de Bruxelles (ULB)",
+          "location": "Brussels",
+          "aiStrength": 77,
+          "notableLabs": ["Machine Learning Group", "AI Lab ULB"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Ghent University",
+          "location": "Ghent, East Flanders",
+          "aiStrength": 78,
+          "notableLabs": ["IDLab", "IMEC-IDLab"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "VUB (Vrije Universiteit Brussel)",
+          "location": "Brussels",
+          "aiStrength": 74,
+          "notableLabs": ["AI Lab VUB", "ETRO"],
+          "fundingLevel": "Moderate-High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "€1.25B Belgian Recovery AI investment; EU AI Act compliance driving public investment",
+        "keyPrograms": ["AI4Belgium", "IMEC nano-AI research", "FWO research grants (Flanders)", "F.R.S.-FNRS (Wallonia)"],
+        "federalAgencies": ["FWO", "F.R.S.-FNRS", "IMEC", "Innoviris"],
+        "aiNationalStrategy": "AI 4 Belgium Report; IMEC as strategic semiconductor research center",
+        "publicPrivatePartnership": "Strong in Flanders, moderate in Wallonia",
+        "investmentTrend": "Growing, with IMEC as a global semiconductor and AI chip research anchor"
+      },
+      "startupEcosystem": {
+        "score": 65,
+        "vcFundingUSD": "€1-2B annually",
+        "keyHubs": ["Brussels", "Leuven", "Ghent", "Antwerp"],
+        "unicorns": "5-7 (Collibra, Deliveroo Belgium)",
+        "accelerators": ["imec.istart", "BNP Paribas Fortis Starter", "BSMA"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Moderate"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "FWO + FNRS combined €300M+ for research",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "IMEC funding ~€600M+ annually (semiconductor AI)",
+        "phdStipendRange": "€2,200 - €2,600/month (FWO funded PhD)",
+        "fellowships": ["FWO PhD Fellowships", "IMEC PhD industrial program", "FNRS FRESH scholarships"],
+        "bangladeshiEligibility": "Limited direct scholarships; primarily position-based funding"
+      },
+      "aiFutureOutlook2035": {
+        "score": 71,
+        "narrative": "Belgium's role as the EU capital gives it unique influence in AI governance and regulation. IMEC is a global leader in semiconductor research relevant to AI chips. KU Leuven AI research is genuinely world-class. However, Belgian institutional complexity (federal + regional) can slow progress. English-language work environment in Brussels tech is strong.",
+        "expectedJobGrowth": "25-35% increase in AI roles",
+        "salaryGrowthProjection": "10-15% real wage growth",
+        "riskFactors": ["Institutional complexity (federal/regional split)", "High taxes", "Language complexity (French/Dutch/German)", "Political instability historically"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 69,
+        "narrative": "Belgium will remain strategically important as EU AI policy center. IMEC's semiconductor research will continue to be globally relevant. Life sciences AI will grow from pharma cluster. Aging population will drive immigration need. Multiple language requirement adds complexity for integration.",
+        "expectedJobGrowth": "EU regulation compliance AI, pharma AI, semiconductor AI",
+        "dominantSectors": ["EU AI Governance & Compliance", "Pharmaceutical AI", "Semiconductor Research AI", "Logistics AI", "Finance AI"],
+        "riskFactors": ["Institutional complexity", "High cost (Brussels)", "Language fragmentation"]
+      },
+      "importantIndustries": [
+        "EU AI Regulation & Compliance",
+        "Pharmaceutical & Life Sciences AI",
+        "Semiconductor Research AI (IMEC)",
+        "Financial AI",
+        "Logistics & Supply Chain AI",
+        "Telecom AI"
+      ],
+      "bangladeshiStudentNotes": "Belgium offers KU Leuven which has one of the strongest AI programs in Europe and is often underappreciated internationally. Brussels provides unique EU policy exposure. IMEC industrial PhD programs are excellent for hardware/systems AI. Multiple languages (French and Dutch are both official + German) create integration complexity. Professional Single Permit for work after study. PR is achievable but language requirements vary by region. Cost of living is moderate compared to Scandinavia or Switzerland.",
+      "visaDifficulty": "Moderate",
+      "prDifficulty": "Moderate"
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "aiMarketScore": 59,
+      "aiMarketScoreConfidence": 73,
+      "aiMarketEvidence": "New Zealand has a small but growing AI ecosystem. Strong agri-tech, film/VFX AI, and fintech AI. Very high quality of life and English-language environment. Wellington and Auckland are main tech hubs. Population only 5.1M limits market size significantly. Better as quality-of-life destination than cutting-edge AI research destination.",
+      "topCompanies": [
+        {
+          "name": "Xero AI",
+          "location": "Wellington",
+          "focus": "Accounting AI, Fintech AI, Small Business AI",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Weta Digital (Netflix)",
+          "location": "Wellington",
+          "focus": "VFX AI, Computer Graphics AI, Simulation",
+          "hires": "ML Engineers, Computer Graphics"
+        },
+        {
+          "name": "Fisher & Paykel Healthcare AI",
+          "location": "Auckland",
+          "focus": "Medical Device AI, Respiratory AI",
+          "hires": "Data Scientists, Medical AI"
+        },
+        {
+          "name": "ANZ Bank NZ AI",
+          "location": "Auckland",
+          "focus": "Banking AI, Fraud Detection",
+          "hires": "Data Scientists, ML Engineers"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "University of Auckland",
+          "location": "Auckland",
+          "aiStrength": 71,
+          "notableLabs": ["AI & ML Research Group", "Bioengineering Institute"],
+          "fundingLevel": "Moderate"
+        },
+        {
+          "name": "Victoria University of Wellington",
+          "location": "Wellington",
+          "aiStrength": 68,
+          "notableLabs": ["ECRG (Evolutionary Computation Research Group)", "Natural Language Processing"],
+          "fundingLevel": "Moderate"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "NZD 300M+ for science and innovation (AI subset ~NZD 50-80M)",
+        "keyPrograms": ["NZ AI Strategy", "Callaghan Innovation AI grants", "Vision Mātauranga (indigenous AI)"],
+        "federalAgencies": ["Callaghan Innovation", "MBIE", "MBIE AI Forum"],
+        "aiNationalStrategy": "Algorithm Charter for Aotearoa New Zealand 2020; AI Forum NZ roadmap",
+        "publicPrivatePartnership": "Moderate",
+        "investmentTrend": "Modest; constrained by population size and economic scale"
+      },
+      "startupEcosystem": {
+        "score": 55,
+        "vcFundingUSD": "NZD 500M-1B annually",
+        "keyHubs": ["Auckland", "Wellington"],
+        "unicorns": "2-3 (Xero, Soul Machines)",
+        "accelerators": ["Lightning Lab", "Creative HQ", "Sprout Agritech"],
+        "bangladeshiFounderFriendly": true,
+        "visaBarrier": "Low"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "Marsden Fund NZD 80M+ total; AI portion modest",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Limited",
+        "phdStipendRange": "NZD 27,500/year (basic stipend) - significantly lower than EU",
+        "fellowships": ["NZ Government Scholarships (limited international)", "MBIE Smart Ideas"],
+        "bangladeshiEligibility": "Limited dedicated scholarships; Pacific focused programs"
+      },
+      "aiFutureOutlook2035": {
+        "score": 63,
+        "narrative": "New Zealand will remain a high-quality but small AI market. Agriculture, VFX, healthcare, and fintech will drive AI demand. Strong immigration-friendly policies and excellent quality of life. Not competitive for cutting-edge AI research compared to US, EU, or Singapore. Good for lifestyle and PR pathway.",
+        "expectedJobGrowth": "20-28% increase in AI roles",
+        "salaryGrowthProjection": "8-12% real wage growth",
+        "riskFactors": ["Small market", "Brain drain to Australia", "Geographic isolation", "Lower salaries than Australia"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 61,
+        "narrative": "By 2045, New Zealand will increasingly use AI for climate adaptation, smart agriculture, and healthcare efficiency. Geographic isolation and small population will limit market growth but quality of life will remain exceptional. PR and citizenship pathway will remain accessible.",
+        "expectedJobGrowth": "AI in agriculture, climate, healthcare, tourism",
+        "dominantSectors": ["Agriculture & FoodTech AI", "VFX & Creative AI", "Healthcare AI", "Environmental AI"],
+        "riskFactors": ["Small market", "Geographic isolation", "Climate vulnerability (cyclones, flooding)"]
+      },
+      "importantIndustries": [
+        "Agriculture & FoodTech AI",
+        "VFX & Entertainment AI",
+        "Healthcare AI",
+        "Financial AI",
+        "Tourism & Hospitality AI",
+        "Environmental & Climate AI"
+      ],
+      "bangladeshiStudentNotes": "New Zealand is best suited for Bangladeshi students who prioritize quality of life and straightforward PR rather than cutting-edge AI research. Post-study work rights are 3 years (for masters/PhD). PR through Skilled Migrant Category is achievable in 3-5 years. Salary is lower than Australia for equivalent roles. Auckland has a significant South Asian community making cultural integration easier. Not recommended for those primarily targeting AI research careers - go to Canada, Germany, or US instead.",
+      "visaDifficulty": "Low to Moderate",
+      "prDifficulty": "Moderate"
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "aiMarketScore": 78,
+      "aiMarketScoreConfidence": 82,
+      "aiMarketEvidence": "Japan has the world's 3rd largest economy and is a major AI investor ($2T+). Home to Sony, Toyota, SoftBank, Fujitsu, NEC, NTT, Preferred Networks. Strong robotics tradition. Government committed ¥10T+ to AI and semiconductors. Critical weakness is Japanese language requirement for integration. Immigration gradually opening. Excellent quality of life and safety.",
+      "topCompanies": [
+        {
+          "name": "Sony AI",
+          "location": "Tokyo / Osaka",
+          "focus": "Game AI, Entertainment AI, Imaging AI, Autonomous Driving AI",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Toyota AI Research (TRI)",
+          "location": "Tokyo / Nagoya",
+          "focus": "Autonomous Driving, Robotics, Human-Machine Teaming",
+          "hires": "ML Engineers, Robotics Engineers"
+        },
+        {
+          "name": "Preferred Networks (PFN)",
+          "location": "Tokyo",
+          "focus": "Deep Learning, Robotics AI, Drug Discovery",
+          "hires": "Research Scientists, ML Engineers (English accepted)"
+        },
+        {
+          "name": "NTT Research AI",
+          "location": "Tokyo / Palo Alto CA",
+          "focus": "Physics-inspired AI, Medical AI, Cryptography AI",
+          "hires": "Research Scientists"
+        },
+        {
+          "name": "Fujitsu AI",
+          "location": "Tokyo / Kawasaki",
+          "focus": "Enterprise AI, Supercomputing AI, Digital Twin",
+          "hires": "ML Engineers, AI Consultants"
+        },
+        {
+          "name": "SoftBank Robotics",
+          "location": "Tokyo",
+          "focus": "Humanoid Robotics, Social AI",
+          "hires": "Robotics Engineers, ML Engineers"
+        },
+        {
+          "name": "LINE AI (Yahoo Japan)",
+          "location": "Tokyo",
+          "focus": "Messaging AI, NLP, Recommendation",
+          "hires": "ML Engineers, NLP Engineers"
+        },
+        {
+          "name": "Recruit AI",
+          "location": "Tokyo",
+          "focus": "HR AI, Job Matching AI, Analytics",
+          "hires": "Data Scientists, ML Engineers"
+        },
+        {
+          "name": "RIKEN Center for AI",
+          "location": "Wako, Saitama",
+          "focus": "Scientific AI, HPC AI, Life Sciences AI",
+          "hires": "Research Scientists"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "University of Tokyo",
+          "location": "Tokyo",
+          "aiStrength": 87,
+          "notableLabs": ["MBZUAI collaboration", "Matsuo Lab (Deep Learning)", "Sugiyama Lab (ML)"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Kyoto University",
+          "location": "Kyoto",
+          "aiStrength": 84,
+          "notableLabs": ["AI Research Unit", "Human-Robot Interaction"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Tokyo Institute of Technology (Tokyo Tech)",
+          "location": "Tokyo",
+          "aiStrength": 82,
+          "notableLabs": ["Ono Academic Lab", "Institute for AI and Beyond"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Osaka University",
+          "location": "Osaka",
+          "aiStrength": 80,
+          "notableLabs": ["Center for AI and Data Innovation", "Intelligent Robotics Lab"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "NAIST (Nara Institute of Science and Technology)",
+          "location": "Ikoma, Nara",
+          "aiStrength": 78,
+          "notableLabs": ["IS Lab", "NLP Group", "Computer Vision"],
+          "fundingLevel": "Moderate-High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "¥4T+ (approximately $26B equivalent) AI and semiconductor strategy over 5 years; ¥10T for AI and chips by 2030",
+        "keyPrograms": ["MEXT AI Strategy", "NEDO AI programs", "G7 Hiroshima AI Process", "Moonshot R&D AI", "RIKEN AI"],
+        "federalAgencies": ["MEXT", "METI", "NEDO", "RIKEN", "JST"],
+        "aiNationalStrategy": "AI Strategy 2022 (updated); Integrated Innovation Strategy 2023",
+        "publicPrivatePartnership": "Strong in corporate sector (Toyota, Sony, SoftBank massive investors)",
+        "investmentTrend": "Rapidly increasing - Japan views AI as national competitiveness priority"
+      },
+      "startupEcosystem": {
+        "score": 68,
+        "vcFundingUSD": "¥1T+ ($6B+) annually in Japanese startups",
+        "keyHubs": ["Tokyo", "Osaka", "Kyoto", "Fukuoka"],
+        "unicorns": "10-15 Japanese unicorns",
+        "accelerators": ["Global Brain", "ANRI", "SoftBank Investment Advisors", "500 Startups Japan"],
+        "bangladeshiFounderFriendly": "Moderate - language barrier is significant for founding",
+        "visaBarrier": "High - Japanese language important even for business"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "KAKENHI (Grants-in-Aid for Scientific Research) ¥300B+ for CS/AI",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Toyota, Sony, NTT, Fujitsu fund billions in research",
+        "phdStipendRange": "¥200,000 - ¥280,000/month (MEXT scholarship + additional RA payments)",
+        "fellowships": ["MEXT Japanese Government Scholarships (Monbukagakusho)", "JSPS Fellowship", "JASSO Support"],
+        "bangladeshiEligibility": "MEXT scholarships fully open to Bangladeshis - prestigious and comprehensive"
+      },
+      "aiFutureOutlook2035": {
+        "score": 81,
+        "narrative": "Japan's AI future is compelling due to structural labor shortage (population declining by ~600,000/year), massive corporate investment, and world-class robotics tradition. Government is aggressively opening immigration for AI engineers (J-Skip, Digital Nomad Visa, relaxed PR requirements for highly skilled workers). Preferred Networks is Japan's most exciting pure-play AI startup. Language remains the primary barrier but English-acceptable positions in research are growing.",
+        "expectedJobGrowth": "40-55% increase in AI roles (driven by labor shortage)",
+        "salaryGrowthProjection": "15-25% real wage growth in AI (from lower base)",
+        "riskFactors": ["Japanese language critical for daily life and deep integration", "Historically slow PR pathway", "Cultural adjustment", "Earthquake risk (manageable with infrastructure)"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 79,
+        "narrative": "By 2045, Japan's demographic crisis will have transformed immigration policy dramatically. AI will be essential for elderly care (world's oldest population), manufacturing, and service sector efficiency. Japan will likely have among the world's highest robot density. International AI talent will be structurally necessary. The question is whether Japan opens sufficiently in time. Early movers (2027-2029) benefit most.",
+        "expectedJobGrowth": "AI existentially critical for Japan's economic survival",
+        "dominantSectors": ["Elderly Care AI (Robot)", "Manufacturing AI", "Automotive AI", "Biomedical AI", "Defense AI"],
+        "riskFactors": ["Demographic crisis depth", "Language integration", "Cultural insularity historically", "Seismic risk"]
+      },
+      "importantIndustries": [
+        "Robotics & Humanoid AI",
+        "Automotive & Autonomous Driving AI",
+        "Manufacturing & Industry 4.0 AI",
+        "Healthcare & Elderly Care AI",
+        "Consumer Electronics AI",
+        "Gaming & Entertainment AI",
+        "Financial AI",
+        "Agricultural AI"
+      ],
+      "bangladeshiStudentNotes": "Japan is genuinely transforming its immigration policies and Bangladeshi students should pay close attention. MEXT scholarship is one of the most generous globally - covers tuition + living allowance + airfare. English-language PhD programs are widely available at top universities. After degree, J-Skip Visa (for highly skilled AI workers) offers faster PR pathway. Highly Skilled Foreign Professional (HSFP) points system can give PR in 1-3 years for top candidates. Japanese language proficiency dramatically improves life quality and career advancement. Safety is exceptional. Tokyo is one of the world's great cities. Food, transport, and infrastructure are excellent. Strong recommendation for robotics and manufacturing AI specialties.",
+      "visaDifficulty": "Moderate (improving with new reforms)",
+      "prDifficulty": "Moderate (improving for highly skilled AI workers)"
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "aiMarketScore": 76,
+      "aiMarketScoreConfidence": 80,
+      "aiMarketEvidence": "South Korea has a formidable AI ecosystem driven by Samsung, LG, Kakao, Naver, Hyundai. Government committed ₩9.4T to AI by 2027. KAIST is a world-class university for AI and CS. Extremely competitive tech culture. Korean language important for integration. Aging population driving immigration opening. K-tech (semiconductor AI, display AI) is globally critical.",
+      "topCompanies": [
+        {
+          "name": "Samsung Research AI",
+          "location": "Seoul / Suwon",
+          "focus": "On-device AI, NLP (Bixby), Computer Vision, Semiconductor AI",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Naver AI (HyperCLOVA)",
+          "location": "Seongnam, Gyeonggi",
+          "focus": "Korean LLM, Search AI, Vision AI, Robotics",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Kakao Brain",
+          "location": "Seongnam, Gyeonggi",
+          "focus": "LLM, Generative AI, Multimodal AI",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "LG AI Research",
+          "location": "Seoul",
+          "focus": "Multimodal AI, EXAONE LLM, Robotics",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Hyundai Motor AI (Boston Dynamics Korea)",
+          "location": "Seoul / Hwaseong",
+          "focus": "Autonomous Driving AI, Robotics, Mobility AI",
+          "hires": "Robotics Engineers, ML Engineers"
+        },
+        {
+          "name": "SK Telecom AI",
+          "location": "Seoul",
+          "focus": "Telecom AI, A. (AI personal assistant), Network AI",
+          "hires": "ML Engineers, NLP"
+        },
+        {
+          "name": "KT AI",
+          "location": "Seoul",
+          "focus": "Telecom AI, Smart City AI",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Krafton AI",
+          "location": "Seoul",
+          "focus": "Game AI, Generative AI for games",
+          "hires": "ML Engineers, Game AI"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "KAIST (Korea Advanced Institute of Science and Technology)",
+          "location": "Daejeon",
+          "aiStrength": 90,
+          "notableLabs": ["AI Graduate School", "Robotics Program", "KAIST AI Institute"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Seoul National University (SNU)",
+          "location": "Seoul",
+          "aiStrength": 87,
+          "notableLabs": ["Department of CSE AI", "ASRI", "Robotics Lab"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "POSTECH",
+          "location": "Pohang, North Gyeongsang",
+          "aiStrength": 84,
+          "notableLabs": ["Dept of AI", "Machine Learning Lab"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "Yonsei University",
+          "location": "Seoul",
+          "aiStrength": 81,
+          "notableLabs": ["School of AI", "Data Science"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "GIST (Gwangju Institute of Science and Technology)",
+          "location": "Gwangju",
+          "aiStrength": 78,
+          "notableLabs": ["AI Graduate School"],
+          "fundingLevel": "High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "₩9.4T ($7B+) total AI investment plan through 2027; additional ₩17T for semiconductor AI",
+        "keyPrograms": ["AI Graduate School Program (8 universities)", "National AI R&D Strategy", "Digital New Deal AI", "Korean AI chip (system semiconductor) initiative"],
+        "federalAgencies": ["MSIT (Ministry of Science and ICT)", "IITP", "NRF", "KISTI"],
+        "aiNationalStrategy": "National AI Strategy 2019; updated 2022 - Hyperscale AI and AI Semiconductor priority",
+        "publicPrivatePartnership": "Very Strong - Samsung, Naver, Kakao deeply integrated with government AI agenda",
+        "investmentTrend": "Rapidly increasing with specific focus on semiconductor AI and sovereign LLMs"
+      },
+      "startupEcosystem": {
+        "score": 72,
+        "vcFundingUSD": "₩5T+ ($3.5B+) annually in Korean startups",
+        "keyHubs": ["Seoul (Gangnam)", "Seongnam", "Busan"],
+        "unicorns": "15-20 Korean unicorns",
+        "accelerators": ["Kakao Ventures", "Samsung Ventures", "SparkLabs", "500 Startups Korea"],
+        "bangladeshiFounderFriendly": "Limited - language barrier significant for founding",
+        "visaBarrier": "High - Korean language important"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "NRF + IITP AI grants ₩2T+ ($1.5B+) annually",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Samsung, Naver, Kakao fund hundreds of millions in research",
+        "phdStipendRange": "₩1,200,000 - ₩2,500,000/month (plus housing at KAIST/POSTECH)",
+        "fellowships": ["Korean Government Scholarship (KGSP) - Fully funded", "KAIST/SNU specific fellowships", "Samsung Scholarship"],
+        "bangladeshiEligibility": "KGSP (Korean Government Scholarship Program) fully open to Bangladeshis - covers tuition + living + language training"
+      },
+      "aiFutureOutlook2035": {
+        "score": 79,
+        "narrative": "South Korea is underrated in global AI conversations. KAIST's AI graduate school program is world-class. Samsung's semiconductor dominance means AI chip R&D is a structural strength. Korea's demographic crisis (world's lowest fertility rate 0.72 in 2023) will force aggressive immigration opening before 2035. Korean language proficiency significantly enhances career and social prospects.",
+        "expectedJobGrowth": "40-55% increase in AI roles (labor shortage driven)",
+        "salaryGrowthProjection": "15-25% real wage growth in AI",
+        "riskFactors": ["Korean language essential for integration", "Highly competitive work culture", "Geopolitical risk (North Korea proximity - managed)", "Demographic crisis requiring rapid immigration policy adaptation"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 76,
+        "narrative": "By 2045, South Korea will be radically transformed by demographic necessity. Fertility rate collapse means AI and immigration become existential priorities. Korea will likely be among the world's most AI-automated societies. K-culture global reach will continue benefiting Korea's soft power. Semiconductor AI leadership (Samsung, SK Hynix) will remain globally critical.",
+        "expectedJobGrowth": "AI existentially critical for Korea's demographic survival",
+        "dominantSectors": ["Semiconductor AI", "Robotics (humanoid/elder care)", "Autonomous Vehicles", "K-content AI", "Biotech AI"],
+        "riskFactors": ["Demographic crisis", "North Korea risk (historically managed)", "High work pressure culture", "Language integration requirement"]
+      },
+      "importantIndustries": [
+        "Semiconductor & Memory AI",
+        "Robotics & Automation AI",
+        "Automotive & Mobility AI",
+        "Consumer Electronics AI",
+        "Entertainment & K-Content AI",
+        "Telecom & Network AI",
+        "Financial AI",
+        "Healthcare & Biotech AI"
+      ],
+      "bangladeshiStudentNotes": "South Korea is an excellent but underutilized destination for Bangladeshi students. KGSP scholarship is fully funded including Korean language training, tuition, living allowance, and airfare - one of the world's best government scholarship programs. KAIST AI graduate school is genuinely world-class. Korean language study (1 year included in KGSP) opens significant career opportunities. After graduation, E-7 (Specific Activities Visa) for AI engineers is achievable. Highly Skilled Foreign Professionals can receive accelerated PR. Samsung and Naver hire international researchers in English. Cultural adjustment is real but manageable with Korean language basics. North Korea risk is real but historically well-managed by deterrence.",
+      "visaDifficulty": "Moderate (improving for AI specialists)",
+      "prDifficulty": "Moderate-Hard (language important)"
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "aiMarketScore": 85,
+      "aiMarketScoreConfidence": 88,
+      "aiMarketEvidence": "Singapore is Southeast Asia's premier AI hub. Government committed SGD 1B+ to AI under National AI Strategy 2.0. AI Singapore (AISG) drives national AI capability. Hosts regional HQs of Google, Meta, Amazon, Microsoft. Strong universities (NUS, NTU ranked top 20 globally). Highest AI salaries in Asia. Critical issue: small country (5.9M) with strict PR/citizenship for foreigners.",
+      "topCompanies": [
+        {
+          "name": "Google (APAC AI hub)",
+          "location": "Singapore",
+          "focus": "AI Research, Cloud AI, Search AI (APAC)",
+          "hires": "Research Scientists, ML Engineers, SWE"
+        },
+        {
+          "name": "Meta AI (APAC)",
+          "location": "Singapore",
+          "focus": "AI Research, Content AI (APAC)",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "ByteDance (TikTok) Singapore",
+          "location": "Singapore",
+          "focus": "Recommendation AI, Content AI, NLP",
+          "hires": "ML Engineers, Algorithm Engineers"
+        },
+        {
+          "name": "Sea Limited AI",
+          "location": "Singapore",
+          "focus": "E-commerce AI, Gaming AI, Fintech AI",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Grab AI",
+          "location": "Singapore",
+          "focus": "Mobility AI, Food Delivery AI, Financial AI",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "Shopee AI",
+          "location": "Singapore",
+          "focus": "E-commerce AI, Recommendation AI",
+          "hires": "ML Engineers, Algorithm Engineers"
+        },
+        {
+          "name": "DBS Bank AI",
+          "location": "Singapore",
+          "focus": "Banking AI, NLP, Fraud Detection",
+          "hires": "ML Engineers, Data Scientists"
+        },
+        {
+          "name": "AI Singapore (AISG)",
+          "location": "Singapore",
+          "focus": "National AI R&D, AI100 programs, AI apprenticeships",
+          "hires": "AI Engineers, ML Engineers"
+        },
+        {
+          "name": "Visa AI (APAC)",
+          "location": "Singapore",
+          "focus": "Payments AI, Fraud AI",
+          "hires": "ML Engineers, Data Scientists"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "National University of Singapore (NUS)",
+          "location": "Kent Ridge, Singapore",
+          "aiStrength": 91,
+          "notableLabs": ["School of Computing AI", "NUS-NTU Joint Lab", "AI Research Centre"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Nanyang Technological University (NTU)",
+          "location": "Jurong West, Singapore",
+          "aiStrength": 89,
+          "notableLabs": ["School of Computer Science & Engineering", "AI Research Institute"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Singapore Management University (SMU)",
+          "location": "Singapore",
+          "aiStrength": 77,
+          "notableLabs": ["Centre for Research in Privacy Technologies", "AI Innovation Programme"],
+          "fundingLevel": "High"
+        },
+        {
+          "name": "SUTD (Singapore University of Technology and Design)",
+          "location": "Changi, Singapore",
+          "aiStrength": 78,
+          "notableLabs": ["ROAR Lab", "AI & Data Engineering"],
+          "fundingLevel": "High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "SGD 1B+ National AI Strategy 2.0; SGD 500M AI Singapore program",
+        "keyPrograms": ["National AI Strategy 2.0 (NAIS 2.0)", "AI Singapore (AISG)", "AI Trailblazers", "100 Experiments", "SGD 5B Research, Innovation and Enterprise 2025"],
+        "federalAgencies": ["IMDA", "NRF (National Research Foundation)", "A*STAR", "AI Singapore"],
+        "aiNationalStrategy": "National AI Strategy 1.0 (2019), NAIS 2.0 (2023) - most comprehensive in SE Asia",
+        "publicPrivatePartnership": "Exceptional - Google, Microsoft, Meta have committed billions to Singapore AI",
+        "investmentTrend": "Strong and sustained; Singapore's AI strategy is a national priority for economic survival"
+      },
+      "startupEcosystem": {
+        "score": 82,
+        "vcFundingUSD": "USD 4-6B annually in Singapore tech startups",
+        "keyHubs": ["Singapore (entire city-state)"],
+        "unicorns": "20+ (Grab, Sea, Lazada, Nium, Ninja Van)",
+        "accelerators": ["Enterprise Singapore", "NUS Enterprise", "Antler", "Y Combinator Singapore cohort"],
+        "bangladeshiFounderFriendly": "Moderate - EntrePass available but highly selective",
+        "visaBarrier": "Moderate for employment; High for permanent settlement"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "NRF SGD 500M+ for AI research; A*STAR annual budget SGD 900M+",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Google, Microsoft, Amazon, Meta fund research programs at NUS/NTU",
+        "phdStipendRange": "SGD 2,500 - 3,000/month (NUS/NTU Research Scholarship - covers fees + living)",
+        "fellowships": ["NUS Research Scholarship", "NTU Research Scholarship", "A*STAR Singapore International Graduate Award (SINGA)", "AI Singapore Graduate Fellowship"],
+        "bangladeshiEligibility": "SINGA (Singapore International Graduate Award) fully open to Bangladeshis - highly competitive"
+      },
+      "aiFutureOutlook2035": {
+        "score": 86,
+        "narrative": "Singapore will remain the dominant AI hub in Southeast Asia and top-10 globally through 2035. NAIS 2.0 is being executed with characteristic Singaporean efficiency. The gateway to ASEAN's 680M population market gives Singapore unique value. High salaries, zero crime, excellent infrastructure. Critical long-term challenge: Singapore actively limits PR and citizenship to maintain social cohesion. Employment Pass holders have limited path to PR. Competition for PR is intense.",
+        "expectedJobGrowth": "45-60% increase in AI roles (APAC hub effect)",
+        "salaryGrowthProjection": "15-25% real wage growth (top in Asia)",
+        "riskFactors": ["PR is genuinely difficult despite long employment", "Citizenship extremely difficult (one of hardest globally)", "Very high cost of living (one of world's most expensive)", "Small market requiring ASEAN expansion for career ceiling", "No natural resources - dependent on talent attraction"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 83,
+        "narrative": "Singapore by 2045 will face existential questions about its talent attraction model. Aging Singaporean citizens + strict immigration for long-term residents = structural tension. Singapore must attract and retain global AI talent but resists becoming a full immigration nation. For Bangladeshi students, Singapore is excellent for 5-10 year career building and high savings, but long-term permanent settlement is genuinely uncertain.",
+        "expectedJobGrowth": "AI central to Singapore's entire economic model by 2045",
+        "dominantSectors": ["Fintech AI", "Logistics AI (port)", "Healthcare AI (aging citizens)", "Government AI (Smart Nation)", "Defense AI", "Southeast Asia platform AI"],
+        "riskFactors": ["PR/citizenship difficulty will persist by design", "Extreme cost of living", "Dependence on geopolitical stability (US-China balance)", "Very small city-state"]
+      },
+      "importantIndustries": [
+        "Financial Technology & Banking AI",
+        "Logistics & Port AI",
+        "E-commerce & Retail AI",
+        "Healthcare AI",
+        "Government & Smart City AI",
+        "Defense & Cybersecurity AI",
+        "Semiconductor & Chip Design AI",
+        "Education AI"
+      ],
+      "bangladeshiStudentNotes": "Singapore is genuinely excellent for career building but the key warning for Bangladeshi students is: DO NOT treat Singapore as a long-term home plan without realistic PR expectations. Employment Pass (EP) is achievable with strong AI skills and NUS/NTU degree. Salary is the highest in Asia by far. A*STAR SINGA scholarship is available for Bangladeshis for PhD. Post-study work (Employment Pass) is job-offer dependent - not automatic. PR requires typically 6-8 years of continuous employment and is points-based and selective (rejection rate high even after 10 years). Citizenship is near-impossible for most. Spouse can work on Long-Term Visit Pass but LTVP does NOT grant automatic work rights (must apply separately). Best strategy: Use Singapore for 5-10 year career + high savings + return to Canada/Australia for PR. Or pair Singapore degree with another country's PR plan.",
+      "visaDifficulty": "Moderate (Employment Pass achievable)",
+      "prDifficulty": "Very High (by design)"
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "aiMarketScore": 88,
+      "aiMarketScoreConfidence": 82,
+      "aiMarketEvidence": "China is the world's #2 AI power by almost every metric (patents, publications, investment, deployment). Baidu, Alibaba, Tencent, Huawei, ByteDance, SenseTime, Megvii. Government targeting AI parity with US by 2030. Traditional PR (Green Card) is historically difficult but new policies for high-value foreigners. Geopolitical tension with West is key risk. Chinese language essential.",
+      "topCompanies": [
+        {
+          "name": "Baidu AI (ERNIE Bot)",
+          "location": "Beijing / Shenzhen",
+          "focus": "Search AI, LLM, Autonomous Driving (Apollo)",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Alibaba DAMO Academy",
+          "location": "Hangzhou / Beijing",
+          "focus": "LLM, Computer Vision, NLP, Cloud AI",
+          "hires": "Research Scientists, Algorithm Engineers"
+        },
+        {
+          "name": "Tencent AI Lab",
+          "location": "Shenzhen / Beijing",
+          "focus": "Game AI, NLP, Computer Vision, Healthcare AI",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "ByteDance AI (Doubao, Coze)",
+          "location": "Beijing",
+          "focus": "LLM, Content Recommendation, Multimodal AI",
+          "hires": "Research Scientists, Algorithm Engineers"
+        },
+        {
+          "name": "Huawei AI (Noah's Ark Lab)",
+          "location": "Shenzhen / Beijing",
+          "focus": "AI Chips (Ascend), 5G AI, NLP",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "SenseTime",
+          "location": "Shanghai / Beijing",
+          "focus": "Computer Vision, Surveillance AI, Generative AI",
+          "hires": "Computer Vision Researchers, ML Engineers"
+        },
+        {
+          "name": "Zhipu AI",
+          "location": "Beijing",
+          "focus": "Chinese LLM (GLM), Multimodal AI",
+          "hires": "Research Scientists, ML Engineers"
+        },
+        {
+          "name": "Moonshot AI (Kimi)",
+          "location": "Beijing",
+          "focus": "Long Context LLM",
+          "hires": "Research Scientists"
+        },
+        {
+          "name": "DeepSeek",
+          "location": "Hangzhou",
+          "focus": "Frontier LLM research, Open-source AI",
+          "hires": "Research Scientists (highly selective)"
+        }
+      ],
+      "topUniversities": [
+        {
+          "name": "Tsinghua University",
+          "location": "Beijing",
+          "aiStrength": 93,
+          "notableLabs": ["THUML (Tsinghua University Machine Learning Group)", "THUDM", "Institute for AI Industry Research"],
+          "fundingLevel": "Exceptional"
+        },
+        {
+          "name": "Peking University",
+          "location": "Beijing",
+          "aiStrength": 91,
+          "notableLabs": ["Center on Frontiers of Computing Studies", "AI Lab"],
+          "fundingLevel": "Exceptional"
+        },
+        {
+          "name": "University of Science and Technology of China (USTC)",
+          "location": "Hefei, Anhui",
+          "aiStrength": 89,
+          "notableLabs": ["iFlytek Research collaboration", "NLP Group"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Shanghai Jiao Tong University (SJTU)",
+          "location": "Shanghai",
+          "aiStrength": 88,
+          "notableLabs": ["AI Institute", "Computer Vision", "Medical AI"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Zhejiang University",
+          "location": "Hangzhou, Zhejiang",
+          "aiStrength": 87,
+          "notableLabs": ["AI Institute", "Alibaba collaboration labs"],
+          "fundingLevel": "Very High"
+        },
+        {
+          "name": "Fudan University",
+          "location": "Shanghai",
+          "aiStrength": 85,
+          "notableLabs": ["Fudan NLP Group", "AI Lab"],
+          "fundingLevel": "Very High"
+        }
+      ],
+      "governmentInvestment": {
+        "annualBudgetUSD": "¥500B+ ($70B+) annually in AI and related technology across all levels of government",
+        "keyPrograms": ["New Generation AI Development Plan (AIDP)", "AI+ Action Plan 2024", "National Data Bureau AI", "Made in China 2025 AI", "Beijing AI Innovation Hub", "Shanghai AI Lab"],
+        "federalAgencies": ["MOST", "MIIT", "CAICT", "Academy of Sciences (CAS)"],
+        "aiNationalStrategy": "New Generation AI Development Plan 2017 (3-step to AI global leadership by 2030); updated with AI+ 2024",
+        "publicPrivatePartnership": "Exceptionally tight - government-private sector integration is defining feature",
+        "investmentTrend": "Massive and accelerating - AI is national strategic priority at highest level"
+      },
+      "startupEcosystem": {
+        "score": 85,
+        "vcFundingUSD": "$15-20B annually in Chinese AI startups (despite regulatory pressures)",
+        "keyHubs": ["Beijing (Zhongguancun)", "Shanghai", "Shenzhen", "Hangzhou"],
+        "unicorns": "100+ Chinese AI unicorns",
+        "accelerators": ["Tencent WeStart", "Alibaba Entrepreneur Fund", "Innoway Beijing", "Baidu AI Accelerator"],
+        "bangladeshiFounderFriendly": "Limited - language barrier, regulatory complexity, geopolitical concerns",
+        "visaBarrier": "Moderate for work; High for long-term residence"
+      },
+      "researchFunding": {
+        "nsfAIGrantsAnnual": "NSFC (National Natural Science Foundation) ¥30B+ for AI/CS",
+        "darpaAnnual": "N/A",
+        "industryLabFunding": "Alibaba, Baidu, Tencent, Huawei fund billions in research",
+        "phdStipendRange": "¥3,000 - ¥5,000/month (CSC scholarship + university supplement, modest by global standards)",
+        "fellowships": ["CSC (China Scholarship Council) - fully funded for international students", "CAS PIFI fellowship", "University-specific scholarships"],
+        "bangladeshiEligibility": "CSC scholarships fully open to Bangladeshis - large Bangladeshi student community in China"
+      },
+      "aiFutureOutlook2035": {
+        "score": 84,
+        "narrative": "China will be a genuine co-equal AI power with the US by 2030-2035. DeepSeek's breakthrough shows China can match frontier US AI capabilities. Massive deployment advantage (1.4B population as training data and market). Government commitment is total and unconditional. For foreign AI researchers, opportunities are significant but risks include: geopolitical tension affecting career/return, internet restrictions (GFW), political sensitivity, and very difficult PR pathway traditionally (now improving for high-value foreigners).",
+        "expectedJobGrowth": "50-70% increase in AI roles",
+        "salaryGrowthProjection": "20-35% real wage growth in AI (from growing base)",
+        "riskFactors": ["Geopolitical tension (US-China cold war on AI)", "Internet censorship (GFW blocks Google, Meta, Twitter)", "Traditional PR difficulty (slowly improving)", "Political environment sensitivity", "Technology decoupling risk affecting career portability", "COVID-style lockdown risk historically"]
+      },
+      "aiFutureOutlook2045": {
+        "score": 80,
+        "narrative": "By 2045, China will be either the world's leading AI power or in a clear co-equal position with the US. Domestic AI champions (Baidu, ByteDance successors, Huawei AI chips) will have matured. Long-term residence for exceptional AI talent (China Green Card is rare but exists for truly exceptional cases) will gradually improve. However, the geopolitical bifurcation of global AI (US-sphere vs China-sphere) may create career portability challenges for those deeply embedded in Chinese AI systems.",
+        "expectedJobGrowth": "AI dominates every sector of Chinese economy",
+        "dominantSectors": ["LLM & Foundation Models", "Computer Vision", "Autonomous Vehicles", "Manufacturing AI", "Healthcare AI", "Smart City AI", "Defense AI"],
+        "riskFactors": ["US-China tech war escalation", "Political risk", "GFW isolation", "Regulatory unpredictability", "Return to Bangladesh or third country complexity"]
+      },
+      "importantIndustries": [
+        "Large Language Models & Foundation AI",
+        "Computer Vision & Surveillance AI",
+        "Autonomous Vehicles",
+        "Industrial & Manufacturing AI",
+        "Healthcare & Drug Discovery AI",
+        "Financial & Fintech AI",
+        "Smart City & Government AI",
+        "E-commerce & Recommendation AI",
+        "Robotics & Humanoid AI"
+      ],
+      "bangladeshiStudentNotes": "China is controversial but cannot be ignored for Bangladeshi students given the massive AI ecosystem and CSC scholarship availability. Key facts: CSC scholarships cover full tuition + monthly stipend + accommodation for Bangladeshis. Large Bangladeshi student community in Chinese universities. Mandarin Chinese is essentially mandatory for meaningful career integration. Post-graduation work is possible on work permit but PR (Permanent Residence / China Green Card) is genuinely very difficult - among the world's most restrictive despite recent improvements for exceptional talent. Geopolitical consideration: A China-focused AI career may limit options in US/EU companies later due to technology export controls and security concerns. Best approach: Use China for PhD research, publish internationally, then transition to Canada/Germany/Australia for PR. NOT recommended as long-term settlement destination for most Bangladeshi students given PR difficulty and geopolitical risks.",
+      "visaDifficulty": "Moderate (for study/work)",
+      "prDifficulty": "Very High (among world's most difficult)"
+    },
+    
+  {
+    "country": "France",
+    "countryCode": "FR",
+    "aiMarketScore": 80,
+    "aiMarketScoreConfidence": 83,
+    "aiMarketEvidence": "France has invested heavily in AI following Macron's AI strategy. Home to Mistral AI (Europe's leading AI startup), INRIA, Meta AI Paris, Google DeepMind Paris, Hugging Face (HQ Paris). Station F is Europe's largest startup campus. President Macron personally champions AI leadership for Europe. €1.5B government commitment. Yann LeCun connection (NYU/Meta but French origin) gives France credibility.",
+    "topCompanies": [
+      {
+        "name": "Mistral AI",
+        "location": "Paris",
+        "focus": "European Frontier LLM, Open-source AI",
+        "hires": "Research Scientists, ML Engineers (small elite team)"
+      },
+      {
+        "name": "Hugging Face",
+        "location": "Paris (HQ) / New York",
+        "focus": "Open-source AI, ML model hub, Datasets",
+        "hires": "ML Engineers, Research Scientists"
+      },
+      {
+        "name": "Meta AI (FAIR Paris)",
+        "location": "Paris",
+        "focus": "Fundamental AI Research, NLP, Computer Vision",
+        "hires": "Research Scientists (highly selective)"
+      },
+      {
+        "name": "Google DeepMind Paris",
+        "location": "Paris",
+        "focus": "AI Research, NLP, Mathematics AI",
+        "hires": "Research Scientists"
+      },
+      {
+        "name": "INRIA",
+        "location": "Multiple French cities",
+        "focus": "Public AI Research - broad spectrum",
+        "hires": "Research Scientists, Postdocs"
+      },
+      {
+        "name": "Thales AI",
+        "location": "Paris area",
+        "focus": "Defense AI, Aerospace AI, Cybersecurity AI",
+        "hires": "AI Engineers, ML Engineers"
+      },
+      {
+        "name": "BNP Paribas AI",
+        "location": "Paris",
+        "focus": "Financial AI, Risk Modeling",
+        "hires": "Data Scientists, Quantitative Analysts"
+      },
+      {
+        "name": "Deezer AI",
+        "location": "Paris",
+        "focus": "Music recommendation AI, Audio AI",
+        "hires": "ML Engineers, Audio ML"
+      }
+    ],
+    "topUniversities": [
+      {
+        "name": "Sorbonne University / UPMC",
+        "location": "Paris",
+        "aiStrength": 83,
+        "notableLabs": ["ISIR", "LIP6", "INRIA Paris collaboration"],
+        "fundingLevel": "High"
+      },
+      {
+        "name": "École Normale Supérieure (ENS Paris)",
+        "location": "Paris",
+        "aiStrength": 90,
+        "notableLabs": ["DMA", "SIERRA team (INRIA-ENS)", "Willow team"],
+        "fundingLevel": "Very High"
+      },
+      {
+        "name": "École Polytechnique (l'X)",
+        "location": "Palaiseau, Île-de-France",
+        "aiStrength": 87,
+        "notableLabs": ["CMAP", "LIX"],
+        "fundingLevel": "Very High"
+      },
+      {
+        "name": "Université Paris-Saclay",
+        "location": "Saclay, Île-de-France",
+        "aiStrength": 85,
+        "notableLabs": ["CentraleSupélec AI", "LRI", "TAO (INRIA)"],
+        "fundingLevel": "Very High"
+      },
+      {
+        "name": "CentraleSupélec",
+        "location": "Gif-sur-Yvette",
+        "aiStrength": 83,
+        "notableLabs": ["L2S Lab", "Signals and Systems"],
+        "fundingLevel": "High"
+      }
+    ],
+    "governmentInvestment": {
+      "annualBudgetUSD": "€1.5B+ national AI strategy; part of €30B France 2030 plan; EU AI funding additional",
+      "keyPrograms": [
+        "France 2030 AI component",
+        "PRAIRIE Institute (Paris)",
+        "3IA Institutes - 4 national AI clusters (Paris, Grenoble, Nice, Toulouse)",
+        "INRIA National AI Plan",
+        "European AI Act compliance infrastructure funding"
+      ],
+      "internationalCollaboration": ["EU Horizon Europe", "ELSA (European AI Safety)", "Franco-German AI cooperation"],
+      "trend": "Strongly increasing; Macron personally drives AI national strategy"
+    },
+    "startupEcosystem": {
+      "score": 81,
+      "hubCities": ["Paris (dominant)", "Grenoble", "Lyon", "Toulouse", "Nice"],
+      "notableStartups": [
+        "Mistral AI (LLM, valuation $6B+ 2025)",
+        "Hugging Face (open-source ML platform)",
+        "Nabla (medical AI)",
+        "Dust (AI workflow)",
+        "Poolside (AI coding)"
+      ],
+      "vcFunding2024USD": "$3.5B+ AI-specific VC in France 2024",
+      "stationF": "World's largest startup campus, Paris - major AI presence"
+    },
+    "researchFunding": {
+      "score": 84,
+      "phdStipendMonthlyEUR": "1400-2000",
+      "postdocMonthlyEUR": "2200-3500",
+      "competitiveGrants": ["ANR (Agence Nationale de la Recherche)", "ERC grants", "INRIA fellowships", "3IA PhD fellowships"],
+      "internationalStudentEligible": true,
+      "languageBarrier": "English programs available at PhD level but French increasingly expected for integration"
+    },
+    "aiFutureOutlook2035": "France positioned as Europe's #2 AI nation after UK. Mistral AI trajectory critical. EU AI Act regulation may slow some commercial applications but boost safety research. Paris AI ecosystem expanding. French language processing a niche strength. Risk: brain drain to US if salaries not competitive. Government commitment remains strong under current political direction.",
+    "aiFutureOutlook2045": "France likely maintains top-5 European AI position. EU sovereign AI infrastructure (computing, data) benefits France disproportionately given research base. Aging population drives healthcare AI demand. Energy (nuclear) advantage supports AI compute nationally. Long-term competitiveness depends on retaining talent and EU digital sovereignty success.",
+    "importantIndustries": [
+      "Aerospace & Defense AI (Airbus, Thales, Dassault)",
+      "Financial Services AI (BNP, Société Générale, AXA)",
+      "Healthcare & Pharma AI (Sanofi AI, Owkin biomedical AI)",
+      "Automotive AI (Renault, Stellantis)",
+      "Luxury & Retail AI (LVMH AI personalization)",
+      "Energy AI (EDF nuclear optimization, TotalEnergies)",
+      "Telecommunications AI (Orange AI Labs)",
+      "Agriculture AI (precision farming)"
+    ],
+    "bangladeshiStudentNotes": {
+      "languageChallenge": "French language important for daily life and long-term integration even if degree is in English",
+      "admissionFriendliness": "Moderate - grandes écoles very competitive, public universities more accessible",
+      "workRights": "Students can work 20h/week; post-study visa available (APS - 1 year renewable)",
+      "averageAISalaryEUR": "45000-75000 entry, 70000-120000 senior",
+      "prPathway": "Talent Passport (Passeport Talent) viable after job offer; PR after 5 years",
+      "overallRating": "Good research base, competitive ecosystem, language barrier is real challenge"
+    }
+  },
+  {
+    "country": "United Arab Emirates",
+    "countryCode": "AE",
+    "aiMarketScore": 72,
+    "aiMarketScoreConfidence": 78,
+    "aiMarketEvidence": "UAE has made AI a national priority with UAE Strategy for AI 2031, world's first AI Minister (Omar Al Olama), Technology Innovation Institute (TII) in Abu Dhabi home to Falcon LLM (world's top open-source LLM 2023), G42 (Abu Dhabi AI giant with Microsoft $1.5B investment), MBZUAI (world's first dedicated AI university). Dubai and Abu Dhabi aggressively recruiting global AI talent with zero income tax advantage. However ecosystem is government-driven and relatively shallow in private sector depth.",
+    "topCompanies": [
+      {
+        "name": "G42 (Group 42)",
+        "location": "Abu Dhabi",
+        "focus": "AI infrastructure, Healthcare AI, Cloud AI, LLM development",
+        "hires": "ML Engineers, AI Researchers, Cloud Architects"
+      },
+      {
+        "name": "Technology Innovation Institute (TII)",
+        "location": "Abu Dhabi",
+        "focus": "Falcon LLM, AI Safety, Quantum AI, Autonomous Robotics",
+        "hires": "Research Scientists, ML Engineers (government research institute)"
+      },
+      {
+        "name": "Microsoft UAE (Azure AI Hub)",
+        "location": "Abu Dhabi / Dubai",
+        "focus": "Cloud AI, OpenAI partnership, Enterprise AI",
+        "hires": "AI Engineers, Cloud Architects, Sales Engineers"
+      },
+      {
+        "name": "Amazon AWS Middle East",
+        "location": "Dubai",
+        "focus": "Cloud infrastructure, AI services, SageMaker",
+        "hires": "Solutions Architects, ML Engineers"
+      },
+      {
+        "name": "Presight AI",
+        "location": "Abu Dhabi",
+        "focus": "Big data analytics, Surveillance AI, Government AI",
+        "hires": "Data Scientists, AI Engineers"
+      },
+      {
+        "name": "Careem (Uber subsidiary)",
+        "location": "Dubai",
+        "focus": "Ride-hailing AI, Super-app ML",
+        "hires": "ML Engineers, Data Scientists"
+      },
+      {
+        "name": "Noon AI",
+        "location": "Dubai",
+        "focus": "E-commerce AI, Recommendation systems",
+        "hires": "ML Engineers, Data Scientists"
+      },
+      {
+        "name": "Etisalat (e&) AI",
+        "location": "Abu Dhabi",
+        "focus": "Telecom AI, Network optimization, Smart city AI",
+        "hires": "AI Engineers, Network ML"
+      }
+    ],
+    "topUniversities": [
+      {
+        "name": "Mohamed bin Zayed University of Artificial Intelligence (MBZUAI)",
+        "location": "Abu Dhabi",
+        "aiStrength": 88,
+        "notableLabs": ["Computer Vision Lab", "NLP Lab", "Machine Learning Lab", "Robotics Lab"],
+        "fundingLevel": "Very High - fully funded all programs"
+      },
+      {
+        "name": "Khalifa University",
+        "location": "Abu Dhabi",
+        "aiStrength": 74,
+        "notableLabs": ["KUCARS (Autonomous Robotics)", "AI & Robotics Center"],
+        "fundingLevel": "High"
+      },
+      {
+        "name": "New York University Abu Dhabi (NYUAD)",
+        "location": "Abu Dhabi",
+        "aiStrength": 78,
+        "notableLabs": ["CGSB", "Center for AI and Digital Science"],
+        "fundingLevel": "High - generous scholarships"
+      },
+      {
+        "name": "American University of Sharjah",
+        "location": "Sharjah",
+        "aiStrength": 65,
+        "notableLabs": ["Computer Engineering Research"],
+        "fundingLevel": "Moderate"
+      },
+      {
+        "name": "University of Dubai",
+        "location": "Dubai",
+        "aiStrength": 60,
+        "notableLabs": ["AI Research Center"],
+        "fundingLevel": "Moderate"
+      }
+    ],
+    "governmentInvestment": {
+      "annualBudgetUSD": "Multi-billion AED; UAE AI Strategy 2031 with $300B+ economy transformation target",
+      "keyPrograms": [
+        "UAE National Strategy for Artificial Intelligence 2031",
+        "Abu Dhabi AI Campus (Masdar City)",
+        "Dubai AI Everything initiative",
+        "Falcon LLM national model (TII)",
+        "Smart Dubai AI roadmap",
+        "G42 national AI champion funding"
+      ],
+      "internationalCollaboration": ["Microsoft $1.5B G42 investment", "OpenAI partnership", "US AI technology transfer agreements"],
+      "trend": "Very strongly increasing; AI is explicit national identity and economic diversification strategy"
+    },
+    "startupEcosystem": {
+      "score": 68,
+      "hubCities": ["Dubai (dominant startup hub)", "Abu Dhabi (research & government AI)"],
+      "notableStartups": [
+        "Anghami (music streaming AI - NASDAQ listed)",
+        "Property Finder (real estate AI)",
+        "Bayzat (HR tech AI)",
+        "Mamo Pay (fintech AI)",
+        "Sarwa (robo-advisory)"
+      ],
+      "vcFunding2024USD": "$1.2B+ MENA-wide VC with UAE capturing ~50%",
+      "challenges": "Ecosystem government-driven; organic private startup depth shallower than Singapore or Dublin"
+    },
+    "researchFunding": {
+      "score": 80,
+      "phdStipendMonthlyUSD": "2500-4000 (MBZUAI fully funded with stipend)",
+      "postdocMonthlyUSD": "4000-6000",
+      "competitiveGrants": ["MBZUAI Research Grants", "Khalifa University Research Funds", "ADEK research grants", "TII competitive research positions"],
+      "internationalStudentEligible": true,
+      "languageBarrier": "No barrier - all programs in English; Arabic not required for academic/tech roles"
+    },
+    "aiFutureOutlook2035": "UAE will be a significant AI hub for MENA and South Asia corridor. MBZUAI graduates feeding regional AI ecosystem. G42 expanding globally. Risk: geopolitical positioning between US and China could complicate tech access. Zero-tax advantage continues attracting global talent. However long-term settlement remains extremely limited - UAE not a destination for PR or citizenship.",
+    "aiFutureOutlook2045": "UAE maintains AI hub status driven by sovereign wealth and state direction. Smart city (NEOM neighbor, Abu Dhabi smart city) AI integration deepens. However demographic reality (90%+ expat workforce with no pathway to citizenship) means talent pipeline is transactional. UAE AI will depend on continued international talent attraction without retention through citizenship.",
+    "importantIndustries": [
+      "Government & Smart City AI (Dubai smart city, Abu Dhabi AI)",
+      "Financial Services AI (DIFC fintech, Islamic finance AI)",
+      "Real Estate AI (property tech)",
+      "Healthcare AI (G42 Health, genomics)",
+      "Energy AI (ADNOC oil optimization AI)",
+      "Logistics & Supply Chain AI (DP World)",
+      "Tourism & Hospitality AI",
+      "Defense & Security AI (surveillance)"
+    ],
+    "bangladeshiStudentNotes": {
+      "languageChallenge": "None - English dominant in tech sector; Arabic useful for daily life but not required professionally",
+      "admissionFriendliness": "High for MBZUAI (competitive but strongly merit-based with full funding); other universities moderately accessible",
+      "workRights": "Employment visa required; post-study work possible but tied to employer sponsorship; golden visa for high earners",
+      "averageAISalaryUSD": "60000-120000 tax-free; senior roles 120000-200000+",
+      "prPathway": "NO traditional PR pathway; Golden Visa (10 years renewable) is closest equivalent but not permanent residency; NO citizenship pathway for non-nationals",
+      "overallRating": "Excellent for income and research exposure; poor for long-term settlement; treat as career accelerator not permanent home",
+      "bangladeshiCommunity": "Very large Bangladeshi diaspora in UAE (700,000+); strong community support; remittance hub",
+      "criticalWarning": "UAE is NOT suitable as final destination for family settlement and citizenship goals - use as stepping stone only"
+    }
+  }
+
+  ]
+}

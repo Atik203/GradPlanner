@@ -243,13 +243,13 @@ export default function DashboardRankingsPage() {
                 size="sm"
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage <= 1 || loading}
-                className="border-border text-muted-foreground hover:text-foreground h-9"
+                className="border-border text-muted-foreground hover:text-foreground h-9 px-2 sm:px-3"
               >
-                <ChevronLeft className="h-4 w-4 mr-1" />
-                Previous
+                <ChevronLeft className="h-4 w-4 sm:mr-1" />
+                <span className="hidden sm:inline">Previous</span>
               </Button>
 
-              <div className="flex items-center gap-1.5">
+              <div className="flex items-center gap-1 sm:gap-1.5">
                 {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
                   let pageNum: number;
                   if (totalPages <= 5) {
@@ -283,10 +283,10 @@ export default function DashboardRankingsPage() {
                 size="sm"
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage >= totalPages || loading}
-                className="border-border text-muted-foreground hover:text-foreground h-9"
+                className="border-border text-muted-foreground hover:text-foreground h-9 px-2 sm:px-3"
               >
-                Next
-                <ChevronRight className="h-4 w-4 ml-1" />
+                <span className="hidden sm:inline">Next</span>
+                <ChevronRight className="h-4 w-4 sm:ml-1" />
               </Button>
             </div>
           )}

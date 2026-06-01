@@ -1,0 +1,1649 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Post-study work rights analysis for Bangladeshi CS/AI/ML graduates planning 2027-2029 graduation",
+    "targetProfile": "Bangladeshi student, STEM graduate (CS/AI/ML), age 22-30, completed MSc/PhD abroad",
+    "criticalNote": "Post-study work visa is THE critical bridge between graduation and PR pathway - treat as strategic phase not gap year"
+  },
+  "postStudyWorkRights": [
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "visaName": "F-1 OPT + STEM OPT Extension",
+      "visaDuration": "12 months OPT + 24 months STEM extension = 36 months total",
+      "score": 88,
+      "scoreConfidence": 92,
+      "scoreEvidence": "STEM OPT extension provides 3 years total - among longest globally. Direct path to H-1B attempts (3 lottery chances). However H-1B lottery risk and employer dependency are major vulnerabilities.",
+      "eligibilityRequirements": [
+        "Degree from SEVP-certified US institution",
+        "STEM degree (CS/AI/ML qualifies)",
+        "Apply within 90 days of degree completion",
+        "Job offer in field related to degree",
+        "Employer must be E-Verify enrolled for STEM extension"
+      ],
+      "workRestrictions": {
+        "hoursPerWeek": "No limit - full-time employment expected",
+        "employerRestrictions": "Must be in field of study; employer must be E-Verify for STEM extension",
+        "selfEmploymentAllowed": false,
+        "unemploymentLimit": "90 days cumulative unemployment over entire OPT period",
+        "geographicRestrictions": "None - anywhere in US"
+      },
+      "applicationProcess": {
+        "timingBeforeGraduation": "Can apply up to 90 days before completion",
+        "processingTimeWeeks": "12-16 weeks",
+        "costUSD": "410 (OPT) + 410 (STEM extension)",
+        "difficulty": "Moderate - paperwork intensive but straightforward if eligible"
+      },
+      "extensionPossibilities": {
+        "canExtend": false,
+        "maxTotalDuration": "36 months",
+        "extensionNotes": "STEM OPT is one-time 24-month extension. No further extensions. Must transition to H-1B, O-1, or other work visa."
+      },
+      "transitionToPR": {
+        "viabilityScore": 65,
+        "typicalPathway": "OPT → H-1B (lottery) → EB-2/EB-3 green card sponsorship",
+        "averageTimelineYears": "6-15 years total (India/China backlog; Bangladesh ~3-5 years after I-140 approval)",
+        "majorRisks": [
+          "H-1B lottery (~15% selection rate 2025-2026)",
+          "Employer dependency throughout process",
+          "Premium processing suspended periodically",
+          "Policy volatility (Trump 2.0 era uncertainty 2025-2029)"
+        ],
+        "bangladeshiAdvantage": "NO country-specific green card backlog unlike India/China - significant advantage"
+      },
+      "dependentRights": {
+        "spouseCanAccompany": true,
+        "spouseVisaType": "F-2 dependent visa",
+        "spouseCanWork": false,
+        "spouseWorkNotes": "F-2 spouses CANNOT work. Major limitation. Would need own work authorization (e.g., if primary gets H-1B, spouse can apply for H-4 EAD).",
+        "childrenAllowed": true,
+        "childEducationRights": "Can attend K-12 public schools"
+      },
+      "financialRequirements": {
+        "minimumSalary": "Prevailing wage for STEM OPT (typically $65,000+ for CS roles)",
+        "proofOfFunds": false,
+        "healthInsurance": "Not mandatory but strongly recommended; often employer-provided"
+      },
+      "strategicConsiderations": {
+        "optimalStrategy": "Use full 36 months to attempt H-1B lottery 3 times; secure employer willing to sponsor green card early; consider EB-1A if exceptional",
+        "planB": "If H-1B fails after 3 attempts, consider Canada Express Entry, O-1 visa (exceptional ability), or L-1 transfer to US office from foreign office",
+        "timing": "Start H-1B prep in Year 1 of OPT; file PERM/EB-2 as early as possible even on OPT if employer willing"
+      },
+      "bangladeshiStudentNotes": {
+        "communitySupport": "Very large Bangladeshi tech community in Bay Area, NYC, Seattle, Austin",
+        "employerFriendliness": "Big tech (Google, Meta, Microsoft, Amazon) very familiar with OPT→H-1B pipeline",
+        "practicalTips": [
+          "Join Bangladeshi professional associations (BAASF, BAPA, etc.)",
+          "Network aggressively during OPT - H-1B sponsorship often relationship-based",
+          "Consider startups willing to sponsor early if lottery fails",
+          "Keep Canada Express Entry profile active as backup (can claim US work experience points)"
+        ],
+        "recentPolicyChanges2025_2026": "Trump 2.0 administration: increased scrutiny on OPT but STEM extension largely intact as of June 2026. H-1B lottery reforms proposed but not implemented. Monitor USCIS carefully."
+      },
+      "overallRating": "Excellent work rights duration; high-quality job market; major vulnerability is H-1B lottery and employer dependency. Best for top talent who can be competitive in lottery or qualify for O-1/EB-1.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "visaName": "Post-Graduation Work Permit (PGWP)",
+      "visaDuration": "Up to 3 years (matches study duration: 2-year Master's = 3-year PGWP; 1-year Master's = 1-year PGWP; PhD = 3-year PGWP)",
+      "score": 92,
+      "scoreConfidence": 95,
+      "scoreEvidence": "PGWP is open work permit (any employer, any province) with direct Express Entry pathway. No lottery. Near-guaranteed PR for STEM grads with Canadian experience and education. Spouse gets open work permit. Strongest post-study-to-PR pipeline globally.",
+      "eligibilityRequirements": [
+        "Full-time study at DLI (Designated Learning Institution) for minimum 8 months",
+        "Graduated from eligible program",
+        "Apply within 180 days of degree completion confirmation",
+        "Valid study permit at time of application",
+        "Program minimum 8 months duration"
+      ],
+      "workRestrictions": {
+        "hoursPerWeek": "No limit",
+        "employerRestrictions": "None - open work permit (any employer)",
+        "selfEmploymentAllowed": true,
+        "unemploymentLimit": "No formal limit - but affects Express Entry CRS score if gaps",
+        "geographicRestrictions": "None - work anywhere in Canada"
+      },
+      "applicationProcess": {
+        "timingBeforeGraduation": "Apply after receiving completion letter (transcript showing degree conferred)",
+        "processingTimeWeeks": "12-20 weeks (as of 2026; processing times fluctuate)",
+        "costCAD": "255 + 155 (work permit holder fee) + 100 (open work permit holder fee) = ~510 CAD",
+        "difficulty": "Easy - straightforward online application if eligible"
+      },
+      "extensionPossibilities": {
+        "canExtend": false,
+        "maxTotalDuration": "One-time permit; duration = program length (max 3 years)",
+        "extensionNotes": "Cannot extend PGWP. Can pursue second degree for new PGWP (policy tightened 2024-2026 - limited eligibility for second PGWP). Must transition to PR or other work permit (e.g., employer-specific LMIA)."
+      },
+      "transitionToPR": {
+        "viabilityScore": 94,
+        "typicalPathway": "PGWP → 1 year skilled work (NOC TEER 0/1/2/3) → Express Entry (Federal Skilled Worker OR Canadian Experience Class) → PR",
+        "averageTimelineYears": "2-3 years total (1 year work + 6-12 months PR processing)",
+        "majorRisks": [
+          "Express Entry CRS cutoff score volatility (2024-2026: 470-530 range for general draws; ~350-400 for STEM-specific draws)",
+          "Provincial nomination competition (PNP can add 600 points)",
+          "Job market softness in some provinces (housing crisis reducing job mobility)",
+          "PGWP policy under review - future restrictions possible for low-quality programs"
+        ],
+        "bangladeshiAdvantage": "Strong network in Toronto, Vancouver, Montreal; familiarity with Canadian immigration system; no country-specific quota"
+      },
+      "dependentRights": {
+        "spouseCanAccompany": true,
+        "spouseVisaType": "Open work permit (C41 - spouse of PGWP holder)",
+        "spouseCanWork": true,
+        "spouseWorkNotes": "Spouse receives FULL open work permit valid for same duration as PGWP. Massive advantage - dual income, spouse can also claim work experience for Express Entry.",
+        "childrenAllowed": true,
+        "childEducationRights": "Children can attend public K-12 schools tuition-free"
+      },
+      "financialRequirements": {
+        "minimumSalary": "No minimum salary requirement for PGWP itself; must meet LICO (Low Income Cut-Off) for Express Entry (~CAD 27,000 single, ~CAD 34,000 couple)",
+        "proofOfFunds": "Not required for PGWP; required for Express Entry PR (~CAD 13,000 single, ~CAD 17,000 couple)",
+        "healthInsurance": "Provincial healthcare eligibility varies; often 3-month wait - private insurance needed initially"
+      },
+      "strategicConsiderations": {
+        "optimalStrategy": "Secure NOC TEER 0/1/2 job during PGWP Year 1; work 1 year to qualify for CEC; apply Express Entry; pursue PNP if CRS score borderline; prioritize provinces with good STEM job markets (Ontario, BC, Quebec for AI)",
+        "planB": "If Express Entry CRS low, pursue Provincial Nominee Program (BC PNP Tech, Ontario Tech Draws, Alberta AOS); worst case, employer-specific LMIA work permit while building CRS",
+        "timing": "Create Express Entry profile as soon as 1 year Canadian skilled work completed; monitor draws; apply PNP simultaneously if eligible"
+      },
+      "bangladeshiStudentNotes": {
+        "communitySupport": "Very large Bangladeshi community in Toronto, Montreal, Vancouver; strong professional networks (BCSIR, BACO)",
+        "employerFriendliness": "Canadian tech sector familiar with PGWP; Shopify, Coveo, Element AI, Canadian banks actively hire PGWP holders",
+        "practicalTips": [
+          "Toronto, Vancouver housing costs extreme - consider smaller cities (Ottawa, Montreal, Calgary, Waterloo) for better savings",
+          "French language (CLB 7+) adds significant Express Entry points - consider learning basics",
+          "Join PGWP-to-PR communities on Reddit (r/ImmigrationCanada), bangladeshi Facebook groups",
+          "Apply for SIN immediately upon PGWP approval - needed for jobs",
+          "Network at Collision Conference, tech meetups"
+        ],
+        "recentPolicyChanges2025_2026": "Canada tightened PGWP eligibility 2024-2026 (field of study restrictions for some colleges, language requirements for some low-quality programs). University STEM programs UNAFFECTED. Express Entry category-based draws (STEM) favor CS/AI grads. Housing crisis causing federal immigration target reductions but STEM workers still prioritized."
+      },
+      "overallRating": "Gold standard for post-study work. Open work permit, spouse work rights, clear PR pathway, no lottery. Ideal for students prioritizing immigration certainty over maximum salary.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "visaName": "Aufenthaltserlaubnis zur Arbeitsplatzsuche (Job Seeker Visa - post-graduation) → Aufenthaltserlaubnis zur Beschäftigung (Employment Residence Permit)",
+      "visaDuration": "18 months job search + unlimited employment residence permit after job",
+      "score": 85,
+      "scoreConfidence": 88,
+      "scoreEvidence": "Germany offers 18-month post-study job search visa - generous by global standards. EU Blue Card fast-track available for high earners. Strong job market for STEM. However: bureaucracy complex, German language increasingly important for daily integration and some employers, work permit processing can be slow.",
+      "eligibilityRequirements": [
+        "Recognized German university degree (or recognized foreign degree)",
+        "Proof of financial means (~€12,000/year from savings or sponsor)",
+        "Health insurance (mandatory)",
+        "Registered address in Germany (Anmeldung)",
+        "Apply before current residence permit expires"
+      ],
+      "workRestrictions": {
+        "hoursPerWeek": "No limit once employment permit secured; trial work/internships allowed during 18-month search period (up to 20h/week)",
+        "employerRestrictions": "During job search: limited. After employment permit: must be in field related to qualification",
+        "selfEmploymentAllowed": false,
+        "unemploymentLimit": "18 months to find job; after employment permit, unemployment can jeopardize renewal",
+        "geographicRestrictions": "None within Germany; can work anywhere in Germany"
+      },
+      "applicationProcess": {
+        "timingBeforeGraduation": "Apply after degree completion, before current student residence permit expires",
+        "processingTimeWeeks": "4-12 weeks (varies dramatically by city - Berlin slower, smaller cities faster)",
+        "costEUR": "100-150 EUR (varies by Ausländerbehörde)",
+        "difficulty": "Moderate-to-High - bureaucratic; requires in-person appointment at Ausländerbehörde; documentation requirements strict"
+      },
+      "extensionPossibilities": {
+        "canExtend": true,
+        "maxTotalDuration": "18 months job search (non-renewable) → employment permit renewable indefinitely (typically 1-4 year renewals) → permanent residence (Niederlassungserlaubnis) after ~4 years",
+        "extensionNotes": "Job search visa one-time only. Employment permit renewable as long as employed. Transition to permanent settlement permit after 4 years skilled employment + B1 German."
+      },
+      "transitionToPR": {
+        "viabilityScore": 87,
+        "typicalPathway": "18-month job search → Employment permit → EU Blue Card (if salary >€45,300 for STEM ~2026) → Niederlassungserlaubnis (PR) after 21-33 months with Blue Card (faster with B1 German)",
+        "averageTimelineYears": "3-4 years total (including study)",
+        "majorRisks": [
+          "Bureaucracy (Ausländerbehörde appointments scarce in big cities)",
+          "German language barrier (B1 required for PR; many employers expect functional German)",
+          "EU Blue Card salary threshold (must earn above threshold - €45,300+ for STEM shortage occupations)",
+          "Recognition of qualifications can be complex for some degrees"
+        ],
+        "bangladeshiAdvantage": "Bangladeshi degrees increasingly recognized; STEM qualifications in high demand; no country-specific quota"
+      },
+      "dependentRights": {
+        "spouseCanAccompany": true,
+        "spouseVisaType": "Family reunification residence permit (Familiennachzug)",
+        "spouseCanWork": true,
+        "spouseWorkNotes": "Spouse receives residence permit with work authorization after family reunification visa approved. Can work without restriction if primary holds EU Blue Card or settlement permit. During job search visa phase, spouse work rights limited.",
+        "childrenAllowed": true,
+        "childEducationRights": "Free public schools (K-12); mandatory schooling; German language integration required"
+      },
+      "financialRequirements": {
+        "minimumSalary": "€45,300+ for EU Blue Card (STEM shortage occupation); €58,400+ for non-shortage occupations (2026 figures, adjusted annually)",
+        "proofOfFunds": "~€12,000 for 18-month job search period (blocked account or sponsor declaration)",
+        "healthInsurance": "Mandatory - public (TK, AOK) or private; ~€120/month for students transitioning"
+      },
+      "strategicConsiderations": {
+        "optimalStrategy": "Secure job offer during final semester or within 18 months; target EU Blue Card salary threshold; learn German to B1 minimum (accelerates PR); prioritize cities with active STEM markets (Munich, Berlin, Frankfurt, Hamburg, Stuttgart)",
+        "planB": "If job search difficult, consider: vocational training (Ausbildung) integration, language courses (Integrationskurs), networking via LinkedIn/XING, Bangladeshi tech groups in Germany",
+        "timing": "Apply for job search visa immediately after graduation; use full 18 months strategically; don't rush into first offer - Blue Card threshold matters"
+      },
+      "bangladeshiStudentNotes": {
+        "communitySupport": "Growing Bangladeshi community in Berlin, Frankfurt, Munich; Bangladeshi student associations (BaSA); mosques provide social infrastructure",
+        "employerFriendliness": "German companies (SAP, Siemens, Bosch, BMW, Deutsche Bank) increasingly hiring international talent; startups more flexible on German language; corporates may expect German",
+        "practicalTips": [
+          "Learn German ASAP - opens more doors (integrationskurs free after residence permit)",
+          "Join XING (German LinkedIn) - more effective than LinkedIn for German job search",
+          "Prepare for slow bureaucracy - book Ausländerbehörde appointments months in advance",
+          "Get Steuer-ID and register address (Anmeldung) immediately",
+          "Networking critical - attend meetups, hackathons, conferences (Bits & Pretzels, TOA)",
+          "Consider smaller cities - cheaper, less bureaucracy, desperate for talent (Leipzig, Dresden, Nuremberg)"
+        ],
+        "recentPolicyChanges2025_2026": "Fachkräfteeinwanderungsgesetz (Skilled Immigration Act) reforms 2024-2026 eased recognition of foreign degrees, lowered Blue Card thresholds slightly, introduced Chancenkarte (Opportunity Card) - doesn't affect graduates but shows pro-immigration trend. Labor shortage acute - 440,000 annual deficit."
+      },
+      "overallRating": "Excellent for motivated students willing to invest in language and navigate bureaucracy. Strong job market, clear PR path, EU Blue Card advantages. Not ideal for those seeking plug-and-play simplicity.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "visaName": "Temporary Graduate visa (subclass 485) - Post-Study Work stream",
+      "visaDuration": "2-4 years (2 years for Bachelor's, 3 years for Master's, 4 years for PhD; extended to 4-6 years if study in regional area)",
+      "score": 90,
+      "scoreConfidence": 91,
+      "scoreEvidence": "Australia offers 2-4 year post-study work rights with pathway to skilled migration (subclass 189/190/491). Points-based system transparent. Strong STEM demand. Regional incentives significant. Spouse can work. Major advantage: long duration. Risks: points threshold competitive, cost of living very high, policy volatility.",
+      "eligibilityRequirements": [
+        "Recent graduate from Australian institution (CRICOS-registered)",
+        "Apply within 6 months of course completion",
+        "Australian study requirement (2+ years full-time study)",
+        "English requirement: IELTS 6.0 each band minimum",
+        "Health insurance (OVHC)",
+        "Age: under 50",
+        "No debts to Australian government"
+      ],
+      "workRestrictions": {
+        "hoursPerWeek": "No limit",
+        "employerRestrictions": "None - open work rights (any employer, any occupation)",
+        "selfEmploymentAllowed": true,
+        "unemploymentLimit": "No formal limit",
+        "geographicRestrictions": "None - work anywhere in Australia (but regional study grants longer visa + regional skilled migration points bonus)"
+      },
+      "applicationProcess": {
+        "timingBeforeGraduation": "Can apply after graduation (within 6 months of completion)",
+        "processingTimeWeeks": "12-20 weeks (highly variable 2025-2026)",
+        "costAUD": "1,895 AUD (main applicant) + 950 AUD per additional family member + health checks ~300 AUD",
+        "difficulty": "Moderate - English test requirement, health checks, police clearance (from Bangladesh)"
+      },
+      "extensionPossibilities": {
+        "canExtend": false,
+        "maxTotalDuration": "One-time visa: 2-4 years (4-6 years if regional study)",
+        "extensionNotes": "Cannot extend subclass 485. Must transition to skilled migration (subclass 189/190/491), employer sponsorship (subclass 482→186), or partner visa."
+      },
+      "transitionToPR": {
+        "viabilityScore": 88,
+        "typicalPathway": "Subclass 485 → Skilled Independent (189) OR State Nominated (190) OR Regional Skilled (491→191) via SkillSelect points",
+        "averageTimelineYears": "3-4 years (including 485 period + skills assessment + points accumulation + PR processing)",
+        "majorRisks": [
+          "Points threshold volatility (2024-2026: 65-85 points minimum, CS/AI competitive)",
+          "Skills assessment required (ACS for ICT - can be slow)",
+          "State nomination competition (NSW, VIC highly competitive; SA, TAS, NT easier)",
+          "Occupation ceiling (annual caps on PR grants per occupation)",
+          "Policy changes (2024-2026: migration cuts announced, STEM still prioritized)"
+        ],
+        "bangladeshiAdvantage": "No country-specific quota; strong Bangladeshi tech community support; ACS skills assessment familiar with Bangladeshi qualifications"
+      },
+      "dependentRights": {
+        "spouseCanAccompany": true,
+        "spouseVisaType": "Included as secondary applicant on subclass 485",
+        "spouseCanWork": true,
+        "spouseWorkNotes": "Full work rights - no restrictions",
+        "childrenAllowed": true,
+        "childEducationRights": "Can attend school; public school fees apply (not free for temporary residents - ~AUD 4,000-15,000/year varies by state)"
+      },
+      "financialRequirements": {
+        "minimumSalary": "No minimum for visa; must demonstrate access to funds for OVHC and living costs (~AUD 20,000 recommended)",
+        "proofOfFunds": "Not explicitly required but sufficient funds for health insurance mandatory",
+        "healthInsurance": "Overseas Visitor Health Cover (OVHC) mandatory - ~AUD 500-700/year single, ~AUD 1,500-2,000 family"
+      },
+      "strategicConsiderations": {
+        "optimalStrategy": "Use 485 period to: (1) gain Australian work experience (points bonus), (2) complete skills assessment (ACS), (3) achieve higher English score (PTE/IELTS 8 = extra points), (4) study regional if possible (extra points + longer visa), (5) consider state sponsorship strategically (VIC/NSW competitive, SA/TAS/NT easier)",
+        "planB": "If points insufficient for 189/190: pursue employer sponsorship (TSS 482→ENS 186), or regional 491 (lower points, 3 years regional living → 191 PR), or partner pathway if married to Australian",
+        "timing": "Start skills assessment early; create SkillSelect EOI as soon as eligible; monitor monthly invitation rounds; apply state nomination 6-12 months before 485 expires"
+      },
+      "bangladeshiStudentNotes": {
+        "communitySupport": "Large Bangladeshi community in Sydney, Melbourne, Brisbane, Perth; active associations (BASA, Bangladesh Society); mosques, cultural centers",
+        "employerFriendliness": "Australian tech sector (Atlassian, Canva, Envato, big banks) actively hire 485 holders; mining companies (Rio Tinto, BHP) recruit STEM; government agencies also hire permanent residents",
+        "practicalTips": [
+          "Consider regional study (Adelaide, Hobart, Canberra, Darwin) - longer visa + easier PR pathway",
+          "PTE Academic generally easier to score high than IELTS - matters for points",
+          "Network via LinkedIn, Meetup, BASA events",
+          "Skills assessment (ACS) can take 12+ weeks - start early",
+          "Cost of living extreme in Sydney/Melbourne - budget carefully (rent AUD 1,500-3,000/month)",
+          "Regional sponsorship (SA, TAS, NT) offers lower points threshold - highly strategic"
+        ],
+        "recentPolicyChanges2025_2026": "Australia announced migration cuts 2024-2025 (total intake reduction) but STEM skilled migration still prioritized. Longer 485 duration for regional study reinforced. Points test threshold rising due to competition. Clare O'Neil as minister: focus on genuine skills needs, crackdown on visa misuse."
+      },
+      "overallRating": "Excellent post-study work rights duration and flexibility. Clear PR pathway though competitive. High cost of living and policy volatility are concerns. Strong choice for STEM graduates willing to navigate points system strategically.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "visaName": "Third Level Graduate Scheme (Stamp 1G)",
+      "visaDuration": "24 months (all degree levels)",
+      "score": 87,
+      "scoreConfidence": 89,
+      "scoreEvidence": "Ireland offers 2-year post-study work permit for all graduates. Strong tech job market (European HQs of Google, Meta, Apple, Microsoft). English-speaking. EU access. Pathway to Critical Skills Employment Permit → Stamp 4 (PR-equivalent) → citizenship after 5 years. Drawbacks: housing crisis severe, high cost of living, smaller job market than larger countries.",
+      "eligibilityRequirements": [
+        "Graduated from recognized Irish institution (Quality and Qualifications Ireland - QQI approved)",
+        "Degree at NFQ Level 8+ (Honours Bachelor's or higher)",
+        "Apply within 12 months of graduation",
+        "Valid immigration permission at time of application",
+        "No criminal record"
+      ],
+      "workRestrictions": {
+        "hoursPerWeek": "No limit",
+        "employerRestrictions": "None - can work for any employer in any sector",
+        "selfEmploymentAllowed": true,
+        "unemploymentLimit": "No formal limit",
+        "geographicRestrictions": "None - anywhere in Ireland (Republic, not Northern Ireland)"
+      },
+      "applicationProcess": {
+        "timingBeforeGraduation": "Apply after graduation within 12-month window",
+        "processingTimeWeeks": "8-12 weeks (online application to IRP - Irish Residence Permit)",
+        "costEUR": "300 EUR IRP fee",
+        "difficulty": "Easy - straightforward online process"
+      },
+      "extensionPossibilities": {
+        "canExtend": false,
+        "maxTotalDuration": "24 months (one-time permit, non-renewable)",
+        "extensionNotes": "Cannot extend Stamp 1G. Must transition to employment permit (Critical Skills or General Employment Permit) or other pathway. No second Stamp 1G for second degree."
+      },
+      "transitionToPR": {
+        "viabilityScore": 84,
+        "typicalPathway": "Stamp 1G → Critical Skills Employment Permit (CSEP) → Stamp 4 (after 2 years CSEP or 5 years legal residence) → Citizenship (after 5 years including 1 year Stamp 4+)",
+        "averageTimelineYears": "4-6 years (2 years Stamp 1G + 2 years CSEP → Stamp 4 → citizenship pathway)",
+        "majorRisks": [
+          "Critical Skills Employment Permit salary threshold (€34,000-38,000 minimum; realistically €40,000+ for CS roles competitive)",
+          "Employer dependency for CSEP (though can switch after first year)",
+          "Housing crisis reduces quality of life and savings ability",
+          "Smaller job market than UK, US, Germany - less employer competition",
+          "Policy volatility (immigration becoming politically sensitive 2024-2026)"
+        ],
+        "bangladeshiAdvantage": "English-speaking country (major advantage); no country quota; strong Bangladeshi community; tech sector actively recruits international graduates"
+      },
+      "dependentRights": {
+        "spouseCanAccompany": true,
+        "spouseVisaType": "Join as dependent on Stamp 1G (after 1 year relationship proof)",
+        "spouseCanWork": false,
+        "spouseWorkNotes": "Spouse on Stamp 3 (dependent) CANNOT work during Stamp 1G phase. Once primary transitions to Critical Skills Employment Permit, spouse gets Stamp 1 Dependant with work rights. Major limitation during Stamp 1G.",
+        "childrenAllowed": true,
+        "childEducationRights": "Free primary/secondary education once resident"
+      },
+      "financialRequirements": {
+        "minimumSalary": "No minimum for Stamp 1G; must earn €34,000+ (€40,000+ for some occupations) for Critical Skills Employment Permit transition",
+        "proofOfFunds": "Must demonstrate ability to support self (~€10,000 recommended but not formally required)",
+        "healthInsurance": "Not mandatory but strongly recommended; access to public healthcare limited for Stamp 1G (emergency only)"
+      },
+      "strategicConsiderations": {
+        "optimalStrategy": "Secure job meeting Critical Skills Employment Permit threshold (€40,000+) during Year 1 of Stamp 1G; transition to CSEP before Stamp 1G expires; accumulate 5 years residence → Stamp 4 → citizenship; prioritize Dublin/Cork for job market",
+        "planB": "If CSEP salary threshold difficult, consider General Employment Permit (lower threshold but longer path to Stamp 4); or relocate within EU via tech company (e.g., Google Dublin → Google Amsterdam)",
+        "timing": "Secure CSEP-qualifying job by Month 18 of Stamp 1G to allow processing time; apply for Stamp 4 as soon as eligible (after 60 months legal residence or 24 months CSEP)"
+      },
+      "bangladeshiStudentNotes": {
+        "communitySupport": "Active Bangladeshi community in Dublin (10,000+); mosques (Clonskeagh Mosque), cultural associations, restaurants; growing community in Cork, Galway",
+        "employerFriendliness": "Tech multinationals (Google, Meta, Apple, Microsoft, Amazon, LinkedIn, Salesforce, HubSpot) very familiar with Stamp 1G pipeline; financial services (Citi, BoA, Fidelity) also recruit",
+        "practicalTips": [
+          "Housing crisis severe - rent in Dublin €1,500-2,500/month for 1-bed; consider house shares initially",
+          "Apply for PPS Number immediately upon arrival - needed for jobs, banking",
+          "Network via Tech.ie, DogpatchLabs, Meetup; LinkedIn active",
+          "Critical Skills Permit salary threshold updated annually - monitor Department of Enterprise",
+          "Consider Cork/Galway/Limerick - cheaper housing, good tech jobs (Apple Cork, Boston Scientific Galway)",
+          "Join Ireland Bangladeshi ICT Forum (Facebook group active)"
+        ],
+        "recentPolicyChanges2025_2026": "Ireland extended Stamp 1G from 12 months to 24 months (2022 policy - now well established). Housing crisis causing political backlash against immigration 2024-2026 but skilled worker pathway intact. Critical Skills salary thresholds adjusted annually (upward). No major policy reversals expected for STEM graduates."
+      },
+      "overallRating": "Very strong post-study work permit with clear PR pathway. English language, EU access, tech job market are major advantages. Housing crisis and cost of living significant challenges. Excellent choice for graduates prioritizing English-speaking environment and European lifestyle.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "visaName": "Orientation Year for Graduates (Zoekjaar afgestudeerde hoger onderwijs)",
+      "visaDuration": "12 months",
+      "score": 81,
+      "scoreConfidence": 85,
+      "scoreEvidence": "Netherlands offers 1-year search year for graduates. Strong tech ecosystem (Amsterdam, Eindhoven). Transition to highly skilled migrant (kennismigrant) permit relatively smooth. English widely spoken. EU access. Drawbacks: shorter duration than competitors (Canada 3 years, Australia 2-4 years, Germany 18 months, Ireland 2 years), housing crisis extreme, Dutch language important for integration and PR.",
+      "eligibilityRequirements": [
+        "Degree from Dutch institution OR from top-200 university globally (QS/THE/Shanghai ranking)",
+        "Applied within 3 years of graduation",
+        "Age: under 30 (for foreign degree holders; no age limit for Dutch graduates)",
+        "Proof of funds (€1,272/month maintenance requirement)",
+        "Valid passport"
+      ],
+      "workRestrictions": {
+        "hoursPerWeek": "No limit",
+        "employerRestrictions": "None - can work for any employer",
+        "selfEmploymentAllowed": true,
+        "unemploymentLimit": "No formal limit during 12-month period",
+        "geographicRestrictions": "None within Netherlands"
+      },
+      "applicationProcess": {
+        "timingBeforeGraduation": "Apply after graduation (within 3 years for foreign graduates, typically immediately for Dutch graduates)",
+        "processingTimeWeeks": "4-8 weeks",
+        "costEUR": "62 EUR application fee + ~200 EUR residence permit",
+        "difficulty": "Easy for Dutch graduates; moderate for foreign graduates (must prove top-200 university ranking)"
+      },
+      "extensionPossibilities": {
+        "canExtend": false,
+        "maxTotalDuration": "12 months (one-time, non-renewable)",
+        "extensionNotes": "Cannot extend. Must transition to Highly Skilled Migrant permit (kennismigrant), entrepreneur visa, or other residence permit."
+      },
+      "transitionToPR": {
+        "viabilityScore": 82,
+        "typicalPathway": "Orientation Year → Highly Skilled Migrant permit (requires recognized sponsor employer + salary threshold) → 5 years legal residence + Civic Integration Exam (inburgeringsexamen) + Dutch A2 language → Permanent residence (verblijfsvergunning voor onbepaalde tijd)",
+        "averageTimelineYears": "5-6 years (including orientation year + HSM period + language/integration requirements)",
+        "majorRisks": [
+          "Highly Skilled Migrant salary threshold (€3,909/month gross for under-30s in 2026; €5,008/month for 30+; indexed annually)",
+          "Must find employer registered as recognized sponsor (most large companies; startups may not qualify)",
+          "Dutch language requirement for PR (A2 speaking, listening; B1 for citizenship)",
+          "Civic Integration Exam (Inburgeringsexamen) mandatory and moderately difficult",
+          "Housing crisis extreme (Amsterdam, Utrecht, Rotterdam) - affects quality of life and costs"
+        ],
+        "bangladeshiAdvantage": "Strong tech job market; no country quota; growing Bangladeshi community; English sufficient for most tech jobs initially"
+      },
+      "dependentRights": {
+        "spouseCanAccompany": true,
+        "spouseVisaType": "Residence permit as partner (partner van kennismigrant after transition to HSM)",
+        "spouseCanWork": true,
+        "spouseWorkNotes": "Spouse can work if primary holds Highly Skilled Migrant permit; during Orientation Year, spouse work rights limited (would need own permit).",
+        "childrenAllowed": true,
+        "childEducationRights": "Free public primary/secondary education"
+      },
+      "financialRequirements": {
+        "minimumSalary": "No minimum for Orientation Year; €3,909+/month for Highly Skilled Migrant (under 30, 2026 threshold)",
+        "proofOfFunds": "€1,272/month for 12 months = ~€15,300 total (bank statement)",
+        "healthInsurance": "Mandatory Dutch health insurance (~€120-150/month) once registered in Netherlands"
+      },
+      "strategicConsiderations": {
+        "optimalStrategy": "Use 12-month Orientation Year to secure job with recognized sponsor meeting HSM salary threshold; transition to HSM permit; learn Dutch (A2 minimum) early; accumulate 5 years residence; pass Civic Integration Exam; apply PR; Amsterdam, Eindhoven (ASML, Philips, NXP), Rotterdam offer best job markets",
+        "planB": "If HSM salary threshold challenging, consider: (1) contractor work initially to build experience, (2) smaller cities with lower living costs (Groningen, Maastricht, Leiden), (3) EU Blue Card (similar salary threshold but EU-wide mobility)",
+        "timing": "Secure HSM-qualifying job by Month 9 of Orientation Year to allow transition processing"
+      },
+      "bangladeshiStudentNotes": {
+        "communitySupport": "Growing Bangladeshi community in Amsterdam, Rotterdam, The Hague, Utrecht; mosques (Westermoskee Amsterdam), cultural associations, restaurants",
+        "employerFriendliness": "Tech companies (Booking.com, Adyen, Mollie, Elastic, Uber Amsterdam), ASML (Eindhoven), Philips, ING, Rabobank familiar with HSM pipeline and actively hire internationals",
+        "practicalTips": [
+          "Housing crisis SEVERE - start search early; use HousingAnywhere, Kamernet; expect €800-2,000/month Amsterdam; consider Haarlem, Almere, Utrecht as alternatives",
+          "Register at municipality (gemeente) immediately - get BSN (social security number) - needed for everything",
+          "Learn Dutch - free/subsidized courses available; critical for long-term integration and PR",
+          "Cycling is primary transport - invest in good bike and strong lock",
+          "Network via Meetup.com (Amsterdam has huge tech meetup scene), LinkedIn, StartupAmsterdam events",
+          "Consider Eindhoven for engineering (Brainport region, ASML, High Tech Campus) - cheaper than Amsterdam, excellent jobs"
+        ],
+        "recentPolicyChanges2025_2026": "Netherlands tightened housing policy 2024-2026 (international student housing restrictions), causing political sensitivity around immigration. However Highly Skilled Migrant scheme intact - business lobby supports it. HSM salary thresholds increasing annually (inflation-indexed). Civic Integration requirements strengthened. No immediate threat to STEM graduate pathway."
+      },
+      "overallRating": "Good post-study work permit but short duration (12 months) compared to competitors. Strong tech job market and EU access are advantages. Housing crisis, language requirements, and short search year are challenges. Best for highly motivated graduates who can secure job quickly.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "visaName": "Extension for Job Seeking (Förlängning för arbetssökande efter studier)",
+      "visaDuration": "12 months",
+      "score": 79,
+      "scoreConfidence": 82,
+      "scoreEvidence": "Sweden offers 12-month post-study job search permit. Strong tech ecosystem (Stockholm tech hub - Spotify, Klarna, King, Ericsson). High quality of life. Pathway to work permit → PR (4 years) → citizenship (5 years). Drawbacks: short duration, housing crisis, Swedish language important for many jobs and integration, recent political shifts toward stricter immigration.",
+      "eligibilityRequirements": [
+        "Completed studies at Swedish university",
+        "Apply before current residence permit expires",
+        "Sufficient funds for maintenance",
+        "Valid passport",
+        "Comprehensive health insurance"
+      ],
+      "workRestrictions": {
+        "hoursPerWeek": "No limit",
+        "employerRestrictions": "None",
+        "selfEmploymentAllowed": true,
+        "unemploymentLimit": "No formal limit during 12-month period",
+        "geographicRestrictions": "None within Sweden"
+      },
+      "applicationProcess": {
+        "timingBeforeGraduation": "Apply before current student permit expires",
+        "processingTimeWeeks": "4-12 weeks",
+        "costSEK": "1,000 SEK (~100 EUR)",
+        "difficulty": "Moderate - health insurance requirement can be expensive"
+      },
+      "extensionPossibilities": {
+        "canExtend": false,
+        "maxTotalDuration": "12 months (one-time)",
+        "extensionNotes": "Must transition to work permit. New reforms (2022-2026) simplified work permit process for those who studied in Sweden."
+      },
+      "transitionToPR": {
+        "viabilityScore": 78,
+        "typicalPathway": "Job search permit → Work permit → 4 years continuous residence + Swedish language (B1 encouraged) + sufficient income → Permanent residence (PUT) → Citizenship after 5 years total",
+        "averageTimelineYears": "5-6 years",
+        "majorRisks": [
+          "Work permit requires job offer meeting salary/working conditions standards (no formal minimum but ~SEK 13,000/month minimum to support self)",
+          "Swedish language barrier (English common in tech but Swedish increasingly expected for integration and PR)",
+          "Housing crisis (especially Stockholm, Gothenburg, Malmö)",
+          "Political shift toward stricter immigration (2024-2026 - Sweden Democrats influence; skilled migration still supported but scrutiny increased)",
+          "Continuous residence requirement strict (short absences okay but must maintain residence)"
+        ],
+        "bangladeshiAdvantage": "Strong tech job market for skilled workers; no country quota; English widely spoken in tech sector"
+      },
+      "dependentRights": {
+        "spouseCanAccompany": true,
+        "spouseVisaType": "Accompanying family member permit",
+        "spouseCanWork": true,
+        "spouseWorkNotes": "Spouse receives residence permit with work authorization if primary has work permit (not during job search phase unless spouse has own permit basis)",
+        "childrenAllowed": true,
+        "childEducationRights": "Free public education K-12"
+      },
+      "financialRequirements": {
+        "minimumSalary": "No strict minimum for job search permit; work permit requires salary meeting Swedish standards (typically SEK 13,000+/month minimum)",
+        "proofOfFunds": "Must demonstrate maintenance ability (~SEK 8,568/month = ~€800/month)",
+        "healthInsurance": "Comprehensive health insurance mandatory during job search period (can be expensive ~€50-150/month)"
+      },
+      "strategicConsiderations": {
+        "optimalStrategy": "Secure job during final semester or within 12 months; transition to work permit; learn Swedish (free Swedish for Immigrants - SFI courses); accumulate 4 years residence; apply PUT; Stockholm, Gothenburg, Malmö best for tech jobs",
+        "planB": "If job search difficult in Sweden, leverage EU tech mobility (Stockholm startup → Berlin/Amsterdam transfer); or consider other Nordic countries (Norway, Denmark higher salaries)",
+        "timing": "Apply for work permit as soon as job secured; start Swedish learning immediately"
+      },
+      "bangladeshiStudentNotes": {
+        "communitySupport": "Small but growing Bangladeshi community in Stockholm, Gothenburg; mosques (Stockholm Mosque, Malmö Mosque), cultural associations",
+        "employerFriendliness": "Tech sector (Spotify, Klarna, King, iZettle/Zettle, Northvolt, Ericsson, Volvo Tech) actively hires international talent; English common in startups; corporates may expect Swedish",
+        "practicalTips": [
+          "Housing queue system (bostadskö) - register immediately, years-long wait in Stockholm; expect to rent second-hand (high costs)",
+          "SFI (Swedish for Immigrants) free courses - start immediately",
+          "Personal number (personnummer) critical - needed for everything; get as soon as residence permit approved",
+          "Swedish work culture: flat hierarchy, work-life balance, fika culture - understand norms",
+          "Network via meetups (Stockholm has active tech scene), LinkedIn, KTH/Chalmers alumni networks",
+          "Winter darkness (Nov-Feb) challenges mental health - prepare"
+        ],
+        "recentPolicyChanges2025_2026": "Sweden introduced labor migration reforms (2022 effective) that eased work permit applications for those who studied in Sweden - positive change. However, political environment shifted right (Sweden Democrats in coalition 2022-2026) with rhetoric against immigration. Skilled migration pathway remains intact but could face future restrictions. Monitor Migrationsverket policy closely."
+      },
+      "overallRating": "Good quality of life and strong tech ecosystem but short post-study duration (12 months), housing crisis, and political uncertainty are concerns. Best for students already committed to Nordic lifestyle and willing to learn Swedish.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "visaName": "Extended Residence Permit for Job Seeking (Oleskelulupa työnhakua varten)",
+      "visaDuration": "12 months",
+      "score": 76,
+      "scoreConfidence": 79,
+      "scoreEvidence": "Finland offers 12-month post-study job search permit. High quality of life, education system, social services. Aging population creates growing labor demand. Pathway to continuous residence permit → PR (4 years) → citizenship (5-6 years). Drawbacks: small job market (especially outside Helsinki), Finnish language critical for most jobs and integration, cold climate, recent rightward political shift affecting immigration sentiment.",
+      "eligibilityRequirements": [
+        "Graduated from Finnish university",
+        "Apply before current student permit expires",
+        "Sufficient funds (€560/month maintenance)",
+        "Valid passport"
+      ],
+      "workRestrictions": {
+        "hoursPerWeek": "No limit",
+        "employerRestrictions": "None",
+        "selfEmploymentAllowed": true,
+        "unemploymentLimit": "No formal limit during 12-month period",
+        "geographicRestrictions": "None within Finland"
+      },
+      "applicationProcess": {
+        "timingBeforeGraduation": "Apply before student permit expires",
+        "processingTimeWeeks": "4-8 weeks",
+        "costEUR": "~200 EUR",
+        "difficulty": "Easy - straightforward process"
+      },
+      "extensionPossibilities": {
+        "canExtend": false,
+        "maxTotalDuration": "12 months (one-time)",
+        "extensionNotes": "Must transition to work-based residence permit (continuous permit 'A' type)"
+      },
+      "transitionToPR": {
+        "viabilityScore": 75,
+        "typicalPathway": "Job search permit → Continuous work residence permit (A-type) → 4 years continuous residence + Finnish/Swedish language (YKI test intermediate level) + integration → Permanent residence (P permit) → Citizenship (5-8 years total)",
+        "averageTimelineYears": "6-8 years",
+        "majorRisks": [
+          "Small job market - most opportunities in Helsinki; very limited in smaller cities",
+          "Finnish language critical (Swedish alternative in some regions but Finnish dominant) - YKI test required for PR",
+          "Income requirement for work permit (must earn enough to support self - typically €1,200+/month)",
+          "Aging population creates FUTURE demand but current job market for non-Finnish speakers limited",
+          "Political environment shifting (Finns Party coalition 2023-2026 - anti-immigration rhetoric though skilled workers still needed)"
+        ],
+        "bangladeshiAdvantage": "Desperate need for young workers long-term (aging crisis); no country quota; once settled, excellent social benefits and quality of life"
+      },
+      "dependentRights": {
+        "spouseCanAccompany": true,
+        "spouseVisaType": "Family member residence permit",
+        "spouseCanWork": true,
+        "spouseWorkNotes": "Spouse receives residence permit with work authorization if primary has continuous work permit (not during job search period)",
+        "childrenAllowed": true,
+        "childEducationRights": "Free public education K-12; world-class Finnish education system"
+      },
+      "financialRequirements": {
+        "minimumSalary": "No strict minimum for job search permit; work permit requires sufficient income (typically €1,200+/month minimum)",
+        "proofOfFunds": "€560/month for job search period (~€6,720 for 12 months)",
+        "healthInsurance": "Not mandatory during job search if sufficient funds; public healthcare access after residence permit + Kela registration"
+      },
+      "strategicConsiderations": {
+        "optimalStrategy": "Learn Finnish language intensively (free integration training - kotoutumiskoulutus available); target Helsinki job market (Nokia, Supercell, Rovio, Wolt, financial sector); network via Aalto/University of Helsinki alumni; prioritize companies with English work culture initially; plan long-term (5-8 year timeline)",
+        "planB": "If Finnish job market difficult, leverage Helsinki as Nordic gateway (network into Swedish/Norwegian companies); or pivot to Tallinn, Estonia (ferry away, growing tech hub); or return to larger EU market (Germany, Netherlands) after Finnish degree",
+        "timing": "Start intensive Finnish language in final year of study; secure job by Month 9 of job search permit"
+      },
+      "bangladeshiStudentNotes": {
+        "communitySupport": "Very small Bangladeshi community in Finland (~1,500 total); mosques limited (Helsinki Islamic Centre); expect limited cultural infrastructure - can be isolating",
+        "employerFriendliness": "Tech companies (Nokia, Supercell, Rovio, Wolt, Kone) hire internationals but Finnish language often expected even in 'English' roles; gaming industry more international; financial sector (Nordea, OP) very Finnish-language oriented",
+        "practicalTips": [
+          "Finnish language essential - start from Day 1; free courses (Integration training for immigrants) available",
+          "YKI test (Yleinen kielitutkinto) required for PR - aim for intermediate level (3-4 on scale)",
+          "Housing easier than Sweden/Netherlands but Helsinki expensive; student housing transitions challenging",
+          "Personal identity code (henkilötunnus) critical - get immediately",
+          "Register with Kela (social insurance) - access to healthcare, benefits",
+          "Winter harsh (Oct-Apr) - mental health challenges common; northern lights benefit minimal in Helsinki",
+          "Network via Startup Sauna, Slush conference, Junction hackathon - Helsinki tech scene small but active",
+          "Consider Tampere, Oulu (smaller cities, cheaper, tech hubs - Nokia, gaming, universities) if Helsinki too expensive"
+        ],
+        "recentPolicyChanges2025_2026": "Finland coalition government 2023-2026 includes Finns Party (nationalist, anti-immigration) leading to stricter immigration rhetoric and some policy tightening (reduced humanitarian migration, increased language requirements). SKILLED migration pathway still supported (labor shortage acute - 50,000+ annual shortfall projected) but political environment less welcoming than pre-2023. Monitor Migri policy changes."
+      },
+      "overallRating": "High quality of life and long-term security but small job market, language barrier, and current political climate are significant challenges. Best for students willing to commit deeply to Finnish language and culture with long-term perspective (5-10 years). Not ideal for those seeking quick job placement or English-only careers.",
+      "lastUpdated": "2026-06-01"
+    },
+    {
+  "country": "Denmark",
+  "countryCode": "DK",
+  "visaName": "Establishment Card (Etableringskort) - post-graduation job search",
+  "visaDuration": "12 months",
+  "score": 80,
+  "scoreConfidence": 84,
+  "scoreEvidence": "Denmark offers 12-month post-study job search permit. Strong tech ecosystem (Copenhagen - Zendesk, Unity, Microsoft Development Center), high quality of life, excellent English proficiency. Transition to work/residence permit → PR (8 years, faster with Danish language) → citizenship. Drawbacks: short duration, high cost of living, Danish language important for integration and some employers, smaller market than Sweden/Germany.",
+  "eligibilityRequirements": [
+    "Completed higher education in Denmark (at least Bachelor's level)",
+    "Apply within 6 months of graduation",
+    "Sufficient funds (DKK 8,000/month = ~€1,070/month)",
+    "Valid passport",
+    "No debts to Danish state"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "No limit once employed",
+    "employerRestrictions": "None - can work for any employer once job secured",
+    "selfEmploymentAllowed": true,
+    "unemploymentLimit": "No formal limit during 12-month search period",
+    "geographicRestrictions": "None within Denmark"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Apply within 6 months of graduation",
+    "processingTimeWeeks": "4-8 weeks",
+    "costDKK": "1,795 DKK (~€240 EUR)",
+    "difficulty": "Easy - online application via New to Denmark portal"
+  },
+  "extensionPossibilities": {
+    "canExtend": false,
+    "maxTotalDuration": "12 months (one-time)",
+    "extensionNotes": "Must transition to work/residence permit (requires job offer). Fast Track scheme available for certain employers."
+  },
+  "transitionToPR": {
+    "viabilityScore": 79,
+    "typicalPathway": "Establishment Card → Work/Residence permit (requires job offer + salary threshold DKK 436,000/year ~€58,500 for 2026) → 8 years continuous residence + Danish language PD3 + citizenship test + self-sufficiency → Permanent residence → Citizenship (9 years total)",
+    "averageTimelineYears": "8-9 years",
+    "majorRisks": [
+      "High salary threshold for work permit (DKK 436,000/year ~€58,500 - among highest in Europe)",
+      "Danish language requirement for PR (PD3 = B2 level - very difficult language)",
+      "8-year residence requirement for PR (longest in Nordic region)",
+      "Political environment increasingly restrictive (2024-2026 immigration tightening under Social Democrat-center coalition)",
+      "Small job market outside Copenhagen"
+    ],
+    "bangladeshiAdvantage": "English sufficient for tech sector initially; no country quota; strong work-life balance; excellent social services once settled"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Accompanying family member permit (after work permit secured)",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse can work if primary has work/residence permit; not during Establishment Card phase",
+    "childrenAllowed": true,
+    "childEducationRights": "Free public K-12 (Danish language instruction mandatory)"
+  },
+  "financialRequirements": {
+    "minimumSalary": "DKK 436,000/year (~€58,500) for work/residence permit transition; varies for Fast Track scheme",
+    "proofOfFunds": "DKK 8,000/month for 12 months = ~DKK 96,000 (~€12,900)",
+    "healthInsurance": "Covered by Danish public healthcare after residence registration (yellow health card)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "Target high-salary tech jobs in Copenhagen (Zendesk, Unity, Microsoft, Maersk, Novo Nordisk, Danske Bank) to meet DKK 436,000 threshold; learn Danish immediately (free courses available); secure job within 12 months; prioritize Fast Track employers (easier processing)",
+    "planB": "If salary threshold challenging, consider: (1) Fast Track scheme (lower threshold for certain employers/roles), (2) relocate to Sweden/Norway after degree (Danish degree recognized, easier paths), (3) entrepreneurship visa",
+    "timing": "Secure job by Month 9 of Establishment Card; start Danish language courses immediately (municipality offers free Danish classes)"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Small Bangladeshi community in Copenhagen (~3,000-4,000); mosques (Islamic Cultural Centre Copenhagen), limited cultural infrastructure compared to larger countries",
+    "employerFriendliness": "Tech companies (Zendesk, Unity, Microsoft Development Center Copenhagen, Trustpilot, Siteimprove) hire internationals; English work culture in tech; corporates (Maersk, Novo Nordisk) increasingly international",
+    "practicalTips": [
+      "Copenhagen expensive - rent DKK 8,000-15,000/month (€1,070-2,000); consider Frederiksberg, Nørrebro, Amager",
+      "Get CPR number (personal ID) immediately - needed for everything (banking, healthcare, work)",
+      "Free Danish classes (Danskuddannelse) mandatory for residence permit holders - start early",
+      "Bicycle culture dominant - invest in good bike",
+      "Network via Copenhagen Tech Hub, CPHFTW (Copenhagen FinTech Week), Meetup events",
+      "Consider Aarhus (2nd city) - cheaper, Aarhus University tech hub, growing startup scene",
+      "Work permit salary threshold HIGH - negotiate salary carefully or target Fast Track employers"
+    ],
+    "recentPolicyChanges2025_2026": "Denmark tightened immigration significantly 2016-2026 (both right-wing and Social Democrat governments restrictive). Salary thresholds for work permits increased annually (inflation-indexed). Language requirements for PR strengthened. However SKILLED migration (especially tech) still viable - business lobby influence. Fast Track scheme expanded 2024-2026 for critical sectors (IT, engineering). Monitor NewToDenmark.dk for policy updates."
+  },
+  "overallRating": "High quality of life and excellent work-life balance but high salary threshold, long PR timeline (8 years), Danish language difficulty, and restrictive political environment are significant barriers. Best for high-earning tech professionals willing to commit long-term and learn Danish. Not ideal for those seeking faster PR or lower salary entry points.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Norway",
+  "countryCode": "NO",
+  "visaName": "Job Seeker Residence Permit (post-graduation)",
+  "visaDuration": "12 months",
+  "score": 82,
+  "scoreConfidence": 86,
+  "scoreEvidence": "Norway offers 12-month job search permit for graduates. Excellent quality of life, high salaries, political stability, strong social services. Tech ecosystem smaller than Sweden/Denmark but growing (Oslo - Schibsted, Kahoot, Vipps). Pathway to work permit → PR (3 years) → citizenship (7 years total). Advantages: shorter PR timeline than Denmark, high salaries, oil wealth stability. Drawbacks: small job market, high cost of living (highest in Europe), Norwegian language important.",
+  "eligibilityRequirements": [
+    "Completed higher education in Norway (Bachelor's or higher)",
+    "Applied within 6 months of graduation",
+    "Sufficient funds (NOK 128,887/year = ~€11,600 for 2026)",
+    "Valid passport",
+    "Valid Norwegian residence permit at application"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "No limit",
+    "employerRestrictions": "None",
+    "selfEmploymentAllowed": true,
+    "unemploymentLimit": "No formal limit during 12-month period",
+    "geographicRestrictions": "None within Norway"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Apply within 6 months of completing degree",
+    "processingTimeWeeks": "4-12 weeks (UDI processing times variable)",
+    "costNOK": "6,300 NOK (~€560 EUR)",
+    "difficulty": "Moderate - documentation requirements strict; online application via UDI"
+  },
+  "extensionPossibilities": {
+    "canExtend": false,
+    "maxTotalDuration": "12 months (one-time)",
+    "extensionNotes": "Must transition to skilled worker residence permit (requires job offer meeting salary/qualification requirements)"
+  },
+  "transitionToPR": {
+    "viabilityScore": 83,
+    "typicalPathway": "Job seeker permit → Skilled worker permit → 3 years continuous residence + Norwegian language A2 (B1 recommended) + civic knowledge test → Permanent residence → Citizenship after 7 years total residence",
+    "averageTimelineYears": "7-8 years (among shorter timelines in Nordic region)",
+    "majorRisks": [
+      "Small job market (Oslo dominates; Bergen, Trondheim, Stavanger limited)",
+      "Cost of living extreme (Oslo most expensive city globally 2024-2026 rankings)",
+      "Norwegian language important (Bokmål or Nynorsk; A2 minimum for PR, B1 for citizenship)",
+      "Salary threshold for skilled worker permit (no strict minimum but must be comparable to Norwegian standards - typically NOK 450,000+/year = €40,000+)",
+      "Oil sector volatility (though AI/tech growing independent of oil)"
+    ],
+    "bangladeshiAdvantage": "Shorter PR timeline (3 years vs. Denmark 8, Sweden 4); high salaries compensate cost of living; excellent long-term stability (oil wealth, political stability); no country quota"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Family immigration permit (after work permit secured)",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse receives work authorization if primary has skilled worker permit; not during job seeker phase",
+    "childrenAllowed": true,
+    "childEducationRights": "Free public K-12; excellent quality"
+  },
+  "financialRequirements": {
+    "minimumSalary": "No strict minimum for job seeker permit; skilled worker permit requires salary meeting Norwegian standards (typically NOK 450,000+/year = €40,000+)",
+    "proofOfFunds": "NOK 128,887 for 12 months (~€11,600)",
+    "healthInsurance": "Covered by Norwegian public healthcare (free) after registration"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "Target Oslo tech sector (Schibsted, Kahoot, Vipps, Finn.no, DNB, Equinor digital); learn Norwegian immediately (free courses available); aim for NOK 500,000-700,000 salary (€45,000-63,000) to offset high living costs; accumulate 3 years for PR application",
+    "planB": "If Oslo job market difficult: (1) consider oil/energy sector in Stavanger (high salaries, Equinor, tech roles), (2) Bergen (smaller tech scene but cheaper than Oslo), (3) leverage Norwegian degree to relocate to Sweden/Denmark (Nordic mobility)",
+    "timing": "Secure job by Month 9; apply for skilled worker permit immediately upon job offer; start Norwegian language courses (free from municipality - norskopplæring)"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Very small Bangladeshi community in Norway (~5,000 total, mostly Oslo); mosques (Central Jamaat-e Ahl-e Sunnat mosque Oslo), limited cultural infrastructure - can feel isolated",
+    "employerFriendliness": "Tech companies (Schibsted, Kahoot, Vipps, DNB, Telenor) hire internationals; oil sector (Equinor) recruits STEM; English sufficient initially in tech; Norwegian expected for integration",
+    "practicalTips": [
+      "Cost of living EXTREME - Oslo rent NOK 12,000-25,000/month (€1,070-2,230); groceries, transport very expensive; budget NOK 20,000-30,000/month (€1,780-2,670)",
+      "Get D-number (temporary ID) then national ID number (fødselsnummer) - critical for banking, work, healthcare",
+      "Free Norwegian courses (norskopplæring) - mandatory for residence permit holders; start immediately",
+      "Work-life balance excellent - 37.5 hour work week standard; 5 weeks vacation",
+      "Outdoor culture (hiking, skiing) central to Norwegian life - embrace for integration",
+      "Network via Oslo Innovation Week, Nordic Startup Scene, Meetup Oslo tech groups",
+      "Consider smaller cities (Bergen, Trondheim, Stavanger) - significantly cheaper, good quality of life, limited job market but less competition"
+    ],
+    "recentPolicyChanges2025_2026": "Norway has relatively stable immigration policy (less restrictive than Denmark/Sweden politically). Family immigration rules tightened slightly (language requirements). Skilled worker pathway intact - Norway desperately needs labor (aging population, labor shortage 50,000+ annually). UDI processing times improved 2024-2026. No major threats to STEM graduate pathway as of June 2026."
+  },
+  "overallRating": "Excellent long-term stability, high salaries, short PR timeline (3 years), strong social services. Major drawbacks: extreme cost of living, small job market (Oslo-centric), Norwegian language necessity. Best for high-earning tech professionals prioritizing quality of life, political stability, and long-term security over diversity and cosmopolitan lifestyle. Treat as family-friendly long-term destination if you can secure competitive salary.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Switzerland",
+  "countryCode": "CH",
+  "visaName": "Post-study job search period (6 months) → Work Permit (Permit B)",
+  "visaDuration": "6 months job search (then work permit required)",
+  "score": 75,
+  "scoreConfidence": 80,
+  "scoreEvidence": "Switzerland offers only 6-month post-graduation job search - shortest among developed countries. However: highest salaries globally, excellent quality of life, political stability, strong AI/tech sector (ETH Zurich ecosystem, Google Zurich, Microsoft, IBM Research). Pathway: work permit (Permit B) → Permit C (settlement, 5-10 years) → citizenship (10 years, very difficult). Major challenges: short search period, quota system for non-EU nationals (Bangladeshi face significant barriers), language requirements (German/French/Italian canton-dependent), extremely high cost of living, difficult integration.",
+  "eligibilityRequirements": [
+    "Graduated from Swiss university",
+    "Non-EU/EFTA nationals can seek work for 6 months after graduation",
+    "Must secure job offer within 6 months",
+    "Job must be deemed in 'national interest' (highly skilled, shortage occupation)",
+    "Employer must prove no Swiss/EU candidate available (priority to locals)"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "No limit once work permit secured",
+    "employerRestrictions": "Must be skilled role; priority to Swiss/EU nationals (quota system); employer must justify hiring non-EU national",
+    "selfEmploymentAllowed": false,
+    "unemploymentLimit": "6 months maximum to secure job; after work permit, unemployment can jeopardize renewal",
+    "geographicRestrictions": "Canton-specific - work permit tied to canton initially (Permit B); Permit C allows Switzerland-wide mobility"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "6-month window starts from graduation",
+    "processingTimeWeeks": "8-12 weeks for work permit (Permit B) after job offer",
+    "costCHF": "Varies by canton; typically CHF 150-300 (~€160-320)",
+    "difficulty": "Very High - quota system for non-EU nationals; employer must demonstrate shortage; cantonal approval required; competitive"
+  },
+  "extensionPossibilities": {
+    "canExtend": false,
+    "maxTotalDuration": "6 months job search (non-renewable) → Work permit (Permit B, 1-year renewable) → Settlement permit (Permit C, after 5-10 years depending on nationality/canton) → Citizenship (after 10 years, very difficult naturalization)",
+    "extensionNotes": "6-month search period cannot be extended. Work permit (Permit B) renewed annually if employed; quota-dependent. Non-EU nationals face significant barriers throughout."
+  },
+  "transitionToPR": {
+    "viabilityScore": 68,
+    "typicalPathway": "6-month search → Work permit (Permit B, quota-restricted) → 10 years continuous residence + language proficiency (B1 minimum, often B2 required) + integration criteria + cantonal/municipal approval + federal approval → Permit C (settlement) → Citizenship (after 10 years total, canton-specific requirements, very difficult)",
+    "averageTimelineYears": "10-12 years minimum (among longest in developed world)",
+    "majorRisks": [
+      "Quota system for non-EU nationals (Bangladesh quota extremely limited - few hundred permits annually for entire country across all sectors)",
+      "Priority to Swiss/EU/EFTA nationals - employers must justify hiring non-EU",
+      "Short 6-month search period - very tight timeline",
+      "Permit B renewal contingent on employment (loss of job = loss of permit)",
+      "Permit C (settlement) difficult for non-EU (10 years residence, strict integration, language, cantonal approval)",
+      "Citizenship extremely difficult (10+ years, cantonal naturalization committees, local voting on applications in some communes, expensive CHF 2,000-4,000, language C1 often expected, cultural integration scrutinized)",
+      "Language requirements (German in Zurich/Bern, French in Geneva/Lausanne, Italian in Ticino)"
+    ],
+    "bangladeshiAdvantage": "VERY LIMITED. Switzerland is NOT immigrant-friendly for non-EU nationals. Treat as career opportunity ONLY, not long-term settlement pathway. Advantages: if you can secure job, salary compensates challenges; ETH Zurich degree carries global prestige."
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Permit B (family reunification) - if primary has Permit B",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse can work if primary holds Permit B; however same quota restrictions apply to spouse finding job independently - challenging",
+    "childrenAllowed": true,
+    "childEducationRights": "Free public K-12 (language of canton - German/French/Italian); high quality but integration required"
+  },
+  "financialRequirements": {
+    "minimumSalary": "No formal minimum but must be market rate (typically CHF 80,000-120,000+ for STEM roles = €85,000-128,000+); cantonal authorities scrutinize to prevent wage dumping",
+    "proofOfFunds": "Must demonstrate ability to support self during 6-month search (~CHF 25,000 = €26,500 recommended)",
+    "healthInsurance": "Mandatory Swiss health insurance (expensive - CHF 300-600/month = €320-640/month)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "Secure job BEFORE graduation (critical given 6-month limit); target multinational tech companies familiar with non-EU hiring (Google Zurich, Microsoft, IBM Research, UBS, Credit Suisse, Roche, Novartis); ETH Zurich/EPFL PhD students have better chances than Master's (research roles often exempt from quota); learn local language (German for Zurich/Basel, French for Geneva/Lausanne); understand this is NOT a long-term settlement pathway - use as resume booster then relocate to Canada/Germany/Australia for PR",
+    "planB": "If job search fails or quota blocked: (1) leverage Swiss degree to relocate to Germany (Swiss degrees highly valued, easier work permit), (2) pursue PhD at ETH/EPFL (extends stay, better quota access), (3) target EU Blue Card in Germany/Netherlands with Swiss experience, (4) return to larger markets (US, Canada, UK) with Swiss credential advantage",
+    "timing": "START JOB SEARCH 6-12 MONTHS BEFORE GRADUATION. Network aggressively. Secure offer before graduation if possible to avoid 6-month pressure. Apply work permit immediately upon job offer (processing takes 2-3 months)."
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Very small Bangladeshi community in Switzerland (~3,000-4,000 total); mosques limited (Zurich has Islamic Centre, Geneva has mosques); expect minimal cultural infrastructure - very isolating",
+    "employerFriendliness": "Large multinationals (Google, Microsoft, IBM, UBS, Credit Suisse, Roche, Novartis, ABB) hire non-EU but quotas limit slots; ETH Zurich spin-offs more flexible; SMEs (majority of Swiss economy) rarely sponsor non-EU",
+    "practicalTips": [
+      "CRITICAL: Understand Switzerland is NOT immigration country - quota system designed to restrict non-EU settlement. Plan accordingly.",
+      "6-month search period VERY SHORT - start networking from Day 1 of studies",
+      "Cost of living EXTREME - Zurich rent CHF 1,500-3,000/month (€1,600-3,200); groceries, transport, healthcare very expensive; need CHF 4,000-6,000/month (€4,250-6,400) minimum",
+      "Learn local language ASAP - German for Zurich (Swiss German daily, High German work), French for Geneva/Lausanne; critical for integration and Permit C",
+      "Network via ETH Career Center, EPFL Innovation Park, digitalswitzerland events",
+      "Salary negotiation: CHF 90,000-130,000 typical for entry-level STEM (€96,000-138,000) but cost of living offsets",
+      "Banking difficult without Permit B - use Revolut/N26 initially",
+      "Understand cantonal system - each canton different rules, integration requirements",
+      "Citizenship realistic ONLY after 10+ years, language C1, deep integration - treat as unlikely outcome"
+    ],
+    "recentPolicyChanges2025_2026": "Switzerland maintained quota system for non-EU nationals (no relaxation despite labor shortages - political resistance from SVP party to immigration remains strong). Some cantons (Zurich, Zug) slightly increased quotas for 'high-skilled' tech workers 2024-2026 but overall highly restrictive. Free movement within EU/EFTA continues; non-EU face barriers. No policy changes favoring Bangladeshi graduates expected."
+  },
+  "overallRating": "Highest salaries and excellent quality of life BUT shortest post-study period (6 months), quota system makes securing work permit very difficult for non-EU nationals, long and uncertain PR/citizenship pathway (10+ years, very restrictive), high cost of living, language barriers, limited cultural diversity. ONLY suitable for top-tier graduates who can secure elite jobs (Google, IBM Research, ETH spin-offs) and treat Switzerland as 3-5 year career booster, NOT long-term settlement destination. For family relocation and PR goals, pursue Canada/Germany/Australia instead.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Austria",
+  "countryCode": "AT",
+  "visaName": "Job Seeker Visa (Aufenthaltstitel zur Arbeitssuche) for graduates",
+  "visaDuration": "12 months",
+  "score": 77,
+  "scoreConfidence": 81,
+  "scoreEvidence": "Austria offers 12-month job search permit for graduates of Austrian universities. Growing tech scene (Vienna - Erste Digital, Raisin, N26 hub, TU Wien ecosystem), high quality of life, central European location. Pathway: job search → Red-White-Red Card (work permit) → permanent residence (5 years) → citizenship (10 years, must renounce previous). Advantages: EU access, Vienna quality of life, lower cost than Switzerland. Drawbacks: German language critical, smaller job market than Germany, bureaucracy, moderate salaries compared to Switzerland/US.",
+  "eligibilityRequirements": [
+    "Graduated from Austrian university (Bachelor's or higher)",
+    "Applied within 6 months of degree completion",
+    "Sufficient funds (€1,000/month minimum)",
+    "Comprehensive health insurance",
+    "Valid passport",
+    "Proof of accommodation in Austria"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "No limit once job secured",
+    "employerRestrictions": "During job search: limited work allowed (trial work, internships); after Red-White-Red Card: can work for sponsoring employer initially, unrestricted after job change allowance",
+    "selfEmploymentAllowed": false,
+    "unemploymentLimit": "12 months to secure qualifying job offer; after Red-White-Red Card, unemployment affects renewal",
+    "geographicRestrictions": "None within Austria"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Apply within 6 months of graduation",
+    "processingTimeWeeks": "8-12 weeks",
+    "costEUR": "~150-200 EUR",
+    "difficulty": "Moderate - documentation requirements typical of Austrian bureaucracy; requires in-person submission at MA35 (Vienna) or regional authority"
+  },
+  "extensionPossibilities": {
+    "canExtend": false,
+    "maxTotalDuration": "12 months (one-time) → Red-White-Red Card (points-based work permit, renewable) → Red-White-Red Card plus (unrestricted, after 1 year RWR) → Permanent residence (Daueraufenthalt, after 5 years) → Citizenship (after 10 years total)",
+    "extensionNotes": "Job seeker visa cannot be extended. Must transition to Red-White-Red Card (requires job offer + points threshold met)."
+  },
+  "transitionToPR": {
+    "viabilityScore": 76,
+    "typicalPathway": "Job seeker visa → Red-White-Red Card (points-based: qualifications + age + language + salary) → RWR Card Plus (after 1 year, unrestricted work) → 5 years legal residence + German A2 + Integration Agreement → Permanent residence → Citizenship (10 years total + German B2 + renounce Bangladeshi passport + naturalization test)",
+    "averageTimelineYears": "10 years for citizenship (5 years for PR)",
+    "majorRisks": [
+      "German language requirement (A2 for PR, B2 for citizenship) - Austrian German dialect differs from High German",
+      "Red-White-Red Card points system competitive (need 55+ points: degree, salary, age, language)",
+      "Salary threshold for points (€40,000+ typically needed for sufficient points)",
+      "Must renounce Bangladeshi citizenship for Austrian citizenship (dual citizenship only exceptional cases)",
+      "Small job market compared to Germany (Vienna accounts for majority of opportunities)",
+      "Bureaucracy (Austrian administration notoriously slow and paper-heavy)"
+    ],
+    "bangladeshiAdvantage": "Lower cost of living than Switzerland/Denmark; Vienna quality of life high; EU access; no country-specific quota; Austrian degrees increasingly recognized"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Family reunification after Red-White-Red Card secured",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse receives work authorization after family reunification granted (requires primary to have RWR Card or RWR Card Plus); not during job seeker visa phase",
+    "childrenAllowed": true,
+    "childEducationRights": "Free public K-12; high quality; German language"
+  },
+  "financialRequirements": {
+    "minimumSalary": "No minimum for job seeker visa; Red-White-Red Card requires salary meeting threshold for points (typically €40,000+ for STEM to be competitive)",
+    "proofOfFunds": "€1,000/month for 12 months = €12,000 minimum",
+    "healthInsurance": "Comprehensive health insurance mandatory (can be private initially, public after employment)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "Target Vienna tech sector (Erste Digital, Raiffeisen, ÖBB, AVL List, Raisin, TU Wien spin-offs); learn German to B1 minimum (adds Red-White-Red Card points); aim for €45,000-55,000 salary to maximize points; secure job within 12 months; transition to RWR Card; accumulate 5 years for PR",
+    "planB": "If Austrian job market limited: (1) use Vienna as base to network into German market (similar language, culture), (2) leverage Austrian degree to apply for EU Blue Card in Germany/Netherlands, (3) consider TU Wien PhD if Master's graduate (extends stay, research opportunities)",
+    "timing": "Secure job by Month 9 of job seeker visa; apply for Red-White-Red Card immediately upon job offer (processing 8-12 weeks); start intensive German courses from Day 1"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Small Bangladeshi community in Vienna (~2,000-3,000); Islamic Center Vienna (mosques), limited cultural infrastructure compared to Germany/UK; some isolation expected",
+    "employerFriendliness": "Tech companies (Erste Digital, Raiffeisen digital, ÖBB Infra, AVL List, TU Wien spin-offs) hire internationals but German often expected; English-only roles limited; corporate culture formal",
+    "practicalTips": [
+      "Vienna rent moderate - €600-1,200/month for shared/1-bed; cheaper than Zurich/Copenhagen/Oslo but rising",
+      "Learn German ASAP - Austrian German dialect (Österreichisches Deutsch) differs from High German; Integration courses available (ÖIF - Österreichischer Integrationsfonds)",
+      "Bureaucracy: register address (Meldezettel) immediately; get e-card (health insurance card); MA35 (immigration office Vienna) appointments scarce - book early",
+      "Vienna public transport excellent (U-Bahn, Tram) - annual pass €365/year (€1/day)",
+      "Network via TU Wien Career Center, Startup Vienna events, WeAreDevelopers conference",
+      "Coffee culture central to Austrian social life - embrace for integration",
+      "Consider Graz, Linz, Salzburg (smaller cities, cheaper, tech hubs via universities, less competitive) if Vienna challenging"
+    ],
+    "recentPolicyChanges2025_2026": "Austria introduced job seeker visa for graduates relatively recently (2020s policy). Red-White-Red Card system stable. Coalition government (ÖVP-Greens 2020-2024, then ÖVP-SPÖ 2024-2026) maintained moderate immigration stance - skilled workers supported but far-right FPÖ pressure exists. Language requirements for residence permits strengthened 2024-2026. No major changes expected but monitor AMS (labor market service) and MA35 policies."
+  },
+  "overallRating": "Good quality of life (Vienna consistently top-10 globally), moderate cost of living, EU access, 12-month job search window. Challenges: German language essential, smaller job market than Germany, bureaucracy, must renounce Bangladeshi citizenship for Austrian citizenship (10 years away). Best for students prioritizing Vienna lifestyle, EU access, and willing to commit to German language. Moderate choice - better than Switzerland for settlement, not as good as Germany/Canada for job market and immigration friendliness.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Belgium",
+  "countryCode": "BE",
+  "visaName": "Job Search Visa (Carte de Séjour pour Chercher un Emploi) - post-graduation",
+  "visaDuration": "12 months",
+  "score": 74,
+  "scoreConfidence": 78,
+  "scoreEvidence": "Belgium offers 12-month job search permit for graduates of Belgian universities. Brussels EU capital with international organizations, NATO, European Commission; strong tech presence (Brussels, Ghent, Leuven). Multilingual (French, Dutch, German). Pathway: job search → work permit → PR (5 years) → citizenship (5 years, difficult language requirements). Advantages: EU access, international environment, Brussels as EU hub. Drawbacks: complex language landscape (French/Flemish divide), bureaucracy extreme, moderate job market, high taxes, language requirements for PR/citizenship challenging.",
+  "eligibilityRequirements": [
+    "Graduated from recognized Belgian university (Bachelor's or higher)",
+    "Applied within 12 months of graduation",
+    "Proof of sufficient funds (varies by region - typically €600-800/month)",
+    "Valid passport",
+    "Health insurance",
+    "No criminal record"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "No limit once job secured",
+    "employerRestrictions": "During job search: can work part-time; after work permit: depends on permit type (Professional Card vs. single permit)",
+    "selfEmploymentAllowed": false,
+    "unemploymentLimit": "12 months to secure job; after work permit, unemployment affects renewal",
+    "geographicRestrictions": "None within Belgium (but language of region matters - Flanders Dutch, Wallonia French, Brussels bilingual)"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Apply within 12 months of degree completion",
+    "processingTimeWeeks": "8-16 weeks (varies by municipality - Brussels slower, Flemish regions faster)",
+    "costEUR": "~200-350 EUR (varies by region/municipality)",
+    "difficulty": "High - Belgian bureaucracy notoriously complex; regional variations (Flanders, Wallonia, Brussels different procedures); language barriers"
+  },
+  "extensionPossibilities": {
+    "canExtend": false,
+    "maxTotalDuration": "12 months (one-time) → Work permit (Single Permit or Professional Card) → 5 years legal residence + language requirement (Dutch or French A2 minimum) + Integration → Permanent residence → Citizenship (5 years additional = 10 years total + language B1 + integration test)",
+    "extensionNotes": "Job search visa cannot be extended. Must transition to work permit (Single Permit common for employees; Professional Card for self-employment)."
+  },
+  "transitionToPR": {
+    "viabilityScore": 71,
+    "typicalPathway": "Job search visa → Single Permit (work permit for employees) → 5 years legal residence + language requirement (Dutch or French A2) + Integration → Permanent residence (Carte F) → Citizenship (5 additional years + language B1 + knowledge of Belgian society test + prove economic integration)",
+    "averageTimelineYears": "10 years for citizenship (5 years for PR)",
+    "majorRisks": [
+      "Language complexity (Dutch in Flanders, French in Wallonia, bilingual in Brussels) - must choose and commit for PR",
+      "Bureaucracy EXTREME (commune-level administration, regional differences, slow processing)",
+      "Moderate job market (Brussels EU institutions competitive; private sector limited compared to Netherlands/Germany)",
+      "High taxes (Belgian income tax among highest in Europe - 45-50% marginal rate)",
+      "Political instability (coalition governments, Flemish-Walloon tensions)",
+      "Integration requirements vary by region (Flanders stricter language/integration than Wallonia)"
+    ],
+    "bangladeshiAdvantage": "Brussels international environment (English widely spoken in EU quarter); no country quota; EU institutional jobs possible (European Commission, Parliament, NATO - though citizenship restrictions apply); strong international schools for children"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Family reunification after work permit secured",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse receives work authorization after family reunification visa granted; not during job search phase",
+    "childrenAllowed": true,
+    "childEducationRights": "Free public education K-12 (Dutch in Flanders, French in Wallonia, bilingual in Brussels); international schools expensive but excellent (Brussels International School, European Schools)"
+  },
+  "financialRequirements": {
+    "minimumSalary": "No strict minimum for job search visa; work permit salary varies (EU Blue Card threshold €58,000+ for Belgium 2026; Single Permit lower but must be market rate)",
+    "proofOfFunds": "€600-800/month for 12 months (varies by region)",
+    "healthInsurance": "Comprehensive health insurance mandatory; public healthcare after registration (mutuelle/ziekenfonds - high quality, low cost after employed)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "Brussels-based strategy: target EU institutions (if eligible for support roles - citizenship not required for all), European Commission contractors, NATO, international NGOs, tech companies (Microsoft Brussels, Oracle, SAP); OR Flanders strategy: target Ghent/Leuven tech (IMEC, university spin-offs); learn Dutch (Flemish) OR French depending on target region; secure job within 12 months; transition to work permit; accumulate 5 years for PR",
+    "planB": "If Belgian job market difficult: (1) leverage Brussels EU network to relocate to Luxembourg (EU institutions, better salaries), (2) use Belgian degree to apply for roles in Netherlands (similar language in Flanders), (3) pivot to France (Wallonia French connection), (4) pursue EU Blue Card in Germany/Netherlands",
+    "timing": "Secure job by Month 9; apply for work permit/Single Permit upon job offer; start language learning immediately (Dutch if Flanders-focused, French if Wallonia/Brussels-focused)"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Small Bangladeshi community in Brussels (~3,000-5,000); mosques (Great Mosque of Brussels, other Islamic centers); limited cultural infrastructure; Antwerp has small community",
+    "employerFriendliness": "EU institutions hire internationally (European Commission, Parliament, NATO - though many roles require EU citizenship long-term); tech sector (Microsoft, Oracle, SAP Brussels, Flemish startups) hires but limited compared to Netherlands/Germany; French/Dutch language often expected",
+    "practicalTips": [
+      "Brussels rent moderate - €700-1,400/month (cheaper than Amsterdam/Zurich, more expensive than Berlin); Ghent/Leuven cheaper",
+      "Language choice critical - assess job market by region; Flanders (Dutch) has stronger economy/job market; Wallonia (French) easier language but weaker economy; Brussels bilingual but English works in EU quarter",
+      "Bureaucracy: register at commune (municipality) immediately; get electronic ID (eID card) - needed for everything; each commune has different procedures",
+      "Belgian tax system complex - income tax HIGH (progressive up to 50%); social security contributions additional (~13% employee); net salary significantly lower than gross",
+      "Network via BruTech, Flanders DC (startup hub), ULB/KU Leuven career services, EU networking events",
+      "Public transport good in Brussels (STIB/MIVB metro/tram); cycling culture in Flanders; car-centric in Wallonia",
+      "Consider Ghent (tech hub, Ghent University, IMEC nearby, vibrant student city, cheaper than Brussels) or Leuven (KU Leuven ecosystem, pharmaceutical/biotech, Dutch-speaking)"
+    ],
+    "recentPolicyChanges2025_2026": "Belgium job search visa introduced relatively recently (2018-2020 era, refined since). Coalition government changes frequently (Flemish nationalist NVA, Francophone socialists, liberals, greens) create policy volatility. Flanders pushing for more restrictive immigration; Wallonia more open. Integration requirements strengthened in Flanders (language, civic courses mandatory). Brussels maintains international openness (EU institutions pressure). No major reversals expected for skilled graduates but monitor regional policies separately."
+  },
+  "overallRating": "Brussels EU capital advantage for international careers, EU institutional access, multilingual environment. However: extreme bureaucracy, complex language landscape (Dutch/French choice critical), moderate job market, high taxes, political complexity (Flemish-Walloon tensions) make Belgium challenging. Best for students targeting EU institutions or comfortable with multilingual complexity. NOT ideal for those seeking straightforward immigration pathway or maximum salary. Consider Netherlands or Germany instead for clearer STEM pathways.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "New Zealand",
+  "countryCode": "NZ",
+  "visaName": "Post-Study Work Visa - Open",
+  "visaDuration": "1-3 years (1 year for Level 7 degree like Bachelor's; 2 years for Level 8 degree like Master's; 3 years for Level 9-10 PhD)",
+  "score": 83,
+  "scoreConfidence": 87,
+  "scoreEvidence": "New Zealand offers 1-3 year post-study work visa with open work rights (any employer). Excellent quality of life, English-speaking, pathway to Skilled Migrant Residence Visa (points-based) → PR → citizenship (5 years). Advantages: open work permit, family-friendly, beautiful environment, less competitive than Australia. Drawbacks: small job market (Auckland dominates), geographic isolation, moderate salaries, brain drain to Australia, housing crisis in Auckland, policy volatility (NZ changes immigration frequently).",
+  "eligibilityRequirements": [
+    "Completed at least 30 weeks full-time study in New Zealand",
+    "Degree at Level 7+ on NZQF (Bachelor's or higher)",
+    "From approved institution (most universities qualify)",
+    "Applied within 3 months of degree completion",
+    "Valid study visa at application",
+    "Age: no formal limit but points system for residence favors under-39"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "No limit",
+    "employerRestrictions": "None - open work visa (any employer, any location in NZ)",
+    "selfEmploymentAllowed": true,
+    "unemploymentLimit": "No formal limit",
+    "geographicRestrictions": "None - work anywhere in New Zealand (but jobs concentrated in Auckland, Wellington, Christchurch)"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Apply after degree completion, within 3 months of completion",
+    "processingTimeWeeks": "8-12 weeks (Immigration New Zealand processing times variable 2024-2026)",
+    "costNZD": "680 NZD (~€410 EUR)",
+    "difficulty": "Easy - straightforward online application if eligible"
+  },
+  "extensionPossibilities": {
+    "canExtend": false,
+    "maxTotalDuration": "One-time visa: 1-3 years depending on qualification level (Master's = 2 years; PhD = 3 years)",
+    "extensionNotes": "Cannot extend post-study work visa. Must transition to Skilled Migrant Residence Visa (points-based) or other work visa (Accredited Employer Work Visa)."
+  },
+  "transitionToPR": {
+    "viabilityScore": 81,
+    "typicalPathway": "Post-Study Work Visa → 12 months skilled work in NZ (ANZSCO skill level 1-3) → Skilled Migrant Residence Visa application (points-based: 160 points required as of 2026 - qualifications + NZ experience + job offer + age) → Residence Visa (PR) → Citizenship (after 5 years residence including 1 year as resident)",
+    "averageTimelineYears": "3-5 years (post-study work + residence processing + citizenship)",
+    "majorRisks": [
+      "Points threshold volatility (Skilled Migrant Category - SMC - threshold fluctuates; 160 points required 2026 but can increase)",
+      "Small job market (Auckland 60% of opportunities; Wellington/Christchurch limited; regional areas very limited)",
+      "Salary levels lower than Australia (wage gap ~20-30%) - brain drain to Australia common",
+      "Policy volatility (NZ immigration policy changes frequently with government changes - Labour vs. National)",
+      "Geographic isolation (12+ hour flight to major markets)",
+      "Housing crisis (especially Auckland - rent/house prices high relative to salaries)"
+    ],
+    "bangladeshiAdvantage": "No country quota; English-speaking; points system transparent; family-friendly; easier than Australia for settlement (lower points threshold, less competitive); NZ citizenship allows living/working in Australia visa-free (Trans-Tasman agreement - massive advantage)"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Partner of a Worker visa (spouse of post-study work visa holder)",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse receives open work visa (same duration as primary) - can work for any employer. Major advantage.",
+    "childrenAllowed": true,
+    "childEducationRights": "Dependent children can attend primary/secondary school (fees may apply for temporary residents - NZD 10,000-15,000/year typically; free after residence visa)"
+  },
+  "financialRequirements": {
+    "minimumSalary": "No minimum for post-study work visa; Skilled Migrant Residence Visa requires job offer at median wage or above (NZD 31.61/hour = ~NZD 65,700/year as of 2026) for points",
+    "proofOfFunds": "NZD 4,200 for living costs (or job offer/NZ bank account showing funds)",
+    "healthInsurance": "Not mandatory but recommended; public healthcare limited for temporary work visa holders"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "Secure skilled job (ANZSCO 1-3) in Auckland/Wellington during post-study work visa; work 12 months to earn NZ work experience points; accumulate 160+ points (NZ qualification + NZ work experience + age + job offer); apply Skilled Migrant Residence Visa; after residence, consider trans-Tasman move to Australia for higher salary (NZ citizens can live/work Australia freely) OR stay for citizenship → Australia mobility",
+    "planB": "If points insufficient: (1) pursue higher qualification (Master's → PhD adds points), (2) regional NZ work (some regions offer bonus points), (3) Accredited Employer Work Visa (employer-sponsored), (4) trans-Tasman mobility to Australia after NZ citizenship (5 years)",
+    "timing": "Secure job by Month 6 of post-study work visa; accumulate 12 months NZ work experience; apply SMC residence visa; monitor Immigration New Zealand policy changes (frequent)"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Small Bangladeshi community in Auckland (~5,000-7,000); mosques (Ponsonby Mosque, Ranui Islamic Centre), grocery stores, restaurants; Wellington/Christchurch very small communities; can be isolating outside Auckland",
+    "employerFriendliness": "Tech sector (Xero, Atlassian Auckland office, Trade Me, Datacom, banks - ANZ, ASB) hire internationals; smaller market than Australia; English-speaking culture advantage; Kiwi work culture relaxed, work-life balance",
+    "practicalTips": [
+      "Auckland rent expensive - NZD 1,800-3,000/month (€1,080-1,800); Wellington cheaper NZD 1,500-2,500; Christchurch cheaper still",
+      "Salary levels: expect NZD 60,000-90,000 entry-level tech (€36,000-54,000) - lower than Australia/US but cost of living also lower outside Auckland",
+      "Trans-Tasman advantage: NZ citizenship → automatic right to live/work Australia (major long-term benefit) - use NZ as easier pathway to Australia if Australian PR too competitive",
+      "Small market: network aggressively via LinkedIn, Meetup, Kiwi tech events; personal referrals critical",
+      "IRD number (tax ID) - get immediately upon arrival for work",
+      "Earthquake risk (Christchurch, Wellington) - understand and prepare",
+      "Join Bangladesh Association of New Zealand (BANZ) - Auckland-based, community events",
+      "Consider regional NZ (Hamilton, Tauranga, Dunedin) if Auckland too expensive - bonus SMC points for regional work"
+    ],
+    "recentPolicyChanges2025_2026": "New Zealand National-led coalition government (2023-2026) tightened immigration policy (reduced residence approvals, increased English requirements, raised salary thresholds for Accredited Employer Work Visa). However Skilled Migrant Category maintained - NZ needs skilled workers (aging population, labor shortages acute). Post-study work visa duration unchanged. Monitor Immigration New Zealand closely - policy changes common with government turnover."
+  },
+  "overallRating": "Strong post-study work rights (2-3 years for Master's/PhD), open work permit, spouse work rights, clear PR pathway via Skilled Migrant Category, English-speaking, family-friendly, Trans-Tasman advantage (NZ citizenship → Australia access). Challenges: small job market, moderate salaries, geographic isolation, housing crisis in Auckland, policy volatility. Excellent choice for students prioritizing quality of life, English environment, and using NZ as pathway to Australia long-term. Moderate choice for maximum salary/career acceleration (Australia/US better).",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "Japan",
+  "countryCode": "JP",
+  "visaName": "Job-Hunting Visa (Designated Activities - job search after graduation)",
+  "visaDuration": "12 months (6 months initially, renewable once for 6 months)",
+  "score": 70,
+  "scoreConfidence": 75,
+  "scoreEvidence": "Japan offers 12-month job search period for graduates of Japanese universities. World-class technology (AI, robotics, automotive), political stability, safety, aging population creating future opportunities. Pathway: job search → Engineer/Specialist in Humanities/International Services visa → PR (10 years, faster with points) → citizenship (5 years, very difficult - language N1, cultural integration). Major challenges: Japanese language CRITICAL (JLPT N2 minimum for most jobs, N1 for integration), difficult work culture, PR timeline long, citizenship requires near-native language/cultural assimilation, limited cultural diversity.",
+  "eligibilityRequirements": [
+    "Graduated from Japanese university (Bachelor's or higher)",
+    "Applied within designated period after graduation",
+    "Financial support demonstrated (savings or sponsor)",
+    "Continued job search activities (must demonstrate effort)",
+    "Japanese language proficiency (JLPT N2 recommended, N3 minimum for visa though N2+ needed for jobs)"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "28 hours per week maximum during job search visa (part-time only)",
+    "employerRestrictions": "Part-time work only during job search period; full-time after work visa obtained",
+    "selfEmploymentAllowed": false,
+    "unemploymentLimit": "Must demonstrate ongoing job search activities; failure to find job within 12 months requires departure",
+    "geographicRestrictions": "None within Japan"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Apply before student visa expires (timing varies)",
+    "processingTimeWeeks": "2-4 weeks (Japanese immigration relatively efficient)",
+    "costJPY": "4,000 JPY (~€25 EUR)",
+    "difficulty": "Moderate - requires university recommendation letter, proof of job search activities, financial documentation"
+  },
+  "extensionPossibilities": {
+    "canExtend": true,
+    "maxTotalDuration": "12 months total (6 months initial + 6 months extension one time)",
+    "extensionNotes": "Can extend once for additional 6 months. Must transition to work visa (Engineer/Specialist in Humanities/International Services) after job secured."
+  },
+  "transitionToPR": {
+    "viabilityScore": 65,
+    "typicalPathway": "Job search visa → Work visa (Engineer/Specialist in Humanities/International Services, 1-5 year validity, renewable) → 10 years continuous residence (or 5 years if 70+ points in Highly Skilled Professional points system) + stable income + Japanese language proficiency (N2 minimum, N1 preferred) + tax compliance → Permanent Residence (PR) → Citizenship (5 additional years + Japanese language N1 + cultural integration + renounce previous citizenship)",
+    "averageTimelineYears": "10-15 years for PR (5-7 if HSP points system); 15-20 years for citizenship",
+    "majorRisks": [
+      "Japanese language CRITICAL - JLPT N2 absolute minimum for professional jobs, N1 for management/PR/citizenship; very difficult language for Bengali speakers",
+      "Work culture challenging (long hours, hierarchy, limited work-life balance in many companies - though improving)",
+      "PR timeline very long (10 years standard, 5 years Highly Skilled Professional)",
+      "Citizenship extremely difficult (requires near-native Japanese language N1, cultural assimilation, interview process examining integration, must renounce Bangladeshi passport)",
+      "Limited cultural diversity (Japan 98% ethnically homogeneous) - social integration challenging",
+      "Aging society advantages (labor shortages) offset by conservative immigration culture"
+    ],
+    "bangladeshiAdvantage": "Japan desperate for young workers (aging crisis - 28% of population 65+, labor shortage 6.3 million by 2030); tech sector values STEM skills; once settled, excellent stability/safety; Highly Skilled Professional points system favors advanced degrees + youth; emerging openness to immigration (slowly changing from historically closed society)"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Dependent visa (after work visa secured, not during job search visa)",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse on dependent visa can work part-time (28 hours/week maximum) with Permission to Engage in Activity Other than Permitted (work permit add-on). Not during primary's job search visa phase.",
+    "childrenAllowed": true,
+    "childEducationRights": "Free public K-12 education (Japanese language instruction; international schools expensive ¥2-3M/year = €12,500-18,800)"
+  },
+  "financialRequirements": {
+    "minimumSalary": "No minimum for job search visa; work visa requires salary commensurate with Japanese workers (typically ¥3.5-5M/year entry = €21,900-31,300 for STEM)",
+    "proofOfFunds": "¥200,000-300,000 minimum recommended (~€1,250-1,880) for job search period",
+    "healthInsurance": "National Health Insurance mandatory after residence registration (¥2,000-5,000/month = €12-31; excellent coverage)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "PRIORITY 1: Achieve JLPT N2 BEFORE graduation (critical for job hunting). Target Japanese tech giants (Sony AI, Toyota AI, NTT Data, Rakuten, Line, Mercari, Preferred Networks) OR foreign companies in Japan (Google Tokyo, Amazon Japan, Microsoft Japan - English-friendly but Japanese still important). Accumulate points for Highly Skilled Professional (70+ points = 5-year PR track instead of 10). Focus: Tokyo (60% of opportunities), Osaka, Nagoya (automotive AI). Use job search visa full 12 months if needed. Network via university career center (extremely important in Japanese job market - shūkatsu system).",
+    "planB": "If Japanese job market difficult: (1) target foreign companies with Japan offices (English-friendly), (2) leverage Japanese degree to relocate to Singapore/Hong Kong (Japanese language + English valued), (3) consider staying for PhD if Master's (extends stay, deeper language learning), (4) pivot to Southeast Asia with Japan experience (valued in Vietnam, Thailand, Indonesia tech markets)",
+    "timing": "Start job search 12-18 months before graduation (Japanese hiring via shūkatsu system starts early); secure JLPT N2 by final year; apply job search visa before student visa expires; transition to work visa upon job offer"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Very small Bangladeshi community in Japan (~20,000 total, mostly Tokyo); mosques limited (Tokyo Camii, Otsuka Mosque); halal food increasingly available but limited; significant cultural isolation - Japanese society homogeneous; limited English outside major cities",
+    "employerFriendliness": "Japanese companies (Sony, Toyota, Hitachi, NTT, Panasonic, Rakuten, Line, Softbank) increasingly hiring foreign STEM talent (demographic necessity) but expect Japanese language requirement (N2 minimum) and cultural adaptation (hierarchy, work hours, business etiquette); Foreign companies in Japan (Google, Amazon, Microsoft, Oracle Japan) more English-friendly but still expect Japanese for client-facing roles",
+    "practicalTips": [
+      "JAPANESE LANGUAGE CRITICAL - invest 2-3 years achieving JLPT N2 minimum (N1 for long-term success); without N2, job options extremely limited",
+      "Tokyo rent: ¥70,000-150,000/month (€440-940) - cheaper than Western capitals but small apartments; Osaka/Nagoya cheaper",
+      "Work culture: expect long hours (though improving - government pushing work-life balance reforms); ringi system (consensus decision-making) slow; hierarchy strict; after-work socializing (nomikai) important for integration",
+      "Shūkatsu system: Japanese job hunting highly structured (mass recruiting, simultaneous applications, group interviews) - understand system via university career center",
+      "My Number Card (マイナンバーカード) - get immediately for residence, banking, taxes",
+      "Network: Japanese job market relationship-based - university career center, professor introductions, company seminars critical",
+      "Permanent residence: pursue Highly Skilled Professional (HSP) points (advanced degree + high salary + age under 30 = good chance for 70+ points = 5-year PR track)",
+      "Cultural integration: learn business etiquette (meishi exchange, keigo language, bowing), join company clubs (部活 - bukatsu), embrace Japanese culture deeply for long-term success"
+    ],
+    "recentPolicyChanges2025_2026": "Japan gradually opening to immigration (demographic crisis forcing change). Highly Skilled Professional points system expanded 2024-2026. 'Specified Skilled Worker' visa introduced for shortage occupations (though targeted at lower-skilled - not relevant for graduates). Government announced target of attracting 400,000+ high-skilled foreign workers by 2030. Tokyo Metropolitan Government launched startup visa programs. However: citizenship remains extremely difficult (language N1, cultural assimilation), society remains conservative. Positive trajectory but slow change."
+  },
+  "overallRating": "World-class technology, safety, stability, aging population creating future opportunities, Highly Skilled Professional points system viable for ambitious graduates. MAJOR challenges: Japanese language CRITICAL (JLPT N2 minimum, N1 for integration), difficult work culture (improving but still demanding), very long PR timeline (10 years standard, 5 HSP), citizenship extremely difficult, cultural integration challenging (homogeneous society). ONLY suitable for students deeply committed to learning Japanese language and culture (2-3 year investment minimum) and comfortable with long-term uncertainty. NOT suitable for those seeking quick PR or English-only career. Best as long-term bet on Japan's AI future if you can master language and culture.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "South Korea",
+  "countryCode": "KR",
+  "visaName": "D-10 Job Seeking Visa (Job Search after graduation)",
+  "visaDuration": "6-24 months (varies: points-based system for duration - higher qualifications = longer duration; Master's/PhD from Korean university can get up to 24 months)",
+  "score": 72,
+  "scoreConfidence": 77,
+  "scoreEvidence": "South Korea offers 6-24 month job search visa (duration points-based). Rapidly growing AI/tech ecosystem (Samsung AI, LG AI, Naver, Kakao, Seoul AI hub), high salaries, advanced infrastructure. Pathway: job search → E-7 (Designated Activities - professional work visa) → F-2 (points-based long-term residence) → F-5 (permanent residence, 5 years) → citizenship (5 years, extremely difficult - Korean fluency, cultural assimilation). Challenges: Korean language ESSENTIAL (TOPIK 4+ for most jobs, TOPIK 6 for government), competitive job market, long working hours, PR/citizenship very difficult for non-ethnic Koreans, aging population slowly opening immigration.",
+  "eligibilityRequirements": [
+    "Graduated from Korean university (Bachelor's or higher) OR foreign university (recognized)",
+    "Points threshold met (scored on: education level, Korean language ability, age, previous experience) - higher points = longer job search duration (6-24 months)",
+    "Proof of financial means",
+    "Health insurance",
+    "Clean criminal record"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "Can work part-time during job search period (details vary)",
+    "employerRestrictions": "Must secure professional job (E-7 visa eligible occupation) to transition",
+    "selfEmploymentAllowed": false,
+    "unemploymentLimit": "6-24 months depending on points score; must transition to work visa or depart",
+    "geographicRestrictions": "None within South Korea"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Apply within designated period after graduation",
+    "processingTimeWeeks": "2-4 weeks (Korean immigration relatively efficient)",
+    "costKRW": "~100,000-200,000 KRW (~€70-140 EUR)",
+    "difficulty": "Moderate - points-based system; requires documentation of qualifications, language ability, financial means"
+  },
+  "extensionPossibilities": {
+    "canExtend": true,
+    "maxTotalDuration": "6-24 months total depending on points (can extend within maximum)",
+    "extensionNotes": "Must transition to E-7 (professional work visa) after securing qualifying job. E-7 renewable. Can transition to F-2 (points-based residence) after 3-5 years → F-5 (PR) after meeting requirements."
+  },
+  "transitionToPR": {
+    "viabilityScore": 68,
+    "typicalPathway": "D-10 job search → E-7 professional work visa → F-2 points-based residence visa (after 3-5 years E-7 + points threshold: salary + Korean language + age + education) → F-5 permanent residence (after 5 years total + Korean language TOPIK 5+ + income threshold) → Citizenship (after 5 additional years + Korean language TOPIK 6 + cultural assimilation + renounce previous citizenship)",
+    "averageTimelineYears": "10-15 years for PR; 15-20 years for citizenship (very difficult for non-ethnic Koreans)",
+    "majorRisks": [
+      "Korean language CRITICAL - TOPIK 4 minimum for professional jobs, TOPIK 5-6 for PR/citizenship; extremely difficult language",
+      "F-2 points system competitive (must score high: salary KRW 40M+/year = €27,500+, Korean language TOPIK 4+, age under 35 ideal, advanced degree)",
+      "F-5 PR difficult (strict income requirements, Korean language TOPIK 5, 5 years continuous residence)",
+      "Citizenship extremely difficult (TOPIK 6 = near-native Korean, cultural assimilation interview, must renounce Bangladeshi passport, historically favors ethnic Koreans - gyopo)",
+      "Work culture INTENSE (longest working hours in OECD - improving but still demanding; hierarchical culture; age-based seniority)",
+      "Social integration challenging (Korean society relatively homogeneous, though Seoul internationalized)"
+    ],
+    "bangladeshiAdvantage": "Korea desperate for young workers (aging crisis - lowest birthrate globally 0.7 in 2024, labor shortage acute); STEM skills valued; tech sector booming (AI investment massive - Samsung, LG, Naver, Kakao); once F-5 secured, excellent stability; Muslim community small but growing; halal food improving in Seoul"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "F-3 (dependent) after work visa secured",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse on F-3 can apply for work permit (limited types of work allowed; professional roles difficult without separate E-7). Not during D-10 job search phase.",
+    "childrenAllowed": true,
+    "childEducationRights": "Free public K-12 (Korean language instruction; extremely competitive education system; international schools expensive ₩20-40M/year = €13,700-27,500)"
+  },
+  "financialRequirements": {
+    "minimumSalary": "No minimum for D-10; E-7 work visa requires professional-level salary (typically KRW 30-40M/year minimum = €20,600-27,500); F-2 points system requires KRW 40M+/year for sufficient points",
+    "proofOfFunds": "Varies by visa duration; typically KRW 10-20M (~€6,850-13,700) for job search period",
+    "healthInsurance": "National Health Insurance mandatory after alien registration (excellent coverage, affordable ₩100,000-150,000/month = €68-103)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "PRIORITY 1: Achieve TOPIK 4+ BEFORE/DURING studies (critical for job market and F-2 points). Target Korean tech giants (Samsung AI Research, LG AI Research, Naver AI, Kakao Brain, SK Telecom AI) OR global companies in Korea (Google Korea, Amazon Korea, Microsoft Korea). Accumulate F-2 points: advanced degree + Korean language TOPIK 4-5 + age under 35 + salary KRW 40M+. Seoul dominates (80%+ opportunities). Use D-10 full duration if needed. Transition E-7 → F-2 (3-5 years) → F-5 (5 years). Network via university career center, Korean language exchange, company recruiting events.",
+    "planB": "If Korean job market difficult: (1) leverage Korean language skills in Japan/China (valued), (2) target foreign companies with Seoul offices (English-friendlier but Korean still expected), (3) consider staying for PhD (extends stay, deeper Korean language), (4) pivot to Southeast Asia with Korean degree (Samsung/LG presence in Vietnam, Indonesia values Korean credentials)",
+    "timing": "Start job search 12 months before graduation; secure TOPIK 4 by final year; apply D-10 before graduation; transition to E-7 upon job offer; accumulate points for F-2"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Small Bangladeshi community in South Korea (~20,000-25,000, mostly Seoul/Gyeonggi); mosques limited (Seoul Central Masjid Itaewon, Ansan mosque); halal food improving in Seoul (Itaewon, Gangnam); can be isolating outside Seoul; Korean Muslim community small but supportive",
+    "employerFriendliness": "Korean companies (Samsung, LG, Hyundai, SK, Naver, Kakao) increasingly hiring foreign STEM talent (demographic necessity) but expect Korean language TOPIK 4+ and cultural adaptation (hierarchy, work hours, team culture); Foreign companies in Korea (Google, Amazon, Coupang) more English-friendly but Korean language still important for advancement",
+    "practicalTips": [
+      "KOREAN LANGUAGE CRITICAL - invest 2-3 years achieving TOPIK 4 minimum (TOPIK 5-6 for F-5 PR); without TOPIK 4, job options extremely limited",
+      "Seoul rent: ₩500,000-1,500,000/month (€343-1,030) - key money system (jeonse/wolse) complex; Gyeonggi province cheaper; Busan cheaper than Seoul",
+      "Work culture: expect long hours (though government pushing 52-hour maximum work week); hierarchy strict (age-based seniority - hoesik after-work drinking culture important); fast-paced environment",
+      "Alien Registration Card (ARC) - get within 90 days of arrival; needed for banking, phone, everything",
+      "Job market: Korean job sites (Saramin, JobKorea, Wanted) + LinkedIn; networking via university career center, alumni; company recruiting events (공채 - gongchae mass recruitment)",
+      "F-2 points strategy: maximize education (PhD adds points), Korean language (TOPIK 5-6 max points), salary (negotiate well), age (apply young)",
+      "Banking: get Korean bank account with ARC; mobile payment (Kakao Pay, Naver Pay) ubiquitous",
+      "Network: Korean society relationship-based - join university clubs, Korean language exchange, professional associations; social integration effort required"
+    ],
+    "recentPolicyChanges2025_2026": "South Korea rapidly opening to immigration (demographic catastrophe - birthrate 0.7 in 2024, lowest globally). Government announced plans to attract 1M+ foreign workers by 2030. D-10 job search visa introduced/expanded 2020s. F-2 points system reformed to favor high-skilled workers (language, salary, education). Seoul government offering foreign talent incentives (housing subsidies, startup support). However: citizenship remains extremely difficult (TOPIK 6, cultural assimilation), society still conservative on immigration. Positive trajectory but cultural barriers remain."
+  },
+  "overallRating": "Rapidly growing AI/tech ecosystem, high salaries, advanced infrastructure, aging population creating desperate need for young workers, F-2 points system viable for high achievers. MAJOR challenges: Korean language CRITICAL (TOPIK 4 minimum, TOPIK 5-6 for PR), intense work culture (though improving), PR/citizenship very difficult (10-15 years, language near-native), social integration challenging. ONLY suitable for students deeply committed to learning Korean language and culture (2-3 year investment minimum) and comfortable with hierarchical work culture. NOT suitable for quick PR or English-only career. Best as long-term bet on Korea's AI future (Samsung AI, Naver, Kakao Brain leading globally) if you can master language and cultural adaptation.",
+  "lastUpdated": "2026-06-01"
+},{
+  "country": "Singapore",
+  "countryCode": "SG",
+  "visaName": "Long-Term Visit Pass (LTVP) for job search OR direct Employment Pass (EP) application",
+  "visaDuration": "No formal post-study work visa; can apply for LTVP (6-12 months) for job search OR apply Employment Pass directly upon job offer",
+  "score": 68,
+  "scoreConfidence": 73,
+  "scoreEvidence": "Singapore does NOT have automatic post-study work rights like Canada/Australia. Graduates must either: (1) secure job offer and apply for Employment Pass (EP) directly (salary threshold SGD 5,000/month = €3,400 for fresh graduates in 2026), OR (2) apply for Long-Term Visit Pass for job search (6-12 months, discretionary approval). Strong tech job market (Google APAC, Meta Singapore, Grab, Sea, GoTo, ByteDance), excellent salaries, but PR extremely competitive (limited quota, favor Singaporean priorities). Pathway: EP → PR (2-6 years, highly competitive, <5% approval rate) → Citizenship (10+ years, very difficult). Major challenges: no guaranteed post-study work period, high EP salary threshold, PR quota extremely tight, expensive cost of living.",
+  "eligibilityRequirements": [
+    "For LTVP job search: Graduated from Singapore university OR top-tier foreign university; approval discretionary; proof of funds; typically 6-12 months granted",
+    "For Employment Pass: Job offer with minimum salary (SGD 5,000/month for fresh graduates 2026 = €3,400; SGD 5,500 if age 45+); recognized qualifications; acceptable employer"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "LTVP: part-time work may be allowed (case-by-case); Employment Pass: no limit (full-time employment)",
+    "employerRestrictions": "Employment Pass tied to specific employer; must apply for new EP if changing jobs (within 1 month grace period)",
+    "selfEmploymentAllowed": false,
+    "unemploymentLimit": "LTVP: 6-12 months to secure job; Employment Pass: if lose job, 1-month grace period to find new employer and transfer EP or must leave Singapore",
+    "geographicRestrictions": "None within Singapore (city-state)"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "LTVP: can apply after graduation; EP: apply after securing job offer (employer typically applies on behalf)",
+    "processingTimeWeeks": "LTVP: 4-8 weeks; Employment Pass: 3-8 weeks (depends on employer, candidate profile, quota considerations)",
+    "costSGD": "LTVP: ~SGD 60; EP: SGD 105 application fee + SGD 225 issuance fee (employer typically pays)",
+    "difficulty": "High - EP salary threshold rising annually (SGD 5,000 for fresh grads 2026, increases with age); LTVP discretionary; COMPASS framework (2023+) adds points assessment (salary, qualifications, diversity) - competitive"
+  },
+  "extensionPossibilities": {
+    "canExtend": true,
+    "maxTotalDuration": "LTVP: 6-12 months (may extend once, discretionary); Employment Pass: renewable every 2 years as long as employed and meet salary threshold (increases with age/tenure - SGD 5,500 at 45+, SGD 6,200 at 50+)",
+    "extensionNotes": "EP renewable indefinitely if employment continues and salary thresholds met. COMPASS framework (2023+) requires employers to meet diversity quota or pay higher levy - affects renewal."
+  },
+  "transitionToPR": {
+    "viabilityScore": 58,
+    "typicalPathway": "Employment Pass → 2-6 years work in Singapore → Apply for PR (highly competitive, <5% approval rate for non-Malaysians) → If granted, PR status → Citizenship (after 10+ years PR + National Service for male children + renounce previous citizenship + Singaporean integration)",
+    "averageTimelineYears": "10-15 years for PR (highly uncertain - many never get PR); 20+ years for citizenship (extremely difficult)",
+    "majorRisks": [
+      "NO automatic post-study work - must secure job immediately or apply discretionary LTVP",
+      "EP salary threshold high and rising (SGD 5,000/month = €3,400 fresh grad 2026; increases annually with inflation and age)",
+      "COMPASS framework (2023+) adds points assessment (salary, qualifications, nationality diversity) - competitive pressure",
+      "PR extremely difficult (<5% approval for non-Malaysians; quota limited; opaque criteria - favor Singaporean strategic priorities: marriage to Singaporean, high net worth, critical skills, PRC/Indian nationals favored for geopolitical balance)",
+      "Job loss = EP cancellation (1 month to find new job or leave Singapore) - precarious",
+      "Cost of living extreme (Singapore top-5 globally - housing, car, education)",
+      "Citizenship requires renouncing Bangladeshi passport, male children must serve National Service (2 years military), extremely difficult approval (citizenship rate <1% of PR applications)"
+    ],
+    "bangladeshiAdvantage": "VERY LIMITED. Singapore PR/citizenship not designed as immigration pathway - city-state prioritizes temporary workforce, not permanent settlement. Advantages: excellent career acceleration (3-5 years Singapore experience valued globally), high salary (SGD 60,000-120,000/year = €41,000-82,000 entry for STEM), tax-efficient (income tax 0-11% for SGD 60,000-120,000 income), English-speaking, strategic location (Asia hub). Treat as temporary career booster, NOT settlement destination."
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Dependant's Pass (DP) if EP holder earns SGD 6,000+/month (2026 threshold); Long-Term Visit Pass (LTVP) if married to EP holder",
+    "spouseCanWork": "Conditional - Dependant's Pass (DP) holder can work IF obtains Letter of Consent (LOC) from MOM; LTVP holder must apply separate work pass (difficult); effectively spouse work challenging unless EP salary high (SGD 12,000+/month for easier LOC approval)",
+    "spouseWorkNotes": "Spouse work rights LIMITED - DP requires LOC (discretionary approval, easier if EP holder high salary SGD 12,000+); many spouses cannot work, creating financial pressure. Major limitation vs. Canada/Australia/Germany.",
+    "childrenAllowed": true,
+    "childEducationRights": "Can attend school - public schools limited (citizen priority), international schools expensive (SGD 30,000-50,000/year = €20,500-34,200); dependent children on Student's Pass or DP"
+  },
+  "financialRequirements": {
+    "minimumSalary": "Employment Pass: SGD 5,000/month for fresh graduates (€3,400), SGD 5,500 at 45+, SGD 6,200 at 50+; increases annually; COMPASS framework requires competitive salary relative to local PMET (Professionals, Managers, Executives, Technicians)",
+    "proofOfFunds": "LTVP: proof of sufficient funds for job search period (typically SGD 10,000+ recommended)",
+    "healthInsurance": "Not mandatory but recommended; employer typically provides insurance; public healthcare (subsidized for citizens/PR, expensive for foreigners - 3D/4D wards unsubsidized)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "Secure job offer BEFORE graduation (critical - no automatic post-study work). Target MNCs (Google Singapore, Meta, Microsoft, Amazon AWS APAC, Sea Group, Grab, Shopify Singapore, ByteDance Singapore) OR Singapore unicorns (Sea, Grab, GoTo, Lazada) for SGD 6,000-10,000/month (€4,100-6,850) to meet EP threshold + family sponsorship. Work 3-5 years, save aggressively (low tax), accumulate global experience, apply PR (but don't count on it - <5% approval). Strategic: use Singapore as Asia career hub (3-5 years) → relocate to Canada/Australia for PR OR leverage Singapore experience for senior roles in US/Europe. NOT a settlement destination - treat as career accelerator.",
+    "planB": "If EP threshold difficult to meet OR PR rejected (likely): (1) use Singapore experience to relocate to Australia (Singapore work experience valued, points for Australian skilled migration), (2) Canada Express Entry with Singapore work experience (CRS points), (3) UK/Europe with Singapore credentials (attractive on resume), (4) regional SEA (Singapore experience premium in Malaysia, Indonesia, Vietnam, Thailand)",
+    "timing": "Start job search 6-12 months before graduation; network aggressively (Singapore job market relationship-driven); secure offer before graduation to avoid LTVP discretion; apply EP immediately upon job offer; DO NOT plan family relocation until EP stable and salary SGD 8,000+ (for dependent sponsorship + spouse work via LOC)"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Small Bangladeshi community in Singapore (~60,000 total, mostly blue-collar workers in construction/services); limited professional network; mosques available (Sultan Mosque, Abdul Gafoor Mosque, Jamae Mosque); halal food ubiquitous; can be isolating for young professionals (limited Bangladeshi tech community vs. large Indian/Chinese/Malaysian presence)",
+    "employerFriendliness": "MNCs (Google, Meta, Amazon, Microsoft, Salesforce, Oracle, SAP Singapore) hire internationally and familiar with EP process; Singapore companies (DBS, OCBC, UOB banks, Sea, Grab, Shopify) increasingly hiring foreign tech talent but COMPASS framework pressure to hire locals; expect competitive job market (Singapore, Malaysia, India, China, Philippines, Vietnam talent competing for same roles)",
+    "practicalTips": [
+      "CRITICAL: Secure job BEFORE graduation - no automatic post-study work like Canada/Australia; job offer = EP pathway",
+      "Salary negotiation: target SGD 6,000-7,000/month minimum (€4,100-4,800) to clear EP threshold comfortably + allow family sponsorship later",
+      "Cost of living EXTREME - HDB rental SGD 2,000-3,500/month (€1,370-2,400), condo SGD 3,000-6,000; hawker food cheap SGD 5-10/meal but Western food expensive; budget SGD 3,000-4,000/month (€2,050-2,740) minimum",
+      "Network: Singapore job market relationship-driven - LinkedIn active, career fairs, university alumni, industry meetups (SG Tech, TechInAsia events); referrals critical",
+      "PR reality: DO NOT COUNT ON PR - <5% approval, opaque criteria, favor Singaporeans/strategic priorities; treat Singapore as temporary (3-7 years max) career stepping stone",
+      "Tax advantage: income tax low (0% up to SGD 20,000, ~11% on SGD 80,000 = €54,700) - save aggressively for future relocation to PR-friendly country",
+      "CPF: employer contributes to Central Provident Fund (retirement) - foreigners can withdraw upon leaving Singapore permanently (advantage vs. some countries)",
+      "Education: if bringing children later, budget SGD 30,000-50,000/year (€20,500-34,200) for international school - public schools limited for non-citizens",
+      "Job loss risk: EP cancelled if unemployed - 1 month to find new job or must leave - save 6+ months emergency fund"
+    ],
+    "recentPolicyChanges2025_2026": "Singapore introduced COMPASS framework (Complementarity Assessment Framework) September 2023, fully implemented 2024-2026. Major change: employers assessed on diversity (C1 criterion - compare foreign vs. local hires by salary) and skill level (C2 criterion - qualifications, salary relative to peers). EP salary thresholds increased (SGD 5,000 fresh grad 2026 up from SGD 4,500 in 2023). Fair Consideration Framework (FCF) requires advertising jobs to Singaporeans before hiring foreigners. RESULT: tighter EP approvals, more scrutiny, favor local hiring. Government balancing talent attraction vs. citizen employment pressure (2024-2026 economic slowdown increased unemployment, political pressure on immigration). Tech sector STILL needs talent but approvals more selective. Monitor MOM (Ministry of Manpower) closely."
+  },
+  "overallRating": "Excellent for short-term career acceleration (3-5 years): high salary, low tax, English-speaking, global MNC exposure, Asia hub, safe/efficient city. POOR for long-term settlement: no automatic post-study work, high EP threshold, PR extremely difficult (<5% approval, opaque, quota-limited), citizenship nearly impossible, expensive cost of living, spouse work limited, job loss = deportation risk. Strategic use: Singapore for 3-5 years → relocate to Canada/Australia/Germany for PR OR leverage experience for senior roles in US/UK/Europe. NOT a settlement destination for Bangladeshi graduates - treat as resume booster and savings opportunity (low tax) before moving to PR-friendly country. Only pursue if short-term oriented OR exceptional talent who can command SGD 15,000+/month (€10,250+) for better PR odds.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "China",
+  "countryCode": "CN",
+  "visaName": "Work Permit (Work Permit Category A/B) - no formal post-study work visa; direct work permit application after graduation",
+  "visaDuration": "No dedicated post-study work visa; must secure job offer and apply for Work Permit + Work-type Residence Permit (typically 1-2 years initially, renewable)",
+  "score": 62,
+  "scoreConfidence": 68,
+  "scoreEvidence": "China does NOT offer post-study work visa for foreign graduates. Must secure job offer immediately after graduation and employer applies for Work Permit (Category A for high-talent, Category B for professional) + Work Residence Permit. Booming AI ecosystem (Beijing AI hub - Baidu, ByteDance, Tencent AI, Alibaba DAMO, SenseTime, Megvii), government AI investment massive ($150B+ national plan), high demand for STEM talent. Pathway: Work Permit → 5 years continuous work → Permanent Residence (very difficult, <10,000 granted total historically, easing slightly 2024-2026) OR long-term residence permits. Major challenges: no post-study buffer, traditional PR nearly impossible (quota tiny, favor strategic priorities), authoritarian governance, Great Firewall, language barrier (Mandarin critical), geopolitical risks (US-China tensions, Bangladesh-India-China dynamics).",
+  "eligibilityRequirements": [
+    "Bachelor's degree minimum (Master's/PhD preferred for Category A)",
+    "Job offer from Chinese employer (employer must be registered and eligible to sponsor foreigners)",
+    "2+ years work experience (waived for fresh graduates from Chinese universities in some cities - Beijing, Shanghai allow fresh grad Work Permits with Chinese Master's/PhD)",
+    "Age: typically 18-60 (varies)",
+    "No criminal record",
+    "Physical examination (required for residence permit)"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "No limit",
+    "employerRestrictions": "Work Permit tied to specific employer; must apply for new permit if changing jobs (employer-initiated process)",
+    "selfEmploymentAllowed": false,
+    "unemploymentLimit": "If lose job, residence permit may be cancelled; must find new employer and transfer work permit or leave China (grace period limited - typically 30 days)",
+    "geographicRestrictions": "Work Permit typically tied to specific city/province (Beijing permit ≠ Shanghai permit; must reapply if relocating)"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Must secure job offer; employer applies for Work Permit Notification Letter → candidate applies for Z visa (work visa) at Chinese embassy abroad → enter China → convert to Work Residence Permit within 30 days",
+    "processingTimeWeeks": "6-12 weeks total (Work Permit Notification 2-4 weeks, Z visa 1-2 weeks, Residence Permit 2-4 weeks); varies by city (Shanghai/Beijing faster, smaller cities slower)",
+    "costCNY": "~2,000-5,000 CNY (~€250-625 EUR) total (Work Permit application, Z visa, Residence Permit, medical examination); employer often covers",
+    "difficulty": "Moderate-to-High - bureaucratic process; employer must be registered sponsor; points system for Work Permit Category (education, salary, Chinese university degree, age, Chinese language, work experience); fresh graduates from foreign universities may not meet experience requirement (2 years) unless waived; documentation heavy (notarized/authenticated degree certificates, background check)"
+  },
+  "extensionPossibilities": {
+    "canExtend": true,
+    "maxTotalDuration": "Work Residence Permit renewable annually or biannually (1-2 year validity) as long as employed; no maximum duration; can hold indefinitely if continuously employed",
+    "extensionNotes": "Renewable indefinitely. After 5 years continuous legal residence + high income/tax contribution + Chinese language proficiency, can apply for Permanent Residence (extremely difficult - approval rate <1%, ~10,000 total PR holders in China as of 2024 out of ~1M+ foreign workers) OR newer long-term residence permits (5-10 year validity, renewable, no settlement rights but long-term stay allowed)"
+  },
+  "transitionToPR": {
+    "viabilityScore": 48,
+    "typicalPathway": "Work Permit + Work Residence Permit → 5+ years continuous legal residence + high income/tax contribution (typically ¥600,000+/year = €77,000+) + Chinese language (HSK 5 recommended) + stable employment → Apply for Permanent Residence Permit (绿卡 lǜkǎ 'green card') → IF approved (extremely rare - <1% approval, ~10,000 total holders historically) → long-term settlement rights BUT citizenship nearly impossible for non-ethnic Chinese",
+    "averageTimelineYears": "10-20 years for PR (extremely uncertain - most never get PR); citizenship essentially unavailable (China does not grant citizenship to non-ethnic Chinese except extremely rare exceptional cases - marriage to Chinese citizen for 5+ years or extraordinary contribution)",
+    "majorRisks": [
+      "NO post-study work visa - must secure job immediately (0 buffer period unlike Canada 3 years, Australia 2-4 years)",
+      "Traditional PR (Permanent Residence 绿卡) nearly impossible (<1% approval rate, ~10,000 total holders in 2024 out of 600,000+ long-term foreign residents, favor high-net-worth, strategic talent, ethnic Chinese returnees)",
+      "Citizenship unavailable (China does not naturalize non-ethnic Chinese except marriage or extraordinary contribution - realistic chance <0.01%)",
+      "Authoritarian governance (CCP control, censorship, surveillance, political risk)",
+      "Great Firewall (Google, Facebook, WhatsApp, Western internet blocked - VPN required, legality gray area)",
+      "Geopolitical risk (US-China tensions, tech decoupling, Bangladesh-China-India dynamics, potential sanctions/restrictions)",
+      "Language barrier (Mandarin essential for daily life and integration; English limited outside tier-1 cities)",
+      "Work Permit tied to employer (job loss = potential deportation; limited grace period)",
+      "Pollution (Beijing, Shanghai air quality poor - improving but still concerning)",
+      "Cultural integration challenging (collectivist culture, Communist Party pervasive, different legal system, human rights concerns)"
+    ],
+    "bangladeshiAdvantage": "China-Bangladesh strategic partnership (Belt and Road Initiative, infrastructure projects, favorable diplomatic relations); Chinese universities increasingly recognize Bangladeshi degrees; AI/tech sector desperate for talent (demographic decline looming, 2025+ workforce shrinking); IF you can master Chinese language + navigate system, long-term opportunities (5-10 year residence permits easing, salary potential high ¥400,000-800,000/year = €51,000-103,000 senior roles); newer 'long-term residence' permits (2023+) offer 5-10 year validity without traditional PR difficulty - viable long-term stay option even if citizenship impossible"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "S1 visa (dependent of Work Permit holder) → Residence Permit for Family Reunion",
+    "spouseCanWork": false,
+    "spouseWorkNotes": "Spouse on S1 dependent visa CANNOT work. Must obtain own Work Permit (requires job offer, employer sponsorship, meets Work Permit criteria independently) - challenging. Major limitation vs. Canada/Germany.",
+    "childrenAllowed": true,
+    "childEducationRights": "Can attend international schools (expensive - ¥150,000-300,000/year = €19,300-38,600); public schools (Chinese language, local curriculum, challenging for foreign children, some cities allow with fees); Chinese education system highly competitive (gaokao exam pressure)"
+  },
+  "financialRequirements": {
+    "minimumSalary": "Work Permit Category A (high-talent): no strict minimum but typically ¥300,000+/year (€38,600+); Category B (professional): varies by city (Beijing/Shanghai ¥200,000-300,000/year = €25,700-38,600 minimum; tier-2 cities lower); must meet local salary threshold for foreigner employment",
+    "proofOfFunds": "Not required for Work Permit but must demonstrate stable employment/income",
+    "healthInsurance": "Social insurance mandatory (employer contributes; covers basic healthcare); many foreigners supplement with private international health insurance (Chinese public healthcare variable quality)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "IF pursuing China: (1) Master Mandarin Chinese (HSK 5-6 critical for career advancement and integration), (2) Target tier-1 cities (Beijing AI hub - Baidu, ByteDance, Megvii, SenseTime; Shenzhen - Tencent, Huawei, DJI; Hangzhou - Alibaba DAMO; Shanghai - finance + tech), (3) Aim for Category A Work Permit (higher salary ¥400,000+, easier renewal, path to long-term permits), (4) Understand this is NOT citizenship pathway - plan 5-10 year career stint, save aggressively, then relocate to PR-friendly country (Canada/Australia) OR stay long-term on renewable residence permits without settlement. Strategic: use China for AI career (world-class companies, massive investment, cutting-edge research) → leverage experience for global opportunities.",
+    "planB": "If China work permit difficult OR geopolitical concerns: (1) leverage Chinese university degree for Southeast Asia (Singapore, Malaysia value Chinese education), (2) target Chinese companies overseas (ByteDance international, Alibaba Cloud global, Huawei global), (3) use Mandarin skills + China experience for Hong Kong/Taiwan (easier settlement), (4) pivot to Canada/Australia with Chinese work experience (valuable for Asia-focused roles)",
+    "timing": "Secure job offer BEFORE graduation (critical - no post-study work buffer); start Mandarin learning from Day 1 of studies (HSK 5 minimum for career success); network via university career centers (Tsinghua, Peking University, Fudan, SJTU have strong employer connections); apply Work Permit immediately upon job offer; understand long-term strategy (5-10 year stay vs. indefinite - plan accordingly given PR/citizenship limitations)"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Very small Bangladeshi community in China (~5,000-8,000 total, concentrated in Beijing, Shanghai, Guangzhou - many students, traders); mosques limited (Niujie Mosque Beijing, Huxi Mosque Shanghai, Guangzhou mosques serving traders); halal food available (Hui Muslim Chinese restaurants, Bangladeshi restaurants in Beijing/Guangzhou); expect significant cultural isolation outside Bangladeshi student circles",
+    "employerFriendliness": "Chinese AI/tech giants (Baidu, ByteDance, Tencent, Alibaba, Huawei, SenseTime, Megvii, DJI) actively hiring foreign AI talent (government AI national plan priority); MNCs in China (Microsoft Research Asia, Google Beijing - closed 2010 but residual presence, IBM China) hire but limited; Chinese companies expect Mandarin proficiency (HSK 5+) even for technical roles; work culture: long hours (996 culture - 9am-9pm, 6 days/week in tech, officially illegal but common), hierarchical, fast-paced",
+    "practicalTips": [
+      "MANDARIN CRITICAL - HSK 5 minimum for professional work, HSK 6 for management; without Chinese language, career ceiling low; invest 2-3 years intensive study",
+      "Beijing/Shanghai rent: ¥4,000-10,000/month (€515-1,285) - affordable compared to Singapore/London but rising; Shenzhen expensive; tier-2 cities (Hangzhou, Chengdu, Nanjing, Wuhan) much cheaper ¥2,000-5,000",
+      "VPN essential (Great Firewall blocks Google, Gmail, WhatsApp, Facebook, Western news) - legal gray area; use discreetly; ExpressVPN, Astrill popular (¥500-1,000/year = €64-128)",
+      "Pollution: Beijing/Shanghai air quality poor (AQI >150 common in winter) - invest in air purifiers, masks; tier-2 cities better; southern cities (Shenzhen, Guangzhou) better climate",
+      "Banking: get Chinese bank account (Bank of China, ICBC, China Construction Bank) - Alipay, WeChat Pay essential (cashless society); foreigners can open with passport + residence permit",
+      "Social integration: learn Chinese culture, etiquette (gift-giving, business card exchange, hierarchical respect); join expat communities (Beijing Expat, Shanghai Expat groups) + Chinese professional networks",
+      "Geopolitical awareness: understand US-China tensions (tech export controls, sanctions risk); monitor Bangladesh-China-India dynamics; have exit strategy if geopolitical situation deteriorates",
+      "Healthcare: tier-1 city international hospitals expensive but good (Beijing United Family, Shanghai United Family); public hospitals cheap but language barrier + quality variable; get comprehensive international health insurance",
+      "PR reality: DO NOT COUNT ON TRADITIONAL PR - <1% approval, nearly impossible; newer long-term residence permits (5-10 year validity) more viable but no settlement/citizenship rights; plan 5-10 year stint, save (cost of living low relative to salary ¥400,000 = €51,000 goes far), then relocate for PR elsewhere",
+      "Networking: use LinkedIn (blocked - need VPN) + Chinese platforms (WeChat essential, Maimai for professional networking); university alumni networks (Tsinghua, PKU, Fudan extremely valuable); guanxi (relationships) critical in Chinese society"
+    ],
+    "recentPolicyChanges2025_2026": "China introduced tiered Work Permit system (Category A/B/C) 2017, refined 2020s. Category A (high-talent) favors PhD, high salary, Chinese university graduates. Fresh graduate exception expanded (Beijing, Shanghai, Shenzhen allow Work Permit for Chinese university Master's/PhD without 2-year experience requirement - positive for graduates). Permanent Residence reform 2020 eased requirements slightly (5 years residence + high tax contribution vs. previous 10+ years) but approval still <1%. NEW: Long-term residence permits introduced 2023-2024 (5-10 year validity, renewable, for high-skilled foreigners) - NOT traditional PR but allows long-term stay without annual renewal hassle - viable alternative. Geopolitical: US-China tech decoupling accelerating (export controls on AI chips, talent restrictions); China courting non-Western talent (Bangladesh, ASEAN, Africa, Latin America) to fill gap - opportunity for Bangladeshi graduates. Monitor carefully."
+  },
+  "overallRating": "Excellent for short-to-medium term AI career acceleration (5-10 years): world-class AI companies (Baidu, ByteDance, Tencent leading globally in LLM, computer vision, robotics), massive government investment ($150B+ AI plan), cutting-edge research, competitive salaries (¥400,000-800,000 = €51,000-103,000 senior), low cost of living relative to salary (high savings potential). MAJOR limitations: NO post-study work visa (must secure job immediately), traditional PR nearly impossible (<1% approval), citizenship unavailable for non-ethnic Chinese, authoritarian governance (censorship, surveillance, political risk), geopolitical tensions (US-China, potential sanctions), Great Firewall (internet restrictions), pollution, Mandarin language barrier (HSK 5+ essential). Strategic use: China for 5-10 years AI career (ByteDance, Baidu, Tencent resume gold for global AI roles) + savings (low living costs) → relocate to Canada/Australia for PR OR stay long-term on renewable residence permits (5-10 year permits viable as of 2024-2026) if comfortable with authoritarian system. NOT a settlement/citizenship destination - treat as career opportunity in world's #2 AI powerhouse. ONLY suitable for students: (1) deeply committed to Mandarin (2-3 years HSK 5-6), (2) comfortable with authoritarian governance, (3) short-to-medium term oriented (5-10 years) OR willing to stay indefinitely on renewable permits without citizenship aspiration. Geopolitical risk requires monitoring (US-China tensions, potential sanctions on AI sector, Bangladesh-India-China dynamics).",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "France",
+  "countryCode": "FR",
+  "visaName": "APS - Autorisation Provisoire de Séjour (Temporary Residence Authorization for job search)",
+  "visaDuration": "12 months (24 months for PhD graduates from French institutions)",
+  "score": 78,
+  "scoreConfidence": 82,
+  "scoreEvidence": "France offers 12-month post-study work visa (APS) for Master's graduates, 24 months for PhDs from French universities. Strong AI ecosystem (Paris AI hub - Mistral AI, Hugging Face, Meta AI Paris, Google DeepMind Paris, Station F), government AI investment (€1.5B+ national strategy), English + French bilingual advantage. Pathway: APS → Passeport Talent (work permit for skilled workers) OR Salarié (employee permit) → 5 years legal residence + French language B1 + integration → Permanent residence (Carte de résident 10 years) → Citizenship (5 years as resident + French B2 + cultural integration + renounce previous citizenship). Advantages: strong research, EU access, quality of life, 24-month PhD APS. Challenges: French language critical for daily life and PR (B1 minimum, B2 for citizenship), bureaucracy, moderate salaries vs. US/Switzerland, competitive job market (French nationals prioritized).",
+  "eligibilityRequirements": [
+    "Master's degree or higher from French institution recognized by State",
+    "Apply within 4 months of degree completion (after student visa expires or before)",
+    "Proof of financial means (no strict amount but ability to support self)",
+    "Valid student visa at application OR within 4 months of expiration"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "No limit - full-time work allowed",
+    "employerRestrictions": "None - can work for any employer during APS period",
+    "selfEmploymentAllowed": true,
+    "unemploymentLimit": "12 months (24 months PhD) to secure job qualifying for work permit transition",
+    "geographicRestrictions": "None within France (but job market concentrated in Paris - 60%+ opportunities; Lyon, Toulouse, Grenoble smaller hubs)"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Apply within 4 months of degree completion",
+    "processingTimeWeeks": "4-12 weeks (varies by prefecture - Paris slower, provincial prefectures faster); apply at local prefecture (immigration office)",
+    "costEUR": "~225 EUR (residence permit tax)",
+    "difficulty": "Moderate - French bureaucracy (documentation requirements strict: degree certificate, proof of finances, proof of address, passport); prefecture appointments scarce (especially Paris); process entirely in French"
+  },
+  "extensionPossibilities": {
+    "canExtend": false,
+    "maxTotalDuration": "12 months for Master's (non-renewable); 24 months for PhD (non-renewable)",
+    "extensionNotes": "Cannot extend APS. Must transition to work permit: Passeport Talent (multi-year, for qualified workers, salary threshold €53,836.50+ for 2026 OR if job matches Master's/PhD field) OR Salarié (employee permit, requires labor market test - employer must prove no French/EU candidate available). Passeport Talent preferred (no labor market test, multi-year validity)."
+  },
+  "transitionToPR": {
+    "viabilityScore": 76,
+    "typicalPathway": "APS → Passeport Talent (if salary €53,836+/year OR highly qualified job matching degree) OR Salarié permit → 5 years continuous legal residence + French language B1 (TCF/DELF/DALF certificate) + integration (Contrat d'Intégration Républicaine - CIR) + stable income → Carte de résident (10-year renewable residence permit = PR equivalent) → Citizenship (5 years as carte de résident holder + French B2 + civic knowledge + renounce Bangladeshi passport)",
+    "averageTimelineYears": "10 years for citizenship (5 years for PR-equivalent carte de résident)",
+    "majorRisks": [
+      "French language CRITICAL - B1 minimum for carte de résident (PR), B2 for citizenship; difficult language for Bengali speakers (gendered nouns, conjugations, pronunciation); daily life challenging without French even in Paris",
+      "Passeport Talent salary threshold (€53,836+/year = €4,486/month gross for 2026) - high for entry-level; without this, must use Salarié permit (labor market test - employer must justify hiring foreigner over French/EU)",
+      "Job market: French employers prioritize French/EU nationals; labor code protects workers (difficult firing) making employers cautious with foreign hires; language expectations even for 'English' roles",
+      "Bureaucracy (préfecture appointments scarce, documentation requirements heavy, processes slow)",
+      "Citizenship requires renouncing Bangladeshi passport (France generally does not allow dual citizenship except EU/Francophone countries + limited exceptions)",
+      "Integration requirements (CIR - Contrat d'Intégration Républicaine mandatory: civic training, French language courses, values training)"
+    ],
+    "bangladeshiAdvantage": "France-Bangladesh diplomatic relations positive; French degrees globally recognized (Sorbonne, École Polytechnique, CentraleSupélec prestigious); Paris international city (easier cultural integration than provincial France); AI ecosystem world-class (Mistral AI, Hugging Face, INRIA, Meta AI Paris); EU mobility after 5 years (carte de résident 10 years allows EU travel); no country-specific quota"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Vie Privée et Familiale (private and family life permit) after work permit secured (not during APS)",
+    "spouseCanWork": true,
+    "spouseWorkNotes": "Spouse receives residence permit with work authorization (Vie Privée et Familiale allows full work rights) after family reunification granted; typically requires primary to have stable work permit (Passeport Talent or Salarié) and sufficient income (SMIC minimum wage × family size); not during APS phase",
+    "childrenAllowed": true,
+    "childEducationRights": "Free public K-12 education (French language); mandatory schooling from age 3; excellent quality (French education system rigorous); international schools expensive (€10,000-25,000/year)"
+  },
+  "financialRequirements": {
+    "minimumSalary": "No minimum for APS; Passeport Talent requires €53,836+/year (€4,486/month gross) OR highly qualified job matching Master's/PhD (then lower salary accepted); Salarié permit requires SMIC minimum wage minimum (€1,766/month gross 2026 = €21,200/year) but must pass labor market test",
+    "proofOfFunds": "No strict requirement for APS but must demonstrate ability to support self during job search",
+    "healthInsurance": "Students typically have student health insurance during APS transition; after work permit, French social security (Sécurité Sociale - excellent coverage, ~€50-100/month contribution for basic; mutuelle supplementary ~€50-150/month)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "Learn French to B1 MINIMUM during studies (critical for job market + PR) - B2 ideal. Target Paris (Mistral AI, Hugging Face, Meta AI Paris, Google DeepMind Paris, Thales, BNP Paribas, Société Générale, Capgemini, Atos) OR tech hubs (Lyon, Toulouse aerospace/AI, Grenoble tech). Aim for €45,000-60,000 salary (€3,750-5,000/month) to meet/exceed Passeport Talent threshold. Use full 12-month APS (24 months if PhD) strategically. Transition to Passeport Talent (multi-year, easier renewal). Accumulate 5 years residence → carte de résident (10-year permit = PR equivalent) → citizenship after 5 more years. Network via Station F (startup campus), French Tech ecosystem, university career services (grandes écoles especially - École Polytechnique, CentraleSupélec, Télécom Paris have strong employer pipelines).",
+    "planB": "If French job market difficult: (1) leverage French degree for Francophone countries (Luxembourg higher salaries, Belgium, Switzerland French cantons, Canada Quebec - French language advantage), (2) EU Blue Card in Germany/Netherlands with French degree, (3) target French MNCs with global presence (Capgemini, Atos, Thales, Airbus, TotalEnergies - international mobility), (4) stay for PhD if Master's (24-month APS, deeper French language, research funding)",
+    "timing": "Secure job by Month 9 of APS (12 months) to allow work permit processing; apply Passeport Talent or Salarié immediately upon job offer; prioritize French language learning from Day 1 (free integration courses - CIR - after work permit; private courses during APS)"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "Small-to-moderate Bangladeshi community in Paris (~15,000-20,000 total, concentrated in Paris 18th/19th arrondissements); mosques (Grande Mosquée de Paris, Mosquée Addawa Paris); halal food available (Paris 18th/19th, La Chapelle area); Bangladeshi restaurants, groceries; community associations (Association Franco-Bangladaise); Lyon, Toulouse smaller communities; provincial France limited Bangladeshi presence",
+    "employerFriendliness": "French companies (Mistral AI, Thales, Airbus, Capgemini, Atos, BNP Paribas, Société Générale) increasingly hire international talent (labor shortage in tech/engineering) but expect French language proficiency (B1+ even for technical roles, B2 for client-facing); MNCs in France (Microsoft France, Oracle France, SAP France) more English-friendly but French still important for advancement; startup ecosystem (Station F, Paris startups) more international but competitive",
+    "practicalTips": [
+      "FRENCH LANGUAGE PRIORITY - B1 minimum for career success, B2 for long-term integration; without French, job options limited to MNCs (Google, Microsoft, international startups) and career ceiling low; invest 1-2 years intensive French (Alliance Française, university courses, language exchanges)",
+      "Paris rent EXPENSIVE - €800-1,500/month for studio/1-bed (cheaper in banlieue - suburbs like Saint-Denis, Montreuil; expensive in central Paris); Lyon €600-1,000; Toulouse €500-900; colocation (house share) common for cost savings",
+      "Salary expectations: €40,000-55,000 entry-level STEM (€3,333-4,583/month gross); €55,000-75,000 mid-level; lower than Germany/UK but cost of living also lower outside Paris; high taxes (income tax + social charges ~25-35% total)",
+      "Bureaucracy: préfecture appointments SCARCE (especially Paris - book months in advance via online portal); bring ALL documents (originals + copies + translations); processes slow (residence permit renewals can take months); patience essential",
+      "Social integration: French culture values language (speaking French = respect); dining culture (long lunches, dinner 8-9pm); café culture; work-life balance better than US/UK (35-hour work week legal, 5+ weeks vacation); August vacation (Paris empties)",
+      "Network: LinkedIn active + French platforms (Welcome to the Jungle for jobs, Meetup for tech events); university alumni networks (grandes écoles - X, CentraleSupélec, Télécom Paris - strong networks); attend French Tech events, Station F programs",
+      "Healthcare: excellent public system (Sécurité Sociale covers 70%, mutuelle supplementary covers rest); Carte Vitale (health card) - get after work permit + social security registration",
+      "Transport: Paris public transport excellent (Métro, RER, bus) - Navigo pass €86/month unlimited; TGV high-speed rail for national travel; car not needed in cities",
+      "EU advantage: Paris = gateway to EU (Eurostar to London 2h15, Amsterdam 3h20, Brussels 1h25); explore EU easily; carte de résident (after 5 years) allows EU-wide travel"
+    ],
+    "recentPolicyChanges2025_2026": "France extended APS to 24 months for PhDs (previously 12 months) - positive change. Passeport Talent scheme expanded 2020s (multi-year permits for qualified workers, startups, researchers). Salary threshold for Passeport Talent indexed annually (€53,836 for 2026, up from €52,000 in 2024). Integration requirements strengthened (CIR mandatory, French language B1 for carte de résident, B2 for citizenship). Immigration law debates 2023-2024 (center-right government tightening some aspects) but skilled worker pathway intact - business lobby supports tech talent attraction. Macron personally champions AI (France AI Strategy 2018, France 2030 plan) - political commitment to attracting AI talent remains strong as of June 2026. Monitor Ministère de l'Intérieur (interior ministry) and OFII (immigration office) for policy changes."
+  },
+  "overallRating": "Strong post-study work rights (12 months Master's, 24 months PhD), world-class AI research (Mistral AI, Hugging Face, INRIA, grandes écoles), quality of life (work-life balance, culture, cuisine, healthcare), EU access, clear PR pathway (5 years → carte de résident). Challenges: French language CRITICAL (B1 minimum, B2 for full integration), bureaucracy (préfecture appointments, slow processing), moderate salaries vs. US/Switzerland/UK, competitive job market (French prioritized), must renounce Bangladeshi citizenship for French citizenship. Excellent choice for students willing to invest in French language (1-2 years intensive study) and embrace French culture long-term. NOT ideal for English-only careers or quick PR (5 years minimum). Best for: (1) PhD students (24-month APS advantage), (2) Francophiles committed to French language/culture, (3) those valuing quality of life over maximum salary, (4) EU access priority. Moderate choice overall - better than Finland/Sweden for job market, not as good as Germany for STEM opportunities or Canada for immigration ease.",
+  "lastUpdated": "2026-06-01"
+},
+{
+  "country": "United Arab Emirates",
+  "countryCode": "AE",
+  "visaName": "No formal post-study work visa; Job Seeker Visa (6 months, multi-entry) OR direct Employment Visa application",
+  "visaDuration": "Job Seeker Visa: 6 months multi-entry (renewable once) OR direct Employment Visa (2-3 years, renewable) after job offer",
+  "score": 64,
+  "scoreConfidence": 70,
+  "scoreEvidence": "UAE offers 6-month Job Seeker Visa (introduced 2022, renewable once = 12 months max) for recent graduates OR graduates can apply Employment Visa directly upon job offer. Strong AI ecosystem (Abu Dhabi - G42, Technology Innovation Institute/Falcon LLM, MBZUAI; Dubai - tech hub), zero income tax (huge advantage), high salaries, English-speaking work environment. However: NO pathway to traditional PR or citizenship for non-Emiratis (Golden Visa offers 5-10 year renewable residence but NOT permanent/citizenship), transactional labor model (visa tied to employment - job loss = deportation), cultural restrictions, geopolitical volatility (Middle East tensions). Strategic use: UAE for 3-7 years career acceleration + savings (tax-free) → relocate to PR-friendly country (Canada/Australia). NOT a settlement destination.",
+  "eligibilityRequirements": [
+    "Job Seeker Visa: Bachelor's degree or higher from UAE university OR top-ranked international university (QS/THE rankings); valid for 6 months multi-entry, renewable once; UAE Dirham 10,000+ in bank account OR financial guarantee",
+    "Employment Visa: Job offer from UAE employer; Bachelor's degree minimum (attested/authenticated); employer sponsors visa; medical examination required"
+  ],
+  "workRestrictions": {
+    "hoursPerWeek": "Job Seeker Visa: cannot work (can attend interviews, networking only); Employment Visa: no limit (full-time work)",
+    "employerRestrictions": "Employment Visa tied to specific employer (sponsor); cannot work for other employer; must cancel and transfer visa if changing jobs (employer-initiated, new employer must sponsor)",
+    "selfEmploymentAllowed": "Only with separate business license/freelance permit (expensive, requires Emirates ID, fee ~AED 15,000+ = €3,800+)",
+    "unemploymentLimit": "Job Seeker Visa: 6 months (renewable once = 12 months max); Employment Visa: if lose job, 30-day grace period to find new sponsor or must leave UAE (visa cancelled by employer upon termination)",
+    "geographicRestrictions": "None within UAE (Dubai, Abu Dhabi, Sharjah, other emirates)"
+  },
+  "applicationProcess": {
+    "timingBeforeGraduation": "Job Seeker Visa: apply after graduation; Employment Visa: apply after securing job offer (employer applies on behalf)",
+    "processingTimeWeeks": "Job Seeker Visa: 1-2 weeks (online application); Employment Visa: 2-4 weeks (employer-initiated: Emirates ID, medical, visa stamping)",
+    "costAED": "Job Seeker Visa: ~AED 1,200-2,000; Employment Visa: ~AED 5,000-10,000 total (visa, Emirates ID, medical, stamping - employer typically covers)",
+    "difficulty": "Easy-to-Moderate - UAE immigration relatively streamlined; online systems (ICP portal); Job Seeker Visa straightforward if eligible; Employment Visa employer-initiated (simple for employee but depends on employer compliance)"
+  },
+  "extensionPossibilities": {
+    "canExtend": true,
+    "maxTotalDuration": "Job Seeker Visa: 6 months + 6 months renewal = 12 months max; Employment Visa: renewable every 2-3 years as long as employed (indefinitely); Golden Visa (10 years) available for high-skilled (PhD, specialists, investors, entrepreneurs) - renewable but NOT citizenship pathway",
+    "extensionNotes": "Employment Visa renewable indefinitely if continuously employed. Golden Visa (5-year or 10-year) introduced 2019, expanded 2022-2024: available for PhD holders, high-skilled professionals, investors (AED 2M property/business), entrepreneurs, outstanding students. Golden Visa advantages: longer validity (5-10 years), not tied to employer (can change jobs freely), can sponsor family, renewable - BUT still NOT permanent residence or citizenship (no voting rights, no passport, can be revoked if unemployed >6 months or security concerns)."
+  },
+  "transitionToPR": {
+    "viabilityScore": 35,
+    "typicalPathway": "Employment Visa → 3-10+ years work → Golden Visa (10-year renewable residence if PhD/investor/high-skilled) → Indefinite renewals BUT NO pathway to traditional PR or citizenship for non-Emiratis (Emirati citizenship only for: birth to Emirati parent, marriage to Emirati for 10+ years with children + Arabic fluency + Muslim + renounce previous citizenship, OR exceptional contribution to UAE - extremely rare, <100 granted historically, favor Arabs/Muslims)",
+    "averageTimelineYears": "N/A - Citizenship unavailable for 99.9% of expatriates; Golden Visa offers long-term residence (10 years renewable) but NOT permanent residence (can still be revoked)",
+    "majorRisks": [
+      "NO pathway to traditional PR or citizenship - UAE does not grant permanent residence or naturalization to non-Emiratis except extremely rare cases (marriage, exceptional contribution - effectively unavailable)",
+      "Employment Visa tied to employer - job loss = 30-day grace period then deportation (extremely precarious)",
+      "Golden Visa NOT permanent residence - renewable but can be revoked (unemployment >6 months, security concerns, policy changes); does NOT lead to citizenship",
+      "Cultural/legal restrictions (Islamic law influences legal system; alcohol restricted; public affection illegal; LGBTQ+ illegal; censorship; political activism forbidden; blasphemy laws)",
+      "Geopolitical volatility (Middle East tensions - Iran, Yemen, Israel-Palestine; regional conflicts; oil price dependency; climate risk - extreme heat increasing)",
+      "No labor protections (employment law favors employers; limited worker rights; wage theft common in some sectors; kafala system vestiges remain despite reforms)",
+      "Climate crisis (extreme heat - 50°C summers, increasing; water scarcity; long-term habitability concerns)",
+      "Demographic reality (90%+ population expatriates with no citizenship path - transactional labor model, not immigration country)"
+    ],
+    "bangladeshiAdvantage": "INCOME MAXIMIZATION ONLY - zero income tax = massive savings potential (save 50-70% of salary if disciplined vs. 20-30% in high-tax countries); MBZUAI (world's first AI university) fully funded opportunities; strong Bangladesh-UAE ties (700,000+ Bangladeshi diaspora, remittance corridor, familiar culture/halal/Islamic environment); English sufficient for work (Arabic useful but not required in most tech roles); treat as 3-7 year wealth accumulation phase then relocate to PR-friendly country with savings ($100,000-300,000+ accumulated tax-free)"
+  },
+  "dependentRights": {
+    "spouseCanAccompany": true,
+    "spouseVisaType": "Dependent visa (sponsored by primary if salary AED 4,000+/month = €980+; some emirates require AED 6,000-10,000+ for family sponsorship)",
+    "spouseCanWork": false,
+    "spouseWorkNotes": "Spouse on dependent visa CANNOT work unless obtains own Employment Visa (requires own job offer + employer sponsorship - separate process, challenging). Alternative: spouse can get freelance permit (expensive, ~AED 15,000 = €3,800) for self-employment. Major limitation vs. Canada/Germany/Australia.",
+    "childrenAllowed": true,
+    "childEducationRights": "No free public education for expatriates; international schools mandatory (expensive - AED 40,000-90,000/year = €9,800-22,000 per child); British curriculum, American curriculum, IB common; high quality but very expensive"
+  },
+  "financialRequirements": {
+    "minimumSalary": "Job Seeker Visa: no minimum (but need AED 10,000+ bank balance = €2,450+); Employment Visa: no strict minimum but typically AED 4,000-5,000/month (€980-1,225) for entry roles; family sponsorship requires AED 4,000-10,000+/month depending on emirate",
+    "proofOfFunds": "Job Seeker Visa: AED 10,000+ in bank account OR financial guarantee",
+    "healthInsurance": "Mandatory health insurance for Employment Visa (employer provides basic; comprehensive coverage ~AED 500-1,500/month = €122-368 for family if self-paid)"
+  },
+  "strategicConsiderations": {
+    "optimalStrategy": "UAE = SHORT-TERM WEALTH ACCUMULATION STRATEGY ONLY (3-7 years max), NOT settlement destination. Target: (1) MBZUAI research roles (fully funded PhD, competitive post-doc salaries AED 30,000-40,000/month = €7,350-9,800 tax-free), (2) G42/TII AI roles (AED 25,000-50,000/month = €6,125-12,250), (3) MNCs (Microsoft UAE, Amazon AWS Middle East, Google Cloud UAE - AED 20,000-40,000/month = €4,900-9,800), (4) Dubai tech startups (Careem, Noon - AED 15,000-30,000). Live frugally (share accommodation AED 2,000-4,000/month = €490-980), save 50-70% of salary, accumulate $100,000-300,000+ over 3-7 years TAX-FREE. Then: relocate to Canada/Australia/Germany for PR with capital + UAE work experience (valued globally, especially for Middle East/Asia roles). DO NOT bring family initially (expensive schooling, spouse cannot work, high cost). Pursue Golden Visa if PhD/high-skilled for 10-year residence flexibility (not tied to employer) but understand it's NOT PR/citizenship.",
+    "planB": "If UAE job market difficult OR after wealth accumulation phase: (1) Canada Express Entry with UAE work experience + savings for settlement funds, (2) Australia skilled migration with UAE experience, (3) UK/Europe with UAE credentials (attractive for Middle East business development roles), (4) Singapore with UAE experience (Middle East exposure valued), (5) leverage UAE network for GCC mobility (Saudi Arabia Vision 2030, Qatar, Kuwait - similar models but even less settlement opportunity)",
+    "timing": "Job Seeker Visa: use full 12 months (6+6 renewal) if needed; network aggressively (Dubai career fairs, LinkedIn, MBZUAI connections); secure offer → Employment Visa; Employment phase: target 3-5 year wealth accumulation, save aggressively, then relocate for PR; Golden Visa: pursue if PhD or high-skilled (10-year residence flexibility useful for long-term UAE stay without employer dependency)"
+  },
+  "bangladeshiStudentNotes": {
+    "communitySupport": "VERY LARGE Bangladeshi community (~700,000 in UAE, largest diaspora after Saudi Arabia); concentrated in Dubai (Deira, Bur Dubai, International City), Abu Dhabi, Sharjah; extensive infrastructure: mosques (every area), halal food (ubiquitous), Bangladeshi restaurants, groceries, cultural associations, Bangladesh consulates (Dubai, Abu Dhabi); cricket leagues, cultural events (Pohela Boishakh, Eid); remittance corridor well-established; mostly blue-collar workers but growing professional class; strong community support BUT also wage hierarchy (Western expats paid more than South Asians for same roles - discrimination common)",
+    "employerFriendliness": "MNCs (Microsoft, Amazon, Google, Oracle UAE) hire internationals; competitive salaries AED 15,000-40,000/month (€3,675-9,800) tax-free; G42, TII (Falcon LLM team) actively recruiting global AI talent; MBZUAI fully funded programs (excellent stipends); Dubai startups (Careem, Noon, Fetchr) hire but salaries lower AED 12,000-25,000 (€2,940-6,125); expect nationality-based wage discrimination (Westerners often paid 20-50% more for same role vs. South Asians - reality of UAE labor market); English sufficient for tech roles (Arabic useful for advancement but not critical)",
+    "practicalTips": [
+      "FINANCIAL DISCIPLINE CRITICAL - zero income tax = massive savings opportunity IF disciplined; many expats overspend (lifestyle inflation, luxury cars, expensive apartments) and save nothing; live frugally: shared accommodation AED 2,000-4,000 vs. luxury 1-bed AED 6,000-12,000; cook at home vs. dining out; avoid car lease (use Metro in Dubai, public transport in Abu Dhabi); TARGET: save 50-70% of salary for 3-5 years = $100,000-300,000+ accumulated; THEN relocate to PR country with capital",
+      "Dubai rent: AED 3,000-8,000/month (€735-1,960) for studio/1-bed; shared accommodation AED 1,500-3,000; Abu Dhabi slightly cheaper; Sharjah cheapest AED 1,500-3,000 for 1-bed",
+      "Salary negotiation: research market rates; Westerners often quoted higher - negotiate firmly; typical STEM: AED 15,000-25,000 entry (€3,675-6,125), AED 25,000-50,000 senior (€6,125-12,250) tax-free; ALL-IN package: base salary + housing allowance + transport + flights + health insurance",
+      "Cost of living: groceries moderate (Carrefour, Lulu hypermarket); dining expensive (AED 50-150/meal = €12-37); transport: Dubai Metro affordable (AED 300/month pass = €73), car expensive (lease AED 2,000-4,000/month + petrol + insurance + parking); entertainment expensive (alcohol AED 40-80/drink in hotels only = €10-20)",
+      "Golden Visa: if PhD or high-skilled, pursue 10-year Golden Visa (frees from employer dependency, can change jobs freely, sponsor family independently) - application ~AED 3,000-5,000 (€735-1,225); requires proof of qualifications (attested degree, salary letter, etc.)",
+      "Banking: easy to open account (Emirates NBD, ADCB, Mashreq); get salary account; investment options (USD savings accounts, global stock trading, real estate - but real estate ties up capital); wire transfer home (remittance) easy (Exchange houses like UAE Exchange, Western Union; banks also offer)",
+      "Cultural adaptation: Islamic country (no pork, alcohol only in licensed venues/hotels, dress modestly especially outside expat areas, Ramadan fasting hours respect required); conservative social norms (public affection illegal, LGBTQ+ illegal, blasphemy laws - be discreet); political activism forbidden (no criticism of rulers, government); censorship (VPN useful - legal for personal use); Friday-Saturday weekend (work Sunday-Thursday)",
+      "Networking: Dubai career fairs, LinkedIn extremely active, STEP Conference, GITEX Tech, Expand North Star (startup event); expat communities (Meetup groups, internations.org); Bangladeshi professional associations",
+      "Heat: summer (May-September) extreme 40-50°C (104-122°F) - AC everywhere, outdoor activities limited; winter (November-March) pleasant 20-30°C (68-86°F)",
+      "Exit strategy: DO NOT get comfortable - UAE is transactional, NOT home; save aggressively for 3-7 years, then relocate to PR country (Canada/Australia/Germany) with capital + experience; if staying longer, pursue Golden Visa for flexibility but understand NO citizenship pathway"
+    ],
+    "recentPolicyChanges2025_2026": "UAE introduced Job Seeker Visa 2022 (6 months, renewable) - positive for graduates. Golden Visa expanded 2019-2024 (now includes PhD holders, high-skilled professionals, investors, entrepreneurs, outstanding students - 5-year or 10-year validity). Retirement visa (5-year) introduced for over-55s. Employment law reforms 2022-2024 (end of some kafala system elements - workers can change jobs more easily, unemployment insurance introduced). However: NO movement toward permanent residence or citizenship for expatriates - UAE demographic model remains transactional (bring talent, extract labor, no settlement rights). Climate: extreme heat increasing (50°C+ days common 2024-2026 summers) - long-term habitability concerns. Geopolitical: Israel-UAE normalization 2020 (Abraham Accords) increased Western business presence; Iran tensions ongoing; Yemen conflict proximity. Monitor closely."
+  },
+  "overallRating": "EXCELLENT for short-term wealth accumulation (3-7 years): zero income tax = save 50-70% of salary (vs. 20-30% in high-tax countries) = $100,000-300,000+ accumulated; high STEM salaries (AED 180,000-600,000/year = €44,000-147,000 tax-free); strong AI ecosystem (MBZUAI, G42, TII Falcon LLM world-class); English-speaking work environment; large Bangladeshi community (700,000+, support infrastructure); halal/Islamic cultural familiarity. POOR for settlement: NO PR or citizenship pathway (Golden Visa renewable but NOT permanent, can be revoked, no citizenship); employment visa tied to employer (job loss = deportation in 30 days); spouse cannot work (unless own visa); children's education expensive (AED 40,000-90,000/year = €9,800-22,000 per child); cultural/legal restrictions (Islamic law, censorship, political activism forbidden); geopolitical volatility (Middle East tensions); climate crisis (extreme heat 50°C+, long-term habitability concerns). STRATEGIC USE: UAE for 3-7 years → accumulate $100,000-300,000+ tax-free savings + world-class AI experience (G42, MBZUAI, TII resume gold) → relocate to Canada/Australia/Germany for PR with capital + strong credentials. ONLY suitable for: (1) wealth maximization orientation (willing to sacrifice settlement for savings), (2) single or willing to delay family (spouse work restrictions, education costs), (3) comfortable with authoritarian governance + cultural restrictions, (4) treat as stepping stone NOT destination. NOT suitable for those prioritizing family settlement, citizenship, political freedom, or long-term home. Use UAE as career accelerator + wealth accumulation vehicle, then relocate for permanent life.",
+  "lastUpdated": "2026-06-01"
+}
+  ]
+}

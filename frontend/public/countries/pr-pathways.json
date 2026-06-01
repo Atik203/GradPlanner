@@ -1,0 +1,683 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Permanent Residency pathways analysis for Bangladeshi CS/AI/ML graduates",
+    "targetProfile": "Bangladeshi student, STEM graduate, age 22-30, no previous immigration issues"
+  },
+  "prPathways": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "pathways": [
+        {
+          "pathwayName": "Express Entry - Canadian Experience Class (CEC)",
+          "difficulty": "Moderate-High",
+          "estimatedYears": 2.5,
+          "description": "After 1 year of skilled work experience in Canada (NOC TEER 0-3) with valid work authorization, apply via Express Entry CEC draw.",
+          "languageRequired": "IELTS CLB 7+ (approximately IELTS 6.0-6.5)",
+          "jobRequired": true,
+          "minimumWorkExperience": "1 year in NOC TEER 0-3 occupation",
+          "pointsBased": true,
+          "currentCRSRange": "480-520 for CEC-specific draws (2024-2026)",
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "processingTime": "6 months after ITA",
+          "costEstimate": 1500,
+          "costCurrency": "CAD",
+          "successRateForProfile": "Moderate - CRS score must be competitive",
+          "strengths": ["No job offer required if CRS high enough", "Fastest route from graduation", "Family included"],
+          "weaknesses": ["Increasing CRS competition", "Changing rules under political pressure"],
+          "strategicAdvice": "Complete 2+ year program for PGWP eligibility. Target occupations in NOC 21-23 cluster (CS, AI, ML all qualify). Aim for CRS 490+. Consider French language training for FSW French category draws (CRS as low as 370)."
+        },
+        {
+          "pathwayName": "Express Entry - Federal Skilled Worker (FSW)",
+          "difficulty": "High",
+          "estimatedYears": 3,
+          "description": "For those with Canadian job offer or very high CRS. Can apply from outside Canada.",
+          "languageRequired": "IELTS CLB 7+",
+          "jobRequired": false,
+          "pointsBased": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "French language proficiency significantly boosts CRS and opens dedicated French draws with lower cutoffs."
+        },
+        {
+          "pathwayName": "Provincial Nominee Program (PNP)",
+          "difficulty": "Moderate",
+          "estimatedYears": 2.5,
+          "description": "Province-specific streams. Tech-focused streams in BC, Ontario, Alberta.",
+          "languageRequired": "IELTS CLB 5-7 depending on province",
+          "jobRequired": "Depends on stream",
+          "pointsBased": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "notableStreams": ["BC Tech Stream", "Alberta AAIP Tech Pilot", "Ontario Human Capital Priorities Stream"],
+          "strategicAdvice": "PNP draws specifically for tech workers are very favorable. Study in the province you intend to settle in."
+        },
+        {
+          "pathwayName": "Atlantic Immigration Program",
+          "difficulty": "Low-Moderate",
+          "estimatedYears": 2,
+          "description": "For graduates of Atlantic Canadian institutions with job offer from Atlantic employer.",
+          "languageRequired": "IELTS CLB 4-5",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Dalhousie, UNB, Memorial University are good options. Atlantic region less competitive but smaller tech job market."
+        }
+      ],
+      "overallPRScore": 78,
+      "averageYearsToAcquire": 3,
+      "confidenceScore": 86,
+      "keyRisks": ["CRS score competition increasing", "Immigration cap reductions 2024-2025", "Political pressure on immigration volumes", "Housing crisis affecting settlement"],
+      "keyAdvantages": ["Multiple pathways", "Family included", "Relatively transparent system", "French language bonus"]
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "pathways": [
+        {
+          "pathwayName": "Skilled Independent Visa (Subclass 189)",
+          "difficulty": "Moderate",
+          "estimatedYears": 2.5,
+          "description": "Points-tested visa. No employer or state sponsor required. Highest points candidates invited from pool.",
+          "languageRequired": "IELTS 7.0 each band minimum (competent English)",
+          "jobRequired": false,
+          "pointsBased": true,
+          "minimumPoints": 65,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "occupationsInDemand": ["Software Engineer", "ICT Business Analyst", "AI/ML Engineer", "Data Scientist"],
+          "strategicAdvice": "Age under 25 maximizes age points (30 points). IELTS 8+ across all bands adds 20 points. Australian study adds 5 points. Aim for 90+ points total.",
+          "successRateForProfile": "High if points score above 90"
+        },
+        {
+          "pathwayName": "Skilled Nominated Visa (Subclass 190)",
+          "difficulty": "Low-Moderate",
+          "estimatedYears": 2,
+          "description": "State/territory nominates applicant adding 5 points. Different state requirements.",
+          "languageRequired": "IELTS 7.0",
+          "jobRequired": false,
+          "pointsBased": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "ACT, Tasmania, SA often have lower cutoffs for tech occupations. Consider studying in these states."
+        },
+        {
+          "pathwayName": "Skills in Demand Visa (Subclass 482) to PR via Subclass 186 TRT",
+          "difficulty": "Moderate",
+          "estimatedYears": 3,
+          "description": "Work for 2+ years on Skills in Demand visa then apply for ENS (186) Temporary Residence Transition stream.",
+          "languageRequired": "IELTS 6.0",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Good for students who secure employer sponsorship. Core Skills stream of SID visa covers most tech roles."
+        },
+        {
+          "pathwayName": "Global Talent Independent Program (GTI)",
+          "difficulty": "High",
+          "estimatedYears": 1,
+          "description": "For exceptional talent in target sectors including AI and tech. Requires endorsement.",
+          "languageRequired": "None formally but practically required",
+          "jobRequired": false,
+          "pointsBased": false,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "For candidates with PhD, publications, or demonstrated exceptional contribution to AI/ML field. Very competitive."
+        }
+      ],
+      "overallPRScore": 80,
+      "averageYearsToAcquire": 2.5,
+      "confidenceScore": 87,
+      "keyRisks": ["Points cutoffs fluctuate", "Housing crisis in major cities", "Political sentiment on immigration volumes shifting"],
+      "keyAdvantages": ["Multiple pathways", "Shorter citizenship timeline after PR", "Skills in Demand covers CS/AI/ML", "Regional incentives available"]
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "pathways": [
+        {
+          "pathwayName": "EU Blue Card → Niederlassungserlaubnis (Settlement Permit)",
+          "difficulty": "Moderate",
+          "estimatedYears": 2.5,
+          "description": "EU Blue Card for qualified workers above salary threshold. PR (Niederlassungserlaubnis) after 27 months with B1 German and social security contributions, or 33 months standard.",
+          "languageRequired": "German B1 for PR after 27 months, B2+ speeds further integration",
+          "jobRequired": true,
+          "salaryThreshold": "EUR 43,800/year for IT shortage occupations (2024)",
+          "pointsBased": false,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "processingTime": "3-6 months for Blue Card",
+          "strategicAdvice": "Most efficient German PR pathway. Learn German from day 1 of studies. B1 by time of PR application mandatory. AI/ML engineering roles easily meet salary threshold."
+        },
+        {
+          "pathwayName": "Skilled Worker Visa → Settlement Permit",
+          "difficulty": "Moderate",
+          "estimatedYears": 4,
+          "description": "General skilled worker route after qualification recognition (Anerkennung). 4 years of work before settlement permit.",
+          "languageRequired": "German B2 recommended",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Blue Card route is preferred for IT professionals. This route useful for those below Blue Card salary threshold."
+        },
+        {
+          "pathwayName": "Chancenkarte (Opportunity Card) → Employment → PR",
+          "difficulty": "Moderate",
+          "estimatedYears": 3,
+          "description": "Points-based Chancenkarte allows entering Germany to search for job without prior offer. Can then convert to skilled worker visa.",
+          "languageRequired": "German A1+ or English B2+",
+          "jobRequired": false,
+          "pointsBased": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Good for those already graduated from recognized university. Not for students - requires degree in hand."
+        }
+      ],
+      "overallPRScore": 76,
+      "averageYearsToAcquire": 3,
+      "confidenceScore": 88,
+      "keyRisks": ["German language requirement is non-negotiable", "Recognition of Bangladeshi degree quality varies", "Political risk from AfD electoral gains moderate"],
+      "keyAdvantages": ["EU Blue Card is efficient", "Labor shortage guarantees employment", "Strong pathway to citizenship", "Family included quickly"]
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "pathways": [
+        {
+          "pathwayName": "Critical Skills Employment Permit (CSEP) → PR",
+          "difficulty": "Moderate",
+          "estimatedYears": 5,
+          "description": "Hold CSEP for 21 months then apply for Long-term residency Stamp 4. After 5 years total legal residence can apply for PR (Stamp 5) or citizenship.",
+          "languageRequired": "English (practical)",
+          "jobRequired": true,
+          "salaryThreshold": "EUR 32,000 for Critical Skills occupations",
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Secure CSEP job as quickly as possible after graduation. Big Tech companies in Dublin have structured sponsorship. CS/AI/ML roles almost always qualify."
+        },
+        {
+          "pathwayName": "General Employment Permit → PR",
+          "difficulty": "Moderate-High",
+          "estimatedYears": 6,
+          "description": "Longer route via general employment permit. Must show Irish labour market test.",
+          "languageRequired": "English",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "CSEP is strongly preferred for STEM professionals. Avoid this route if CSEP-eligible."
+        }
+      ],
+      "overallPRScore": 70,
+      "averageYearsToAcquire": 5,
+      "confidenceScore": 82,
+      "keyRisks": ["Housing crisis in Dublin is severe", "Longer PR timeline compared to other destinations", "Small market outside Dublin"],
+      "keyAdvantages": ["EU citizenship value", "English language", "Big Tech employment ecosystem", "Citizenship allows EU-wide mobility"]
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "pathways": [
+        {
+          "pathwayName": "Highly Skilled Migrant → Permanent Residence",
+          "difficulty": "Moderate",
+          "estimatedYears": 5,
+          "description": "After 5 years of continuous legal residence in Netherlands can apply for permanent residence permit (Article 20/21 EU Long-term residence).",
+          "languageRequired": "Dutch A2 minimum for permit, integration exam including NT2 required",
+          "jobRequired": true,
+          "salaryThreshold": "EUR 4,752/month under 30 (2024)",
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "integrationExam": "Inburgering - Dutch language and civic integration",
+          "strategicAdvice": "Start Dutch language course immediately on arrival. Integration exam required for PR. Minimum 5 years. High salary threshold is attainable in tech but requires meeting it every single year."
+        },
+        {
+          "pathwayName": "Startup / Innovator Visa → PR",
+          "difficulty": "High",
+          "estimatedYears": 5,
+          "description": "For tech entrepreneurs with innovative business. Requires facilitator approval.",
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Viable for AI startup founders only. Very competitive selection."
+        }
+      ],
+      "overallPRScore": 72,
+      "averageYearsToAcquire": 5,
+      "confidenceScore": 84,
+      "keyRisks": ["Dutch integration exam is mandatory and requires Dutch language", "Housing shortage very acute", "30% ruling reduction affects net income"],
+      "keyAdvantages": ["English-friendly environment", "Strong tech sector", "EU residence rights", "Clear pathway once employed"]
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "pathways": [
+        {
+          "pathwayName": "Work Residence Permit → Permanent Residence",
+          "difficulty": "Moderate",
+          "estimatedYears": 4,
+          "description": "After 4 years of work in Sweden within 7 years, can apply for permanent residence permit (PUT).",
+          "languageRequired": "Swedish for practical integration, formal requirement being strengthened",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Secure union-standard salary from day 1. Employer must report to Swedish Employment Agency. Swedish language learning critical for long-term integration and citizenship."
+        }
+      ],
+      "overallPRScore": 74,
+      "averageYearsToAcquire": 4,
+      "confidenceScore": 82,
+      "keyRisks": ["Swedish language requirement for citizenship", "Housing queue in Stockholm", "New government tightening integration requirements"],
+      "keyAdvantages": ["4-year pathway", "Strong labor rights", "Excellent quality of life", "Strong tech ecosystem"]
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "pathways": [
+        {
+          "pathwayName": "Employment Residence Permit → Permanent Residence (P Permit)",
+          "difficulty": "Moderate",
+          "estimatedYears": 4,
+          "description": "After 4 years of continuous residence with employment permit can apply for P permit (permanent residence).",
+          "languageRequired": "Finnish A1 minimum (language test requirement being discussed)",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Finnish language learning highly recommended for long-term integration. Tech sector increasingly English-speaking but Finnish opens broader opportunities."
+        }
+      ],
+      "overallPRScore": 72,
+      "averageYearsToAcquire": 4,
+      "confidenceScore": 80,
+      "keyRisks": ["Finnish language difficulty", "Smaller tech market", "Integration requirements tightening"],
+      "keyAdvantages": ["Genuine immigration need due to demographics", "Strong social infrastructure", "EU residence rights", "Relatively affordable housing"]
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "pathways": [
+        {
+          "pathwayName": "Pay Limit Scheme → Permanent Residence",
+          "difficulty": "Moderate",
+          "estimatedYears": 4,
+          "description": "Work on Pay Limit permit (salary DKK 465,000+ annually). PR after 4 years of ordinary residence.",
+          "languageRequired": "Danish A2 minimum for PR application (language requirement increasing)",
+          "jobRequired": true,
+          "salaryThreshold": "DKK 465,000/year (2024)",
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Danish salary threshold is high but attainable in tech. Danish language required for full integration and citizenship."
+        },
+        {
+          "pathwayName": "Positive List → Permanent Residence",
+          "difficulty": "Moderate",
+          "estimatedYears": 4,
+          "description": "For occupations on shortage list. CS/AI/ML roles frequently listed.",
+          "languageRequired": "Danish required for citizenship",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true
+        }
+      ],
+      "overallPRScore": 72,
+      "averageYearsToAcquire": 4,
+      "confidenceScore": 82,
+      "keyRisks": ["Citizenship 9-year requirement", "Danish language required", "Anti-immigration political environment"],
+      "keyAdvantages": ["High salaries", "Good welfare state", "PR after 4 years", "EU residence rights"]
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "pathways": [
+        {
+          "pathwayName": "Skilled Worker Residence Permit → Permanent Residence",
+          "difficulty": "Moderate",
+          "estimatedYears": 3,
+          "description": "After 3 years of continuous residence with skilled worker permit, can apply for permanent residence.",
+          "languageRequired": "Norwegian A2 or higher (requirement being strengthened)",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Norwegian language test introduced as requirement. Start language learning early. 3-year pathway is relatively fast among Scandinavian countries."
+        }
+      ],
+      "overallPRScore": 74,
+      "averageYearsToAcquire": 3,
+      "confidenceScore": 80,
+      "keyRisks": ["Norwegian language requirement", "Smaller tech market", "High cost of living"],
+      "keyAdvantages": ["3-year pathway among fastest in Scandinavia", "Exceptional economic stability", "Strong sovereign wealth fund security", "EU-adjacent via EEA"]
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "pathways": [
+        {
+          "pathwayName": "B Permit → C Permit (Permanent Residence)",
+          "difficulty": "High",
+          "estimatedYears": 5,
+          "description": "Permit B (renewable annual) after 5 years converts to Permit C (permanent residence) for most non-EU nationals. Requires integration, language, and clean record.",
+          "languageRequired": "German/French/Italian B1 (depending on canton) mandatory for C permit",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "notes": "Non-EU annual quota limits initial entry. Once B permit obtained, pathway to C is clear.",
+          "strategicAdvice": "ETH Zurich or EPFL PhD is best entry strategy. Extremely high salaries compensate for high cost of living."
+        }
+      ],
+      "overallPRScore": 64,
+      "averageYearsToAcquire": 5,
+      "confidenceScore": 82,
+      "keyRisks": ["Non-EU work permit quota", "Language requirement", "Citizenship extremely difficult", "Very high cost of living"],
+      "keyAdvantages": ["Highest salaries globally", "PR pathway exists (C Permit)", "World's best research institutions", "Political stability"]
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "pathways": [
+        {
+          "pathwayName": "Red-White-Red Card → Settlement Permit",
+          "difficulty": "Moderate",
+          "estimatedYears": 5,
+          "description": "Red-White-Red Card (2+3 years) then apply for Rot-Weiß-Rot Plus Card and eventually Settlement Permit after 5 years.",
+          "languageRequired": "German B1 minimum for full settlement",
+          "jobRequired": true,
+          "pointsBased": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Very Highly Qualified Workers stream of RWR Card is best for CS/AI professionals. Points awarded for education, language, experience, and salary."
+        }
+      ],
+      "overallPRScore": 70,
+      "averageYearsToAcquire": 5,
+      "confidenceScore": 78,
+      "keyRisks": ["10-year citizenship requirement", "German language barrier", "Political risk from FPÖ-led government", "Smaller tech market"],
+      "keyAdvantages": ["EU residence rights", "Points-based RWR system is structured", "Good quality of life"]
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "pathways": [
+        {
+          "pathwayName": "Single Permit → Unlimited Residence Permit",
+          "difficulty": "Moderate",
+          "estimatedYears": 5,
+          "description": "After 5 years of continuous legal residence can apply for unlimited residence permit (Type D permit).",
+          "languageRequired": "Dutch or French depending on region",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Brussels as capital region has most international environment. Language choice (Dutch or French) depends on location."
+        }
+      ],
+      "overallPRScore": 70,
+      "averageYearsToAcquire": 5,
+      "confidenceScore": 76,
+      "keyRisks": ["Language complexity", "High taxation", "Political instability (government formation difficulties)"],
+      "keyAdvantages": ["5-year citizenship pathway", "EU capital city environment", "Research university ecosystem"]
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "pathways": [
+        {
+          "pathwayName": "Green List Straight to Residence",
+          "difficulty": "Low-Moderate",
+          "estimatedYears": 1,
+          "description": "For occupations on Tier 1 of Green List. CS and software engineering roles included. Direct PR application possible.",
+          "languageRequired": "IELTS 6.5 minimum",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Fastest PR pathway globally for tech professionals. Requires job offer from NZ employer. Small market means competition within NZ is lower."
+        },
+        {
+          "pathwayName": "Skilled Migrant Category (via points expression of interest)",
+          "difficulty": "Moderate",
+          "estimatedYears": 1.5,
+          "description": "Points-based EOI. If selected, invited to apply for residence.",
+          "languageRequired": "IELTS 6.5",
+          "jobRequired": "Preferred but not mandatory",
+          "pointsBased": true,
+          "familyEligible": true,
+          "citizenshipEligible": true
+        }
+      ],
+      "overallPRScore": 76,
+      "averageYearsToAcquire": 1.5,
+      "confidenceScore": 80,
+      "keyRisks": ["Small tech job market", "Geographic isolation", "Housing affordability in Auckland"],
+      "keyAdvantages": ["Fastest PR pathway for tech professionals", "English-speaking", "Strong quality of life", "Trans-Tasman pathway to Australia"]
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "pathways": [
+        {
+          "pathwayName": "EB-2 (Advanced Degree) → Green Card",
+          "difficulty": "Very High",
+          "estimatedYears": 60,
+          "description": "Employment-based category requiring employer sponsorship. Per-country cap means Bangladeshi nationals face multi-decade wait.",
+          "languageRequired": "English",
+          "jobRequired": true,
+          "pointsBased": false,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "currentWaitEstimate": "50-100+ years for Bangladeshi nationals (not significantly different from India due to same non-India rest-of-world line)",
+          "strategicAdvice": "NOT recommended as primary PR strategy. Consider US as career accelerator then transition to Canada, Australia, or Europe for PR."
+        },
+        {
+          "pathwayName": "EB-1A (Extraordinary Ability)",
+          "difficulty": "Extreme",
+          "estimatedYears": 2,
+          "description": "Self-petition for extraordinary ability in science, arts, education, business, or athletics. No per-country cap currently causing as severe backlog but still limited.",
+          "languageRequired": "English",
+          "jobRequired": false,
+          "pointsBased": false,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Viable only for truly exceptional candidates with major publications, awards, or recognized contributions to AI field."
+        },
+        {
+          "pathwayName": "O-1A Visa → EB-1A Green Card",
+          "difficulty": "Very High",
+          "estimatedYears": 3,
+          "description": "O-1A for extraordinary ability as temporary then EB-1A green card. Best non-quota pathway.",
+          "strategicAdvice": "Build portfolio of publications, patents, media coverage, and judging/peer review to qualify."
+        }
+      ],
+      "overallPRScore": 42,
+      "averageYearsToAcquire": 60,
+      "confidenceScore": 88,
+      "keyRisks": ["Per-country EB backlog effectively eliminates standard PR pathway", "H-1B lottery uncertainty", "H-4 EAD restrictions for spouses", "Political immigration hostility"],
+      "keyAdvantages": ["Highest salaries globally while working on OPT/H-1B", "Best AI research", "Can accumulate savings and experience before targeting other country PR", "EB-1A for exceptional candidates"]
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "pathways": [
+        {
+          "pathwayName": "Highly Skilled Foreign Professional (HSFP) → PR",
+          "difficulty": "Low-Moderate",
+          "estimatedYears": 1,
+          "description": "Points-based system. 80+ points: PR after 1 year. 70-79 points: PR after 3 years. Points for age, education, salary, Japanese language, research achievements.",
+          "languageRequired": "Japanese not mandatory for points but adds points. JLPT N1=15pts, N2=10pts",
+          "jobRequired": true,
+          "pointsBased": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "processingTime": "4-6 months after points qualification",
+          "pointsBreakdown": {
+            "doctorateDegree": 30,
+            "mastersDegree": 20,
+            "age25to29": 15,
+            "age30to34": 10,
+            "salary10M+": 40,
+            "salary6M+": 25,
+            "salary4M+": 10,
+            "JLPTN1": 15,
+            "JLPTN2": 10,
+            "japaneseUniversity": 10,
+            "qualifications": 10
+          },
+          "strategicAdvice": "CS/AI PhD from Japanese university (20+30=50 base) + age under 30 (15 pts) + salary JPY 4M+ (10 pts) + JLPT N2 (10 pts) = 85 points → PR in 1 year. This is one of the world's fastest PR pathways for qualified candidates."
+        },
+        {
+          "pathwayName": "Standard PR via 10 years residence",
+          "difficulty": "Low",
+          "estimatedYears": 10,
+          "description": "Any foreigner with 10 years continuous residence and good standing can apply for PR. Simpler but slower.",
+          "languageRequired": "Japanese N3+ practically",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true
+        },
+        {
+          "pathwayName": "J-Skip Visa → Accelerated PR",
+          "difficulty": "Moderate",
+          "estimatedYears": 2,
+          "description": "J-Skip (2023) for highly qualified professionals earning JPY 20M+. Immediate Specified Skilled Worker status and faster PR.",
+          "languageRequired": "English sufficient for J-Skip. Japanese recommended.",
+          "jobRequired": true,
+          "salaryThreshold": "JPY 20,000,000/year",
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "JPY 20M is very high threshold. Primarily relevant for senior-level professionals from top tech firms."
+        }
+      ],
+      "overallPRScore": 68,
+      "averageYearsToAcquire": 3,
+      "confidenceScore": 83,
+      "keyRisks": ["Japanese language essential for daily life despite not being mandatory for HSFP PR", "Salary levels lower than Western nations", "Cultural adaptation significant"],
+      "keyAdvantages": ["HSFP 1-year PR pathway among world's fastest", "Demographic crisis driving immigration reform", "MEXT scholarships excellent", "Aging society = guaranteed long-term need"]
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "pathways": [
+        {
+          "pathwayName": "F-2 (Residency Visa) → F-5 (Permanent Residence)",
+          "difficulty": "Moderate",
+          "estimatedYears": 4,
+          "description": "F-2 skilled professional visa then after 5 years total continuous residence apply for F-5 PR. Points-based F-2 for skilled workers.",
+          "languageRequired": "TOPIK Level 4+ strongly recommended for PR",
+          "jobRequired": true,
+          "pointsBased": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Korean language is critical. TOPIK Level 5-6 strongly advantageous. Tech companies (Samsung, NAVER, Kakao) are increasingly international but Korean proficiency accelerates career progression."
+        },
+        {
+          "pathwayName": "E-7 Tech Specialist → F-2 → F-5",
+          "difficulty": "Moderate",
+          "estimatedYears": 5,
+          "description": "E-7 specialized employment visa for AI/tech roles at Korean companies. Accumulate residence then qualify for F-2 and eventually F-5.",
+          "languageRequired": "Korean preferred, English possible in some tech companies",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true
+        }
+      ],
+      "overallPRScore": 66,
+      "averageYearsToAcquire": 5,
+      "confidenceScore": 78,
+      "keyRisks": ["Korean language essential barrier", "Workplace culture intensity", "Citizenship requires Korean citizenship renunciation (single citizenship standard enforced)"],
+      "keyAdvantages": ["Demographic crisis = growing immigration openness", "AI investment massive", "GKS scholarship excellent", "Semiconductor industry dominance"]
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "pathways": [
+        {
+          "pathwayName": "Employment Pass → Permanent Residence Application",
+          "difficulty": "Very High",
+          "estimatedYears": 5,
+          "description": "PR application submitted after 2-3 years of EP. NOT automatic. Selective. Rejection common. Criteria: salary, employer type, education, contributions, family ties to Singapore.",
+          "languageRequired": "English (practical)",
+          "jobRequired": true,
+          "salaryThreshold": "SGD 5,000+/month for tech (2025)",
+          "familyEligible": false,
+          "citizenshipEligible": true,
+          "successRate": "Estimated 20-40% approval rate for eligible EP holders",
+          "notes": "Singapore PR is not a right but a privilege. Government manages PR grants to maintain demographic balance. Ethnic Chinese applicants statistically have higher approval rates.",
+          "strategicAdvice": "Aim for SGD 8,000+/month salary, work for large or listed employer, no criminal record, pay high taxes. Even then not guaranteed. Consider Singapore as 3-5 year career phase only."
+        }
+      ],
+      "overallPRScore": 60,
+      "averageYearsToAcquire": 6,
+      "confidenceScore": 84,
+      "keyRisks": ["PR not guaranteed even with perfect profile", "Citizenship almost impossible", "High cost of living", "Dependent on government discretion"],
+      "keyAdvantages": ["Best tech salaries in Asia", "English-speaking hub", "Regional headquarters advantage", "NUS/NTU research"]
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "pathways": [
+        {
+          "pathwayName": "Work Permit Type A → Permanent Residence Application",
+          "difficulty": "Extreme",
+          "estimatedYears": 15,
+          "description": "Permanent Residence (中国绿卡) theoretically possible after years of high-level contributions. Practically fewer than 20,000 have ever been granted despite millions of foreign residents.",
+          "languageRequired": "Mandarin (practical necessity)",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": false,
+          "successRate": "Less than 0.1% of eligible foreign residents receive PR",
+          "strategicAdvice": "Do NOT plan China as long-term settlement destination. Use for research/career experience only."
+        }
+      ],
+      "overallPRScore": 38,
+      "averageYearsToAcquire": 15,
+      "confidenceScore": 70,
+      "keyRisks": ["PR essentially inaccessible", "Citizenship not available", "Geopolitical risk", "Internet censorship affects research", "Political environment"],
+      "keyAdvantages": ["Strong AI research environment", "CSC scholarship generous", "Career experience in global AI superpower", "Mandarin language skill valuable"]
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "pathways": [
+        {
+          "pathwayName": "Talent Passport → Carte de Résident (10-year PR)",
+          "difficulty": "Moderate",
+          "estimatedYears": 5,
+          "description": "After 5 years of legal residence can apply for Carte de Résident (10-year renewable residence card). Effectively PR.",
+          "languageRequired": "French B1 minimum",
+          "jobRequired": true,
+          "familyEligible": true,
+          "citizenshipEligible": true,
+          "strategicAdvice": "Talent Passport (4 years) provides straightforward pathway. French language acquisition essential. DELF B2 strongly recommended."
+        }
+      ],
+      "overallPRScore": 70,
+      "averageYearsToAcquire": 5,
+      "confidenceScore": 80,
+      "keyRisks": ["French language barrier", "Social unrest and political instability", "Bureaucratic complexity", "Housing costs in Paris"],
+      "keyAdvantages": ["5-year citizenship pathway", "EU residence rights", "Strong AI ecosystem growing", "Family benefits excellent"]
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "pathways": [
+        {
+          "pathwayName": "Golden Visa (10-year renewable)",
+          "difficulty": "Moderate",
+          "estimatedYears": 0,
+          "description": "NOT permanent residence. 10-year renewable visa for specialists, researchers, and AI professionals. Can be cancelled. Does not lead to citizenship.",
+          "languageRequired": "English or Arabic",
+          "jobRequired": true,
+          "salaryThreshold": "AED 30,000/month for specialists",
+          "familyEligible": true,
+          "citizenshipEligible": false,
+          "isActualPR": false,
+          "notes": "Golden Visa provides stable long-term stay but is NOT equivalent to PR. No path to citizenship for most.",
+          "strategicAdvice": "Use UAE Golden Visa as stable base for high-income career phase. Simultaneously build qualifications for PR in another country (Australia, Canada, Germany)."
+        }
+      ],
+      "overallPRScore": 38,
+      "averageYearsToAcquire": 999,
+      "confidenceScore": 88,
+      "keyRisks": ["No real PR or citizenship pathway", "Golden Visa can be revoked", "Economic dependence on oil/real estate", "Legal system restrictive"],
+      "keyAdvantages": ["Zero income tax", "High salaries", "Growing tech ecosystem", "MBZUAI world-class AI institution", "Stability within Gulf context"]
+    }
+  ]
+}
