@@ -1,0 +1,1334 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2026-06-01",
+    "description": "Document requirements for Bangladeshi CS/AI/ML students applying to study abroad 2027-2029",
+    "targetProfile": "Bangladeshi student, BSc completed, applying for MSc/PhD in CS/AI/ML/Data Science",
+    "criticalNote": "Document preparation should begin 12-18 months before application deadline. Bangladeshi students face additional attestation and verification steps not required for other nationalities."
+  },
+  "documentRequirements": [
+    {
+      "country": "Canada",
+      "countryCode": "CA",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All semester marksheets from BSc. Must be attested by university and Ministry of Education Bangladesh.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "4-8 weeks"
+        },
+        {
+          "document": "Bachelor's Degree Certificate",
+          "details": "Original degree or provisional certificate. Notarized copy required.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.5+ overall (no band below 6.0) or TOEFL iBT 90+. Some universities accept Duolingo.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "GRE Score",
+          "details": "Optional at most Canadian universities but recommended for competitive programs. 315+ preferred.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 5 years"
+        },
+        {
+          "document": "Statement of Purpose",
+          "details": "750-1000 words. Must specifically address research interests matching faculty.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2-3 academic references. Must be from faculty who taught or supervised research. Direct email submission preferred.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 6-8 weeks in advance"
+        },
+        {
+          "document": "CV/Resume",
+          "details": "Academic format. Include research, publications, projects, GPA.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Passport Copy",
+          "details": "Valid minimum 2 years beyond program end date.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Renew if needed 8-12 weeks"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Study Permit Application",
+          "details": "Applied online via IRCC portal after receiving Letter of Acceptance.",
+          "processingTime": "8-16 weeks"
+        },
+        {
+          "document": "Letter of Acceptance",
+          "details": "From Designated Learning Institution (DLI). Required before visa application.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Financial Support",
+          "details": "CAD 20,635/year minimum for living costs plus tuition. Bank statement last 6 months. Scholarship letter if funded.",
+          "processingTime": "Prepare 3 months bank history"
+        },
+        {
+          "document": "Biometrics",
+          "details": "Required for Bangladesh passport holders. Collected at VFS Global Dhaka.",
+          "processingTime": "Appointment within 30 days of request"
+        },
+        {
+          "document": "Medical Examination",
+          "details": "Required for study permits over 6 months. Designated IRCC physician only.",
+          "processingTime": "2-4 weeks, valid 12 months"
+        },
+        {
+          "document": "Police Clearance Certificate",
+          "details": "From Bangladesh Police. Required for visa and study permit.",
+          "processingTime": "4-8 weeks from Bangladesh police"
+        },
+        {
+          "document": "Purpose of Travel Statement",
+          "details": "Why Canada, why this program, intent to return - though PR is the actual goal, official statement must show study intent.",
+          "processingTime": "Self-prepared"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Transcripts must be attested by university registrar, then Ministry of Education, then Ministry of Foreign Affairs",
+        "Degree certificate requires same attestation chain",
+        "VFS Global Dhaka office handles biometric collection",
+        "Bank statement should show steady balance not sudden deposits",
+        "Scholarship offer letter significantly strengthens financial proof"
+      ],
+      "keyDeadlines": {
+        "fallIntake": "December 1 - February 15",
+        "winterIntake": "August 1 - October 1",
+        "visaApplyAfterAdmission": "Apply immediately after LOA received"
+      },
+      "estimatedCosts": {
+        "applicationFees": "CAD 100-200 per university",
+        "studyPermitFee": "CAD 150",
+        "biometricFee": "CAD 85",
+        "medicalExam": "USD 150-250 equivalent",
+        "attestationCosts": "BDT 3,000-8,000 per document"
+      }
+    },
+    {
+      "country": "Australia",
+      "countryCode": "AU",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Official transcripts from BSc institution. Australian universities may require certified copies.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "4-6 weeks"
+        },
+        {
+          "document": "Bachelor's Degree Certificate",
+          "details": "Original or certified copy. Must show completed qualification.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.5+ overall (6.0 per band) or TOEFL iBT 79+ or PTE 58+.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Statement of Purpose / Research Proposal",
+          "details": "For PhD: detailed research proposal 1,500-3,000 words aligned with supervisor. For MSc: SOP 500-800 words.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2-3 academic referees. Direct online submission via university portal.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 6 weeks in advance"
+        },
+        {
+          "document": "CV",
+          "details": "Academic and professional achievements. Include any publications or research projects.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Visa (Subclass 500)",
+          "details": "Applied via ImmiAccount online portal.",
+          "processingTime": "4-12 weeks"
+        },
+        {
+          "document": "Confirmation of Enrolment (CoE)",
+          "details": "Issued by university after accepting offer and paying deposit.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Genuine Student Requirement (GSR)",
+          "details": "Replaced GTE from 2024. Must demonstrate genuine study intention and understanding of program.",
+          "processingTime": "Self-prepared statement"
+        },
+        {
+          "document": "Proof of Financial Capacity",
+          "details": "AUD 29,710/year living costs + tuition. Bank statements, scholarship letter, or sponsor declaration.",
+          "processingTime": "Prepare 6-month bank history"
+        },
+        {
+          "document": "Health Insurance (OSHC)",
+          "details": "Overseas Student Health Cover mandatory for entire visa duration. Must purchase before visa lodgement.",
+          "processingTime": "Same day purchase online"
+        },
+        {
+          "document": "Health Examination",
+          "details": "Required for Bangladesh nationals. Via BUPA Medical or panel physician.",
+          "processingTime": "2-4 weeks, results valid 12 months"
+        },
+        {
+          "document": "Biometrics",
+          "details": "May be required. Collected at VFS Global Dhaka.",
+          "processingTime": "Within 28 days of request"
+        },
+        {
+          "document": "Police Clearance",
+          "details": "Bangladesh Police clearance certificate.",
+          "processingTime": "4-8 weeks"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Transcripts and degree must be certified - Australian universities may specify apostille or notarization",
+        "GSR statement must be genuine and specific - vague answers cause refusal",
+        "OSHC must be purchased from approved provider before visa lodgement",
+        "Financial documents must show stable funds not recent lump sum deposits"
+      ],
+      "keyDeadlines": {
+        "semester1February": "October 1 - November 30",
+        "semester2July": "March 1 - April 30",
+        "visaApplyAfterCoE": "Apply within 2 weeks of CoE receipt"
+      },
+      "estimatedCosts": {
+        "applicationFees": "AUD 0-100 per university",
+        "visaFee": "AUD 710",
+        "oshcAnnual": "AUD 600-700/year",
+        "medicalExam": "AUD 300-400",
+        "biometricFee": "AUD 0 if included in visa fee"
+      }
+    },
+    {
+      "country": "Germany",
+      "countryCode": "DE",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All semester transcripts with grades. Must be officially certified. Many universities require APS certificate for Bangladeshi applicants.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "APS: 4-8 weeks after submission"
+        },
+        {
+          "document": "APS Certificate",
+          "details": "Akademische Pruefungsstelle certificate. Required for Bangladeshi students applying to German universities. Involves interview and document verification at German Embassy Dhaka.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "6-12 weeks total"
+        },
+        {
+          "document": "Bachelor's Degree Certificate",
+          "details": "Certified copy with certified German or English translation.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "4-6 weeks including translation"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "For English-taught programs: IELTS 6.5+ or TOEFL 90+. German programs require TestDaF 4 or DSH-2.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Motivation Letter",
+          "details": "Why this program, why Germany, research interests. 500-800 words.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2 academic references. Some universities accept directly uploaded PDF.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 6 weeks in advance"
+        },
+        {
+          "document": "CV in Europass Format",
+          "details": "Standard European CV format preferred.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Visa (National Visa D)",
+          "details": "Applied at German Embassy Dhaka. Required before departure.",
+          "processingTime": "6-12 weeks"
+        },
+        {
+          "document": "University Admission Letter",
+          "details": "Conditional or unconditional admission required.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Blocked Account (Sperrkonto)",
+          "details": "EUR 11,208/year minimum (2025-2026 rate). Must open before visa application. Fintiba or Coracle recommended.",
+          "processingTime": "1-2 weeks to open account"
+        },
+        {
+          "document": "Health Insurance",
+          "details": "German public health insurance proof or equivalent. TK or AOK student plans.",
+          "processingTime": "Can arrange after arrival for first month"
+        },
+        {
+          "document": "Accommodation Proof",
+          "details": "Student dormitory booking, rental contract, or host declaration.",
+          "processingTime": "Secure before visa application"
+        },
+        {
+          "document": "APS Certificate",
+          "details": "Required for the visa application as well.",
+          "processingTime": "Must be completed before visa application"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "APS certificate is mandatory and the most time-consuming step - begin this first",
+        "All documents in German must be translated by certified sworn translator",
+        "Blocked account is essential - no exceptions for visa",
+        "German Embassy Dhaka appointment may have waiting time of 4-8 weeks",
+        "German language learning recommended to start immediately even for English programs"
+      ],
+      "keyDeadlines": {
+        "winterSemesterOctober": "January 15 - July 15",
+        "summerSemesterApril": "July 15 - January 15",
+        "apsCertificateLeadTime": "Begin APS process 6 months before application deadline"
+      },
+      "estimatedCosts": {
+        "applicationFees": "EUR 0 for public universities",
+        "apsFee": "EUR 150 approx",
+        "visaFee": "EUR 75",
+        "blockedAccountSetup": "EUR 50-100 setup fee",
+        "translationCosts": "EUR 30-80 per document"
+      }
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Official transcripts from all years of BSc. Certified copies required.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "3-6 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.5+ overall or TOEFL iBT 90+. Some universities accept PTE or Duolingo.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Personal Statement / SOP",
+          "details": "Why Ireland, why this program, career goals. 500-800 words.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Two Academic References",
+          "details": "From university professors or research supervisors.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 4-6 weeks advance"
+        },
+        {
+          "document": "CV",
+          "details": "Academic and technical projects highlighted.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Study Visa / Study Permission",
+          "details": "Applied online via AVATS system. Ireland uses permission letter not traditional visa sticker for studies.",
+          "processingTime": "4-8 weeks"
+        },
+        {
+          "document": "Letter of Acceptance",
+          "details": "From Irish university. Required before visa application.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Funds",
+          "details": "EUR 10,000 minimum for first year living costs plus tuition fees. Bank statement 6 months.",
+          "processingTime": "Prepare 6-month bank history"
+        },
+        {
+          "document": "Private Health Insurance",
+          "details": "Required for visa. Irish Life Health or Laya Healthcare student plans.",
+          "processingTime": "Purchase online same day"
+        },
+        {
+          "document": "Police Clearance",
+          "details": "Bangladesh Police clearance. Must be recent within 6 months.",
+          "processingTime": "4-8 weeks"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Ireland visa process via AVATS online - straightforward but funds proof very important",
+        "Must register with GNIB (Garda National Immigration Bureau) within 90 days of arrival",
+        "IRP (Irish Residence Permit) card collected after registration - essential document",
+        "Housing in Dublin must be arranged before arrival - market very tight"
+      ],
+      "keyDeadlines": {
+        "septemberIntake": "January 1 - June 30",
+        "januaryIntake": "August 1 - November 30"
+      },
+      "estimatedCosts": {
+        "applicationFees": "EUR 50-100 per university",
+        "visaFee": "EUR 60",
+        "healthInsurance": "EUR 500-700/year student plan",
+        "irpRegistration": "EUR 300"
+      }
+    },
+    {
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Certified copies of all BSc transcripts. Dutch universities may require Nuffic credential evaluation.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "Nuffic evaluation 4-6 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.5+ or TOEFL iBT 90+. Applied Science universities may accept lower.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Motivation Letter",
+          "details": "Specific to program and university. Research interest alignment important.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Two References",
+          "details": "Academic references submitted via university portal.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 4-6 weeks advance"
+        },
+        {
+          "document": "CV",
+          "details": "Standard European format.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "MVV Entry Visa",
+          "details": "Required before departure. Applied at Dutch Embassy - Dhaka handles via third country embassy or VFS.",
+          "processingTime": "4-8 weeks"
+        },
+        {
+          "document": "University Enrollment Letter",
+          "details": "Required for MVV application.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Financial Means",
+          "details": "EUR 11,000-13,000/year living costs. Bank statement or scholarship letter.",
+          "processingTime": "Prepare 6-month bank history"
+        },
+        {
+          "document": "Antecedents Certificate",
+          "details": "Police clearance from Bangladesh.",
+          "processingTime": "4-8 weeks"
+        },
+        {
+          "document": "Health Insurance",
+          "details": "AON or SMP student insurance required before or shortly after arrival.",
+          "processingTime": "Purchase online"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Check Dutch Embassy coverage for Bangladesh - may need to apply through third-country embassy",
+        "University typically assists with MVV and residence permit process",
+        "BSN (citizen service number) registration at municipality essential after arrival",
+        "Housing must be arranged before arrival - extremely competitive in Amsterdam and Utrecht"
+      ],
+      "keyDeadlines": {
+        "septemberIntake": "January 15 - April 1",
+        "februaryIntake": "September 1 - November 1"
+      },
+      "estimatedCosts": {
+        "applicationFees": "EUR 100 STUDIELINK fee",
+        "mvvFee": "EUR 192",
+        "residencePermit": "EUR 192",
+        "healthInsurance": "EUR 600-900/year"
+      }
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All BSc transcripts uploaded to universityadmissions.se portal.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "Portal processing 4-6 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.5+ or TOEFL iBT 90+. Swedish universities specify per program.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Certified copy uploaded digitally.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "2-3 weeks"
+        },
+        {
+          "document": "Motivation Letter",
+          "details": "Program specific. 500-700 words.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "References",
+          "details": "2 academic references. Contact details submitted; university may contact directly.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Inform referees in advance"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Residence Permit for Studies",
+          "details": "Applied online via Migrationsverket before departure. No separate visa for non-EU students.",
+          "processingTime": "4-12 weeks"
+        },
+        {
+          "document": "University Acceptance Letter",
+          "details": "From universityadmissions.se and the specific university.",
+          "processingTime": "Issued after selection"
+        },
+        {
+          "document": "Proof of Financial Means",
+          "details": "SEK 8,514/month minimum (2025 rate). Bank statements or scholarship documentation.",
+          "processingTime": "Prepare 3-month bank history"
+        },
+        {
+          "document": "Comprehensive Health Insurance",
+          "details": "Required for first period before Swedish personal number obtained.",
+          "processingTime": "Purchase before departure"
+        },
+        {
+          "document": "Passport",
+          "details": "Valid throughout study period. Biometric passport required.",
+          "processingTime": "Renew if needed"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Apply through universityadmissions.se central portal - single application for multiple universities",
+        "Migrationsverket online application is straightforward but financial proof must be specific",
+        "Apply for Swedish personal number at Tax Agency after arrival - enables bank account, healthcare",
+        "Tuition fees apply for non-EU students - check if program has scholarship automatically"
+      ],
+      "keyDeadlines": {
+        "autumnSemester": "October 15 - January 15",
+        "springSemester": "June 15 - August 15",
+        "permitApply": "Apply as soon as acceptance received"
+      },
+      "estimatedCosts": {
+        "applicationFee": "SEK 900 for non-EU applicants",
+        "residencePermitFee": "SEK 1,000",
+        "healthInsurance": "EUR 300-500 initial period"
+      }
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Official transcripts. Finnish universities may require credential recognition from Finnish National Agency for Education (FINNA).",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "Credential check 4-8 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.0-6.5 or TOEFL 90+. Varies by university and program.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Certified copy.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks"
+        },
+        {
+          "document": "Motivation Letter",
+          "details": "500-800 words. Research alignment critical for funded positions.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "References",
+          "details": "2 academic references.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 4-6 weeks advance"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Residence Permit for Studies",
+          "details": "Applied via Enter Finland online portal. No visa required separately for non-EU if permit obtained.",
+          "processingTime": "6-12 weeks"
+        },
+        {
+          "document": "Acceptance Letter",
+          "details": "From Finnish university.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Financial Means",
+          "details": "EUR 560/month minimum (EUR 6,720/year). Bank statement or scholarship letter.",
+          "processingTime": "3-6 month bank history"
+        },
+        {
+          "document": "Health Insurance",
+          "details": "Required until Finnish municipality registration obtained.",
+          "processingTime": "Purchase before departure"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Enter Finland portal is user-friendly - biometric permit collected from Migrationsverket office in Helsinki after arrival",
+        "Register at local DigitaalinenFinland or DVV after arrival for Finnish ID",
+        "Tuition fees apply for non-EU - scholarships at Aalto, Helsinki, Tampere important to secure",
+        "Finnish language courses available free - begin immediately for long-term integration"
+      ],
+      "keyDeadlines": {
+        "autumnIntake": "November 1 - January 22",
+        "springIntake": "July 1 - September 30"
+      },
+      "estimatedCosts": {
+        "applicationFee": "EUR 0-100",
+        "residencePermitFee": "EUR 350",
+        "healthInsurance": "EUR 200-400 initial period"
+      }
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Certified official transcripts. ENIC/NARIC Denmark credential evaluation may be required.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "NARIC evaluation 4-6 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.5+ or TOEFL iBT 83+. DTU and KU specify per program.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Motivation Letter",
+          "details": "Specific research interest and program fit. 500-700 words.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Two References",
+          "details": "Academic referees.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 4-6 weeks advance"
+        },
+        {
+          "document": "CV",
+          "details": "Academic focus with technical skills and projects.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Residence Permit",
+          "details": "Applied online via newtodenmark.dk before departure.",
+          "processingTime": "4-10 weeks"
+        },
+        {
+          "document": "University Enrollment Confirmation",
+          "details": "Required for permit application.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Financial Means",
+          "details": "DKK 6,243/month (approx EUR 840). Bank statements or scholarship confirmation.",
+          "processingTime": "3-6 month bank history"
+        },
+        {
+          "document": "Health Insurance",
+          "details": "Required until Danish CPR number obtained and public health access granted.",
+          "processingTime": "Purchase before departure"
+        },
+        {
+          "document": "Police Clearance",
+          "details": "Bangladesh national police certificate.",
+          "processingTime": "4-8 weeks"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "newtodenmark.dk application is online and accessible",
+        "CPR registration essential after arrival - enables health, banking, everything",
+        "Tuition fees for non-EU outside scholarship - check DTU PhD funded positions",
+        "Danish integration contract may apply after PR stage"
+      ],
+      "keyDeadlines": {
+        "septemberIntake": "February 1 - March 15",
+        "februaryIntake": "September 1 - October 1"
+      },
+      "estimatedCosts": {
+        "applicationFee": "DKK 0 for most universities",
+        "residencePermitFee": "DKK 0 if student",
+        "healthInsurance": "EUR 200-400 initial period"
+      }
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Certified official transcripts. NOKUT credential recognition for Bangladeshi degrees.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "NOKUT recognition 6-10 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.5 or TOEFL 90+. Norwegian universities accept both.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Motivation Letter",
+          "details": "500-800 words program specific.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Two References",
+          "details": "Academic referees.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 4-6 weeks advance"
+        },
+        {
+          "document": "CV",
+          "details": "Academic and research focus.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Residence Permit",
+          "details": "Applied via UDI (Norwegian Directorate of Immigration) online portal.",
+          "processingTime": "4-12 weeks"
+        },
+        {
+          "document": "Acceptance Letter",
+          "details": "From Norwegian university.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Financial Means",
+          "details": "NOK 137,907/year (2025 rate). Bank statement or scholarship/funding confirmation.",
+          "processingTime": "3-6 month bank history"
+        },
+        {
+          "document": "Police Clearance",
+          "details": "Bangladesh national police certificate.",
+          "processingTime": "4-8 weeks"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Norway has no tuition fees at public universities even for non-EU - key advantage",
+        "Financial proof requirement is higher than most EU countries due to Norwegian cost of living",
+        "UDI online application straightforward",
+        "Register at local Folkeregisteret after arrival for national ID number (fødselsnummer)"
+      ],
+      "keyDeadlines": {
+        "autumnIntake": "December 1 - February 1",
+        "springIntake": "June 1 - September 1"
+      },
+      "estimatedCosts": {
+        "applicationFee": "NOK 0 most public universities",
+        "residencePermitFee": "NOK 5,300",
+        "noTuitionFee": true
+      }
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Certified official transcripts. ETH and EPFL require very high GPA - typically 3.7+ equivalent.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "4-6 weeks including translation"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 7.0+ or TOEFL 100+ for ETH Zurich and EPFL. Very competitive threshold.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "GRE Score",
+          "details": "Often required for ETH and EPFL particularly for PhD. 320+ competitive.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 5 years"
+        },
+        {
+          "document": "Research Proposal",
+          "details": "For PhD: 1,500-3,000 words. Must align precisely with supervisor research.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Three Academic References",
+          "details": "Strong references from research supervisors critical. Generic references not sufficient.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 8 weeks in advance"
+        },
+        {
+          "document": "CV",
+          "details": "Research publications, projects, competition achievements. Quality over quantity.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Visa (National D Visa)",
+          "details": "Applied at Swiss Embassy. Bangladesh covered via Swiss Embassy New Delhi or VFS.",
+          "processingTime": "4-8 weeks"
+        },
+        {
+          "document": "Acceptance Letter",
+          "details": "From ETH, EPFL, or Swiss university.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Financial Means",
+          "details": "CHF 21,000/year minimum. Bank statements or funding letter from university.",
+          "processingTime": "3-6 month bank history"
+        },
+        {
+          "document": "Health Insurance",
+          "details": "Swiss mandatory health insurance (KVG/LAMal). Must purchase within 3 months of arrival.",
+          "processingTime": "Arrange within 3 months of arrival"
+        },
+        {
+          "document": "Accommodation Proof",
+          "details": "Rental contract or university housing confirmation.",
+          "processingTime": "Secure before visa application"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Swiss Embassy for Bangladesh is in New Delhi - apply well in advance",
+        "ETH and EPFL acceptance rates very low globally - apply to 6-8 universities as backup",
+        "PhD positions at ETH typically fully funded with salary - this is the target pathway",
+        "Register at Einwohnerkontrolle (residents registration) within 14 days of arrival",
+        "Swiss health insurance is mandatory and expensive - budget CHF 300-400/month"
+      ],
+      "keyDeadlines": {
+        "autumnIntake": "November 15 - December 15",
+        "springIntake": "April 15 - May 15"
+      },
+      "estimatedCosts": {
+        "applicationFee": "CHF 150 ETH, CHF 200 EPFL",
+        "visaFee": "CHF 80",
+        "healthInsuranceMonthly": "CHF 300-450/month",
+        "translationCosts": "CHF 50-100 per document"
+      }
+    },
+    {
+      "country": "United States",
+      "countryCode": "US",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Official transcripts from BSc university. Many US universities require WES or ECE credential evaluation for Bangladeshi degrees.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "WES evaluation 7-20 weeks"
+        },
+        {
+          "document": "WES Credential Evaluation",
+          "details": "World Education Services evaluation. Required by most US universities for Bangladeshi transcripts. Course-by-course evaluation recommended.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "7-10 weeks standard, 3-5 weeks rush"
+        },
+        {
+          "document": "GRE Score",
+          "details": "Required by many top CS programs. 320+ for top 50 universities. Some programs waiving GRE since 2022.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 5 years"
+        },
+        {
+          "document": "TOEFL/IELTS",
+          "details": "TOEFL iBT 100+ or IELTS 7.0+ for top programs. Some accept 90/6.5.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Statement of Purpose",
+          "details": "Most critical document. 800-1,200 words. Research-focused. Must name specific faculty.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Multiple drafts over 4-6 weeks"
+        },
+        {
+          "document": "Three Letters of Recommendation",
+          "details": "Strong academic references essential. Research supervisors preferred over coursework professors.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 8-10 weeks in advance"
+        },
+        {
+          "document": "CV",
+          "details": "Publications, research, projects, competitions. Quality critical for top programs.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Writing Sample",
+          "details": "Some programs require research paper or technical writing sample.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Use existing research paper if available"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "F-1 Student Visa",
+          "details": "Applied at US Embassy Dhaka after receiving I-20 form from university.",
+          "processingTime": "4-12 weeks including appointment wait time"
+        },
+        {
+          "document": "I-20 Form",
+          "details": "Issued by SEVIS-registered university after paying SEVIS fee.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "SEVIS Fee Payment",
+          "details": "USD 350 fee paid online before visa interview.",
+          "processingTime": "Online payment immediate"
+        },
+        {
+          "document": "DS-160 Form",
+          "details": "Online visa application form. Must be completed before interview.",
+          "processingTime": "2-3 hours to complete"
+        },
+        {
+          "document": "Proof of Financial Support",
+          "details": "Full first year costs. Funding letter from university or personal/sponsor bank statements.",
+          "processingTime": "Prepare 6-month bank history"
+        },
+        {
+          "document": "Visa Interview Preparation",
+          "details": "US Embassy Dhaka conducts F-1 interviews. High refusal rate for Bangladeshi applicants without strong funding. Funded PhD/MS positions significantly reduce refusal risk.",
+          "processingTime": "Appointment 2-8 weeks wait"
+        },
+        {
+          "document": "Enrollment Proof and Financial Documents",
+          "details": "I-20, offer of admission, funding letter all required at interview.",
+          "processingTime": "Compile before interview"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "WES evaluation is critical - begin this 5-6 months before application deadline",
+        "F-1 visa refusal rate for Bangladesh nationals is higher than average - funded admission dramatically improves chances",
+        "Strong ties to Bangladesh or convincing study purpose required for consular officer",
+        "Contact professors directly before applying - response from professor dramatically improves admission chances",
+        "Apply to range of programs: 2-3 reach, 3-4 target, 2-3 safety"
+      ],
+      "keyDeadlines": {
+        "fallIntake": "December 1 - February 1",
+        "springIntake": "August 1 - October 1",
+        "wesEvaluationStartDate": "Begin 6 months before application deadline"
+      },
+      "estimatedCosts": {
+        "applicationFees": "USD 75-120 per university",
+        "wesEvaluation": "USD 160-220",
+        "sevisFee": "USD 350",
+        "visaFee": "USD 185",
+        "greExam": "USD 205",
+        "toeflExam": "USD 220"
+      }
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Certified official transcripts. Japanese universities may require certified Japanese translation.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "Translation 2-4 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.0+ or TOEFL 79+ for English programs. JLPT N2 or N1 for Japanese language programs.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Research Proposal",
+          "details": "For graduate school: detailed research plan required. Must contact professor before applying - essential in Japanese system.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared after professor contact"
+        },
+        {
+          "document": "Letter from Accepting Professor",
+          "details": "Most critical document. Without lab acceptance from professor, formal application has very low chance. Email professors 6-12 months before.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Allow 2-3 months for professor response"
+        },
+        {
+          "document": "Two References",
+          "details": "Academic referees. One may be the accepting Japanese professor.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 4-6 weeks advance"
+        },
+        {
+          "document": "MEXT Scholarship Application",
+          "details": "If applying for MEXT scholarship - additional forms, interview, and timeline via Japanese Embassy Dhaka.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "6-12 months process"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Visa (College Student)",
+          "details": "Certificate of Eligibility (COE) obtained by university first, then visa at Japanese Embassy Dhaka.",
+          "processingTime": "COE 1-3 months, then visa 1-2 weeks"
+        },
+        {
+          "document": "Certificate of Eligibility (COE)",
+          "details": "University applies on student behalf at local immigration. Required before visa application.",
+          "processingTime": "1-3 months"
+        },
+        {
+          "document": "Proof of Financial Support",
+          "details": "JPY 120,000-150,000/month. Scholarship letter or bank statements.",
+          "processingTime": "Prepare 3-6 month bank history"
+        },
+        {
+          "document": "Health Certificate",
+          "details": "Medical examination form required by some universities.",
+          "processingTime": "2-4 weeks"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Professor contact is the single most important step - without this admission is very unlikely",
+        "MEXT Embassy scholarship via Japanese Embassy Dhaka - applications open around April each year",
+        "Japanese language learning should start immediately - even N4 is appreciated",
+        "COE process handled by university - student must wait and be patient",
+        "Budget carefully - Tokyo is expensive but MEXT covers living allowance"
+      ],
+      "keyDeadlines": {
+        "mextScholarshipEmbassy": "April - June each year",
+        "aprilIntake": "September 1 - November 30",
+        "octoberIntake": "March 1 - June 30",
+        "professorContactTiming": "12 months before intended start"
+      },
+      "estimatedCosts": {
+        "applicationFee": "JPY 30,000 typical",
+        "visaFee": "JPY 0 for Bangladesh (check current status)",
+        "mextCoversAllIfGranted": true
+      }
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Official certified transcripts. Korean universities may require apostille or notarization.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "Translation to Korean or English 2-4 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.0+ or TOEFL 80+ for English programs. TOPIK Level 4+ for Korean language programs.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Research Proposal",
+          "details": "PhD required. MSc recommended. Contact professor in advance similar to Japan.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Professor Contact",
+          "details": "Email Korean professors before formal application. Lab acceptance important for PhD.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Allow 4-8 weeks for response"
+        },
+        {
+          "document": "Two References",
+          "details": "Academic referees.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 4-6 weeks advance"
+        },
+        {
+          "document": "GKS Scholarship Forms",
+          "details": "If applying for Korean Government Scholarship (GKS) - separate application via Korean Embassy Dhaka.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "GKS application timeline February-April"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "D-2 Student Visa",
+          "details": "Applied at Korean Embassy Dhaka after university admission.",
+          "processingTime": "2-4 weeks"
+        },
+        {
+          "document": "Admission Letter",
+          "details": "From KAIST, SNU, POSTECH or other Korean university.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Financial Support",
+          "details": "USD 600/month living expenses. Bank statements or scholarship letter.",
+          "processingTime": "3-6 month bank history"
+        },
+        {
+          "document": "Apostilled Degree Certificate",
+          "details": "Bangladesh not Hague Convention member - use notarization and embassy legalization chain.",
+          "processingTime": "4-8 weeks for full chain"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Bangladesh not Hague apostille member - documents need notarization then Korean Embassy Dhaka legalization",
+        "GKS scholarship via Korean Embassy - significant funding opportunity, apply annually",
+        "Korean language TOPIK exam registration - start Korean from day one",
+        "ARC (Alien Registration Card) mandatory within 90 days of arrival",
+        "KAIST and POSTECH are fully funded for PhD - target these specifically"
+      ],
+      "keyDeadlines": {
+        "gksScholarshipDeadline": "February - April annually",
+        "marchIntake": "September 1 - November 30",
+        "septemberIntake": "March 1 - May 31"
+      },
+      "estimatedCosts": {
+        "applicationFee": "KRW 50,000-100,000",
+        "visaFee": "KRW 60,000",
+        "apostilleEquivalent": "BDT 5,000-10,000 full chain"
+      }
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "applicationStage": "University Admission",
+      "requiredDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "Certified official transcripts with English translation.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "3-6 weeks"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Notarized copy with certified translation.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "3-5 weeks"
+        },
+        {
+          "document": "English Proficiency",
+          "details": "IELTS 6.0+ or TOEFL 80+ for English programs. HSK Level 4+ for Chinese language programs.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Score valid 2 years"
+        },
+        {
+          "document": "Study Plan",
+          "details": "500-800 words describing research intentions.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Two References",
+          "details": "Academic recommendation letters.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Request 4-6 weeks advance"
+        },
+        {
+          "document": "CSC Scholarship Application",
+          "details": "Chinese Government Scholarship via CSC portal. Very competitive. Apply via Chinese Embassy Dhaka.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "CSC application December-March annually"
+        },
+        {
+          "document": "Physical Examination Form",
+          "details": "Foreigner physical exam form required for X visa and residence permit.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Complete at designated hospital in China"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "X1 Student Visa (Long-term)",
+          "details": "For studies over 180 days. Applied at Chinese Embassy Dhaka.",
+          "processingTime": "4-10 weeks"
+        },
+        {
+          "document": "JW201 or JW202 Form",
+          "details": "Chinese government scholarship or self-funded admission form issued by university via education ministry.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Admission Notice",
+          "details": "From Chinese university. Must include JW form.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Proof of Financial Support",
+          "details": "CNY 3,000-5,000/month. Bank statements or CSC scholarship letter.",
+          "processingTime": "3-6 month bank history"
+        },
+        {
+          "document": "Residence Permit",
+          "details": "Must apply within 30 days of arrival at local PSB Exit-Entry Administration.",
+          "processingTime": "Within 30 days of arrival"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "CSC scholarship is the primary funding route - apply through Chinese Embassy Dhaka each year",
+        "VPN situation must be understood before arrival - professional and academic connectivity affected",
+        "Physical examination required in China within weeks of arrival",
+        "Residence permit registration at PSB mandatory",
+        "HSK Chinese language exam recommended to start immediately for long-term career"
+      ],
+      "keyDeadlines": {
+        "cscScholarshipDeadline": "January - March annually",
+        "septemberIntake": "November 1 - April 30",
+        "marchIntake": "August 1 - November 30"
+      },
+      "estimatedCosts": {
+        "applicationFee": "CNY 400-800",
+        "visaFee": "USD 140 approx for Bangladesh",
+        "cscCoversAllIfGranted": true,
+        "physicalExamInChina": "CNY 600-900"
+      }
+    }
+  ]
+}
