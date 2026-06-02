@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, ArrowLeft, GraduationCap, AlertCircle, Info, Star } from "lucide-react";
-import { countriesData } from "@/data/countries";
+
 
 const professorSchema = z.object({
   name: z.string().min(1, "Professor name is required"),
@@ -49,8 +49,7 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
   // Filter universities by country if country param provided
   const filteredUniversities = initialCountry
     ? universities.filter(u => {
-        const countryData = Object.values(countriesData).find(c => c.slug === initialCountry.toLowerCase());
-        return countryData ? u.country.toLowerCase() === countryData.id.toLowerCase() : true;
+        return u.country.toLowerCase().replace(/\s+/g, '-') === initialCountry.toLowerCase();
       })
     : universities;
 

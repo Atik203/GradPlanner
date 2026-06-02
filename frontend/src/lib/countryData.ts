@@ -71,9 +71,17 @@ export type {
 const BASE = '/countries';
 
 async function loadJson<T>(file: string): Promise<T> {
-  const res = await fetch(`${BASE}/${file}`, { next: { revalidate: 3600 } });
-  if (!res.ok) throw new Error(`Failed to load ${file}: ${res.status}`);
-  return res.json() as Promise<T>;
+  if (typeof window === 'undefined') {
+    const fs = await import('fs/promises');
+    const path = await import('path');
+    const filePath = path.join(process.cwd(), 'public', 'countries', file);
+    const data = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(data) as T;
+  } else {
+    const res = await fetch(`${BASE}/${file}`, { next: { revalidate: 3600 } });
+    if (!res.ok) throw new Error(`Failed to load ${file}: ${res.status}`);
+    return res.json() as Promise<T>;
+  }
 }
 
 // ─── Individual loaders ────────────────────────────────────────────
@@ -175,7 +183,17 @@ export async function getCountryIntelligence(countryCode: string) {
     loadCitizenshipRules(),
   ]);
 
-  const cc = countryCode.toUpperCase();
+  const normalizedInput = countryCode.toLowerCase().replace(/\s+/g, '-');
+  const countryEntry = countries.find(c => 
+    c.countryCode.toLowerCase() === normalizedInput || 
+    c.country.toLowerCase().replace(/\s+/g, '-') === normalizedInput
+  );
+
+  if (!countryEntry) {
+    throw new Error(`Country not found for input: ${countryCode}`);
+  }
+
+  const cc = countryEntry.countryCode;
 
   return {
     summary:              countries.find(c => c.countryCode === cc),

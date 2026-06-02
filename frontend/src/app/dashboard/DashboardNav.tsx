@@ -34,19 +34,26 @@ const trackingItems: NavItem[] = [
 ];
 
 const countryItems: { name: string; href: string }[] = [
-  { name: "Ireland", href: "/dashboard/countries/ireland" },
-  { name: "Sweden", href: "/dashboard/countries/sweden" },
-  { name: "Germany", href: "/dashboard/countries/germany" },
   { name: "Australia", href: "/dashboard/countries/australia" },
-  { name: "USA", href: "/dashboard/countries/usa" },
+  { name: "Austria", href: "/dashboard/countries/austria" },
+  { name: "Belgium", href: "/dashboard/countries/belgium" },
   { name: "Canada", href: "/dashboard/countries/canada" },
-  { name: "South Korea", href: "/dashboard/countries/south-korea" },
   { name: "China", href: "/dashboard/countries/china" },
-  { name: "Japan", href: "/dashboard/countries/japan" },
-  { name: "UAE", href: "/dashboard/countries/uae" },
-  { name: "Netherlands", href: "/dashboard/countries/netherlands" },
-  { name: "Switzerland", href: "/dashboard/countries/switzerland" },
+  { name: "Denmark", href: "/dashboard/countries/denmark" },
   { name: "Finland", href: "/dashboard/countries/finland" },
+  { name: "France", href: "/dashboard/countries/france" },
+  { name: "Germany", href: "/dashboard/countries/germany" },
+  { name: "Ireland", href: "/dashboard/countries/ireland" },
+  { name: "Japan", href: "/dashboard/countries/japan" },
+  { name: "Netherlands", href: "/dashboard/countries/netherlands" },
+  { name: "New Zealand", href: "/dashboard/countries/new-zealand" },
+  { name: "Norway", href: "/dashboard/countries/norway" },
+  { name: "Singapore", href: "/dashboard/countries/singapore" },
+  { name: "South Korea", href: "/dashboard/countries/south-korea" },
+  { name: "Sweden", href: "/dashboard/countries/sweden" },
+  { name: "Switzerland", href: "/dashboard/countries/switzerland" },
+  { name: "UAE", href: "/dashboard/countries/uae" },
+  { name: "USA", href: "/dashboard/countries/usa" },
 ];
 
 export function DashboardNav({ user }: { user: any }) {
