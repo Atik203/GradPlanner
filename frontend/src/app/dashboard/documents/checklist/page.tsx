@@ -72,7 +72,7 @@ export default function DocumentChecklistPage() {
     async function loadCountry() {
       try {
         const data = await fetchApi(`/api/v1/countries/${selectedCountryCode}`);
-        setCountryData(data);
+        setCountryData(data?.documents || null);
       } catch (err) {
         console.error("Failed to load country doc requirements:", err);
         setCountryData(null);
