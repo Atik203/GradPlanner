@@ -9,19 +9,25 @@ const globalForPrisma = globalThis as unknown as {
 
 let prisma: PrismaClient;
 
-if (process.env.NODE_ENV === "production") {
+function createPrismaClient(): PrismaClient {
   const pool = new Pool({
     connectionString: process.env.DATABASE_URL,
   });
+
+  // Handle unexpected errors on idle pool clients to prevent Node process crash
+  pool.on("error", (err) => {
+    console.error("Unexpected idle client error in PostgreSQL Pool:", err);
+  });
+
   const adapter = new PrismaPg(pool);
-  prisma = new PrismaClient({ adapter });
+  return new PrismaClient({ adapter });
+}
+
+if (process.env.NODE_ENV === "production") {
+  prisma = createPrismaClient();
 } else {
   if (!globalForPrisma.prisma) {
-    const pool = new Pool({
-      connectionString: process.env.DATABASE_URL,
-    });
-    const adapter = new PrismaPg(pool);
-    globalForPrisma.prisma = new PrismaClient({ adapter });
+    globalForPrisma.prisma = createPrismaClient();
   }
   prisma = globalForPrisma.prisma;
 }

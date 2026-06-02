@@ -43,7 +43,7 @@ router.get("/", async (req: Request, res: Response) => {
 // Returns: full intelligence dataset for a country
 router.get("/:code", async (req: Request, res: Response) => {
   try {
-    const code = req.params.code;
+    const code = req.params.code as string;
     let normalized = code.toLowerCase().trim().replace(/\s+/g, '-');
     
     // Map aliases
