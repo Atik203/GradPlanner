@@ -23,10 +23,6 @@ export const auth = betterAuth({
 
   trustedProxyHeaders: true,
 
-  account: {
-    storeStateStrategy: "cookie",
-  },
-
   // ── Secret used to sign session tokens ────────────────────────────────────
   secret: process.env.BETTER_AUTH_SECRET,
 
