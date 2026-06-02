@@ -2,7 +2,7 @@
   "buildCommand": "npx prisma generate && npx tsc",
   "installCommand": "pnpm install",
   "functions": {
-    "api/index.ts": {
+    "api/index.js": {
       "maxDuration": 30
     }
   },
