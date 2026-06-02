@@ -21,6 +21,12 @@ export const auth = betterAuth({
   // ── Base URL (backend origin, NOT the Next.js frontend) ───────────────────
   baseURL: (process.env.BETTER_AUTH_URL ?? "http://localhost:5000") + "/api/v1/auth",
 
+  trustedProxyHeaders: true,
+
+  account: {
+    storeStateStrategy: "cookie",
+  },
+
   // ── Secret used to sign session tokens ────────────────────────────────────
   secret: process.env.BETTER_AUTH_SECRET,
 
