@@ -101,15 +101,42 @@
         }
       },
       "sampleTimeline_MSc": [
-        {"year": 2026, "event": "Apply to Canadian universities, take IELTS"},
-        {"year": 2027, "event": "Begin MSc in CS/AI - September start"},
-        {"year": 2028, "event": "Year 2 MSc - research + internship"},
-        {"year": 2029, "event": "Graduate - apply for PGWP (3yr if 3yr program)"},
-        {"year": 2030, "event": "Working on PGWP - build CRS score"},
-        {"year": 2031, "event": "Apply for Express Entry PR"},
-        {"year": 2032, "event": "PR approved - sponsor spouse"},
-        {"year": 2035, "event": "Apply for citizenship"},
-        {"year": 2036, "event": "Canadian citizen"}
+        {
+          "year": 2026,
+          "event": "Apply to Canadian universities, take IELTS"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc in CS/AI - September start"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 MSc - research + internship"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate - apply for PGWP (3yr if 3yr program)"
+        },
+        {
+          "year": 2030,
+          "event": "Working on PGWP - build CRS score"
+        },
+        {
+          "year": 2031,
+          "event": "Apply for Express Entry PR"
+        },
+        {
+          "year": 2032,
+          "event": "PR approved - sponsor spouse"
+        },
+        {
+          "year": 2035,
+          "event": "Apply for citizenship"
+        },
+        {
+          "year": 2036,
+          "event": "Canadian citizen"
+        }
       ],
       "confidenceScore": 86
     },
@@ -184,15 +211,42 @@
         }
       },
       "sampleTimeline_PhD": [
-        {"year": 2026, "event": "Apply to US PhD programs, GRE + TOEFL"},
-        {"year": 2027, "event": "Begin fully-funded PhD"},
-        {"year": 2032, "event": "Graduate PhD - apply OPT"},
-        {"year": 2032, "event": "Apply H1B April lottery - 28% chance"},
-        {"year": 2033, "event": "H1B approved (if successful) or try again"},
-        {"year": 2034, "event": "Employer files PERM for green card"},
-        {"year": 2036, "event": "I-140 approved, wait for visa number"},
-        {"year": 2038, "event": "Green card approved (best case, no backlog)"},
-        {"year": 2043, "event": "US citizenship eligible"}
+        {
+          "year": 2026,
+          "event": "Apply to US PhD programs, GRE + TOEFL"
+        },
+        {
+          "year": 2027,
+          "event": "Begin fully-funded PhD"
+        },
+        {
+          "year": 2032,
+          "event": "Graduate PhD - apply OPT"
+        },
+        {
+          "year": 2032,
+          "event": "Apply H1B April lottery - 28% chance"
+        },
+        {
+          "year": 2033,
+          "event": "H1B approved (if successful) or try again"
+        },
+        {
+          "year": 2034,
+          "event": "Employer files PERM for green card"
+        },
+        {
+          "year": 2036,
+          "event": "I-140 approved, wait for visa number"
+        },
+        {
+          "year": 2038,
+          "event": "Green card approved (best case, no backlog)"
+        },
+        {
+          "year": 2043,
+          "event": "US citizenship eligible"
+        }
       ],
       "confidenceScore": 72,
       "criticalWarning": "H1B lottery is high-stakes gamble; plan backup Canada/Australia pathway simultaneously"
@@ -268,15 +322,42 @@
         }
       },
       "sampleTimeline_MSc": [
-        {"year": 2026, "event": "Apply German universities, start German A1, get IELTS"},
-        {"year": 2027, "event": "Begin MSc - take German language courses"},
-        {"year": 2028, "event": "Year 2 MSc - achieve German B1, thesis"},
-        {"year": 2029, "event": "Graduate - job seeker visa, find job in 3 months"},
-        {"year": 2029, "event": "EU Blue Card obtained"},
-        {"year": 2031, "event": "21 months Blue Card + B1 = apply PR"},
-        {"year": 2032, "event": "PR approved - sponsor spouse (A1 German required)"},
-        {"year": 2034, "event": "5 years PR - apply citizenship"},
-        {"year": 2035, "event": "German citizen (dual citizenship allowed from 2024)"}
+        {
+          "year": 2026,
+          "event": "Apply German universities, start German A1, get IELTS"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc - take German language courses"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 MSc - achieve German B1, thesis"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate - job seeker visa, find job in 3 months"
+        },
+        {
+          "year": 2029,
+          "event": "EU Blue Card obtained"
+        },
+        {
+          "year": 2031,
+          "event": "21 months Blue Card + B1 = apply PR"
+        },
+        {
+          "year": 2032,
+          "event": "PR approved - sponsor spouse (A1 German required)"
+        },
+        {
+          "year": 2034,
+          "event": "5 years PR - apply citizenship"
+        },
+        {
+          "year": 2035,
+          "event": "German citizen (dual citizenship allowed from 2024)"
+        }
       ],
       "confidenceScore": 88
     },
@@ -347,15 +428,42 @@
         }
       },
       "sampleTimeline_MSc": [
-        {"year": 2026, "event": "Apply to Go8 universities, IELTS prep"},
-        {"year": 2027, "event": "Begin MSc at Melbourne/Sydney/ANU"},
-        {"year": 2028, "event": "Year 2 - networking, internship, job search"},
-        {"year": 2029, "event": "Graduate - apply 485 visa (2-3yr)"},
-        {"year": 2030, "event": "Secure job - ACS skills assessment - EOI"},
-        {"year": 2031, "event": "PR approved (189/186)"},
-        {"year": 2032, "event": "Spouse PR confirmed"},
-        {"year": 2035, "event": "4-year PR requirement met"},
-        {"year": 2036, "event": "Australian citizenship (renounce BD passport)"}
+        {
+          "year": 2026,
+          "event": "Apply to Go8 universities, IELTS prep"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc at Melbourne/Sydney/ANU"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 - networking, internship, job search"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate - apply 485 visa (2-3yr)"
+        },
+        {
+          "year": 2030,
+          "event": "Secure job - ACS skills assessment - EOI"
+        },
+        {
+          "year": 2031,
+          "event": "PR approved (189/186)"
+        },
+        {
+          "year": 2032,
+          "event": "Spouse PR confirmed"
+        },
+        {
+          "year": 2035,
+          "event": "4-year PR requirement met"
+        },
+        {
+          "year": 2036,
+          "event": "Australian citizenship (renounce BD passport)"
+        }
       ],
       "confidenceScore": 82
     },
@@ -423,14 +531,38 @@
         }
       },
       "sampleTimeline_MSc": [
-        {"year": 2026, "event": "Apply Studielink by January 15, IELTS"},
-        {"year": 2027, "event": "Begin MSc TU Delft/UvA/TU/e"},
-        {"year": 2028, "event": "Year 2 - Dutch language A2/B1, thesis"},
-        {"year": 2029, "event": "Graduate - orientation year permit"},
-        {"year": 2029, "event": "Job at Booking/ASML/Adyen - HSM permit + 30% ruling"},
-        {"year": 2030, "event": "Sponsor spouse - both working"},
-        {"year": 2034, "event": "5 years residence - EU Long-Term PR"},
-        {"year": 2035, "event": "Apply Dutch citizenship with Dutch B1"}
+        {
+          "year": 2026,
+          "event": "Apply Studielink by January 15, IELTS"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc TU Delft/UvA/TU/e"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 - Dutch language A2/B1, thesis"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate - orientation year permit"
+        },
+        {
+          "year": 2029,
+          "event": "Job at Booking/ASML/Adyen - HSM permit + 30% ruling"
+        },
+        {
+          "year": 2030,
+          "event": "Sponsor spouse - both working"
+        },
+        {
+          "year": 2034,
+          "event": "5 years residence - EU Long-Term PR"
+        },
+        {
+          "year": 2035,
+          "event": "Apply Dutch citizenship with Dutch B1"
+        }
       ],
       "confidenceScore": 84
     },
@@ -496,13 +628,34 @@
         }
       },
       "sampleTimeline_PhD": [
-        {"year": 2026, "event": "Apply KTH/Chalmers PhD positions, IELTS"},
-        {"year": 2027, "event": "Begin PhD (salaried employment)"},
-        {"year": 2031, "event": "Graduate PhD - apply work permit (job offer lined up)"},
-        {"year": 2031, "event": "4 years residence = apply permanent residence"},
-        {"year": 2032, "event": "PR approved - sponsor spouse"},
-        {"year": 2034, "event": "5 years total residence - citizenship eligible"},
-        {"year": 2035, "event": "Swedish citizen (dual with BD allowed)"}
+        {
+          "year": 2026,
+          "event": "Apply KTH/Chalmers PhD positions, IELTS"
+        },
+        {
+          "year": 2027,
+          "event": "Begin PhD (salaried employment)"
+        },
+        {
+          "year": 2031,
+          "event": "Graduate PhD - apply work permit (job offer lined up)"
+        },
+        {
+          "year": 2031,
+          "event": "4 years residence = apply permanent residence"
+        },
+        {
+          "year": 2032,
+          "event": "PR approved - sponsor spouse"
+        },
+        {
+          "year": 2034,
+          "event": "5 years total residence - citizenship eligible"
+        },
+        {
+          "year": 2035,
+          "event": "Swedish citizen (dual with BD allowed)"
+        }
       ],
       "confidenceScore": 80
     },
@@ -566,13 +719,34 @@
         }
       },
       "sampleTimeline_MSc": [
-        {"year": 2026, "event": "Apply Aalto MSc - scholarship if possible, Finnish A1"},
-        {"year": 2027, "event": "Begin MSc Aalto/Helsinki - Finnish language courses"},
-        {"year": 2028, "event": "Year 2 - Finnish A2/B1, thesis, job search"},
-        {"year": 2029, "event": "Graduate - 1-year job search permit"},
-        {"year": 2029, "event": "Job secured at Nokia/Aalto spin-off"},
-        {"year": 2033, "event": "4 years residence - permanent residence"},
-        {"year": 2034, "event": "Finnish citizenship (Finnish B1 required)"}
+        {
+          "year": 2026,
+          "event": "Apply Aalto MSc - scholarship if possible, Finnish A1"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc Aalto/Helsinki - Finnish language courses"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 - Finnish A2/B1, thesis, job search"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate - 1-year job search permit"
+        },
+        {
+          "year": 2029,
+          "event": "Job secured at Nokia/Aalto spin-off"
+        },
+        {
+          "year": 2033,
+          "event": "4 years residence - permanent residence"
+        },
+        {
+          "year": 2034,
+          "event": "Finnish citizenship (Finnish B1 required)"
+        }
       ],
       "confidenceScore": 81
     },
@@ -636,13 +810,34 @@
         }
       },
       "sampleTimeline_PhD": [
-        {"year": 2026, "event": "Apply DTU PhD positions, IELTS"},
-        {"year": 2027, "event": "Begin PhD DTU (salaried) - Danish language"},
-        {"year": 2030, "event": "Graduate - 6-month job search permit"},
-        {"year": 2030, "event": "Job at Novo Nordisk/Vestas/Maersk"},
-        {"year": 2034, "event": "4-year fast-track PR (with Danish B1 + tests)"},
-        {"year": 2035, "event": "Citizenship application (9yr total)"},
-        {"year": 2037, "event": "Danish citizen (dual allowed)"}
+        {
+          "year": 2026,
+          "event": "Apply DTU PhD positions, IELTS"
+        },
+        {
+          "year": 2027,
+          "event": "Begin PhD DTU (salaried) - Danish language"
+        },
+        {
+          "year": 2030,
+          "event": "Graduate - 6-month job search permit"
+        },
+        {
+          "year": 2030,
+          "event": "Job at Novo Nordisk/Vestas/Maersk"
+        },
+        {
+          "year": 2034,
+          "event": "4-year fast-track PR (with Danish B1 + tests)"
+        },
+        {
+          "year": 2035,
+          "event": "Citizenship application (9yr total)"
+        },
+        {
+          "year": 2037,
+          "event": "Danish citizen (dual allowed)"
+        }
       ],
       "confidenceScore": 79
     },
@@ -707,14 +902,38 @@
         }
       },
       "sampleTimeline_MSc": [
-        {"year": 2026, "event": "Apply NTNU/Oslo - no tuition, save for living costs"},
-        {"year": 2027, "event": "Begin MSc - Norwegian language course"},
-        {"year": 2028, "event": "Year 2 - Norwegian A2, thesis"},
-        {"year": 2029, "event": "Graduate - 1-year job seeker permit"},
-        {"year": 2029, "event": "Job at NTNU spinoff/Equinor/Telenor"},
-        {"year": 2032, "event": "3 years work = permanent residence"},
-        {"year": 2033, "event": "Sponsor spouse - both working"},
-        {"year": 2034, "event": "7 years total = citizenship (keep BD passport)"}
+        {
+          "year": 2026,
+          "event": "Apply NTNU/Oslo - no tuition, save for living costs"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc - Norwegian language course"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 - Norwegian A2, thesis"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate - 1-year job seeker permit"
+        },
+        {
+          "year": 2029,
+          "event": "Job at NTNU spinoff/Equinor/Telenor"
+        },
+        {
+          "year": 2032,
+          "event": "3 years work = permanent residence"
+        },
+        {
+          "year": 2033,
+          "event": "Sponsor spouse - both working"
+        },
+        {
+          "year": 2034,
+          "event": "7 years total = citizenship (keep BD passport)"
+        }
       ],
       "confidenceScore": 84
     },
@@ -780,13 +999,34 @@
         }
       },
       "sampleTimeline_PhD": [
-        {"year": 2026, "event": "Apply ETH/EPFL PhD - extremely competitive"},
-        {"year": 2027, "event": "Begin PhD ETH Zurich (CHF 4,000/month)"},
-        {"year": 2031, "event": "Graduate - job at Google Zurich/ABB/Roche"},
-        {"year": 2031, "event": "B permit obtained"},
-        {"year": 2036, "event": "5 years B permit - apply C permit (10yr rule for non-EU)"},
-        {"year": 2041, "event": "10 years - C permit and citizenship eligible"},
-        {"year": 2043, "event": "Swiss citizenship (long process)"}
+        {
+          "year": 2026,
+          "event": "Apply ETH/EPFL PhD - extremely competitive"
+        },
+        {
+          "year": 2027,
+          "event": "Begin PhD ETH Zurich (CHF 4,000/month)"
+        },
+        {
+          "year": 2031,
+          "event": "Graduate - job at Google Zurich/ABB/Roche"
+        },
+        {
+          "year": 2031,
+          "event": "B permit obtained"
+        },
+        {
+          "year": 2036,
+          "event": "5 years B permit - apply C permit (10yr rule for non-EU)"
+        },
+        {
+          "year": 2041,
+          "event": "10 years - C permit and citizenship eligible"
+        },
+        {
+          "year": 2043,
+          "event": "Swiss citizenship (long process)"
+        }
       ],
       "confidenceScore": 78,
       "criticalNote": "Longest immigration pathway; best salaries but hardest PR/citizenship"
@@ -850,14 +1090,38 @@
         }
       },
       "sampleTimeline_MSc": [
-        {"year": 2026, "event": "Apply TCD/UCD MSc, IELTS"},
-        {"year": 2027, "event": "Begin MSc Dublin"},
-        {"year": 2028, "event": "Graduate - 2-year graduate stay permit"},
-        {"year": 2028, "event": "Job at Google/Meta/Amazon Dublin"},
-        {"year": 2029, "event": "Critical Skills Employment Permit"},
-        {"year": 2033, "event": "5 years - Long-Term Residence (Stamp 4)"},
-        {"year": 2034, "event": "Citizenship application"},
-        {"year": 2036, "event": "Irish citizen (EU passport - huge benefit)"}
+        {
+          "year": 2026,
+          "event": "Apply TCD/UCD MSc, IELTS"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc Dublin"
+        },
+        {
+          "year": 2028,
+          "event": "Graduate - 2-year graduate stay permit"
+        },
+        {
+          "year": 2028,
+          "event": "Job at Google/Meta/Amazon Dublin"
+        },
+        {
+          "year": 2029,
+          "event": "Critical Skills Employment Permit"
+        },
+        {
+          "year": 2033,
+          "event": "5 years - Long-Term Residence (Stamp 4)"
+        },
+        {
+          "year": 2034,
+          "event": "Citizenship application"
+        },
+        {
+          "year": 2036,
+          "event": "Irish citizen (EU passport - huge benefit)"
+        }
       ],
       "confidenceScore": 76,
       "keyBenefit": "Irish citizenship = EU passport - enables working across all EU countries"
@@ -926,15 +1190,42 @@
         }
       },
       "sampleTimeline_MSc": [
-        {"year": 2026, "event": "Apply MEXT scholarship - April application"},
-        {"year": 2027, "event": "Begin Japanese language + MSc Tokyo/Kyoto"},
-        {"year": 2028, "event": "Year 2 - JLPT N2 target, research"},
-        {"year": 2029, "event": "Graduate - job (April hiring) at Sony/Toyota/NTT"},
-        {"year": 2030, "event": "Apply HSP visa - target 70+ points"},
-        {"year": 2032, "event": "3 years HSP = PR eligible"},
-        {"year": 2033, "event": "PR approved - sponsor spouse"},
-        {"year": 2034, "event": "Total 5 years - citizenship eligible"},
-        {"year": 2036, "event": "Japanese citizen (must renounce Bangladesh)"}
+        {
+          "year": 2026,
+          "event": "Apply MEXT scholarship - April application"
+        },
+        {
+          "year": 2027,
+          "event": "Begin Japanese language + MSc Tokyo/Kyoto"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 - JLPT N2 target, research"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate - job (April hiring) at Sony/Toyota/NTT"
+        },
+        {
+          "year": 2030,
+          "event": "Apply HSP visa - target 70+ points"
+        },
+        {
+          "year": 2032,
+          "event": "3 years HSP = PR eligible"
+        },
+        {
+          "year": 2033,
+          "event": "PR approved - sponsor spouse"
+        },
+        {
+          "year": 2034,
+          "event": "Total 5 years - citizenship eligible"
+        },
+        {
+          "year": 2036,
+          "event": "Japanese citizen (must renounce Bangladesh)"
+        }
       ],
       "confidenceScore": 77
     },
@@ -998,14 +1289,38 @@
         }
       },
       "sampleTimeline_PhD": [
-        {"year": 2026, "event": "Apply GKS scholarship + KAIST direct"},
-        {"year": 2026, "event": "1-year Korean language training (GKS included)"},
-        {"year": 2027, "event": "Begin PhD KAIST - TOPIK II target"},
-        {"year": 2030, "event": "Graduate PhD - D-10 job seeker"},
-        {"year": 2031, "event": "Job at Samsung/Naver/Kakao - E-7 visa"},
-        {"year": 2033, "event": "F-2 resident visa"},
-        {"year": 2036, "event": "F-5 permanent residence"},
-        {"year": 2038, "event": "Korean citizenship (must renounce BD)"}
+        {
+          "year": 2026,
+          "event": "Apply GKS scholarship + KAIST direct"
+        },
+        {
+          "year": 2026,
+          "event": "1-year Korean language training (GKS included)"
+        },
+        {
+          "year": 2027,
+          "event": "Begin PhD KAIST - TOPIK II target"
+        },
+        {
+          "year": 2030,
+          "event": "Graduate PhD - D-10 job seeker"
+        },
+        {
+          "year": 2031,
+          "event": "Job at Samsung/Naver/Kakao - E-7 visa"
+        },
+        {
+          "year": 2033,
+          "event": "F-2 resident visa"
+        },
+        {
+          "year": 2036,
+          "event": "F-5 permanent residence"
+        },
+        {
+          "year": 2038,
+          "event": "Korean citizenship (must renounce BD)"
+        }
       ],
       "confidenceScore": 75
     },
@@ -1066,16 +1381,721 @@
         }
       },
       "sampleTimeline_Realistic": [
-        {"year": 2026, "event": "Apply CSC scholarship - Tsinghua/Peking"},
-        {"year": 2027, "event": "Begin PhD - study HSK + publish intensively"},
-        {"year": 2030, "event": "Graduate PhD - Type B work permit at ByteDance/Alibaba"},
-        {"year": 2031, "event": "Build publications, international reputation"},
-        {"year": 2033, "event": "Apply Canada Express Entry (foreign PhD + experience)"},
-        {"year": 2033, "event": "OR apply Germany Blue Card with strong profile"},
-        {"year": 2034, "event": "Relocate to Canada/Germany with excellent credentials"}
+        {
+          "year": 2026,
+          "event": "Apply CSC scholarship - Tsinghua/Peking"
+        },
+        {
+          "year": 2027,
+          "event": "Begin PhD - study HSK + publish intensively"
+        },
+        {
+          "year": 2030,
+          "event": "Graduate PhD - Type B work permit at ByteDance/Alibaba"
+        },
+        {
+          "year": 2031,
+          "event": "Build publications, international reputation"
+        },
+        {
+          "year": 2033,
+          "event": "Apply Canada Express Entry (foreign PhD + experience)"
+        },
+        {
+          "year": 2033,
+          "event": "OR apply Germany Blue Card with strong profile"
+        },
+        {
+          "year": 2034,
+          "event": "Relocate to Canada/Germany with excellent credentials"
+        }
       ],
       "strategicNote": "China is best treated as a 5-7 year investment: get world-class AI research experience + publications + industry exposure, then use that strong profile to fast-track immigration in Canada, Germany, or Netherlands",
       "confidenceScore": 79
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "totalJourneyYears": {
+        "mscPathway": "9-12 years",
+        "phdPathway": "11-15 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "8-12 months",
+          "startDate": "January 2026 for September 2027 intake",
+          "keyMilestones": [
+            "IELTS preparation (3-6 months)",
+            "University applications (Sep-Dec 2025)",
+            "Acceptance letter (Jan-Apr 2026)",
+            "Austria visa: Apply via Austrian Embassy Dhaka; straightforward but German language expected",
+            "Visa approval (4-12 weeks)"
+          ],
+          "criticalDeadlines": "Most universities deadline October-January"
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "Year 1: Settle, language course, build research network",
+            "Year 2 MSc: Research/thesis + job search begins",
+            "Apply for PSW visa 3 months before graduation"
+          ],
+          "criticalNote": "Network with professors and industry contacts from Year 1"
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Post-Study Work Permit",
+          "duration": "1-3 years",
+          "processingTime": "4-12 weeks",
+          "keyMilestones": [
+            "Month 1-3: PSW application",
+            "Month 3-6: Job search and employment",
+            "Month 6+: Accumulate residence time for PR",
+            "Month 12-24: Language exam if required"
+          ],
+          "criticalNote": "Secure employment before PSW expires"
+        },
+        "phase4_pr": {
+          "pathwayName": "Red-White-Red Card Plus → Settlement Permit (5 years)",
+          "processingTime": "6-12 months",
+          "eligibilityRequirements": [
+            "5 years legal residence",
+            "Clean criminal record",
+            "Language requirement",
+            "Employment or self-sufficiency"
+          ],
+          "estimatedYearsFromGraduation": "3-5 years",
+          "keyMilestones": [
+            "Accumulate required residence years",
+            "Pass language test if required",
+            "Submit PR application",
+            "PR approved"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years",
+          "processingTime": "12-24 months",
+          "languageRequired": "Country language B1-B2",
+          "estimatedYearsFromGraduation": "10-12 years",
+          "note": "Language test is the main requirement alongside residence"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification visa — usually allowed after PR",
+          "childrenVisa": "Included in family reunification",
+          "parentSponsor": "Difficult — requires significant financial proof",
+          "bestTime": "After PR approval",
+          "timeFromGraduation": "6-8 years for spouse"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {
+          "year": 2026,
+          "event": "Prepare IELTS, apply to universities, collect documents"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc program"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 MSc — research, internship, job applications"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate — apply for post-study work permit"
+        },
+        {
+          "year": 2030,
+          "event": "Working in Austria — accumulate residence for PR"
+        },
+        {
+          "year": 2031,
+          "event": "Continue working — language exam, PR application preparation"
+        },
+        {
+          "year": 2032,
+          "event": "Apply for Permanent Residency"
+        },
+        {
+          "year": 2033,
+          "event": "PR approved — sponsor spouse and family"
+        },
+        {
+          "year": 2037,
+          "event": "Apply for citizenship"
+        }
+      ],
+      "confidenceScore": 85
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "totalJourneyYears": {
+        "mscPathway": "9-12 years",
+        "phdPathway": "11-15 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "8-12 months",
+          "startDate": "January 2026 for September 2027 intake",
+          "keyMilestones": [
+            "IELTS preparation (3-6 months)",
+            "University applications (Sep-Dec 2025)",
+            "Acceptance letter (Jan-Apr 2026)",
+            "Belgium visa: Apply via VFS Global/Belgian Embassy; Single Permit via employer",
+            "Visa approval (4-12 weeks)"
+          ],
+          "criticalDeadlines": "Most universities deadline October-January"
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "Year 1: Settle, language course, build research network",
+            "Year 2 MSc: Research/thesis + job search begins",
+            "Apply for PSW visa 3 months before graduation"
+          ],
+          "criticalNote": "Network with professors and industry contacts from Year 1"
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Post-Study Work Permit",
+          "duration": "1-3 years",
+          "processingTime": "4-12 weeks",
+          "keyMilestones": [
+            "Month 1-3: PSW application",
+            "Month 3-6: Job search and employment",
+            "Month 6+: Accumulate residence time for PR",
+            "Month 12-24: Language exam if required"
+          ],
+          "criticalNote": "Secure employment before PSW expires"
+        },
+        "phase4_pr": {
+          "pathwayName": "Single Permit → Carte de Séjour Permanente (5 years)",
+          "processingTime": "6-12 months",
+          "eligibilityRequirements": [
+            "5 years legal residence",
+            "Clean criminal record",
+            "Language requirement",
+            "Employment or self-sufficiency"
+          ],
+          "estimatedYearsFromGraduation": "3-5 years",
+          "keyMilestones": [
+            "Accumulate required residence years",
+            "Pass language test if required",
+            "Submit PR application",
+            "PR approved"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years",
+          "processingTime": "12-24 months",
+          "languageRequired": "Country language B1-B2",
+          "estimatedYearsFromGraduation": "10-12 years",
+          "note": "Language test is the main requirement alongside residence"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification visa — usually allowed after PR",
+          "childrenVisa": "Included in family reunification",
+          "parentSponsor": "Difficult — requires significant financial proof",
+          "bestTime": "After PR approval",
+          "timeFromGraduation": "6-8 years for spouse"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {
+          "year": 2026,
+          "event": "Prepare IELTS, apply to universities, collect documents"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc program"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 MSc — research, internship, job applications"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate — apply for post-study work permit"
+        },
+        {
+          "year": 2030,
+          "event": "Working in Belgium — accumulate residence for PR"
+        },
+        {
+          "year": 2031,
+          "event": "Continue working — language exam, PR application preparation"
+        },
+        {
+          "year": 2032,
+          "event": "Apply for Permanent Residency"
+        },
+        {
+          "year": 2033,
+          "event": "PR approved — sponsor spouse and family"
+        },
+        {
+          "year": 2037,
+          "event": "Apply for citizenship"
+        }
+      ],
+      "confidenceScore": 85
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "totalJourneyYears": {
+        "mscPathway": "7-10 years",
+        "phdPathway": "9-13 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "8-12 months",
+          "startDate": "January 2026 for September 2027 intake",
+          "keyMilestones": [
+            "IELTS preparation (3-6 months)",
+            "University applications (Sep-Dec 2025)",
+            "Acceptance letter (Jan-Apr 2026)",
+            "NZ visa: Online Visitor Visa then Student Visa; straightforward process for BD nationals",
+            "Visa approval (4-12 weeks)"
+          ],
+          "criticalDeadlines": "Most universities deadline October-January"
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "Year 1: Settle, language course, build research network",
+            "Year 2 MSc: Research/thesis + job search begins",
+            "Apply for PSW visa 3 months before graduation"
+          ],
+          "criticalNote": "Network with professors and industry contacts from Year 1"
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Post-Study Work Permit",
+          "duration": "1-3 years",
+          "processingTime": "4-12 weeks",
+          "keyMilestones": [
+            "Month 1-3: PSW application",
+            "Month 3-6: Job search and employment",
+            "Month 6+: Accumulate residence time for PR",
+            "Month 12-24: Language exam if required"
+          ],
+          "criticalNote": "Secure employment before PSW expires"
+        },
+        "phase4_pr": {
+          "pathwayName": "Skilled Migrant Category points (3 years work exp)",
+          "processingTime": "6-12 months",
+          "eligibilityRequirements": [
+            "3 years legal residence",
+            "Clean criminal record",
+            "Language requirement",
+            "Employment or self-sufficiency"
+          ],
+          "estimatedYearsFromGraduation": "1-3 years",
+          "keyMilestones": [
+            "Accumulate required residence years",
+            "Pass language test if required",
+            "Submit PR application",
+            "PR approved"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years",
+          "processingTime": "12-24 months",
+          "languageRequired": "Country language B1-B2",
+          "estimatedYearsFromGraduation": "8-10 years",
+          "note": "Language test is the main requirement alongside residence"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification visa — usually allowed after PR",
+          "childrenVisa": "Included in family reunification",
+          "parentSponsor": "Difficult — requires significant financial proof",
+          "bestTime": "After PR approval",
+          "timeFromGraduation": "4-6 years for spouse"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {
+          "year": 2026,
+          "event": "Prepare IELTS, apply to universities, collect documents"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc program"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 MSc — research, internship, job applications"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate — apply for post-study work permit"
+        },
+        {
+          "year": 2030,
+          "event": "Working in New Zealand — accumulate residence for PR"
+        },
+        {
+          "year": 2031,
+          "event": "Continue working — language exam, PR application preparation"
+        },
+        {
+          "year": 2030,
+          "event": "Apply for Permanent Residency"
+        },
+        {
+          "year": 2031,
+          "event": "PR approved — sponsor spouse and family"
+        },
+        {
+          "year": 2035,
+          "event": "Apply for citizenship"
+        }
+      ],
+      "confidenceScore": 85
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "totalJourneyYears": {
+        "mscPathway": "10-13 years",
+        "phdPathway": "12-16 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "8-12 months",
+          "startDate": "January 2026 for September 2027 intake",
+          "keyMilestones": [
+            "IELTS preparation (3-6 months)",
+            "University applications (Sep-Dec 2025)",
+            "Acceptance letter (Jan-Apr 2026)",
+            "Singapore visa: Student Pass via ICA — university arranges; very smooth process",
+            "Visa approval (4-12 weeks)"
+          ],
+          "criticalDeadlines": "Most universities deadline October-January"
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "Year 1: Settle, language course, build research network",
+            "Year 2 MSc: Research/thesis + job search begins",
+            "Apply for PSW visa 3 months before graduation"
+          ],
+          "criticalNote": "Network with professors and industry contacts from Year 1"
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Post-Study Work Permit",
+          "duration": "1-3 years",
+          "processingTime": "4-12 weeks",
+          "keyMilestones": [
+            "Month 1-3: PSW application",
+            "Month 3-6: Job search and employment",
+            "Month 6+: Accumulate residence time for PR",
+            "Month 12-24: Language exam if required"
+          ],
+          "criticalNote": "Secure employment before PSW expires"
+        },
+        "phase4_pr": {
+          "pathwayName": "EP/SP → Permanent Residence application (6+ years)",
+          "processingTime": "6-12 months",
+          "eligibilityRequirements": [
+            "6 years legal residence",
+            "Clean criminal record",
+            "Language requirement",
+            "Employment or self-sufficiency"
+          ],
+          "estimatedYearsFromGraduation": "4-6 years",
+          "keyMilestones": [
+            "Accumulate required residence years",
+            "Pass language test if required",
+            "Submit PR application",
+            "PR approved"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "14 years",
+          "processingTime": "12-24 months",
+          "languageRequired": "Country language B1-B2",
+          "estimatedYearsFromGraduation": "20-22 years",
+          "note": "Language test is the main requirement alongside residence"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification visa — usually allowed after PR",
+          "childrenVisa": "Included in family reunification",
+          "parentSponsor": "Difficult — requires significant financial proof",
+          "bestTime": "After PR approval",
+          "timeFromGraduation": "7-9 years for spouse"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {
+          "year": 2026,
+          "event": "Prepare IELTS, apply to universities, collect documents"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc program"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 MSc — research, internship, job applications"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate — apply for post-study work permit"
+        },
+        {
+          "year": 2030,
+          "event": "Working in Singapore — accumulate residence for PR"
+        },
+        {
+          "year": 2031,
+          "event": "Continue working — language exam, PR application preparation"
+        },
+        {
+          "year": 2033,
+          "event": "Apply for Permanent Residency"
+        },
+        {
+          "year": 2034,
+          "event": "PR approved — sponsor spouse and family"
+        },
+        {
+          "year": 2047,
+          "event": "Apply for citizenship"
+        }
+      ],
+      "confidenceScore": 85
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "totalJourneyYears": {
+        "mscPathway": "9-12 years",
+        "phdPathway": "11-15 years"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "8-12 months",
+          "startDate": "January 2026 for September 2027 intake",
+          "keyMilestones": [
+            "IELTS preparation (3-6 months)",
+            "University applications (Sep-Dec 2025)",
+            "Acceptance letter (Jan-Apr 2026)",
+            "France visa: Long-stay student visa (VLS-TS) — Campus France attestation required; allow 8-12 weeks",
+            "Visa approval (4-12 weeks)"
+          ],
+          "criticalDeadlines": "Most universities deadline October-January"
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "Year 1: Settle, language course, build research network",
+            "Year 2 MSc: Research/thesis + job search begins",
+            "Apply for PSW visa 3 months before graduation"
+          ],
+          "criticalNote": "Network with professors and industry contacts from Year 1"
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Post-Study Work Permit",
+          "duration": "1-3 years",
+          "processingTime": "4-12 weeks",
+          "keyMilestones": [
+            "Month 1-3: PSW application",
+            "Month 3-6: Job search and employment",
+            "Month 6+: Accumulate residence time for PR",
+            "Month 12-24: Language exam if required"
+          ],
+          "criticalNote": "Secure employment before PSW expires"
+        },
+        "phase4_pr": {
+          "pathwayName": "Passeport Talent → Carte de Résident (5 years work)",
+          "processingTime": "6-12 months",
+          "eligibilityRequirements": [
+            "5 years legal residence",
+            "Clean criminal record",
+            "Language requirement",
+            "Employment or self-sufficiency"
+          ],
+          "estimatedYearsFromGraduation": "3-5 years",
+          "keyMilestones": [
+            "Accumulate required residence years",
+            "Pass language test if required",
+            "Submit PR application",
+            "PR approved"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "5 years",
+          "processingTime": "12-24 months",
+          "languageRequired": "Country language B1-B2",
+          "estimatedYearsFromGraduation": "10-12 years",
+          "note": "Language test is the main requirement alongside residence"
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification visa — usually allowed after PR",
+          "childrenVisa": "Included in family reunification",
+          "parentSponsor": "Difficult — requires significant financial proof",
+          "bestTime": "After PR approval",
+          "timeFromGraduation": "6-8 years for spouse"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {
+          "year": 2026,
+          "event": "Prepare IELTS, apply to universities, collect documents"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MSc program"
+        },
+        {
+          "year": 2028,
+          "event": "Year 2 MSc — research, internship, job applications"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate — apply for post-study work permit"
+        },
+        {
+          "year": 2030,
+          "event": "Working in France — accumulate residence for PR"
+        },
+        {
+          "year": 2031,
+          "event": "Continue working — language exam, PR application preparation"
+        },
+        {
+          "year": 2032,
+          "event": "Apply for Permanent Residency"
+        },
+        {
+          "year": 2033,
+          "event": "PR approved — sponsor spouse and family"
+        },
+        {
+          "year": 2037,
+          "event": "Apply for citizenship"
+        }
+      ],
+      "confidenceScore": 85
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "totalJourneyYears": {
+        "mscPathway": "Career accelerator only — no PR/citizenship",
+        "phdPathway": "Career accelerator only — no PR/citizenship"
+      },
+      "phases": {
+        "phase1_application": {
+          "duration": "8-12 months",
+          "startDate": "January 2026 for September 2027 intake",
+          "keyMilestones": [
+            "IELTS preparation (3-6 months)",
+            "University applications (Sep-Dec 2025)",
+            "Acceptance letter (Jan-Apr 2026)",
+            "UAE visa: University/employer arranges entry permit; near-zero rejection for MBZUAI students",
+            "Visa approval (4-12 weeks)"
+          ],
+          "criticalDeadlines": "Most universities deadline October-January"
+        },
+        "phase2_study": {
+          "mscDuration": "2 years",
+          "phdDuration": "3-4 years",
+          "keyMilestones": [
+            "Year 1: Settle, language course, build research network",
+            "Year 2 MSc: Research/thesis + job search begins",
+            "Apply for PSW visa 3 months before graduation"
+          ],
+          "criticalNote": "Network with professors and industry contacts from Year 1"
+        },
+        "phase3_postStudyWork": {
+          "permitName": "Post-Study Work Permit",
+          "duration": "1-3 years",
+          "processingTime": "4-12 weeks",
+          "keyMilestones": [
+            "Month 1-3: PSW application",
+            "Month 3-6: Job search and employment",
+            "Month 6+: Accumulate residence time for PR",
+            "Month 12-24: Language exam if required"
+          ],
+          "criticalNote": "Secure employment before PSW expires"
+        },
+        "phase4_pr": {
+          "pathwayName": "Golden Visa (10yr renewable) — not traditional PR",
+          "processingTime": "6-12 months",
+          "eligibilityRequirements": [
+            "999 years legal residence",
+            "Clean criminal record",
+            "Language requirement",
+            "Employment or self-sufficiency"
+          ],
+          "estimatedYearsFromGraduation": "2-3 years (Golden Visa threshold)",
+          "keyMilestones": [
+            "Accumulate required residence years",
+            "Pass language test if required",
+            "Submit PR application",
+            "PR approved"
+          ]
+        },
+        "phase5_citizenship": {
+          "waitAfterPr": "0 years",
+          "processingTime": "12-24 months",
+          "languageRequired": "Country language B1-B2",
+          "estimatedYearsFromGraduation": "999-1001 years",
+          "note": "UAE has NO citizenship pathway. Use UAE for wealth accumulation then transition to Canada/Ireland/Germany for PR and citizenship."
+        },
+        "phase6_familyRelocation": {
+          "spouseVisa": "Family reunification visa — usually allowed after PR",
+          "childrenVisa": "Included in family reunification",
+          "parentSponsor": "Difficult — requires significant financial proof",
+          "bestTime": "After PR approval",
+          "timeFromGraduation": "1000-1002 years for spouse"
+        }
+      },
+      "sampleTimeline_MSc": [
+        {
+          "year": 2026,
+          "event": "Apply to MBZUAI (February/May deadlines)"
+        },
+        {
+          "year": 2027,
+          "event": "Begin MBZUAI MSc — AED 9,300/month stipend, zero fees"
+        },
+        {
+          "year": 2028,
+          "event": "MSc Year 2 — research at G42 or TII, network"
+        },
+        {
+          "year": 2029,
+          "event": "Graduate — join G42 / MBZUAI / Microsoft UAE as AI Engineer"
+        },
+        {
+          "year": 2030,
+          "event": "Working in UAE — accumulate savings; apply for Golden Visa (AED 30k salary threshold)"
+        },
+        {
+          "year": 2031,
+          "event": "Golden Visa approved (10yr) — financial security; accelerate savings"
+        },
+        {
+          "year": 2033,
+          "event": "Target: AED 500,000-1M saved; evaluate PR destination (Canada/Ireland/Germany)"
+        },
+        {
+          "year": 2034,
+          "event": "Transition to chosen PR country using UAE experience + savings"
+        },
+        {
+          "year": 2039,
+          "event": "Citizenship in chosen country (if Canada: ~2034, Ireland: ~2034, Germany: ~2036)"
+        }
+      ],
+      "confidenceScore": 85
     }
   ],
   "criticalTimingRules": {

@@ -1,4 +1,3 @@
-
 {
   "metadata": {
     "version": "2.0.0",
@@ -1192,11 +1191,23 @@
         "totalCompNote": "Base + bonus + equity (in tech); expat packages less common for fresh grads; low taxation (~10-15% effective) boosts take-home significantly"
       },
       "geographicVariation": {
-        "singapore": {
-          "jobDensity": 100,
-          "avgSalary": "SGD 85,000",
-          "costOfLivingIndex": 91,
-          "netBenefit": "City-state - no geographic variation; high cost but high take-home due to low tax; 1BR rent SGD 2,800+"
+        "central_business_district": {
+          "jobDensity": 95,
+          "avgSalary": "SGD 100,000",
+          "costOfLivingIndex": 100,
+          "netBenefit": "Maximum tech and finance jobs; rent SGD 4,000-8,000 1BR in Marina/CBD"
+        },
+        "one_north": {
+          "jobDensity": 90,
+          "avgSalary": "SGD 95,000",
+          "costOfLivingIndex": 88,
+          "netBenefit": "Tech hub (Meta, Grab, Alibaba SG HQ); NUS proximity; rent SGD 2,500-4,500 1BR"
+        },
+        "jurong_east": {
+          "jobDensity": 65,
+          "avgSalary": "SGD 82,000",
+          "costOfLivingIndex": 72,
+          "netBenefit": "Manufacturing AI, logistics tech (JTC), more affordable; 45min to CBD"
         }
       },
       "workCulture": {
@@ -1244,6 +1255,2395 @@
       "strategicAdvice": "Singapore is outstanding for career acceleration, salary, and tax efficiency - but weak for permanent immigration certainty. Best strategy: Treat as 5-10 year career boost rather than forever home. Target Grab, Sea, or Big Tech for strong resume building and regional exposure. Save aggressively (low tax, high salary = excellent savings rate). After 3-5 years, leverage Singapore experience to move to Australia/Canada/UK with strong profile, or apply Singapore PR with realistic expectations (50-60% rejection for most). Alternatively, use Singapore as regional base while maintaining flexibility. Excellent for: young, single professionals prioritizing career and savings. Poor for: those prioritizing immigration certainty and family settlement.",
       "confidenceScore": 86,
       "dataQuality": "High; transparent employment data, clear visa thresholds, large expat community provides information"
+    },
+    {
+      "country": "Ireland",
+      "countryCode": "IE",
+      "overallJobMarketScore": 85,
+      "demandLevel": "Very High",
+      "demandTrend": "Strong and growing — EU headquarters hub for Big Tech",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "2-4 months",
+      "averageTimeToJobDays": 75,
+      "jobOpeningsAnnual": 18000,
+      "aiMlSpecificOpenings": 4500,
+      "competitionLevel": 65,
+      "jobSecurityScore": 82,
+      "startupEcosystemScore": 78,
+      "researchPositionsScore": 72,
+      "remoteWorkCulture": 88,
+      "workLifeBalanceScore": 82,
+      "careerProgressionScore": 80,
+      "majorHubs": [
+        "Dublin",
+        "Cork",
+        "Limerick",
+        "Galway"
+      ],
+      "topEmployers": [
+        "Google (EMEA HQ)",
+        "Meta (EMEA HQ)",
+        "Apple (EMEA HQ)",
+        "Microsoft",
+        "Amazon",
+        "Salesforce",
+        "LinkedIn",
+        "Twitter/X",
+        "HubSpot",
+        "Stripe (HQ)"
+      ],
+      "emergingCompanies": [
+        "Intercom",
+        "Teamwork",
+        "LetsGetChecked",
+        "Conjura",
+        "Adaptiiv"
+      ],
+      "skillsInDemand": [
+        "MLOps",
+        "Cloud (AWS/GCP/Azure)",
+        "LLM fine-tuning",
+        "Data Engineering",
+        "Python/PyTorch",
+        "Site Reliability Engineering",
+        "Full-stack (React/Node)"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Big Tech EMEA HQ",
+          "demandScore": 95,
+          "salaryRange": "EUR 75,000-140,000",
+          "note": "Google, Meta, Apple all have EMEA headquarters in Dublin — largest tech employer cluster in Europe"
+        },
+        {
+          "sector": "FinTech & Payments",
+          "demandScore": 88,
+          "salaryRange": "EUR 70,000-130,000",
+          "note": "Stripe HQ, PayPal, Mastercard Technology"
+        },
+        {
+          "sector": "Pharma-Tech & Health AI",
+          "demandScore": 78,
+          "salaryRange": "EUR 65,000-115,000",
+          "note": "Pfizer, J&J Tech; AI in drug discovery growing"
+        },
+        {
+          "sector": "Cybersecurity",
+          "demandScore": 82,
+          "salaryRange": "EUR 70,000-125,000",
+          "note": "McAfee, Trend Micro, Symantec have Irish tech centers"
+        },
+        {
+          "sector": "Gaming & Interactive Media",
+          "demandScore": 68,
+          "salaryRange": "EUR 55,000-100,000",
+          "note": "King, Activision, EA have Irish offices"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "EMEA support/tech roles at Big Tech",
+        "hardestEntry": "SWE at product teams (US-facing)",
+        "sweetSpot": "ML Engineer at EU-headquartered FinTech (Stripe, PayPal)",
+        "bangladeshiPresence": "Growing — CSO data shows South Asian community expanding in Dublin",
+        "biasLevel": "Low — highly international work environment"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 85,
+        "pospWpgpAdvantage": "Stamp 1G (2yr PSW) is golden — employers know you can start immediately",
+        "studyPermitToPgwpSuccess": 90,
+        "sponsorshipCost": "Low",
+        "note": "CSEP (Critical Skills Employment Permit) is the target — EUR 32,000+ salary, tech roles easily qualify"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "EUR 80,000-110,000",
+        "mscEntryLevel": "EUR 60,000-90,000",
+        "midLevel3to5yrs": "EUR 90,000-130,000",
+        "seniorLevel": "EUR 120,000-180,000",
+        "totalCompNote": "RSU packages exist at Big Tech EMEA offices, though smaller than US counterparts"
+      },
+      "geographicVariation": {
+        "dublin": {
+          "jobDensity": 95,
+          "avgSalary": "EUR 85,000",
+          "costOfLivingIndex": 95,
+          "netBenefit": "Maximum jobs, highest rent — 1BR EUR 2,200-2,800/month, severe shortage"
+        },
+        "cork": {
+          "jobDensity": 68,
+          "avgSalary": "EUR 72,000",
+          "costOfLivingIndex": 72,
+          "netBenefit": "Apple, Amazon, EMC hubs — better housing, emerging tech scene"
+        },
+        "limerick": {
+          "jobDensity": 45,
+          "avgSalary": "EUR 65,000",
+          "costOfLivingIndex": 60,
+          "netBenefit": "Lower competition, smaller tech cluster, affordable housing"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 40,
+        "vacationDays": 20,
+        "sickLeaveDays": 10,
+        "parentalLeaveWeeks": 26,
+        "workFromHomeAcceptance": 88,
+        "diversityScore": 88,
+        "burnoutRisk": "Low-Medium",
+        "culturalFit": "Highly international; pubs are the social nexus; relaxed work style"
+      },
+      "careerGrowth": {
+        "pathToSenior": "3-5 years",
+        "pathToStaffPrincipal": "8-12 years",
+        "managementOpportunities": 78,
+        "technicalLadder": "Strong at Big Tech EMEA offices",
+        "entrepreneurshipSupport": 80,
+        "note": "Dublin's startup scene is vibrant; NDRC incubator; Enterprise Ireland funding"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 88,
+        "topUsPhd": 92,
+        "topEuPhd": 88,
+        "bangladeshUndergrad": 65,
+        "note": "QQI credential recognition; Irish MSc/PhD strongly regarded"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 45,
+        "trend": "Post-2023 layoffs stabilizing; EU AI Act compliance creating new roles in governance/safety",
+        "protection": "Strong employment law; 2 weeks/year severance; unfair dismissal protections"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 92,
+        "crsPointsFromJob": "N/A (Stamp 4 system)",
+        "provinceNominationBoost": "N/A",
+        "note": "Critical Skills Employment Permit → Stamp 4 (PR equivalent) → Irish citizenship in 5yr total"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Very strong — EU AI Act compliance roles, continued Big Tech investment",
+        "outlook2040": "Strong — Ireland's low corporation tax model under EU pressure but tech cluster is established",
+        "riskFactors": "Housing crisis most severe in EU; potential EU corporate tax reform"
+      },
+      "strategicAdvice": "Ireland is arguably the best short-term career accelerator for Bangladeshi AI/ML graduates. Stamp 1G → CSEP → Stamp 4 in 3yr is a clear, fast PR pathway. Dublin Big Tech salaries are 2x Bangladesh but cost-of-living is brutal. Prioritize Cork or Limerick for first job to reduce housing burden. CRITICAL: Apply for CSEP immediately on graduation — Critical Skills list includes all tech/AI roles.",
+      "confidenceScore": 90,
+      "dataQuality": "High"
+    },
+    {
+      "country": "Sweden",
+      "countryCode": "SE",
+      "overallJobMarketScore": 80,
+      "demandLevel": "High",
+      "demandTrend": "Growing — AI/ML, green tech, and gaming",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "3-6 months",
+      "averageTimeToJobDays": 120,
+      "jobOpeningsAnnual": 14000,
+      "aiMlSpecificOpenings": 3500,
+      "competitionLevel": 70,
+      "jobSecurityScore": 85,
+      "startupEcosystemScore": 90,
+      "researchPositionsScore": 80,
+      "remoteWorkCulture": 85,
+      "workLifeBalanceScore": 95,
+      "careerProgressionScore": 75,
+      "majorHubs": [
+        "Stockholm",
+        "Gothenburg",
+        "Malmö",
+        "Uppsala"
+      ],
+      "topEmployers": [
+        "Spotify",
+        "Klarna",
+        "Ericsson",
+        "IKEA Tech",
+        "Volvo Cars Tech",
+        "H&M Tech",
+        "Northvolt",
+        "King (Activision)",
+        "Mojang (Microsoft)",
+        "Scania Tech"
+      ],
+      "emergingCompanies": [
+        "Einride",
+        "Voi Technology",
+        "Mentice",
+        "Detectify",
+        "Tackle"
+      ],
+      "skillsInDemand": [
+        "Recommendation Systems (Spotify-style)",
+        "Computer Vision (autonomous vehicles)",
+        "Battery AI (Northvolt)",
+        "NLP/Swedish language models",
+        "MLOps",
+        "Rust",
+        "Kotlin"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Music Tech & Streaming",
+          "demandScore": 82,
+          "salaryRange": "SEK 55,000-80,000/month",
+          "note": "Spotify is world's largest audio ML employer; recommendation, NLP, audio AI roles"
+        },
+        {
+          "sector": "FinTech & Payments",
+          "demandScore": 88,
+          "salaryRange": "SEK 60,000-85,000/month",
+          "note": "Klarna, iZettle (PayPal), Trustly — advanced fraud detection AI"
+        },
+        {
+          "sector": "Automotive AI",
+          "demandScore": 84,
+          "salaryRange": "SEK 58,000-82,000/month",
+          "note": "Volvo Cars, Scania — autonomous driving AI; strong in Gothenburg"
+        },
+        {
+          "sector": "Gaming & Interactive",
+          "demandScore": 80,
+          "salaryRange": "SEK 50,000-75,000/month",
+          "note": "King, Mojang, DICE (EA) — procedural generation, NPC AI, game analytics"
+        },
+        {
+          "sector": "GreenTech & Battery",
+          "demandScore": 78,
+          "salaryRange": "SEK 55,000-78,000/month",
+          "note": "Northvolt — ML for battery optimization; massive EU investment"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Gaming/tech startups; data engineering roles",
+        "hardestEntry": "Spotify/Klarna product ML teams (global talent competition)",
+        "sweetSpot": "Series B-C Nordic startup with international team",
+        "bangladeshiPresence": "Small but growing; South Asian tech community in Stockholm",
+        "biasLevel": "Low — diversity actively promoted, Swedes very inclusive professionally"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 78,
+        "pospWpgpAdvantage": "Swedish PSW (12 months) gives time; employer sponsorship via work permit",
+        "studyPermitToPgwpSuccess": 82,
+        "sponsorshipCost": "Low-Medium",
+        "note": "Swedish Migration Agency (Migrationsverket) processes work permits; employer must show salary > SEK 27,360/month"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "SEK 720,000-900,000/year",
+        "mscEntryLevel": "SEK 540,000-720,000/year",
+        "midLevel3to5yrs": "SEK 720,000-960,000/year",
+        "seniorLevel": "SEK 900,000-1,200,000/year",
+        "totalCompNote": "Lower than US/Switzerland but high quality of life; pension contributions are excellent"
+      },
+      "geographicVariation": {
+        "stockholm": {
+          "jobDensity": 92,
+          "avgSalary": "SEK 680,000",
+          "costOfLivingIndex": 85,
+          "netBenefit": "Max jobs; housing is genuinely difficult — queue years for housing, subletting expensive"
+        },
+        "gothenburg": {
+          "jobDensity": 72,
+          "avgSalary": "SEK 610,000",
+          "costOfLivingIndex": 74,
+          "netBenefit": "Automotive tech hub; Volvo/Scania; better housing than Stockholm"
+        },
+        "malmö": {
+          "jobDensity": 55,
+          "avgSalary": "SEK 560,000",
+          "costOfLivingIndex": 68,
+          "netBenefit": "Close to Copenhagen (Øresund bridge); gaming and tech; most affordable of three"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 37,
+        "vacationDays": 25,
+        "sickLeaveDays": "Unlimited (80% pay)",
+        "parentalLeaveWeeks": 68,
+        "workFromHomeAcceptance": 90,
+        "diversityScore": 82,
+        "burnoutRisk": "Low",
+        "culturalFit": "Lagom philosophy — balance is paramount; flat hierarchy; consensus-driven decisions"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years",
+        "pathToStaffPrincipal": "10-14 years",
+        "managementOpportunities": 72,
+        "technicalLadder": "Strong at Spotify, Klarna, Ericsson",
+        "entrepreneurshipSupport": 90,
+        "note": "Stockholm is #2 tech startup city in Europe per capita; Vinnova grants for AI research"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 85,
+        "topUsPhd": 90,
+        "topEuPhd": 88,
+        "bangladeshUndergrad": 60,
+        "note": "KTH/Chalmers degree highly regarded in Swedish market; Swedish language for non-tech roles"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 40,
+        "trend": "Stable; Swedish companies culturally averse to mass layoffs due to labor law (LAS)",
+        "protection": "LAS (Employment Protection Act) — last-in-first-out; strong union protection; 1-6 month notice periods"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 85,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "4 years legal residence (work) required for PR; Swedish language B1 practical requirement"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Strong — Nordic tech ecosystem expanding; EU AI research investment",
+        "outlook2040": "Good — aging population creates labor need; green tech revolution",
+        "riskFactors": "Right-wing government tightening immigration; Swedish language barrier; expensive housing"
+      },
+      "strategicAdvice": "Sweden's work-life balance is genuinely the best in the world. Study at KTH/Chalmers (fully paid PhD), then target Spotify, Klarna, or Northvolt. CRITICAL: Learn Swedish to A2 during studies — B1 is needed for PR, and Swedish job market explodes open with language. Housing queue registration (Bostadskö) should start on Day 1 of arrival.",
+      "confidenceScore": 88,
+      "dataQuality": "High"
+    },
+    {
+      "country": "Finland",
+      "countryCode": "FI",
+      "overallJobMarketScore": 75,
+      "demandLevel": "High",
+      "demandTrend": "Growing — severe tech labor shortage due to demographics",
+      "marketSaturation": "Low-Medium",
+      "averageTimeToJob": "3-5 months",
+      "averageTimeToJobDays": 105,
+      "jobOpeningsAnnual": 8000,
+      "aiMlSpecificOpenings": 2000,
+      "competitionLevel": 55,
+      "jobSecurityScore": 88,
+      "startupEcosystemScore": 80,
+      "researchPositionsScore": 85,
+      "remoteWorkCulture": 82,
+      "workLifeBalanceScore": 92,
+      "careerProgressionScore": 72,
+      "majorHubs": [
+        "Helsinki",
+        "Espoo",
+        "Tampere",
+        "Oulu"
+      ],
+      "topEmployers": [
+        "Nokia Bell Labs",
+        "Rovio (Angry Birds)",
+        "Supercell",
+        "KONE",
+        "Neste",
+        "Reaktor",
+        "Wolt (DoorDash)",
+        "F-Secure (WithSecure)",
+        "Elisa",
+        "Futurice"
+      ],
+      "emergingCompanies": [
+        "Speechly",
+        "Aito.ai",
+        "Saidot",
+        "Lassie",
+        "Leanheat"
+      ],
+      "skillsInDemand": [
+        "Network AI (Nokia)",
+        "Game AI (Rovio/Supercell)",
+        "Industrial IoT AI (KONE)",
+        "NLP Finnish language",
+        "Computer Vision",
+        "Embedded ML",
+        "Privacy-preserving AI"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Telecom & Network AI",
+          "demandScore": 88,
+          "salaryRange": "EUR 55,000-90,000",
+          "note": "Nokia Bell Labs is a major research employer; 5G/6G AI is the core focus area"
+        },
+        {
+          "sector": "Gaming",
+          "demandScore": 85,
+          "salaryRange": "EUR 50,000-85,000",
+          "note": "Supercell, Rovio, Remedy — Finland is world-class in mobile/PC gaming AI"
+        },
+        {
+          "sector": "Industrial Automation",
+          "demandScore": 78,
+          "salaryRange": "EUR 52,000-82,000",
+          "note": "KONE elevators, Metso — predictive maintenance AI, digital twin technology"
+        },
+        {
+          "sector": "Logistics & Delivery Tech",
+          "demandScore": 80,
+          "salaryRange": "EUR 50,000-80,000",
+          "note": "Wolt (acquired by DoorDash) — recommendation systems, route optimization ML"
+        },
+        {
+          "sector": "Cybersecurity",
+          "demandScore": 75,
+          "salaryRange": "EUR 55,000-88,000",
+          "note": "WithSecure (F-Secure) — threat detection ML; SSH Communications Security"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Nokia (large hiring pipeline), Wolt, game studios",
+        "hardestEntry": "Supercell (extremely selective)",
+        "sweetSpot": "Mid-size Finnish tech company or consultancy (Reaktor, Futurice, Gofore)",
+        "bangladeshiPresence": "Very small; South Asian community limited; Espoo has a diverse expat community",
+        "biasLevel": "Low professionally; Finns are reserved but fair; English widely used in tech"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 85,
+        "pospWpgpAdvantage": "Finnish residence permit for employment — straightforward process; 2yr job seeker permit from Migrationsverket",
+        "studyPermitToPgwpSuccess": 88,
+        "sponsorshipCost": "Low",
+        "note": "Finland has severe labor shortage — employers NEED international graduates; ENTER market now"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "EUR 55,000-75,000",
+        "mscEntryLevel": "EUR 45,000-65,000",
+        "midLevel3to5yrs": "EUR 65,000-85,000",
+        "seniorLevel": "EUR 80,000-120,000",
+        "totalCompNote": "Lower than Netherlands/Switzerland but comprehensive benefits; meals, transport, leisure subsidized by employer"
+      },
+      "geographicVariation": {
+        "helsinki": {
+          "jobDensity": 88,
+          "avgSalary": "EUR 58,000",
+          "costOfLivingIndex": 82,
+          "netBenefit": "90% of Finnish tech jobs; reasonable rent EUR 1,100-1,600 for 1BR"
+        },
+        "espoo": {
+          "jobDensity": 80,
+          "avgSalary": "EUR 60,000",
+          "costOfLivingIndex": 80,
+          "netBenefit": "Nokia HQ, Aalto University — strongest AI research cluster; slightly lower rent than Helsinki"
+        },
+        "tampere": {
+          "jobDensity": 55,
+          "avgSalary": "EUR 52,000",
+          "costOfLivingIndex": 68,
+          "netBenefit": "Emerging tech hub; Microsoft, Ericsson offices; most affordable major city"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 37,
+        "vacationDays": 30,
+        "sickLeaveDays": "Unlimited (80% pay via Kela)",
+        "parentalLeaveWeeks": 72,
+        "workFromHomeAcceptance": 88,
+        "diversityScore": 78,
+        "burnoutRisk": "Very Low",
+        "culturalFit": "Finnish culture values silence, directness, and competence over social performance; no small talk expected"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-5 years",
+        "pathToStaffPrincipal": "8-12 years",
+        "managementOpportunities": 68,
+        "technicalLadder": "Well developed at Nokia, Wolt",
+        "entrepreneurshipSupport": 85,
+        "note": "Business Finland funds AI startups; Aalto entrepreneurship ecosystem world-class"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 82,
+        "topUsPhd": 88,
+        "topEuPhd": 88,
+        "bangladeshUndergrad": 60,
+        "note": "Finnish/EU degree preferred; English-language Aalto/UHelsinki degree very strong in market"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 35,
+        "trend": "Very stable; Finnish employment law strict; Nokia restructuring risk noted but overall market healthy",
+        "protection": "Strong union protections; YT (collective bargaining) process; generous severance"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 90,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "CRITICAL: Since 2022, study years count toward PR. MSc = 2yr toward the 4yr requirement. Only need 2 more years of work for PR — fastest in EU!"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Very strong — worst tech labor shortage in Europe; government actively begging for skilled immigrants",
+        "outlook2040": "Excellent — demographic crisis structural, immigration demand permanent; AI national priority",
+        "riskFactors": "Finnish language for citizenship; social isolation risk for non-EU immigrants"
+      },
+      "strategicAdvice": "Finland is the most underrated destination for Bangladeshi CS graduates. Study years count toward PR, making it the fastest PR pathway in Europe. Aalto University AI programs are world-class. Nokia provides stable entry employment. CRITICAL: Register for Finnish language course on Day 1 — Finnish language opens the market 10x and is needed for citizenship.",
+      "confidenceScore": 87,
+      "dataQuality": "High"
+    },
+    {
+      "country": "Denmark",
+      "countryCode": "DK",
+      "overallJobMarketScore": 82,
+      "demandLevel": "High",
+      "demandTrend": "Strong — life sciences AI, renewable energy, and gaming",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "3-5 months",
+      "averageTimeToJobDays": 105,
+      "jobOpeningsAnnual": 10000,
+      "aiMlSpecificOpenings": 2800,
+      "competitionLevel": 68,
+      "jobSecurityScore": 85,
+      "startupEcosystemScore": 82,
+      "researchPositionsScore": 85,
+      "remoteWorkCulture": 88,
+      "workLifeBalanceScore": 95,
+      "careerProgressionScore": 78,
+      "majorHubs": [
+        "Copenhagen",
+        "Aarhus",
+        "Odense"
+      ],
+      "topEmployers": [
+        "Novo Nordisk (AI in drug discovery)",
+        "Vestas (wind energy AI)",
+        "Maersk (logistics AI)",
+        "Ørsted (offshore wind AI)",
+        "LEGO Group Tech",
+        "Unity Technologies",
+        "Netcompany",
+        "Systematic",
+        "Milestone Systems"
+      ],
+      "emergingCompanies": [
+        "Corti",
+        "Liqtech",
+        "Templafy",
+        "Contractbook",
+        "Pleo"
+      ],
+      "skillsInDemand": [
+        "Life Sciences AI (drug discovery)",
+        "Renewable Energy optimization ML",
+        "Computer Vision (industrial)",
+        "NLP Danish language",
+        "Logistics AI (Maersk)",
+        "Digital Twin technology"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Life Sciences & BioTech AI",
+          "demandScore": 95,
+          "salaryRange": "DKK 600,000-900,000/year",
+          "note": "Novo Nordisk is world's most valuable European company — massive AI investment in GLP-1/diabetes AI"
+        },
+        {
+          "sector": "Green Energy AI",
+          "demandScore": 88,
+          "salaryRange": "DKK 550,000-800,000/year",
+          "note": "Vestas, Ørsted — ML for wind turbine optimization, grid balancing; world-leading sector"
+        },
+        {
+          "sector": "Logistics & Shipping AI",
+          "demandScore": 82,
+          "salaryRange": "DKK 520,000-780,000/year",
+          "note": "Maersk (shipping), DSV (logistics) — route optimization, predictive maintenance"
+        },
+        {
+          "sector": "Gaming & Simulation",
+          "demandScore": 78,
+          "salaryRange": "DKK 480,000-720,000/year",
+          "note": "Unity HQ in Copenhagen — game engine AI; LEGO Group tech division"
+        },
+        {
+          "sector": "HealthTech",
+          "demandScore": 85,
+          "salaryRange": "DKK 530,000-800,000/year",
+          "note": "Corti (AI in healthcare calls), Monsenso — Denmark's strong healthcare AI ecosystem"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Consultancies (Netcompany, Systematic), HealthTech startups",
+        "hardestEntry": "Novo Nordisk research (requires PhD preferably)",
+        "sweetSpot": "Corti, Pleo, or Templafy — well-funded Copenhagen startups",
+        "bangladeshiPresence": "Very small; diverse expat community in Copenhagen exists",
+        "biasLevel": "Low — Danish work culture extremely merit-based and egalitarian"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 80,
+        "pospWpgpAdvantage": "3yr job seeker visa (introduced 2023) is excellent; SIRI handles permits",
+        "studyPermitToPgwpSuccess": 85,
+        "sponsorshipCost": "Low",
+        "note": "Fast-track scheme for highly qualified workers; tech roles qualify automatically; employer registers on SIRI portal"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "DKK 700,000-900,000/year",
+        "mscEntryLevel": "DKK 540,000-720,000/year",
+        "midLevel3to5yrs": "DKK 720,000-960,000/year",
+        "seniorLevel": "DKK 900,000-1,300,000/year",
+        "totalCompNote": "HIGHEST PhD salaries in Europe — DTU PhD students earn DKK 450,000/year as employees"
+      },
+      "geographicVariation": {
+        "copenhagen": {
+          "jobDensity": 92,
+          "avgSalary": "DKK 680,000",
+          "costOfLivingIndex": 90,
+          "netBenefit": "Max tech jobs; rent DKK 12,000-17,000 for 1BR; Novo Nordisk and all HQs here"
+        },
+        "aarhus": {
+          "jobDensity": 65,
+          "avgSalary": "DKK 600,000",
+          "costOfLivingIndex": 78,
+          "netBenefit": "Denmark's second city; university and Vestas presence; lower rent"
+        },
+        "odense": {
+          "jobDensity": 48,
+          "avgSalary": "DKK 560,000",
+          "costOfLivingIndex": 70,
+          "netBenefit": "Robotics cluster (Universal Robots); affordable; growing tech scene"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 37,
+        "vacationDays": 25,
+        "sickLeaveDays": "Unlimited (employer-funded 1st month, then state)",
+        "parentalLeaveWeeks": 52,
+        "workFromHomeAcceptance": 90,
+        "diversityScore": 80,
+        "burnoutRisk": "Very Low",
+        "culturalFit": "Janteloven (no showing off); flat hierarchy; highly trusting management culture; coffee culture essential"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years",
+        "pathToStaffPrincipal": "10-14 years",
+        "managementOpportunities": 72,
+        "technicalLadder": "Strong in larger firms",
+        "entrepreneurshipSupport": 82,
+        "note": "Innovation Fund Denmark provides DKK 5B+ annually for research/startup collaboration"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 85,
+        "topUsPhd": 90,
+        "topEuPhd": 88,
+        "bangladeshUndergrad": 60,
+        "note": "DTU (Technical University of Denmark) degree is globally respected; English-taught programs standard"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 38,
+        "trend": "Very stable; flexicurity model — easy to hire/fire BUT generous unemployment benefits (90% of salary for 2yrs)",
+        "protection": "Flexicurity system unique globally: employers can lay off easily, but government provides comprehensive support"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 75,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "WARNING: Denmark PR requires 8 years (or 4 years for elite scheme). Citizenship needs 9 years + Danish language. Very restrictive."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Very strong — Novo Nordisk success driving massive investment; green energy world leader",
+        "outlook2040": "Strong — demographic need, but very restrictive citizenship makes long-term integration hard",
+        "riskFactors": "Extremely difficult PR/citizenship path; Danish language required; limited community for BD nationals"
+      },
+      "strategicAdvice": "Denmark offers the highest PhD salaries in Europe and world-leading AI in life sciences and renewable energy. HOWEVER: the PR and citizenship pathways are the most restrictive in Northern Europe. Target Denmark for a 5-7 year career booster, accumulating savings and publications, then transition to Ireland or Canada for PR. Do NOT choose Denmark as your PR destination.",
+      "confidenceScore": 88,
+      "dataQuality": "High"
+    },
+    {
+      "country": "Norway",
+      "countryCode": "NO",
+      "overallJobMarketScore": 76,
+      "demandLevel": "Moderate-High",
+      "demandTrend": "Stable — energy AI is the dominant sector",
+      "marketSaturation": "Low-Medium",
+      "averageTimeToJob": "4-6 months",
+      "averageTimeToJobDays": 135,
+      "jobOpeningsAnnual": 7000,
+      "aiMlSpecificOpenings": 1800,
+      "competitionLevel": 55,
+      "jobSecurityScore": 90,
+      "startupEcosystemScore": 70,
+      "researchPositionsScore": 80,
+      "remoteWorkCulture": 80,
+      "workLifeBalanceScore": 96,
+      "careerProgressionScore": 70,
+      "majorHubs": [
+        "Oslo",
+        "Bergen",
+        "Trondheim"
+      ],
+      "topEmployers": [
+        "Equinor (energy AI)",
+        "DNV (certification AI)",
+        "Kongsberg (defense AI)",
+        "Telenor",
+        "SINTEF (research)",
+        "Opera Software",
+        "Aker Solutions",
+        "Schibsted",
+        "Crayon"
+      ],
+      "emergingCompanies": [
+        "Cognite",
+        "Boost.ai",
+        "Sbanken",
+        "NorSIS",
+        "Xplore Technologies"
+      ],
+      "skillsInDemand": [
+        "Energy AI (Equinor digital twin)",
+        "Subsea robotics AI",
+        "NLP Norwegian language",
+        "Computer Vision industrial",
+        "Time-series ML (oil & gas)",
+        "Cloud AI (Azure dominant)"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Energy & Oil AI",
+          "demandScore": 92,
+          "salaryRange": "NOK 700,000-1,100,000/year",
+          "note": "Equinor's AI program is among Europe's largest; Cognite (data platform) is a unicorn focused on energy AI"
+        },
+        {
+          "sector": "Maritime & Subsea Tech",
+          "demandScore": 80,
+          "salaryRange": "NOK 650,000-950,000/year",
+          "note": "Kongsberg, Rolls-Royce Marine — autonomous shipping AI, subsea inspection robotics"
+        },
+        {
+          "sector": "Telecoms & Media",
+          "demandScore": 72,
+          "salaryRange": "NOK 580,000-850,000/year",
+          "note": "Telenor, Schibsted — recommendation systems, content AI, fraud detection"
+        },
+        {
+          "sector": "Public Sector & Research",
+          "demandScore": 78,
+          "salaryRange": "NOK 550,000-800,000/year",
+          "note": "SINTEF, NTNU spin-outs — well-funded applied AI research; very stable employment"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Cognite (English-friendly), SINTEF research positions",
+        "hardestEntry": "Equinor direct product teams (mostly Norwegian-speaking)",
+        "sweetSpot": "Energy tech startups or tech consultancies in Oslo",
+        "bangladeshiPresence": "Very small; South Asian community mostly in Oslo",
+        "biasLevel": "Low — Norwegians fair but reserved; English widely used in tech"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 80,
+        "pospWpgpAdvantage": "1yr job seeker visa; Norwegian employer must satisfy UDI requirements",
+        "studyPermitToPgwpSuccess": 80,
+        "sponsorshipCost": "Low",
+        "note": "UDI (Norwegian immigration) efficient; employer-sponsored work permits process in 2-4 weeks"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "NOK 700,000-850,000/year",
+        "mscEntryLevel": "NOK 580,000-720,000/year",
+        "midLevel3to5yrs": "NOK 750,000-950,000/year",
+        "seniorLevel": "NOK 950,000-1,400,000/year",
+        "totalCompNote": "HIGHEST nominal salaries in Europe due to oil wealth; real purchasing power exceptional due to strong welfare state"
+      },
+      "geographicVariation": {
+        "oslo": {
+          "jobDensity": 88,
+          "avgSalary": "NOK 720,000",
+          "costOfLivingIndex": 95,
+          "netBenefit": "Most jobs but expensive — 1BR NOK 16,000-22,000/month"
+        },
+        "trondheim": {
+          "jobDensity": 65,
+          "avgSalary": "NOK 640,000",
+          "costOfLivingIndex": 75,
+          "netBenefit": "NTNU university town; research and tech; much more affordable; vibrant student city"
+        },
+        "bergen": {
+          "jobDensity": 52,
+          "avgSalary": "NOK 620,000",
+          "costOfLivingIndex": 80,
+          "netBenefit": "Subsea tech and maritime AI; beautiful city; second tier for tech jobs"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 37.5,
+        "vacationDays": 25,
+        "sickLeaveDays": "Unlimited (100% pay via NAV)",
+        "parentalLeaveWeeks": 49,
+        "workFromHomeAcceptance": 85,
+        "diversityScore": 75,
+        "burnoutRisk": "Very Low",
+        "culturalFit": "Similar to Sweden — flat, egalitarian, consensus-driven; Friluftsliv (outdoor life) is paramount"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years",
+        "pathToStaffPrincipal": "10-14 years",
+        "managementOpportunities": 70,
+        "technicalLadder": "Well developed in energy tech",
+        "entrepreneurshipSupport": 78,
+        "note": "Norwegian Sovereign Wealth Fund invests in technology; Innovation Norway provides startup grants"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 82,
+        "topUsPhd": 88,
+        "topEuPhd": 86,
+        "bangladeshUndergrad": 60,
+        "note": "NTNU (Trondheim) degree highly respected in Nordic market; Norwegian language critical long-term"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 30,
+        "trend": "Very stable; oil wealth insulates economy; Equinor's digital transformation is permanent structural investment",
+        "protection": "Strongest employment protections in Europe; NAV safety net extraordinarily generous"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 82,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "3 years full-time work for PR (Settlement Permit); Norwegian A2 language required; 7 years for citizenship"
+      },
+      "longTermOutlook": {
+        "outlook2030": "Strong — energy transition is Norway's multi-trillion investment; Equinor AI is a decade-long build",
+        "outlook2040": "Good — sovereign wealth fund provides economic immunity from global shocks; aging population needs immigrants",
+        "riskFactors": "Language barrier; extreme climate (dark winters); small tech market outside energy sector"
+      },
+      "strategicAdvice": "Norway is the highest-paying destination in Europe for energy AI specialists. The Sovereign Wealth Fund ensures economic stability unmatched anywhere. HOWEVER: it is only valuable if you work in energy tech (Equinor, Kongsberg, Cognite). For pure ML research or consumer tech, Sweden or Germany is better. Learn Norwegian A2 minimum before arrival.",
+      "confidenceScore": 86,
+      "dataQuality": "High"
+    },
+    {
+      "country": "Switzerland",
+      "countryCode": "CH",
+      "overallJobMarketScore": 92,
+      "demandLevel": "Very High",
+      "demandTrend": "Strong and growing — highest AI salaries in Europe",
+      "marketSaturation": "Low",
+      "averageTimeToJob": "3-6 months",
+      "averageTimeToJobDays": 120,
+      "jobOpeningsAnnual": 15000,
+      "aiMlSpecificOpenings": 4500,
+      "competitionLevel": 72,
+      "jobSecurityScore": 88,
+      "startupEcosystemScore": 82,
+      "researchPositionsScore": 98,
+      "remoteWorkCulture": 78,
+      "workLifeBalanceScore": 85,
+      "careerProgressionScore": 90,
+      "majorHubs": [
+        "Zurich",
+        "Geneva",
+        "Basel",
+        "Lausanne"
+      ],
+      "topEmployers": [
+        "Google (Zurich — largest outside US)",
+        "Microsoft Research",
+        "IBM Research Zurich",
+        "UBS AI Lab",
+        "Credit Suisse Tech",
+        "Novartis AI",
+        "Roche Informatics",
+        "CERN",
+        "ABB Robotics",
+        "Nestlé Digital Hub"
+      ],
+      "emergingCompanies": [
+        "Beekeeper",
+        "Yokoy",
+        "Climeworks",
+        "GetYourGuide",
+        "Ava"
+      ],
+      "skillsInDemand": [
+        "Large-scale ML systems (Google Zurich style)",
+        "Quantitative ML (FinTech)",
+        "Drug discovery AI",
+        "Robotics control",
+        "Privacy-preserving ML (EU AI Act compliance)",
+        "High-performance computing"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Big Tech Research",
+          "demandScore": 98,
+          "salaryRange": "CHF 150,000-250,000+/year",
+          "note": "Google Zurich has 5,000+ engineers — top research lab outside US headquarters; Brain team here"
+        },
+        {
+          "sector": "Banking & FinTech AI",
+          "demandScore": 90,
+          "salaryRange": "CHF 130,000-200,000/year",
+          "note": "UBS, Credit Suisse successor, Julius Baer — algorithmic trading, risk ML, fraud detection"
+        },
+        {
+          "sector": "Pharma & Life Sciences AI",
+          "demandScore": 88,
+          "salaryRange": "CHF 120,000-180,000/year",
+          "note": "Novartis, Roche, Lonza — drug discovery AI, clinical trial optimization; Basel is pharma capital"
+        },
+        {
+          "sector": "Robotics & Industrial AI",
+          "demandScore": 85,
+          "salaryRange": "CHF 115,000-175,000/year",
+          "note": "ABB (world's #1 industrial robotics) HQ in Zurich; control systems AI, digital twin"
+        },
+        {
+          "sector": "International Organizations",
+          "demandScore": 80,
+          "salaryRange": "CHF 110,000-160,000 + UN benefits",
+          "note": "CERN, WHO, WEF, UN Geneva — data science, AI ethics, computational research"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Google Zurich (largest hiring pipeline; actively recruiting EU PhD graduates)",
+        "hardestEntry": "Quant roles at private banks (HEC/ETH only practically)",
+        "sweetSpot": "ETH Zurich / EPFL PhD → Google/IBM Research postdoc → industry",
+        "bangladeshiPresence": "Very small; Zurich is cosmopolitan; English in tech is standard",
+        "biasLevel": "Low professionally; Swiss rental market has documented discrimination against non-European names"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 72,
+        "pospWpgpAdvantage": "6 months job seeker; BUT quota system (Kontingent) limits non-EU work permits; employer must prove no EU/Swiss candidate available",
+        "studyPermitToPgwpSuccess": 78,
+        "sponsorshipCost": "High (legal fees, quota application)",
+        "note": "CRITICAL RISK: Even with a job offer, your canton's non-EU quota may be exhausted — permit denied. Google/IBM have enough political weight to navigate this; smaller companies struggle."
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "CHF 130,000-170,000/year",
+        "mscEntryLevel": "CHF 100,000-135,000/year",
+        "midLevel3to5yrs": "CHF 150,000-200,000/year",
+        "seniorLevel": "CHF 200,000-350,000+/year",
+        "totalCompNote": "Highest base salaries globally after USA; ZERO income tax for first years if on lump-sum taxation; 2nd pillar pension accumulation is significant"
+      },
+      "geographicVariation": {
+        "zurich": {
+          "jobDensity": 95,
+          "avgSalary": "CHF 145,000",
+          "costOfLivingIndex": 100,
+          "netBenefit": "Google, UBS, ABB — most tech jobs; rent CHF 3,000-5,000/month 1BR; highest cost city in world"
+        },
+        "geneva": {
+          "jobDensity": 78,
+          "avgSalary": "CHF 140,000",
+          "costOfLivingIndex": 98,
+          "netBenefit": "UN/International orgs, pharma; CERN nearby; also very expensive"
+        },
+        "basel": {
+          "jobDensity": 72,
+          "avgSalary": "CHF 130,000",
+          "costOfLivingIndex": 88,
+          "netBenefit": "Pharma capital (Novartis, Roche); more affordable; tri-national area (CH/DE/FR)"
+        },
+        "lausanne": {
+          "jobDensity": 68,
+          "avgSalary": "CHF 125,000",
+          "costOfLivingIndex": 92,
+          "netBenefit": "EPFL hub; startup ecosystem; French-speaking; slightly lower cost"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 42,
+        "vacationDays": 20,
+        "sickLeaveDays": "Employer covered; no statutory unlimited sick leave",
+        "parentalLeaveWeeks": 14,
+        "workFromHomeAcceptance": 78,
+        "diversityScore": 88,
+        "burnoutRisk": "Medium-High",
+        "culturalFit": "Precise, punctual, quality-obsessed; four national languages internally; English dominant in tech"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years",
+        "pathToStaffPrincipal": "8-12 years",
+        "managementOpportunities": 82,
+        "technicalLadder": "Strongest in Europe at Google/IBM/ETH spin-outs",
+        "entrepreneurshipSupport": 85,
+        "note": "ETH Zurich spinout ecosystem produced 500+ companies; Innosuisse grants; world-class venture scene"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 85,
+        "topUsPhd": 95,
+        "topEuPhd": 92,
+        "bangladeshUndergrad": 62,
+        "note": "ETH/EPFL degree = global top 10 credential; US PhD highly respected; employer cares most about output/publications"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 42,
+        "trend": "Stable at Big Tech; banking sector restructuring ongoing; pharma AI investment structural",
+        "protection": "Swiss employment law is relatively employer-friendly vs EU; however severance packages generous in practice"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 85,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "10 years legal residence for C-permit (PR). WARNING: even with a tech job, you remain on quota-based B-permit for years. PR is not guaranteed and community can vote against your naturalization."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Exceptional — Switzerland AI investment growing; Google Zurich expanding; pharma AI structural",
+        "outlook2040": "Strong — wealth, stability, political neutrality; demographic need for immigrants",
+        "riskFactors": "10yr PR wait; cantonal naturalization voting system; quota work permit system; extremely high COL"
+      },
+      "strategicAdvice": "Switzerland offers the highest AI salaries in Europe, world-class research at ETH/EPFL/Google Zurich, and extraordinary quality of life. STRATEGY: Target ETH Zurich or EPFL for PhD (free, fully paid), then join Google Zurich as research scientist. This is the elite academic-to-industry pipeline. DO NOT plan to stay permanently unless at a major employer with resources to navigate the quota/permit system.",
+      "confidenceScore": 91,
+      "dataQuality": "High"
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "overallJobMarketScore": 72,
+      "demandLevel": "Moderate-High",
+      "demandTrend": "Growing — small but efficient tech ecosystem",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "3-5 months",
+      "averageTimeToJobDays": 110,
+      "jobOpeningsAnnual": 8000,
+      "aiMlSpecificOpenings": 2000,
+      "competitionLevel": 60,
+      "jobSecurityScore": 85,
+      "startupEcosystemScore": 75,
+      "researchPositionsScore": 78,
+      "remoteWorkCulture": 75,
+      "workLifeBalanceScore": 88,
+      "careerProgressionScore": 72,
+      "majorHubs": [
+        "Vienna",
+        "Graz",
+        "Linz"
+      ],
+      "topEmployers": [
+        "Red Bull (AI/digital)",
+        "A1 Telekom",
+        "Erste Group (FinTech AI)",
+        "Raiffeisen Digital",
+        "Kapsch",
+        "AIT (Austrian Institute of Technology)",
+        "AVL (automotive AI)",
+        "Frequentis",
+        "Spar Tech"
+      ],
+      "emergingCompanies": [
+        "Bitpanda",
+        "Shpock",
+        "Runtastic",
+        "Anyline",
+        "Mostly AI"
+      ],
+      "skillsInDemand": [
+        "Computer Vision (Anyline — document scanning AI)",
+        "FinTech AI (Erste/Raiffeisen)",
+        "Automotive embedded AI (AVL)",
+        "Synthetic data generation (Mostly AI)",
+        "Telecom AI (A1)"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Financial Services AI",
+          "demandScore": 85,
+          "salaryRange": "EUR 55,000-90,000",
+          "note": "Erste Bank, Raiffeisen — Central and Eastern Europe's largest banks; heavy AI investment in fraud/credit"
+        },
+        {
+          "sector": "Automotive & Mobility",
+          "demandScore": 82,
+          "salaryRange": "EUR 55,000-88,000",
+          "note": "AVL (engine/battery AI), Kapsch (traffic systems); Austria has strong automotive supply chain"
+        },
+        {
+          "sector": "Telecom AI",
+          "demandScore": 75,
+          "salaryRange": "EUR 50,000-80,000",
+          "note": "A1 Telekom; network optimization, churn prediction, customer AI"
+        },
+        {
+          "sector": "Synthetic Data & Privacy AI",
+          "demandScore": 80,
+          "salaryRange": "EUR 55,000-90,000",
+          "note": "Mostly AI (world-leading synthetic data company, Vienna HQ) — rapidly growing sector"
+        },
+        {
+          "sector": "Research Institutes",
+          "demandScore": 78,
+          "salaryRange": "EUR 50,000-80,000",
+          "note": "AIT (Austrian Institute of Technology) — government-funded applied AI; very stable employment"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "AIT research positions, A1 Telekom graduate programs",
+        "hardestEntry": "Mostly AI/Bitpanda — competitive even for Vienna market",
+        "sweetSpot": "Vienna fintech or synthetic data startups — English-friendly",
+        "bangladeshiPresence": "Small; South Asian community in Vienna (approx 15,000); halal food available",
+        "biasLevel": "Medium — German language strongly favored; right-wing political shifts create some tension"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 78,
+        "pospWpgpAdvantage": "Red-White-Red Card (RWR) is Austria's skilled migration visa — straightforward for tech roles",
+        "studyPermitToPgwpSuccess": 82,
+        "sponsorshipCost": "Low-Medium",
+        "note": "RWR Card requires minimum EUR 2,352/month salary (easy in tech); processing 4-8 weeks via AMS"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "EUR 55,000-75,000/year",
+        "mscEntryLevel": "EUR 42,000-62,000/year",
+        "midLevel3to5yrs": "EUR 65,000-85,000/year",
+        "seniorLevel": "EUR 85,000-120,000/year",
+        "totalCompNote": "14th salary (holiday and Christmas bonus = 2 extra months) is standard — effectively 14 monthly payments per year"
+      },
+      "geographicVariation": {
+        "vienna": {
+          "jobDensity": 90,
+          "avgSalary": "EUR 56,000",
+          "costOfLivingIndex": 82,
+          "netBenefit": "90%+ of Austrian tech jobs; excellent public transit; rent EUR 1,200-1,800 1BR — manageable"
+        },
+        "graz": {
+          "jobDensity": 60,
+          "avgSalary": "EUR 50,000",
+          "costOfLivingIndex": 70,
+          "netBenefit": "TU Graz (strong AI dept), AVL HQ; affordable; underrated tech city"
+        },
+        "linz": {
+          "jobDensity": 45,
+          "avgSalary": "EUR 48,000",
+          "costOfLivingIndex": 68,
+          "netBenefit": "Manufacturing tech (Voestalpine AI); affordable; smaller but stable"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 38.5,
+        "vacationDays": 25,
+        "sickLeaveDays": "6 weeks fully paid (employer), then government benefits",
+        "parentalLeaveWeeks": 52,
+        "workFromHomeAcceptance": 78,
+        "diversityScore": 72,
+        "burnoutRisk": "Low-Medium",
+        "culturalFit": "Formal professional culture; titles matter; coffee house culture is the social institution; German essential"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years",
+        "pathToStaffPrincipal": "10-14 years",
+        "managementOpportunities": 68,
+        "technicalLadder": "Developing; less mature than Germany",
+        "entrepreneurshipSupport": 78,
+        "note": "Vienna startup ecosystem growing (Bitpanda, Mostly AI); Austria Wirtschaftsservice (AWS) provides startup grants"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 82,
+        "topUsPhd": 88,
+        "topEuPhd": 88,
+        "bangladeshUndergrad": 58,
+        "note": "TU Wien/TU Graz degrees respected in German-speaking market; NARIC Austria for credential recognition"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 38,
+        "trend": "Very stable; Austrian employment law heavily protects workers; layoffs legally difficult and expensive",
+        "protection": "Abfertigung Neu (severance fund) — employer contributes 1.53% salary monthly; accrues as your portable pension"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 82,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "10 years for standard PR. Red-White-Red Card Plus after 2yr → 5yr → settlement permit. Faster for highly qualified but still 5-6 years minimum."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Moderate — small market but stable; EU Blue Card option for Germany transition",
+        "outlook2040": "Stable — Austria benefits from Central European gateway role; demographics favor immigrants",
+        "riskFactors": "Right-wing FPÖ political risk to immigration policy; German language mandatory; 10yr PR wait"
+      },
+      "strategicAdvice": "Austria is Germany's quieter sibling — similar language requirement but less competition and faster visa process. Vienna is a genuinely beautiful city with high quality of life. STRATEGY: Use Austria as an entry point into the German-speaking tech market if Germany visa wait times are prohibitive. The RWR Card is far faster than German visa queues. Learn German — no alternative.",
+      "confidenceScore": 84,
+      "dataQuality": "High"
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "overallJobMarketScore": 78,
+      "demandLevel": "High",
+      "demandTrend": "Strong — EU institutions, semiconductor, and FinTech",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "2-4 months",
+      "averageTimeToJobDays": 90,
+      "jobOpeningsAnnual": 12000,
+      "aiMlSpecificOpenings": 3500,
+      "competitionLevel": 65,
+      "jobSecurityScore": 88,
+      "startupEcosystemScore": 78,
+      "researchPositionsScore": 82,
+      "remoteWorkCulture": 85,
+      "workLifeBalanceScore": 88,
+      "careerProgressionScore": 80,
+      "majorHubs": [
+        "Brussels",
+        "Antwerp",
+        "Ghent",
+        "Leuven"
+      ],
+      "topEmployers": [
+        "IMEC (world's largest semiconductor research center)",
+        "Google Belgium",
+        "Microsoft Belgium",
+        "Proximus (telecom AI)",
+        "ING Belgium (FinTech AI)",
+        "Solvay (materials AI)",
+        "UCB (pharma AI)",
+        "Audi Brussels",
+        "NATO (data science roles)"
+      ],
+      "emergingCompanies": [
+        "Cowboy (e-bike AI)",
+        "Odoo (ERP AI)",
+        "Showpad",
+        "Teamleader",
+        "Silverfin"
+      ],
+      "skillsInDemand": [
+        "Semiconductor process AI (IMEC)",
+        "FinTech ML (ING)",
+        "NLP multilingual (FR/NL/DE/EN)",
+        "Computer Vision industrial",
+        "EU AI Act compliance architecture",
+        "Chip design automation"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Semiconductors & Chip AI",
+          "demandScore": 95,
+          "salaryRange": "EUR 65,000-120,000",
+          "note": "IMEC (Leuven) is world's most cited semiconductor research institute — AI for chip design, lithography optimization; ASML partner"
+        },
+        {
+          "sector": "EU Institutions AI",
+          "demandScore": 88,
+          "salaryRange": "EUR 70,000-110,000 + EU benefits",
+          "note": "European Commission, European Parliament, NATO — data science, AI policy, NLP; competitive but stable"
+        },
+        {
+          "sector": "FinTech & Banking",
+          "demandScore": 85,
+          "salaryRange": "EUR 60,000-100,000",
+          "note": "ING Group, KBC, Belfius — credit risk AI, anti-money laundering ML, wealth management automation"
+        },
+        {
+          "sector": "Pharma & Chemical AI",
+          "demandScore": 82,
+          "salaryRange": "EUR 62,000-100,000",
+          "note": "UCB, Solvay, Janssen (J&J) — drug discovery AI, molecular simulation ML"
+        },
+        {
+          "sector": "Software & SaaS",
+          "demandScore": 80,
+          "salaryRange": "EUR 55,000-90,000",
+          "note": "Odoo (world's most popular open-source ERP), Showpad — Belgium has surprisingly strong SaaS cluster"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Odoo (large international team, English-first), IMEC research positions, EU institution consultants",
+        "hardestEntry": "EU permanent staff positions (A-grade: requires EU citizenship)",
+        "sweetSpot": "IMEC spin-out startup or FinTech in Brussels with international team",
+        "bangladeshiPresence": "Moderate; established South Asian community in Brussels and Antwerp",
+        "biasLevel": "Low in Brussels (highly international); medium in Flanders (Dutch-language preference)"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 82,
+        "pospWpgpAdvantage": "Single Permit (combined work + residence) — straightforward for tech; employer must apply",
+        "studyPermitToPgwpSuccess": 85,
+        "sponsorshipCost": "Low",
+        "note": "Highly Qualified Worker permit: salary > EUR 45,144 — easily met in tech. EU Blue Card Belgium also available."
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "EUR 65,000-90,000/year",
+        "mscEntryLevel": "EUR 50,000-72,000/year",
+        "midLevel3to5yrs": "EUR 75,000-100,000/year",
+        "seniorLevel": "EUR 100,000-145,000/year",
+        "totalCompNote": "Gross salary heavily taxed (50%+) BUT take-home is mitigated by company car, meal vouchers, eco-cheques, and group insurance — total compensation is competitive"
+      },
+      "geographicVariation": {
+        "brussels": {
+          "jobDensity": 88,
+          "avgSalary": "EUR 68,000 gross",
+          "costOfLivingIndex": 80,
+          "netBenefit": "EU institutions, Big Tech, FinTech; most international city; English widely used; rent EUR 1,100-1,800 1BR"
+        },
+        "leuven": {
+          "jobDensity": 78,
+          "avgSalary": "EUR 65,000 gross",
+          "costOfLivingIndex": 72,
+          "netBenefit": "IMEC HQ, KU Leuven — semiconductor and research; 30 min from Brussels; university town vibe"
+        },
+        "ghent": {
+          "jobDensity": 65,
+          "avgSalary": "EUR 60,000 gross",
+          "costOfLivingIndex": 70,
+          "netBenefit": "Growing tech hub; Odoo offices; Ghent university; affordable and beautiful"
+        },
+        "antwerp": {
+          "jobDensity": 68,
+          "avgSalary": "EUR 62,000 gross",
+          "costOfLivingIndex": 74,
+          "netBenefit": "Logistics AI (port of Antwerp), diamond-tech; Dutch-speaking predominantly"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 38,
+        "vacationDays": 20,
+        "sickLeaveDays": "First month full pay (employer); then INAMI covers 60-75%",
+        "parentalLeaveWeeks": 15,
+        "workFromHomeAcceptance": 88,
+        "diversityScore": 88,
+        "burnoutRisk": "Low-Medium",
+        "culturalFit": "Pragmatic; split culture (French vs Flemish); Brussels is anglophone in tech; excellent food and beer culture"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-5 years",
+        "pathToStaffPrincipal": "8-12 years",
+        "managementOpportunities": 78,
+        "technicalLadder": "Well developed at IMEC and Big Tech offices",
+        "entrepreneurshipSupport": 80,
+        "note": "Imec.istart accelerator; Flanders Innovation & Entrepreneurship; hub.brussels for startups"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 85,
+        "topUsPhd": 90,
+        "topEuPhd": 92,
+        "bangladeshUndergrad": 62,
+        "note": "KU Leuven (IMEC affiliated) degree is top-10 EU engineering credential; multilingual Belgium rewards multilingual candidates"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 35,
+        "trend": "Very stable; EU institutional employment is permanent; private sector heavily protected by law",
+        "protection": "Among strongest employment protections in EU; Collective Redundancy (CLA No.32bis) provides major severance"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 88,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "5 years legal residence for PR. EU Blue Card after 18 months → mobility within EU. Single Permit for employment. Citizenship after 5yr PR (10yr total). Language requirement: FR or NL B1."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Strong — IMEC semiconductor role in EU Chips Act critical; EU AI regulation compliance creating jobs",
+        "outlook2040": "Strong — Belgium's position as EU headquarters city is permanent; geopolitical stability very high",
+        "riskFactors": "Language fragmentation (need both French and Dutch for true integration); high taxes; political instability"
+      },
+      "strategicAdvice": "Belgium is severely underrated. IMEC alone makes it a world-class destination for AI/semiconductor research. EU institution careers offer unmatched job security. Brussels is the most international city in Europe — English is a de facto official language in tech. STRATEGY: Target IMEC or EU Commission AI roles. Zero competition from most Asian applicants who overlook Belgium. Capital gains tax is 0% — invest aggressively.",
+      "confidenceScore": 88,
+      "dataQuality": "High"
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "overallJobMarketScore": 62,
+      "demandLevel": "Moderate",
+      "demandTrend": "Flat — small market with brain drain to Australia",
+      "marketSaturation": "Medium-High",
+      "averageTimeToJob": "4-6 months",
+      "averageTimeToJobDays": 135,
+      "jobOpeningsAnnual": 4500,
+      "aiMlSpecificOpenings": 900,
+      "competitionLevel": 68,
+      "jobSecurityScore": 72,
+      "startupEcosystemScore": 65,
+      "researchPositionsScore": 70,
+      "remoteWorkCulture": 80,
+      "workLifeBalanceScore": 92,
+      "careerProgressionScore": 60,
+      "majorHubs": [
+        "Auckland",
+        "Wellington",
+        "Christchurch"
+      ],
+      "topEmployers": [
+        "Xero (cloud accounting AI)",
+        "Fisher & Paykel Healthcare Tech",
+        "Weta FX (visual effects AI)",
+        "ANZ Bank NZ",
+        "Westpac NZ",
+        "NIWA (climate science)",
+        "AgResearch",
+        "Datacom",
+        "Auckland University of Technology"
+      ],
+      "emergingCompanies": [
+        "Partly (car insurance AI)",
+        "Auror (retail security AI)",
+        "Timely (booking AI)",
+        "PocketSmith",
+        "Vend (now Lightspeed)"
+      ],
+      "skillsInDemand": [
+        "Cloud AI (Xero ecosystem)",
+        "Computer Vision (Weta FX)",
+        "AgriTech AI",
+        "Climate AI (NIWA)",
+        "Healthcare sensor ML",
+        "NLP English-language"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Cloud Accounting & SaaS",
+          "demandScore": 82,
+          "salaryRange": "NZD 90,000-140,000",
+          "note": "Xero is world's leading cloud accounting platform — massive ML/AI investment in automation, forecasting"
+        },
+        {
+          "sector": "Visual Effects & Film AI",
+          "demandScore": 78,
+          "salaryRange": "NZD 85,000-135,000",
+          "note": "Weta FX (Lord of the Rings heritage) — AI for VFX, generative imagery, 3D simulation; very niche but world-class"
+        },
+        {
+          "sector": "AgriTech & Climate AI",
+          "demandScore": 72,
+          "salaryRange": "NZD 75,000-120,000",
+          "note": "NZ's farming sector investing heavily in AI; NIWA climate modeling; Precision Agriculture AI unique globally"
+        },
+        {
+          "sector": "Banking & FinTech",
+          "demandScore": 75,
+          "salaryRange": "NZD 80,000-130,000",
+          "note": "ANZ, ASB, Kiwibank — fraud detection, wealth management AI; smaller scale than Australia"
+        },
+        {
+          "sector": "Healthcare & MedTech",
+          "demandScore": 72,
+          "salaryRange": "NZD 78,000-125,000",
+          "note": "Fisher & Paykel Healthcare (world-class respiratory devices), Health Alliance NZ"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "Xero (large international team), government research roles (NIWA, AgResearch)",
+        "hardestEntry": "Weta FX (extremely selective; requires specialist VFX background)",
+        "sweetSpot": "Auckland SaaS startup with international growth ambitions",
+        "bangladeshiPresence": "Small but established; South Asian community approximately 200,000 in NZ; Auckland has halal food",
+        "biasLevel": "Low — highly multicultural; New Zealanders (Kiwis) very welcoming"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 75,
+        "pospWpgpAdvantage": "Post Study Work Visa: 1-3 years depending on NZ study level; pathway to Skilled Migrant Category",
+        "studyPermitToPgwpSuccess": 82,
+        "sponsorshipCost": "Low",
+        "note": "Accredited Employer Work Visa (AEWV) — employer must be INZ-accredited; tech companies generally are; processing 4-8 weeks"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "NZD 100,000-130,000/year",
+        "mscEntryLevel": "NZD 80,000-105,000/year",
+        "midLevel3to5yrs": "NZD 105,000-140,000/year",
+        "seniorLevel": "NZD 140,000-190,000/year",
+        "totalCompNote": "Salaries lower than Australia by 20-30%; however cost of living also lower outside Auckland; quality of life extremely high"
+      },
+      "geographicVariation": {
+        "auckland": {
+          "jobDensity": 85,
+          "avgSalary": "NZD 100,000",
+          "costOfLivingIndex": 82,
+          "netBenefit": "80% of NZ tech jobs; housing crisis (1BR NZD 3,000-4,000/month in central) is severe"
+        },
+        "wellington": {
+          "jobDensity": 65,
+          "avgSalary": "NZD 92,000",
+          "costOfLivingIndex": 75,
+          "netBenefit": "Government tech, Xero HQ, WCC; more manageable housing; windy but vibrant capital"
+        },
+        "christchurch": {
+          "jobDensity": 45,
+          "avgSalary": "NZD 85,000",
+          "costOfLivingIndex": 65,
+          "netBenefit": "Emerging tech hub post-earthquake rebuild; most affordable major city; aerospace and AgriTech"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 38,
+        "vacationDays": 20,
+        "sickLeaveDays": "10 days/year (statutory)",
+        "parentalLeaveWeeks": 26,
+        "workFromHomeAcceptance": 82,
+        "diversityScore": 85,
+        "burnoutRisk": "Very Low",
+        "culturalFit": "Relaxed, flat hierarchy; no-nonsense; rugby and outdoor culture dominant; Māori culture respected and integrated"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years",
+        "pathToStaffPrincipal": "Difficult — market too small for many principal-level roles",
+        "managementOpportunities": 65,
+        "technicalLadder": "Limited; most senior talent moves to Australia or globally",
+        "entrepreneurshipSupport": 72,
+        "note": "Callaghan Innovation provides R&D grants; NZ Growth Grants; easy to start a company"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 82,
+        "topUsPhd": 88,
+        "topEuPhd": 82,
+        "bangladeshUndergrad": 65,
+        "note": "Auckland/Victoria/Otago degrees respected regionally; NZQA credential assessment required for overseas qualifications"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 58,
+        "trend": "Higher risk than Australian counterpart — small economy very sensitive to global tech cycles and China trade",
+        "protection": "90 days notice requirement; employment court relatively employee-friendly; no equivalent to Australian Fair Work"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 78,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "Skilled Migrant Category (SMC) point system — 160+ points required. Tech jobs score well. PR in 1-2 years after PSW."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Moderate — brain drain to Australia structural; housing crisis unresolved; AgriTech AI unique niche",
+        "outlook2040": "Moderate — climate change makes NZ increasingly attractive as safe haven; tech sector growing slowly",
+        "riskFactors": "Career ceiling too low; earthquake risk; economic dependence on China and Australia"
+      },
+      "strategicAdvice": "New Zealand offers an extraordinary quality of life and a genuinely welcoming, safe society. HOWEVER: it is career-limiting for CS/AI graduates. Use NZ as a 2-4 year quality-of-life destination with a clear plan to transition to Australia (Trans-Tasman agreement makes this trivial). Xero is the flagship employer. If you want AgriTech or climate AI, NZ is world-class and unique. Otherwise, treat it as a beautiful stepping stone to Australian PR.",
+      "confidenceScore": 85,
+      "dataQuality": "High"
+    },
+    {
+      "country": "Japan",
+      "countryCode": "JP",
+      "overallJobMarketScore": 80,
+      "demandLevel": "Very High",
+      "demandTrend": "Exploding — acute AI talent shortage; government mandated digital transformation",
+      "marketSaturation": "Low",
+      "averageTimeToJob": "3-6 months",
+      "averageTimeToJobDays": 120,
+      "jobOpeningsAnnual": 40000,
+      "aiMlSpecificOpenings": 12000,
+      "competitionLevel": 45,
+      "jobSecurityScore": 92,
+      "startupEcosystemScore": 72,
+      "researchPositionsScore": 85,
+      "remoteWorkCulture": 65,
+      "workLifeBalanceScore": 62,
+      "careerProgressionScore": 72,
+      "majorHubs": [
+        "Tokyo",
+        "Osaka",
+        "Fukuoka",
+        "Kyoto"
+      ],
+      "topEmployers": [
+        "SoftBank (AI division)",
+        "NTT Data",
+        "Fujitsu AI Lab",
+        "Recruit Holdings",
+        "LINE (LY Corporation)",
+        "Sony AI",
+        "Preferred Networks",
+        "RIKEN AIP",
+        "Toyota Research Institute",
+        "NEC AI Research"
+      ],
+      "emergingCompanies": [
+        "Sakana AI",
+        "PKSHA Technology",
+        "BrainPad",
+        "LeapMind",
+        "Abeja"
+      ],
+      "skillsInDemand": [
+        "LLM fine-tuning (Japanese language models)",
+        "Computer Vision (manufacturing QA)",
+        "Robotics AI (Toyota, Honda)",
+        "Healthcare AI",
+        "Predictive maintenance",
+        "MLOps at scale"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Manufacturing AI & Robotics",
+          "demandScore": 95,
+          "salaryRange": "JPY 7,000,000-12,000,000/year",
+          "note": "Toyota, Honda, Panasonic — Japan is world's robotics capital; massive AI investment for automated QA"
+        },
+        {
+          "sector": "Telecom & Platforms",
+          "demandScore": 88,
+          "salaryRange": "JPY 7,000,000-13,000,000/year",
+          "note": "SoftBank, NTT, LINE/LY Corp — recommendation systems, Japanese NLP, ad tech AI"
+        },
+        {
+          "sector": "Finance & InsurTech AI",
+          "demandScore": 85,
+          "salaryRange": "JPY 8,000,000-14,000,000/year",
+          "note": "Mitsubishi UFJ, Nomura, Tokio Marine — risk ML, fraud detection; huge digital transformation investment"
+        },
+        {
+          "sector": "Gaming",
+          "demandScore": 82,
+          "salaryRange": "JPY 7,000,000-12,000,000/year",
+          "note": "Nintendo, Capcom, Square Enix, Cygames — procedural generation, NPC AI, computer vision"
+        },
+        {
+          "sector": "Healthcare AI",
+          "demandScore": 88,
+          "salaryRange": "JPY 7,500,000-13,000,000/year",
+          "note": "Aging population creating world's largest healthcare AI opportunity; massive unmet demand"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "English-friendly companies: Preferred Networks, Sakana AI, RIKEN AIP, multinational Japanese arms",
+        "hardestEntry": "Traditional zaibatsu (NEC, Fujitsu, NTT Data) without Japanese language",
+        "sweetSpot": "AI startups in Tokyo (Sakana AI, PKSHA) — English culture, high salaries, equity",
+        "bangladeshiPresence": "Very small; ~3,000 BD nationals in Japan; halal food available in Tokyo (Shinjuku halal district)",
+        "biasLevel": "Medium — Japanese language critical for 80% of companies; English-friendly firms are minority but growing"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 82,
+        "pospWpgpAdvantage": "Designated Activities visa (post-graduation job seeking, 1yr); then Engineer/Specialist in Humanities visa",
+        "studyPermitToPgwpSuccess": 85,
+        "sponsorshipCost": "Low",
+        "note": "Highly Skilled Professional (HSP) points system: 70+ points. PhD + tech job + age bonus = very fast track. HSP = PR in just 1-3 years!"
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "JPY 8,000,000-12,000,000/year",
+        "mscEntryLevel": "JPY 6,000,000-9,000,000/year",
+        "midLevel3to5yrs": "JPY 9,000,000-15,000,000/year",
+        "seniorLevel": "JPY 13,000,000-25,000,000/year",
+        "totalCompNote": "High nominal salaries after years of wage stagnation; yen weakness makes purchasing power higher for foreign goods but lower for remittance"
+      },
+      "geographicVariation": {
+        "tokyo": {
+          "jobDensity": 95,
+          "avgSalary": "JPY 8,500,000",
+          "costOfLivingIndex": 78,
+          "netBenefit": "60% of Japan's AI jobs; expensive by local standards but cheap vs NY/London; 1BR JPY 100,000-180,000/month"
+        },
+        "osaka": {
+          "jobDensity": 65,
+          "avgSalary": "JPY 7,500,000",
+          "costOfLivingIndex": 68,
+          "netBenefit": "Panasonic, Sharp AI divisions; best food city in world; more affordable than Tokyo"
+        },
+        "fukuoka": {
+          "jobDensity": 52,
+          "avgSalary": "JPY 7,000,000",
+          "costOfLivingIndex": 60,
+          "netBenefit": "Government-designated startup hub; low cost; fast-growing; Sony Semiconductor nearby"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 48,
+        "vacationDays": 10,
+        "sickLeaveDays": "No statutory sick leave; many companies pay but culture discourages use",
+        "parentalLeaveWeeks": 52,
+        "workFromHomeAcceptance": 65,
+        "diversityScore": 60,
+        "burnoutRisk": "High",
+        "culturalFit": "Hierarchical; perfectionist; consensus-driven ringi system; significant overtime culture; however improving rapidly in tech"
+      },
+      "careerGrowth": {
+        "pathToSenior": "5-8 years (traditional firms), 3-5 years (startups)",
+        "pathToStaffPrincipal": "12-15 years traditional, 7-10 years startup",
+        "managementOpportunities": 65,
+        "technicalLadder": "Poorly developed at traditional firms; improving at startups",
+        "entrepreneurshipSupport": 72,
+        "note": "J-Startup program; METI AI strategy funding; Fukuoka startup corridor"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 80,
+        "topUsPhd": 92,
+        "topEuPhd": 85,
+        "bangladeshUndergrad": 58,
+        "note": "Japanese preference for domestic qualifications; top US PhD highly valued; BUET/AUST reputation slowly building"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 20,
+        "trend": "Extremely stable; Japanese labor market has near-zero layoff culture; companies restructure through attrition only",
+        "protection": "Among the most protective employment frameworks globally; termination requires extreme justification"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 90,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "Highly Skilled Professional (HSP) visa: 70+ points → PR in 3 years; 80+ points → PR in 1 year. PhD+AI job likely = 80+ points. FASTEST PR for highly qualified."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Very strong — government JPY 4 trillion AI investment; labor shortage structural due to demographics",
+        "outlook2040": "Excellent — Japan NEEDS immigrants structurally; AI talent shortage will only worsen; PR reforms will continue",
+        "riskFactors": "Language barrier (JLPT N2 for citizenship); work culture burnout; natural disasters (earthquakes); social isolation"
+      },
+      "strategicAdvice": "Japan's HSP visa is the best-kept secret for Bangladeshi CS/AI PhDs. 80+ HSP points (PhD + AI job + under 30) gives PR in ONE YEAR. MEXT scholarship pays full tuition + JPY 144,000/month. STRATEGY: MEXT → Top Japanese university PhD → AI startup (Preferred Networks/Sakana AI) → HSP points → PR in 1yr. Learn JLPT N3 during studies; N2 for citizenship. Critical warning: work culture in traditional firms is brutal — only target English-friendly companies.",
+      "confidenceScore": 88,
+      "dataQuality": "High"
+    },
+    {
+      "country": "South Korea",
+      "countryCode": "KR",
+      "overallJobMarketScore": 82,
+      "demandLevel": "Very High",
+      "demandTrend": "Exploding — Samsung, Hyundai, LG, Kakao massive AI investment",
+      "marketSaturation": "Low",
+      "averageTimeToJob": "3-5 months",
+      "averageTimeToJobDays": 105,
+      "jobOpeningsAnnual": 35000,
+      "aiMlSpecificOpenings": 10000,
+      "competitionLevel": 50,
+      "jobSecurityScore": 85,
+      "startupEcosystemScore": 85,
+      "researchPositionsScore": 82,
+      "remoteWorkCulture": 68,
+      "workLifeBalanceScore": 65,
+      "careerProgressionScore": 80,
+      "majorHubs": [
+        "Seoul (Gangnam)",
+        "Pangyo (Korea's Silicon Valley)",
+        "Daejeon (KAIST)",
+        "Busan"
+      ],
+      "topEmployers": [
+        "Samsung AI Research Center",
+        "LG AI Research",
+        "Kakao (Korea's Google)",
+        "Naver AI Lab",
+        "Hyundai Motor AI",
+        "SK Telecom AI",
+        "KRAFTON (gaming)",
+        "Krafton/PUBG",
+        "KT (telecom AI)",
+        "POSCO (steel AI)"
+      ],
+      "emergingCompanies": [
+        "Wrtn Technologies",
+        "Rebellions (AI chip)",
+        "Hyperconnect (acquired by Match)",
+        "DeepNatural",
+        "Moloco"
+      ],
+      "skillsInDemand": [
+        "Semiconductor AI (Samsung HBM)",
+        "Korean NLP (Hyperclova)",
+        "Computer Vision (Hyundai autonomous)",
+        "Robotics AI",
+        "Gaming AI (KRAFTON)",
+        "AI chip design (Rebellions)"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Semiconductors & AI Chips",
+          "demandScore": 98,
+          "salaryRange": "KRW 60,000,000-120,000,000/year",
+          "note": "Samsung (HBM memory for AI), SK Hynix — world's AI chip supply chain; Rebellions (Korean AI chip startup) growing fast"
+        },
+        {
+          "sector": "Big Tech Platform AI",
+          "demandScore": 92,
+          "salaryRange": "KRW 70,000,000-130,000,000/year",
+          "note": "Kakao, Naver, LINE — HyperCLOVA X (Korean GPT-4 equivalent), recommendation at massive scale"
+        },
+        {
+          "sector": "Automotive AI",
+          "demandScore": 88,
+          "salaryRange": "KRW 65,000,000-110,000,000/year",
+          "note": "Hyundai, Kia — autonomous driving AI, Boston Dynamics (owned by Hyundai) robotics"
+        },
+        {
+          "sector": "Gaming & Metaverse",
+          "demandScore": 85,
+          "salaryRange": "KRW 60,000,000-110,000,000/year",
+          "note": "KRAFTON (PUBG), Netmarble, Nexon — game AI, procedural world generation; Korea world #2 gaming nation"
+        },
+        {
+          "sector": "Telecoms AI",
+          "demandScore": 82,
+          "salaryRange": "KRW 58,000,000-100,000,000/year",
+          "note": "SK Telecom, KT — 5G AI optimization, customer AI, B2B cloud AI platform"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "GKS scholarship → KAIST/POSTECH PhD → Samsung/Naver (structured international hire pipeline)",
+        "hardestEntry": "Kakao, Naver top product teams (Korean language near-mandatory)",
+        "sweetSpot": "Samsung AI Research Center (English culture, international team), Rebellions AI chip startup",
+        "bangladeshiPresence": "Very small; ~5,000 BD nationals in Korea; halal food available in Seoul (Itaewon)",
+        "biasLevel": "Medium — Korean language for 70% of companies; English-friendly culture growing at Samsung/Hyundai research arms"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 85,
+        "pospWpgpAdvantage": "D-10 job seeker visa (6 months); then E-7 (Specially Designated Activities) for tech roles",
+        "studyPermitToPgwpSuccess": 88,
+        "sponsorshipCost": "Low",
+        "note": "KIIP (Korea Immigration Integration Program) for PR. Point-based system similar to Japan HSP."
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "KRW 70,000,000-100,000,000/year",
+        "mscEntryLevel": "KRW 55,000,000-80,000,000/year",
+        "midLevel3to5yrs": "KRW 80,000,000-120,000,000/year",
+        "seniorLevel": "KRW 120,000,000-200,000,000/year",
+        "totalCompNote": "Samsung/LG pay globally competitive; equity rare but bonus (성과급) can be 100-200% of salary; annual pay raises negotiable"
+      },
+      "geographicVariation": {
+        "seoul_gangnam": {
+          "jobDensity": 90,
+          "avgSalary": "KRW 85,000,000",
+          "costOfLivingIndex": 75,
+          "netBenefit": "Kakao, Naver, Samsung HQ proximity; 1BR KRW 1,500,000-2,500,000/month — affordable vs Western cities"
+        },
+        "pangyo": {
+          "jobDensity": 88,
+          "avgSalary": "KRW 82,000,000",
+          "costOfLivingIndex": 72,
+          "netBenefit": "Korea's tech valley — Kakao, Krafton, many AI startups; 20min from Seoul; slightly cheaper"
+        },
+        "daejeon": {
+          "jobDensity": 65,
+          "avgSalary": "KRW 70,000,000",
+          "costOfLivingIndex": 60,
+          "netBenefit": "KAIST, ETRI (government AI research) — research-focused; very affordable; university city"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 52,
+        "vacationDays": 15,
+        "sickLeaveDays": "Very limited; presenteeism culture strong",
+        "parentalLeaveWeeks": 52,
+        "workFromHomeAcceptance": 60,
+        "diversityScore": 62,
+        "burnoutRisk": "Very High",
+        "culturalFit": "Hierarchical; Confucian respect for seniority; hard-working culture (ppalli ppalli — hurry hurry); improving at startups"
+      },
+      "careerGrowth": {
+        "pathToSenior": "5-8 years",
+        "pathToStaffPrincipal": "10-15 years at chaebols; faster at startups",
+        "managementOpportunities": 70,
+        "technicalLadder": "Developing rapidly; Samsung and Naver have distinct IC tracks",
+        "entrepreneurshipSupport": 88,
+        "note": "K-ICT startup support; TIPS (Technology Innovation Program); government provides KRW 500M to startups"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 82,
+        "topUsPhd": 95,
+        "topEuPhd": 88,
+        "bangladeshUndergrad": 58,
+        "note": "KAIST/POSTECH (Korean top universities) degree = elite credential; US PhD from top school is highly respected; domestic degree preferred at traditional chaebols"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 35,
+        "trend": "Stable; chaebol employment culturally permanent; startup sector more volatile but AI roles protected",
+        "protection": "Korean Labor Standards Act; mass layoffs require government approval; chaebols culturally avoid layoffs"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 88,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "F-2 (Resident) → F-5 (Permanent Resident) after 5 years. Requires TOPIK Level 4 (Korean language). 5-year PR then 5 more years for citizenship. Language is the primary barrier."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Very strong — Samsung HBM AI chip dominance; Hyundai robotics; government KRW 9 trillion AI investment",
+        "outlook2040": "Strong — demographic crisis (world's lowest birth rate) creates massive structural immigration need; Korea NEEDS immigrants",
+        "riskFactors": "TOPIK Level 4 requirement for PR (significant language investment); geopolitical risk (North Korea proximity); work-life burnout"
+      },
+      "strategicAdvice": "South Korea is exceptional for AI/semiconductor specialists. GKS scholarship pays full tuition + KRW 1,000,000/month — start here. Samsung AI Research Center and Naver AI Lab are world-class. STRATEGY: GKS → KAIST PhD → Samsung AI Research (English-friendly) → 5 years → PR with TOPIK 4. KEY RISK: TOPIK 4 is genuinely difficult (equivalent to C1 Korean). Start Korean language study on Day 1 of arrival. The demographic crisis means Korea WILL liberalize immigration — position yourself early.",
+      "confidenceScore": 88,
+      "dataQuality": "High"
+    },
+    {
+      "country": "China",
+      "countryCode": "CN",
+      "overallJobMarketScore": 78,
+      "demandLevel": "Extremely High",
+      "demandTrend": "Explosive — world's #2 AI ecosystem with government mandate",
+      "marketSaturation": "Low for top roles",
+      "averageTimeToJob": "2-4 months",
+      "averageTimeToJobDays": 90,
+      "jobOpeningsAnnual": 500000,
+      "aiMlSpecificOpenings": 150000,
+      "competitionLevel": 88,
+      "jobSecurityScore": 65,
+      "startupEcosystemScore": 95,
+      "researchPositionsScore": 90,
+      "remoteWorkCulture": 60,
+      "workLifeBalanceScore": 40,
+      "careerProgressionScore": 90,
+      "majorHubs": [
+        "Beijing (Zhongguancun)",
+        "Shanghai",
+        "Shenzhen",
+        "Hangzhou"
+      ],
+      "topEmployers": [
+        "Alibaba (DAMO Academy)",
+        "Tencent AI Lab",
+        "Baidu (AI Cloud)",
+        "ByteDance (TikTok AI)",
+        "Huawei Noah's Ark Lab",
+        "Meituan",
+        "JD.com AI",
+        "Xiaomi AI",
+        "DJI (drone AI)",
+        "OPPO Research"
+      ],
+      "emergingCompanies": [
+        "DeepSeek",
+        "Moonshot AI",
+        "Zhipu AI",
+        "Manus AI",
+        "Stepfun"
+      ],
+      "skillsInDemand": [
+        "LLM training at scale (Chinese language models)",
+        "Computer Vision (surveillance, autonomous)",
+        "Recommendation AI (ByteDance scale)",
+        "Drone AI (DJI)",
+        "Semiconductor AI (domestic chips post-US sanctions)"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Big Tech Platform AI",
+          "demandScore": 98,
+          "salaryRange": "CNY 600,000-1,500,000/year",
+          "note": "ByteDance, Alibaba, Tencent — world's largest recommendation systems; AI at billions-of-users scale"
+        },
+        {
+          "sector": "Autonomous Vehicles",
+          "demandScore": 92,
+          "salaryRange": "CNY 700,000-1,500,000/year",
+          "note": "BYD, Li Auto, Baidu Apollo, Pony.ai — world's largest autonomous vehicle testing ground"
+        },
+        {
+          "sector": "Hardware & Drones",
+          "demandScore": 90,
+          "salaryRange": "CNY 500,000-1,200,000/year",
+          "note": "DJI (controls 70% of global drone market), Xiaomi robotics; embedded AI at massive scale"
+        },
+        {
+          "sector": "AI Foundation Models",
+          "demandScore": 95,
+          "salaryRange": "CNY 800,000-2,000,000/year",
+          "note": "DeepSeek (shocked world with R1), Moonshot AI, Zhipu AI — China's OpenAI race; intensely funded"
+        },
+        {
+          "sector": "E-commerce & Retail AI",
+          "demandScore": 88,
+          "salaryRange": "CNY 500,000-1,000,000/year",
+          "note": "Alibaba, JD.com, Pinduoduo — logistics AI, computer vision for quality control, recommendation"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "International hire programs at ByteDance, Alibaba (they actively recruit globally)",
+        "hardestEntry": "Huawei (security clearance for foreigners complex post-US sanctions)",
+        "sweetSpot": "DeepSeek, Moonshot AI — cutting-edge research, English culture, world-class team",
+        "bangladeshiPresence": "Growing; CSC scholarship alumni community; Mandarin essential for daily life",
+        "biasLevel": "Medium — Chinese language critical for life outside work; professional English used at top tech firms"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 80,
+        "pospWpgpAdvantage": "Work visa (Z visa) → Residence Permit for Employment; CSC scholarship alumni have strong employer network",
+        "studyPermitToPgwpSuccess": 80,
+        "sponsorshipCost": "Low",
+        "note": "China Talent visa (Type A/B) for high-skilled workers: fast-track. ByteDance/Alibaba have dedicated global mobility teams."
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "CNY 700,000-1,200,000/year",
+        "mscEntryLevel": "CNY 400,000-700,000/year",
+        "midLevel3to5yrs": "CNY 800,000-1,500,000/year",
+        "seniorLevel": "CNY 1,500,000-3,000,000+/year",
+        "totalCompNote": "Top AI salaries globally at DeepSeek/ByteDance level; equity in pre-IPO companies can be life-changing; BUT geopolitical risk to equity value is real"
+      },
+      "geographicVariation": {
+        "beijing": {
+          "jobDensity": 90,
+          "avgSalary": "CNY 650,000",
+          "costOfLivingIndex": 70,
+          "netBenefit": "Baidu, ByteDance HQ, Tsinghua/PKU AI labs — China's Silicon Valley; 1BR CNY 6,000-10,000/month"
+        },
+        "shanghai": {
+          "jobDensity": 85,
+          "avgSalary": "CNY 620,000",
+          "costOfLivingIndex": 75,
+          "netBenefit": "Most international; Alibaba financial affiliate, Tesla AI, JP Morgan tech; expat-friendly"
+        },
+        "shenzhen": {
+          "jobDensity": 82,
+          "avgSalary": "CNY 600,000",
+          "costOfLivingIndex": 72,
+          "netBenefit": "Hardware AI capital (DJI, Huawei, Tencent HQ); fastest growing tech city; near Hong Kong"
+        },
+        "hangzhou": {
+          "jobDensity": 78,
+          "avgSalary": "CNY 580,000",
+          "costOfLivingIndex": 65,
+          "netBenefit": "Alibaba HQ — e-commerce AI at unimaginable scale; beautiful city; most affordable major hub"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 60,
+        "vacationDays": 5,
+        "sickLeaveDays": "Limited; 996 culture (9am-9pm, 6 days) is still real at top firms despite legal limits",
+        "parentalLeaveWeeks": 14,
+        "workFromHomeAcceptance": 55,
+        "diversityScore": 60,
+        "burnoutRisk": "Extreme",
+        "culturalFit": "Intensely competitive; speed above all; guanxi (relationships) matter enormously; face culture critical"
+      },
+      "careerGrowth": {
+        "pathToSenior": "2-4 years (fastest in world)",
+        "pathToStaffPrincipal": "6-8 years at top firms",
+        "managementOpportunities": 90,
+        "technicalLadder": "Rapidly developing",
+        "entrepreneurshipSupport": 98,
+        "note": "China produces more AI startups than any other country; government grants, VC ecosystem world-class post-DeepSeek"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 80,
+        "topUsPhd": 98,
+        "topEuPhd": 90,
+        "bangladeshUndergrad": 55,
+        "note": "US PhD from top school is the highest-value credential in China AI; CSC scholarship Chinese university PhD respected"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 72,
+        "trend": "High volatility; regulatory crackdowns (Alibaba 2021, gaming 2022, now AI regulation); US-China tech war creates uncertainty",
+        "protection": "Chinese labor law mandatory severance (N+1 months); however enforcement patchy at large firms"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 65,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "China PR (Permanent Residence Certificate) is extremely difficult for non-Chinese. No realistic pathway for Bangladeshi tech workers. Treat as 3-5 year career accelerator, not permanent home."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Strong for AI careers — DeepSeek shock shows China is reaching parity with US in AI; massive government investment",
+        "outlook2040": "Uncertain — US-China tech decoupling creates risk; however China's internal AI market self-sustains; demographic decline",
+        "riskFactors": "US-China tech war (US sanctions, export controls); no realistic PR path; great firewall restrictions; regulatory unpredictability"
+      },
+      "strategicAdvice": "China offers the fastest career acceleration in the world for AI engineers willing to work 80+ hours/week. CSC scholarship (free tuition + stipend) is the entry point. DeepSeek and Moonshot AI are comparable to OpenAI in technical sophistication. CRITICAL STRATEGY: China should be used as a 3-5 year high-intensity career springboard — build your portfolio, publications, and savings — then leverage those credentials for PR in Canada/Australia/Germany. DO NOT plan to settle permanently.",
+      "confidenceScore": 85,
+      "dataQuality": "High"
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "overallJobMarketScore": 80,
+      "demandLevel": "High",
+      "demandTrend": "Strong and accelerating — France 2030 AI investment plan",
+      "marketSaturation": "Medium",
+      "averageTimeToJob": "3-5 months",
+      "averageTimeToJobDays": 110,
+      "jobOpeningsAnnual": 25000,
+      "aiMlSpecificOpenings": 7000,
+      "competitionLevel": 68,
+      "jobSecurityScore": 90,
+      "startupEcosystemScore": 88,
+      "researchPositionsScore": 88,
+      "remoteWorkCulture": 82,
+      "workLifeBalanceScore": 85,
+      "careerProgressionScore": 78,
+      "majorHubs": [
+        "Paris (Station F)",
+        "Grenoble",
+        "Lyon",
+        "Toulouse",
+        "Sophia Antipolis"
+      ],
+      "topEmployers": [
+        "Mistral AI (Paris)",
+        "Google DeepMind Paris",
+        "Meta AI Research Paris",
+        "Thales (defense AI)",
+        "Airbus (aerospace AI)",
+        "BNP Paribas Tech",
+        "Capgemini AI",
+        "Schneider Electric AI",
+        "INRIA",
+        "CEA Tech"
+      ],
+      "emergingCompanies": [
+        "Mistral AI",
+        "Bioptimus",
+        "Nabla",
+        "Contentsquare",
+        "Shift Technology"
+      ],
+      "skillsInDemand": [
+        "Foundation model training (Mistral)",
+        "Aerospace AI (Airbus)",
+        "Defense AI (Thales)",
+        "Healthcare AI",
+        "French NLP",
+        "EU AI Act compliance architecture"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "AI Foundation Models",
+          "demandScore": 95,
+          "salaryRange": "EUR 90,000-180,000",
+          "note": "Mistral AI is Europe's most valuable AI company (EUR 6B valuation) — building LLMs competitive with GPT-4; Paris becomes Europe's AI capital"
+        },
+        {
+          "sector": "Aerospace & Defense AI",
+          "demandScore": 90,
+          "salaryRange": "EUR 65,000-110,000",
+          "note": "Airbus (Toulouse HQ), Thales, Dassault — AI for aircraft systems, autonomous defense; EU's largest aerospace market"
+        },
+        {
+          "sector": "Research Institutions",
+          "demandScore": 88,
+          "salaryRange": "EUR 55,000-85,000",
+          "note": "INRIA (world-renowned AI research), CEA Tech, CNRS — France's strong public AI research ecosystem; Turing Institute equivalent"
+        },
+        {
+          "sector": "Banking & FinTech",
+          "demandScore": 85,
+          "salaryRange": "EUR 70,000-120,000",
+          "note": "BNP Paribas, Société Générale, Crédit Agricole — algorithmic trading AI, fraud detection, wealth management ML"
+        },
+        {
+          "sector": "Luxury & Retail AI",
+          "demandScore": 78,
+          "salaryRange": "EUR 60,000-100,000",
+          "note": "LVMH (Louis Vuitton parent), L'Oréal — customer personalization AI; France's unique luxury sector AI applications"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "INRIA research positions (English culture), Capgemini AI graduate programs",
+        "hardestEntry": "Mistral AI core research team (world-class competition)",
+        "sweetSpot": "Bioptimus, Nabla, or Contentsquare — well-funded Paris startups with international culture",
+        "bangladeshiPresence": "Moderate; established South Asian community in Paris (approximately 100,000 Bangladeshi nationals in France)",
+        "biasLevel": "Medium — French language strongly preferred for integration; Station F ecosystem is very international"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 82,
+        "pospWpgpAdvantage": "Passeport Talent (Talent Passport) — specifically for highly qualified researchers and tech workers; fast 4-week processing",
+        "studyPermitToPgwpSuccess": 86,
+        "sponsorshipCost": "Low",
+        "note": "Passeport Talent: Salarié qualifié (qualified employee) — salary > EUR 39,151 → 4-year renewable visa with immediate work rights. Easiest skilled migration in EU after Netherlands."
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "EUR 70,000-100,000/year",
+        "mscEntryLevel": "EUR 50,000-75,000/year",
+        "midLevel3to5yrs": "EUR 75,000-110,000/year",
+        "seniorLevel": "EUR 110,000-180,000/year",
+        "totalCompNote": "Salaries appear lower gross but 35-hour work week, 5 weeks mandatory vacation, and comprehensive state healthcare dramatically increase effective compensation"
+      },
+      "geographicVariation": {
+        "paris": {
+          "jobDensity": 92,
+          "avgSalary": "EUR 75,000",
+          "costOfLivingIndex": 88,
+          "netBenefit": "Mistral AI, Station F startups, INRIA Paris, Google Paris — world-class AI hub; 1BR EUR 1,500-2,500/month"
+        },
+        "grenoble": {
+          "jobDensity": 68,
+          "avgSalary": "EUR 62,000",
+          "costOfLivingIndex": 70,
+          "netBenefit": "Semiconductor capital (STMicroelectronics), CEA research; university town; very affordable; stunning Alps backdrop"
+        },
+        "toulouse": {
+          "jobDensity": 72,
+          "avgSalary": "EUR 60,000",
+          "costOfLivingIndex": 68,
+          "netBenefit": "Airbus headquarters — aerospace AI; vibrant student city; affordable; strong engineering tradition"
+        },
+        "sophia_antipolis": {
+          "jobDensity": 65,
+          "avgSalary": "EUR 65,000",
+          "costOfLivingIndex": 75,
+          "netBenefit": "Europe's Silicon Valley; SAP, Oracle, Amadeus; Mediterranean lifestyle; near Nice"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 35,
+        "vacationDays": 25,
+        "sickLeaveDays": "90 days full pay via Securite Sociale after 1yr employment",
+        "parentalLeaveWeeks": 16,
+        "workFromHomeAcceptance": 82,
+        "diversityScore": 80,
+        "burnoutRisk": "Low",
+        "culturalFit": "Work to live, not live to work; lunch breaks sacrosanct; intellectual debate highly valued; direct feedback expected"
+      },
+      "careerGrowth": {
+        "pathToSenior": "4-6 years",
+        "pathToStaffPrincipal": "8-12 years",
+        "managementOpportunities": 78,
+        "technicalLadder": "Growing rapidly at Mistral/startup ecosystem",
+        "entrepreneurshipSupport": 88,
+        "note": "Station F (world's largest startup campus) in Paris; BPI France public investment bank for startups; French Tech Next40 elite program"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 85,
+        "topUsPhd": 92,
+        "topEuPhd": 92,
+        "bangladeshUndergrad": 60,
+        "note": "Grande École (Polytechnique, CentraleSupélec) degree = French elite credential; ENIC-NARIC France for foreign credential recognition"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 35,
+        "trend": "Very stable; French labor law makes layoffs extremely expensive; PSE (social plan) process takes months",
+        "protection": "World's strongest employment protection; CDI (permanent contract) practically irrevocable; even startups hesitate to lay off"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 88,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "5 years legal residence → Carte de Résident (PR). Passeport Talent → 4yr visa → PR at year 5. French B1 language required. Citizenship at year 10 (or year 5 for exceptional contribution)."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Very strong — France 2030 plan investing EUR 22B in AI/quantum/green tech; Mistral AI puts France on global AI map",
+        "outlook2040": "Strong — EU's core economic engine; nuclear energy AI leadership; aerospace AI world-class",
+        "riskFactors": "Political instability (frequent government changes, strikes); French language mandatory for true integration; high income tax"
+      },
+      "strategicAdvice": "France is Europe's most exciting AI destination in 2026. Mistral AI's success has created a vibrant Paris AI ecosystem. The Passeport Talent makes work permit trivially easy for AI graduates. STRATEGY: INRIA PhD or Ecole Polytechnique master's → Mistral AI or INRIA research → Passeport Talent → 5yr PR. CRITICAL: French B1 mandatory for PR. Enroll in Alliance Française in Dhaka 18 months before departure — this single investment will transform your French options.",
+      "confidenceScore": 90,
+      "dataQuality": "High"
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "overallJobMarketScore": 85,
+      "demandLevel": "Very High",
+      "demandTrend": "Explosive — government-mandated AI transformation; MBZUAI world-class",
+      "marketSaturation": "Low",
+      "averageTimeToJob": "1-3 months",
+      "averageTimeToJobDays": 60,
+      "jobOpeningsAnnual": 30000,
+      "aiMlSpecificOpenings": 8000,
+      "competitionLevel": 55,
+      "jobSecurityScore": 75,
+      "startupEcosystemScore": 82,
+      "researchPositionsScore": 85,
+      "remoteWorkCulture": 72,
+      "workLifeBalanceScore": 72,
+      "careerProgressionScore": 90,
+      "majorHubs": [
+        "Dubai (DIFC)",
+        "Abu Dhabi (Masdar City)",
+        "Sharjah"
+      ],
+      "topEmployers": [
+        "G42 (Abu Dhabi AI government arm)",
+        "MBZUAI (research)",
+        "Presight AI",
+        "Microsoft UAE",
+        "Amazon AWS UAE",
+        "Oracle UAE",
+        "Etisalat/e& (telecom AI)",
+        "Careem (Uber subsidiary)",
+        "Property Finder",
+        "Noon.com"
+      ],
+      "emergingCompanies": [
+        "Aleph Alpha UAE",
+        "Falcon LLM team (TII)",
+        "Cafu (fuel delivery AI)",
+        "Anghami (music AI)"
+      ],
+      "skillsInDemand": [
+        "Arabic NLP (Falcon LLM)",
+        "Healthcare AI (Cleveland Clinic Abu Dhabi)",
+        "FinTech AI (DIFC)",
+        "Smart city AI (UAE government projects)",
+        "Cloud AI (Microsoft/AWS local expansion)",
+        "Cybersecurity AI"
+      ],
+      "industriesHiring": [
+        {
+          "sector": "Government AI & Smart City",
+          "demandScore": 95,
+          "salaryRange": "AED 20,000-45,000/month",
+          "note": "G42 (backed by Sheikh Tahnoon) runs UAE's AI strategy — massive government contracts, Falcon LLM, genome sequencing AI; almost no competition from locals"
+        },
+        {
+          "sector": "Financial Services AI",
+          "demandScore": 90,
+          "salaryRange": "AED 25,000-55,000/month",
+          "note": "DIFC (Dubai International Financial Centre) — hundreds of FinTech companies; fraud detection, quantitative trading, wealth AI"
+        },
+        {
+          "sector": "Research Institutions",
+          "demandScore": 92,
+          "salaryRange": "AED 22,000-40,000/month + housing",
+          "note": "MBZUAI (Mohamed bin Zayed University of AI) — world's first AI-focused university; full scholarship for MSc/PhD + AED 9,300/month stipend; top research"
+        },
+        {
+          "sector": "Telecoms AI",
+          "demandScore": 85,
+          "salaryRange": "AED 18,000-38,000/month",
+          "note": "e& (Etisalat) — network optimization AI, 5G, smart home; largest telecom in MENA"
+        },
+        {
+          "sector": "E-commerce & Delivery",
+          "demandScore": 82,
+          "salaryRange": "AED 18,000-35,000/month",
+          "note": "Careem (Uber MENA), Noon.com, Talabat — logistics optimization, demand forecasting, recommendation"
+        }
+      ],
+      "entryLevelReality": {
+        "easiestEntry": "MBZUAI (scholarship = automatic entry), G42 international recruitment pipeline",
+        "hardestEntry": "Private bank quant roles (Goldman, JPMorgan UAE — prefer Oxbridge/Ivy credentials)",
+        "sweetSpot": "G42 AI engineer or Microsoft UAE — largest AI employer in region, English-only culture, international team",
+        "bangladeshiPresence": "Very large — Bangladesh is one of the top 3 expat communities in UAE (~1.5M Bangladeshis); established community in Dubai (Deira, Bur Dubai)",
+        "biasLevel": "Low professionally for tech roles; large BD community means cultural comfort; Bangladeshi passport holders very common in UAE"
+      },
+      "visaSponsorshipReality": {
+        "willingnessScore": 95,
+        "pospWpgpAdvantage": "MBZUAI arranges student visa and then employment visa — zero bureaucracy for students; employer handles all",
+        "studyPermitToPgwpSuccess": 96,
+        "sponsorshipCost": "Zero (employer pays)",
+        "note": "UAE Golden Visa (10yr) available for AI specialists — salary > AED 30,000 OR MBZUAI graduate. Golden Visa = long-term stability without employment dependency (unlike standard residency)."
+      },
+      "salaryExpectations": {
+        "phdEntryLevel": "AED 25,000-40,000/month (tax-free)",
+        "mscEntryLevel": "AED 18,000-30,000/month (tax-free)",
+        "midLevel3to5yrs": "AED 30,000-50,000/month (tax-free)",
+        "seniorLevel": "AED 50,000-100,000+/month (tax-free)",
+        "totalCompNote": "100% tax-free. Every AED earned hits your bank. AED 25,000/month = approximately USD 6,800/month take-home, every month. Housing often provided or allowance given."
+      },
+      "geographicVariation": {
+        "dubai": {
+          "jobDensity": 88,
+          "avgSalary": "AED 28,000/month",
+          "costOfLivingIndex": 85,
+          "netBenefit": "FinTech, e-commerce, hospitality AI; most international city; 1BR AED 7,000-15,000/month in Marina/Downtown"
+        },
+        "abu_dhabi": {
+          "jobDensity": 82,
+          "avgSalary": "AED 30,000/month",
+          "costOfLivingIndex": 80,
+          "netBenefit": "G42, MBZUAI, Masdar City — government AI and research; less nightlife, more stable; 1BR AED 6,000-12,000/month"
+        },
+        "sharjah": {
+          "jobDensity": 55,
+          "avgSalary": "AED 22,000/month",
+          "costOfLivingIndex": 65,
+          "netBenefit": "University of Sharjah; more affordable; commutable to Dubai (30min); growing tech scene"
+        }
+      },
+      "workCulture": {
+        "averageHoursPerWeek": 45,
+        "vacationDays": 30,
+        "sickLeaveDays": "15 days full pay",
+        "parentalLeaveWeeks": 5,
+        "workFromHomeAcceptance": 72,
+        "diversityScore": 95,
+        "burnoutRisk": "Medium",
+        "culturalFit": "Multicultural — 90 nationalities in major tech firms; English universal; Ramadan schedule changes; alcohol restricted to licensed venues"
+      },
+      "careerGrowth": {
+        "pathToSenior": "3-5 years",
+        "pathToStaffPrincipal": "6-10 years",
+        "managementOpportunities": 85,
+        "technicalLadder": "Rapidly developing at G42, MBZUAI spin-outs",
+        "entrepreneurshipSupport": 90,
+        "note": "Dubai Future Foundation; Hub71 (Abu Dhabi's startup ecosystem) provides seed funding + visa + housing for startups; zero corporate tax for tech companies"
+      },
+      "foreignCredentialRecognition": {
+        "canadianMasterScore": 88,
+        "topUsPhd": 95,
+        "topEuPhd": 92,
+        "bangladeshUndergrad": 68,
+        "note": "MBZUAI degree is rapidly gaining international recognition; US/EU PhD very highly valued; BUET/AUST degrees recognized, BD community well-known"
+      },
+      "layoffRisk2027to2029": {
+        "riskScore": 60,
+        "trend": "Higher than EU — visa tied to employment for standard workers; global tech downturn = visa cancellation risk; Golden Visa holders are protected",
+        "protection": "End of Service Gratuity (21 days/year × years served) mandatory; DEWS (savings scheme) for DIFC workers; no other protection for non-Golden Visa"
+      },
+      "prPathwayIntegration": {
+        "jobRequiredForPr": true,
+        "skillClassEligibility": 90,
+        "crsPointsFromJob": "N/A",
+        "provinceNominationBoost": "N/A",
+        "note": "CRITICAL: There is NO traditional PR in UAE. Golden Visa (10yr renewable) is the equivalent but IS NOT citizenship. HIV-positive individuals are deported under UAE law. No naturalization pathway exists for non-Arabs. Plan UAE as a 5-10yr wealth accumulation phase, not a permanent home."
+      },
+      "longTermOutlook": {
+        "outlook2030": "Very strong — Vision 2031 UAE AI strategy is state-level priority; G42 and Falcon LLM world-class",
+        "outlook2040": "Uncertain — extreme heat (>50°C increasingly common), lack of PR/citizenship, and US-China tensions create long-term risks",
+        "riskFactors": "NO citizenship or PR pathway; extreme climate (increasingly unlivable outdoors summers); geopolitical Middle East risk; Golden Visa ≠ PR"
+      },
+      "strategicAdvice": "UAE is the ultimate wealth-building accelerator for Bangladeshi AI graduates. Tax-free salaries, MBZUAI full scholarship, and the largest Bangladeshi community outside Bangladesh create a uniquely comfortable environment. STRATEGY: MBZUAI scholarship → G42 or MBZUAI research role → Golden Visa (10yr) → accumulate AED 1-2 million in savings → use savings + experience to move to Canada/Ireland/Germany for PR. NEVER plan UAE as your final destination. The Golden Visa gives you 10 years of security — use them wisely.",
+      "confidenceScore": 92,
+      "dataQuality": "High"
     }
   ]
 }
