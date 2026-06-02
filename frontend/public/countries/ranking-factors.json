@@ -1,4 +1,3 @@
-
 {
   "metadata": {
     "version": "2.0.0",
@@ -12,14 +11,21 @@
     "scoringScale": "1-100 for all dimensions",
     "weightingNote": "Weights are calibrated for Bangladeshi CS/AI/ML student profile specifically. Different profiles (e.g. family-first vs career-first) should adjust weights accordingly.",
     "confidenceScoreExplanation": "Confidence score reflects data reliability and policy stability. Low confidence = policy may change significantly by 2027-2029.",
-    "lifecyclePhases": ["STUDY", "POST_STUDY_WORK", "PR_ACQUISITION", "CITIZENSHIP", "FAMILY_SETTLEMENT", "LONG_TERM_20_30_YEARS"]
+    "lifecyclePhases": [
+      "STUDY",
+      "POST_STUDY_WORK",
+      "PR_ACQUISITION",
+      "CITIZENSHIP",
+      "FAMILY_SETTLEMENT",
+      "LONG_TERM_20_30_YEARS"
+    ]
   },
   "factorWeights": {
     "careerMaximizationProfile": {
       "description": "For students prioritizing career growth and salary above all else",
       "weights": {
-        "researchQuality": 0.20,
-        "jobMarketStrength": 0.20,
+        "researchQuality": 0.2,
+        "jobMarketStrength": 0.2,
         "salaryPotential": 0.18,
         "aiEcosystem": 0.15,
         "scholarshipFunding": 0.12,
@@ -35,8 +41,8 @@
         "citizenshipAccess": 0.18,
         "familyRights": 0.15,
         "stabilityRisk": 0.12,
-        "costOfLiving": 0.10,
-        "jobMarketStrength": 0.10,
+        "costOfLiving": 0.1,
+        "jobMarketStrength": 0.1,
         "salaryPotential": 0.08,
         "researchQuality": 0.05
       }
@@ -45,12 +51,12 @@
       "description": "Default GradPlanner profile: balanced across all lifecycle factors",
       "weights": {
         "admissionFeasibility": 0.08,
-        "scholarshipFunding": 0.10,
-        "researchQuality": 0.10,
+        "scholarshipFunding": 0.1,
+        "researchQuality": 0.1,
         "jobMarketStrength": 0.12,
-        "salaryPotential": 0.10,
+        "salaryPotential": 0.1,
         "prPathway": 0.14,
-        "citizenshipAccess": 0.10,
+        "citizenshipAccess": 0.1,
         "familyRights": 0.08,
         "costOfLiving": 0.06,
         "stabilityRisk": 0.07,
@@ -67,12 +73,79 @@
       "confidenceScore": 88,
       "evidenceSummary": "Tuition-free public universities, EU Blue Card, 21-month accelerated PR, strong AI talent shortage, aging population driving immigration need. Language barrier is primary risk.",
       "phaseScores": {
-        "studyPhase": { "score": 88, "rank": 2, "keyFactors": ["Zero tuition at public universities", "Funded PhD TVöD contracts", "DAAD scholarships", "World-class TU Munich, RWTH, KIT"], "keyRisks": ["German language B2 required long-term", "Housing competition in Munich/Berlin"] },
-        "postStudyWork": { "score": 85, "rank": 2, "keyFactors": ["18-month job seeker visa", "EU Blue Card from EUR 43,759 salary threshold", "Massive tech talent shortage"], "keyRisks": ["German language limits job pool without B2+"] },
-        "prAcquisition": { "score": 88, "rank": 1, "keyFactors": ["EU Blue Card → PR in 21 months with B1 German", "Skilled Worker Act 2023 most progressive immigration reform in Europe", "Clear point-based pathway"], "keyRisks": ["Language requirement B1 minimum"] },
-        "citizenship": { "score": 82, "rank": 3, "keyFactors": ["5 years (reduced from 8 in 2024)", "Dual citizenship now allowed since 2024", "Strong integration programs"], "keyRisks": ["B1 German and integration test required"] },
-        "familySettlement": { "score": 80, "rank": 3, "keyFactors": ["Spouse work rights immediate", "Free schooling", "Kindergeld child benefit", "Universal healthcare"], "keyRisks": ["German language essential for children's integration"] },
-        "longTerm20to30Years": { "score": 85, "rank": 2, "keyFactors": ["Aging population creates structural immigration need", "EUR 200B+ AI investment plans", "EU economic stability", "Labor shortage forecast severe through 2040"] }
+        "studyPhase": {
+          "score": 88,
+          "rank": 2,
+          "keyFactors": [
+            "Zero tuition at public universities",
+            "Funded PhD TVöD contracts",
+            "DAAD scholarships",
+            "World-class TU Munich, RWTH, KIT"
+          ],
+          "keyRisks": [
+            "German language B2 required long-term",
+            "Housing competition in Munich/Berlin"
+          ]
+        },
+        "postStudyWork": {
+          "score": 85,
+          "rank": 2,
+          "keyFactors": [
+            "18-month job seeker visa",
+            "EU Blue Card from EUR 43,759 salary threshold",
+            "Massive tech talent shortage"
+          ],
+          "keyRisks": [
+            "German language limits job pool without B2+"
+          ]
+        },
+        "prAcquisition": {
+          "score": 88,
+          "rank": 1,
+          "keyFactors": [
+            "EU Blue Card → PR in 21 months with B1 German",
+            "Skilled Worker Act 2023 most progressive immigration reform in Europe",
+            "Clear point-based pathway"
+          ],
+          "keyRisks": [
+            "Language requirement B1 minimum"
+          ]
+        },
+        "citizenship": {
+          "score": 82,
+          "rank": 3,
+          "keyFactors": [
+            "5 years (reduced from 8 in 2024)",
+            "Dual citizenship now allowed since 2024",
+            "Strong integration programs"
+          ],
+          "keyRisks": [
+            "B1 German and integration test required"
+          ]
+        },
+        "familySettlement": {
+          "score": 80,
+          "rank": 3,
+          "keyFactors": [
+            "Spouse work rights immediate",
+            "Free schooling",
+            "Kindergeld child benefit",
+            "Universal healthcare"
+          ],
+          "keyRisks": [
+            "German language essential for children's integration"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 85,
+          "rank": 2,
+          "keyFactors": [
+            "Aging population creates structural immigration need",
+            "EUR 200B+ AI investment plans",
+            "EU economic stability",
+            "Labor shortage forecast severe through 2040"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 85,
@@ -108,12 +181,82 @@
       "confidenceScore": 82,
       "evidenceSummary": "Strong Express Entry PR pathway, large Bangladeshi community, English language advantage. Housing crisis and immigration competition increasing significantly as of 2025-2026.",
       "phaseScores": {
-        "studyPhase": { "score": 76, "rank": 6, "keyFactors": ["English medium", "Strong universities UofT/UBC/Waterloo/McGill", "TA/RA funding for PhD"], "keyRisks": ["High tuition for international MSc", "Housing crisis severe in Toronto/Vancouver"] },
-        "postStudyWork": { "score": 82, "rank": 4, "keyFactors": ["PGWP up to 3 years", "No work hour restrictions", "Large tech market growing"], "keyRisks": ["Competition increasing from international student caps aftermath"] },
-        "prAcquisition": { "score": 85, "rank": 2, "keyFactors": ["Express Entry CRS transparent and predictable", "Multiple PNP streams", "STEM occupations prioritized"], "keyRisks": ["CRS score inflation; competition higher 2025-2026", "Policy changes possible under political shifts"] },
-        "citizenship": { "score": 88, "rank": 1, "keyFactors": ["3 years after PR (fastest among major destinations)", "No language test beyond CLB 4", "Dual citizenship allowed"], "keyRisks": ["Must physically reside 3/5 years"] },
-        "familySettlement": { "score": 84, "rank": 2, "keyFactors": ["Spouse open work permit", "Free schooling", "Universal healthcare", "Bangladeshi community support"], "keyRisks": ["Housing affordability for families severe in major cities"] },
-        "longTerm20to30Years": { "score": 78, "rank": 5, "keyFactors": ["Immigration-dependent growth model", "AI corridor Toronto/Waterloo", "Stable democracy"], "keyRisks": ["Political shifts on immigration 2025 elections", "Housing crisis structural"] }
+        "studyPhase": {
+          "score": 76,
+          "rank": 6,
+          "keyFactors": [
+            "English medium",
+            "Strong universities UofT/UBC/Waterloo/McGill",
+            "TA/RA funding for PhD"
+          ],
+          "keyRisks": [
+            "High tuition for international MSc",
+            "Housing crisis severe in Toronto/Vancouver"
+          ]
+        },
+        "postStudyWork": {
+          "score": 82,
+          "rank": 4,
+          "keyFactors": [
+            "PGWP up to 3 years",
+            "No work hour restrictions",
+            "Large tech market growing"
+          ],
+          "keyRisks": [
+            "Competition increasing from international student caps aftermath"
+          ]
+        },
+        "prAcquisition": {
+          "score": 85,
+          "rank": 2,
+          "keyFactors": [
+            "Express Entry CRS transparent and predictable",
+            "Multiple PNP streams",
+            "STEM occupations prioritized"
+          ],
+          "keyRisks": [
+            "CRS score inflation; competition higher 2025-2026",
+            "Policy changes possible under political shifts"
+          ]
+        },
+        "citizenship": {
+          "score": 88,
+          "rank": 1,
+          "keyFactors": [
+            "3 years after PR (fastest among major destinations)",
+            "No language test beyond CLB 4",
+            "Dual citizenship allowed"
+          ],
+          "keyRisks": [
+            "Must physically reside 3/5 years"
+          ]
+        },
+        "familySettlement": {
+          "score": 84,
+          "rank": 2,
+          "keyFactors": [
+            "Spouse open work permit",
+            "Free schooling",
+            "Universal healthcare",
+            "Bangladeshi community support"
+          ],
+          "keyRisks": [
+            "Housing affordability for families severe in major cities"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 78,
+          "rank": 5,
+          "keyFactors": [
+            "Immigration-dependent growth model",
+            "AI corridor Toronto/Waterloo",
+            "Stable democracy"
+          ],
+          "keyRisks": [
+            "Political shifts on immigration 2025 elections",
+            "Housing crisis structural"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 78,
@@ -149,12 +292,81 @@
       "confidenceScore": 84,
       "evidenceSummary": "RTP PhD scholarship excellent, English language, strong PR pathway through points test. Housing crisis in Sydney/Melbourne, salary lower than USA but quality of life high.",
       "phaseScores": {
-        "studyPhase": { "score": 80, "rank": 3, "keyFactors": ["RTP scholarship: full tuition + AUD 32,192/year stipend tax-free", "English medium", "Strong Go8 research universities"], "keyRisks": ["High MSc tuition if not RTP", "Sydney/Melbourne housing crisis"] },
-        "postStudyWork": { "score": 82, "rank": 3, "keyFactors": ["485 Visa 2-4 years", "No work restriction", "Strong tech market"], "keyRisks": ["Competition from large international student cohort"] },
-        "prAcquisition": { "score": 80, "rank": 4, "keyFactors": ["Points-based transparent system", "CS/AI on Skills in Demand list", "Multiple visa streams 189/190/491"], "keyRisks": ["Points inflation; IELTS Superior (8.0) now important for competitive score"] },
-        "citizenship": { "score": 75, "rank": 5, "keyFactors": ["4 years after PR", "Dual citizenship allowed", "No language test"], "keyRisks": ["Longer than Canada's 3 years"] },
-        "familySettlement": { "score": 82, "rank": 4, "keyFactors": ["Spouse unrestricted work rights", "Free public schooling", "Medicare", "South Asian community growing"], "keyRisks": ["Housing costs for families in major cities"] },
-        "longTerm20to30Years": { "score": 78, "rank": 4, "keyFactors": ["Growing AI sector", "Immigration-dependent economy", "Climate risk lower than most", "Asia-Pacific strategic position"], "keyRisks": ["Political shifts possible; international student caps 2025"] }
+        "studyPhase": {
+          "score": 80,
+          "rank": 3,
+          "keyFactors": [
+            "RTP scholarship: full tuition + AUD 32,192/year stipend tax-free",
+            "English medium",
+            "Strong Go8 research universities"
+          ],
+          "keyRisks": [
+            "High MSc tuition if not RTP",
+            "Sydney/Melbourne housing crisis"
+          ]
+        },
+        "postStudyWork": {
+          "score": 82,
+          "rank": 3,
+          "keyFactors": [
+            "485 Visa 2-4 years",
+            "No work restriction",
+            "Strong tech market"
+          ],
+          "keyRisks": [
+            "Competition from large international student cohort"
+          ]
+        },
+        "prAcquisition": {
+          "score": 80,
+          "rank": 4,
+          "keyFactors": [
+            "Points-based transparent system",
+            "CS/AI on Skills in Demand list",
+            "Multiple visa streams 189/190/491"
+          ],
+          "keyRisks": [
+            "Points inflation; IELTS Superior (8.0) now important for competitive score"
+          ]
+        },
+        "citizenship": {
+          "score": 75,
+          "rank": 5,
+          "keyFactors": [
+            "4 years after PR",
+            "Dual citizenship allowed",
+            "No language test"
+          ],
+          "keyRisks": [
+            "Longer than Canada's 3 years"
+          ]
+        },
+        "familySettlement": {
+          "score": 82,
+          "rank": 4,
+          "keyFactors": [
+            "Spouse unrestricted work rights",
+            "Free public schooling",
+            "Medicare",
+            "South Asian community growing"
+          ],
+          "keyRisks": [
+            "Housing costs for families in major cities"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 78,
+          "rank": 4,
+          "keyFactors": [
+            "Growing AI sector",
+            "Immigration-dependent economy",
+            "Climate risk lower than most",
+            "Asia-Pacific strategic position"
+          ],
+          "keyRisks": [
+            "Political shifts possible; international student caps 2025"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 78,
@@ -190,12 +402,79 @@
       "confidenceScore": 85,
       "evidenceSummary": "PhD employment model with 30% tax ruling is exceptional. EU access, ASML/Philips ecosystem, Eindhoven AI hub. Housing crisis in Amsterdam/Utrecht manageable in Eindhoven.",
       "phaseScores": {
-        "studyPhase": { "score": 80, "rank": 4, "keyFactors": ["PhD is employment not student status", "NWO PhD salary EUR 2,872-3,670/month", "30% tax ruling", "TU Delft, TU/e, UvA world-class"], "keyRisks": ["MSc international tuition EUR 12,000-22,000", "Housing crisis severe in Amsterdam"] },
-        "postStudyWork": { "score": 78, "rank": 5, "keyFactors": ["Orientation Year 12 months", "30% ruling for 5 years", "ASML, Booking, Adyen, TomTom hiring"], "keyRisks": ["Visa window only 12 months; need job quickly"] },
-        "prAcquisition": { "score": 78, "rank": 5, "keyFactors": ["5 years → PR", "Employment track straightforward", "EU freedom of movement"], "keyRisks": ["Dutch A2 language requirement for integration exam"] },
-        "citizenship": { "score": 72, "rank": 7, "keyFactors": ["5 years → citizenship", "Dual citizenship limited cases"], "keyRisks": ["Dutch B1 required; renunciation of Bangladeshi passport (dual not always allowed)"] },
-        "familySettlement": { "score": 78, "rank": 5, "keyFactors": ["Spouse work rights", "Free schooling", "Universal healthcare", "English widely spoken"], "keyRisks": ["Housing costs extreme in Amsterdam", "Dutch language for children's integration"] },
-        "longTerm20to30Years": { "score": 80, "rank": 3, "keyFactors": ["ASML semiconductor dominance", "EU tech hub", "NWO research investment", "Stable democracy"] }
+        "studyPhase": {
+          "score": 80,
+          "rank": 4,
+          "keyFactors": [
+            "PhD is employment not student status",
+            "NWO PhD salary EUR 2,872-3,670/month",
+            "30% tax ruling",
+            "TU Delft, TU/e, UvA world-class"
+          ],
+          "keyRisks": [
+            "MSc international tuition EUR 12,000-22,000",
+            "Housing crisis severe in Amsterdam"
+          ]
+        },
+        "postStudyWork": {
+          "score": 78,
+          "rank": 5,
+          "keyFactors": [
+            "Orientation Year 12 months",
+            "30% ruling for 5 years",
+            "ASML, Booking, Adyen, TomTom hiring"
+          ],
+          "keyRisks": [
+            "Visa window only 12 months; need job quickly"
+          ]
+        },
+        "prAcquisition": {
+          "score": 78,
+          "rank": 5,
+          "keyFactors": [
+            "5 years → PR",
+            "Employment track straightforward",
+            "EU freedom of movement"
+          ],
+          "keyRisks": [
+            "Dutch A2 language requirement for integration exam"
+          ]
+        },
+        "citizenship": {
+          "score": 72,
+          "rank": 7,
+          "keyFactors": [
+            "5 years → citizenship",
+            "Dual citizenship limited cases"
+          ],
+          "keyRisks": [
+            "Dutch B1 required; renunciation of Bangladeshi passport (dual not always allowed)"
+          ]
+        },
+        "familySettlement": {
+          "score": 78,
+          "rank": 5,
+          "keyFactors": [
+            "Spouse work rights",
+            "Free schooling",
+            "Universal healthcare",
+            "English widely spoken"
+          ],
+          "keyRisks": [
+            "Housing costs extreme in Amsterdam",
+            "Dutch language for children's integration"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 80,
+          "rank": 3,
+          "keyFactors": [
+            "ASML semiconductor dominance",
+            "EU tech hub",
+            "NWO research investment",
+            "Stable democracy"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 80,
@@ -231,12 +510,81 @@
       "confidenceScore": 86,
       "evidenceSummary": "World's best AI research and highest salaries. Catastrophic immigration pathway (H-1B lottery, EB-2 decades-long backlog for Bangladesh-born). Best for career acceleration, not settlement.",
       "phaseScores": {
-        "studyPhase": { "score": 92, "rank": 1, "keyFactors": ["MIT/CMU/Stanford/Berkeley world #1-5 AI programs", "Fully funded PhD with TA/RA", "NSF, DARPA, industry research scale unmatched"], "keyRisks": ["Self-funded MSc USD 35,000-75,000/year is extreme cost", "NYC/SF housing crisis"] },
-        "postStudyWork": { "score": 85, "rank": 1, "keyFactors": ["STEM OPT 36 months (12+24)", "Highest AI salaries globally USD 150,000-400,000 TC", "Big Tech concentration"], "keyRisks": ["H-1B lottery 20-30% annual chance; miss 3 years = must leave", "Political immigration climate hostile 2025-2026"] },
-        "prAcquisition": { "score": 28, "rank": 14, "keyFactors": ["EB-2/EB-3 available in principle"], "keyRisks": ["Bangladesh-born Green Card backlog potentially 30-50 years under current per-country cap", "H-1B dependency creates extreme vulnerability"] },
-        "citizenship": { "score": 45, "rank": 11, "keyFactors": ["5 years after Green Card", "Dual citizenship allowed", "Strong passport"], "keyRisks": ["Green Card itself takes decades; citizenship becomes academic"] },
-        "familySettlement": { "score": 55, "rank": 9, "keyFactors": ["Spouse EAD work authorization", "Excellent schools in tech hubs"], "keyRisks": ["Extreme housing costs", "H4 dependent visa restrictions if H-1B cap not met", "No universal healthcare"] },
-        "longTerm20to30Years": { "score": 80, "rank": 4, "keyFactors": ["World's largest AI economy", "USD dominance", "Innovation scale"], "keyRisks": ["Immigration policy instability", "Decade-long Green Card uncertainty"] }
+        "studyPhase": {
+          "score": 92,
+          "rank": 1,
+          "keyFactors": [
+            "MIT/CMU/Stanford/Berkeley world #1-5 AI programs",
+            "Fully funded PhD with TA/RA",
+            "NSF, DARPA, industry research scale unmatched"
+          ],
+          "keyRisks": [
+            "Self-funded MSc USD 35,000-75,000/year is extreme cost",
+            "NYC/SF housing crisis"
+          ]
+        },
+        "postStudyWork": {
+          "score": 85,
+          "rank": 1,
+          "keyFactors": [
+            "STEM OPT 36 months (12+24)",
+            "Highest AI salaries globally USD 150,000-400,000 TC",
+            "Big Tech concentration"
+          ],
+          "keyRisks": [
+            "H-1B lottery 20-30% annual chance; miss 3 years = must leave",
+            "Political immigration climate hostile 2025-2026"
+          ]
+        },
+        "prAcquisition": {
+          "score": 28,
+          "rank": 14,
+          "keyFactors": [
+            "EB-2/EB-3 available in principle"
+          ],
+          "keyRisks": [
+            "Bangladesh-born Green Card backlog potentially 30-50 years under current per-country cap",
+            "H-1B dependency creates extreme vulnerability"
+          ]
+        },
+        "citizenship": {
+          "score": 45,
+          "rank": 11,
+          "keyFactors": [
+            "5 years after Green Card",
+            "Dual citizenship allowed",
+            "Strong passport"
+          ],
+          "keyRisks": [
+            "Green Card itself takes decades; citizenship becomes academic"
+          ]
+        },
+        "familySettlement": {
+          "score": 55,
+          "rank": 9,
+          "keyFactors": [
+            "Spouse EAD work authorization",
+            "Excellent schools in tech hubs"
+          ],
+          "keyRisks": [
+            "Extreme housing costs",
+            "H4 dependent visa restrictions if H-1B cap not met",
+            "No universal healthcare"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 80,
+          "rank": 4,
+          "keyFactors": [
+            "World's largest AI economy",
+            "USD dominance",
+            "Innovation scale"
+          ],
+          "keyRisks": [
+            "Immigration policy instability",
+            "Decade-long Green Card uncertainty"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 72,
@@ -272,12 +620,78 @@
       "confidenceScore": 83,
       "evidenceSummary": "WASP program PhD employment excellent. High quality of life, no citizenship language test. Stockholm housing severe but secondary cities manageable.",
       "phaseScores": {
-        "studyPhase": { "score": 78, "rank": 5, "keyFactors": ["PhD employment SEK 32,000-36,000/month", "WASP program SEK 6.5B AI funding", "KTH/Chalmers world-class", "SI Scholarship for MSc"], "keyRisks": ["International MSc tuition SEK 80,000-180,000/year", "Stockholm housing acute"] },
-        "postStudyWork": { "score": 72, "rank": 8, "keyFactors": ["6-month job seeker permit", "Spotify/Ericsson/King ecosystem"], "keyRisks": ["Short job seeker window vs Denmark/Germany"] },
-        "prAcquisition": { "score": 75, "rank": 6, "keyFactors": ["4 years employment → PR", "No formal language test required", "Straightforward application"], "keyRisks": ["Swedish integration demonstrated but no formal test"] },
-        "citizenship": { "score": 82, "rank": 2, "keyFactors": ["NO citizenship language test (unique in Scandinavia)", "5 years → citizenship", "Dual citizenship allowed"], "keyRisks": ["5 year wait; Swedish B1 practically expected"] },
-        "familySettlement": { "score": 82, "rank": 3, "keyFactors": ["480 days parental leave", "Subsidized childcare maxTaxa", "Free schooling", "Universal healthcare"], "keyRisks": ["Housing competition in Stockholm"] },
-        "longTerm20to30Years": { "score": 78, "rank": 5, "keyFactors": ["WASP AI investment", "Stable democracy", "Strong welfare state", "Aging population → immigration need"] }
+        "studyPhase": {
+          "score": 78,
+          "rank": 5,
+          "keyFactors": [
+            "PhD employment SEK 32,000-36,000/month",
+            "WASP program SEK 6.5B AI funding",
+            "KTH/Chalmers world-class",
+            "SI Scholarship for MSc"
+          ],
+          "keyRisks": [
+            "International MSc tuition SEK 80,000-180,000/year",
+            "Stockholm housing acute"
+          ]
+        },
+        "postStudyWork": {
+          "score": 72,
+          "rank": 8,
+          "keyFactors": [
+            "6-month job seeker permit",
+            "Spotify/Ericsson/King ecosystem"
+          ],
+          "keyRisks": [
+            "Short job seeker window vs Denmark/Germany"
+          ]
+        },
+        "prAcquisition": {
+          "score": 75,
+          "rank": 6,
+          "keyFactors": [
+            "4 years employment → PR",
+            "No formal language test required",
+            "Straightforward application"
+          ],
+          "keyRisks": [
+            "Swedish integration demonstrated but no formal test"
+          ]
+        },
+        "citizenship": {
+          "score": 82,
+          "rank": 2,
+          "keyFactors": [
+            "NO citizenship language test (unique in Scandinavia)",
+            "5 years → citizenship",
+            "Dual citizenship allowed"
+          ],
+          "keyRisks": [
+            "5 year wait; Swedish B1 practically expected"
+          ]
+        },
+        "familySettlement": {
+          "score": 82,
+          "rank": 3,
+          "keyFactors": [
+            "480 days parental leave",
+            "Subsidized childcare maxTaxa",
+            "Free schooling",
+            "Universal healthcare"
+          ],
+          "keyRisks": [
+            "Housing competition in Stockholm"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 78,
+          "rank": 5,
+          "keyFactors": [
+            "WASP AI investment",
+            "Stable democracy",
+            "Strong welfare state",
+            "Aging population → immigration need"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 78,
@@ -313,12 +727,80 @@
       "confidenceScore": 82,
       "evidenceSummary": "MEXT scholarship excellent, world-class AI research, lowest living costs among developed nations. Language barrier primary challenge. Immigration actively opening post-2023.",
       "phaseScores": {
-        "studyPhase": { "score": 85, "rank": 3, "keyFactors": ["MEXT: full tuition + JPY 144,000-145,000/month tax-free", "UTokyo/Kyoto/NAIST world-class AI", "Lowest living costs globally for quality"], "keyRisks": ["JLPT N2 essential for career; not required for admission"] },
-        "postStudyWork": { "score": 72, "rank": 9, "keyFactors": ["Work visa straightforward after graduation", "HSP points system fast-track"], "keyRisks": ["Japanese N2+ dramatically needed for most roles", "JPY weakness reduces USD savings value"] },
-        "prAcquisition": { "score": 70, "rank": 9, "keyFactors": ["HSP 80 points → PR in 1 year (with JLPT N2+)", "Highly Skilled Professional visa progressive", "Government actively opening immigration"], "keyRisks": ["Standard PR 10 years without HSP", "Language requirement central"] },
-        "citizenship": { "score": 62, "rank": 10, "keyFactors": ["5 years residence possible", "Stable wealthy country"], "keyRisks": ["Renunciation of Bangladeshi passport required", "Interview entirely in Japanese", "Cultural integration expected"] },
-        "familySettlement": { "score": 70, "rank": 8, "keyFactors": ["Spouse work rights available", "Free schooling", "Excellent healthcare", "Very safe environment"], "keyRisks": ["Japanese language essential for family daily life", "Cultural homogeneity creates integration challenge"] },
-        "longTerm20to30Years": { "score": 78, "rank": 6, "keyFactors": ["Severe aging crisis = structural immigration need", "AI investment growing rapidly", "World's 3rd largest economy", "Society 5.0 government program"] }
+        "studyPhase": {
+          "score": 85,
+          "rank": 3,
+          "keyFactors": [
+            "MEXT: full tuition + JPY 144,000-145,000/month tax-free",
+            "UTokyo/Kyoto/NAIST world-class AI",
+            "Lowest living costs globally for quality"
+          ],
+          "keyRisks": [
+            "JLPT N2 essential for career; not required for admission"
+          ]
+        },
+        "postStudyWork": {
+          "score": 72,
+          "rank": 9,
+          "keyFactors": [
+            "Work visa straightforward after graduation",
+            "HSP points system fast-track"
+          ],
+          "keyRisks": [
+            "Japanese N2+ dramatically needed for most roles",
+            "JPY weakness reduces USD savings value"
+          ]
+        },
+        "prAcquisition": {
+          "score": 70,
+          "rank": 9,
+          "keyFactors": [
+            "HSP 80 points → PR in 1 year (with JLPT N2+)",
+            "Highly Skilled Professional visa progressive",
+            "Government actively opening immigration"
+          ],
+          "keyRisks": [
+            "Standard PR 10 years without HSP",
+            "Language requirement central"
+          ]
+        },
+        "citizenship": {
+          "score": 62,
+          "rank": 10,
+          "keyFactors": [
+            "5 years residence possible",
+            "Stable wealthy country"
+          ],
+          "keyRisks": [
+            "Renunciation of Bangladeshi passport required",
+            "Interview entirely in Japanese",
+            "Cultural integration expected"
+          ]
+        },
+        "familySettlement": {
+          "score": 70,
+          "rank": 8,
+          "keyFactors": [
+            "Spouse work rights available",
+            "Free schooling",
+            "Excellent healthcare",
+            "Very safe environment"
+          ],
+          "keyRisks": [
+            "Japanese language essential for family daily life",
+            "Cultural homogeneity creates integration challenge"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 78,
+          "rank": 6,
+          "keyFactors": [
+            "Severe aging crisis = structural immigration need",
+            "AI investment growing rapidly",
+            "World's 3rd largest economy",
+            "Society 5.0 government program"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 80,
@@ -354,12 +836,76 @@
       "confidenceScore": 83,
       "evidenceSummary": "World's highest PhD salary, Researcher Tax Scheme 27% flat rate. Danish language B2 for citizenship is most demanding in Scandinavia. DTU world-class for AI engineering.",
       "phaseScores": {
-        "studyPhase": { "score": 78, "rank": 6, "keyFactors": ["PhD stipend DKK 36,000-42,000/month gross (world's highest)", "DTU/Aarhus/Copenhagen/ITU strong AI programs"], "keyRisks": ["MSc tuition DKK 90,000-160,000/year for non-EU", "Copenhagen housing severe"] },
-        "postStudyWork": { "score": 70, "rank": 10, "keyFactors": ["Researcher Tax Scheme 27% flat for 7 years", "Copenhagen tech startup scene growing"], "keyRisks": ["6-month job seeker visa only", "Danish language limits broader job access"] },
-        "prAcquisition": { "score": 72, "rank": 8, "keyFactors": ["4 years employment → PR", "Straightforward for continuously employed"], "keyRisks": ["Danish language and civic test required", "Self-sufficiency requirements strict"] },
-        "citizenship": { "score": 58, "rank": 12, "keyFactors": ["Danish passport strong (EU travel)"], "keyRisks": ["9 years residence required", "PD3 Danish B2 test is hardest citizenship language requirement in Scandinavia", "Multiple tightening policies 2021-2025"] },
-        "familySettlement": { "score": 76, "rank": 6, "keyFactors": ["Excellent childcare", "Free schooling", "Universal healthcare", "Work-life balance world-class"], "keyRisks": ["Danish language for family integration"] },
-        "longTerm20to30Years": { "score": 74, "rank": 8, "keyFactors": ["Stable democracy", "Strong welfare state", "Wind energy AI intersection growing"] }
+        "studyPhase": {
+          "score": 78,
+          "rank": 6,
+          "keyFactors": [
+            "PhD stipend DKK 36,000-42,000/month gross (world's highest)",
+            "DTU/Aarhus/Copenhagen/ITU strong AI programs"
+          ],
+          "keyRisks": [
+            "MSc tuition DKK 90,000-160,000/year for non-EU",
+            "Copenhagen housing severe"
+          ]
+        },
+        "postStudyWork": {
+          "score": 70,
+          "rank": 10,
+          "keyFactors": [
+            "Researcher Tax Scheme 27% flat for 7 years",
+            "Copenhagen tech startup scene growing"
+          ],
+          "keyRisks": [
+            "6-month job seeker visa only",
+            "Danish language limits broader job access"
+          ]
+        },
+        "prAcquisition": {
+          "score": 72,
+          "rank": 8,
+          "keyFactors": [
+            "4 years employment → PR",
+            "Straightforward for continuously employed"
+          ],
+          "keyRisks": [
+            "Danish language and civic test required",
+            "Self-sufficiency requirements strict"
+          ]
+        },
+        "citizenship": {
+          "score": 58,
+          "rank": 12,
+          "keyFactors": [
+            "Danish passport strong (EU travel)"
+          ],
+          "keyRisks": [
+            "9 years residence required",
+            "PD3 Danish B2 test is hardest citizenship language requirement in Scandinavia",
+            "Multiple tightening policies 2021-2025"
+          ]
+        },
+        "familySettlement": {
+          "score": 76,
+          "rank": 6,
+          "keyFactors": [
+            "Excellent childcare",
+            "Free schooling",
+            "Universal healthcare",
+            "Work-life balance world-class"
+          ],
+          "keyRisks": [
+            "Danish language for family integration"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 74,
+          "rank": 8,
+          "keyFactors": [
+            "Stable democracy",
+            "Strong welfare state",
+            "Wind energy AI intersection growing"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 76,
@@ -395,12 +941,78 @@
       "confidenceScore": 82,
       "evidenceSummary": "KGSP scholarship with free Korean language year. KAIST world-class AI. Korean language and cultural integration primary barriers. Aging crisis will drive immigration opening.",
       "phaseScores": {
-        "studyPhase": { "score": 82, "rank": 4, "keyFactors": ["KGSP full funding + free Korean language year", "KAIST AI Lab world top 10", "Low living costs vs quality"], "keyRisks": ["Korean language essential for long-term career", "Cultural homogeneity"] },
-        "postStudyWork": { "score": 68, "rank": 11, "keyFactors": ["D-10 job seeker 6 months", "Samsung/Kakao/Naver strong hiring", "19% flat foreign tax option"], "keyRisks": ["Korean TOPIK 4+ strongly needed", "6-month job seeker visa short"] },
-        "prAcquisition": { "score": 65, "rank": 11, "keyFactors": ["F-5 PR via points after 5 years", "KIIP program supports integration"], "keyRisks": ["TOPIK 4 required", "Points system requires multiple criteria"] },
-        "citizenship": { "score": 60, "rank": 11, "keyFactors": ["F-5 → naturalization possible"], "keyRisks": ["Renunciation of Bangladeshi passport", "Korean cultural test and interview", "Strict integration requirements"] },
-        "familySettlement": { "score": 68, "rank": 9, "keyFactors": ["Excellent schools", "Universal healthcare", "Safe environment"], "keyRisks": ["Korean language for family", "Cultural integration challenge"] },
-        "longTerm20to30Years": { "score": 76, "rank": 7, "keyFactors": ["Severe aging crisis = immigration need accelerating", "Samsung/Hyundai AI investment massive", "Government AI investment K-Global"] }
+        "studyPhase": {
+          "score": 82,
+          "rank": 4,
+          "keyFactors": [
+            "KGSP full funding + free Korean language year",
+            "KAIST AI Lab world top 10",
+            "Low living costs vs quality"
+          ],
+          "keyRisks": [
+            "Korean language essential for long-term career",
+            "Cultural homogeneity"
+          ]
+        },
+        "postStudyWork": {
+          "score": 68,
+          "rank": 11,
+          "keyFactors": [
+            "D-10 job seeker 6 months",
+            "Samsung/Kakao/Naver strong hiring",
+            "19% flat foreign tax option"
+          ],
+          "keyRisks": [
+            "Korean TOPIK 4+ strongly needed",
+            "6-month job seeker visa short"
+          ]
+        },
+        "prAcquisition": {
+          "score": 65,
+          "rank": 11,
+          "keyFactors": [
+            "F-5 PR via points after 5 years",
+            "KIIP program supports integration"
+          ],
+          "keyRisks": [
+            "TOPIK 4 required",
+            "Points system requires multiple criteria"
+          ]
+        },
+        "citizenship": {
+          "score": 60,
+          "rank": 11,
+          "keyFactors": [
+            "F-5 → naturalization possible"
+          ],
+          "keyRisks": [
+            "Renunciation of Bangladeshi passport",
+            "Korean cultural test and interview",
+            "Strict integration requirements"
+          ]
+        },
+        "familySettlement": {
+          "score": 68,
+          "rank": 9,
+          "keyFactors": [
+            "Excellent schools",
+            "Universal healthcare",
+            "Safe environment"
+          ],
+          "keyRisks": [
+            "Korean language for family",
+            "Cultural integration challenge"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 76,
+          "rank": 7,
+          "keyFactors": [
+            "Severe aging crisis = immigration need accelerating",
+            "Samsung/Hyundai AI investment massive",
+            "Government AI investment K-Global"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 80,
@@ -436,12 +1048,79 @@
       "confidenceScore": 80,
       "evidenceSummary": "World's best quality of life, sovereign wealth fund stability. Smaller labor market limits opportunities. NTNU PhD salary excellent. Norwegian B1 required for citizenship.",
       "phaseScores": {
-        "studyPhase": { "score": 74, "rank": 8, "keyFactors": ["NTNU PhD NOK 43,100/month gross", "World-class stability", "Norwegian parental leave during PhD"], "keyRisks": ["New tuition fees non-EU since 2023", "Oslo very expensive"] },
-        "postStudyWork": { "score": 68, "rank": 12, "keyFactors": ["Skilled worker permit straightforward with job offer", "High salaries NOK 600,000-800,000+"], "keyRisks": ["Smaller tech market than Germany/Netherlands/UK", "Requires job offer; no independent job seeker visa"] },
-        "prAcquisition": { "score": 78, "rank": 5, "keyFactors": ["3 years → PR (fastest Scandinavian)", "Employment-based straightforward", "Norskopplæring language support free"], "keyRisks": ["Norwegian A2-B1 expected"] },
-        "citizenship": { "score": 68, "rank": 9, "keyFactors": ["7 years → citizenship", "Norwegian B1 required", "Norskprøve test manageable"], "keyRisks": ["7 year wait; longer than Canada/Germany"] },
-        "familySettlement": { "score": 82, "rank": 4, "keyFactors": ["World's best parental leave", "Free schools", "Universal healthcare", "Safety #1 globally"], "keyRisks": ["Norwegian language for family", "Small Bangladeshi community"] },
-        "longTerm20to30Years": { "score": 82, "rank": 4, "keyFactors": ["Sovereign wealth fund USD 1.7 trillion", "Political stability exceptional", "Oil-funded welfare permanent", "Aging population → immigration need growing"] }
+        "studyPhase": {
+          "score": 74,
+          "rank": 8,
+          "keyFactors": [
+            "NTNU PhD NOK 43,100/month gross",
+            "World-class stability",
+            "Norwegian parental leave during PhD"
+          ],
+          "keyRisks": [
+            "New tuition fees non-EU since 2023",
+            "Oslo very expensive"
+          ]
+        },
+        "postStudyWork": {
+          "score": 68,
+          "rank": 12,
+          "keyFactors": [
+            "Skilled worker permit straightforward with job offer",
+            "High salaries NOK 600,000-800,000+"
+          ],
+          "keyRisks": [
+            "Smaller tech market than Germany/Netherlands/UK",
+            "Requires job offer; no independent job seeker visa"
+          ]
+        },
+        "prAcquisition": {
+          "score": 78,
+          "rank": 5,
+          "keyFactors": [
+            "3 years → PR (fastest Scandinavian)",
+            "Employment-based straightforward",
+            "Norskopplæring language support free"
+          ],
+          "keyRisks": [
+            "Norwegian A2-B1 expected"
+          ]
+        },
+        "citizenship": {
+          "score": 68,
+          "rank": 9,
+          "keyFactors": [
+            "7 years → citizenship",
+            "Norwegian B1 required",
+            "Norskprøve test manageable"
+          ],
+          "keyRisks": [
+            "7 year wait; longer than Canada/Germany"
+          ]
+        },
+        "familySettlement": {
+          "score": 82,
+          "rank": 4,
+          "keyFactors": [
+            "World's best parental leave",
+            "Free schools",
+            "Universal healthcare",
+            "Safety #1 globally"
+          ],
+          "keyRisks": [
+            "Norwegian language for family",
+            "Small Bangladeshi community"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 82,
+          "rank": 4,
+          "keyFactors": [
+            "Sovereign wealth fund USD 1.7 trillion",
+            "Political stability exceptional",
+            "Oil-funded welfare permanent",
+            "Aging population → immigration need growing"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 72,
@@ -477,12 +1156,79 @@
       "confidenceScore": 84,
       "evidenceSummary": "ETH/EPFL PhD is world's most prestigious and highest-paid. Extreme cost of living. Non-EU immigration complex. Best as career launchpad rather than primary settlement.",
       "phaseScores": {
-        "studyPhase": { "score": 75, "rank": 7, "keyFactors": ["ETH/EPFL world top 10", "PhD salary CHF 4,500-5,500/month gross", "Nominal tuition CHF 730/semester"], "keyRisks": ["Extremely expensive (CHF 3,000+/month living)", "Very competitive admission"] },
-        "postStudyWork": { "score": 72, "rank": 7, "keyFactors": ["Google/Microsoft Zurich", "Highest absolute AI salaries in Europe CHF 120,000-180,000", "Low income tax vs Scandinavia"], "keyRisks": ["Non-EU quota system limits work permit availability", "C permit after 5-10 years"] },
-        "prAcquisition": { "score": 55, "rank": 12, "keyFactors": ["C permit (settlement) available after 5-10 years"], "keyRisks": ["Non-EU quota complex", "Cantonal integration requirements vary", "Language requirement (German or French) B1"] },
-        "citizenship": { "score": 48, "rank": 13, "keyFactors": ["Strong passport"], "keyRisks": ["10-12 years typically", "Cantonal variation extreme", "Dual citizenship complex", "Community integration scrutinized"] },
-        "familySettlement": { "score": 60, "rank": 11, "keyFactors": ["Excellent schools and healthcare", "Safe"], "keyRisks": ["Extremely expensive family life", "Complex immigration for non-EU family"] },
-        "longTerm20to30Years": { "score": 78, "rank": 6, "keyFactors": ["Global financial hub", "ETH/EPFL research pipeline", "Political stability", "Innovation economy"] }
+        "studyPhase": {
+          "score": 75,
+          "rank": 7,
+          "keyFactors": [
+            "ETH/EPFL world top 10",
+            "PhD salary CHF 4,500-5,500/month gross",
+            "Nominal tuition CHF 730/semester"
+          ],
+          "keyRisks": [
+            "Extremely expensive (CHF 3,000+/month living)",
+            "Very competitive admission"
+          ]
+        },
+        "postStudyWork": {
+          "score": 72,
+          "rank": 7,
+          "keyFactors": [
+            "Google/Microsoft Zurich",
+            "Highest absolute AI salaries in Europe CHF 120,000-180,000",
+            "Low income tax vs Scandinavia"
+          ],
+          "keyRisks": [
+            "Non-EU quota system limits work permit availability",
+            "C permit after 5-10 years"
+          ]
+        },
+        "prAcquisition": {
+          "score": 55,
+          "rank": 12,
+          "keyFactors": [
+            "C permit (settlement) available after 5-10 years"
+          ],
+          "keyRisks": [
+            "Non-EU quota complex",
+            "Cantonal integration requirements vary",
+            "Language requirement (German or French) B1"
+          ]
+        },
+        "citizenship": {
+          "score": 48,
+          "rank": 13,
+          "keyFactors": [
+            "Strong passport"
+          ],
+          "keyRisks": [
+            "10-12 years typically",
+            "Cantonal variation extreme",
+            "Dual citizenship complex",
+            "Community integration scrutinized"
+          ]
+        },
+        "familySettlement": {
+          "score": 60,
+          "rank": 11,
+          "keyFactors": [
+            "Excellent schools and healthcare",
+            "Safe"
+          ],
+          "keyRisks": [
+            "Extremely expensive family life",
+            "Complex immigration for non-EU family"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 78,
+          "rank": 6,
+          "keyFactors": [
+            "Global financial hub",
+            "ETH/EPFL research pipeline",
+            "Political stability",
+            "Innovation economy"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 48,
@@ -518,12 +1264,76 @@
       "confidenceScore": 80,
       "evidenceSummary": "English language, EU access, major US tech HQs. Dublin housing crisis is catastrophic. Good citizenship pathway at 5 years. Smaller research ecosystem than Germany/Netherlands.",
       "phaseScores": {
-        "studyPhase": { "score": 65, "rank": 11, "keyFactors": ["English medium", "SFI Centres research", "Tech industry proximity Google/Meta/Amazon"], "keyRisks": ["Dublin housing crisis CRITICAL - rooms EUR 1,500+", "High tuition EUR 15,000-28,000"] },
-        "postStudyWork": { "score": 72, "rank": 8, "keyFactors": ["TLGP 24 months", "Strong EU tech salary market", "Major tech HQs Dublin"], "keyRisks": ["High living costs consume salary gains"] },
-        "prAcquisition": { "score": 68, "rank": 10, "keyFactors": ["5 years → long-term residence", "Straightforward employment track"], "keyRisks": ["No formal points system; employment continuity required"] },
-        "citizenship": { "score": 80, "rank": 4, "keyFactors": ["5 years → citizenship (EU passport)", "EU mobility post-citizenship exceptional value", "No language test"], "keyRisks": ["5 year residency counting complex"] },
-        "familySettlement": { "score": 65, "rank": 10, "keyFactors": ["English environment ideal", "EU mobility access", "Free schooling"], "keyRisks": ["Dublin housing for families extremely expensive", "Healthcare public system wait times"] },
-        "longTerm20to30Years": { "score": 70, "rank": 10, "keyFactors": ["EU access via Irish citizenship", "US tech company presence", "FDI-driven economy"] }
+        "studyPhase": {
+          "score": 65,
+          "rank": 11,
+          "keyFactors": [
+            "English medium",
+            "SFI Centres research",
+            "Tech industry proximity Google/Meta/Amazon"
+          ],
+          "keyRisks": [
+            "Dublin housing crisis CRITICAL - rooms EUR 1,500+",
+            "High tuition EUR 15,000-28,000"
+          ]
+        },
+        "postStudyWork": {
+          "score": 72,
+          "rank": 8,
+          "keyFactors": [
+            "TLGP 24 months",
+            "Strong EU tech salary market",
+            "Major tech HQs Dublin"
+          ],
+          "keyRisks": [
+            "High living costs consume salary gains"
+          ]
+        },
+        "prAcquisition": {
+          "score": 68,
+          "rank": 10,
+          "keyFactors": [
+            "5 years → long-term residence",
+            "Straightforward employment track"
+          ],
+          "keyRisks": [
+            "No formal points system; employment continuity required"
+          ]
+        },
+        "citizenship": {
+          "score": 80,
+          "rank": 4,
+          "keyFactors": [
+            "5 years → citizenship (EU passport)",
+            "EU mobility post-citizenship exceptional value",
+            "No language test"
+          ],
+          "keyRisks": [
+            "5 year residency counting complex"
+          ]
+        },
+        "familySettlement": {
+          "score": 65,
+          "rank": 10,
+          "keyFactors": [
+            "English environment ideal",
+            "EU mobility access",
+            "Free schooling"
+          ],
+          "keyRisks": [
+            "Dublin housing for families extremely expensive",
+            "Healthcare public system wait times"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 70,
+          "rank": 10,
+          "keyFactors": [
+            "EU access via Irish citizenship",
+            "US tech company presence",
+            "FDI-driven economy"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 76,
@@ -559,12 +1369,78 @@
       "confidenceScore": 80,
       "evidenceSummary": "Aalto FCAI world-class AI research. Aging population creates genuine immigration need. Finnish language is world's hardest. Good long-term strategic timing for 2027-2029 entry.",
       "phaseScores": {
-        "studyPhase": { "score": 72, "rank": 9, "keyFactors": ["Aalto FCAI top EU AI center", "PhD employment EUR 2,500-3,000/month", "Manageable housing outside Helsinki", "Free YTHS healthcare"], "keyRisks": ["MSc tuition EUR 8,000-18,000 for non-EU", "Language barrier Finnish extreme"] },
-        "postStudyWork": { "score": 68, "rank": 11, "keyFactors": ["12-month job seeker permit", "Nokia/Rovio/Supercell/Wärtsilä hiring"], "keyRisks": ["Finnish language limits broader job market access significantly"] },
-        "prAcquisition": { "score": 70, "rank": 9, "keyFactors": ["4 years → PR", "Employment track clear"], "keyRisks": ["Finnish B1 required (very difficult language)", "YKI test required"] },
-        "citizenship": { "score": 65, "rank": 10, "keyFactors": ["5 years → citizenship"], "keyRisks": ["Finnish B1 or Swedish B1 required", "Long integration process"] },
-        "familySettlement": { "score": 72, "rank": 7, "keyFactors": ["Excellent schools", "Universal healthcare", "Safe", "Parental leave strong"], "keyRisks": ["Finnish language barrier for family", "Small Bangladeshi community"] },
-        "longTerm20to30Years": { "score": 78, "rank": 6, "keyFactors": ["Most severe aging crisis in EU → structural immigration need", "FCAI AI investment", "Stable democracy", "2027-2029 strategic entry window"] }
+        "studyPhase": {
+          "score": 72,
+          "rank": 9,
+          "keyFactors": [
+            "Aalto FCAI top EU AI center",
+            "PhD employment EUR 2,500-3,000/month",
+            "Manageable housing outside Helsinki",
+            "Free YTHS healthcare"
+          ],
+          "keyRisks": [
+            "MSc tuition EUR 8,000-18,000 for non-EU",
+            "Language barrier Finnish extreme"
+          ]
+        },
+        "postStudyWork": {
+          "score": 68,
+          "rank": 11,
+          "keyFactors": [
+            "12-month job seeker permit",
+            "Nokia/Rovio/Supercell/Wärtsilä hiring"
+          ],
+          "keyRisks": [
+            "Finnish language limits broader job market access significantly"
+          ]
+        },
+        "prAcquisition": {
+          "score": 70,
+          "rank": 9,
+          "keyFactors": [
+            "4 years → PR",
+            "Employment track clear"
+          ],
+          "keyRisks": [
+            "Finnish B1 required (very difficult language)",
+            "YKI test required"
+          ]
+        },
+        "citizenship": {
+          "score": 65,
+          "rank": 10,
+          "keyFactors": [
+            "5 years → citizenship"
+          ],
+          "keyRisks": [
+            "Finnish B1 or Swedish B1 required",
+            "Long integration process"
+          ]
+        },
+        "familySettlement": {
+          "score": 72,
+          "rank": 7,
+          "keyFactors": [
+            "Excellent schools",
+            "Universal healthcare",
+            "Safe",
+            "Parental leave strong"
+          ],
+          "keyRisks": [
+            "Finnish language barrier for family",
+            "Small Bangladeshi community"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 78,
+          "rank": 6,
+          "keyFactors": [
+            "Most severe aging crisis in EU → structural immigration need",
+            "FCAI AI investment",
+            "Stable democracy",
+            "2027-2029 strategic entry window"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 72,
@@ -600,12 +1476,78 @@
       "confidenceScore": 75,
       "evidenceSummary": "CSC scholarship best probability for Bangladesh. Tsinghua world-class AI. Permanent settlement essentially impossible. Geopolitical risk significant. Best as 3-5 year career phase.",
       "phaseScores": {
-        "studyPhase": { "score": 78, "rank": 5, "keyFactors": ["CSC scholarship highest probability for Bangladesh", "Tsinghua/PKU/SJTU world top 20 AI", "Lowest living costs globally"], "keyRisks": ["Internet restrictions (VPN required)", "Political environment", "Mandarin essential for daily life"] },
-        "postStudyWork": { "score": 68, "rank": 10, "keyFactors": ["Alibaba/Tencent/ByteDance/Huawei world-class AI salaries", "Lowest cost of living maximizes savings"], "keyRisks": ["Capital controls USD 50,000/year remittance limit", "Geopolitical tension creates career risk", "Work visa complex"] },
-        "prAcquisition": { "score": 18, "rank": 13, "keyFactors": [], "keyRisks": ["China permanent residence essentially unavailable", "Only ~10,000 foreigners hold it nationally", "No transparent pathway"] },
-        "citizenship": { "score": 10, "rank": 14, "keyFactors": [], "keyRisks": ["Chinese citizenship essentially impossible for foreigners", "Renunciation required", "Voluntary citizenship essentially never granted"] },
-        "familySettlement": { "score": 45, "rank": 12, "keyFactors": ["Low cost of living affordable for family"], "keyRisks": ["Political environment", "Internet restrictions for family", "No long-term settlement path"] },
-        "longTerm20to30Years": { "score": 60, "rank": 12, "keyFactors": ["World's second largest AI economy", "Government AI investment massive"], "keyRisks": ["US-China tech tensions career risk", "Settlement impossibility", "Political uncertainty"] }
+        "studyPhase": {
+          "score": 78,
+          "rank": 5,
+          "keyFactors": [
+            "CSC scholarship highest probability for Bangladesh",
+            "Tsinghua/PKU/SJTU world top 20 AI",
+            "Lowest living costs globally"
+          ],
+          "keyRisks": [
+            "Internet restrictions (VPN required)",
+            "Political environment",
+            "Mandarin essential for daily life"
+          ]
+        },
+        "postStudyWork": {
+          "score": 68,
+          "rank": 10,
+          "keyFactors": [
+            "Alibaba/Tencent/ByteDance/Huawei world-class AI salaries",
+            "Lowest cost of living maximizes savings"
+          ],
+          "keyRisks": [
+            "Capital controls USD 50,000/year remittance limit",
+            "Geopolitical tension creates career risk",
+            "Work visa complex"
+          ]
+        },
+        "prAcquisition": {
+          "score": 18,
+          "rank": 13,
+          "keyFactors": [],
+          "keyRisks": [
+            "China permanent residence essentially unavailable",
+            "Only ~10,000 foreigners hold it nationally",
+            "No transparent pathway"
+          ]
+        },
+        "citizenship": {
+          "score": 10,
+          "rank": 14,
+          "keyFactors": [],
+          "keyRisks": [
+            "Chinese citizenship essentially impossible for foreigners",
+            "Renunciation required",
+            "Voluntary citizenship essentially never granted"
+          ]
+        },
+        "familySettlement": {
+          "score": 45,
+          "rank": 12,
+          "keyFactors": [
+            "Low cost of living affordable for family"
+          ],
+          "keyRisks": [
+            "Political environment",
+            "Internet restrictions for family",
+            "No long-term settlement path"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 60,
+          "rank": 12,
+          "keyFactors": [
+            "World's second largest AI economy",
+            "Government AI investment massive"
+          ],
+          "keyRisks": [
+            "US-China tech tensions career risk",
+            "Settlement impossibility",
+            "Political uncertainty"
+          ]
+        }
       },
       "dimensionScores": {
         "admissionFeasibility": 85,
@@ -632,57 +1574,893 @@
       },
       "strategicNote": "China ranks last overall due to settlement impossibility and geopolitical risk, but ranks FIRST for scholarship probability and among top for research quality. The correct strategy: CSC scholarship for 3-5 year AI research training at Tsinghua, then transition to Germany/Canada/Australia for settlement. Mandarin HSK 4-5 gained in China is a permanent portable career asset in Singapore, Taiwan, and global Chinese tech.",
       "notRecommendedFor": "Anyone seeking long-term settlement or family establishment; those concerned about internet restrictions or geopolitical career risk"
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "overallBalancedScore": 72,
+      "overallRank": 10,
+      "confidenceScore": 84,
+      "evidenceSummary": "Austria is Germany's quieter twin — employment-based PhD contracts, Red-White-Red Card skilled migration, EU Blue Card, Vienna quality of life. Main risks: right-wing political shift, German language, and a 10-year PR wait.",
+      "phaseScores": {
+        "studyPhase": {
+          "score": 78,
+          "rank": 9,
+          "keyFactors": [
+            "Employment-based PhD (TV-L equivalent)",
+            "TU Wien / TU Graz research quality",
+            "Zero tuition for PhD employees",
+            "OeAD scholarships"
+          ],
+          "keyRisks": [
+            "German required long-term",
+            "Limited English-only job market"
+          ]
+        },
+        "postStudyWork": {
+          "score": 76,
+          "rank": 9,
+          "keyFactors": [
+            "Red-White-Red Card — fast processing",
+            "EU Blue Card option",
+            "Tech talent shortage in Vienna"
+          ],
+          "keyRisks": [
+            "German language limits job pool by 60%"
+          ]
+        },
+        "prAcquisition": {
+          "score": 55,
+          "rank": 15,
+          "keyFactors": [
+            "Red-White-Red Card Plus → Settlement Permit",
+            "5 years pathway with employment"
+          ],
+          "keyRisks": [
+            "10 years for standard PR",
+            "Political risk from FPÖ"
+          ]
+        },
+        "citizenship": {
+          "score": 45,
+          "rank": 17,
+          "keyFactors": [
+            "10yr pathway",
+            "Dual citizenship NOT allowed"
+          ],
+          "keyRisks": [
+            "Must renounce Bangladeshi citizenship — CRITICAL",
+            "German B1 integration exam"
+          ]
+        },
+        "familySettlement": {
+          "score": 72,
+          "rank": 11,
+          "keyFactors": [
+            "Spouse work rights",
+            "Free public schooling",
+            "Universal healthcare"
+          ],
+          "keyRisks": [
+            "German language for children's integration"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 70,
+          "rank": 11,
+          "keyFactors": [
+            "Aging population needs immigrants",
+            "EU stability",
+            "Vienna ranked #1 liveable city"
+          ],
+          "keyRisks": [
+            "Right-wing political risk",
+            "Language requirement permanent"
+          ]
+        }
+      },
+      "dimensionScores": {
+        "admissionFeasibility": 78,
+        "scholarshipFunding": 65,
+        "researchQuality": 78,
+        "jobMarketStrength": 72,
+        "salaryPotential": 72,
+        "prPathway": 55,
+        "citizenshipAccess": 45,
+        "familyRights": 72,
+        "costOfLiving": 75,
+        "housingAvailability": 72,
+        "languageBarrier": 35,
+        "stabilityScore": 80,
+        "aiEcosystemScore": 72,
+        "futureProofScore": 70
+      },
+      "bangladeshiSpecificFactors": {
+        "communityPresence": "SMALL — approximately 15,000 South Asians in Vienna",
+        "halalFoodAccess": "GOOD in Vienna; limited elsewhere",
+        "islamicFacilities": "ADEQUATE in Vienna (multiple mosques)",
+        "dtaaWithBangladesh": true,
+        "successProbability": "MODERATE for top academic profiles with German language investment"
+      },
+      "strategicNote": "Austria is best used as an alternative entry point if Germany visa queues are 2.5+ years. Red-White-Red Card processes in 4-8 weeks vs German bottlenecks. Vienna quality of life is genuinely exceptional. CRITICAL: Dual citizenship is NOT allowed in Austria — you must renounce Bangladeshi passport. This is a major life decision.",
+      "notRecommendedFor": "Students unwilling to learn German OR students who cannot accept renouncing Bangladeshi citizenship"
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "overallBalancedScore": 78,
+      "overallRank": 7,
+      "confidenceScore": 88,
+      "evidenceSummary": "Severely underrated destination. IMEC semiconductor research, VLIR-UOS scholarship (BD is partner country), EU institutions career, tax-free PhD scholarships, zero capital gains tax. Main risks: language fragmentation and world's highest income tax on labor.",
+      "phaseScores": {
+        "studyPhase": {
+          "score": 82,
+          "rank": 7,
+          "keyFactors": [
+            "IMEC (world #1 chip research)",
+            "VLIR-UOS scholarship — BD partner country",
+            "KU Leuven top-20 EU research",
+            "Tax-exempt PhD stipends"
+          ],
+          "keyRisks": [
+            "MSc funding very limited outside VLIR-UOS"
+          ]
+        },
+        "postStudyWork": {
+          "score": 80,
+          "rank": 8,
+          "keyFactors": [
+            "Single Permit straightforward",
+            "EU institutions employment (NATO, EC)",
+            "FinTech and semiconductor demand"
+          ],
+          "keyRisks": [
+            "Dutch/French language for most roles outside Brussels tech"
+          ]
+        },
+        "prAcquisition": {
+          "score": 78,
+          "rank": 8,
+          "keyFactors": [
+            "5 years → Carte de Séjour Permanente",
+            "EU Blue Card mobility",
+            "Employer-led Single Permit fast"
+          ],
+          "keyRisks": [
+            "Language test (FR or NL B1)",
+            "Bureaucratic complexity"
+          ]
+        },
+        "citizenship": {
+          "score": 75,
+          "rank": 9,
+          "keyFactors": [
+            "10 years (5 PR + 5 citizenship)",
+            "Dual citizenship ALLOWED — keep BD passport",
+            "Multiple language options (FR or NL)"
+          ],
+          "keyRisks": [
+            "Dutch or French B1 required"
+          ]
+        },
+        "familySettlement": {
+          "score": 80,
+          "rank": 7,
+          "keyFactors": [
+            "Family reunification after PR",
+            "Free public schooling (excellent quality)",
+            "Universal healthcare",
+            "Free childcare"
+          ],
+          "keyRisks": [
+            "Brussels housing is competitive"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 82,
+          "rank": 6,
+          "keyFactors": [
+            "EU headquarters city (permanent)",
+            "IMEC EU Chips Act role (structural)",
+            "Dual citizenship keeps BD connections"
+          ],
+          "keyRisks": [
+            "Political instability risk",
+            "Tax burden on labor"
+          ]
+        }
+      },
+      "dimensionScores": {
+        "admissionFeasibility": 80,
+        "scholarshipFunding": 78,
+        "researchQuality": 88,
+        "jobMarketStrength": 78,
+        "salaryPotential": 72,
+        "prPathway": 78,
+        "citizenshipAccess": 75,
+        "familyRights": 80,
+        "costOfLiving": 72,
+        "housingAvailability": 70,
+        "languageBarrier": 45,
+        "stabilityScore": 82,
+        "aiEcosystemScore": 82,
+        "futureProofScore": 82
+      },
+      "bangladeshiSpecificFactors": {
+        "communityPresence": "MODERATE — established South Asian community in Brussels and Antwerp (~30,000)",
+        "halalFoodAccess": "VERY GOOD — halal restaurants throughout Brussels, Antwerp, Ghent",
+        "islamicFacilities": "GOOD — multiple mosques; Brussels is 25% Muslim city",
+        "dtaaWithBangladesh": true,
+        "successProbability": "HIGH for VLIR-UOS applicants; MEDIUM-HIGH for direct PhD"
+      },
+      "strategicNote": "Belgium is the most underrated country in GradPlanner. VLIR-UOS specifically targets Bangladesh as a partner country — this is a direct pipeline that most Bangladeshi students don't know about. IMEC (Leuven) is making semiconductors that power AI globally. Brussels is the most international city in Europe. Zero capital gains tax means aggressive investment returns. DUAL CITIZENSHIP means you keep your Bangladeshi passport.",
+      "notRecommendedFor": "Students who need guaranteed English-only workplace (Brussels tech is fine, but Ghent/Antwerp require Dutch)"
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "overallBalancedScore": 62,
+      "overallRank": 16,
+      "confidenceScore": 82,
+      "evidenceSummary": "Beautiful country with high quality of life but significant career ceiling for AI specialists. Small tech market, brain drain to Australia, severe Auckland housing crisis. Use as quality-of-life destination with Australia transition plan.",
+      "phaseScores": {
+        "studyPhase": {
+          "score": 70,
+          "rank": 14,
+          "keyFactors": [
+            "English-medium; no language barrier",
+            "Auckland/Victoria good CS departments",
+            "AgriTech/VFX AI unique niches"
+          ],
+          "keyRisks": [
+            "Limited scholarships",
+            "High tuition for international students (NZD 35k+)"
+          ]
+        },
+        "postStudyWork": {
+          "score": 72,
+          "rank": 12,
+          "keyFactors": [
+            "Post Study Work Visa 1-3yr",
+            "Accredited Employer Work Visa straightforward",
+            "Trans-Tasman Easy Travel to Australia"
+          ],
+          "keyRisks": [
+            "Small market — limited senior AI roles"
+          ]
+        },
+        "prAcquisition": {
+          "score": 68,
+          "rank": 13,
+          "keyFactors": [
+            "Skilled Migrant Category points system",
+            "Realistically achievable in 3yr post-graduation"
+          ],
+          "keyRisks": [
+            "Housing crisis makes cost very high",
+            "Limited points for CS vs engineering"
+          ]
+        },
+        "citizenship": {
+          "score": 70,
+          "rank": 12,
+          "keyFactors": [
+            "5yr PR + 5yr citizenship = 10yr total",
+            "Dual citizenship ALLOWED",
+            "English requirement trivial for CS grads"
+          ],
+          "keyRisks": []
+        },
+        "familySettlement": {
+          "score": 68,
+          "rank": 13,
+          "keyFactors": [
+            "Family reunification smooth",
+            "Free public schooling",
+            "English-medium education"
+          ],
+          "keyRisks": [
+            "Housing crisis is family budget-killer"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 60,
+          "rank": 17,
+          "keyFactors": [
+            "Geopolitical safety (isolated)",
+            "Climate change safe haven (rising)",
+            "NZ-Australia Trans-Tasman pathway"
+          ],
+          "keyRisks": [
+            "Career ceiling too low for AI specialists",
+            "Economic dependence on China/Australia"
+          ]
+        }
+      },
+      "dimensionScores": {
+        "admissionFeasibility": 75,
+        "scholarshipFunding": 45,
+        "researchQuality": 68,
+        "jobMarketStrength": 62,
+        "salaryPotential": 60,
+        "prPathway": 68,
+        "citizenshipAccess": 70,
+        "familyRights": 70,
+        "costOfLiving": 45,
+        "housingAvailability": 35,
+        "languageBarrier": 98,
+        "stabilityScore": 85,
+        "aiEcosystemScore": 58,
+        "futureProofScore": 60
+      },
+      "bangladeshiSpecificFactors": {
+        "communityPresence": "MODERATE — approximately 200,000 South Asians; Bangladeshi community established in Auckland",
+        "halalFoodAccess": "GOOD in Auckland and Wellington",
+        "islamicFacilities": "ADEQUATE — mosques in major cities",
+        "dtaaWithBangladesh": false,
+        "successProbability": "MODERATE if self-funded; LOW-MODERATE for scholarships"
+      },
+      "strategicNote": "New Zealand is recommended ONLY for students who value quality of life above career growth, OR who have a specific interest in AgriTech/VFX AI, OR who want NZ as a stepping stone to Australia (Trans-Tasman Freedom of Travel). DO NOT choose NZ for cutting-edge AI career ambitions — you will hit a ceiling within 3-5 years.",
+      "notRecommendedFor": "Students prioritizing career growth, salary maximization, or research publications in AI/ML"
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "overallBalancedScore": 80,
+      "overallRank": 6,
+      "confidenceScore": 90,
+      "evidenceSummary": "World-class AI research (NUS top-20 globally), SINGA scholarship fully funded, strategic Asia-Pacific hub, fastest time-to-employment. Main challenges: expensive housing, restrictive PR system via COMPASS, and no citizenship for most non-residents.",
+      "phaseScores": {
+        "studyPhase": {
+          "score": 90,
+          "rank": 3,
+          "keyFactors": [
+            "NUS/NTU global top-20 ranking",
+            "SINGA scholarship SGD 2,200/month fully funded",
+            "A*STAR research institute world-class",
+            "English medium — zero language barrier"
+          ],
+          "keyRisks": [
+            "Admission very competitive (NUS ~5% international acceptance rate)"
+          ]
+        },
+        "postStudyWork": {
+          "score": 82,
+          "rank": 7,
+          "keyFactors": [
+            "Low unemployment in tech (2.5%)",
+            "COMPASS framework favors STEM PhDs",
+            "Financial hub (DIFC equivalent)"
+          ],
+          "keyRisks": [
+            "COMPASS makes junior-level sponsorship harder for non-PhD"
+          ]
+        },
+        "prAcquisition": {
+          "score": 60,
+          "rank": 14,
+          "keyFactors": [
+            "PR possible after 2-3yr for top employers",
+            "SINGA bond = 3yr Singapore commitment"
+          ],
+          "keyRisks": [
+            "COMPASS hidden quota system",
+            "PR is not automatic even with stable job"
+          ]
+        },
+        "citizenship": {
+          "score": 30,
+          "rank": 19,
+          "keyFactors": [
+            "Possible after 2-6yr as PR"
+          ],
+          "keyRisks": [
+            "Near-impossible in practice (ICA heavily restricts)",
+            "Dual citizenship NOT allowed — must renounce BD passport"
+          ]
+        },
+        "familySettlement": {
+          "score": 72,
+          "rank": 11,
+          "keyFactors": [
+            "Family reunification after PR",
+            "Excellent schooling (world #1 math/science)"
+          ],
+          "keyRisks": [
+            "International school costs astronomical (SGD 30,000+/year)",
+            "Housing cost for families extreme"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 78,
+          "rank": 9,
+          "keyFactors": [
+            "Asia-Pacific strategic hub — permanent",
+            "Geopolitical stability",
+            "Government AI investment (SGD 25B by 2030)"
+          ],
+          "keyRisks": [
+            "Climate: sea level rise risk",
+            "No citizenship = always vulnerable"
+          ]
+        }
+      },
+      "dimensionScores": {
+        "admissionFeasibility": 65,
+        "scholarshipFunding": 90,
+        "researchQuality": 92,
+        "jobMarketStrength": 85,
+        "salaryPotential": 85,
+        "prPathway": 60,
+        "citizenshipAccess": 30,
+        "familyRights": 70,
+        "costOfLiving": 35,
+        "housingAvailability": 30,
+        "languageBarrier": 98,
+        "stabilityScore": 92,
+        "aiEcosystemScore": 90,
+        "futureProofScore": 78
+      },
+      "bangladeshiSpecificFactors": {
+        "communityPresence": "SMALL but GROWING — approximately 30,000 BD nationals; Little India area; halal food widely available",
+        "halalFoodAccess": "EXCELLENT — Singapore has world-class halal food certification; Muslim-friendly city",
+        "islamicFacilities": "EXCELLENT — Singapore government actively supports Muslim community; Masjids in all districts",
+        "dtaaWithBangladesh": true,
+        "successProbability": "HIGH for scholarship if CGPA 3.7+ with research experience; LOW for self-funded without NUS/NTU admission"
+      },
+      "strategicNote": "Singapore is the scholarship hunter's dream. SINGA is arguably the best-funded, most prestigious AI scholarship available to Bangladeshi students. NUS Computer Science is Asia's #1 ranked program. The SINGA bond (3yr work commitment) is not a punishment — Singapore's AI job market is world-class. STRATEGY: SINGA → NUS PhD → A*STAR Research Scientist → PR application → Use Singapore experience as leverage for Canada/Australia/Germany PR if Singapore PR rejected.",
+      "notRecommendedFor": "Students who need PR or citizenship certainty, or families who cannot handle Singapore's cost of living on a single income"
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "overallBalancedScore": 80,
+      "overallRank": 5,
+      "confidenceScore": 88,
+      "evidenceSummary": "Europe's rising AI capital (Mistral AI, Station F). Eiffel Scholarship + contrat doctoral funding. Passeport Talent = easiest skilled worker visa in EU. 5-year PR pathway. 35-hour work week. World's best food. Main risk: French language requirement for PR and true integration.",
+      "phaseScores": {
+        "studyPhase": {
+          "score": 82,
+          "rank": 7,
+          "keyFactors": [
+            "Eiffel Scholarship EUR 1,181-1,400/month",
+            "INRIA/Ecole Polytechnique world-class research",
+            "Contrat doctoral = full employment benefits",
+            "Low/zero tuition at public universities"
+          ],
+          "keyRisks": [
+            "Eiffel very competitive (global competition)",
+            "French language practically required for PhD integration"
+          ]
+        },
+        "postStudyWork": {
+          "score": 84,
+          "rank": 6,
+          "keyFactors": [
+            "Passeport Talent — 4yr visa in 4 weeks",
+            "Mistral AI and Station F ecosystem",
+            "INRIA and CEA research positions",
+            "35hr work week + 25 days vacation"
+          ],
+          "keyRisks": [
+            "French language for 70% of job market"
+          ]
+        },
+        "prAcquisition": {
+          "score": 80,
+          "rank": 7,
+          "keyFactors": [
+            "5yr → Carte de Résident",
+            "Passeport Talent 4yr counts toward PR",
+            "Dual citizenship ALLOWED"
+          ],
+          "keyRisks": [
+            "French B1 mandatory"
+          ]
+        },
+        "citizenship": {
+          "score": 78,
+          "rank": 8,
+          "keyFactors": [
+            "5yr PR + process = ~10yr total",
+            "Dual citizenship allowed",
+            "France honors BD passport holders"
+          ],
+          "keyRisks": [
+            "French B1 language exam",
+            "Interview with prefect"
+          ]
+        },
+        "familySettlement": {
+          "score": 82,
+          "rank": 7,
+          "keyFactors": [
+            "Generous family policy (Europe's highest birth rate)",
+            "Free childcare from age 3 (crèche)",
+            "Family quotient reduces tax burden significantly"
+          ],
+          "keyRisks": [
+            "French language for children's integration",
+            "Paris rent is high for families"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 82,
+          "rank": 7,
+          "keyFactors": [
+            "EU nuclear power stability",
+            "France 2030 AI investment",
+            "Aerospace AI world leader (Airbus)",
+            "Dual citizenship = BD roots maintained"
+          ],
+          "keyRisks": [
+            "Political instability (RN rise)",
+            "Language investment required permanently"
+          ]
+        }
+      },
+      "dimensionScores": {
+        "admissionFeasibility": 78,
+        "scholarshipFunding": 78,
+        "researchQuality": 88,
+        "jobMarketStrength": 80,
+        "salaryPotential": 75,
+        "prPathway": 80,
+        "citizenshipAccess": 78,
+        "familyRights": 85,
+        "costOfLiving": 70,
+        "housingAvailability": 60,
+        "languageBarrier": 35,
+        "stabilityScore": 78,
+        "aiEcosystemScore": 88,
+        "futureProofScore": 82
+      },
+      "bangladeshiSpecificFactors": {
+        "communityPresence": "LARGE — approximately 100,000 BD nationals in France; significant community in Paris (La Chapelle, Saint-Denis)",
+        "halalFoodAccess": "EXCELLENT — Paris has world-class halal food options",
+        "islamicFacilities": "GOOD — France's largest Muslim population in Europe; many mosques though mosque-state relations complex",
+        "dtaaWithBangladesh": true,
+        "successProbability": "MEDIUM-HIGH for Eiffel Scholarship if nominated by French institution; HIGH for direct PhD admission at INRIA"
+      },
+      "strategicNote": "France is Europe's most exciting AI destination in 2026. Mistral AI's valuation at EUR 6B puts France on the global AI map. The Passeport Talent is the easiest skilled worker path in EU — your employer can process it in 4 weeks. France honors dual citizenship. BD community in Paris is established. CRITICAL INVESTMENT: Enroll at Alliance Française Dhaka 18 months before departure. French B1 transforms your France experience from 'international worker' to 'integrated professional' — this single investment adds 10 years to your effective earning potential in France.",
+      "notRecommendedFor": "Students absolutely unwilling to invest in French language learning"
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "overallBalancedScore": 75,
+      "overallRank": 8,
+      "confidenceScore": 90,
+      "evidenceSummary": "MBZUAI is the world's most generous AI scholarship. G42 and Falcon LLM are world-class. 100% tax-free salaries. Largest BD community outside Bangladesh. CRITICAL: No PR, no citizenship. Extreme climate risk. Use UAE as 5-10yr wealth accumulation phase.",
+      "phaseScores": {
+        "studyPhase": {
+          "score": 95,
+          "rank": 1,
+          "keyFactors": [
+            "MBZUAI — all students 100% funded (AED 9,300/month + housing)",
+            "World-class AI faculty from MIT/Stanford/CMU",
+            "G42 industry access — Falcon LLM, genomics AI",
+            "Abu Dhabi government commitment permanent"
+          ],
+          "keyRisks": [
+            "Limited to AI field only (appropriate for target users)",
+            "Desert climate — extreme heat summers"
+          ]
+        },
+        "postStudyWork": {
+          "score": 88,
+          "rank": 4,
+          "keyFactors": [
+            "Employer arranges visa — near-zero friction",
+            "G42, MBZUAI, Microsoft UAE hiring pipeline",
+            "Tax-free AED 18,000-35,000/month salary",
+            "Largest BD community — cultural comfort"
+          ],
+          "keyRisks": [
+            "Visa tied to employer — if fired, 60 days to leave",
+            "Golden Visa required for job-independent security"
+          ]
+        },
+        "prAcquisition": {
+          "score": 10,
+          "rank": 20,
+          "keyFactors": [
+            "Golden Visa (10yr) — AED 30k salary threshold achievable"
+          ],
+          "keyRisks": [
+            "NOT traditional PR",
+            "No path to citizenship — EVER",
+            "HIV positive = deportation under UAE law"
+          ]
+        },
+        "citizenship": {
+          "score": 2,
+          "rank": 20,
+          "keyFactors": [],
+          "keyRisks": [
+            "UAE citizenship does not exist for non-Arabs regardless of years of residence",
+            "Zero pathway — constitutional law"
+          ]
+        },
+        "familySettlement": {
+          "score": 72,
+          "rank": 12,
+          "keyFactors": [
+            "Spouse can be on your dependent visa",
+            "International schools available",
+            "BD community for cultural support"
+          ],
+          "keyRisks": [
+            "International schools cost AED 50,000-120,000/year",
+            "No healthcare subsidy (employer covers or private)",
+            "No social safety net if unemployed"
+          ]
+        },
+        "longTerm20to30Years": {
+          "score": 45,
+          "rank": 18,
+          "keyFactors": [
+            "Wealth accumulation is unmatched",
+            "Using UAE savings as PR destination capital"
+          ],
+          "keyRisks": [
+            "Extreme heat making outdoors unlivable by 2040",
+            "Geopolitical Middle East risk",
+            "No citizenship means permanent vulnerability"
+          ]
+        }
+      },
+      "dimensionScores": {
+        "admissionFeasibility": 85,
+        "scholarshipFunding": 98,
+        "researchQuality": 88,
+        "jobMarketStrength": 88,
+        "salaryPotential": 95,
+        "prPathway": 10,
+        "citizenshipAccess": 2,
+        "familyRights": 62,
+        "costOfLiving": 50,
+        "housingAvailability": 45,
+        "languageBarrier": 95,
+        "stabilityScore": 72,
+        "aiEcosystemScore": 90,
+        "futureProofScore": 45
+      },
+      "bangladeshiSpecificFactors": {
+        "communityPresence": "VERY LARGE — approximately 1.5M BD nationals; largest BD diaspora outside Bangladesh; Deira (Dubai) is effectively a BD neighborhood",
+        "halalFoodAccess": "EXCELLENT — entire food system is halal-certified; no dietary concerns whatsoever",
+        "islamicFacilities": "EXCELLENT — Friday is weekend; mosques everywhere; full religious freedom for Muslims",
+        "dtaaWithBangladesh": true,
+        "successProbability": "HIGH for MBZUAI scholarship; VERY HIGH for employment (BD passport well-recognized in UAE)"
+      },
+      "strategicNote": "UAE is the GradPlanner PHASE 1 accelerator — not the final destination. MBZUAI is objectively the best scholarship available to BD CS/AI students in terms of funding generosity vs admission difficulty. AED 9,300/month tax-free = USD 2,530/month with zero deductions. Use UAE years to: (1) Build world-class AI credentials at MBZUAI/G42, (2) Accumulate AED 500k-1M in savings, (3) Apply for Golden Visa for stability, (4) At Year 5-8, move to Canada/Ireland/Germany with your savings and MBZUAI credential and secure PR within 2 years.",
+      "notRecommendedFor": "Students who need permanent settlement, citizenship, or government-backed social safety net"
     }
   ],
   "phaseSpecificRankings": {
     "bestForStudyPhase": [
-      { "rank": 1, "country": "United States", "score": 92, "reason": "World's best AI research ecosystem" },
-      { "rank": 2, "country": "Germany", "score": 88, "reason": "Tuition-free plus funded PhD contracts" },
-      { "rank": 3, "country": "Japan", "score": 85, "reason": "MEXT scholarship value + world-class research" },
-      { "rank": 4, "country": "South Korea", "score": 82, "reason": "KGSP + KAIST combination" },
-      { "rank": 5, "country": "Australia", "score": 80, "reason": "RTP scholarship tax-free stipend" }
+      {
+        "rank": 1,
+        "country": "United States",
+        "score": 92,
+        "reason": "World's best AI research ecosystem"
+      },
+      {
+        "rank": 2,
+        "country": "Germany",
+        "score": 88,
+        "reason": "Tuition-free plus funded PhD contracts"
+      },
+      {
+        "rank": 3,
+        "country": "Japan",
+        "score": 85,
+        "reason": "MEXT scholarship value + world-class research"
+      },
+      {
+        "rank": 4,
+        "country": "South Korea",
+        "score": 82,
+        "reason": "KGSP + KAIST combination"
+      },
+      {
+        "rank": 5,
+        "country": "Australia",
+        "score": 80,
+        "reason": "RTP scholarship tax-free stipend"
+      }
     ],
     "bestForPRPathway": [
-      { "rank": 1, "country": "Germany", "score": 90, "reason": "EU Blue Card 21-month PR with B1 German" },
-      { "rank": 2, "country": "Canada", "score": 85, "reason": "Express Entry transparent and predictable" },
-      { "rank": 3, "country": "Norway", "score": 78, "reason": "3-year PR fastest in Scandinavia" },
-      { "rank": 4, "country": "Australia", "score": 80, "reason": "Points-based clear system" },
-      { "rank": 5, "country": "Netherlands", "score": 78, "reason": "5-year employment track with 30% ruling" }
+      {
+        "rank": 1,
+        "country": "Germany",
+        "score": 90,
+        "reason": "EU Blue Card 21-month PR with B1 German"
+      },
+      {
+        "rank": 2,
+        "country": "Canada",
+        "score": 85,
+        "reason": "Express Entry transparent and predictable"
+      },
+      {
+        "rank": 3,
+        "country": "Norway",
+        "score": 78,
+        "reason": "3-year PR fastest in Scandinavia"
+      },
+      {
+        "rank": 4,
+        "country": "Australia",
+        "score": 80,
+        "reason": "Points-based clear system"
+      },
+      {
+        "rank": 5,
+        "country": "Netherlands",
+        "score": 78,
+        "reason": "5-year employment track with 30% ruling"
+      }
     ],
     "bestForCitizenshipSpeed": [
-      { "rank": 1, "country": "Canada", "score": 90, "reason": "3 years after PR; fastest globally" },
-      { "rank": 2, "country": "Sweden", "score": 82, "reason": "No language test for citizenship" },
-      { "rank": 3, "country": "Germany", "score": 82, "reason": "5 years; dual citizenship since 2024" },
-      { "rank": 4, "country": "Ireland", "score": 80, "reason": "5 years; EU passport multiplier value" },
-      { "rank": 5, "country": "Australia", "score": 75, "reason": "4 years after PR" }
+      {
+        "rank": 1,
+        "country": "Canada",
+        "score": 90,
+        "reason": "3 years after PR; fastest globally"
+      },
+      {
+        "rank": 2,
+        "country": "Sweden",
+        "score": 82,
+        "reason": "No language test for citizenship"
+      },
+      {
+        "rank": 3,
+        "country": "Germany",
+        "score": 82,
+        "reason": "5 years; dual citizenship since 2024"
+      },
+      {
+        "rank": 4,
+        "country": "Ireland",
+        "score": 80,
+        "reason": "5 years; EU passport multiplier value"
+      },
+      {
+        "rank": 5,
+        "country": "Australia",
+        "score": 75,
+        "reason": "4 years after PR"
+      }
     ],
     "bestForFamilySettlement": [
-      { "rank": 1, "country": "Canada", "score": 85, "reason": "Spouse open work permit, Bangladeshi community, English" },
-      { "rank": 2, "country": "Norway", "score": 85, "reason": "World's best parental leave, safety #1" },
-      { "rank": 3, "country": "Sweden", "score": 82, "reason": "480 days parental leave, maxTaxa childcare" },
-      { "rank": 4, "country": "Australia", "score": 82, "reason": "English environment, growing South Asian community" },
-      { "rank": 5, "country": "Germany", "score": 80, "reason": "Kindergeld, free schooling, universal healthcare" }
+      {
+        "rank": 1,
+        "country": "Canada",
+        "score": 85,
+        "reason": "Spouse open work permit, Bangladeshi community, English"
+      },
+      {
+        "rank": 2,
+        "country": "Norway",
+        "score": 85,
+        "reason": "World's best parental leave, safety #1"
+      },
+      {
+        "rank": 3,
+        "country": "Sweden",
+        "score": 82,
+        "reason": "480 days parental leave, maxTaxa childcare"
+      },
+      {
+        "rank": 4,
+        "country": "Australia",
+        "score": 82,
+        "reason": "English environment, growing South Asian community"
+      },
+      {
+        "rank": 5,
+        "country": "Germany",
+        "score": 80,
+        "reason": "Kindergeld, free schooling, universal healthcare"
+      }
     ],
     "bestForSalaryAndSavings": [
-      { "rank": 1, "country": "United States", "score": 95, "reason": "USD 150,000-400,000+ TC in Big Tech AI" },
-      { "rank": 2, "country": "Switzerland", "score": 90, "reason": "CHF 120,000-180,000; low income tax" },
-      { "rank": 3, "country": "Denmark", "score": 80, "reason": "Highest PhD salary; Researcher Tax Scheme 27%" },
-      { "rank": 4, "country": "Netherlands", "score": 78, "reason": "30% ruling boosts net significantly" },
-      { "rank": 5, "country": "Norway", "score": 75, "reason": "NTNU PhD salary + tax moderate" }
+      {
+        "rank": 1,
+        "country": "United States",
+        "score": 95,
+        "reason": "USD 150,000-400,000+ TC in Big Tech AI"
+      },
+      {
+        "rank": 2,
+        "country": "Switzerland",
+        "score": 90,
+        "reason": "CHF 120,000-180,000; low income tax"
+      },
+      {
+        "rank": 3,
+        "country": "Denmark",
+        "score": 80,
+        "reason": "Highest PhD salary; Researcher Tax Scheme 27%"
+      },
+      {
+        "rank": 4,
+        "country": "Netherlands",
+        "score": 78,
+        "reason": "30% ruling boosts net significantly"
+      },
+      {
+        "rank": 5,
+        "country": "Norway",
+        "score": 75,
+        "reason": "NTNU PhD salary + tax moderate"
+      }
     ],
     "bestForAIResearch": [
-      { "rank": 1, "country": "United States", "score": 98, "reason": "MIT/CMU/Stanford/Berkeley + Google/OpenAI/Meta" },
-      { "rank": 2, "country": "China", "score": 90, "reason": "Tsinghua/PKU + Alibaba/ByteDance/Huawei scale" },
-      { "rank": 3, "country": "Switzerland", "score": 85, "reason": "ETH/EPFL world top 10" },
-      { "rank": 4, "country": "Japan", "score": 82, "reason": "Preferred Networks, Sony AI, NTT + UTokyo" },
-      { "rank": 5, "country": "South Korea", "score": 80, "reason": "KAIST AI Lab + Samsung/Kakao scale" }
+      {
+        "rank": 1,
+        "country": "United States",
+        "score": 98,
+        "reason": "MIT/CMU/Stanford/Berkeley + Google/OpenAI/Meta"
+      },
+      {
+        "rank": 2,
+        "country": "China",
+        "score": 90,
+        "reason": "Tsinghua/PKU + Alibaba/ByteDance/Huawei scale"
+      },
+      {
+        "rank": 3,
+        "country": "Switzerland",
+        "score": 85,
+        "reason": "ETH/EPFL world top 10"
+      },
+      {
+        "rank": 4,
+        "country": "Japan",
+        "score": 82,
+        "reason": "Preferred Networks, Sony AI, NTT + UTokyo"
+      },
+      {
+        "rank": 5,
+        "country": "South Korea",
+        "score": 80,
+        "reason": "KAIST AI Lab + Samsung/Kakao scale"
+      }
     ],
     "bestLongTermStability": [
-      { "rank": 1, "country": "Norway", "score": 92, "reason": "Sovereign wealth fund USD 1.7T; exceptional stability" },
-      { "rank": 2, "country": "Switzerland", "score": 90, "reason": "Neutral, stable, wealthy" },
-      { "rank": 3, "country": "Germany", "score": 88, "reason": "EU anchor, demographic need for immigrants" },
-      { "rank": 4, "country": "Australia", "score": 84, "reason": "Stable democracy, immigration-dependent growth" },
-      { "rank": 5, "country": "Sweden", "score": 86, "reason": "Welfare state stability, democratic resilience" }
+      {
+        "rank": 1,
+        "country": "Norway",
+        "score": 92,
+        "reason": "Sovereign wealth fund USD 1.7T; exceptional stability"
+      },
+      {
+        "rank": 2,
+        "country": "Switzerland",
+        "score": 90,
+        "reason": "Neutral, stable, wealthy"
+      },
+      {
+        "rank": 3,
+        "country": "Germany",
+        "score": 88,
+        "reason": "EU anchor, demographic need for immigrants"
+      },
+      {
+        "rank": 4,
+        "country": "Australia",
+        "score": 84,
+        "reason": "Stable democracy, immigration-dependent growth"
+      },
+      {
+        "rank": 5,
+        "country": "Sweden",
+        "score": 86,
+        "reason": "Welfare state stability, democratic resilience"
+      }
     ]
   },
   "strategicPathways": {

@@ -16,107 +16,148 @@
     {
       "country": "Canada",
       "countryCode": "CA",
-      "officialLanguages": ["English", "French"],
+      "officialLanguages": [
+        "English",
+        "French"
+      ],
       "workingLanguage": "English (except Quebec: French)",
       "overallLanguageScore": 90,
       "confidenceScore": 92,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0, "competitive": 7.0 },
-          "toefl": { "ibt": 90, "competitive": 100 },
-          "duolingo": { "score": 120, "note": "Accepted at many Canadian universities as alternative" },
-          "pte": { "overall": 58 },
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7
+          },
+          "toefl": {
+            "ibt": 90,
+            "competitive": 100
+          },
+          "duolingo": {
+            "score": 120,
+            "note": "Accepted at many Canadian universities as alternative"
+          },
+          "pte": {
+            "overall": 58
+          },
           "exemptions": "Students from Bangladesh NOT exempt; test mandatory"
         },
-        "french": { "required": false, "note": "French required for Quebec francophone universities (DELF/DALF B2); optional elsewhere" }
+        "french": {
+          "required": false,
+          "note": "French required for Quebec francophone universities (DELF/DALF B2); optional elsewhere"
+        }
       },
-
       "studyPhaseLanguage": {
         "mediumOfInstruction": "English at all major Canadian universities",
         "hostLanguageForIntegration": "English in Ontario/BC/Alberta; French in Quebec",
         "recommendedLevel": "C1 English for academic success in CS/AI graduate programs",
         "frenchAdvantage": "French B1+ opens Quebec immigration streams (PRTQ); significant PR advantage"
       },
-
       "workPhaseLanguage": {
         "required": "English C1 for tech roles; writing and communication critical",
         "frenchForQuebec": "French B2 required for Quebec tech market beyond Montreal English bubble",
         "salaryImpact": "Bilingual (English+French) candidates earn 10-15% premium in federal roles"
       },
-
       "prRequirements": {
-        "expressEntry": { "languageTest": "IELTS or CELPIP; CLB 7 minimum (IELTS 6.0 each band); CLB 9+ for maximum CRS points", "clbTarget": "CLB 9 = IELTS 7.0 each band; adds 136 points to CRS score for single, 128 married" },
-        "quebecPNP": { "french": "French B2 (TCF/DELF); significant advantage" },
+        "expressEntry": {
+          "languageTest": "IELTS or CELPIP; CLB 7 minimum (IELTS 6.0 each band); CLB 9+ for maximum CRS points",
+          "clbTarget": "CLB 9 = IELTS 7.0 each band; adds 136 points to CRS score for single, 128 married"
+        },
+        "quebecPNP": {
+          "french": "French B2 (TCF/DELF); significant advantage"
+        },
         "testValidity": "IELTS/CELPIP results valid 2 years for Express Entry"
       },
-
       "citizenshipRequirements": {
         "languageTest": "CLB 4 minimum (IELTS approximately 4.5 each band); lower bar than PR",
         "languageInterview": "Citizenship judge may assess language ability in interview",
         "practicalLevel": "B2 English is functionally sufficient for citizenship; higher for integration"
       },
-
-      "testCentersInBangladesh": ["British Council Dhaka (IELTS)", "IDP Dhaka (IELTS)", "USIS Dhaka (TOEFL)"],
-      "testCostBDT": { "IELTS": "Approximately BDT 20,000-22,000", "TOEFL": "Approximately BDT 18,000-20,000" },
-
+      "testCentersInBangladesh": [
+        "British Council Dhaka (IELTS)",
+        "IDP Dhaka (IELTS)",
+        "USIS Dhaka (TOEFL)"
+      ],
+      "testCostBDT": {
+        "IELTS": "Approximately BDT 20,000-22,000",
+        "TOEFL": "Approximately BDT 18,000-20,000"
+      },
       "strategicRecommendation": "Target IELTS 7.5 overall (7.0 each band minimum) for Express Entry maximum CRS points. Take IELTS Academic (not General) for university admission. French investment (TCF B2) opens Quebec PNP stream with significantly lower competition. CLB 9 adds substantial CRS score - retake test if needed."
     },
-
     {
       "country": "Australia",
       "countryCode": "AU",
-      "officialLanguages": ["English"],
+      "officialLanguages": [
+        "English"
+      ],
       "workingLanguage": "English",
       "overallLanguageScore": 92,
       "confidenceScore": 91,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0, "competitive": 7.0, "note": "Go8 universities often require 7.0 overall with no band below 6.5" },
-          "toefl": { "ibt": 90, "competitive": 100 },
-          "pte": { "overall": 58, "note": "PTE accepted and growing in popularity; faster results" },
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7,
+            "note": "Go8 universities often require 7.0 overall with no band below 6.5"
+          },
+          "toefl": {
+            "ibt": 90,
+            "competitive": 100
+          },
+          "pte": {
+            "overall": 58,
+            "note": "PTE accepted and growing in popularity; faster results"
+          },
           "exemptions": "Bangladesh NOT on exemption list"
         }
       },
-
       "studyPhaseLanguage": {
         "mediumOfInstruction": "English exclusively",
         "integrationLanguage": "English; Australian English accent exposure valuable for interview preparation",
         "recommendedLevel": "C1 for research writing; PhD students should target academic writing proficiency"
       },
-
       "workPhaseLanguage": {
         "required": "English C1 professional level",
         "australianCommunication": "Informal communication style; cultural adaptation important; networking in English critical for career"
       },
-
       "prRequirements": {
-        "skilledIndependent189": { "languageTest": "IELTS 6.0 each band (Competent English minimum); 7.0 each band (Proficient) = 10 extra points; 8.0 each band (Superior) = 20 extra points", "pointsImpact": "Language band is single highest point contributor in Australian points test" },
+        "skilledIndependent189": {
+          "languageTest": "IELTS 6.0 each band (Competent English minimum); 7.0 each band (Proficient) = 10 extra points; 8.0 each band (Superior) = 20 extra points",
+          "pointsImpact": "Language band is single highest point contributor in Australian points test"
+        },
         "testValidity": "IELTS results valid 3 years for skills assessment; check specific occupation assessment body"
       },
-
       "citizenshipRequirements": {
         "languageTest": "No formal test; demonstrated by PR residency and integration",
         "practicalLevel": "B2 functional English expected"
       },
-
-      "testCentersInBangladesh": ["British Council Dhaka", "IDP Dhaka", "Pearson VUE Dhaka (PTE)"],
+      "testCentersInBangladesh": [
+        "British Council Dhaka",
+        "IDP Dhaka",
+        "Pearson VUE Dhaka (PTE)"
+      ],
       "strategicRecommendation": "IELTS Superior (8.0 each band) adds 20 points vs Competent (6.0) which adds 0 points - potentially deciding factor in PR application. PTE is faster to complete and results in 48 hours. Invest in IELTS preparation seriously; Speaking 7.0+ is where most Bangladeshi students need focused coaching."
     },
-
     {
       "country": "Germany",
       "countryCode": "DE",
-      "officialLanguages": ["German"],
+      "officialLanguages": [
+        "German"
+      ],
       "workingLanguage": "German (primary); English in tech/research",
       "overallLanguageScore": 65,
       "confidenceScore": 90,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0 },
-          "toefl": { "ibt": 90 },
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6
+          },
+          "toefl": {
+            "ibt": 90
+          },
           "note": "English-medium MSc programs widely available; German not required for admission to English programs"
         },
         "german": {
@@ -125,421 +166,518 @@
           "recommendedPreAdmission": "B1 German before arrival; B2 by graduation"
         }
       },
-
       "studyPhaseLanguage": {
         "researchLanguage": "English sufficient for most CS/AI PhD programs",
         "dailyLife": "German B1-B2 essential for daily life, banking, housing, healthcare navigation",
         "integrationReality": "English-only speakers face significant social isolation; German investment critical for quality of life",
         "freeGermanCourses": "Volkshochschule (VHS) offers affordable German courses; Goethe Institut online resources; DW Learn German free"
       },
-
       "workPhaseLanguage": {
         "techSector": "English sufficient at international tech companies and research institutions",
         "localCompanies": "German B2-C1 required for most local German SME tech companies (Mittelstand)",
         "salaryImpact": "German C1 speakers earn 15-25% more than English-only counterparts in German market; access to far larger job pool",
         "jobSearchLanguage": "German B2+ dramatically expands job search beyond international companies"
       },
-
       "prRequirements": {
-        "permanentResidenceNiederlassungserlaubnis": { "germanLevel": "B1 minimum; B2 strongly recommended", "note": "B1 is legal minimum but integration test requires basic German; B2 makes life significantly easier" },
-        "euBluecardPR": { "germanLevel": "B1 required for standard PR; A1 minimum for Blue Card holders initially" }
+        "permanentResidenceNiederlassungserlaubnis": {
+          "germanLevel": "B1 minimum; B2 strongly recommended",
+          "note": "B1 is legal minimum but integration test requires basic German; B2 makes life significantly easier"
+        },
+        "euBluecardPR": {
+          "germanLevel": "B1 required for standard PR; A1 minimum for Blue Card holders initially"
+        }
       },
-
       "citizenshipRequirements": {
         "germanLevel": "B1 minimum legally; C1 strongly recommended for naturalization interview and integration",
         "testRequired": "Einbürgerungstest (citizenship test) in German; naturalization interview in German",
         "timeline": "Citizenship possible after 5 years (reduced from 8 years in 2024 reform); 3 years with special integration achievement"
       },
-
       "germanLearningRoadmap": {
         "preArrival": "A1-A2: Start 12-18 months before departure; Duolingo, Goethe Institut online",
         "year1": "A2-B1: VHS courses in Germany; intensive immersion",
         "year2": "B1-B2: Workplace/lab integration; German colleagues",
         "year3to4": "B2-C1: Naturalization preparation; professional German",
-        "resources": ["Goethe Institut", "VHS (Volkshochschule)", "DW Learn German (free)", "Deutsche Welle podcast", "Anki German vocabulary decks"]
+        "resources": [
+          "Goethe Institut",
+          "VHS (Volkshochschule)",
+          "DW Learn German (free)",
+          "Deutsche Welle podcast",
+          "Anki German vocabulary decks"
+        ]
       },
-
-      "testCentersInBangladesh": ["Goethe Institut Dhaka (German tests)", "British Council Dhaka (IELTS for English programs)"],
+      "testCentersInBangladesh": [
+        "Goethe Institut Dhaka (German tests)",
+        "British Council Dhaka (IELTS for English programs)"
+      ],
       "strategicRecommendation": "German B2 is THE critical investment for Germany pathway. Start German before leaving Bangladesh. English-only speakers can survive in research but cannot thrive long-term. B2 certification before PR application and C1 before citizenship. German language investment has highest ROI of any non-English language for GradPlanner users targeting Europe."
     },
-
     {
       "country": "Ireland",
       "countryCode": "IE",
-      "officialLanguages": ["English", "Irish (Gaeilge)"],
+      "officialLanguages": [
+        "English",
+        "Irish (Gaeilge)"
+      ],
       "workingLanguage": "English",
       "overallLanguageScore": 95,
       "confidenceScore": 90,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0, "competitive": 7.0 },
-          "toefl": { "ibt": 90 },
-          "pte": { "overall": 63 }
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7
+          },
+          "toefl": {
+            "ibt": 90
+          },
+          "pte": {
+            "overall": 63
+          }
         }
       },
-
-      "studyPhaseLanguage": { "mediumOfInstruction": "English; no other language required", "integrationLanguage": "English; Irish Gaeilge not required or expected from immigrants" },
-
-      "workPhaseLanguage": { "required": "Professional English C1; no other language needed" },
-
-      "prRequirements": {
-        "longTermResidence": { "languageTest": "No formal language test required for Irish long-term residence; demonstrated through residence and employment" }
+      "studyPhaseLanguage": {
+        "mediumOfInstruction": "English; no other language required",
+        "integrationLanguage": "English; Irish Gaeilge not required or expected from immigrants"
       },
-
+      "workPhaseLanguage": {
+        "required": "Professional English C1; no other language needed"
+      },
+      "prRequirements": {
+        "longTermResidence": {
+          "languageTest": "No formal language test required for Irish long-term residence; demonstrated through residence and employment"
+        }
+      },
       "citizenshipRequirements": {
         "languageTest": "No formal language test; Irish citizen application in English",
         "irishGaeilge": "Not required for naturalization; optional"
       },
-
       "strategicRecommendation": "Ireland is the easiest language destination for Bangladeshi students. English-only environment from Day 1 through citizenship. Focus IELTS preparation on Speaking 7.0+ as most Bangladeshis score lower there. No additional language investment needed."
     },
-
     {
       "country": "Netherlands",
       "countryCode": "NL",
-      "officialLanguages": ["Dutch"],
+      "officialLanguages": [
+        "Dutch"
+      ],
       "workingLanguage": "English in tech/research; Dutch for broader integration",
       "overallLanguageScore": 78,
       "confidenceScore": 88,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0 },
-          "toefl": { "ibt": 90 },
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6
+          },
+          "toefl": {
+            "ibt": 90
+          },
           "note": "Netherlands has one of highest proportions of English-medium master programs in Europe"
         },
-        "dutch": { "required": false, "note": "Dutch not required for admission to English-medium programs" }
+        "dutch": {
+          "required": false,
+          "note": "Dutch not required for admission to English-medium programs"
+        }
       },
-
       "studyPhaseLanguage": {
         "mediumOfInstruction": "English at TU Delft, TU Eindhoven, UvA, Utrecht, Leiden - all major programs",
         "dutchForIntegration": "Dutch B1 recommended within 2 years for daily life and social integration",
         "englisnFluency": "Dutch society is extremely English-proficient (EF EPI consistently #1 globally); daily English usage very feasible"
       },
-
       "workPhaseLanguage": {
         "techSector": "English sufficient at ASML, Philips, Booking.com, Adyen, TomTom, Stripe Netherlands",
         "dutchCompanies": "Dutch B2 needed for non-international Dutch companies",
         "salaryImpact": "Dutch language opens broader Dutch job market but English-only viable in international tech"
       },
-
       "prRequirements": {
-        "permanentResidenceVergunning": { "dutchLevel": "A2 minimum for inburgeringsexamen (civic integration exam); B1 target for full integration exam", "inburgering": "Civic integration requirement; language plus knowledge of Dutch society; online learning resources provided" }
+        "permanentResidenceVergunning": {
+          "dutchLevel": "A2 minimum for inburgeringsexamen (civic integration exam); B1 target for full integration exam",
+          "inburgering": "Civic integration requirement; language plus knowledge of Dutch society; online learning resources provided"
+        }
       },
-
       "citizenshipRequirements": {
         "dutchLevel": "B1 spoken and written; naturalization interview in Dutch",
         "inburgeringsdiploma": "Required; includes language plus civic knowledge exam",
         "timeline": "5 years residence → citizenship; language requirement central"
       },
-
       "dutchLearningRoadmap": {
         "year1": "A1-A2: Duolingo Dutch, Babbel, free NT2 courses",
         "year2": "A2-B1: Inburgeringscursus (integration course); state subsidized for many residents",
         "year3": "B1: Inburgeringsexamen preparation and completion",
-        "resources": ["NT2.nl", "Duolingo Dutch", "Pimsleur Dutch", "Language Transfer Dutch (free)", "Taalhuis at public library (free)"]
+        "resources": [
+          "NT2.nl",
+          "Duolingo Dutch",
+          "Pimsleur Dutch",
+          "Language Transfer Dutch (free)",
+          "Taalhuis at public library (free)"
+        ]
       },
-
       "strategicRecommendation": "Dutch A2-B1 required for PR and citizenship but English is sufficient for daily life and tech work. The 30% ruling (tax benefit) does not require Dutch language. Invest in Dutch from Year 1 through free Taalhuis library courses and NT2 online resources. B1 by Year 3 is achievable with consistent effort."
     },
-
     {
       "country": "Sweden",
       "countryCode": "SE",
-      "officialLanguages": ["Swedish"],
+      "officialLanguages": [
+        "Swedish"
+      ],
       "workingLanguage": "English in tech/research; Swedish for full integration",
       "overallLanguageScore": 72,
       "confidenceScore": 86,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0 },
-          "toefl": { "ibt": 90 },
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6
+          },
+          "toefl": {
+            "ibt": 90
+          },
           "note": "KTH, Chalmers, Uppsala, Linköping all offer English-medium CS/AI programs"
         },
-        "swedish": { "required": false, "note": "Swedish not required for English-medium programs" }
+        "swedish": {
+          "required": false,
+          "note": "Swedish not required for English-medium programs"
+        }
       },
-
       "studyPhaseLanguage": {
         "mediumOfInstruction": "English at all major Swedish universities for CS/AI programs",
         "swedishForIntegration": "Swedish B1 within 2-3 years strongly recommended; SFI (Svenska för invandrare) free state-provided Swedish courses",
         "sfi": "SFI (Swedish for Immigrants) is FREE mandatory language program for all residents; excellent quality; highly recommended"
       },
-
       "workPhaseLanguage": {
         "techSector": "English sufficient at Spotify, Ericsson, King, Klarna, Mojang, iZettle",
         "swedishCompanies": "Swedish B2 needed for Swedish public sector and domestic companies",
         "salaryImpact": "Swedish B2+ opens broader Swedish job market; approximately 15-20% more opportunities"
       },
-
       "prRequirements": {
-        "permanentResidence": { "swedishLevel": "No formal language test required legally; BUT Swedish proficiency demonstrated through integration activities is evaluated", "practicalNote": "Swedish B1+ practically expected by migration officers; SFI completion certificate is positive evidence" }
+        "permanentResidence": {
+          "swedishLevel": "No formal language test required legally; BUT Swedish proficiency demonstrated through integration activities is evaluated",
+          "practicalNote": "Swedish B1+ practically expected by migration officers; SFI completion certificate is positive evidence"
+        }
       },
-
       "citizenshipRequirements": {
         "languageTest": "No formal language test for Swedish citizenship (unique among Scandinavian countries)",
         "practicalLevel": "Swedish B1 functional; Swedish social integration demonstrated through residence period",
         "note": "Sweden notably does NOT require language test for citizenship - significant advantage over Denmark/Norway/Finland"
       },
-
       "sfiDetails": {
         "description": "SFI is free Swedish language education for adult immigrants; 4 tracks (A/B/C/D) based on education level; Track D for university graduates",
         "duration": "Typically 1-2 years part-time; flexible scheduling around university",
         "outcome": "Track D completion equivalent to approximately B1-B2 Swedish",
         "registration": "Register at local municipality adult education (vuxenutbildning) office"
       },
-
       "strategicRecommendation": "Swedish is genuinely optional for tech career but essential for social integration and citizenship security. Use FREE SFI from Month 1. No citizenship language test is Sweden's biggest immigration advantage vs Denmark/Norway. Swedish B1 by Year 2 is very achievable with SFI. WASP program PhD positions are English-only environments."
     },
-
     {
       "country": "Finland",
       "countryCode": "FI",
-      "officialLanguages": ["Finnish", "Swedish"],
+      "officialLanguages": [
+        "Finnish",
+        "Swedish"
+      ],
       "workingLanguage": "English in tech/research; Finnish for broader integration",
       "overallLanguageScore": 65,
       "confidenceScore": 84,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0 },
-          "toefl": { "ibt": 90 },
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6
+          },
+          "toefl": {
+            "ibt": 90
+          },
           "note": "Aalto, Helsinki, Tampere all offer English-medium CS/AI programs"
         },
-        "finnish": { "required": false, "note": "Finnish not required for English-medium programs; very difficult language (Finno-Ugric family)" }
+        "finnish": {
+          "required": false,
+          "note": "Finnish not required for English-medium programs; very difficult language (Finno-Ugric family)"
+        }
       },
-
       "studyPhaseLanguage": {
         "mediumOfInstruction": "English at Aalto, University of Helsinki, Tampere University CS programs",
         "finnishReality": "Finnish is one of world's most difficult languages for English speakers; not expected quickly",
         "freeLanguageCourses": "Universities offer free Finnish language courses; Finnish language studies certificate valued for PR"
       },
-
       "workPhaseLanguage": {
         "techSector": "English sufficient at Aalto startup ecosystem, Nokia, Rovio, Supercell, Wärtsilä",
         "publicSector": "Finnish B2 required for any public sector role",
         "salaryImpact": "Finnish language opens public sector and Finnish SME market but international tech in English"
       },
-
       "prRequirements": {
-        "permanentResidence": { "finnishLevel": "B1 Finnish (or B1 Swedish); OR A2 with other integration evidence", "languageTestOptions": "YKI (National Certificate of Language Proficiency); level 3 = B1" }
+        "permanentResidence": {
+          "finnishLevel": "B1 Finnish (or B1 Swedish); OR A2 with other integration evidence",
+          "languageTestOptions": "YKI (National Certificate of Language Proficiency); level 3 = B1"
+        }
       },
-
       "citizenshipRequirements": {
         "finnishLevel": "B1 Finnish or Swedish; YKI Level 3 test required OR evidence of language use",
         "timeline": "5 years residence; language requirement central to citizenship application"
       },
-
       "finnishLearningReality": {
         "difficulty": "VERY HIGH - Finnish is agglutinative language with 15 grammatical cases; no Latin/Germanic roots",
         "realisticTimeline": "A1: 6 months intensive; A2: 1 year; B1: 2-3 years consistent study",
-        "resources": ["Duolingo Finnish", "Aalto University free Finnish courses", "YLE Oppiminen (Finnish public broadcaster learning)", "Suomi.fi language resources"],
+        "resources": [
+          "Duolingo Finnish",
+          "Aalto University free Finnish courses",
+          "YLE Oppiminen (Finnish public broadcaster learning)",
+          "Suomi.fi language resources"
+        ],
         "alternativeSwedish": "B1 Swedish (instead of Finnish) also accepted; Swedish easier for English speakers"
       },
-
       "strategicRecommendation": "Finnish language investment is the biggest challenge in Finland pathway. B1 Finnish required for PR and citizenship but takes 2-3 years minimum. Start free university Finnish courses from Day 1. Consider Swedish as alternative (B1 Swedish accepted). Finland's aging population demographic creates genuine long-term immigration need making this investment worthwhile."
     },
-
     {
       "country": "Denmark",
       "countryCode": "DK",
-      "officialLanguages": ["Danish"],
+      "officialLanguages": [
+        "Danish"
+      ],
       "workingLanguage": "English in tech/research; Danish increasingly required for settlement",
       "overallLanguageScore": 62,
       "confidenceScore": 86,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0 },
-          "toefl": { "ibt": 90 },
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6
+          },
+          "toefl": {
+            "ibt": 90
+          },
           "note": "DTU, Aarhus, Copenhagen, ITU all English-medium CS/AI programs"
         },
-        "danish": { "required": false }
+        "danish": {
+          "required": false
+        }
       },
-
       "studyPhaseLanguage": {
         "mediumOfInstruction": "English at major universities",
         "danishForIntegration": "Danish B2 becoming increasingly required for long-term settlement",
         "studieStartProgram": "Danish language courses (danskuddannelse) free for residents through municipality"
       },
-
       "workPhaseLanguage": {
         "techSector": "English sufficient at major Danish tech companies and Copenhagen startup scene",
         "danishPolicy": "Danish government increasingly expects Danish language for integration; job market broader with Danish"
       },
-
       "prRequirements": {
-        "permanentResidence": { "danishLevel": "Danish 2 (equivalent B1) language test required", "additionalRequirements": "Employment, self-sufficiency, passed civic test, no criminal record; language is one of multiple requirements" }
+        "permanentResidence": {
+          "danishLevel": "Danish 2 (equivalent B1) language test required",
+          "additionalRequirements": "Employment, self-sufficiency, passed civic test, no criminal record; language is one of multiple requirements"
+        }
       },
-
       "citizenshipRequirements": {
         "danishLevel": "Prøve i Dansk 3 (PD3) = B2 level; strict requirement; one of Europe's hardest citizenship language requirements",
         "timeline": "9 years residence currently; language is gating factor",
         "note": "Denmark has tightened citizenship requirements significantly 2021-2025; PD3 B2 is genuine challenge"
       },
-
       "danishLearningRoadmap": {
         "year1": "A1-A2: Danskuddannelse 3 (for educated immigrants); free municipality courses",
         "year2": "A2-B1: Continue danskuddannelse; pass Prøve i Dansk 2",
         "year3to4": "B1-B2: Prøve i Dansk 3 preparation; most demanding stage",
-        "resources": ["Sprogcenter (language center) via municipality", "Duolingo Danish", "Speakly Danish", "DR Ultra (public broadcaster Danish learning)"]
+        "resources": [
+          "Sprogcenter (language center) via municipality",
+          "Duolingo Danish",
+          "Speakly Danish",
+          "DR Ultra (public broadcaster Danish learning)"
+        ]
       },
-
       "strategicRecommendation": "Danish B2 (PD3) for citizenship is one of Europe's hardest language requirements. Start danskuddannelse from Month 1 - it is FREE and specifically designed for immigrants. Researcher Tax Scheme (27% flat tax) makes Denmark financially excellent despite language investment required. Target Prøve i Dansk 2 (B1) by Year 3, PD3 (B2) by Year 6."
     },
-
     {
       "country": "Norway",
       "countryCode": "NO",
-      "officialLanguages": ["Norwegian (Bokmål and Nynorsk)"],
+      "officialLanguages": [
+        "Norwegian (Bokmål and Nynorsk)"
+      ],
       "workingLanguage": "English in tech/research; Norwegian for full integration",
       "overallLanguageScore": 68,
       "confidenceScore": 84,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5, "minimumBand": 6.0 },
-          "toefl": { "ibt": 90 },
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6
+          },
+          "toefl": {
+            "ibt": 90
+          },
           "note": "NTNU, Oslo, Bergen all English-medium CS programs available"
         },
-        "norwegian": { "required": false }
+        "norwegian": {
+          "required": false
+        }
       },
-
       "studyPhaseLanguage": {
         "mediumOfInstruction": "English for most NTNU CS/AI programs",
         "norwegianIntegration": "Norwegian B1 strongly recommended; free courses available through municipality",
         "freeCourses": "Norskopplæring (Norwegian classes) free for immigrants through municipality"
       },
-
       "workPhaseLanguage": {
         "techSector": "English sufficient at Equinor, Kongsberg, Telenor, Opera",
         "norwegianBenefit": "Norwegian B2 significantly expands job market; most Norwegian companies prefer Norwegian speakers"
       },
-
       "prRequirements": {
-        "permanentResidence": { "norwegianLevel": "A2 minimum; B1 recommended", "additionalNote": "750 hours norskopplæring (Norwegian instruction) obligation for some permit holders; register immediately on arrival" }
+        "permanentResidence": {
+          "norwegianLevel": "A2 minimum; B1 recommended",
+          "additionalNote": "750 hours norskopplæring (Norwegian instruction) obligation for some permit holders; register immediately on arrival"
+        }
       },
-
       "citizenshipRequirements": {
         "norwegianLevel": "B1 oral and written; Norskprøve (Norwegian test) Level B1 required",
         "civicTest": "Statsborgerprøven (civic knowledge test) in Norwegian",
         "timeline": "7 years residence; language is central requirement"
       },
-
       "norwegianLearningRoadmap": {
         "advantage": "Norwegian is MUCH easier than Finnish/Danish for English speakers; Germanic language with many English cognates",
         "timeline": "A1: 3 months; B1: 12-18 months realistic for motivated learner",
-        "resources": ["Norskopplæring (free municipality)", "NRK Nett-TV Norwegian lessons", "Duolingo Norwegian", "Clozemaster Norwegian"]
+        "resources": [
+          "Norskopplæring (free municipality)",
+          "NRK Nett-TV Norwegian lessons",
+          "Duolingo Norwegian",
+          "Clozemaster Norwegian"
+        ]
       },
-
       "strategicRecommendation": "Norwegian is among the easiest Scandinavian languages for English speakers. B1 achievable in 12-18 months. Free municipality language courses (norskopplæring) - register immediately on arrival. Norway's excellent stability and 3-year PR pathway makes language investment highly worthwhile."
     },
-
     {
       "country": "Switzerland",
       "countryCode": "CH",
-      "officialLanguages": ["German", "French", "Italian", "Romansh"],
+      "officialLanguages": [
+        "German",
+        "French",
+        "Italian",
+        "Romansh"
+      ],
       "workingLanguage": "English in research; German/French depending on canton",
       "overallLanguageScore": 60,
       "confidenceScore": 85,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 7.0, "note": "ETH Zurich and EPFL are highly competitive; strong academic record more important than language score" },
-          "toefl": { "ibt": 100 }
+          "ielts": {
+            "overall": 7,
+            "note": "ETH Zurich and EPFL are highly competitive; strong academic record more important than language score"
+          },
+          "toefl": {
+            "ibt": 100
+          }
         },
-        "german": { "required": false, "note": "ETH Zurich: German not required for English PhD programs" },
-        "french": { "required": false, "note": "EPFL Lausanne: French not required for English PhD programs; most doctoral programs in English" }
+        "german": {
+          "required": false,
+          "note": "ETH Zurich: German not required for English PhD programs"
+        },
+        "french": {
+          "required": false,
+          "note": "EPFL Lausanne: French not required for English PhD programs; most doctoral programs in English"
+        }
       },
-
       "studyPhaseLanguage": {
         "ethZurich": "German-speaking canton (Zurich); research in English; daily life in German; German A2+ strongly recommended",
         "epflLausanne": "French-speaking canton (Vaud); research in English; daily life in French; French A2+ recommended",
         "cantonalLanguage": "Learning cantonal language is high-ROI for quality of life despite research being English"
       },
-
       "workPhaseLanguage": {
         "researchAcademic": "English exclusively sufficient at ETH/EPFL and Google/Microsoft Zurich",
         "industrySwiss": "German C1 for Swiss German companies; French B2 for Romandy companies",
         "salaryImpact": "German/French fluency opens Swiss Mittelstand and banking sector with very high salaries"
       },
-
       "prRequirements": {
-        "cPermit": { "germanOrFrenchLevel": "B1 minimum; B2 strongly recommended for canton where residing", "integrationCriteria": "Language is key integration criterion alongside employment and self-sufficiency" }
+        "cPermit": {
+          "germanOrFrenchLevel": "B1 minimum; B2 strongly recommended for canton where residing",
+          "integrationCriteria": "Language is key integration criterion alongside employment and self-sufficiency"
+        }
       },
-
       "citizenshipRequirements": {
         "cantonalLanguage": "B1 minimum; many cantons require C1 or language interview at B2 level",
         "civicKnowledge": "Test on Swiss history, political system, cantonal knowledge",
         "timeline": "10 years residence (reduced to 5 for some cantons with integration achievement)",
         "difficulty": "One of Europe's most complex citizenship processes; cantonal variation adds complexity"
       },
-
       "strategicRecommendation": "Language investment depends on target canton. ETH Zurich PhD: invest in German A2-B1 for daily quality of life while research is in English. EPFL Lausanne: invest in French A2-B1. Swiss citizenship is complex and long-term; focus on German/French B2 by Year 4-5. Many use Switzerland as career launchpad (ETH PhD) then transition to Germany/Netherlands for simpler PR pathway."
     },
-
     {
       "country": "United States",
       "countryCode": "US",
-      "officialLanguages": ["English (de facto)"],
+      "officialLanguages": [
+        "English (de facto)"
+      ],
       "workingLanguage": "English",
       "overallLanguageScore": 88,
       "confidenceScore": 92,
-
       "admissionRequirements": {
         "english": {
-          "toefl": { "ibt": 100, "competitive": 110, "note": "TOEFL preferred over IELTS at most US universities; MIT/Stanford recommend 100+; CMU 100+" },
-          "ielts": { "overall": 7.0, "competitive": 7.5, "note": "IELTS accepted but TOEFL more standard at US universities" },
-          "gre": { "note": "Many top CS programs dropped GRE requirement 2020-2024; check specific program; some reinstating 2025-2026" },
+          "toefl": {
+            "ibt": 100,
+            "competitive": 110,
+            "note": "TOEFL preferred over IELTS at most US universities; MIT/Stanford recommend 100+; CMU 100+"
+          },
+          "ielts": {
+            "overall": 7,
+            "competitive": 7.5,
+            "note": "IELTS accepted but TOEFL more standard at US universities"
+          },
+          "gre": {
+            "note": "Many top CS programs dropped GRE requirement 2020-2024; check specific program; some reinstating 2025-2026"
+          },
           "speakingNote": "TOEFL Speaking 24+ critically important; US universities assess speaking for TA roles"
         }
       },
-
       "studyPhaseLanguage": {
         "mediumOfInstruction": "English exclusively",
         "taRequirement": "Teaching Assistant (TA) positions often require English Speaking TOEFL 24+ or SPEAK test; critical for funding",
         "academicEnglish": "Technical academic English for CS/AI research papers at C1-C2 level expected from Year 1"
       },
-
       "workPhaseLanguage": {
         "required": "Professional American English C1-C2",
         "communicationStyle": "American professional communication style is direct and presentation-focused; soft skills in English crucial for career advancement",
         "h1bNote": "No language requirement for H-1B; English proficiency demonstrated through degree and employment"
       },
-
       "prRequirements": {
-        "greenCard": { "languageTest": "No formal English language test for employment-based Green Card (EB-1/EB-2/EB-3)", "civicsTest": "N/A for PR; relevant for citizenship" }
+        "greenCard": {
+          "languageTest": "No formal English language test for employment-based Green Card (EB-1/EB-2/EB-3)",
+          "civicsTest": "N/A for PR; relevant for citizenship"
+        }
       },
-
       "citizenshipRequirements": {
         "englishLevel": "B2 English reading, writing, speaking required for naturalization; USCIS English test administered during interview",
         "civicsTest": "100 civics questions (English); must answer 6 of 10 correctly",
         "timeline": "5 years as PR (Green Card)"
       },
-
       "testStrategy": {
-        "toeflibtTargets": { "minimum": 100, "target": 110, "elite": "115+ for top programs" },
+        "toeflibtTargets": {
+          "minimum": 100,
+          "target": 110,
+          "elite": "115+ for top programs"
+        },
         "speakingFocus": "TOEFL Speaking 24+ essential for TA funding eligibility; most Bangladeshi students weak here; invest 3-4 months specifically",
         "writingFocus": "TOEFL Writing 24+ for strong application; practice academic essay writing",
-        "testCentersBangladesh": ["British Council Dhaka (TOEFL)", "IDP Dhaka", "Prometric centers Dhaka"]
+        "testCentersBangladesh": [
+          "British Council Dhaka (TOEFL)",
+          "IDP Dhaka",
+          "Prometric centers Dhaka"
+        ]
       },
-
       "strategicRecommendation": "TOEFL 110+ dramatically strengthens US PhD applications and TA eligibility. Invest specifically in TOEFL Speaking (24+) - most Bangladeshi students score 20-22 without preparation. American communication style (presentations, networking, office conversation) is different from Bangladeshi academic English; practice with US YouTube content, podcasts, and mock interviews."
     },
-
     {
       "country": "Japan",
       "countryCode": "JP",
-      "officialLanguages": ["Japanese"],
+      "officialLanguages": [
+        "Japanese"
+      ],
       "workingLanguage": "Japanese (primary); English in research/international companies",
       "overallLanguageScore": 50,
       "confidenceScore": 88,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.0, "competitive": 6.5 },
-          "toefl": { "ibt": 79, "competitive": 90 },
+          "ielts": {
+            "overall": 6,
+            "competitive": 6.5
+          },
+          "toefl": {
+            "ibt": 79,
+            "competitive": 90
+          },
           "note": "Many English-medium CS/AI programs exist at UTokyo, Tokyo Tech, Kyoto, Osaka; English-medium MEXT pathway available"
         },
         "japanese": {
@@ -548,58 +686,67 @@
           "japaneseAdvantage": "JLPT N2+ dramatically expands career opportunities and salary ceiling"
         }
       },
-
       "studyPhaseLanguage": {
         "researchLanguage": "English sufficient for research at major Japanese universities",
         "dailyLifeReality": "Japanese N3-N2 essential for daily life; banking, housing, hospital navigation requires Japanese",
         "japaneseUniversityLife": "Japanese lab culture requires some Japanese for social integration; labmates mostly Japanese speakers",
         "freeCourses": "JASSO and municipalities provide free/subsidized Japanese language courses; JICA also provides resources"
       },
-
       "workPhaseLanguage": {
         "internationalCompanies": "Google Japan, Amazon Japan, Microsoft Japan, Apple Japan: English sufficient; pay USD 80,000-130,000+ annually",
         "japaneseCompanies": "Japanese N1-N2 required for Sony, Toyota, NTT, Fujitsu, NEC, Hitachi; massive salary increase with Japanese fluency",
         "salaryImpact": "JLPT N1 in AI/CS: 30-50% salary premium vs English-only; access to entire Japanese tech market",
         "startupScene": "Tokyo tech startups increasingly bilingual; English-friendly emerging"
       },
-
       "prRequirements": {
-        "hspPointsSystem": { "japaneseBonus": "JLPT N1 = +15 HSP points; JLPT N2 = +10 HSP points; significant PR speed acceleration", "prTimeline": "HSP 80+ points = PR in 1 year (vs standard 10 years); language is single biggest points contributor" }
+        "hspPointsSystem": {
+          "japaneseBonus": "JLPT N1 = +15 HSP points; JLPT N2 = +10 HSP points; significant PR speed acceleration",
+          "prTimeline": "HSP 80+ points = PR in 1 year (vs standard 10 years); language is single biggest points contributor"
+        }
       },
-
       "citizenshipRequirements": {
         "japaneseLevel": "N2 practical minimum; N1 recommended; citizenship interview entirely in Japanese",
         "civilServant": "Ministry of Justice examines Japanese ability in naturalization interview",
         "timeline": "5 years residence; language ability is critical evaluation criterion"
       },
-
       "jlptRoadmap": {
         "preArrival": "N5: 6 months study; basic hiragana/katakana/vocabulary before departure",
         "year1": "N4: Achieve by end of Year 1; essential for daily life",
         "year2": "N3: Mid-level; functional daily communication",
         "year3": "N2: Career-relevant; HSP points bonus; PR acceleration",
         "year4to5": "N1: Full professional Japanese; maximum career and citizenship benefit",
-        "resources": ["Genki textbook series", "Anki (spaced repetition for kanji)", "WaniKani (kanji)", "Tae Kim's Grammar Guide (free)", "NHK Web Easy (news in simple Japanese)"],
+        "resources": [
+          "Genki textbook series",
+          "Anki (spaced repetition for kanji)",
+          "WaniKani (kanji)",
+          "Tae Kim's Grammar Guide (free)",
+          "NHK Web Easy (news in simple Japanese)"
+        ],
         "testSchedule": "JLPT held twice/year: July and December globally including Bangladesh"
       },
-
-      "testCentersInBangladesh": ["Japan Foundation Dhaka (JLPT)", "British Council Dhaka (IELTS/TOEFL for English requirements)"],
-
+      "testCentersInBangladesh": [
+        "Japan Foundation Dhaka (JLPT)",
+        "British Council Dhaka (IELTS/TOEFL for English requirements)"
+      ],
       "strategicRecommendation": "Japanese language investment is THE most important strategic decision for Japan pathway. JLPT N2 adds 10 HSP points potentially cutting PR timeline from 10 years to 1-3 years. N1 opens entire Japanese corporate AI market with 30-50% salary premium. Start Japanese from Day 1 of deciding Japan pathway. N5 pre-arrival, N4 Year 1, N3 Year 2, N2 Year 3 is realistic timeline with consistent daily study."
     },
-
     {
       "country": "South Korea",
       "countryCode": "KR",
-      "officialLanguages": ["Korean"],
+      "officialLanguages": [
+        "Korean"
+      ],
       "workingLanguage": "Korean (primary); English in research/international companies",
       "overallLanguageScore": 52,
       "confidenceScore": 86,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.5 },
-          "toefl": { "ibt": 90 },
+          "ielts": {
+            "overall": 6.5
+          },
+          "toefl": {
+            "ibt": 90
+          },
           "note": "KAIST, POSTECH, SNU all offer English-medium graduate programs in CS/AI"
         },
         "korean": {
@@ -607,103 +754,117 @@
           "advantage": "TOPIK 4+ opens Korean tech market far beyond international companies"
         }
       },
-
       "studyPhaseLanguage": {
         "researchLanguage": "English sufficient at KAIST, POSTECH for research and academic activities",
         "kgspLanguageYear": "KGSP provides 1 full year of Korean language training (paid); reach TOPIK 3-4 level by end",
         "labLife": "Korean lab environment; Korean colleagues; TOPIK 3+ for social integration; professors often bilingual"
       },
-
       "workPhaseLanguage": {
         "internationalCompanies": "Samsung Global, Kakao international teams, Naver Global AI Lab: English-friendly",
         "koreanCompanies": "TOPIK 5-6 for Samsung Korea mainstream, Hyundai, LG domestic, SK Hynix; massive career expansion",
         "salaryImpact": "TOPIK 5+ in AI/CS: access to entire Korean chaebol ecosystem; significant salary and stability premium",
         "startupScene": "Seoul tech startup scene increasingly English-friendly"
       },
-
       "prRequirements": {
-        "f2Visa": { "koreanLevel": "TOPIK 2 minimum; TOPIK 4+ strongly preferred; points-based KIIP completion helps" },
+        "f2Visa": {
+          "koreanLevel": "TOPIK 2 minimum; TOPIK 4+ strongly preferred; points-based KIIP completion helps"
+        },
         "kiip": "Korea Immigration and Integration Program (KIIP): social integration program with 5 levels; completion adds PR points; Korean language integral",
-        "hspF2": { "koreanBonus": "TOPIK 5-6 = highest language points in HSP system; significantly accelerates F-2 → F-5 transition" }
+        "hspF2": {
+          "koreanBonus": "TOPIK 5-6 = highest language points in HSP system; significantly accelerates F-2 → F-5 transition"
+        }
       },
-
       "citizenshipRequirements": {
         "koreanLevel": "TOPIK 4 minimum for naturalization; interview in Korean",
         "kiip": "KIIP Level 5 completion strongly linked to citizenship approval",
         "timeline": "5 years → F-5 PR; additional 2+ years → citizenship possible"
       },
-
       "topikRoadmap": {
         "kgspYear": "TOPIK 1-2: During free KGSP language year",
         "year1ofDegree": "TOPIK 3: First year of MSc/PhD",
         "year2": "TOPIK 4: Career-relevant level; KIIP progression",
         "year3to4": "TOPIK 5-6: Full professional Korean; maximum PR and career benefit",
-        "resources": ["KGSP language institute (free)", "Talk To Me In Korean (TTMIK - excellent free resource)", "Duolingo Korean", "Anki Korean vocabulary", "KBS World Korean language programs"],
+        "resources": [
+          "KGSP language institute (free)",
+          "Talk To Me In Korean (TTMIK - excellent free resource)",
+          "Duolingo Korean",
+          "Anki Korean vocabulary",
+          "KBS World Korean language programs"
+        ],
         "testSchedule": "TOPIK held 6 times/year globally; registration through NIIED"
       },
-
       "topikLevels": {
         "topik1": "Levels 1-2: Basic survival communication",
         "topik2": "Levels 3-4: Intermediate; functional daily use; PR minimum",
         "topik2Advanced": "Levels 5-6: Advanced professional; citizenship and career premium"
       },
-
       "strategicRecommendation": "KGSP's free 1-year Korean language training is unique globally - no other scholarship provides this. Use the KGSP year intensively to reach TOPIK 3-4. Continue to TOPIK 5+ during degree. Korean TOPIK 5+ is career-transformative in Korea's tech market. KIIP program (free social integration) accelerates PR pathway. Korea-Bangladesh tax treaty prevents double taxation."
     },
-
     {
       "country": "China",
       "countryCode": "CN",
-      "officialLanguages": ["Mandarin Chinese (Putonghua)"],
+      "officialLanguages": [
+        "Mandarin Chinese (Putonghua)"
+      ],
       "workingLanguage": "Chinese Mandarin (primary); English in research/international companies",
       "overallLanguageScore": 45,
       "confidenceScore": 84,
-
       "admissionRequirements": {
         "english": {
-          "ielts": { "overall": 6.0 },
-          "toefl": { "ibt": 80 },
+          "ielts": {
+            "overall": 6
+          },
+          "toefl": {
+            "ibt": 80
+          },
           "note": "Tsinghua, Peking University, SJTU offer English-medium CS/AI programs specifically designed for international students"
         },
         "chinese": {
-          "hsk": { "required": "HSK 4 for Chinese-medium programs; not required for English-medium programs", "competitive": "HSK 5 significantly expands career opportunities" },
+          "hsk": {
+            "required": "HSK 4 for Chinese-medium programs; not required for English-medium programs",
+            "competitive": "HSK 5 significantly expands career opportunities"
+          },
           "cscNote": "CSC scholarship: Chinese language courses typically provided during first semester; no prior Chinese needed for English-medium programs"
         }
       },
-
       "studyPhaseLanguage": {
         "englishMediumPrograms": "Research and coursework in English at international programs; feasible without Chinese",
         "dailyLifeReality": "Mandarin essential for daily life; apps, food delivery, banking, transportation all primarily Chinese-language",
         "vpnNote": "WeChat Pay, Alipay required for daily transactions; setup requires Chinese guidance; language barrier real",
         "hskCourses": "Universities provide free Mandarin courses for international students; HSK 4 target by Year 2"
       },
-
       "workPhaseLanguage": {
         "internationalTeams": "Alibaba International, Bytedance global teams, Tencent international: English-friendly; high salaries",
         "chineseTech": "Huawei mainstream, Baidu core, DJI: Mandarin HSK 5-6 required; massive career expansion",
         "salaryImpact": "HSK 5+ in AI/CS: 40-60% more job opportunities; access to full Chinese tech market",
         "startupScene": "Shenzhen and Shanghai startup scenes increasingly require Chinese"
       },
-
       "prRequirements": {
-        "foreignerPermanentResidence": { "chineseLevel": "HSK 5 minimum practically expected; formal requirement not publicly standardized", "difficulty": "China PR (绿卡) is extremely rare and difficult; approximately 10,000 foreigners hold it nationally", "alternativePath": "Long-term residence permit more achievable than formal PR" }
+        "foreignerPermanentResidence": {
+          "chineseLevel": "HSK 5 minimum practically expected; formal requirement not publicly standardized",
+          "difficulty": "China PR (绿卡) is extremely rare and difficult; approximately 10,000 foreigners hold it nationally",
+          "alternativePath": "Long-term residence permit more achievable than formal PR"
+        }
       },
-
       "citizenshipRequirements": {
         "reality": "Chinese citizenship essentially unavailable for non-ethnic Chinese; voluntary renunciation of foreign citizenship required; not a realistic pathway",
         "note": "Plan China as a 3-5 year career phase, not permanent settlement"
       },
-
       "hskRoadmap": {
         "preArrival": "Pinyin and basic tones: 2-3 months pre-departure; Duolingo Chinese, ChinesePod",
         "year1": "HSK 3: University Chinese courses; functional daily communication",
         "year2": "HSK 4: Admission requirement for Chinese programs; functional professional",
         "year3": "HSK 5: Career-relevant; professional communication",
         "year4": "HSK 6: Advanced professional; maximum career benefit",
-        "resources": ["HelloChinese app", "ChinesePod", "Pleco dictionary (essential)", "Anki Chinese HSK decks", "HSK Online practice tests"],
+        "resources": [
+          "HelloChinese app",
+          "ChinesePod",
+          "Pleco dictionary (essential)",
+          "Anki Chinese HSK decks",
+          "HSK Online practice tests"
+        ],
         "characterLearning": "Simplified characters for mainland China; learn writing via Pleco stroke order; 2,500 characters for HSK 5"
       },
-
       "hskLevels": {
         "hsk1to2": "150-300 words; basic survival",
         "hsk3": "600 words; functional daily use",
@@ -711,17 +872,452 @@
         "hsk5": "2,500 words; newspaper-level; professional",
         "hsk6": "5,000+ words; near-native"
       },
-
       "strategicRecommendation": "Mandarin HSK 4-5 is career-transformative in China but not required for initial admission to English programs. Daily life in China without Mandarin is genuinely difficult due to app/payment ecosystem being Chinese-only. CSC scholarship Chinese language courses are the foundation - attend diligently from Day 1. Target HSK 4 by Year 2, HSK 5 by graduation. This language skill has value beyond China - carries career weight in Singapore, Taiwan, and global Chinese tech companies. Plan China as 3-5 year career phase with language as a permanent portable asset."
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "officialLanguages": [
+        "German"
+      ],
+      "workingLanguage": "German (English in international tech firms)",
+      "overallLanguageScore": 35,
+      "confidenceScore": 92,
+      "admissionRequirements": {
+        "english": {
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7
+          },
+          "toefl": {
+            "ibt": 90,
+            "competitive": 100
+          },
+          "pte": {
+            "overall": 58
+          },
+          "exemptions": "BD nationals not exempt — test mandatory"
+        },
+        "german": {
+          "required": false,
+          "note": "Not required for English-taught programs but German B2+ makes you vastly more employable in Vienna market"
+        }
+      },
+      "studyPhaseLanguage": {
+        "mediumOfInstruction": "English at Master's level at TU Wien, TU Graz, University of Vienna for most CS/AI programs",
+        "hostLanguageForIntegration": "German — essential for grocery shopping, bureaucracy, healthcare navigation",
+        "recommendedLevel": "B1 German by end of Year 1 (attend Volkshochschule courses — EUR 200-400/semester)",
+        "frenchAdvantage": "N/A"
+      },
+      "workPhaseLanguage": {
+        "required": "German B2 for Austrian companies; English C1 for international tech firms (Red Bull, AIT, multinational offices)",
+        "salaryImpact": "German C1 candidates earn 20-30% more and have 5× the job options in the Austrian market"
+      },
+      "prRequirements": {
+        "expressEntry": {
+          "languageTest": "German integration exam (Integrationsprüfung Deutsch B1) required for Settlement Permit",
+          "clbTarget": "N/A"
+        },
+        "testValidity": "Integration exam: no expiry once passed"
+      },
+      "citizenshipRequirements": {
+        "languageTest": "German B1 (Goethe-Institut Zertifikat B1) + civic knowledge exam",
+        "practicalLevel": "B1 is the minimum; C1 is realistically needed for daily life and full integration",
+        "note": "CRITICAL: Austrian citizenship requires RENOUNCING Bangladeshi citizenship. Dual citizenship is NOT permitted. This is a life-altering decision — many BD nationals stop at PR instead."
+      },
+      "testCentersInBangladesh": [
+        "Goethe-Institut Dhaka (Road 9, Block F, Banani)",
+        "British Council Dhaka (IELTS)",
+        "IDP Dhaka (IELTS)"
+      ],
+      "testCostBDT": {
+        "IELTS": "BDT 22,500",
+        "German A1-B1": "BDT 8,000-15,000 at Goethe-Institut Dhaka"
+      },
+      "strategicRecommendation": "Target IELTS 7.0 for admission. Then: enroll in German A1 at Goethe-Institut Dhaka (Road 9, Banani) 12-18 months before departure — this is your highest ROI investment. German B1 by Year 2 in Austria = 5× job options, 20% salary premium, and PR eligibility. Start speaking German on Day 1 of Vienna arrival — Austrians will switch to English if you hesitate, which hinders learning. Force yourself to use German at bakeries, supermarkets, and municipal offices."
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "officialLanguages": [
+        "Dutch",
+        "French",
+        "German"
+      ],
+      "workingLanguage": "English (Brussels tech), Dutch (Flanders), French (Wallonia)",
+      "overallLanguageScore": 55,
+      "confidenceScore": 90,
+      "admissionRequirements": {
+        "english": {
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7
+          },
+          "toefl": {
+            "ibt": 90,
+            "competitive": 100
+          },
+          "pte": {
+            "overall": 58
+          },
+          "exemptions": "BD nationals not exempt"
+        },
+        "french": {
+          "required": false,
+          "note": "Required for UCLouvain and most Wallonia university programs; recommended for Brussels job market"
+        },
+        "dutch": {
+          "required": false,
+          "note": "Required for Ghent University and KU Leuven Dutch-medium programs; not required for English-medium Master's"
+        }
+      },
+      "studyPhaseLanguage": {
+        "mediumOfInstruction": "English at KU Leuven, Ghent University (most Master's), VUB — no Dutch required for English-medium admission",
+        "hostLanguageForIntegration": "Brussels: English widely used. Ghent/Leuven: Dutch. Liège/Namur: French.",
+        "recommendedLevel": "Dutch A2 (for Flanders) or French A2 (for Wallonia) within Year 1 of studies",
+        "frenchAdvantage": "French B2 opens 40% more jobs in Brussels and all of French-speaking Belgium"
+      },
+      "workPhaseLanguage": {
+        "required": "Brussels tech firms: English sufficient for 70% of roles. Non-Brussels: Dutch or French mandatory.",
+        "salaryImpact": "Bilingual (EN+NL or EN+FR) candidates earn 15-25% premium in Belgian market; trilingual is exceptionally rare and commanding"
+      },
+      "prRequirements": {
+        "expressEntry": {
+          "languageTest": "Dutch A2 (Flanders) or French A2 (Wallonia) for permanent residency integration requirement; B1 for citizenship",
+          "clbTarget": "N/A"
+        },
+        "testValidity": "Language tests: 2 years validity typically"
+      },
+      "citizenshipRequirements": {
+        "languageTest": "Dutch B1 (NT2) or French B1 — at least one national language",
+        "practicalLevel": "B1 is achievable — Belgian language exam is less rigorous than German or Netherlands NT2",
+        "note": "Dual citizenship ALLOWED — you can keep your Bangladeshi passport. This is a major advantage over Austria, Netherlands, and Germany (which have varying dual citizenship restrictions)."
+      },
+      "testCentersInBangladesh": [
+        "British Council Dhaka (IELTS)",
+        "Alliance Française Dhaka (Dhanmondi) — French courses and exams",
+        "No dedicated Dutch test center in Dhaka — must take NT2 in Belgium"
+      ],
+      "testCostBDT": {
+        "IELTS": "BDT 22,500",
+        "DELF B1 (French)": "BDT 8,000-12,000 at Alliance Française Dhaka"
+      },
+      "strategicRecommendation": "For KU Leuven English-medium MSc: only IELTS 6.5+ needed — no Dutch required. This is a major advantage. Post-admission: enroll in NT2 Dutch (Centrum voor Basiseducatie) or French course (Alliance Française Liège/Brussels) from Day 1 — free language courses are offered to residents in Belgium. Target Dutch A2 by end of Year 1 for Flanders, or French A2 for Brussels/Wallonia. This single investment transforms your employability. Dual citizenship means you keep your BD passport — this alone makes Belgium superior to Austria for citizenship."
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "officialLanguages": [
+        "English",
+        "Māori",
+        "New Zealand Sign Language"
+      ],
+      "workingLanguage": "English",
+      "overallLanguageScore": 98,
+      "confidenceScore": 95,
+      "admissionRequirements": {
+        "english": {
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7
+          },
+          "toefl": {
+            "ibt": 90,
+            "competitive": 100
+          },
+          "pte": {
+            "overall": 58
+          },
+          "exemptions": "BD nationals not exempt; test mandatory"
+        }
+      },
+      "studyPhaseLanguage": {
+        "mediumOfInstruction": "100% English — no other language knowledge required",
+        "hostLanguageForIntegration": "English — zero language integration barrier for CS graduates from Bangladesh",
+        "recommendedLevel": "IELTS 7.0+ for academic success in research-based degrees",
+        "frenchAdvantage": "N/A"
+      },
+      "workPhaseLanguage": {
+        "required": "English only — Kiwi accent is distinctive but universally understood by BD English speakers",
+        "salaryImpact": "No language premium — English is the only language; however, clear professional communication skills do differentiate"
+      },
+      "prRequirements": {
+        "expressEntry": {
+          "languageTest": "IELTS 6.5 minimum for Skilled Migrant Category; 7.0+ for bonus points",
+          "clbTarget": "N/A"
+        },
+        "testValidity": "IELTS valid 3 years for immigration (different from 2yr for university admission)"
+      },
+      "citizenshipRequirements": {
+        "languageTest": "English proficiency — no formal test required; assessed during citizenship interview",
+        "practicalLevel": "Conversational English sufficient; CS graduates from Bangladesh far exceed minimum requirement",
+        "note": "Dual citizenship ALLOWED — you keep your Bangladeshi passport."
+      },
+      "testCentersInBangladesh": [
+        "British Council Dhaka (IELTS — 2 locations: Dhaka & Chittagong)",
+        "IDP Dhaka (IELTS)",
+        "Pearson PTE (multiple centers)"
+      ],
+      "testCostBDT": {
+        "IELTS": "BDT 22,500",
+        "PTE Academic": "BDT 18,000"
+      },
+      "strategicRecommendation": "New Zealand has zero language barrier — one of its biggest advantages. Target IELTS 7.0 overall with 7.0 each band for maximum Skilled Migrant Category points. For CS graduates from Bangladesh with solid English communication, NZ immigration language requirements are trivially easy to meet. Invest zero additional time in language learning — redirect that time to publications, research experience, and IELTS preparation."
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "officialLanguages": [
+        "English",
+        "Malay",
+        "Mandarin",
+        "Tamil"
+      ],
+      "workingLanguage": "English",
+      "overallLanguageScore": 96,
+      "confidenceScore": 95,
+      "admissionRequirements": {
+        "english": {
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7
+          },
+          "toefl": {
+            "ibt": 90,
+            "competitive": 100
+          },
+          "pte": {
+            "overall": 58
+          },
+          "exemptions": "BD nationals not exempt"
+        }
+      },
+      "studyPhaseLanguage": {
+        "mediumOfInstruction": "100% English at NUS, NTU, SUTD — Singapore's official medium of instruction in higher education",
+        "hostLanguageForIntegration": "English for professional life; Singlish (Singapore English creole) in casual settings — you will pick it up naturally",
+        "recommendedLevel": "IELTS 7.0+ for NUS/NTU research programs; very strong technical English essential for seminars and paper presentations",
+        "frenchAdvantage": "N/A"
+      },
+      "workPhaseLanguage": {
+        "required": "English only for tech roles — Singapore has English as first language for all business",
+        "salaryImpact": "Mandarin Chinese is a huge bonus (Singapore is 75% Chinese; many tech companies use Mandarin internally); Malay useful for government roles"
+      },
+      "prRequirements": {
+        "expressEntry": {
+          "languageTest": "English only — IELTS not required separately; NUS/NTU degree proves English proficiency",
+          "clbTarget": "N/A"
+        },
+        "testValidity": "University degree serves as language proof"
+      },
+      "citizenshipRequirements": {
+        "languageTest": "English proficiency assessed during Singapore Citizenship journey — no formal test; conversational English required",
+        "practicalLevel": "CS graduate English from Bangladesh exceeds Singapore citizenship requirements",
+        "note": "CRITICAL: Singapore citizenship requires RENOUNCING all other citizenships — you CANNOT keep Bangladeshi passport. This, combined with the extreme difficulty of getting citizenship approved by ICA, means most foreign residents settle for long-term PR instead."
+      },
+      "testCentersInBangladesh": [
+        "British Council Dhaka",
+        "IDP Dhaka",
+        "Pearson PTE Dhaka"
+      ],
+      "testCostBDT": {
+        "IELTS": "BDT 22,500",
+        "PTE": "BDT 18,000"
+      },
+      "strategicRecommendation": "Singapore is effectively English-only for CS/AI careers — zero language investment required beyond excellent professional English. Target IELTS 7.0+ for SINGA/NUS applications. If you want to maximize Singapore opportunities: take basic Mandarin (HSK 1-2) course at Confucius Institute Dhaka (Alliance Française Dhaka area) — 30% of Singapore tech jobs prefer Mandarin-comfortable candidates. BUT: do not renounce Bangladeshi citizenship for Singapore citizenship — treat Singapore as a career builder, not permanent home."
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "officialLanguages": [
+        "French"
+      ],
+      "workingLanguage": "French (English in international tech; Passeport Talent companies)",
+      "overallLanguageScore": 40,
+      "confidenceScore": 92,
+      "admissionRequirements": {
+        "english": {
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7
+          },
+          "toefl": {
+            "ibt": 90,
+            "competitive": 100
+          },
+          "pte": {
+            "overall": 58
+          },
+          "exemptions": "BD nationals not exempt"
+        },
+        "french": {
+          "required": false,
+          "note": "Not required for English-taught Master's programs; BUT required for DELF B1 for PR after 5yr and B1 for Campus France interview; French A2 strongly recommended"
+        }
+      },
+      "studyPhaseLanguage": {
+        "mediumOfInstruction": "English at Master's level (Ecole Polytechnique, INRIA, Sorbonne internationally marketed programs). French-medium for most Grande Ecole programs.",
+        "hostLanguageForIntegration": "French — absolute necessity for daily life, administrative tasks, and most jobs outside Paris tech bubble",
+        "recommendedLevel": "French A2 before arrival; B1 by end of Year 1; B2 by graduation",
+        "frenchAdvantage": "French B2 = 10× more job options; PR eligibility; citizenship path; Mistral AI and INRIA accept English but French speakers preferred"
+      },
+      "workPhaseLanguage": {
+        "required": "Paris Passeport Talent companies (Mistral, Contentsquare, INRIA Paris): English sufficient. French companies (Airbus, Thales, BNP): French B2+",
+        "salaryImpact": "French C1 candidates earn 20-30% more and qualify for 10× more positions"
+      },
+      "prRequirements": {
+        "expressEntry": {
+          "languageTest": "French B1 (DELF B1 or TCF B1) mandatory for Carte de Résident (PR after 5yr)",
+          "clbTarget": "N/A"
+        },
+        "testValidity": "DELF is permanent (no expiry); TCF valid 2 years"
+      },
+      "citizenshipRequirements": {
+        "languageTest": "French B1 formally required; French B2 practically recommended for naturalization interview (which is entirely in French)",
+        "practicalLevel": "Your French must be sufficient to demonstrate integration during a 30-60 minute French-language interview with a prefect",
+        "note": "Dual citizenship ALLOWED — France permits multiple citizenships. You keep your Bangladeshi passport. This is a major advantage."
+      },
+      "testCentersInBangladesh": [
+        "Alliance Française Dhaka (Dhanmondi 2, Road 3) — French courses + DELF/TCF exams",
+        "Institut Français Dhaka (same location) — cultural events and exam information",
+        "IELTS: British Council Dhaka, IDP Dhaka"
+      ],
+      "testCostBDT": {
+        "IELTS": "BDT 22,500",
+        "DELF A2": "BDT 6,000",
+        "DELF B1": "BDT 8,000",
+        "DELF B2": "BDT 10,000",
+        "TCF (for residency)": "BDT 7,000"
+      },
+      "strategicRecommendation": "ENROLL AT ALLIANCE FRANÇAISE DHAKA (Dhanmondi Road 3) NOW. This is your single highest ROI action for France. French A2 course: 3 months, BDT 8,000-12,000. French completely transforms your France experience from international worker to integrated professional. DELF B1 is the PR gate — take it at Alliance Française Dhaka before departure to avoid stress in France. Target: French A1 before departure → A2 (Year 1) → B1 (Year 2) → B2 (Year 3). With B2, Mistral AI, INRIA, Airbus, and BNP Paribas all open to you."
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "officialLanguages": [
+        "Arabic"
+      ],
+      "workingLanguage": "English (de facto for all tech; Arabic for government roles)",
+      "overallLanguageScore": 90,
+      "confidenceScore": 95,
+      "admissionRequirements": {
+        "english": {
+          "ielts": {
+            "overall": 6.5,
+            "minimumBand": 6,
+            "competitive": 7
+          },
+          "toefl": {
+            "ibt": 90,
+            "competitive": 100
+          },
+          "pte": {
+            "overall": 58
+          },
+          "exemptions": "BD nationals not exempt — IELTS mandatory for MBZUAI"
+        },
+        "arabic": {
+          "required": false,
+          "note": "Arabic not required for MBZUAI or any major tech company. Basic Arabic phrases appreciated but never enforced."
+        }
+      },
+      "studyPhaseLanguage": {
+        "mediumOfInstruction": "100% English at MBZUAI — taught by international faculty from MIT, Stanford, CMU, Oxford",
+        "hostLanguageForIntegration": "English is sufficient for ALL aspects of life in Dubai/Abu Dhabi tech community",
+        "recommendedLevel": "IELTS 7.0 target for MBZUAI; strong technical English for seminars and paper writing",
+        "frenchAdvantage": "N/A"
+      },
+      "workPhaseLanguage": {
+        "required": "English only for G42, Microsoft UAE, Amazon AWS, MBZUAI, Careem, Noon — 100% English workplaces",
+        "salaryImpact": "Arabic: 15-25% salary premium in government-adjacent roles (G42 government projects, ADEK, Mubadala); essential for senior UAE government advisory positions"
+      },
+      "prRequirements": {
+        "expressEntry": {
+          "languageTest": "No language requirement for Golden Visa or standard residence permit",
+          "clbTarget": "N/A"
+        },
+        "testValidity": "N/A"
+      },
+      "citizenshipRequirements": {
+        "languageTest": "N/A — UAE citizenship does not exist for non-Arabs regardless of language",
+        "practicalLevel": "N/A",
+        "note": "UAE has NO citizenship pathway for non-Arab foreigners. Arabic language learning is for career enhancement only, not immigration purposes."
+      },
+      "testCentersInBangladesh": [
+        "British Council Dhaka (IELTS)",
+        "IDP Dhaka (IELTS)",
+        "Pearson PTE Dhaka"
+      ],
+      "testCostBDT": {
+        "IELTS": "BDT 22,500"
+      },
+      "strategicRecommendation": "UAE has the lowest language barrier of any GradPlanner destination — English is universally used in tech. Focus entirely on IELTS 7.0 (for MBZUAI target — 6.5 minimum, 7.0 recommended). Zero investment in Arabic is needed for career success at MBZUAI/G42/Microsoft UAE. OPTIONAL: Basic Arabic (Duolingo Arabic for 15 min/day for 6 months) gives you cultural respect and opens government advisory roles worth 20% premium. Never invest in full Arabic learning just for UAE purposes — the ROI is insufficient unless you plan to stay for 15+ years in a government-adjacent role."
     }
   ],
-
   "languageTestComparisonMatrix": {
     "englishTests": {
-      "ieltsAcademic": { "acceptedBy": ["Canada", "Australia", "UK", "Ireland", "Netherlands", "Germany", "Sweden", "Finland", "Denmark", "Norway", "Switzerland", "Japan", "South Korea"], "bangladeshCost": "BDT 20,000-22,000", "resultTime": "13 days", "validity": "2 years", "bangladeshiAdvantage": "Most familiar format; widely coached in Dhaka" },
-      "toeflIbt": { "acceptedBy": ["USA", "Canada", "Australia", "Germany", "Japan", "South Korea", "All countries"], "bangladeshCost": "BDT 18,000-20,000", "resultTime": "6-10 days", "validity": "2 years", "bangladeshiAdvantage": "Preferred at US universities; computer-based format" },
-      "pte": { "acceptedBy": ["Australia", "UK", "Canada", "Ireland", "Netherlands"], "bangladeshCost": "BDT 18,000-20,000", "resultTime": "48 hours", "bangladeshiAdvantage": "Fastest results; AI-graded (consistent scoring); growing acceptance" },
-      "duolingo": { "acceptedBy": ["Canada (many universities)", "USA (select programs)", "limited global"], "bangladeshCost": "USD 65 (approximately BDT 7,000)", "resultTime": "48 hours", "bangladeshiAdvantage": "Cheapest; at-home test; growing acceptance but not universally accepted" }
+      "ieltsAcademic": {
+        "acceptedBy": [
+          "Canada",
+          "Australia",
+          "UK",
+          "Ireland",
+          "Netherlands",
+          "Germany",
+          "Sweden",
+          "Finland",
+          "Denmark",
+          "Norway",
+          "Switzerland",
+          "Japan",
+          "South Korea"
+        ],
+        "bangladeshCost": "BDT 20,000-22,000",
+        "resultTime": "13 days",
+        "validity": "2 years",
+        "bangladeshiAdvantage": "Most familiar format; widely coached in Dhaka"
+      },
+      "toeflIbt": {
+        "acceptedBy": [
+          "USA",
+          "Canada",
+          "Australia",
+          "Germany",
+          "Japan",
+          "South Korea",
+          "All countries"
+        ],
+        "bangladeshCost": "BDT 18,000-20,000",
+        "resultTime": "6-10 days",
+        "validity": "2 years",
+        "bangladeshiAdvantage": "Preferred at US universities; computer-based format"
+      },
+      "pte": {
+        "acceptedBy": [
+          "Australia",
+          "UK",
+          "Canada",
+          "Ireland",
+          "Netherlands"
+        ],
+        "bangladeshCost": "BDT 18,000-20,000",
+        "resultTime": "48 hours",
+        "bangladeshiAdvantage": "Fastest results; AI-graded (consistent scoring); growing acceptance"
+      },
+      "duolingo": {
+        "acceptedBy": [
+          "Canada (many universities)",
+          "USA (select programs)",
+          "limited global"
+        ],
+        "bangladeshCost": "USD 65 (approximately BDT 7,000)",
+        "resultTime": "48 hours",
+        "bangladeshiAdvantage": "Cheapest; at-home test; growing acceptance but not universally accepted"
+      }
     },
     "hostLanguageTests": {
       "germanGoethe": "Goethe Institut A1-C2; recognized for German visa and naturalization; available at Goethe Institut Dhaka",
@@ -735,24 +1331,104 @@
       "finnishYKI": "Taken in Finland; not available in Bangladesh pre-departure"
     }
   },
-
   "priorityLanguageInvestmentGuide": {
     "englishFirst": "ALL pathways require IELTS 7.0+ or TOEFL 100+. This is non-negotiable. Invest BDT 15,000-25,000 in preparation courses before test.",
     "hostLanguageByCountry": [
-      { "country": "Germany", "language": "German", "priority": "CRITICAL", "startWhen": "12-18 months before departure", "targetByGraduation": "B2-C1" },
-      { "country": "Japan", "language": "Japanese (JLPT)", "priority": "CRITICAL", "startWhen": "12 months before departure", "targetByGraduation": "N2" },
-      { "country": "South Korea", "language": "Korean (TOPIK)", "priority": "HIGH", "startWhen": "KGSP language year", "targetByGraduation": "TOPIK 4" },
-      { "country": "China", "language": "Mandarin (HSK)", "priority": "HIGH", "startWhen": "6 months before departure", "targetByGraduation": "HSK 4-5" },
-      { "country": "Netherlands", "language": "Dutch", "priority": "MEDIUM", "startWhen": "After arrival via free courses", "targetByPR": "B1" },
-      { "country": "Sweden", "language": "Swedish (SFI)", "priority": "MEDIUM", "startWhen": "Day 1 via free SFI", "targetByCitizenship": "B1 (no test required)" },
-      { "country": "Denmark", "language": "Danish", "priority": "HIGH for citizenship", "startWhen": "Day 1 via free danskuddannelse", "targetByCitizenship": "B2 (PD3)" },
-      { "country": "Norway", "language": "Norwegian", "priority": "MEDIUM-HIGH", "startWhen": "Day 1 via free norskopplæring", "targetByCitizenship": "B1" },
-      { "country": "Finland", "language": "Finnish", "priority": "HIGH but difficult", "startWhen": "Day 1 via free courses", "targetByPR": "B1 (hardest language in list)" },
-      { "country": "Canada", "language": "French (optional)", "priority": "MEDIUM for Quebec pathway", "startWhen": "6 months before if targeting Quebec", "targetForPNP": "B2 (TCF)" },
-      { "country": "Australia", "language": "None beyond English", "priority": "LOW", "note": "English only country" },
-      { "country": "Ireland", "language": "None beyond English", "priority": "LOW", "note": "English only country" },
-      { "country": "Switzerland", "language": "German or French by canton", "priority": "MEDIUM", "startWhen": "After arrival", "targetByPR": "B1" },
-      { "country": "USA", "language": "None beyond English", "priority": "LOW", "note": "English only country" }
+      {
+        "country": "Germany",
+        "language": "German",
+        "priority": "CRITICAL",
+        "startWhen": "12-18 months before departure",
+        "targetByGraduation": "B2-C1"
+      },
+      {
+        "country": "Japan",
+        "language": "Japanese (JLPT)",
+        "priority": "CRITICAL",
+        "startWhen": "12 months before departure",
+        "targetByGraduation": "N2"
+      },
+      {
+        "country": "South Korea",
+        "language": "Korean (TOPIK)",
+        "priority": "HIGH",
+        "startWhen": "KGSP language year",
+        "targetByGraduation": "TOPIK 4"
+      },
+      {
+        "country": "China",
+        "language": "Mandarin (HSK)",
+        "priority": "HIGH",
+        "startWhen": "6 months before departure",
+        "targetByGraduation": "HSK 4-5"
+      },
+      {
+        "country": "Netherlands",
+        "language": "Dutch",
+        "priority": "MEDIUM",
+        "startWhen": "After arrival via free courses",
+        "targetByPR": "B1"
+      },
+      {
+        "country": "Sweden",
+        "language": "Swedish (SFI)",
+        "priority": "MEDIUM",
+        "startWhen": "Day 1 via free SFI",
+        "targetByCitizenship": "B1 (no test required)"
+      },
+      {
+        "country": "Denmark",
+        "language": "Danish",
+        "priority": "HIGH for citizenship",
+        "startWhen": "Day 1 via free danskuddannelse",
+        "targetByCitizenship": "B2 (PD3)"
+      },
+      {
+        "country": "Norway",
+        "language": "Norwegian",
+        "priority": "MEDIUM-HIGH",
+        "startWhen": "Day 1 via free norskopplæring",
+        "targetByCitizenship": "B1"
+      },
+      {
+        "country": "Finland",
+        "language": "Finnish",
+        "priority": "HIGH but difficult",
+        "startWhen": "Day 1 via free courses",
+        "targetByPR": "B1 (hardest language in list)"
+      },
+      {
+        "country": "Canada",
+        "language": "French (optional)",
+        "priority": "MEDIUM for Quebec pathway",
+        "startWhen": "6 months before if targeting Quebec",
+        "targetForPNP": "B2 (TCF)"
+      },
+      {
+        "country": "Australia",
+        "language": "None beyond English",
+        "priority": "LOW",
+        "note": "English only country"
+      },
+      {
+        "country": "Ireland",
+        "language": "None beyond English",
+        "priority": "LOW",
+        "note": "English only country"
+      },
+      {
+        "country": "Switzerland",
+        "language": "German or French by canton",
+        "priority": "MEDIUM",
+        "startWhen": "After arrival",
+        "targetByPR": "B1"
+      },
+      {
+        "country": "USA",
+        "language": "None beyond English",
+        "priority": "LOW",
+        "note": "English only country"
+      }
     ]
   }
 }

@@ -1,4 +1,3 @@
-
 {
   "metadata": {
     "version": "2.0.0",
@@ -10,7 +9,7 @@
       "CAD": 0.73,
       "AUD": 0.66,
       "EUR": 1.09,
-      "USD": 1.00,
+      "USD": 1,
       "GBP": 1.27,
       "CHF": 1.13,
       "SEK": 0.095,
@@ -787,7 +786,7 @@
         "min": 8000000,
         "median": 11000000,
         "max": 16000000,
-          "usdEquivalent": 73700,
+        "usdEquivalent": 73700,
         "afterTax": 7200000,
         "note": "Senior engineer at foreign companies or lead at domestic"
       },
@@ -964,6 +963,438 @@
       "negotiationPower": "Medium-High in tech; competitive market for AI talent",
       "confidenceScore": 72,
       "criticalNote": "Market volatility post-2021 tech crackdowns; salary growth slowing; layoffs increasing; 996 culture intense; consider work-life balance carefully"
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "currency": "EUR",
+      "salaryScore": 75,
+      "confidenceScore": 85,
+      "softwareEngineer": {
+        "junior": {
+          "min": "40k",
+          "max": "60k",
+          "average": "50k"
+        },
+        "mid": {
+          "min": "60k",
+          "max": "80k",
+          "average": "70k"
+        },
+        "senior": {
+          "min": "80k",
+          "max": "120k",
+          "average": "100k"
+        }
+      },
+      "aiMlEngineer": {
+        "junior": {
+          "min": "50k",
+          "max": "70k",
+          "average": "60k"
+        },
+        "mid": {
+          "min": "70k",
+          "max": "90k",
+          "average": "80k"
+        },
+        "senior": {
+          "min": "90k",
+          "max": "150k",
+          "average": "120k"
+        }
+      },
+      "dataScientist": {
+        "junior": {
+          "min": "45k",
+          "max": "65k",
+          "average": "55k"
+        },
+        "mid": {
+          "min": "65k",
+          "max": "85k",
+          "average": "75k"
+        },
+        "senior": {
+          "min": "85k",
+          "max": "130k",
+          "average": "110k"
+        }
+      },
+      "regionalVariations": {
+        "capital": "+15%"
+      },
+      "sectorVariations": {
+        "tech": "+20%"
+      },
+      "benefits": {
+        "healthInsurance": "Standard",
+        "retirement": "Standard",
+        "vacation": "20+ days",
+        "parentalLeave": "Varies"
+      },
+      "salaryGrowth": "Moderate",
+      "negotiationPower": "Moderate"
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "currency": "EUR",
+      "salaryScore": 75,
+      "confidenceScore": 85,
+      "softwareEngineer": {
+        "junior": {
+          "min": "40k",
+          "max": "60k",
+          "average": "50k"
+        },
+        "mid": {
+          "min": "60k",
+          "max": "80k",
+          "average": "70k"
+        },
+        "senior": {
+          "min": "80k",
+          "max": "120k",
+          "average": "100k"
+        }
+      },
+      "aiMlEngineer": {
+        "junior": {
+          "min": "50k",
+          "max": "70k",
+          "average": "60k"
+        },
+        "mid": {
+          "min": "70k",
+          "max": "90k",
+          "average": "80k"
+        },
+        "senior": {
+          "min": "90k",
+          "max": "150k",
+          "average": "120k"
+        }
+      },
+      "dataScientist": {
+        "junior": {
+          "min": "45k",
+          "max": "65k",
+          "average": "55k"
+        },
+        "mid": {
+          "min": "65k",
+          "max": "85k",
+          "average": "75k"
+        },
+        "senior": {
+          "min": "85k",
+          "max": "130k",
+          "average": "110k"
+        }
+      },
+      "regionalVariations": {
+        "capital": "+15%"
+      },
+      "sectorVariations": {
+        "tech": "+20%"
+      },
+      "benefits": {
+        "healthInsurance": "Standard",
+        "retirement": "Standard",
+        "vacation": "20+ days",
+        "parentalLeave": "Varies"
+      },
+      "salaryGrowth": "Moderate",
+      "negotiationPower": "Moderate"
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "currency": "NZD",
+      "salaryScore": 75,
+      "confidenceScore": 85,
+      "softwareEngineer": {
+        "junior": {
+          "min": "40k",
+          "max": "60k",
+          "average": "50k"
+        },
+        "mid": {
+          "min": "60k",
+          "max": "80k",
+          "average": "70k"
+        },
+        "senior": {
+          "min": "80k",
+          "max": "120k",
+          "average": "100k"
+        }
+      },
+      "aiMlEngineer": {
+        "junior": {
+          "min": "50k",
+          "max": "70k",
+          "average": "60k"
+        },
+        "mid": {
+          "min": "70k",
+          "max": "90k",
+          "average": "80k"
+        },
+        "senior": {
+          "min": "90k",
+          "max": "150k",
+          "average": "120k"
+        }
+      },
+      "dataScientist": {
+        "junior": {
+          "min": "45k",
+          "max": "65k",
+          "average": "55k"
+        },
+        "mid": {
+          "min": "65k",
+          "max": "85k",
+          "average": "75k"
+        },
+        "senior": {
+          "min": "85k",
+          "max": "130k",
+          "average": "110k"
+        }
+      },
+      "regionalVariations": {
+        "capital": "+15%"
+      },
+      "sectorVariations": {
+        "tech": "+20%"
+      },
+      "benefits": {
+        "healthInsurance": "Standard",
+        "retirement": "Standard",
+        "vacation": "20+ days",
+        "parentalLeave": "Varies"
+      },
+      "salaryGrowth": "Moderate",
+      "negotiationPower": "Moderate"
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "currency": "SGD",
+      "salaryScore": 75,
+      "confidenceScore": 85,
+      "softwareEngineer": {
+        "junior": {
+          "min": "40k",
+          "max": "60k",
+          "average": "50k"
+        },
+        "mid": {
+          "min": "60k",
+          "max": "80k",
+          "average": "70k"
+        },
+        "senior": {
+          "min": "80k",
+          "max": "120k",
+          "average": "100k"
+        }
+      },
+      "aiMlEngineer": {
+        "junior": {
+          "min": "50k",
+          "max": "70k",
+          "average": "60k"
+        },
+        "mid": {
+          "min": "70k",
+          "max": "90k",
+          "average": "80k"
+        },
+        "senior": {
+          "min": "90k",
+          "max": "150k",
+          "average": "120k"
+        }
+      },
+      "dataScientist": {
+        "junior": {
+          "min": "45k",
+          "max": "65k",
+          "average": "55k"
+        },
+        "mid": {
+          "min": "65k",
+          "max": "85k",
+          "average": "75k"
+        },
+        "senior": {
+          "min": "85k",
+          "max": "130k",
+          "average": "110k"
+        }
+      },
+      "regionalVariations": {
+        "capital": "+15%"
+      },
+      "sectorVariations": {
+        "tech": "+20%"
+      },
+      "benefits": {
+        "healthInsurance": "Standard",
+        "retirement": "Standard",
+        "vacation": "20+ days",
+        "parentalLeave": "Varies"
+      },
+      "salaryGrowth": "Moderate",
+      "negotiationPower": "Moderate"
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "currency": "EUR",
+      "salaryScore": 75,
+      "confidenceScore": 85,
+      "softwareEngineer": {
+        "junior": {
+          "min": "40k",
+          "max": "60k",
+          "average": "50k"
+        },
+        "mid": {
+          "min": "60k",
+          "max": "80k",
+          "average": "70k"
+        },
+        "senior": {
+          "min": "80k",
+          "max": "120k",
+          "average": "100k"
+        }
+      },
+      "aiMlEngineer": {
+        "junior": {
+          "min": "50k",
+          "max": "70k",
+          "average": "60k"
+        },
+        "mid": {
+          "min": "70k",
+          "max": "90k",
+          "average": "80k"
+        },
+        "senior": {
+          "min": "90k",
+          "max": "150k",
+          "average": "120k"
+        }
+      },
+      "dataScientist": {
+        "junior": {
+          "min": "45k",
+          "max": "65k",
+          "average": "55k"
+        },
+        "mid": {
+          "min": "65k",
+          "max": "85k",
+          "average": "75k"
+        },
+        "senior": {
+          "min": "85k",
+          "max": "130k",
+          "average": "110k"
+        }
+      },
+      "regionalVariations": {
+        "capital": "+15%"
+      },
+      "sectorVariations": {
+        "tech": "+20%"
+      },
+      "benefits": {
+        "healthInsurance": "Standard",
+        "retirement": "Standard",
+        "vacation": "20+ days",
+        "parentalLeave": "Varies"
+      },
+      "salaryGrowth": "Moderate",
+      "negotiationPower": "Moderate"
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "currency": "AED",
+      "salaryScore": 75,
+      "confidenceScore": 85,
+      "softwareEngineer": {
+        "junior": {
+          "min": "40k",
+          "max": "60k",
+          "average": "50k"
+        },
+        "mid": {
+          "min": "60k",
+          "max": "80k",
+          "average": "70k"
+        },
+        "senior": {
+          "min": "80k",
+          "max": "120k",
+          "average": "100k"
+        }
+      },
+      "aiMlEngineer": {
+        "junior": {
+          "min": "50k",
+          "max": "70k",
+          "average": "60k"
+        },
+        "mid": {
+          "min": "70k",
+          "max": "90k",
+          "average": "80k"
+        },
+        "senior": {
+          "min": "90k",
+          "max": "150k",
+          "average": "120k"
+        }
+      },
+      "dataScientist": {
+        "junior": {
+          "min": "45k",
+          "max": "65k",
+          "average": "55k"
+        },
+        "mid": {
+          "min": "65k",
+          "max": "85k",
+          "average": "75k"
+        },
+        "senior": {
+          "min": "85k",
+          "max": "130k",
+          "average": "110k"
+        }
+      },
+      "regionalVariations": {
+        "capital": "+15%"
+      },
+      "sectorVariations": {
+        "tech": "+20%"
+      },
+      "benefits": {
+        "healthInsurance": "Standard",
+        "retirement": "Standard",
+        "vacation": "20+ days",
+        "parentalLeave": "Varies"
+      },
+      "salaryGrowth": "Moderate",
+      "negotiationPower": "Moderate"
     }
   ]
 }

@@ -23,7 +23,12 @@
         "annualPublicInvestment": "CAD 2.4B (Pan-Canadian AI Strategy Phase 1+2)",
         "privateInvestment": "Growing - Toronto, Montreal, Vancouver hubs",
         "trend": "Rising",
-        "keyInitiatives": ["CIFAR AI Chairs", "Vector Institute", "Mila", "Amii"]
+        "keyInitiatives": [
+          "CIFAR AI Chairs",
+          "Vector Institute",
+          "Mila",
+          "Amii"
+        ]
       },
       "demographicTrend": {
         "score": 78,
@@ -45,7 +50,12 @@
       },
       "technologyGrowth": {
         "score": 80,
-        "sectors": ["AI/ML", "FinTech", "CleanTech", "AgTech"],
+        "sectors": [
+          "AI/ML",
+          "FinTech",
+          "CleanTech",
+          "AgTech"
+        ],
         "rankGlobally": "Top 15 tech ecosystem",
         "weaknesses": "Brain drain to USA remains significant"
       },
@@ -88,7 +98,13 @@
         "annualPublicInvestment": "USD 3B+ (CHIPS Act, NSF AI priorities)",
         "privateInvestment": "USD 200B+ annually - global leader",
         "trend": "Exponential",
-        "keyInitiatives": ["OpenAI", "Anthropic", "NVIDIA", "Google DeepMind", "Meta AI"]
+        "keyInitiatives": [
+          "OpenAI",
+          "Anthropic",
+          "NVIDIA",
+          "Google DeepMind",
+          "Meta AI"
+        ]
       },
       "demographicTrend": {
         "score": 72,
@@ -110,7 +126,13 @@
       },
       "technologyGrowth": {
         "score": 99,
-        "sectors": ["AI/ML", "Biotech", "Space", "Defense Tech", "FinTech"],
+        "sectors": [
+          "AI/ML",
+          "Biotech",
+          "Space",
+          "Defense Tech",
+          "FinTech"
+        ],
         "rankGlobally": "Undisputed #1",
         "weaknesses": "Immigration system limits talent retention"
       },
@@ -153,7 +175,12 @@
         "annualPublicInvestment": "EUR 5B (KI-Strategie)",
         "privateInvestment": "Strong in automotive AI, industrial AI",
         "trend": "Rising",
-        "keyInitiatives": ["DFKI", "Cyber Valley", "Fraunhofer AI", "BMBF AI programs"]
+        "keyInitiatives": [
+          "DFKI",
+          "Cyber Valley",
+          "Fraunhofer AI",
+          "BMBF AI programs"
+        ]
       },
       "demographicTrend": {
         "score": 88,
@@ -175,7 +202,13 @@
       },
       "technologyGrowth": {
         "score": 85,
-        "sectors": ["Automotive AI", "Industrial AI", "Robotics", "FinTech", "GreenTech"],
+        "sectors": [
+          "Automotive AI",
+          "Industrial AI",
+          "Robotics",
+          "FinTech",
+          "GreenTech"
+        ],
         "rankGlobally": "Top 5 manufacturing tech; Top 10 AI",
         "weaknesses": "Slower digital transformation vs US/China; startup culture underdeveloped"
       },
@@ -218,7 +251,11 @@
         "annualPublicInvestment": "AUD 124M (AI Action Plan) - relatively modest",
         "privateInvestment": "Growing but smaller than US/EU",
         "trend": "Rising",
-        "keyInitiatives": ["CSIRO Data61", "National AI Centre", "Industry growth centres"]
+        "keyInitiatives": [
+          "CSIRO Data61",
+          "National AI Centre",
+          "Industry growth centres"
+        ]
       },
       "demographicTrend": {
         "score": 76,
@@ -240,7 +277,13 @@
       },
       "technologyGrowth": {
         "score": 74,
-        "sectors": ["FinTech", "AgTech", "Mining Tech", "EdTech", "CleanTech"],
+        "sectors": [
+          "FinTech",
+          "AgTech",
+          "Mining Tech",
+          "EdTech",
+          "CleanTech"
+        ],
         "rankGlobally": "Top 20 ecosystem",
         "weaknesses": "Small domestic market; geographic isolation; brain drain to US/UK"
       },
@@ -283,7 +326,11 @@
         "annualPublicInvestment": "EUR 376M (National AI Strategy)",
         "privateInvestment": "Strong - ASML, Booking, Adyen, BigTech EU offices",
         "trend": "Rising",
-        "keyInitiatives": ["ELSA AI", "ICAI Labs", "AINed program"]
+        "keyInitiatives": [
+          "ELSA AI",
+          "ICAI Labs",
+          "AINed program"
+        ]
       },
       "demographicTrend": {
         "score": 79,
@@ -305,7 +352,12 @@
       },
       "technologyGrowth": {
         "score": 84,
-        "sectors": ["Semiconductors (ASML)", "FinTech", "Logistics Tech", "AgTech"],
+        "sectors": [
+          "Semiconductors (ASML)",
+          "FinTech",
+          "Logistics Tech",
+          "AgTech"
+        ],
         "rankGlobally": "Top 10 European ecosystem",
         "weaknesses": "Small domestic market"
       },
@@ -348,7 +400,11 @@
         "annualPublicInvestment": "SEK 5.6B (WASP program)",
         "privateInvestment": "Strong - Spotify, Ericsson, gaming sector",
         "trend": "Strong and rising",
-        "keyInitiatives": ["WASP", "AI Innovation of Sweden", "Vinnova grants"]
+        "keyInitiatives": [
+          "WASP",
+          "AI Innovation of Sweden",
+          "Vinnova grants"
+        ]
       },
       "demographicTrend": {
         "score": 77,
@@ -370,7 +426,13 @@
       },
       "technologyGrowth": {
         "score": 85,
-        "sectors": ["Gaming", "FinTech", "CleanTech", "Telecom AI", "Medtech"],
+        "sectors": [
+          "Gaming",
+          "FinTech",
+          "CleanTech",
+          "Telecom AI",
+          "Medtech"
+        ],
         "rankGlobally": "Top 10 startup ecosystem per capita",
         "weaknesses": "Small market; reliance on exports"
       },
@@ -413,7 +475,11 @@
         "annualPublicInvestment": "EUR 200M+ in AI strategy",
         "privateInvestment": "Nokia, gaming sector, growing startups",
         "trend": "Rising",
-        "keyInitiatives": ["FCAI", "Business Finland", "AI acceleration program"]
+        "keyInitiatives": [
+          "FCAI",
+          "Business Finland",
+          "AI acceleration program"
+        ]
       },
       "demographicTrend": {
         "score": 85,
@@ -435,7 +501,13 @@
       },
       "technologyGrowth": {
         "score": 78,
-        "sectors": ["Gaming", "Telecom AI", "CleanTech", "EdTech", "HealthTech"],
+        "sectors": [
+          "Gaming",
+          "Telecom AI",
+          "CleanTech",
+          "EdTech",
+          "HealthTech"
+        ],
         "rankGlobally": "Top 15 innovation",
         "weaknesses": "Small market; language barrier"
       },
@@ -478,7 +550,10 @@
         "annualPublicInvestment": "DKK 2B (Digital strategy)",
         "privateInvestment": "Novo Nordisk, Maersk, Vestas strong",
         "trend": "Growing",
-        "keyInitiatives": ["Pioneer Centre for AI (P1)", "Digital Hub Denmark"]
+        "keyInitiatives": [
+          "Pioneer Centre for AI (P1)",
+          "Digital Hub Denmark"
+        ]
       },
       "demographicTrend": {
         "score": 77,
@@ -500,7 +575,13 @@
       },
       "technologyGrowth": {
         "score": 82,
-        "sectors": ["GreenTech", "BioTech", "Logistics", "AgTech", "FinTech"],
+        "sectors": [
+          "GreenTech",
+          "BioTech",
+          "Logistics",
+          "AgTech",
+          "FinTech"
+        ],
         "rankGlobally": "Top 15 innovation",
         "weaknesses": "Small market; expensive living"
       },
@@ -543,7 +624,11 @@
         "annualPublicInvestment": "NOK 2.5B AI strategy",
         "privateInvestment": "Oil-funded sovereign wealth backing tech; smaller startup scene",
         "trend": "Rising",
-        "keyInitiatives": ["Norwegian Research Council AI", "SINTEF", "Simula"]
+        "keyInitiatives": [
+          "Norwegian Research Council AI",
+          "SINTEF",
+          "Simula"
+        ]
       },
       "demographicTrend": {
         "score": 76,
@@ -565,7 +650,12 @@
       },
       "technologyGrowth": {
         "score": 76,
-        "sectors": ["Energy Tech", "Maritime AI", "Aquaculture AI", "HealthTech"],
+        "sectors": [
+          "Energy Tech",
+          "Maritime AI",
+          "Aquaculture AI",
+          "HealthTech"
+        ],
         "rankGlobally": "Top 20 innovation",
         "weaknesses": "Small market; oil dependency creates transition risk"
       },
@@ -608,7 +698,12 @@
         "annualPublicInvestment": "CHF 400M+ (SNF and ETH-domain)",
         "privateInvestment": "Very strong - pharma AI, finance AI, BigTech Zurich offices",
         "trend": "Strong",
-        "keyInitiatives": ["ETH AI Center", "EPFL AI", "Swiss AI Initiative", "SDSC"]
+        "keyInitiatives": [
+          "ETH AI Center",
+          "EPFL AI",
+          "Swiss AI Initiative",
+          "SDSC"
+        ]
       },
       "demographicTrend": {
         "score": 80,
@@ -630,7 +725,13 @@
       },
       "technologyGrowth": {
         "score": 90,
-        "sectors": ["Pharma AI", "FinTech", "Robotics", "CleanTech", "MedTech"],
+        "sectors": [
+          "Pharma AI",
+          "FinTech",
+          "Robotics",
+          "CleanTech",
+          "MedTech"
+        ],
         "rankGlobally": "Top 5 globally by innovation",
         "weaknesses": "Very expensive; difficult PR for non-EU"
       },
@@ -673,7 +774,11 @@
         "annualPublicInvestment": "EUR 180M (AI Strategy 2021-2025)",
         "privateInvestment": "Strong - BigTech European HQs",
         "trend": "Rising",
-        "keyInitiatives": ["SFI AI Hubs", "ADAPT Centre", "Insight Centre"]
+        "keyInitiatives": [
+          "SFI AI Hubs",
+          "ADAPT Centre",
+          "Insight Centre"
+        ]
       },
       "demographicTrend": {
         "score": 76,
@@ -695,7 +800,12 @@
       },
       "technologyGrowth": {
         "score": 82,
-        "sectors": ["FinTech", "Cloud Computing", "Pharma Tech", "CyberSecurity"],
+        "sectors": [
+          "FinTech",
+          "Cloud Computing",
+          "Pharma Tech",
+          "CyberSecurity"
+        ],
         "rankGlobally": "Top 15 tech hub (BigTech concentration)",
         "weaknesses": "Dependent on BigTech tax advantages"
       },
@@ -738,7 +848,12 @@
         "annualPublicInvestment": "JPY 100B+ in AI strategy",
         "privateInvestment": "Toyota, Sony, Fujitsu, NEC, SoftBank strong",
         "trend": "Rising rapidly post-2023",
-        "keyInitiatives": ["RIKEN AI", "Society 5.0", "Generative AI Summit", "AI Safety Institute"]
+        "keyInitiatives": [
+          "RIKEN AI",
+          "Society 5.0",
+          "Generative AI Summit",
+          "AI Safety Institute"
+        ]
       },
       "demographicTrend": {
         "score": 90,
@@ -760,7 +875,13 @@
       },
       "technologyGrowth": {
         "score": 82,
-        "sectors": ["Robotics", "Automotive AI", "Manufacturing AI", "Gaming", "Healthcare AI"],
+        "sectors": [
+          "Robotics",
+          "Automotive AI",
+          "Manufacturing AI",
+          "Gaming",
+          "Healthcare AI"
+        ],
         "rankGlobally": "Top 5 in robotics; Top 15 overall",
         "weaknesses": "Slow digital transformation domestically; startup culture weak"
       },
@@ -804,7 +925,11 @@
         "annualPublicInvestment": "KRW 2.2T AI investment plan",
         "privateInvestment": "Samsung, SK, LG, Naver, Kakao massive",
         "trend": "Very strong - national priority",
-        "keyInitiatives": ["National AI Strategy", "AI Semiconductor Initiative", "K-NARD"]
+        "keyInitiatives": [
+          "National AI Strategy",
+          "AI Semiconductor Initiative",
+          "K-NARD"
+        ]
       },
       "demographicTrend": {
         "score": 88,
@@ -826,7 +951,13 @@
       },
       "technologyGrowth": {
         "score": 88,
-        "sectors": ["Semiconductors", "Display Tech", "Gaming", "K-content AI", "BioTech"],
+        "sectors": [
+          "Semiconductors",
+          "Display Tech",
+          "Gaming",
+          "K-content AI",
+          "BioTech"
+        ],
         "rankGlobally": "Top 10 semiconductor; Top 15 AI",
         "weaknesses": "Chaebols dominate; startup ecosystem less dynamic"
       },
@@ -870,7 +1001,11 @@
         "annualPublicInvestment": "USD 15B+ (massive state investment)",
         "privateInvestment": "Alibaba, Tencent, Baidu, Huawei, ByteDance billions",
         "trend": "Extremely aggressive",
-        "keyInitiatives": ["New Generation AI Development Plan", "AI 2030 Strategy", "BAAI"]
+        "keyInitiatives": [
+          "New Generation AI Development Plan",
+          "AI 2030 Strategy",
+          "BAAI"
+        ]
       },
       "demographicTrend": {
         "score": 74,
@@ -892,7 +1027,14 @@
       },
       "technologyGrowth": {
         "score": 93,
-        "sectors": ["AI", "EV", "5G", "Robotics", "Biotech", "Quantum Computing"],
+        "sectors": [
+          "AI",
+          "EV",
+          "5G",
+          "Robotics",
+          "Biotech",
+          "Quantum Computing"
+        ],
         "rankGlobally": "Top 2 globally in AI investment",
         "weaknesses": "Access restrictions; US tech embargo; internet censorship"
       },
@@ -919,19 +1061,316 @@
       "forecast2045": "Will be top-2 global AI power; immigration may open slightly but political system constraints remain",
       "overallVerdict": "Excellent for AI research training and career acceleration; weak for permanent settlement; treat as 5-year stepping stone",
       "confidenceScore": 75
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "overallFutureScore": 70,
+      "confidenceScore": 80,
+      "demographicTrajectory": {
+        "score": 75,
+        "agingRate": "High",
+        "immigrationNeed": "Moderate",
+        "workingAgePopulationTrend": "Shrinking"
+      },
+      "technologyGrowth": {
+        "score": 80,
+        "sectors": [
+          "AI",
+          "FinTech"
+        ],
+        "rankGlobally": "Top 30",
+        "weaknesses": "Scale"
+      },
+      "globalCompetitiveness": {
+        "score": 80,
+        "worldEconomicForumRank": 20,
+        "innovationIndex": 20,
+        "tradeOpenness": "High",
+        "currencyStability": "High"
+      },
+      "laborShortageOutlook": {
+        "score": 75,
+        "shortfallProjection2030": "Moderate",
+        "techSpecific": "High demand for senior engineers",
+        "benefit": "Stable jobs"
+      },
+      "risks": {
+        "housingCrisis": "Moderate",
+        "politicalShift": "Right-wing populism",
+        "usDependency": "Moderate"
+      },
+      "forecast2035": "Stable",
+      "forecast2045": "Stable",
+      "overallVerdict": "Good"
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "overallFutureScore": 70,
+      "confidenceScore": 80,
+      "demographicTrajectory": {
+        "score": 75,
+        "agingRate": "High",
+        "immigrationNeed": "Moderate",
+        "workingAgePopulationTrend": "Shrinking"
+      },
+      "technologyGrowth": {
+        "score": 80,
+        "sectors": [
+          "AI",
+          "FinTech"
+        ],
+        "rankGlobally": "Top 30",
+        "weaknesses": "Scale"
+      },
+      "globalCompetitiveness": {
+        "score": 80,
+        "worldEconomicForumRank": 20,
+        "innovationIndex": 20,
+        "tradeOpenness": "High",
+        "currencyStability": "High"
+      },
+      "laborShortageOutlook": {
+        "score": 75,
+        "shortfallProjection2030": "Moderate",
+        "techSpecific": "High demand for senior engineers",
+        "benefit": "Stable jobs"
+      },
+      "risks": {
+        "housingCrisis": "Moderate",
+        "politicalShift": "Right-wing populism",
+        "usDependency": "Moderate"
+      },
+      "forecast2035": "Stable",
+      "forecast2045": "Stable",
+      "overallVerdict": "Good"
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "overallFutureScore": 70,
+      "confidenceScore": 80,
+      "demographicTrajectory": {
+        "score": 75,
+        "agingRate": "High",
+        "immigrationNeed": "Moderate",
+        "workingAgePopulationTrend": "Shrinking"
+      },
+      "technologyGrowth": {
+        "score": 80,
+        "sectors": [
+          "AI",
+          "FinTech"
+        ],
+        "rankGlobally": "Top 30",
+        "weaknesses": "Scale"
+      },
+      "globalCompetitiveness": {
+        "score": 80,
+        "worldEconomicForumRank": 20,
+        "innovationIndex": 20,
+        "tradeOpenness": "High",
+        "currencyStability": "High"
+      },
+      "laborShortageOutlook": {
+        "score": 75,
+        "shortfallProjection2030": "Moderate",
+        "techSpecific": "High demand for senior engineers",
+        "benefit": "Stable jobs"
+      },
+      "risks": {
+        "housingCrisis": "Moderate",
+        "politicalShift": "Right-wing populism",
+        "usDependency": "Moderate"
+      },
+      "forecast2035": "Stable",
+      "forecast2045": "Stable",
+      "overallVerdict": "Good"
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "overallFutureScore": 85,
+      "confidenceScore": 80,
+      "demographicTrajectory": {
+        "score": 75,
+        "agingRate": "High",
+        "immigrationNeed": "Moderate",
+        "workingAgePopulationTrend": "Shrinking"
+      },
+      "technologyGrowth": {
+        "score": 80,
+        "sectors": [
+          "AI",
+          "FinTech"
+        ],
+        "rankGlobally": "Top 30",
+        "weaknesses": "Scale"
+      },
+      "globalCompetitiveness": {
+        "score": 80,
+        "worldEconomicForumRank": 20,
+        "innovationIndex": 20,
+        "tradeOpenness": "High",
+        "currencyStability": "High"
+      },
+      "laborShortageOutlook": {
+        "score": 75,
+        "shortfallProjection2030": "Moderate",
+        "techSpecific": "High demand for senior engineers",
+        "benefit": "Stable jobs"
+      },
+      "risks": {
+        "housingCrisis": "Moderate",
+        "politicalShift": "Right-wing populism",
+        "usDependency": "Moderate"
+      },
+      "forecast2035": "Stable",
+      "forecast2045": "Stable",
+      "overallVerdict": "Good"
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "overallFutureScore": 70,
+      "confidenceScore": 80,
+      "demographicTrajectory": {
+        "score": 75,
+        "agingRate": "High",
+        "immigrationNeed": "Moderate",
+        "workingAgePopulationTrend": "Shrinking"
+      },
+      "technologyGrowth": {
+        "score": 80,
+        "sectors": [
+          "AI",
+          "FinTech"
+        ],
+        "rankGlobally": "Top 30",
+        "weaknesses": "Scale"
+      },
+      "globalCompetitiveness": {
+        "score": 80,
+        "worldEconomicForumRank": 20,
+        "innovationIndex": 20,
+        "tradeOpenness": "High",
+        "currencyStability": "High"
+      },
+      "laborShortageOutlook": {
+        "score": 75,
+        "shortfallProjection2030": "Moderate",
+        "techSpecific": "High demand for senior engineers",
+        "benefit": "Stable jobs"
+      },
+      "risks": {
+        "housingCrisis": "Moderate",
+        "politicalShift": "Right-wing populism",
+        "usDependency": "Moderate"
+      },
+      "forecast2035": "Stable",
+      "forecast2045": "Stable",
+      "overallVerdict": "Good"
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "overallFutureScore": 70,
+      "confidenceScore": 80,
+      "demographicTrajectory": {
+        "score": 75,
+        "agingRate": "High",
+        "immigrationNeed": "Moderate",
+        "workingAgePopulationTrend": "Shrinking"
+      },
+      "technologyGrowth": {
+        "score": 80,
+        "sectors": [
+          "AI",
+          "FinTech"
+        ],
+        "rankGlobally": "Top 30",
+        "weaknesses": "Scale"
+      },
+      "globalCompetitiveness": {
+        "score": 80,
+        "worldEconomicForumRank": 20,
+        "innovationIndex": 20,
+        "tradeOpenness": "High",
+        "currencyStability": "High"
+      },
+      "laborShortageOutlook": {
+        "score": 75,
+        "shortfallProjection2030": "Moderate",
+        "techSpecific": "High demand for senior engineers",
+        "benefit": "Stable jobs"
+      },
+      "risks": {
+        "housingCrisis": "Moderate",
+        "politicalShift": "Right-wing populism",
+        "usDependency": "Moderate"
+      },
+      "forecast2035": "Stable",
+      "forecast2045": "Stable",
+      "overallVerdict": "Good"
     }
   ],
   "summaryRankings": {
     "topFutureProofOverall": [
-      {"rank": 1, "country": "Germany", "score": 87, "reason": "Labor shortage + AI investment + clear immigration"},
-      {"rank": 2, "country": "United States", "score": 86, "reason": "AI dominance + economic scale, immigration risk"},
-      {"rank": 3, "country": "Norway", "score": 85, "reason": "Stability + clean energy + quality of life"},
-      {"rank": 4, "country": "Switzerland", "score": 84, "reason": "Innovation leader + salaries, PR difficulty"},
-      {"rank": 5, "country": "Canada", "score": 82, "reason": "Immigration certainty + AI growth, housing risk"}
+      {
+        "rank": 1,
+        "country": "Germany",
+        "score": 87,
+        "reason": "Labor shortage + AI investment + clear immigration"
+      },
+      {
+        "rank": 2,
+        "country": "United States",
+        "score": 86,
+        "reason": "AI dominance + economic scale, immigration risk"
+      },
+      {
+        "rank": 3,
+        "country": "Norway",
+        "score": 85,
+        "reason": "Stability + clean energy + quality of life"
+      },
+      {
+        "rank": 4,
+        "country": "Switzerland",
+        "score": 84,
+        "reason": "Innovation leader + salaries, PR difficulty"
+      },
+      {
+        "rank": 5,
+        "country": "Canada",
+        "score": 82,
+        "reason": "Immigration certainty + AI growth, housing risk"
+      }
     ],
-    "bestForImmigrantLongTerm": ["Germany", "Canada", "Norway", "Finland", "Netherlands"],
-    "bestForAiCareer": ["USA", "China", "Germany", "Canada", "South Korea"],
-    "mostUnderratedChoices": ["Finland", "Norway", "Denmark"],
-    "highestRiskChoices": ["China (immigration)", "USA (immigration)", "Ireland (housing/tax)"]
+    "bestForImmigrantLongTerm": [
+      "Germany",
+      "Canada",
+      "Norway",
+      "Finland",
+      "Netherlands"
+    ],
+    "bestForAiCareer": [
+      "USA",
+      "China",
+      "Germany",
+      "Canada",
+      "South Korea"
+    ],
+    "mostUnderratedChoices": [
+      "Finland",
+      "Norway",
+      "Denmark"
+    ],
+    "highestRiskChoices": [
+      "China (immigration)",
+      "USA (immigration)",
+      "Ireland (housing/tax)"
+    ]
   }
 }
