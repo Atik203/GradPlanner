@@ -2,6 +2,14 @@
 // document-requirements.json
 // =====================================================================
 
+export interface DocumentRequirementsMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+}
+
 export interface DocumentItem {
   document: string;
   details: string;
@@ -38,4 +46,5 @@ export interface DocumentRequirements {
 
 export interface DocumentRequirementsFile {
   documentRequirements: DocumentRequirements[];
+  metadata?: DocumentRequirementsMetadata;
 }

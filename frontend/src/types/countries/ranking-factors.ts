@@ -2,6 +2,15 @@
 // ranking-factors.json
 // =====================================================================
 
+export interface RankingFactorsMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+  scoringPhilosophy?: string;
+}
+
 export interface PhaseScore {
   score: number;
   rank: number;
@@ -59,4 +68,5 @@ export interface CountryRanking {
 
 export interface RankingFactorsFile {
   countryRankings: CountryRanking[];
+  metadata?: RankingFactorsMetadata;
 }

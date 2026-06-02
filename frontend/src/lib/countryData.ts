@@ -9,6 +9,7 @@
  */
 
 import type {
+  
   AiEcosystemFile,
   CitizenshipRulesFile,
   CountriesFile,
@@ -58,6 +59,7 @@ import type {
 
 // Re-export types for convenience
 export type {
+  
   CountrySummary, JobMarket, FundingOpportunity, CountryRanking,
   CountryTimeline, Scholarship, VisaRules, PostStudyWorkRights,
   PrPathways, LivingCosts, SalaryData, LanguageRequirements,

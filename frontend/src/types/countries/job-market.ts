@@ -2,6 +2,16 @@
 // job-market.json
 // =====================================================================
 
+export interface JobMarketMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+  analysisScope?: string;
+  economicContext?: string;
+}
+
 export interface IndustryHiring {
   sector: string;
   demandScore: number;
@@ -128,4 +138,5 @@ export interface JobMarket {
 
 export interface JobMarketFile {
   jobMarkets: JobMarket[];
+  metadata?: JobMarketMetadata;
 }

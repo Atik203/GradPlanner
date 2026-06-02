@@ -2,6 +2,14 @@
 // funding-opportunities.json
 // =====================================================================
 
+export interface FundingOpportunitiesMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+}
+
 export interface GovernmentScholarship {
   name: string;
   amount: string;
@@ -59,4 +67,5 @@ export interface FundingOpportunity {
 
 export interface FundingOpportunitiesFile {
   fundingOpportunities: FundingOpportunity[];
+  metadata?: FundingOpportunitiesMetadata;
 }

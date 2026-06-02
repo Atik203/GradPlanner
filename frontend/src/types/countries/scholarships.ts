@@ -2,6 +2,17 @@
 // scholarships.json — NOTE: Multiple entries per country (different scholarships)
 // =====================================================================
 
+export interface ScholarshipsMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+  scholarshipPhilosophy?: string;
+  bangladeshSpecificNote?: string;
+  applicationTimeline?: object;
+}
+
 export type FundingType =
   | 'FULL_FUNDING'
   | 'PARTIAL_FUNDING'
@@ -74,4 +85,5 @@ export interface Scholarship {
 
 export interface ScholarshipsFile {
   scholarships: Scholarship[];
+  metadata?: ScholarshipsMetadata;
 }

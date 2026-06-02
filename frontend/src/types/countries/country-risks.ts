@@ -2,6 +2,14 @@
 // country-risks.json
 // =====================================================================
 
+export interface CountryRisksMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+}
+
 export type RiskTrend = 'IMPROVING' | 'STABLE' | 'WORSENING';
 
 export type RiskLevel =
@@ -45,4 +53,5 @@ export interface CountryRisk {
 
 export interface CountryRisksFile {
   countryRisks: CountryRisk[];
+  metadata?: CountryRisksMetadata;
 }

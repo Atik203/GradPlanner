@@ -2,6 +2,17 @@
 // housing-market.json
 // =====================================================================
 
+export interface HousingMarketMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  currency?: string;
+  criticalNote?: string;
+  dataSource?: string;
+  housingCrisisScale?: object;
+}
+
 export interface RentBreakdown {
   localCurrency: number;
   usd: number;
@@ -42,4 +53,5 @@ export interface HousingMarket {
 
 export interface HousingMarketFile {
   housingMarkets: HousingMarket[];
+  metadata?: HousingMarketMetadata;
 }

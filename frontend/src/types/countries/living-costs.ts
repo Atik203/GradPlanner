@@ -2,6 +2,18 @@
 // living-costs.json
 // =====================================================================
 
+export interface LivingCostsMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  currency?: string;
+  conversionNote?: string;
+  criticalNote?: string;
+  dataSource?: string;
+  phases?: object;
+}
+
 export interface RentCategory {
   localCurrency: number;
   usd: number;
@@ -53,4 +65,5 @@ export interface LivingCosts {
 
 export interface LivingCostsFile {
   livingCosts: LivingCosts[];
+  metadata?: LivingCostsMetadata;
 }

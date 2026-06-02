@@ -2,6 +2,15 @@
 // language-requirements.json
 // =====================================================================
 
+export interface LanguageRequirementsMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+  bangladeshiBaseline?: object;
+}
+
 export interface IeltsRequirement {
   overall: number;
   minimumBand: number;
@@ -76,4 +85,5 @@ export interface LanguageRequirements {
 
 export interface LanguageRequirementsFile {
   languageRequirements: LanguageRequirements[];
+  metadata?: LanguageRequirementsMetadata;
 }

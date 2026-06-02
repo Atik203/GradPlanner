@@ -2,6 +2,15 @@
 // taxation.json
 // =====================================================================
 
+export interface TaxationMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+  bangladeshDoubleTaxNote?: string;
+}
+
 export interface TaxBracket {
   bracket: string;
   rate: string;
@@ -60,4 +69,5 @@ export interface TaxationEntry {
 
 export interface TaxationFile {
   taxation: TaxationEntry[];
+  metadata?: TaxationMetadata;
 }

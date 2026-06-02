@@ -2,6 +2,14 @@
 // future-proofing.json
 // =====================================================================
 
+export interface FutureProofingMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+}
+
 export interface ScoreWithDetail {
   score: number;
   [key: string]: unknown;
@@ -60,4 +68,5 @@ export interface FutureProofing {
 
 export interface FutureProofingFile {
   futureProofing: FutureProofing[];
+  metadata?: FutureProofingMetadata;
 }

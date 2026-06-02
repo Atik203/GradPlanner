@@ -2,6 +2,14 @@
 // research-opportunities.json
 // =====================================================================
 
+export interface ResearchOpportunitiesMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+}
+
 export interface ResearchOpportunities {
   country: string;
   countryCode: string;
@@ -25,4 +33,5 @@ export interface ResearchOpportunities {
 
 export interface ResearchOpportunitiesFile {
   researchOpportunities: ResearchOpportunities[];
+  metadata?: ResearchOpportunitiesMetadata;
 }

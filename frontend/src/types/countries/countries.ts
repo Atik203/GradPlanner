@@ -2,6 +2,14 @@
 // countries.json — Master country summary
 // =====================================================================
 
+export interface CountriesMetadata {
+  version?: string;
+  lastUpdated?: string;
+  source?: string;
+  targetUsers?: string;
+  planningYears?: number[];
+}
+
 export interface CountrySummary {
   country: string;
   countryCode: string;
@@ -35,4 +43,5 @@ export interface CountrySummary {
 
 export interface CountriesFile {
   countries: CountrySummary[];
+  metadata?: CountriesMetadata;
 }

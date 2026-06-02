@@ -2,6 +2,13 @@
 // pr-pathways.json
 // =====================================================================
 
+export interface PrPathwaysMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+}
+
 export interface PrPathway {
   pathwayName: string;
   difficulty: string;
@@ -36,4 +43,5 @@ export interface PrPathways {
 
 export interface PrPathwaysFile {
   prPathways: PrPathways[];
+  metadata?: PrPathwaysMetadata;
 }

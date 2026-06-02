@@ -2,6 +2,14 @@
 // timeline-rules.json
 // =====================================================================
 
+export interface TimelineRulesMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+}
+
 export interface TimelinePhaseApplication {
   duration: string;
   startDate: string;
@@ -78,4 +86,5 @@ export interface CountryTimeline {
 
 export interface TimelineRulesFile {
   countryTimelines: CountryTimeline[];
+  metadata?: TimelineRulesMetadata;
 }

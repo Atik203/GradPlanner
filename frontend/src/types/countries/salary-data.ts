@@ -2,6 +2,15 @@
 // salary-data.json
 // =====================================================================
 
+export interface SalaryDataMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+  currencyRates?: object;
+}
+
 export interface SalaryBand {
   min: number;
   median: number;
@@ -43,4 +52,5 @@ export interface SalaryData {
 
 export interface SalaryDataFile {
   salaryData: SalaryData[];
+  metadata?: SalaryDataMetadata;
 }

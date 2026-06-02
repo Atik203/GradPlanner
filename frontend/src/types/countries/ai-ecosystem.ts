@@ -2,6 +2,16 @@
 // ai-ecosystem.json
 // =====================================================================
 
+export interface AiEcosystemMetadata {
+  file?: string;
+  version?: string;
+  generatedDate?: string;
+  targetUsers?: string;
+  planningYears?: number[];
+  dataSource?: string;
+  scoringScale?: string;
+}
+
 export interface AiCompany {
   name: string;
   location: string;
@@ -34,4 +44,5 @@ export interface AiEcosystem {
 
 export interface AiEcosystemFile {
   countries: AiEcosystem[];
+  metadata?: AiEcosystemMetadata;
 }

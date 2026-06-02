@@ -2,6 +2,14 @@
 // post-study-work.json
 // =====================================================================
 
+export interface PostStudyWorkMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+}
+
 export interface WorkRestrictions {
   hoursPerWeek: string;
   employerRestrictions: string;
@@ -38,4 +46,5 @@ export interface PostStudyWorkRights {
 
 export interface PostStudyWorkFile {
   postStudyWorkRights: PostStudyWorkRights[];
+  metadata?: PostStudyWorkMetadata;
 }

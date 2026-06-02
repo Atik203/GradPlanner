@@ -2,6 +2,15 @@
 // family-immigration.json
 // =====================================================================
 
+export interface FamilyImmigrationMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  targetProfile?: string;
+  criticalNote?: string;
+  scoringNote?: string;
+}
+
 export interface SpouseRights {
   spouseCanWork: boolean;
   spouseCanWorkDuringStudy: boolean;
@@ -47,4 +56,5 @@ export interface FamilyImmigrationRights {
 
 export interface FamilyImmigrationFile {
   familyImmigrationRights: FamilyImmigrationRights[];
+  metadata?: FamilyImmigrationMetadata;
 }

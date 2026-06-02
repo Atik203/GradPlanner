@@ -2,6 +2,13 @@
 // citizenship-rules.json
 // =====================================================================
 
+export interface CitizenshipRulesMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  note?: string;
+}
+
 export interface CitizenshipRules {
   country: string;
   countryCode: string;
@@ -35,4 +42,5 @@ export interface CitizenshipRules {
 
 export interface CitizenshipRulesFile {
   citizenshipRules: CitizenshipRules[];
+  metadata?: CitizenshipRulesMetadata;
 }

@@ -2,6 +2,13 @@
 // visa-rules.json
 // =====================================================================
 
+export interface VisaRulesMetadata {
+  version?: string;
+  lastUpdated?: string;
+  description?: string;
+  note?: string;
+}
+
 export interface StudentVisa {
   visaName: string;
   processingTime: string;
@@ -62,4 +69,5 @@ export interface VisaRules {
 
 export interface VisaRulesFile {
   visaRules: VisaRules[];
+  metadata?: VisaRulesMetadata;
 }
