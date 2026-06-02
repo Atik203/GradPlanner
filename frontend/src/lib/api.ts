@@ -1,4 +1,5 @@
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
+const isServer = typeof window === "undefined";
+const BACKEND_URL = isServer ? (process.env.NEXT_PUBLIC_API_URL ?? "") : "";
 
 export async function fetchApi(path: string, options: RequestInit = {}) {
   const url = `${BACKEND_URL}${path}`;
