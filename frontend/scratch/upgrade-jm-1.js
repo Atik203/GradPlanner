@@ -1,0 +1,252 @@
+const fs = require('fs');
+const filePath = 'e:/PROJECT/GradPlanner/frontend/public/countries/job-market.json';
+let data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+const upgrades = [
+  {
+    country: "Ireland",
+    countryCode: "IE",
+    overallJobMarketScore: 85,
+    demandLevel: "Very High",
+    demandTrend: "Strong and growing — EU headquarters hub for Big Tech",
+    marketSaturation: "Medium",
+    averageTimeToJob: "2-4 months",
+    averageTimeToJobDays: 75,
+    jobOpeningsAnnual: 18000,
+    aiMlSpecificOpenings: 4500,
+    competitionLevel: 65,
+    jobSecurityScore: 82,
+    startupEcosystemScore: 78,
+    researchPositionsScore: 72,
+    remoteWorkCulture: 88,
+    workLifeBalanceScore: 82,
+    careerProgressionScore: 80,
+    majorHubs: ["Dublin", "Cork", "Limerick", "Galway"],
+    topEmployers: ["Google (EMEA HQ)", "Meta (EMEA HQ)", "Apple (EMEA HQ)", "Microsoft", "Amazon", "Salesforce", "LinkedIn", "Twitter/X", "HubSpot", "Stripe (HQ)"],
+    emergingCompanies: ["Intercom", "Teamwork", "LetsGetChecked", "Conjura", "Adaptiiv"],
+    skillsInDemand: ["MLOps", "Cloud (AWS/GCP/Azure)", "LLM fine-tuning", "Data Engineering", "Python/PyTorch", "Site Reliability Engineering", "Full-stack (React/Node)"],
+    industriesHiring: [
+      { sector: "Big Tech EMEA HQ", demandScore: 95, salaryRange: "EUR 75,000-140,000", note: "Google, Meta, Apple all have EMEA headquarters in Dublin — largest tech employer cluster in Europe" },
+      { sector: "FinTech & Payments", demandScore: 88, salaryRange: "EUR 70,000-130,000", note: "Stripe HQ, PayPal, Mastercard Technology" },
+      { sector: "Pharma-Tech & Health AI", demandScore: 78, salaryRange: "EUR 65,000-115,000", note: "Pfizer, J&J Tech; AI in drug discovery growing" },
+      { sector: "Cybersecurity", demandScore: 82, salaryRange: "EUR 70,000-125,000", note: "McAfee, Trend Micro, Symantec have Irish tech centers" },
+      { sector: "Gaming & Interactive Media", demandScore: 68, salaryRange: "EUR 55,000-100,000", note: "King, Activision, EA have Irish offices" }
+    ],
+    entryLevelReality: { easiestEntry: "EMEA support/tech roles at Big Tech", hardestEntry: "SWE at product teams (US-facing)", sweetSpot: "ML Engineer at EU-headquartered FinTech (Stripe, PayPal)", bangladeshiPresence: "Growing — CSO data shows South Asian community expanding in Dublin", biasLevel: "Low — highly international work environment" },
+    visaSponsorshipReality: { willingnessScore: 85, pospWpgpAdvantage: "Stamp 1G (2yr PSW) is golden — employers know you can start immediately", studyPermitToPgwpSuccess: 90, sponsorshipCost: "Low", note: "CSEP (Critical Skills Employment Permit) is the target — EUR 32,000+ salary, tech roles easily qualify" },
+    salaryExpectations: { phdEntryLevel: "EUR 80,000-110,000", mscEntryLevel: "EUR 60,000-90,000", midLevel3to5yrs: "EUR 90,000-130,000", seniorLevel: "EUR 120,000-180,000", totalCompNote: "RSU packages exist at Big Tech EMEA offices, though smaller than US counterparts" },
+    geographicVariation: {
+      dublin: { jobDensity: 95, avgSalary: "EUR 85,000", costOfLivingIndex: 95, netBenefit: "Maximum jobs, highest rent — 1BR EUR 2,200-2,800/month, severe shortage" },
+      cork: { jobDensity: 68, avgSalary: "EUR 72,000", costOfLivingIndex: 72, netBenefit: "Apple, Amazon, EMC hubs — better housing, emerging tech scene" },
+      limerick: { jobDensity: 45, avgSalary: "EUR 65,000", costOfLivingIndex: 60, netBenefit: "Lower competition, smaller tech cluster, affordable housing" }
+    },
+    workCulture: { averageHoursPerWeek: 40, vacationDays: 20, sickLeaveDays: 10, parentalLeaveWeeks: 26, workFromHomeAcceptance: 88, diversityScore: 88, burnoutRisk: "Low-Medium", culturalFit: "Highly international; pubs are the social nexus; relaxed work style" },
+    careerGrowth: { pathToSenior: "3-5 years", pathToStaffPrincipal: "8-12 years", managementOpportunities: 78, technicalLadder: "Strong at Big Tech EMEA offices", entrepreneurshipSupport: 80, note: "Dublin's startup scene is vibrant; NDRC incubator; Enterprise Ireland funding" },
+    foreignCredentialRecognition: { canadianMasterScore: 88, topUsPhd: 92, topEuPhd: 88, bangladeshUndergrad: 65, note: "QQI credential recognition; Irish MSc/PhD strongly regarded" },
+    layoffRisk2027to2029: { riskScore: 45, trend: "Post-2023 layoffs stabilizing; EU AI Act compliance creating new roles in governance/safety", protection: "Strong employment law; 2 weeks/year severance; unfair dismissal protections" },
+    prPathwayIntegration: { jobRequiredForPr: true, skillClassEligibility: 92, crsPointsFromJob: "N/A (Stamp 4 system)", provinceNominationBoost: "N/A", note: "Critical Skills Employment Permit → Stamp 4 (PR equivalent) → Irish citizenship in 5yr total" },
+    longTermOutlook: { outlook2030: "Very strong — EU AI Act compliance roles, continued Big Tech investment", outlook2040: "Strong — Ireland's low corporation tax model under EU pressure but tech cluster is established", riskFactors: "Housing crisis most severe in EU; potential EU corporate tax reform" },
+    strategicAdvice: "Ireland is arguably the best short-term career accelerator for Bangladeshi AI/ML graduates. Stamp 1G → CSEP → Stamp 4 in 3yr is a clear, fast PR pathway. Dublin Big Tech salaries are 2x Bangladesh but cost-of-living is brutal. Prioritize Cork or Limerick for first job to reduce housing burden. CRITICAL: Apply for CSEP immediately on graduation — Critical Skills list includes all tech/AI roles.",
+    confidenceScore: 90,
+    dataQuality: "High"
+  },
+  {
+    country: "Sweden",
+    countryCode: "SE",
+    overallJobMarketScore: 80,
+    demandLevel: "High",
+    demandTrend: "Growing — AI/ML, green tech, and gaming",
+    marketSaturation: "Medium",
+    averageTimeToJob: "3-6 months",
+    averageTimeToJobDays: 120,
+    jobOpeningsAnnual: 14000,
+    aiMlSpecificOpenings: 3500,
+    competitionLevel: 70,
+    jobSecurityScore: 85,
+    startupEcosystemScore: 90,
+    researchPositionsScore: 80,
+    remoteWorkCulture: 85,
+    workLifeBalanceScore: 95,
+    careerProgressionScore: 75,
+    majorHubs: ["Stockholm", "Gothenburg", "Malmö", "Uppsala"],
+    topEmployers: ["Spotify", "Klarna", "Ericsson", "IKEA Tech", "Volvo Cars Tech", "H&M Tech", "Northvolt", "King (Activision)", "Mojang (Microsoft)", "Scania Tech"],
+    emergingCompanies: ["Einride", "Voi Technology", "Mentice", "Detectify", "Tackle"],
+    skillsInDemand: ["Recommendation Systems (Spotify-style)", "Computer Vision (autonomous vehicles)", "Battery AI (Northvolt)", "NLP/Swedish language models", "MLOps", "Rust", "Kotlin"],
+    industriesHiring: [
+      { sector: "Music Tech & Streaming", demandScore: 82, salaryRange: "SEK 55,000-80,000/month", note: "Spotify is world's largest audio ML employer; recommendation, NLP, audio AI roles" },
+      { sector: "FinTech & Payments", demandScore: 88, salaryRange: "SEK 60,000-85,000/month", note: "Klarna, iZettle (PayPal), Trustly — advanced fraud detection AI" },
+      { sector: "Automotive AI", demandScore: 84, salaryRange: "SEK 58,000-82,000/month", note: "Volvo Cars, Scania — autonomous driving AI; strong in Gothenburg" },
+      { sector: "Gaming & Interactive", demandScore: 80, salaryRange: "SEK 50,000-75,000/month", note: "King, Mojang, DICE (EA) — procedural generation, NPC AI, game analytics" },
+      { sector: "GreenTech & Battery", demandScore: 78, salaryRange: "SEK 55,000-78,000/month", note: "Northvolt — ML for battery optimization; massive EU investment" }
+    ],
+    entryLevelReality: { easiestEntry: "Gaming/tech startups; data engineering roles", hardestEntry: "Spotify/Klarna product ML teams (global talent competition)", sweetSpot: "Series B-C Nordic startup with international team", bangladeshiPresence: "Small but growing; South Asian tech community in Stockholm", biasLevel: "Low — diversity actively promoted, Swedes very inclusive professionally" },
+    visaSponsorshipReality: { willingnessScore: 78, pospWpgpAdvantage: "Swedish PSW (12 months) gives time; employer sponsorship via work permit", studyPermitToPgwpSuccess: 82, sponsorshipCost: "Low-Medium", note: "Swedish Migration Agency (Migrationsverket) processes work permits; employer must show salary > SEK 27,360/month" },
+    salaryExpectations: { phdEntryLevel: "SEK 720,000-900,000/year", mscEntryLevel: "SEK 540,000-720,000/year", midLevel3to5yrs: "SEK 720,000-960,000/year", seniorLevel: "SEK 900,000-1,200,000/year", totalCompNote: "Lower than US/Switzerland but high quality of life; pension contributions are excellent" },
+    geographicVariation: {
+      stockholm: { jobDensity: 92, avgSalary: "SEK 680,000", costOfLivingIndex: 85, netBenefit: "Max jobs; housing is genuinely difficult — queue years for housing, subletting expensive" },
+      gothenburg: { jobDensity: 72, avgSalary: "SEK 610,000", costOfLivingIndex: 74, netBenefit: "Automotive tech hub; Volvo/Scania; better housing than Stockholm" },
+      malmö: { jobDensity: 55, avgSalary: "SEK 560,000", costOfLivingIndex: 68, netBenefit: "Close to Copenhagen (Øresund bridge); gaming and tech; most affordable of three" }
+    },
+    workCulture: { averageHoursPerWeek: 37, vacationDays: 25, sickLeaveDays: "Unlimited (80% pay)", parentalLeaveWeeks: 68, workFromHomeAcceptance: 90, diversityScore: 82, burnoutRisk: "Low", culturalFit: "Lagom philosophy — balance is paramount; flat hierarchy; consensus-driven decisions" },
+    careerGrowth: { pathToSenior: "4-6 years", pathToStaffPrincipal: "10-14 years", managementOpportunities: 72, technicalLadder: "Strong at Spotify, Klarna, Ericsson", entrepreneurshipSupport: 90, note: "Stockholm is #2 tech startup city in Europe per capita; Vinnova grants for AI research" },
+    foreignCredentialRecognition: { canadianMasterScore: 85, topUsPhd: 90, topEuPhd: 88, bangladeshUndergrad: 60, note: "KTH/Chalmers degree highly regarded in Swedish market; Swedish language for non-tech roles" },
+    layoffRisk2027to2029: { riskScore: 40, trend: "Stable; Swedish companies culturally averse to mass layoffs due to labor law (LAS)", protection: "LAS (Employment Protection Act) — last-in-first-out; strong union protection; 1-6 month notice periods" },
+    prPathwayIntegration: { jobRequiredForPr: true, skillClassEligibility: 85, crsPointsFromJob: "N/A", provinceNominationBoost: "N/A", note: "4 years legal residence (work) required for PR; Swedish language B1 practical requirement" },
+    longTermOutlook: { outlook2030: "Strong — Nordic tech ecosystem expanding; EU AI research investment", outlook2040: "Good — aging population creates labor need; green tech revolution", riskFactors: "Right-wing government tightening immigration; Swedish language barrier; expensive housing" },
+    strategicAdvice: "Sweden's work-life balance is genuinely the best in the world. Study at KTH/Chalmers (fully paid PhD), then target Spotify, Klarna, or Northvolt. CRITICAL: Learn Swedish to A2 during studies — B1 is needed for PR, and Swedish job market explodes open with language. Housing queue registration (Bostadskö) should start on Day 1 of arrival.",
+    confidenceScore: 88,
+    dataQuality: "High"
+  },
+  {
+    country: "Finland",
+    countryCode: "FI",
+    overallJobMarketScore: 75,
+    demandLevel: "High",
+    demandTrend: "Growing — severe tech labor shortage due to demographics",
+    marketSaturation: "Low-Medium",
+    averageTimeToJob: "3-5 months",
+    averageTimeToJobDays: 105,
+    jobOpeningsAnnual: 8000,
+    aiMlSpecificOpenings: 2000,
+    competitionLevel: 55,
+    jobSecurityScore: 88,
+    startupEcosystemScore: 80,
+    researchPositionsScore: 85,
+    remoteWorkCulture: 82,
+    workLifeBalanceScore: 92,
+    careerProgressionScore: 72,
+    majorHubs: ["Helsinki", "Espoo", "Tampere", "Oulu"],
+    topEmployers: ["Nokia Bell Labs", "Rovio (Angry Birds)", "Supercell", "KONE", "Neste", "Reaktor", "Wolt (DoorDash)", "F-Secure (WithSecure)", "Elisa", "Futurice"],
+    emergingCompanies: ["Speechly", "Aito.ai", "Saidot", "Lassie", "Leanheat"],
+    skillsInDemand: ["Network AI (Nokia)", "Game AI (Rovio/Supercell)", "Industrial IoT AI (KONE)", "NLP Finnish language", "Computer Vision", "Embedded ML", "Privacy-preserving AI"],
+    industriesHiring: [
+      { sector: "Telecom & Network AI", demandScore: 88, salaryRange: "EUR 55,000-90,000", note: "Nokia Bell Labs is a major research employer; 5G/6G AI is the core focus area" },
+      { sector: "Gaming", demandScore: 85, salaryRange: "EUR 50,000-85,000", note: "Supercell, Rovio, Remedy — Finland is world-class in mobile/PC gaming AI" },
+      { sector: "Industrial Automation", demandScore: 78, salaryRange: "EUR 52,000-82,000", note: "KONE elevators, Metso — predictive maintenance AI, digital twin technology" },
+      { sector: "Logistics & Delivery Tech", demandScore: 80, salaryRange: "EUR 50,000-80,000", note: "Wolt (acquired by DoorDash) — recommendation systems, route optimization ML" },
+      { sector: "Cybersecurity", demandScore: 75, salaryRange: "EUR 55,000-88,000", note: "WithSecure (F-Secure) — threat detection ML; SSH Communications Security" }
+    ],
+    entryLevelReality: { easiestEntry: "Nokia (large hiring pipeline), Wolt, game studios", hardestEntry: "Supercell (extremely selective)", sweetSpot: "Mid-size Finnish tech company or consultancy (Reaktor, Futurice, Gofore)", bangladeshiPresence: "Very small; South Asian community limited; Espoo has a diverse expat community", biasLevel: "Low professionally; Finns are reserved but fair; English widely used in tech" },
+    visaSponsorshipReality: { willingnessScore: 85, pospWpgpAdvantage: "Finnish residence permit for employment — straightforward process; 2yr job seeker permit from Migrationsverket", studyPermitToPgwpSuccess: 88, sponsorshipCost: "Low", note: "Finland has severe labor shortage — employers NEED international graduates; ENTER market now" },
+    salaryExpectations: { phdEntryLevel: "EUR 55,000-75,000", mscEntryLevel: "EUR 45,000-65,000", midLevel3to5yrs: "EUR 65,000-85,000", seniorLevel: "EUR 80,000-120,000", totalCompNote: "Lower than Netherlands/Switzerland but comprehensive benefits; meals, transport, leisure subsidized by employer" },
+    geographicVariation: {
+      helsinki: { jobDensity: 88, avgSalary: "EUR 58,000", costOfLivingIndex: 82, netBenefit: "90% of Finnish tech jobs; reasonable rent EUR 1,100-1,600 for 1BR" },
+      espoo: { jobDensity: 80, avgSalary: "EUR 60,000", costOfLivingIndex: 80, netBenefit: "Nokia HQ, Aalto University — strongest AI research cluster; slightly lower rent than Helsinki" },
+      tampere: { jobDensity: 55, avgSalary: "EUR 52,000", costOfLivingIndex: 68, netBenefit: "Emerging tech hub; Microsoft, Ericsson offices; most affordable major city" }
+    },
+    workCulture: { averageHoursPerWeek: 37, vacationDays: 30, sickLeaveDays: "Unlimited (80% pay via Kela)", parentalLeaveWeeks: 72, workFromHomeAcceptance: 88, diversityScore: 78, burnoutRisk: "Very Low", culturalFit: "Finnish culture values silence, directness, and competence over social performance; no small talk expected" },
+    careerGrowth: { pathToSenior: "4-5 years", pathToStaffPrincipal: "8-12 years", managementOpportunities: 68, technicalLadder: "Well developed at Nokia, Wolt", entrepreneurshipSupport: 85, note: "Business Finland funds AI startups; Aalto entrepreneurship ecosystem world-class" },
+    foreignCredentialRecognition: { canadianMasterScore: 82, topUsPhd: 88, topEuPhd: 88, bangladeshUndergrad: 60, note: "Finnish/EU degree preferred; English-language Aalto/UHelsinki degree very strong in market" },
+    layoffRisk2027to2029: { riskScore: 35, trend: "Very stable; Finnish employment law strict; Nokia restructuring risk noted but overall market healthy", protection: "Strong union protections; YT (collective bargaining) process; generous severance" },
+    prPathwayIntegration: { jobRequiredForPr: true, skillClassEligibility: 90, crsPointsFromJob: "N/A", provinceNominationBoost: "N/A", note: "CRITICAL: Since 2022, study years count toward PR. MSc = 2yr toward the 4yr requirement. Only need 2 more years of work for PR — fastest in EU!" },
+    longTermOutlook: { outlook2030: "Very strong — worst tech labor shortage in Europe; government actively begging for skilled immigrants", outlook2040: "Excellent — demographic crisis structural, immigration demand permanent; AI national priority", riskFactors: "Finnish language for citizenship; social isolation risk for non-EU immigrants" },
+    strategicAdvice: "Finland is the most underrated destination for Bangladeshi CS graduates. Study years count toward PR, making it the fastest PR pathway in Europe. Aalto University AI programs are world-class. Nokia provides stable entry employment. CRITICAL: Register for Finnish language course on Day 1 — Finnish language opens the market 10x and is needed for citizenship.",
+    confidenceScore: 87,
+    dataQuality: "High"
+  },
+  {
+    country: "Denmark",
+    countryCode: "DK",
+    overallJobMarketScore: 82,
+    demandLevel: "High",
+    demandTrend: "Strong — life sciences AI, renewable energy, and gaming",
+    marketSaturation: "Medium",
+    averageTimeToJob: "3-5 months",
+    averageTimeToJobDays: 105,
+    jobOpeningsAnnual: 10000,
+    aiMlSpecificOpenings: 2800,
+    competitionLevel: 68,
+    jobSecurityScore: 85,
+    startupEcosystemScore: 82,
+    researchPositionsScore: 85,
+    remoteWorkCulture: 88,
+    workLifeBalanceScore: 95,
+    careerProgressionScore: 78,
+    majorHubs: ["Copenhagen", "Aarhus", "Odense"],
+    topEmployers: ["Novo Nordisk (AI in drug discovery)", "Vestas (wind energy AI)", "Maersk (logistics AI)", "Ørsted (offshore wind AI)", "LEGO Group Tech", "Unity Technologies", "Netcompany", "Systematic", "Milestone Systems"],
+    emergingCompanies: ["Corti", "Liqtech", "Templafy", "Contractbook", "Pleo"],
+    skillsInDemand: ["Life Sciences AI (drug discovery)", "Renewable Energy optimization ML", "Computer Vision (industrial)", "NLP Danish language", "Logistics AI (Maersk)", "Digital Twin technology"],
+    industriesHiring: [
+      { sector: "Life Sciences & BioTech AI", demandScore: 95, salaryRange: "DKK 600,000-900,000/year", note: "Novo Nordisk is world's most valuable European company — massive AI investment in GLP-1/diabetes AI" },
+      { sector: "Green Energy AI", demandScore: 88, salaryRange: "DKK 550,000-800,000/year", note: "Vestas, Ørsted — ML for wind turbine optimization, grid balancing; world-leading sector" },
+      { sector: "Logistics & Shipping AI", demandScore: 82, salaryRange: "DKK 520,000-780,000/year", note: "Maersk (shipping), DSV (logistics) — route optimization, predictive maintenance" },
+      { sector: "Gaming & Simulation", demandScore: 78, salaryRange: "DKK 480,000-720,000/year", note: "Unity HQ in Copenhagen — game engine AI; LEGO Group tech division" },
+      { sector: "HealthTech", demandScore: 85, salaryRange: "DKK 530,000-800,000/year", note: "Corti (AI in healthcare calls), Monsenso — Denmark's strong healthcare AI ecosystem" }
+    ],
+    entryLevelReality: { easiestEntry: "Consultancies (Netcompany, Systematic), HealthTech startups", hardestEntry: "Novo Nordisk research (requires PhD preferably)", sweetSpot: "Corti, Pleo, or Templafy — well-funded Copenhagen startups", bangladeshiPresence: "Very small; diverse expat community in Copenhagen exists", biasLevel: "Low — Danish work culture extremely merit-based and egalitarian" },
+    visaSponsorshipReality: { willingnessScore: 80, pospWpgpAdvantage: "3yr job seeker visa (introduced 2023) is excellent; SIRI handles permits", studyPermitToPgwpSuccess: 85, sponsorshipCost: "Low", note: "Fast-track scheme for highly qualified workers; tech roles qualify automatically; employer registers on SIRI portal" },
+    salaryExpectations: { phdEntryLevel: "DKK 700,000-900,000/year", mscEntryLevel: "DKK 540,000-720,000/year", midLevel3to5yrs: "DKK 720,000-960,000/year", seniorLevel: "DKK 900,000-1,300,000/year", totalCompNote: "HIGHEST PhD salaries in Europe — DTU PhD students earn DKK 450,000/year as employees" },
+    geographicVariation: {
+      copenhagen: { jobDensity: 92, avgSalary: "DKK 680,000", costOfLivingIndex: 90, netBenefit: "Max tech jobs; rent DKK 12,000-17,000 for 1BR; Novo Nordisk and all HQs here" },
+      aarhus: { jobDensity: 65, avgSalary: "DKK 600,000", costOfLivingIndex: 78, netBenefit: "Denmark's second city; university and Vestas presence; lower rent" },
+      odense: { jobDensity: 48, avgSalary: "DKK 560,000", costOfLivingIndex: 70, netBenefit: "Robotics cluster (Universal Robots); affordable; growing tech scene" }
+    },
+    workCulture: { averageHoursPerWeek: 37, vacationDays: 25, sickLeaveDays: "Unlimited (employer-funded 1st month, then state)", parentalLeaveWeeks: 52, workFromHomeAcceptance: 90, diversityScore: 80, burnoutRisk: "Very Low", culturalFit: "Janteloven (no showing off); flat hierarchy; highly trusting management culture; coffee culture essential" },
+    careerGrowth: { pathToSenior: "4-6 years", pathToStaffPrincipal: "10-14 years", managementOpportunities: 72, technicalLadder: "Strong in larger firms", entrepreneurshipSupport: 82, note: "Innovation Fund Denmark provides DKK 5B+ annually for research/startup collaboration" },
+    foreignCredentialRecognition: { canadianMasterScore: 85, topUsPhd: 90, topEuPhd: 88, bangladeshUndergrad: 60, note: "DTU (Technical University of Denmark) degree is globally respected; English-taught programs standard" },
+    layoffRisk2027to2029: { riskScore: 38, trend: "Very stable; flexicurity model — easy to hire/fire BUT generous unemployment benefits (90% of salary for 2yrs)", protection: "Flexicurity system unique globally: employers can lay off easily, but government provides comprehensive support" },
+    prPathwayIntegration: { jobRequiredForPr: true, skillClassEligibility: 75, crsPointsFromJob: "N/A", provinceNominationBoost: "N/A", note: "WARNING: Denmark PR requires 8 years (or 4 years for elite scheme). Citizenship needs 9 years + Danish language. Very restrictive." },
+    longTermOutlook: { outlook2030: "Very strong — Novo Nordisk success driving massive investment; green energy world leader", outlook2040: "Strong — demographic need, but very restrictive citizenship makes long-term integration hard", riskFactors: "Extremely difficult PR/citizenship path; Danish language required; limited community for BD nationals" },
+    strategicAdvice: "Denmark offers the highest PhD salaries in Europe and world-leading AI in life sciences and renewable energy. HOWEVER: the PR and citizenship pathways are the most restrictive in Northern Europe. Target Denmark for a 5-7 year career booster, accumulating savings and publications, then transition to Ireland or Canada for PR. Do NOT choose Denmark as your PR destination.",
+    confidenceScore: 88,
+    dataQuality: "High"
+  },
+  {
+    country: "Norway",
+    countryCode: "NO",
+    overallJobMarketScore: 76,
+    demandLevel: "Moderate-High",
+    demandTrend: "Stable — energy AI is the dominant sector",
+    marketSaturation: "Low-Medium",
+    averageTimeToJob: "4-6 months",
+    averageTimeToJobDays: 135,
+    jobOpeningsAnnual: 7000,
+    aiMlSpecificOpenings: 1800,
+    competitionLevel: 55,
+    jobSecurityScore: 90,
+    startupEcosystemScore: 70,
+    researchPositionsScore: 80,
+    remoteWorkCulture: 80,
+    workLifeBalanceScore: 96,
+    careerProgressionScore: 70,
+    majorHubs: ["Oslo", "Bergen", "Trondheim"],
+    topEmployers: ["Equinor (energy AI)", "DNV (certification AI)", "Kongsberg (defense AI)", "Telenor", "SINTEF (research)", "Opera Software", "Aker Solutions", "Schibsted", "Crayon"],
+    emergingCompanies: ["Cognite", "Boost.ai", "Sbanken", "NorSIS", "Xplore Technologies"],
+    skillsInDemand: ["Energy AI (Equinor digital twin)", "Subsea robotics AI", "NLP Norwegian language", "Computer Vision industrial", "Time-series ML (oil & gas)", "Cloud AI (Azure dominant)"],
+    industriesHiring: [
+      { sector: "Energy & Oil AI", demandScore: 92, salaryRange: "NOK 700,000-1,100,000/year", note: "Equinor's AI program is among Europe's largest; Cognite (data platform) is a unicorn focused on energy AI" },
+      { sector: "Maritime & Subsea Tech", demandScore: 80, salaryRange: "NOK 650,000-950,000/year", note: "Kongsberg, Rolls-Royce Marine — autonomous shipping AI, subsea inspection robotics" },
+      { sector: "Telecoms & Media", demandScore: 72, salaryRange: "NOK 580,000-850,000/year", note: "Telenor, Schibsted — recommendation systems, content AI, fraud detection" },
+      { sector: "Public Sector & Research", demandScore: 78, salaryRange: "NOK 550,000-800,000/year", note: "SINTEF, NTNU spin-outs — well-funded applied AI research; very stable employment" }
+    ],
+    entryLevelReality: { easiestEntry: "Cognite (English-friendly), SINTEF research positions", hardestEntry: "Equinor direct product teams (mostly Norwegian-speaking)", sweetSpot: "Energy tech startups or tech consultancies in Oslo", bangladeshiPresence: "Very small; South Asian community mostly in Oslo", biasLevel: "Low — Norwegians fair but reserved; English widely used in tech" },
+    visaSponsorshipReality: { willingnessScore: 80, pospWpgpAdvantage: "1yr job seeker visa; Norwegian employer must satisfy UDI requirements", studyPermitToPgwpSuccess: 80, sponsorshipCost: "Low", note: "UDI (Norwegian immigration) efficient; employer-sponsored work permits process in 2-4 weeks" },
+    salaryExpectations: { phdEntryLevel: "NOK 700,000-850,000/year", mscEntryLevel: "NOK 580,000-720,000/year", midLevel3to5yrs: "NOK 750,000-950,000/year", seniorLevel: "NOK 950,000-1,400,000/year", totalCompNote: "HIGHEST nominal salaries in Europe due to oil wealth; real purchasing power exceptional due to strong welfare state" },
+    geographicVariation: {
+      oslo: { jobDensity: 88, avgSalary: "NOK 720,000", costOfLivingIndex: 95, netBenefit: "Most jobs but expensive — 1BR NOK 16,000-22,000/month" },
+      trondheim: { jobDensity: 65, avgSalary: "NOK 640,000", costOfLivingIndex: 75, netBenefit: "NTNU university town; research and tech; much more affordable; vibrant student city" },
+      bergen: { jobDensity: 52, avgSalary: "NOK 620,000", costOfLivingIndex: 80, netBenefit: "Subsea tech and maritime AI; beautiful city; second tier for tech jobs" }
+    },
+    workCulture: { averageHoursPerWeek: 37.5, vacationDays: 25, sickLeaveDays: "Unlimited (100% pay via NAV)", parentalLeaveWeeks: 49, workFromHomeAcceptance: 85, diversityScore: 75, burnoutRisk: "Very Low", culturalFit: "Similar to Sweden — flat, egalitarian, consensus-driven; Friluftsliv (outdoor life) is paramount" },
+    careerGrowth: { pathToSenior: "4-6 years", pathToStaffPrincipal: "10-14 years", managementOpportunities: 70, technicalLadder: "Well developed in energy tech", entrepreneurshipSupport: 78, note: "Norwegian Sovereign Wealth Fund invests in technology; Innovation Norway provides startup grants" },
+    foreignCredentialRecognition: { canadianMasterScore: 82, topUsPhd: 88, topEuPhd: 86, bangladeshUndergrad: 60, note: "NTNU (Trondheim) degree highly respected in Nordic market; Norwegian language critical long-term" },
+    layoffRisk2027to2029: { riskScore: 30, trend: "Very stable; oil wealth insulates economy; Equinor's digital transformation is permanent structural investment", protection: "Strongest employment protections in Europe; NAV safety net extraordinarily generous" },
+    prPathwayIntegration: { jobRequiredForPr: true, skillClassEligibility: 82, crsPointsFromJob: "N/A", provinceNominationBoost: "N/A", note: "3 years full-time work for PR (Settlement Permit); Norwegian A2 language required; 7 years for citizenship" },
+    longTermOutlook: { outlook2030: "Strong — energy transition is Norway's multi-trillion investment; Equinor AI is a decade-long build", outlook2040: "Good — sovereign wealth fund provides economic immunity from global shocks; aging population needs immigrants", riskFactors: "Language barrier; extreme climate (dark winters); small tech market outside energy sector" },
+    strategicAdvice: "Norway is the highest-paying destination in Europe for energy AI specialists. The Sovereign Wealth Fund ensures economic stability unmatched anywhere. HOWEVER: it is only valuable if you work in energy tech (Equinor, Kongsberg, Cognite). For pure ML research or consumer tech, Sweden or Germany is better. Learn Norwegian A2 minimum before arrival.",
+    confidenceScore: 86,
+    dataQuality: "High"
+  }
+];
+
+upgrades.forEach(upgrade => {
+  const idx = data.jobMarkets.findIndex(j => j.country === upgrade.country);
+  if (idx !== -1) {
+    data.jobMarkets[idx] = upgrade;
+  } else {
+    data.jobMarkets.push(upgrade);
+  }
+});
+
+fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+console.log('job-market.json: Ireland, Sweden, Finland, Denmark, Norway upgraded!');

@@ -1329,6 +1329,622 @@
         "cscCoversAllIfGranted": true,
         "physicalExamInChina": "CNY 600-900"
       }
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "generalDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All semesters. Must be official sealed copies from registrar. Attested by Ministry of Education, Bangladesh then Ministry of Foreign Affairs.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "UIU/AUST Registrar: 3-7 days; MoE attestation: 1-2 weeks; MoFA: 3-5 days"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Original + 3 notarized copies. Same attestation chain as transcripts.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "Issued 1-3 days after graduation; attestation 2-3 weeks total"
+        },
+        {
+          "document": "IELTS Certificate",
+          "details": "Academic IELTS only (not General). Valid 2 years from test date. Minimum overall 6.5 (most universities).",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "13 days post-exam; book British Council/IDP Dhaka"
+        },
+        {
+          "document": "Statement of Purpose (SOP)",
+          "details": "800-1,500 words. Country-specific research focus required.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared; allow 2-4 weeks iteration"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2-3 letters. At least one from research supervisor. Sent directly by professor on university letterhead.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks; request early"
+        },
+        {
+          "document": "Curriculum Vitae / Resume",
+          "details": "Academic CV format. Include GPA, publications, research projects.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Passport Copy",
+          "details": "Valid minimum 24 months beyond program end. Renew via DIP Agargaon if needed.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "New passport: 7-10 days urgent; 3-4 weeks regular"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Visa (Type D) Application",
+          "details": "Apply at Austrian Embassy Dhaka (House 35, Road 71, Gulshan 2). Long-stay visa for full duration. Requires admission letter, blocked account proof (EUR 1,100/month = EUR 13,200 in Fintiba/Coracle), health insurance.",
+          "processingTime": "6-10 weeks"
+        },
+        {
+          "document": "Blocked Account (Fintiba/Coracle)",
+          "details": "EUR 13,200 minimum for one year. Wire transfer from Bangladesh takes 7-14 days. Apply online. Account approved in 3-7 days after funding.",
+          "processingTime": "10-21 days total including wire transfer"
+        },
+        {
+          "document": "Health Insurance",
+          "details": "OEGK or private student insurance minimum EUR 30,000 coverage. Must be valid from Day 1 of travel.",
+          "processingTime": "Purchase online; 1-2 days"
+        },
+        {
+          "document": "Police Clearance Certificate (Bangladesh)",
+          "details": "Apply via pcc.police.gov.bd; submit at Ramna Police HQ. Required for visa application.",
+          "processingTime": "4-8 weeks"
+        },
+        {
+          "document": "Proof of Accommodation",
+          "details": "University housing offer or signed rental agreement. Required for visa application.",
+          "processingTime": "Secure 4-6 weeks before visa appointment"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Attestation chain: University Registrar → Ministry of Education → Ministry of Foreign Affairs → Austrian Embassy Dhaka (legalization/apostille)",
+        "Austrian Embassy in Gulshan 2 — book appointment online (oea.bmeia.gv.at)",
+        "German translation of key documents (transcripts, degree) required by Austrian authorities — use certified translator in Dhaka",
+        "Fintiba account must be in student's name — cannot use family member's account",
+        "APS certificate NOT required for Austria (only Germany)"
+      ],
+      "keyDeadlines": {
+        "fallIntake": "October 1 - January 15",
+        "winterIntake": "June 1 - September 1",
+        "visaApplyAfterAdmission": "Apply immediately on receiving unconditional offer letter"
+      },
+      "estimatedCosts": {
+        "applicationFees": "EUR 100-200 per university",
+        "studyPermitFee": "EUR 160 (long-stay visa D)",
+        "biometricFee": "EUR 25",
+        "medicalExam": "Not standard for Austria student visa",
+        "attestationCosts": "BDT 3,000-8,000 per document chain"
+      }
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "generalDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All semesters. Must be official sealed copies from registrar. Attested by Ministry of Education, Bangladesh then Ministry of Foreign Affairs.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "UIU/AUST Registrar: 3-7 days; MoE attestation: 1-2 weeks; MoFA: 3-5 days"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Original + 3 notarized copies. Same attestation chain as transcripts.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "Issued 1-3 days after graduation; attestation 2-3 weeks total"
+        },
+        {
+          "document": "IELTS Certificate",
+          "details": "Academic IELTS only (not General). Valid 2 years from test date. Minimum overall 6.5 (most universities).",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "13 days post-exam; book British Council/IDP Dhaka"
+        },
+        {
+          "document": "Statement of Purpose (SOP)",
+          "details": "800-1,500 words. Country-specific research focus required.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared; allow 2-4 weeks iteration"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2-3 letters. At least one from research supervisor. Sent directly by professor on university letterhead.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks; request early"
+        },
+        {
+          "document": "Curriculum Vitae / Resume",
+          "details": "Academic CV format. Include GPA, publications, research projects.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Passport Copy",
+          "details": "Valid minimum 24 months beyond program end. Renew via DIP Agargaon if needed.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "New passport: 7-10 days urgent; 3-4 weeks regular"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Long-stay Visa (Type D) Application",
+          "details": "Apply at Belgian Embassy Dhaka (Suvastu Zara Tower, 11 Gulshan Ave). Letter of acceptance from Belgian university (COE) required. Proof of financial means: EUR 800/month or scholarship letter.",
+          "processingTime": "6-10 weeks"
+        },
+        {
+          "document": "COE (Certificate of Enrollment)",
+          "details": "Issued by Belgian university after unconditional acceptance. The primary visa trigger document.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Financial Proof",
+          "details": "EUR 800/month × duration OR scholarship letter covering full amount. Bank statement 6 months history OR Fintiba/blocked account.",
+          "processingTime": "Bank statement: 1-3 days; blocked account: 2-3 weeks"
+        },
+        {
+          "document": "Health Insurance",
+          "details": "RIZIV/INAMI-affiliated mutualité (health insurance fund) — student joins on arrival. Temporary private insurance needed for visa application.",
+          "processingTime": "Purchase online; 1-2 days"
+        },
+        {
+          "document": "Police Clearance Certificate",
+          "details": "Required. From Bangladesh Police (pcc.police.gov.bd).",
+          "processingTime": "4-8 weeks"
+        },
+        {
+          "document": "Registration at Municipal Office (Commune)",
+          "details": "On arrival, register at local commune within 8 days. Required for legal residency.",
+          "processingTime": "1-2 hours; bring passport + COE + accommodation proof"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Belgian Embassy Dhaka: appointment via VFS Global system",
+        "VLIR-UOS applicants: scholarship documentation replaces financial proof entirely",
+        "Registration at commune on arrival is MANDATORY — failure to register creates legal status issues",
+        "Attestation chain same as standard: University → MoE → MoFA → Belgian Embassy",
+        "French translation for Wallonia universities; Dutch translation for Flemish universities (Ghent, Leuven)"
+      ],
+      "keyDeadlines": {
+        "fallIntake": "October 1 - January 15",
+        "winterIntake": "June 1 - September 1",
+        "visaApplyAfterAdmission": "Apply immediately on receiving unconditional offer letter"
+      },
+      "estimatedCosts": {
+        "applicationFees": "EUR 100-200 per university",
+        "studyPermitFee": "EUR 180 (long-stay visa D)",
+        "biometricFee": "Included in VFS fee",
+        "medicalExam": "Not standard for Belgium",
+        "attestationCosts": "BDT 3,000-8,000 per document"
+      }
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "generalDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All semesters. Must be official sealed copies from registrar. Attested by Ministry of Education, Bangladesh then Ministry of Foreign Affairs.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "UIU/AUST Registrar: 3-7 days; MoE attestation: 1-2 weeks; MoFA: 3-5 days"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Original + 3 notarized copies. Same attestation chain as transcripts.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "Issued 1-3 days after graduation; attestation 2-3 weeks total"
+        },
+        {
+          "document": "IELTS Certificate",
+          "details": "Academic IELTS only (not General). Valid 2 years from test date. Minimum overall 6.5 (most universities).",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "13 days post-exam; book British Council/IDP Dhaka"
+        },
+        {
+          "document": "Statement of Purpose (SOP)",
+          "details": "800-1,500 words. Country-specific research focus required.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared; allow 2-4 weeks iteration"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2-3 letters. At least one from research supervisor. Sent directly by professor on university letterhead.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks; request early"
+        },
+        {
+          "document": "Curriculum Vitae / Resume",
+          "details": "Academic CV format. Include GPA, publications, research projects.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Passport Copy",
+          "details": "Valid minimum 24 months beyond program end. Renew via DIP Agargaon if needed.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "New passport: 7-10 days urgent; 3-4 weeks regular"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Visa Application",
+          "details": "Apply online via Immigration New Zealand (INZ) portal (immigration.govt.nz). Offer of Place from NZQA-recognized provider required. Financial evidence: NZD 15,000/year minimum.",
+          "processingTime": "4-8 weeks online"
+        },
+        {
+          "document": "Offer of Place",
+          "details": "Unconditional acceptance letter from NZ university. Triggers visa application.",
+          "processingTime": "Issued by university"
+        },
+        {
+          "document": "Financial Evidence",
+          "details": "NZD 15,000/year in bank statement or scholarship letter. 6-month bank statement history.",
+          "processingTime": "1-3 days for bank statement"
+        },
+        {
+          "document": "Health and Character Requirements",
+          "details": "Chest X-ray and medical if from high TB-risk country (Bangladesh requires upfront medical). NZ Panel Physician in Dhaka.",
+          "processingTime": "Medical exam 1 day; results 3-7 days to upload"
+        },
+        {
+          "document": "Police Certificate",
+          "details": "Police Clearance from Bangladesh (pcc.police.gov.bd). Required as character check.",
+          "processingTime": "4-8 weeks"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "NZ Student Visa is applied entirely online — no embassy visit required in Bangladesh",
+        "Chest X-ray from NZ-approved Panel Physician in Dhaka is mandatory (required upfront for most BD applicants)",
+        "Financial evidence is simpler than EU countries — direct bank statement widely accepted",
+        "Biometrics collected at VFS Global Dhaka after visa approval",
+        "Trans-Tasman Travel Agreement means NZ PR holders can live/work in Australia — very strategically important"
+      ],
+      "keyDeadlines": {
+        "fallIntake": "October 1 - January 15",
+        "winterIntake": "June 1 - September 1",
+        "visaApplyAfterAdmission": "Apply immediately on receiving unconditional offer letter"
+      },
+      "estimatedCosts": {
+        "applicationFees": "NZD 100-250 per university",
+        "studyPermitFee": "NZD 375 (student visa)",
+        "biometricFee": "NZD 78",
+        "medicalExam": "USD 100-150 at Panel Physician",
+        "attestationCosts": "BDT 2,000-5,000 (simpler than EU)"
+      }
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "generalDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All semesters. Must be official sealed copies from registrar. Attested by Ministry of Education, Bangladesh then Ministry of Foreign Affairs.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "UIU/AUST Registrar: 3-7 days; MoE attestation: 1-2 weeks; MoFA: 3-5 days"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Original + 3 notarized copies. Same attestation chain as transcripts.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "Issued 1-3 days after graduation; attestation 2-3 weeks total"
+        },
+        {
+          "document": "IELTS Certificate",
+          "details": "Academic IELTS only (not General). Valid 2 years from test date. Minimum overall 6.5 (most universities).",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "13 days post-exam; book British Council/IDP Dhaka"
+        },
+        {
+          "document": "Statement of Purpose (SOP)",
+          "details": "800-1,500 words. Country-specific research focus required.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared; allow 2-4 weeks iteration"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2-3 letters. At least one from research supervisor. Sent directly by professor on university letterhead.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks; request early"
+        },
+        {
+          "document": "Curriculum Vitae / Resume",
+          "details": "Academic CV format. Include GPA, publications, research projects.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Passport Copy",
+          "details": "Valid minimum 24 months beyond program end. Renew via DIP Agargaon if needed.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "New passport: 7-10 days urgent; 3-4 weeks regular"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Student Pass (ICA)",
+          "details": "Applied via SOLAR+ system by your university on your behalf. You submit documents to university; university applies to ICA (Immigration and Checkpoints Authority). Approval rate for NUS/NTU admits near 100%.",
+          "processingTime": "4-6 weeks after university applies"
+        },
+        {
+          "document": "IPA (In-Principle Approval) Letter",
+          "details": "Received after Student Pass approval. Used to enter Singapore and collect physical pass.",
+          "processingTime": "Issued with Student Pass approval"
+        },
+        {
+          "document": "Financial Evidence",
+          "details": "SGD 10,000/year minimum. For SINGA scholars, scholarship letter replaces financial proof completely.",
+          "processingTime": "1-3 days for bank statement"
+        },
+        {
+          "document": "Medical Examination",
+          "details": "Required on arrival in Singapore — university coordinates. Includes chest X-ray and blood tests.",
+          "processingTime": "1 day; results 1-3 days"
+        },
+        {
+          "document": "Passport Photo",
+          "details": "Singapore-format photo (35mm × 45mm, white background, recent 6 months).",
+          "processingTime": "Immediate"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Singapore Student Pass is arranged by YOUR UNIVERSITY — you do NOT contact ICA directly",
+        "SINGA scholars: scholarship letter eliminates virtually all financial documentation requirements",
+        "Medical examination is done IN Singapore, not before departure — no pre-departure health checks required",
+        "Attendance must be ≥75% to maintain Student Pass validity — this is strictly enforced",
+        "Bring original degree and transcript for physical verification on arrival at NUS/NTU admissions office"
+      ],
+      "keyDeadlines": {
+        "fallIntake": "October 1 - January 15",
+        "winterIntake": "June 1 - September 1",
+        "visaApplyAfterAdmission": "Apply immediately on receiving unconditional offer letter"
+      },
+      "estimatedCosts": {
+        "applicationFees": "SGD 50-100 per university",
+        "studyPermitFee": "SGD 90 (student pass)",
+        "biometricFee": "Collected in Singapore",
+        "medicalExam": "Conducted in Singapore (university arranged)",
+        "attestationCosts": "BDT 2,000-4,000 (minimal — Singapore system is digital-friendly)"
+      }
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "generalDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All semesters. Must be official sealed copies from registrar. Attested by Ministry of Education, Bangladesh then Ministry of Foreign Affairs.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "UIU/AUST Registrar: 3-7 days; MoE attestation: 1-2 weeks; MoFA: 3-5 days"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Original + 3 notarized copies. Same attestation chain as transcripts.",
+          "attestationRequired": true,
+          "translationRequired": true,
+          "processingTime": "Issued 1-3 days after graduation; attestation 2-3 weeks total"
+        },
+        {
+          "document": "IELTS Certificate",
+          "details": "Academic IELTS only (not General). Valid 2 years from test date. Minimum overall 6.5 (most universities).",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "13 days post-exam; book British Council/IDP Dhaka"
+        },
+        {
+          "document": "Statement of Purpose (SOP)",
+          "details": "800-1,500 words. Country-specific research focus required.",
+          "attestationRequired": false,
+          "translationRequired": true,
+          "processingTime": "Self-prepared; allow 2-4 weeks iteration"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2-3 letters. At least one from research supervisor. Sent directly by professor on university letterhead.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks; request early"
+        },
+        {
+          "document": "Curriculum Vitae / Resume",
+          "details": "Academic CV format. Include GPA, publications, research projects.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Passport Copy",
+          "details": "Valid minimum 24 months beyond program end. Renew via DIP Agargaon if needed.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "New passport: 7-10 days urgent; 3-4 weeks regular"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Long-stay Student Visa (VLS-TS)",
+          "details": "Apply at VFS Global Dhaka (Nooks & Crannies Building, Banani). Campus France attestation mandatory — complete Campus France process FIRST (campusfrance.org/bd).",
+          "processingTime": "8-12 weeks; book appointment early"
+        },
+        {
+          "document": "Campus France Attestation",
+          "details": "MANDATORY for BD nationals. Create Campus France account → enter university selections → interview at Campus France Dhaka (House 8, Road 53, Gulshan 2) → receive attestation. Fee: BDT 15,000 approximately.",
+          "processingTime": "3-6 weeks for full Campus France process"
+        },
+        {
+          "document": "Financial Proof",
+          "details": "EUR 615/month minimum (EUR 7,380/year) for 12 months. Bank statement OR French government/Eiffel scholarship letter.",
+          "processingTime": "1-3 days"
+        },
+        {
+          "document": "Health Insurance",
+          "details": "Temporary travel insurance for visa (EUR 30,000 coverage). French students are automatically covered by la Sécurité Sociale on enrollment.",
+          "processingTime": "Purchase online; 1-2 days"
+        },
+        {
+          "document": "Accommodation Proof",
+          "details": "University housing offer OR Attestation d'Hébergement from French host.",
+          "processingTime": "University housing: confirm at registration"
+        },
+        {
+          "document": "OFII Registration",
+          "details": "On arrival in France, validate long-stay visa via OFII (Office Français de l'Immigration) within 3 months. Fee EUR 50.",
+          "processingTime": "Online; 1-2 weeks"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "Campus France Dhaka (Gulshan 2) is YOUR FIRST STOP — book appointment 3 months before your university deadline",
+        "VLS-TS must be validated via OFII within 3 months of arrival in France (EUR 50 online) — if missed, your residence status is invalid",
+        "French translation of transcripts and degree certificate required — use certified translator (Institut Français Dhaka can advise)",
+        "Alliance Française Dhaka (Mirpur Road, Dhanmondi) offers French language courses — start immediately",
+        "Attestation chain: University Registrar → MoE → MoFA → French Embassy (via VFS Global Banani)"
+      ],
+      "keyDeadlines": {
+        "fallIntake": "October 1 - January 15",
+        "winterIntake": "June 1 - September 1",
+        "visaApplyAfterAdmission": "Apply immediately on receiving unconditional offer letter"
+      },
+      "estimatedCosts": {
+        "applicationFees": "EUR 0-200 per university (most French public universities free to apply)",
+        "studyPermitFee": "EUR 99 (long-stay visa) + EUR 50 OFII",
+        "biometricFee": "EUR 25 at VFS",
+        "medicalExam": "Not required pre-departure",
+        "attestationCosts": "BDT 3,000-8,000 per document + translation costs BDT 2,000-5,000"
+      }
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "generalDocuments": [
+        {
+          "document": "Academic Transcripts",
+          "details": "All semesters. Must be official sealed copies from registrar. Attested by Ministry of Education, Bangladesh then Ministry of Foreign Affairs.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "UIU/AUST Registrar: 3-7 days; MoE attestation: 1-2 weeks; MoFA: 3-5 days"
+        },
+        {
+          "document": "Degree Certificate",
+          "details": "Original + 3 notarized copies. Same attestation chain as transcripts.",
+          "attestationRequired": true,
+          "translationRequired": false,
+          "processingTime": "Issued 1-3 days after graduation; attestation 2-3 weeks total"
+        },
+        {
+          "document": "IELTS Certificate",
+          "details": "Academic IELTS only (not General). Valid 2 years from test date. Minimum overall 6.5 (most universities).",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "13 days post-exam; book British Council/IDP Dhaka"
+        },
+        {
+          "document": "Statement of Purpose (SOP)",
+          "details": "800-1,500 words. Country-specific research focus required.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared; allow 2-4 weeks iteration"
+        },
+        {
+          "document": "Letters of Recommendation",
+          "details": "2-3 letters. At least one from research supervisor. Sent directly by professor on university letterhead.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "2-4 weeks; request early"
+        },
+        {
+          "document": "Curriculum Vitae / Resume",
+          "details": "Academic CV format. Include GPA, publications, research projects.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "Self-prepared"
+        },
+        {
+          "document": "Passport Copy",
+          "details": "Valid minimum 24 months beyond program end. Renew via DIP Agargaon if needed.",
+          "attestationRequired": false,
+          "translationRequired": false,
+          "processingTime": "New passport: 7-10 days urgent; 3-4 weeks regular"
+        }
+      ],
+      "visaDocuments": [
+        {
+          "document": "Entry Permit (Student)",
+          "details": "MBZUAI arranges the student entry permit through Abu Dhabi Department of Education and Knowledge (ADEK). You do NOT apply independently. University sends your documents to ADEK.",
+          "processingTime": "2-4 weeks after university processes"
+        },
+        {
+          "document": "Emirates ID Registration",
+          "details": "Done on arrival in Abu Dhabi. University arranges appointment at ICA (Federal Authority for Identity). Required for: bank account, SIM card, accommodation.",
+          "processingTime": "1-2 weeks after arrival"
+        },
+        {
+          "document": "Residence Visa Stamping",
+          "details": "Student residence visa stamped in passport after Emirates ID registration. Done by university PRO (Public Relations Officer).",
+          "processingTime": "1-2 weeks after Emirates ID"
+        },
+        {
+          "document": "Medical Fitness Test",
+          "details": "Required in UAE — blood test for HIV, Hepatitis B/C, TB. Conducted at Ministry of Health certified center in Abu Dhabi on arrival.",
+          "processingTime": "1-2 days; results same day or next day"
+        },
+        {
+          "document": "Health Insurance Card",
+          "details": "MBZUAI provides health insurance to all students. Abu Dhabi government-mandated health insurance.",
+          "processingTime": "Provided by university on arrival"
+        }
+      ],
+      "bangladeshSpecificSteps": [
+        "MBZUAI handles ALL visa logistics — your job is ONLY to submit your documents to MBZUAI admissions on time",
+        "Medical fitness test in UAE tests for HIV — positive result = residency permit denied and deportation under UAE law",
+        "No attestation by UAE Embassy needed (most documents) — MBZUAI verification system is sufficient",
+        "Bring sealed, original transcripts for physical verification at MBZUAI Office of Student Affairs",
+        "WhatsApp is the primary communication tool in UAE — save MBZUAI admissions WhatsApp number immediately"
+      ],
+      "keyDeadlines": {
+        "fallIntake": "October 1 - January 15",
+        "winterIntake": "June 1 - September 1",
+        "visaApplyAfterAdmission": "Apply immediately on receiving unconditional offer letter"
+      },
+      "estimatedCosts": {
+        "applicationFees": "AED 0 (MBZUAI application is free)",
+        "studyPermitFee": "AED 0 (all visa costs covered by MBZUAI scholarship)",
+        "biometricFee": "AED 0 (covered)",
+        "medicalExam": "AED 300-500 (fitness test in Abu Dhabi; some universities cover)",
+        "attestationCosts": "BDT 2,000-4,000 (minimal documentation required)"
+      }
     }
   ]
 }

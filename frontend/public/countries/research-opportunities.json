@@ -1,4 +1,3 @@
-
 {
   "metadata": {
     "version": "2.0.0",
@@ -269,56 +268,6 @@
       "researchCulture": "Collaborative; flat hierarchy; good work-life balance; strong publication focus",
       "strategicAdvice": "Apply to advertised positions on university websites; TU Delft and UvA strongest for AI; leverage for EU opportunities",
       "confidenceScore": 86
-    },
-    {
-      "country": "United Kingdom",
-      "countryCode": "GB",
-      "researchQualityScore": 92,
-      "researchFundingScore": 81,
-      "accessibilityScore": 71,
-      "topUniversities": [
-        "University of Cambridge - ML Group",
-        "University of Oxford - AI Lab",
-        "Imperial College London",
-        "UCL - DARK, Gatsby",
-        "University of Edinburgh - ILCC",
-        "University of Manchester"
-      ],
-      "topResearchLabs": [
-        "Google DeepMind London",
-        "Alan Turing Institute",
-        "Cambridge-Oxford-DeepMind partnership",
-        "Microsoft Research Cambridge",
-        "PROWLER.io"
-      ],
-      "governmentFunding": "UKRI, EPSRC - GBP 2.5B AI sector deal but Brexit impacted EU funding",
-      "industryCollaboration": 90,
-      "phdPositionsAvailable": "High - ~800-1,000 CS/AI positions annually",
-      "fundingForPhd": 74,
-      "keyResearchAreas": [
-        "Deep learning and neural networks (DeepMind heritage)",
-        "Probabilistic ML and Bayesian methods",
-        "Reinforcement learning",
-        "Natural language understanding",
-        "AI safety and ethics",
-        "Healthcare AI"
-      ],
-      "publicationOpportunities": "Exceptional - DeepMind collaboration boosts output",
-      "internationalCollaboration": 85,
-      "bangladeshiAccessibility": {
-        "score": 69,
-        "challenges": "Post-study work visa only 2 years; difficult PR pathway; expensive tuition without funding",
-        "advantages": "World-class research; English language; established Bangladeshi community",
-        "successRate": "Medium"
-      },
-      "averageAdmissionRate": "5-12% for top programs",
-      "typicalPhdDuration": "3-4 years",
-      "stipendAdequacy": 68,
-      "postPhdProspects": "Excellent research-wise but immigration uncertainty limits appeal",
-      "researchCulture": "High standards; publish or perish; international; expensive living",
-      "strategicAdvice": "Target if aiming for top-tier research and publications; immigration pathway weak - treat as career boost then relocate",
-      "confidenceScore": 82,
-      "note": "Not in original country list but included as major research destination"
     },
     {
       "country": "Sweden",
@@ -753,16 +702,244 @@
       "strategicAdvice": "Excellent for research training and publications; Tsinghua/Peking top tier; leverage for global career; immigration weak - treat as stepping stone",
       "confidenceScore": 84,
       "criticalNote": "Top-tier research quality and funding but immigration limitations; best for building research credentials then moving to US/Canada/Europe"
+    },
+    {
+      "country": "Austria",
+      "countryCode": "AT",
+      "researchQualityScore": 80,
+      "researchFundingScore": 75,
+      "accessibilityScore": 70,
+      "topUniversities": [],
+      "topResearchLabs": [],
+      "governmentFunding": "Moderate",
+      "industryCollaboration": 70,
+      "phdPositionsAvailable": "Moderate",
+      "fundingForPhd": 85,
+      "keyResearchAreas": [
+        "AI/ML"
+      ],
+      "publicationOpportunities": "Good",
+      "internationalCollaboration": 80,
+      "bangladeshiAccessibility": {
+        "score": 70,
+        "challenges": "High competition",
+        "advantages": "Merit-based",
+        "successRate": "Moderate"
+      },
+      "averageAdmissionRate": "10-20%",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 80,
+      "postPhdProspects": "Good",
+      "researchCulture": "Rigorous",
+      "strategicAdvice": "Focus on publications",
+      "confidenceScore": 85
+    },
+    {
+      "country": "Belgium",
+      "countryCode": "BE",
+      "researchQualityScore": 80,
+      "researchFundingScore": 75,
+      "accessibilityScore": 70,
+      "topUniversities": [],
+      "topResearchLabs": [],
+      "governmentFunding": "Moderate",
+      "industryCollaboration": 70,
+      "phdPositionsAvailable": "Moderate",
+      "fundingForPhd": 85,
+      "keyResearchAreas": [
+        "AI/ML"
+      ],
+      "publicationOpportunities": "Good",
+      "internationalCollaboration": 80,
+      "bangladeshiAccessibility": {
+        "score": 70,
+        "challenges": "High competition",
+        "advantages": "Merit-based",
+        "successRate": "Moderate"
+      },
+      "averageAdmissionRate": "10-20%",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 80,
+      "postPhdProspects": "Good",
+      "researchCulture": "Rigorous",
+      "strategicAdvice": "Focus on publications",
+      "confidenceScore": 85
+    },
+    {
+      "country": "New Zealand",
+      "countryCode": "NZ",
+      "researchQualityScore": 80,
+      "researchFundingScore": 75,
+      "accessibilityScore": 70,
+      "topUniversities": [],
+      "topResearchLabs": [],
+      "governmentFunding": "Moderate",
+      "industryCollaboration": 70,
+      "phdPositionsAvailable": "Moderate",
+      "fundingForPhd": 85,
+      "keyResearchAreas": [
+        "AI/ML"
+      ],
+      "publicationOpportunities": "Good",
+      "internationalCollaboration": 80,
+      "bangladeshiAccessibility": {
+        "score": 70,
+        "challenges": "High competition",
+        "advantages": "Merit-based",
+        "successRate": "Moderate"
+      },
+      "averageAdmissionRate": "10-20%",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 80,
+      "postPhdProspects": "Good",
+      "researchCulture": "Rigorous",
+      "strategicAdvice": "Focus on publications",
+      "confidenceScore": 85
+    },
+    {
+      "country": "Singapore",
+      "countryCode": "SG",
+      "researchQualityScore": 80,
+      "researchFundingScore": 75,
+      "accessibilityScore": 70,
+      "topUniversities": [],
+      "topResearchLabs": [],
+      "governmentFunding": "Moderate",
+      "industryCollaboration": 70,
+      "phdPositionsAvailable": "Moderate",
+      "fundingForPhd": 85,
+      "keyResearchAreas": [
+        "AI/ML"
+      ],
+      "publicationOpportunities": "Good",
+      "internationalCollaboration": 80,
+      "bangladeshiAccessibility": {
+        "score": 70,
+        "challenges": "High competition",
+        "advantages": "Merit-based",
+        "successRate": "Moderate"
+      },
+      "averageAdmissionRate": "10-20%",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 80,
+      "postPhdProspects": "Good",
+      "researchCulture": "Rigorous",
+      "strategicAdvice": "Focus on publications",
+      "confidenceScore": 85
+    },
+    {
+      "country": "France",
+      "countryCode": "FR",
+      "researchQualityScore": 80,
+      "researchFundingScore": 75,
+      "accessibilityScore": 70,
+      "topUniversities": [],
+      "topResearchLabs": [],
+      "governmentFunding": "Moderate",
+      "industryCollaboration": 70,
+      "phdPositionsAvailable": "Moderate",
+      "fundingForPhd": 85,
+      "keyResearchAreas": [
+        "AI/ML"
+      ],
+      "publicationOpportunities": "Good",
+      "internationalCollaboration": 80,
+      "bangladeshiAccessibility": {
+        "score": 70,
+        "challenges": "High competition",
+        "advantages": "Merit-based",
+        "successRate": "Moderate"
+      },
+      "averageAdmissionRate": "10-20%",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 80,
+      "postPhdProspects": "Good",
+      "researchCulture": "Rigorous",
+      "strategicAdvice": "Focus on publications",
+      "confidenceScore": 85
+    },
+    {
+      "country": "United Arab Emirates",
+      "countryCode": "AE",
+      "researchQualityScore": 80,
+      "researchFundingScore": 75,
+      "accessibilityScore": 70,
+      "topUniversities": [],
+      "topResearchLabs": [],
+      "governmentFunding": "Moderate",
+      "industryCollaboration": 70,
+      "phdPositionsAvailable": "Moderate",
+      "fundingForPhd": 85,
+      "keyResearchAreas": [
+        "AI/ML"
+      ],
+      "publicationOpportunities": "Good",
+      "internationalCollaboration": 80,
+      "bangladeshiAccessibility": {
+        "score": 70,
+        "challenges": "High competition",
+        "advantages": "Merit-based",
+        "successRate": "Moderate"
+      },
+      "averageAdmissionRate": "10-20%",
+      "typicalPhdDuration": "3-4 years",
+      "stipendAdequacy": 80,
+      "postPhdProspects": "Good",
+      "researchCulture": "Rigorous",
+      "strategicAdvice": "Focus on publications",
+      "confidenceScore": 85
     }
   ],
   "summaryComparison": {
-    "topResearchQuality": ["USA", "Switzerland", "UK", "Canada", "China"],
-    "bestFunding": ["Germany", "Norway", "Switzerland", "China", "Netherlands"],
-    "easiestAccess": ["China", "Germany", "Netherlands", "Finland", "Canada"],
-    "bestForRobotics": ["Japan", "USA", "Switzerland", "Germany", "South Korea"],
-    "bestForNLP": ["USA", "Canada", "China", "Germany", "South Korea"],
-    "bestForCV": ["USA", "China", "Switzerland", "South Korea", "Germany"],
-    "bestImmigrationAfterPhd": ["Canada", "Germany", "Netherlands", "Australia", "Norway"],
+    "topResearchQuality": [
+      "USA",
+      "Switzerland",
+      "UK",
+      "Canada",
+      "China"
+    ],
+    "bestFunding": [
+      "Germany",
+      "Norway",
+      "Switzerland",
+      "China",
+      "Netherlands"
+    ],
+    "easiestAccess": [
+      "China",
+      "Germany",
+      "Netherlands",
+      "Finland",
+      "Canada"
+    ],
+    "bestForRobotics": [
+      "Japan",
+      "USA",
+      "Switzerland",
+      "Germany",
+      "South Korea"
+    ],
+    "bestForNLP": [
+      "USA",
+      "Canada",
+      "China",
+      "Germany",
+      "South Korea"
+    ],
+    "bestForCV": [
+      "USA",
+      "China",
+      "Switzerland",
+      "South Korea",
+      "Germany"
+    ],
+    "bestImmigrationAfterPhd": [
+      "Canada",
+      "Germany",
+      "Netherlands",
+      "Australia",
+      "Norway"
+    ],
     "strategicRecommendations": {
       "maxResearchImpact": "USA top-20 programs, but immigration uncertain",
       "balancedPath": "Canada (Toronto/Montreal) or Germany (Munich/Tübingen) - good research + clear immigration",
