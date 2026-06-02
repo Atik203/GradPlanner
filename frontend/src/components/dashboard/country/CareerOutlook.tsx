@@ -2,14 +2,21 @@ import React from "react";
 import { CountryIntelligence } from "@/lib/countryData";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { BarChart3, Banknote, Briefcase } from "lucide-react";
+import { SalaryBand } from "@/types/countries";
 
 export function CareerOutlook({ data }: { data: CountryIntelligence }) {
   const salary = data.salary;
   const jobMarket = data.jobMarket;
 
-  const entryAi = salary?.entryLevel?.find(s => s.role.includes("AI") || s.role.includes("Machine Learning"))?.salary || "Unknown";
-  const midAi = salary?.midLevel?.find(s => s.role.includes("AI") || s.role.includes("Machine Learning") || s.role.includes("Data Scientist"))?.salary || "Unknown";
-  const seniorAi = salary?.seniorLevel?.find(s => s.role.includes("AI") || s.role.includes("Machine Learning") || s.role.includes("Senior"))?.salary || "Unknown";
+  const formatSalary = (band?: SalaryBand, currency?: string) => {
+    if (!band || !band.median) return "Unknown";
+    const symbol = currency || "";
+    return `${symbol} ${band.median.toLocaleString()}/yr`;
+  };
+
+  const entryAi = formatSalary(salary?.entryLevel?.mscGraduate, salary?.currency);
+  const midAi = formatSalary(salary?.midLevel3to5yrs, salary?.currency);
+  const seniorAi = formatSalary(salary?.seniorLevel, salary?.currency);
 
   return (
     <Card className="border-border/60 bg-card/20 backdrop-blur-md h-full">
@@ -43,15 +50,15 @@ export function CareerOutlook({ data }: { data: CountryIntelligence }) {
 
         <div className="space-y-1 pt-2">
           <span className="text-xs text-muted-foreground">Job Demand Trend</span>
-          <p className="text-sm font-semibold text-[var(--success)]">{jobMarket?.jobMarketOutlook || "Stable"}</p>
+          <p className="text-sm font-semibold text-[var(--success)]">{jobMarket?.demandTrend || "Stable"}</p>
         </div>
 
         <div className="space-y-2 pt-2 border-t border-border/50">
           <span className="text-xs text-muted-foreground flex items-center gap-1">
-            <Briefcase className="h-3 w-3" /> Top Roles
+            <Briefcase className="h-3 w-3" /> Top Skills in Demand
           </span>
           <div className="flex flex-wrap gap-2">
-            {jobMarket?.inDemandRoles?.slice(0, 4).map((role, i) => (
+            {jobMarket?.skillsInDemand?.slice(0, 4).map((role, i) => (
               <span key={i} className="bg-blue-500/10 text-blue-400 text-xs px-2 py-1 rounded-md font-medium">
                 {role}
               </span>
@@ -62,3 +69,4 @@ export function CareerOutlook({ data }: { data: CountryIntelligence }) {
     </Card>
   );
 }
+

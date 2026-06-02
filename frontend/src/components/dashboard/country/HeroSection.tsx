@@ -26,18 +26,18 @@ export function HeroSection({ data }: { data: CountryIntelligence }) {
                   className={`h-5 w-5 ${i < scoreOutOf5 ? "fill-primary text-primary" : "text-muted"}`}
                 />
               ))}
-              <span className="ml-2 text-sm font-semibold text-muted-foreground">({summary.overallScore}/100)</span>
+               <span className="ml-2 text-sm font-semibold text-muted-foreground">({summary.overallScore}/100)</span>
             </div>
           </div>
           <p className="max-w-2xl text-sm text-muted-foreground leading-relaxed mt-2">
-            {summary.summary}
+            {summary.evidenceSummary || summary.countryCode}
           </p>
         </div>
 
         <div className="flex gap-8 md:text-right shrink-0">
           <div className="space-y-1">
-            <p className="text-xs uppercase text-muted-foreground font-bold tracking-wider">Future Outlook</p>
-            <p className="text-md font-bold text-foreground max-w-[200px]">{data.risks?.overallAssessment || "Stable"}</p>
+            <p className="text-xs uppercase text-muted-foreground font-bold tracking-wider">Risk Level</p>
+            <p className="text-md font-bold text-foreground max-w-[200px]">{data.risks?.riskLevel || "Stable"}</p>
           </div>
           <div className="space-y-1 hidden sm:block text-left">
             <p className="text-xs uppercase text-muted-foreground font-bold tracking-wider">Languages</p>
@@ -56,3 +56,4 @@ export function HeroSection({ data }: { data: CountryIntelligence }) {
     </div>
   );
 }
+

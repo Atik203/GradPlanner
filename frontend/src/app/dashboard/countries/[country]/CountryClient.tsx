@@ -61,7 +61,7 @@ export function CountryClient({ countryData, slug }: { countryData: CountryIntel
       </div>
 
       {/* Timeline Section */}
-      {countryData.timeline.phases && (
+      {countryData.timeline?.phases && (
         <TimelineRoadmap data={countryData} />
       )}
 
