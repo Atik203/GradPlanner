@@ -14,6 +14,7 @@ import professorsRouter from "./routes/professors";
 import applicationsRouter from "./routes/applications";
 import documentsRouter from "./routes/documents";
 import statsRouter from "./routes/stats";
+import countriesRouter from "./routes/countries";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -40,6 +41,7 @@ app.use(express.urlencoded({ extended: true }));
 // ── Registered protected routes ────────────────────────────────────────────────
 app.use("/api/v1/profile", requireAuth, profileRouter);
 app.use("/api/v1/rankings", rankingsRouter); // Public access
+app.use("/api/v1/countries", countriesRouter); // Public access
 app.use("/api/v1/universities", requireAuth, universitiesRouter);
 app.use("/api/v1/professors", requireAuth, professorsRouter);
 app.use("/api/v1/applications", requireAuth, applicationsRouter);
