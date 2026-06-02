@@ -272,10 +272,10 @@ export default function UniversityDetailPage() {
                       {intel.summary?.overallScore || 0}/100 Match Score
                     </span>
                     <span className="text-xs px-2.5 py-1 rounded-md font-medium bg-blue-500/10 text-blue-500">
-                      {intel.jobMarket?.aiEcosystem?.hubs?.[0] || "Tech Hub"}
+                      {intel.jobMarket?.majorHubs?.[0] || "Tech Hub"}
                     </span>
                     <span className="text-xs px-2.5 py-1 rounded-md font-medium bg-emerald-500/10 text-emerald-500">
-                      {intel.postStudyWork?.duration || "PSW Available"}
+                      {intel.postStudyWork?.visaDuration || "PSW Available"}
                     </span>
                   </div>
                   <div className="space-y-4">
@@ -294,7 +294,7 @@ export default function UniversityDetailPage() {
                         PR Pathway for BD Nationals
                       </h4>
                       <p className="text-sm text-muted-foreground leading-relaxed">
-                        {intel.prPathways?.prPathway?.overview || "Pathway depends on duration of stay and employment."}
+                        {intel.prPathways?.pathways?.[0]?.description || "Pathway depends on duration of stay and employment."}
                       </p>
                     </div>
                     <div>

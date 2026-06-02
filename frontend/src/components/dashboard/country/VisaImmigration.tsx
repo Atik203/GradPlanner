@@ -29,24 +29,24 @@ export function VisaImmigration({ data }: { data: CountryIntelligence }) {
             <span className="text-xs text-muted-foreground flex items-center gap-1">
               <Clock className="h-3 w-3" /> Processing Time
             </span>
-            <p className="text-sm font-semibold text-foreground">{visa?.studentVisa?.processingTimeDhaka || "Unknown"}</p>
+            <p className="text-sm font-semibold text-foreground">{visa?.studentVisa?.processingTime || "Unknown"}</p>
           </div>
         </div>
 
         <div className="space-y-3 pt-2 border-t border-border/50">
           <div className="flex justify-between items-center">
             <span className="text-sm text-muted-foreground">Post-Study Work Visa</span>
-            <span className="text-sm font-bold text-foreground text-right">{postStudyWork?.duration || "N/A"}</span>
+            <span className="text-sm font-bold text-foreground text-right">{postStudyWork?.visaDuration || "N/A"}</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-sm text-muted-foreground">PR Difficulty</span>
-            <span className="text-sm font-bold text-foreground text-right">{prPathways?.prPathway?.difficulty || "N/A"}</span>
+            <span className="text-sm font-bold text-foreground text-right">{prPathways?.overallPRDifficulty || prPathways?.pathways?.[0]?.difficulty || "N/A"}</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-sm text-muted-foreground flex items-center gap-1">
               <Award className="h-4 w-4 shrink-0" /> Citizenship
             </span>
-            <span className="text-sm font-bold text-foreground text-right">{citizenship?.yearsToEligibility || "N/A"} Years</span>
+            <span className="text-sm font-bold text-foreground text-right">{citizenship?.minimumResidencyYears ? `${citizenship.minimumResidencyYears} Years` : "N/A"}</span>
           </div>
         </div>
 
@@ -60,3 +60,4 @@ export function VisaImmigration({ data }: { data: CountryIntelligence }) {
     </Card>
   );
 }
+
