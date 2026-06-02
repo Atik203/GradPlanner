@@ -91,7 +91,8 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
       });
       dispatch(addProfessor(response));
       if (initialCountry) {
-        router.push(`/dashboard/countries/${initialCountry.toLowerCase()}`);
+        const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
+        router.push(`/dashboard/countries/${countrySlug}`);
       } else {
         router.push("/dashboard/professors");
       }
@@ -104,7 +105,8 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
 
   const goBack = () => {
     if (initialCountry) {
-      router.push(`/dashboard/countries/${initialCountry.toLowerCase()}`);
+      const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
+      router.push(`/dashboard/countries/${countrySlug}`);
     } else {
       router.push("/dashboard/professors");
     }

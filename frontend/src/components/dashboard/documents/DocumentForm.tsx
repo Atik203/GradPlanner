@@ -109,7 +109,8 @@ export function DocumentForm({ initialCountry = "" }: DocumentFormProps) {
       });
       dispatch(addDocument(response));
       if (initialCountry) {
-        router.push(`/dashboard/countries/${initialCountry.toLowerCase()}`);
+        const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
+        router.push(`/dashboard/countries/${countrySlug}`);
       } else {
         router.push("/dashboard/documents");
       }
@@ -122,7 +123,8 @@ export function DocumentForm({ initialCountry = "" }: DocumentFormProps) {
 
   const goBack = () => {
     if (initialCountry) {
-      router.push(`/dashboard/countries/${initialCountry.toLowerCase()}`);
+      const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
+      router.push(`/dashboard/countries/${countrySlug}`);
     } else {
       router.push("/dashboard/documents");
     }

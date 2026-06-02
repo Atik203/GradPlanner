@@ -4,7 +4,9 @@ import { CountryClient } from "./CountryClient";
 
 export default async function CountryIntelligencePage({ params }: { params: Promise<{ country: string }> }) {
   const resolvedParams = await params;
-  const slug = resolvedParams.country;
+  const rawSlug = resolvedParams.country;
+  // Decode percent-encoded spaces and replace spaces/underscores with hyphens
+  const slug = decodeURIComponent(rawSlug).toLowerCase().trim().replace(/[\s_]+/g, "-");
   
   const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
   let countryData;
@@ -15,6 +17,7 @@ export default async function CountryIntelligencePage({ params }: { params: Prom
     });
     
     if (!res.ok) {
+      console.error(`Backend returned ${res.status} for country slug: ${slug}`);
       notFound();
     }
     

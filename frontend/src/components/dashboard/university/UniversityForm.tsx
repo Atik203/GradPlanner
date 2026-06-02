@@ -89,7 +89,8 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
       
       // Navigate back to universities list or country page if country specified
       if (initialCountry) {
-        router.push(`/dashboard/countries/${initialCountry.toLowerCase()}`);
+        const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
+        router.push(`/dashboard/countries/${countrySlug}`);
       } else {
         router.push("/dashboard/universities");
       }
@@ -109,7 +110,8 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
           size="sm"
           onClick={() => {
             if (initialCountry) {
-              router.push(`/dashboard/countries/${initialCountry.toLowerCase()}`);
+              const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
+              router.push(`/dashboard/countries/${countrySlug}`);
             } else {
               router.push("/dashboard/universities");
             }
@@ -299,7 +301,8 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
               variant="outline"
               onClick={() => {
                 if (initialCountry) {
-                  router.push(`/dashboard/countries/${initialCountry.toLowerCase()}`);
+                  const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
+                  router.push(`/dashboard/countries/${countrySlug}`);
                 } else {
                   router.push("/dashboard/universities");
                 }
