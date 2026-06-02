@@ -21,6 +21,8 @@ export const auth = betterAuth({
   // ── Base URL (backend origin, NOT the Next.js frontend) ───────────────────
   baseURL: (process.env.BETTER_AUTH_URL ?? "http://localhost:5000") + "/api/v1/auth",
 
+  trustedProxyHeaders: true,
+
   // ── Secret used to sign session tokens ────────────────────────────────────
   secret: process.env.BETTER_AUTH_SECRET,
 
@@ -37,7 +39,9 @@ export const auth = betterAuth({
 
   // ── CORS — allow the Next.js frontend ─────────────────────────────────────
   trustedOrigins: [
-    process.env.FRONTEND_URL ?? "http://localhost:3000",
+    (process.env.FRONTEND_URL ?? "http://localhost:3000").replace(/['"]/g, ""),
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
   ],
 
   // ── Session ───────────────────────────────────────────────────────────────
