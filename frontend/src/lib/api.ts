@@ -1,4 +1,4 @@
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000";
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
 
 export async function fetchApi(path: string, options: RequestInit = {}) {
   const url = `${BACKEND_URL}${path}`;
