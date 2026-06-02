@@ -1,7 +1,7 @@
 import { Router, Response } from "express";
 import { prisma } from "../lib/prisma.js";
 import { AuthenticatedRequest } from "../middleware/auth.js";
-import { ApplicationStatus } from "../generated/prisma/enums.js";
+import { ApplicationStatus } from "@prisma/client";
 
 const router: Router = Router();
 
