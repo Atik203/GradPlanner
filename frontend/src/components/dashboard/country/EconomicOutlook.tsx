@@ -20,38 +20,42 @@ export function EconomicOutlook({ data }: { data: CountryIntelligence }) {
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-1">
             <span className="text-xs text-muted-foreground flex items-center gap-1">
-              <TrendingUp className="h-3 w-3" /> Economic Vulnerability
+              <TrendingUp className="h-3 w-3" /> Economic Risk
             </span>
-            <p className="text-sm font-semibold text-foreground">{risks?.economicVulnerability || "Stable"}</p>
+            <p className="text-sm font-semibold text-foreground">{risks?.risks?.economicRisk?.level || risks?.riskLevel || "Low"}</p>
           </div>
           <div className="space-y-1">
             <span className="text-xs text-muted-foreground flex items-center gap-1">
-              <Activity className="h-3 w-3" /> Startups Ecosystem
+              <Activity className="h-3 w-3" /> Tech Ecosystem
             </span>
-            <p className="text-sm font-semibold text-foreground">{aiEcosystem?.startups || "Developing"}</p>
+            <p className="text-sm font-semibold text-foreground">{aiEcosystem?.aiCompanies && aiEcosystem.aiCompanies.length > 0 ? "Active" : "Developing"}</p>
           </div>
         </div>
         
         <div className="space-y-1 pt-2 border-t border-border/50">
           <span className="text-xs text-muted-foreground flex items-center gap-1">
-            <Briefcase className="h-3 w-3" /> Tech Market Status
+            <Briefcase className="h-3 w-3" /> Job Demand Level
           </span>
-          <p className="text-sm font-semibold text-foreground">{jobMarket?.internshipAvailability || "Moderate"}</p>
+          <p className="text-sm font-semibold text-foreground">{jobMarket?.demandLevel || "Moderate"}</p>
         </div>
 
         <div className="space-y-2 pt-2 border-t border-border/50">
           <span className="text-xs text-muted-foreground flex items-center gap-1">
-            <Building2 className="h-3 w-3" /> Major AI Hubs
+            <Building2 className="h-3 w-3" /> Major AI & Research Hubs
           </span>
           <div className="flex flex-wrap gap-2">
-            {aiEcosystem?.hubs?.slice(0, 4).map((hub, i) => (
+            {aiEcosystem?.researchHubs?.slice(0, 4).map((hub, i) => (
               <span key={i} className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-md font-medium">
-                {hub}
+                {hub.name}
               </span>
             ))}
+            {(!aiEcosystem?.researchHubs || aiEcosystem.researchHubs.length === 0) && (
+              <span className="text-xs text-muted-foreground">None specified</span>
+            )}
           </div>
         </div>
       </CardContent>
     </Card>
   );
 }
+
