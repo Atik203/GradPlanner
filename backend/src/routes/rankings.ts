@@ -80,7 +80,7 @@ router.get("/countries", async (req: Request, res: Response) => {
 router.get("/:id", async (req: Request, res: Response) => {
   try {
     const ranking = await prisma.universityRanking.findUnique({
-      where: { id: req.params.id },
+      where: { id: req.params.id as string },
     });
     if (!ranking) {
       return res.status(404).json({ error: "University not found" });
