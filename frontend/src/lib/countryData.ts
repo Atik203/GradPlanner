@@ -183,7 +183,44 @@ export async function getCountryIntelligence(countryCode: string) {
     loadCitizenshipRules(),
   ]);
 
-  const normalizedInput = countryCode.toLowerCase().replace(/\s+/g, '-');
+  let normalizedInput = countryCode.toLowerCase().trim().replace(/\s+/g, '-');
+
+  // Handle common aliases and variations
+  const aliases: Record<string, string> = {
+    'united-states-of-america': 'united-states',
+    'usa': 'united-states',
+    'us': 'united-states',
+    'united-arab-emirates': 'united-arab-emirates',
+    'uae': 'united-arab-emirates',
+    'ae': 'united-arab-emirates',
+    'south-korea': 'south-korea',
+    'korea': 'south-korea',
+    'korea,-south': 'south-korea',
+    'republic-of-korea': 'south-korea',
+    'kr': 'south-korea',
+    'de': 'germany',
+    'ca': 'canada',
+    'au': 'australia',
+    'nl': 'netherlands',
+    'se': 'sweden',
+    'fi': 'finland',
+    'dk': 'denmark',
+    'no': 'norway',
+    'ch': 'switzerland',
+    'ie': 'ireland',
+    'at': 'austria',
+    'be': 'belgium',
+    'nz': 'new-zealand',
+    'jp': 'japan',
+    'sg': 'singapore',
+    'cn': 'china',
+    'fr': 'france',
+  };
+
+  if (aliases[normalizedInput]) {
+    normalizedInput = aliases[normalizedInput];
+  }
+
   const countryEntry = countries.find(c => 
     c.countryCode.toLowerCase() === normalizedInput || 
     c.country.toLowerCase().replace(/\s+/g, '-') === normalizedInput
