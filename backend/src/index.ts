@@ -68,3 +68,12 @@ app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`);
   console.log(`Auth endpoints: http://localhost:${PORT}/api/v1/auth`);
 });
+
+// Global resilience boundaries to prevent process crash
+process.on("uncaughtException", (error) => {
+  console.error("Critical: Uncaught Exception detected:", error);
+});
+
+process.on("unhandledRejection", (reason, promise) => {
+  console.error("Critical: Unhandled Rejection at Promise:", promise, "reason:", reason);
+});
