@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, ArrowLeft, School, Calendar, DollarSign, FileText, Globe } from "lucide-react";
-import { countriesData } from "@/data/countries";
+import { countryList } from "@/lib/countryList";
 
 // Zod Schema
 const universitySchema = z.object({
@@ -43,8 +43,8 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
   // Normalize initial country to match dropdown option value (slug/name)
   let defaultCountry = "";
   if (initialCountry) {
-    const foundCountry = Object.values(countriesData).find(
-      (c) => c.slug.toLowerCase() === initialCountry.toLowerCase() || c.id.toLowerCase() === initialCountry.toLowerCase()
+    const foundCountry = countryList.find(
+      (c) => c.name.toLowerCase() === initialCountry.toLowerCase() || c.id.toLowerCase() === initialCountry.toLowerCase()
     );
     if (foundCountry) {
       defaultCountry = foundCountry.id; // Store exact name e.g. "Germany"
@@ -174,9 +174,9 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
                   {...register("country")}
                 >
                   <option value="">Select a country</option>
-                  {Object.values(countriesData).map((c) => (
+                  {countryList.map((c) => (
                     <option key={c.id} value={c.id}>
-                      {c.hero.flag} {c.hero.title}
+                      {c.name}
                     </option>
                   ))}
                 </select>

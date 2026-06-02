@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, ArrowLeft, FileText, Clock, AlertCircle } from "lucide-react";
-import { countriesData } from "@/data/countries";
+import { countryList } from "@/lib/countryList";
 
 // BD-specific document metadata: name suggestions + timeline hints
 const DOCUMENT_TYPE_META: Record<string, { label: string; nameSuggestion: string; bdHint?: string }> = {
@@ -59,7 +59,7 @@ export function DocumentForm({ initialCountry = "" }: DocumentFormProps) {
   const [selectedType, setSelectedType] = useState("");
 
   const defaultCountry = initialCountry
-    ? (Object.values(countriesData).find(c => c.slug === initialCountry.toLowerCase())?.id ?? initialCountry)
+    ? (countryList.find(c => c.name.toLowerCase() === initialCountry.toLowerCase())?.id ?? initialCountry)
     : "";
 
   const {
@@ -214,8 +214,8 @@ export function DocumentForm({ initialCountry = "" }: DocumentFormProps) {
                   {...register("country")}
                 >
                   <option value="">All Countries (Universal)</option>
-                  {Object.values(countriesData).map(c => (
-                    <option key={c.id} value={c.id}>{c.hero.flag} {c.hero.title}</option>
+                  {countryList.map(c => (
+                    <option key={c.id} value={c.id}>{c.name}</option>
                   ))}
                 </select>
               </div>

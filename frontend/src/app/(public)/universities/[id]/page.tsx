@@ -11,7 +11,7 @@ import {
   ArrowLeft, School, ExternalLink, Star, BarChart3, Users, Briefcase,
   Globe, BookOpen, Loader2, Trophy, Building2, AlertTriangle, Lightbulb, Wallet, FileCheck
 } from "lucide-react";
-import { getCountryIntelligence } from "@/lib/countryIntelligence";
+import { getCountryIntelligence, CountryIntelligence } from "@/lib/countryData";
 
 function RankBadge({ rank, display, source, color }: { rank?: number | null; display?: string | null; source: string; color: string }) {
   const label = display || (rank ? `#${rank}` : "—");
@@ -47,13 +47,24 @@ export default function UniversityDetailPage() {
   const params = useParams<{ id: string }>();
   const id = params?.id ?? "";
   const [university, setUniversity] = useState<UniversityRanking | null>(null);
+  const [intel, setIntel] = useState<CountryIntelligence | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!id) return;
     fetchApi(`/api/v1/rankings/${id}`)
-      .then(data => setUniversity(data))
+      .then(async data => {
+        setUniversity(data);
+        if (data && data.country) {
+          try {
+            const countryData = await getCountryIntelligence(data.country);
+            setIntel(countryData);
+          } catch (err) {
+            console.error("Failed to load country intelligence:", err);
+          }
+        }
+      })
       .catch(() => setError("University not found or failed to load."))
       .finally(() => setLoading(false));
   }, [id]);
@@ -249,54 +260,55 @@ export default function UniversityDetailPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-5 space-y-5">
-              {(() => {
-                const intel = getCountryIntelligence(university.country);
-                return (
-                  <>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {intel.tags.map((t, idx) => (
-                        <span key={idx} className={`text-xs px-2.5 py-1 rounded-md font-medium ${
-                          t.type === 'success' ? 'bg-[var(--success)]/10 text-[var(--success)]' :
-                          t.type === 'warning' ? 'bg-[var(--warning)]/10 text-[var(--warning)]' :
-                          t.type === 'destructive' ? 'bg-destructive/10 text-destructive' :
-                          'bg-muted text-muted-foreground'
-                        }`}>
-                          {t.label}
-                        </span>
-                      ))}
+              {!intel ? (
+                <div className="flex items-center justify-center p-6 text-muted-foreground">
+                  <Loader2 className="h-6 w-6 animate-spin mr-2" />
+                  <span className="text-sm">Loading Country Intelligence...</span>
+                </div>
+              ) : (
+                <>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="text-xs px-2.5 py-1 rounded-md font-medium bg-primary/10 text-primary">
+                      {intel.summary?.overallScore || 0}/100 Match Score
+                    </span>
+                    <span className="text-xs px-2.5 py-1 rounded-md font-medium bg-blue-500/10 text-blue-500">
+                      {intel.jobMarket?.aiEcosystem?.hubs?.[0] || "Tech Hub"}
+                    </span>
+                    <span className="text-xs px-2.5 py-1 rounded-md font-medium bg-emerald-500/10 text-emerald-500">
+                      {intel.postStudyWork?.duration || "PSW Available"}
+                    </span>
+                  </div>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
+                        <AlertTriangle className="h-4 w-4 text-amber-500" />
+                        Visa & Immigration
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {intel.visa?.studentVisa?.tips || "Review embassy guidelines carefully."}
+                      </p>
                     </div>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
-                          <AlertTriangle className="h-4 w-4 text-amber-500" />
-                          Visa & Immigration
-                        </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {intel.visaReality}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
-                          <Briefcase className="h-4 w-4 text-emerald-500" />
-                          PR Pathway for BD Nationals
-                        </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {intel.prPathway}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
-                          <Wallet className="h-4 w-4 text-purple-500" />
-                          Funding Sources
-                        </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {intel.fundingSources}
-                        </p>
-                      </div>
+                    <div>
+                      <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
+                        <Briefcase className="h-4 w-4 text-emerald-500" />
+                        PR Pathway for BD Nationals
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {intel.prPathways?.prPathway?.overview || "Pathway depends on duration of stay and employment."}
+                      </p>
                     </div>
-                  </>
-                );
-              })()}
+                    <div>
+                      <h4 className="text-sm font-semibold flex items-center gap-2 mb-1">
+                        <Wallet className="h-4 w-4 text-purple-500" />
+                        Funding Sources
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {intel.funding?.fundingAvailability || "Varies by university and department."}
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )}
             </CardContent>
           </Card>
 

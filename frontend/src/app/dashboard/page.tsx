@@ -42,6 +42,7 @@ export default function DashboardOverview() {
   const universities = useAppSelector((state) => state.universities.items);
 
   const [stats, setStats] = useState<Stats | null>(null);
+  const [countriesSummary, setCountriesSummary] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -58,14 +59,18 @@ export default function DashboardOverview() {
     async function loadDashboardData() {
       try {
         setLoading(true);
-        const [statsData, profileData, uniData] = await Promise.all([
+        const [statsData, profileData, uniData, countriesRes] = await Promise.all([
           fetchApi("/api/v1/dashboard/stats"),
           fetchApi("/api/v1/profile"),
           fetchApi("/api/v1/universities"),
+          fetch("/countries/countries.json").then(res => res.json().catch(() => ({ countries: [] })))
         ]);
         setStats(statsData);
         dispatch(setProfile(profileData));
         dispatch(setUniversities(uniData));
+        if (countriesRes && countriesRes.countries) {
+          setCountriesSummary(countriesRes.countries);
+        }
 
         // Prefill profile edit fields
         setUniversityName(profileData.university || "");
@@ -252,65 +257,27 @@ export default function DashboardOverview() {
           <p className="text-xs text-muted-foreground hidden sm:block">Analyze PR, Visa, and Costs tailored for BD Nationals</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          <Link href="/dashboard/countries/germany" className="block group">
-            <Card className="border-border/60 bg-card/20 backdrop-blur-md hover:bg-card/40 hover:border-primary/50 transition-all cursor-pointer h-full">
-              <CardHeader className="pb-2">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-md font-bold text-foreground">Germany 🇩🇪</CardTitle>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                <CardDescription className="text-xs text-muted-foreground line-clamp-2">
-                  High funding, strict APS requirement. ~2.5yr visa wait. Excellent EU Blue Card pathway.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex gap-2 mt-2">
-                  <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-medium">Low Tuition</span>
-                  <span className="text-[10px] bg-[var(--warning)]/10 text-[var(--warning)] px-2 py-0.5 rounded font-medium">High Visa Wait</span>
-                </div>
-              </CardContent>
-            </Card>
-          </Link>
-          
-          <Link href="/dashboard/countries/canada" className="block group">
-            <Card className="border-border/60 bg-card/20 backdrop-blur-md hover:bg-card/40 hover:border-primary/50 transition-all cursor-pointer h-full">
-              <CardHeader className="pb-2">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-md font-bold text-foreground">Canada 🇨🇦</CardTitle>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                <CardDescription className="text-xs text-muted-foreground line-clamp-2">
-                  SDS eligible. ~22% BD rejection. Fastest PR route via Express Entry CEC.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex gap-2 mt-2">
-                  <span className="text-[10px] bg-[var(--success)]/10 text-[var(--success)] px-2 py-0.5 rounded font-medium">Fast PR</span>
-                  <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-medium">SDS Route</span>
-                </div>
-              </CardContent>
-            </Card>
-          </Link>
-
-          <Link href="/dashboard/countries/usa" className="block group">
-            <Card className="border-border/60 bg-card/20 backdrop-blur-md hover:bg-card/40 hover:border-primary/50 transition-all cursor-pointer h-full">
-              <CardHeader className="pb-2">
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-md font-bold text-foreground">United States 🇺🇸</CardTitle>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                <CardDescription className="text-xs text-muted-foreground line-clamp-2">
-                  Top tier research. High F-1 rejection without TA/RA. ~70-90 yr PR backlog for BD.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex gap-2 mt-2">
-                  <span className="text-[10px] bg-[var(--success)]/10 text-[var(--success)] px-2 py-0.5 rounded font-medium">Top Research</span>
-                  <span className="text-[10px] bg-destructive/10 text-destructive px-2 py-0.5 rounded font-medium">No PR Path</span>
-                </div>
-              </CardContent>
-            </Card>
-          </Link>
+          {[...countriesSummary].sort((a, b) => b.overallScore - a.overallScore).slice(0, 6).map((country) => (
+            <Link key={country.countryCode} href={`/dashboard/countries/${country.country.toLowerCase().replace(/\s+/g, '-')}`} className="block group">
+              <Card className="border-border/60 bg-card/20 backdrop-blur-md hover:bg-card/40 hover:border-primary/50 transition-all cursor-pointer h-full">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-md font-bold text-foreground">{country.country}</CardTitle>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </div>
+                  <CardDescription className="text-xs text-muted-foreground line-clamp-2" title={country.summary}>
+                    {country.summary}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex gap-2 mt-2">
+                    <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-medium">Overall Score: {country.overallScore}</span>
+                    <span className="text-[10px] bg-emerald-500/10 text-emerald-500 px-2 py-0.5 rounded font-medium">PR Score: {country.prScore}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
         </div>
       </div>
 
