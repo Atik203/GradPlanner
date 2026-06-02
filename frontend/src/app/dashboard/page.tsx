@@ -21,7 +21,12 @@ import {
   TrendingUp,
   User,
   Globe,
-  ArrowRight
+  ArrowRight,
+  Sparkles,
+  ShieldCheck,
+  CheckCircle2,
+  AlertTriangle,
+  Clock
 } from "lucide-react";
 import { TierBadge } from "@/components/badges/TierBadge";
 import { EmptyState } from "@/components/shared/EmptyState";
@@ -63,13 +68,13 @@ export default function DashboardOverview() {
           fetchApi("/api/v1/dashboard/stats"),
           fetchApi("/api/v1/profile"),
           fetchApi("/api/v1/universities"),
-          fetch("/countries/countries.json").then(res => res.json().catch(() => ({ countries: [] })))
+          fetchApi("/api/v1/countries")
         ]);
         setStats(statsData);
         dispatch(setProfile(profileData));
         dispatch(setUniversities(uniData));
-        if (countriesRes && countriesRes.countries) {
-          setCountriesSummary(countriesRes.countries);
+        if (countriesRes) {
+          setCountriesSummary(countriesRes);
         }
 
         // Prefill profile edit fields
@@ -97,7 +102,7 @@ export default function DashboardOverview() {
         method: "PUT",
         body: JSON.stringify({
           university,
-          cgpa,
+          cgpa: cgpa ? parseFloat(cgpa) : null,
           targetIntake,
           graduationDate,
           targetDegree,
@@ -121,57 +126,132 @@ export default function DashboardOverview() {
     );
   }
 
+  // Calculate profile completeness
+  let completeness = 0;
+  if (profile) {
+    if (profile.university) completeness += 20;
+    if (profile.cgpa) completeness += 20;
+    if (profile.targetDegree) completeness += 20;
+    if (profile.targetIntake) completeness += 20;
+    if (profile.graduationDate) completeness += 20;
+  }
+
+  // Dynamic Fit Recommendations (Top 3)
+  const gpa = profile?.cgpa ? Number(profile.cgpa) : 0;
+  const getRecommendations = () => {
+    if (countriesSummary.length === 0) return [];
+    
+    // Sort all countries by overallScore
+    const sorted = [...countriesSummary].sort((a, b) => b.overallScore - a.overallScore);
+    
+    // Adjust recommendation based on GPA
+    if (gpa >= 3.7) {
+      // High GPA -> Germany, USA, Switzerland or Canada
+      return sorted.filter(c => ["DE", "US", "CH", "CA"].includes(c.countryCode)).slice(0, 3);
+    } else if (gpa >= 3.3) {
+      // Mid-high GPA -> Germany, Canada, Sweden, Netherlands
+      return sorted.filter(c => ["DE", "CA", "SE", "NL"].includes(c.countryCode)).slice(0, 3);
+    } else {
+      // Moderate GPA -> UAE (fully funded), Japan (MEXT), South Korea (GKS), Finland
+      return sorted.filter(c => ["AE", "JP", "KR", "FI"].includes(c.countryCode)).slice(0, 3);
+    }
+  };
+
+  const recommendations = getRecommendations();
+
+  // Deadlines parsing
   const upcomingDeadlines = universities
     .filter((u) => u.deadline && !u.deletedAt)
-    .map((u) => ({
-      name: u.name,
-      program: u.program || "ML & AI",
-      deadline: u.deadline!,
-      tier: u.tier,
-    }))
-    .slice(0, 5); // top 5 deadlines
+    .map((u) => {
+      // Simple parse check
+      let isNear = false;
+      try {
+        const deadlineDate = new Date(u.deadline!);
+        const diffTime = deadlineDate.getTime() - Date.now();
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if (diffDays > 0 && diffDays < 30) {
+          isNear = true;
+        }
+      } catch (_) {}
+      return {
+        name: u.name,
+        program: u.program || "MSc Computer Science",
+        deadline: u.deadline!,
+        tier: u.tier,
+        isNear,
+      };
+    })
+    .slice(0, 4);
+
+  // Average PR Index of target countries
+  const trackedCountries = Array.from(new Set(universities.map(u => u.country)));
+  const getAveragePrScore = () => {
+    if (trackedCountries.length === 0) return 0;
+    let sum = 0;
+    let count = 0;
+    trackedCountries.forEach(tcName => {
+      const found = countriesSummary.find(c => c.country.toLowerCase() === tcName.toLowerCase());
+      if (found && found.summary) {
+        sum += found.summary.prScore || 0;
+        count++;
+      }
+    });
+    return count > 0 ? Math.round(sum / count) : 0;
+  };
+  const prScoreAvg = getAveragePrScore();
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      {/* Welcome Banner */}
-      <div className="relative rounded-2xl border border-border bg-gradient-to-r from-muted/50 to-primary/10 p-8 overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+      
+      {/* Welcome Banner / Command Center Header */}
+      <div className="relative rounded-2xl border border-border/80 bg-linear-to-r from-muted/50 to-primary/5 p-8 overflow-hidden shadow-xs">
+        <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+          <div className="space-y-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold">
+              <Sparkles className="h-3 w-3" />
+              Admissions Command Center
+            </div>
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl tracking-tight">
               Hello, {session?.user?.name || "Future Scholar"}!
             </h2>
             <p className="text-muted-foreground text-sm max-w-xl">
-              Welcome to your Country Intelligence & Admissions Hub. Evaluate visa constraints, analyze PR pathways, and track your global applications.
+              Track your profile metrics, application milestones, visa rules, and country immigration stats in real-time.
             </p>
           </div>
-          <Button 
-            onClick={() => setEditProfileOpen(true)}
-            className="self-start md:self-center bg-muted border border-border hover:bg-accent hover:text-accent-foreground text-foreground h-9 px-4 rounded-lg flex items-center gap-2"
-          >
-            <User className="h-4 w-4 text-primary" />
-            Update Profile
-          </Button>
+          
+          <div className="flex flex-col gap-2 shrink-0">
+            <Button 
+              onClick={() => setEditProfileOpen(true)}
+              className="bg-primary hover:bg-primary/95 text-primary-foreground h-10 px-5 rounded-lg flex items-center justify-center gap-2 font-semibold shadow-sm transition-all cursor-pointer"
+            >
+              <User className="h-4 w-4" />
+              Update Profile Details
+            </Button>
+            <p className="text-[11px] text-muted-foreground text-center">Intake Target: {profile?.targetIntake || "September 2028"}</p>
+          </div>
         </div>
 
-        {/* Quick Profile Indicators */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-6 border-t border-border/80">
-          <div className="space-y-1">
-            <span className="text-xs text-muted-foreground uppercase">Target Degree</span>
-            <p className="text-sm font-semibold text-foreground">{profile?.targetDegree || "Not Set"}</p>
+        {/* Profile Completeness & Readiness bar */}
+        <div className="mt-8 pt-6 border-t border-border/60">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+            <span className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+              <ShieldCheck className="h-4 w-4 text-emerald-400" />
+              Profile Completeness & Readiness
+            </span>
+            <span className="text-xs font-bold text-primary">{completeness}% Complete</span>
           </div>
-          <div className="space-y-1">
-            <span className="text-xs text-muted-foreground uppercase">Undergrad CGPA</span>
-            <p className="text-sm font-semibold text-foreground">{profile?.cgpa ? `${profile.cgpa} / 4.0` : "Not Set"}</p>
+          <div className="w-full bg-accent rounded-full h-2">
+            <div 
+              className="bg-linear-to-r from-primary to-emerald-400 h-2 rounded-full transition-all duration-700" 
+              style={{ width: `${completeness}%` }}
+            />
           </div>
-          <div className="space-y-1">
-            <span className="text-xs text-muted-foreground uppercase">Target Intake</span>
-            <p className="text-sm font-semibold text-foreground">{profile?.targetIntake || "September 2028"}</p>
-          </div>
-          <div className="space-y-1">
-            <span className="text-xs text-muted-foreground uppercase">Current University</span>
-            <p className="text-sm font-semibold text-foreground truncate">{profile?.university || "Not Set"}</p>
-          </div>
+          {completeness < 100 && (
+            <p className="text-[11px] text-muted-foreground mt-2">
+              ⚠️ Complete your undergrad profile (CGPA, degree target) to unlock highly accurate country matches.
+            </p>
+          )}
         </div>
       </div>
 
@@ -182,132 +262,173 @@ export default function DashboardOverview() {
         </div>
       )}
 
-      {/* Stats Cards */}
-      {stats && (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {/* Universities */}
-          <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Tracked Universities</CardTitle>
-              <School className="h-4 w-4 text-primary" />
-            </CardHeader>
-            <CardContent className="space-y-1">
-              <div className="text-2xl font-bold text-foreground">{stats.universities.total}</div>
-              <p className="text-xs text-muted-foreground">
-                {stats.universities.dream} Dream · {stats.universities.match} Match · {stats.universities.safety} Safety
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Professors */}
-          <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Contacted Professors</CardTitle>
-              <GraduationCap className="h-4 w-4 text-blue-500" />
-            </CardHeader>
-            <CardContent className="space-y-1">
-              <div className="text-2xl font-bold text-foreground">{stats.professors.total}</div>
-              <p className="text-xs text-muted-foreground">
-                {stats.professors.totalReplies} replies ({stats.professors.repliedPositive} positive)
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Applications */}
-          <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Applications</CardTitle>
-              <FolderGit2 className="h-4 w-4 text-purple-500" />
-            </CardHeader>
-            <CardContent className="space-y-1">
-              <div className="text-2xl font-bold text-foreground">{stats.applications.total}</div>
-              <p className="text-xs text-muted-foreground">
-                {stats.applications.inProgress} in progress · {stats.applications.submitted} submitted
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Documents */}
-          <Card className="border-border/60 bg-card/40 backdrop-blur-xl">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">Document Progress</CardTitle>
-              <FileText className="h-4 w-4 text-yellow-500" />
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="text-2xl font-bold text-foreground">{stats.documents.progressPercentage}%</div>
-              {/* Progress bar */}
-              <div className="w-full bg-accent rounded-full h-1.5">
-                <div 
-                  className="bg-primary h-1.5 rounded-full transition-all duration-500" 
-                  style={{ width: `${stats.documents.progressPercentage}%` }}
-                />
+      {/* Section A: Application Pipeline Visualizer */}
+      <Card className="border-border/60 bg-card/30 backdrop-blur-md">
+        <CardHeader className="pb-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="text-base font-bold text-foreground">Application Pipeline</CardTitle>
+              <CardDescription className="text-xs text-muted-foreground">Follow your admissions tracking workflow.</CardDescription>
+            </div>
+            <Link href="/dashboard/applications">
+              <Button variant="ghost" size="sm" className="text-xs text-primary hover:text-primary/80 flex items-center gap-1 cursor-pointer">
+                Manage Applications
+                <ArrowRight className="h-3 w-3" />
+              </Button>
+            </Link>
+          </div>
+        </CardHeader>
+        <CardContent>
+          {stats ? (
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+              {/* Planning */}
+              <div className="bg-muted/30 border border-border/55 rounded-xl p-4 flex flex-col items-center justify-center text-center relative group hover:border-border transition-colors">
+                <span className="text-2xl font-black text-foreground">{stats.applications.planning}</span>
+                <span className="text-xs text-muted-foreground font-semibold mt-1">Planning</span>
+                <span className="h-1 w-8 rounded-full bg-amber-400 mt-2" />
               </div>
-            </CardContent>
-          </Card>
-        </div>
-      )}
+              {/* In Progress */}
+              <div className="bg-muted/30 border border-border/55 rounded-xl p-4 flex flex-col items-center justify-center text-center relative group hover:border-border transition-colors">
+                <span className="text-2xl font-black text-foreground">{stats.applications.inProgress}</span>
+                <span className="text-xs text-muted-foreground font-semibold mt-1">Drafting</span>
+                <span className="h-1 w-8 rounded-full bg-blue-400 mt-2" />
+              </div>
+              {/* Submitted */}
+              <div className="bg-muted/30 border border-border/55 rounded-xl p-4 flex flex-col items-center justify-center text-center relative group hover:border-border transition-colors">
+                <span className="text-2xl font-black text-foreground">{stats.applications.submitted + stats.applications.underReview}</span>
+                <span className="text-xs text-muted-foreground font-semibold mt-1">Submitted</span>
+                <span className="h-1 w-8 rounded-full bg-purple-400 mt-2" />
+              </div>
+              {/* Decisions */}
+              <div className="bg-muted/30 border border-border/55 rounded-xl p-4 flex flex-col items-center justify-center text-center relative group hover:border-border transition-colors">
+                <span className="text-2xl font-black text-foreground">{stats.applications.offerReceived + stats.applications.accepted}</span>
+                <span className="text-xs text-muted-foreground font-semibold mt-1">Offers / Accepted</span>
+                <span className="h-1 w-8 rounded-full bg-emerald-400 mt-2" />
+              </div>
+            </div>
+          ) : (
+            <div className="text-center py-6 text-xs text-muted-foreground">No applications statistics found.</div>
+          )}
+        </CardContent>
+      </Card>
 
-      {/* Country Intelligence Hub */}
+      {/* Section B: Fit-based Country Recommendations */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
-            <Globe className="h-5 w-5 text-primary" />
-            Country Intelligence Hub
-          </h3>
-          <p className="text-xs text-muted-foreground hidden sm:block">Analyze PR, Visa, and Costs tailored for BD Nationals</p>
+          <div>
+            <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+              <Sparkles className="h-5 w-5 text-primary" />
+              AI Fit Recommendations
+            </h3>
+            <p className="text-xs text-muted-foreground">Based on undergrad CGPA ({gpa || "not set"}) & admissions intelligence.</p>
+          </div>
+          <Link href="/dashboard/countries">
+            <Button variant="ghost" size="sm" className="text-xs text-primary hover:text-primary/80 flex items-center gap-1 cursor-pointer">
+              View All 20 Countries
+              <ArrowRight className="h-3 w-3" />
+            </Button>
+          </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[...countriesSummary].sort((a, b) => b.overallScore - a.overallScore).slice(0, 6).map((country) => (
-            <Link key={country.countryCode} href={`/dashboard/countries/${country.country.toLowerCase().replace(/\s+/g, '-')}`} className="block group">
-              <Card className="border-border/60 bg-card/20 backdrop-blur-md hover:bg-card/40 hover:border-primary/50 transition-all cursor-pointer h-full">
-                <CardHeader className="pb-2">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-md font-bold text-foreground">{country.country}</CardTitle>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                  <CardDescription className="text-xs text-muted-foreground line-clamp-2" title={country.summary}>
-                    {country.summary}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex gap-2 mt-2">
-                    <span className="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-medium">Overall Score: {country.overallScore}</span>
-                    <span className="text-[10px] bg-emerald-500/10 text-emerald-500 px-2 py-0.5 rounded font-medium">PR Score: {country.prScore}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
+
+        {recommendations.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {recommendations.map((country) => {
+              const info = country.summary || {};
+              return (
+                <Card key={country.countryCode} className="border-border/60 bg-card/25 hover:bg-card/45 hover:border-primary/50 transition-all duration-300 flex flex-col h-full shadow-xs group">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-bold">
+                        Fit Match: {country.overallScore}%
+                      </span>
+                      <Globe className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </div>
+                    <CardTitle className="text-lg font-bold text-foreground">{country.country}</CardTitle>
+                    <CardDescription className="text-xs text-muted-foreground line-clamp-3">
+                      {info.summary || "No country summary available."}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-1 flex flex-col justify-end space-y-4 pt-0">
+                    <div className="grid grid-cols-2 gap-2 text-center text-xs">
+                      <div className="bg-muted/40 p-2 rounded-lg">
+                        <span className="text-[10px] text-muted-foreground block">PR Timeline</span>
+                        <span className="font-bold text-foreground">{info.citizenshipYears || "5"} Years</span>
+                      </div>
+                      <div className="bg-muted/40 p-2 rounded-lg">
+                        <span className="text-[10px] text-muted-foreground block">Monthly Cost</span>
+                        <span className="font-bold text-foreground">
+                          {info.averageLivingCost ? `${info.averageLivingCost} ${info.medianSalaryCurrency}` : "Varies"}
+                        </span>
+                      </div>
+                    </div>
+                    <Link href={`/dashboard/countries/${country.country.toLowerCase().replace(/\s+/g, '-')}`} className="block">
+                      <Button className="w-full bg-muted border border-border hover:bg-primary hover:text-primary-foreground text-foreground text-xs font-semibold py-1.5 rounded-lg flex items-center justify-center gap-1 cursor-pointer transition-all">
+                        Analyze Advisor Report
+                        <ArrowRight className="h-3 w-3" />
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        ) : (
+          <EmptyState
+            icon={Globe}
+            title="Recommendations Not Available"
+            description="We could not find seeded countries in the database. Ensure seeding finished successfully."
+          />
+        )}
       </div>
 
-      {/* Grid of details */}
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-        {/* Deadlines Section */}
-        <Card className="border-border/60 bg-card/20 backdrop-blur-md lg:col-span-2">
+      {/* Main Grid: Deadlines, PR Index & Documents */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        {/* Section C: Upcoming Deadlines */}
+        <Card className="border-border/60 bg-card/25 lg:col-span-2">
           <CardHeader>
-            <CardTitle className="text-md font-semibold text-foreground">Upcoming Deadlines</CardTitle>
-            <CardDescription className="text-muted-foreground">Keep track of your target program deadlines.</CardDescription>
+            <CardTitle className="text-base font-bold text-foreground flex items-center gap-2">
+              <Calendar className="h-5 w-5 text-primary" />
+              Upcoming Deadlines
+            </CardTitle>
+            <CardDescription className="text-xs text-muted-foreground">Keep an eye on critical target application cutoff dates.</CardDescription>
           </CardHeader>
           <CardContent>
             {upcomingDeadlines.length === 0 ? (
               <EmptyState
                 icon={Calendar}
-                title="No Upcoming Deadlines"
-                description="Keep track of your target program deadlines by adding dates to your tracked universities."
-                className="py-10"
+                title="No deadlines tracked yet"
+                description="Add target universities with cutoff deadlines to display them here."
+                className="py-8"
               />
             ) : (
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {upcomingDeadlines.map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-3 border border-border bg-card/30 rounded-lg hover:border-border/80 transition-all">
-                    <div className="min-w-0">
-                      <p className="font-semibold text-sm text-foreground truncate">{item.name}</p>
+                  <div 
+                    key={idx} 
+                    className={`flex items-center justify-between p-3.5 border rounded-xl transition-all ${
+                      item.isNear 
+                        ? "border-destructive/30 bg-destructive/5 hover:border-destructive/50" 
+                        : "border-border/60 bg-muted/20 hover:border-border"
+                    }`}
+                  >
+                    <div className="min-w-0 space-y-1">
+                      <div className="flex items-center gap-2">
+                        <p className="font-bold text-sm text-foreground truncate">{item.name}</p>
+                        {item.isNear && (
+                          <span className="inline-flex items-center gap-0.5 text-[9px] bg-destructive/15 text-destructive px-1.5 py-0.5 rounded-full font-bold animate-pulse">
+                            <Clock className="h-2 w-2" />
+                            Urgent
+                          </span>
+                        )}
+                      </div>
                       <p className="text-xs text-muted-foreground truncate">{item.program}</p>
                     </div>
                     <div className="flex items-center gap-3">
                       <TierBadge tier={item.tier} />
-                      <span className="text-xs font-semibold text-muted-foreground">{item.deadline}</span>
+                      <span className={`text-xs font-semibold ${item.isNear ? "text-destructive font-bold" : "text-muted-foreground"}`}>
+                        {item.deadline}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -316,35 +437,112 @@ export default function DashboardOverview() {
           </CardContent>
         </Card>
 
-        {/* Quick Tips */}
-        <Card className="border-border/60 bg-card/20 backdrop-blur-md">
-          <CardHeader>
-            <CardTitle className="text-md font-semibold text-foreground">Admissions Checklist</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-sm text-muted-foreground">
-            <div className="flex gap-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-primary/10 text-primary font-bold text-xs">1</span>
-              <p>Add 5+ universities from QS, THE, or ARWU lists.</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-primary/10 text-primary font-bold text-xs">2</span>
-              <p>Contact target professors in your research areas.</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-primary/10 text-primary font-bold text-xs">3</span>
-              <p>Prepare transcript copies, draft your SOP & CV.</p>
-            </div>
-            <div className="flex gap-3">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded bg-primary/10 text-primary font-bold text-xs">4</span>
-              <p>Register for standard exams (IELTS/GRE).</p>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Section D & E: PR Index & Document Progress */}
+        <div className="space-y-8">
+          
+          {/* PR Readiness Index Gauge */}
+          <Card className="border-border/60 bg-card/25">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base font-bold text-foreground">PR Transition Ease</CardTitle>
+              <CardDescription className="text-xs text-muted-foreground">Average PR pathway feasibility across your tracked universities.</CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col items-center justify-center py-4">
+              {trackedCountries.length > 0 ? (
+                <div className="relative flex items-center justify-center">
+                  {/* Custom SVG Radial Gauge */}
+                  <svg className="w-32 h-32 transform -rotate-90">
+                    <circle
+                      cx="64"
+                      cy="64"
+                      r="54"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      className="text-border/30"
+                      fill="transparent"
+                    />
+                    <circle
+                      cx="64"
+                      cy="64"
+                      r="54"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      className="text-primary transition-all duration-1000"
+                      strokeDasharray={`${2 * Math.PI * 54}`}
+                      strokeDashoffset={`${2 * Math.PI * 54 * (1 - prScoreAvg / 100)}`}
+                      strokeLinecap="round"
+                      fill="transparent"
+                    />
+                  </svg>
+                  <div className="absolute flex flex-col items-center justify-center text-center">
+                    <span className="text-2xl font-black text-foreground">{prScoreAvg}%</span>
+                    <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-wider mt-0.5">PR Score</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="text-center py-6 text-xs text-muted-foreground">
+                  Track universities to compute PR transition score.
+                </div>
+              )}
+              {prScoreAvg > 0 && (
+                <div className="mt-4 text-center">
+                  <p className="text-xs text-muted-foreground">
+                    {prScoreAvg >= 75 ? (
+                      <span className="text-emerald-400 font-semibold">Excellent: Highly favorable PR routes (Canada/Germany/Sweden)</span>
+                    ) : prScoreAvg >= 50 ? (
+                      <span className="text-amber-400 font-semibold">Moderate: Structure points or language required (Netherlands/Japan)</span>
+                    ) : (
+                      <span className="text-destructive font-semibold">Low/Difficult: Stringent quotas or no PR (USA/UAE/China)</span>
+                    )}
+                  </p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Section E: BD Document Checklist */}
+          <Card className="border-border/60 bg-card/25">
+            <CardHeader>
+              <CardTitle className="text-base font-bold text-foreground">BD Document Timelines</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex gap-3 items-start">
+                <CheckCircle2 className="h-4.5 w-4.5 text-emerald-400 shrink-0 mt-0.5" />
+                <div className="text-xs space-y-0.5">
+                  <p className="font-bold text-foreground">Academic Transcripts</p>
+                  <p className="text-muted-foreground">3-7 days request from UIU registrar</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-start">
+                <AlertTriangle className="h-4.5 w-4.5 text-amber-400 shrink-0 mt-0.5" />
+                <div className="text-xs space-y-0.5">
+                  <p className="font-bold text-foreground">Police Clearance Certificate</p>
+                  <p className="text-muted-foreground">2-6 weeks processing (Ramna HQ, Dhaka)</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-start">
+                <AlertTriangle className="h-4.5 w-4.5 text-amber-400 shrink-0 mt-0.5" />
+                <div className="text-xs space-y-0.5">
+                  <p className="font-bold text-foreground">German APS Certificate</p>
+                  <p className="text-muted-foreground">Mandatory for DE. 6-8 weeks wait in Baridhara</p>
+                </div>
+              </div>
+              <div className="flex gap-3 items-start">
+                <AlertCircle className="h-4.5 w-4.5 text-blue-400 shrink-0 mt-0.5" />
+                <div className="text-xs space-y-0.5">
+                  <p className="font-bold text-foreground">Blocked Account / GIC Setup</p>
+                  <p className="text-muted-foreground">Fintiba/Coracle: 2-3 weeks wire transfer in BD banks</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+        </div>
+
       </div>
 
       {/* Update Profile Modal */}
       {editProfileOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in duration-200">
           <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4">
             <h3 className="text-lg font-bold text-foreground">Update Profile Details</h3>
             <form onSubmit={handleSaveProfile} className="space-y-4">
@@ -417,14 +615,14 @@ export default function DashboardOverview() {
                 <Button 
                   type="button" 
                   onClick={() => setEditProfileOpen(false)}
-                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
+                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
                 >
                   Cancel
                 </Button>
                 <Button 
                   type="submit" 
                   disabled={profileSaving}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
                 >
                   {profileSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Save Changes"}
                 </Button>

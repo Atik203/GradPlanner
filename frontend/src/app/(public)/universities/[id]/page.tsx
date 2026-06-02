@@ -11,7 +11,7 @@ import {
   ArrowLeft, School, ExternalLink, Star, BarChart3, Users, Briefcase,
   Globe, BookOpen, Loader2, Trophy, Building2, AlertTriangle, Lightbulb, Wallet, FileCheck
 } from "lucide-react";
-import { getCountryIntelligence, CountryIntelligence } from "@/lib/countryData";
+import { CountryIntelligence } from "@/lib/countryData";
 
 function RankBadge({ rank, display, source, color }: { rank?: number | null; display?: string | null; source: string; color: string }) {
   const label = display || (rank ? `#${rank}` : "—");
@@ -58,7 +58,7 @@ export default function UniversityDetailPage() {
         setUniversity(data);
         if (data && data.country) {
           try {
-            const countryData = await getCountryIntelligence(data.country);
+            const countryData = await fetchApi(`/api/v1/countries/${data.country}`);
             setIntel(countryData);
           } catch (err) {
             console.error("Failed to load country intelligence:", err);
