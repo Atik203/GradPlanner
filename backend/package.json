@@ -2,6 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Express.js and Prisma Postgres Backend",
+  "packageManager": "pnpm@10.14.0",
   "main": "src/index.ts",
   "scripts": {
     "dev": "tsx src/index.ts",
