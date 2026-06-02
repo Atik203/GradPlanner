@@ -89,3 +89,8 @@ export type Document = Prisma.DocumentModel
  * 
  */
 export type UniversityRanking = Prisma.UniversityRankingModel
+/**
+ * Model CountryIntelligence
+ * 
+ */
+export type CountryIntelligence = Prisma.CountryIntelligenceModel

@@ -11,6 +11,7 @@ import { createReadStream } from "fs";
 import { parse } from "csv-parse";
 import path from "path";
 import { prisma } from "../src/lib/prisma.js";
+import { seedCountryIntelligence } from "./seed_country_intelligence.js";
 
 const CSV_PATH = path.resolve(
   path.dirname(new URL(import.meta.url).pathname.slice(1)), // strip leading slash on Windows
@@ -161,6 +162,10 @@ async function main() {
   console.log(`   Ranked in THE 2026        : ${inThe}`);
   console.log(`   Ranked in ARWU 2025       : ${inArwu}`);
   console.log(`   Ranked in ALL 3 systems   : ${inAll3}`);
+
+  // Seed Country Intelligence reference data
+  await seedCountryIntelligence();
+
   console.log("\n✅ Seed complete!");
 }
 

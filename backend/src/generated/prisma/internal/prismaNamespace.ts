@@ -393,7 +393,8 @@ export const ModelName = {
   Professor: 'Professor',
   Application: 'Application',
   Document: 'Document',
-  UniversityRanking: 'UniversityRanking'
+  UniversityRanking: 'UniversityRanking',
+  CountryIntelligence: 'CountryIntelligence'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -409,7 +410,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "account" | "session" | "verification" | "userProfile" | "university" | "professor" | "application" | "document" | "universityRanking"
+    modelProps: "user" | "account" | "session" | "verification" | "userProfile" | "university" | "professor" | "application" | "document" | "universityRanking" | "countryIntelligence"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1153,6 +1154,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    CountryIntelligence: {
+      payload: Prisma.$CountryIntelligencePayload<ExtArgs>
+      fields: Prisma.CountryIntelligenceFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CountryIntelligenceFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CountryIntelligenceFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>
+        }
+        findFirst: {
+          args: Prisma.CountryIntelligenceFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CountryIntelligenceFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>
+        }
+        findMany: {
+          args: Prisma.CountryIntelligenceFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>[]
+        }
+        create: {
+          args: Prisma.CountryIntelligenceCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>
+        }
+        createMany: {
+          args: Prisma.CountryIntelligenceCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CountryIntelligenceCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>[]
+        }
+        delete: {
+          args: Prisma.CountryIntelligenceDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>
+        }
+        update: {
+          args: Prisma.CountryIntelligenceUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>
+        }
+        deleteMany: {
+          args: Prisma.CountryIntelligenceDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CountryIntelligenceUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CountryIntelligenceUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>[]
+        }
+        upsert: {
+          args: Prisma.CountryIntelligenceUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CountryIntelligencePayload>
+        }
+        aggregate: {
+          args: Prisma.CountryIntelligenceAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCountryIntelligence>
+        }
+        groupBy: {
+          args: Prisma.CountryIntelligenceGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CountryIntelligenceGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CountryIntelligenceCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CountryIntelligenceCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1400,6 +1475,39 @@ export const UniversityRankingScalarFieldEnum = {
 export type UniversityRankingScalarFieldEnum = (typeof UniversityRankingScalarFieldEnum)[keyof typeof UniversityRankingScalarFieldEnum]
 
 
+export const CountryIntelligenceScalarFieldEnum = {
+  id: 'id',
+  country: 'country',
+  countryCode: 'countryCode',
+  overallScore: 'overallScore',
+  summary: 'summary',
+  jobMarket: 'jobMarket',
+  funding: 'funding',
+  visa: 'visa',
+  timeline: 'timeline',
+  scholarships: 'scholarships',
+  livingCosts: 'livingCosts',
+  postStudyWork: 'postStudyWork',
+  prPathways: 'prPathways',
+  family: 'family',
+  salary: 'salary',
+  aiEcosystem: 'aiEcosystem',
+  ranking: 'ranking',
+  research: 'research',
+  housing: 'housing',
+  taxation: 'taxation',
+  risks: 'risks',
+  futureProofing: 'futureProofing',
+  documents: 'documents',
+  language: 'language',
+  citizenship: 'citizenship',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CountryIntelligenceScalarFieldEnum = (typeof CountryIntelligenceScalarFieldEnum)[keyof typeof CountryIntelligenceScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1414,6 +1522,13 @@ export const NullableJsonNullValueInput = {
 } as const
 
 export type NullableJsonNullValueInput = (typeof NullableJsonNullValueInput)[keyof typeof NullableJsonNullValueInput]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -1727,6 +1842,7 @@ export type GlobalOmitConfig = {
   application?: Prisma.ApplicationOmit
   document?: Prisma.DocumentOmit
   universityRanking?: Prisma.UniversityRankingOmit
+  countryIntelligence?: Prisma.CountryIntelligenceOmit
 }
 
 /* Types for Logging */

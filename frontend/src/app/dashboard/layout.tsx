@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { DashboardNav } from "./DashboardNav";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { UserMenu } from "@/components/layout/UserMenu";
 
 export default async function DashboardLayout({
   children,
@@ -44,11 +45,12 @@ export default async function DashboardLayout({
         {/* Header */}
         <header className="flex h-16 items-center justify-between px-4 md:px-8 border-b border-border bg-background/50 backdrop-blur-md">
           <div className="flex items-center pl-10 md:pl-0">
-            <h1 className="text-lg font-semibold text-foreground">Workspace</h1>
+            <h1 className="text-lg font-semibold text-foreground text-gradient bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent">Workspace</h1>
           </div>
           <div className="flex items-center gap-4">
             <div className="text-xs text-muted-foreground hidden sm:block">Target Intake: Sept 2028</div>
             <ThemeToggle />
+            <UserMenu user={user} />
           </div>
         </header>
 

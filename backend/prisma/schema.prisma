@@ -235,6 +235,44 @@ model UniversityRanking {
   @@index([inQs, inThe, inArwu])
 }
 
+// ─── Country Intelligence ─────────────────────────────────────────────────────
+
+model CountryIntelligence {
+  id                    String   @id @default(cuid())
+  country               String   @unique
+  countryCode           String   @unique
+  overallScore          Int      @default(0)
+
+  // Dynamic modules stored as JSONB in PostgreSQL
+  summary               Json
+  jobMarket             Json
+  funding               Json
+  visa                  Json
+  timeline              Json
+  scholarships          Json
+  livingCosts           Json
+  postStudyWork         Json
+  prPathways            Json
+  family                Json
+  salary                Json
+  aiEcosystem           Json
+  ranking               Json
+  research              Json
+  housing               Json
+  taxation              Json
+  risks                 Json
+  futureProofing        Json
+  documents             Json
+  language              Json
+  citizenship           Json
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([countryCode])
+  @@index([overallScore])
+}
+
 // ─── Enums ───────────────────────────────────────────────────────────────────
 
 enum Tier {
