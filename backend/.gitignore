@@ -2,3 +2,5 @@
 node_modules
 /dist
 /generated
+# Vercel - keep api/ source, ignore generated output
+.vercel
