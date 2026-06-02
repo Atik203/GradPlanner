@@ -21,12 +21,15 @@
 
 import { createAuthClient } from "better-auth/react";
 
+const isServer = typeof window === "undefined";
+
 export const authClient = createAuthClient({
   /**
-   * The Express backend origin where better-auth is mounted.
-   * In production, set NEXT_PUBLIC_API_URL to your deployed backend URL.
+   * Use absolute URL on the server (for node fetch) and relative URL on the client (for proxy/cookies).
    */
-  baseURL: (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000") + "/api/v1/auth",
+  baseURL: isServer
+    ? (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:5000") + "/api/v1/auth"
+    : "/api/v1/auth",
 });
 
 // Named re-exports for convenience
