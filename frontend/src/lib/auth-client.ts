@@ -25,10 +25,16 @@ const isServer = typeof window === "undefined";
 
 export const authClient = createAuthClient({
   /**
-   * Use absolute URL on the server (for node fetch) and relative URL on the client (for proxy/cookies).
+   * Server-side (SSR/RSC): use NEXT_BACKEND_URL — the private env var that points to the
+   * deployed Express backend (e.g. https://gradplanner-api.vercel.app).
+   * This is NOT exposed to the browser.
+   *
+   * Client-side: use a relative path so the browser's request goes through
+   * Next.js /api/* rewrites which proxy to the backend. This also ensures
+   * session cookies are sent correctly (same-origin).
    */
   baseURL: isServer
-    ? (process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:5000") + "/api/v1/auth"
+    ? (process.env.NEXT_BACKEND_URL ?? "http://127.0.0.1:5000") + "/api/v1/auth"
     : "/api/v1/auth",
 });
 

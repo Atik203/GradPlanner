@@ -8,7 +8,10 @@ export default async function CountryIntelligencePage({ params }: { params: Prom
   // Decode percent-encoded spaces and replace spaces/underscores with hyphens
   const slug = decodeURIComponent(rawSlug).toLowerCase().trim().replace(/[\s_]+/g, "-");
   
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+  // NEXT_BACKEND_URL is a private (server-only) env var pointing to the deployed backend.
+  // It is NOT prefixed with NEXT_PUBLIC_ so it is never sent to the browser.
+  const API_URL = process.env.NEXT_BACKEND_URL || "http://localhost:5000";
+
   let countryData;
   
   try {

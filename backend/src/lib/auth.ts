@@ -5,12 +5,17 @@
  * Mounted via: app.all("/api/auth/*", toNodeHandler(auth))
  *
  * Phase 1: email + password only
- * Phase 2: add Google OAuth (do NOT enable until GOOGLE_CLIENT_ID is configured)
+ * Phase 2: Google OAuth
  */
 
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "./prisma.js";
+
+// The backend's own public URL (e.g. https://gradplanner-api.vercel.app in prod, http://localhost:5000 in dev)
+const BACKEND_BASE = (process.env.BETTER_AUTH_URL ?? "http://localhost:5000").replace(/['\"]/g, "");
+// The frontend's public URL (e.g. https://gradplanner.vercel.app in prod, http://localhost:3000 in dev)
+const FRONTEND_BASE = (process.env.FRONTEND_URL ?? "http://localhost:3000").replace(/['\"]/g, "");
 
 export const auth = betterAuth({
   // ── Database ───────────────────────────────────────────────────────────────
@@ -19,7 +24,8 @@ export const auth = betterAuth({
   }),
 
   // ── Base URL (backend origin, NOT the Next.js frontend) ───────────────────
-  baseURL: (process.env.BETTER_AUTH_URL ?? "http://localhost:5000") + "/api/v1/auth",
+  // better-auth uses this to construct callback URLs, so it MUST be the backend URL.
+  baseURL: BACKEND_BASE + "/api/v1/auth",
 
   trustedProxyHeaders: true,
 
@@ -33,16 +39,14 @@ export const auth = betterAuth({
     maxPasswordLength: 128,
     // Revoke all other sessions when a password is reset
     revokeSessionsOnPasswordReset: true,
-    // Password reset email — configure sendResetPassword when Resend is ready
-    // sendResetPassword: async ({ user, url }) => { ... }
   },
 
   // ── CORS — allow the Next.js frontend ─────────────────────────────────────
   trustedOrigins: [
-    (process.env.FRONTEND_URL ?? "http://localhost:3000").replace(/['"]/g, ""),
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-  ],
+    FRONTEND_BASE,
+  ].filter((v, i, arr) => arr.indexOf(v) === i), // deduplicate
 
   // ── Session ───────────────────────────────────────────────────────────────
   session: {
@@ -55,11 +59,14 @@ export const auth = betterAuth({
   },
 
   // ── Google OAuth ─────────────────────────────────────────────────────────
+  // The redirectURI MUST point to the BACKEND callback endpoint.
+  // Flow: Google → backend /api/v1/auth/callback/google → redirect to frontend /dashboard
+  // Never set redirectURI to the frontend URL — better-auth handles the final redirect itself.
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-      redirectURI: process.env.GOOGLE_CALLBACK_URL,
+      redirectURI: `${BACKEND_BASE}/api/v1/auth/callback/google`,
     },
   },
 });
