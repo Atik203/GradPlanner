@@ -3,40 +3,30 @@
  *
  * Import this in Client Components and Server Actions.
  *
- * Usage:
- *   import { authClient } from "@/lib/auth-client";
+ * IMPORTANT: better-auth's createAuthClient requires an ABSOLUTE URL on both
+ * server and client. A relative path like "/api/v1/auth" is not valid.
  *
- *   // Sign up
- *   await authClient.signUp.email({ name, email, password });
+ * URL strategy:
+ *   Server-side (SSR/RSC): NEXT_BACKEND_URL  — private env var, runtime, never sent to browser
+ *   Client-side (browser):  NEXT_PUBLIC_API_URL — baked into JS bundle at build time
  *
- *   // Sign in
- *   await authClient.signIn.email({ email, password });
- *
- *   // Sign out
- *   await authClient.signOut();
- *
- *   // Get current session (reactive in client components)
- *   const { data: session } = authClient.useSession();
+ * Both must be set to the deployed backend URL in Vercel's env settings.
  */
 
 import { createAuthClient } from "better-auth/react";
 
 const isServer = typeof window === "undefined";
 
+// Server-side: use the private NEXT_BACKEND_URL (runtime, not exposed to browser)
+// Client-side: use NEXT_PUBLIC_API_URL (build-time baked, must be the backend URL on Vercel)
+const BASE_URL = isServer
+  ? (process.env.NEXT_BACKEND_URL ?? "http://localhost:5000")
+  : (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000");
+
 export const authClient = createAuthClient({
-  /**
-   * Server-side (SSR/RSC): use NEXT_BACKEND_URL — the private env var that points to the
-   * deployed Express backend (e.g. https://gradplanner-api.vercel.app).
-   * This is NOT exposed to the browser.
-   *
-   * Client-side: use a relative path so the browser's request goes through
-   * Next.js /api/* rewrites which proxy to the backend. This also ensures
-   * session cookies are sent correctly (same-origin).
-   */
-  baseURL: isServer
-    ? (process.env.NEXT_BACKEND_URL ?? "http://127.0.0.1:5000") + "/api/v1/auth"
-    : "/api/v1/auth",
+  baseURL: BASE_URL + "/api/v1/auth",
 });
 
 // Named re-exports for convenience
 export const { signIn, signUp, signOut, useSession, getSession } = authClient;
+
