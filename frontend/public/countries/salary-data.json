@@ -969,432 +969,377 @@
       "countryCode": "AT",
       "currency": "EUR",
       "salaryScore": 75,
-      "confidenceScore": 85,
-      "softwareEngineer": {
-        "junior": {
-          "min": "40k",
-          "max": "60k",
-          "average": "50k"
+      "purchasingPowerScore": 72,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 42000,
+          "median": 50000,
+          "max": 60000,
+          "usdEquivalent": 54500,
+          "afterTax": 33000,
+          "note": "Solid salaries in Vienna; local tech and engineering hubs"
         },
-        "mid": {
-          "min": "60k",
-          "max": "80k",
-          "average": "70k"
-        },
-        "senior": {
-          "min": "80k",
-          "max": "120k",
-          "average": "100k"
+        "phdGraduate": {
+          "min": 50000,
+          "median": 58000,
+          "max": 70000,
+          "usdEquivalent": 63220,
+          "afterTax": 37500,
+          "note": "AI/ML research positions at universities or specialized labs"
         }
       },
-      "aiMlEngineer": {
-        "junior": {
-          "min": "50k",
-          "max": "70k",
-          "average": "60k"
-        },
-        "mid": {
-          "min": "70k",
-          "max": "90k",
-          "average": "80k"
-        },
-        "senior": {
-          "min": "90k",
-          "max": "150k",
-          "average": "120k"
-        }
+      "midLevel3to5yrs": {
+        "min": 58000,
+        "median": 70000,
+        "max": 85000,
+        "usdEquivalent": 76300,
+        "afterTax": 43000,
+        "note": "Senior/Mid engineer roles at scale-ups"
       },
-      "dataScientist": {
-        "junior": {
-          "min": "45k",
-          "max": "65k",
-          "average": "55k"
-        },
-        "mid": {
-          "min": "65k",
-          "max": "85k",
-          "average": "75k"
-        },
-        "senior": {
-          "min": "85k",
-          "max": "130k",
-          "average": "110k"
-        }
+      "seniorLevel": {
+        "min": 78000,
+        "median": 100000,
+        "max": 130000,
+        "usdEquivalent": 109000,
+        "afterTax": 60000,
+        "note": "Team leads, solution architects, or principal developers"
       },
-      "regionalVariations": {
-        "capital": "+15%"
+      "totalCompensationNote": "Base salary is the primary component; 13th and 14th month salaries are legally mandated",
+      "taxRate": {
+        "effective": "32-40%",
+        "includes": "High tax, includes healthcare and pension"
       },
-      "sectorVariations": {
-        "tech": "+20%"
+      "geographicVariation": {
+        "vienna": "+10% premium; Graz/Linz: -5% lower cost"
+      },
+      "industryPremium": {
+        "industrialTech": "+10%",
+        "softwareSaaS": "+15%",
+        "research": "-10%"
       },
       "benefits": {
-        "healthInsurance": "Standard",
-        "retirement": "Standard",
-        "vacation": "20+ days",
-        "parentalLeave": "Varies"
+        "healthInsurance": "Public insurance included in tax",
+        "retirement": "Pension contributions built in",
+        "vacation": "25 days standard minimum",
+        "parentalLeave": "Up to 2 years job protection"
       },
-      "salaryGrowth": "Moderate",
-      "negotiationPower": "Moderate"
+      "salaryGrowth": "3-5% annually",
+      "negotiationPower": "Medium-Low",
+      "confidenceScore": 85
     },
     {
       "country": "Belgium",
       "countryCode": "BE",
       "currency": "EUR",
       "salaryScore": 75,
-      "confidenceScore": 85,
-      "softwareEngineer": {
-        "junior": {
-          "min": "40k",
-          "max": "60k",
-          "average": "50k"
+      "purchasingPowerScore": 71,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 42000,
+          "median": 48000,
+          "max": 58000,
+          "usdEquivalent": 52320,
+          "afterTax": 29000,
+          "note": "Brussels tech companies and EU-related consulting roles"
         },
-        "mid": {
-          "min": "60k",
-          "max": "80k",
-          "average": "70k"
-        },
-        "senior": {
-          "min": "80k",
-          "max": "120k",
-          "average": "100k"
+        "phdGraduate": {
+          "min": 48000,
+          "median": 55000,
+          "max": 68000,
+          "usdEquivalent": 59950,
+          "afterTax": 32500,
+          "note": "Research contracts at KU Leuven or Ghent University"
         }
       },
-      "aiMlEngineer": {
-        "junior": {
-          "min": "50k",
-          "max": "70k",
-          "average": "60k"
-        },
-        "mid": {
-          "min": "70k",
-          "max": "90k",
-          "average": "80k"
-        },
-        "senior": {
-          "min": "90k",
-          "max": "150k",
-          "average": "120k"
-        }
+      "midLevel3to5yrs": {
+        "min": 55000,
+        "median": 68000,
+        "max": 82000,
+        "usdEquivalent": 74120,
+        "afterTax": 38000,
+        "note": "Mid-to-Senior software engineers"
       },
-      "dataScientist": {
-        "junior": {
-          "min": "45k",
-          "max": "65k",
-          "average": "55k"
-        },
-        "mid": {
-          "min": "65k",
-          "max": "85k",
-          "average": "75k"
-        },
-        "senior": {
-          "min": "85k",
-          "max": "130k",
-          "average": "110k"
-        }
+      "seniorLevel": {
+        "min": 75000,
+        "median": 92000,
+        "max": 120000,
+        "usdEquivalent": 100280,
+        "afterTax": 49000,
+        "note": "Principal developers or technical team leads"
       },
-      "regionalVariations": {
-        "capital": "+15%"
+      "totalCompensationNote": "Legally mandated 13.92 months salary (13th month + holiday pay); company cars are a standard benefit for tech roles",
+      "taxRate": {
+        "effective": "38-45%",
+        "note": "Very high tax burden; company car offsets this"
       },
-      "sectorVariations": {
-        "tech": "+20%"
+      "geographicVariation": {
+        "brussels": "+8% premium; Ghent: +3% startup hub; Wallonia: -10% salary"
+      },
+      "industryPremium": {
+        "techConsulting": "+10%",
+        "saas": "+15%"
       },
       "benefits": {
-        "healthInsurance": "Standard",
-        "retirement": "Standard",
-        "vacation": "20+ days",
-        "parentalLeave": "Varies"
+        "healthInsurance": "Comprehensive public healthcare",
+        "retirement": "Pension built-in",
+        "vacation": "20 days standard minimum",
+        "parentalLeave": "RTT days + standard parental leaves"
       },
-      "salaryGrowth": "Moderate",
-      "negotiationPower": "Moderate"
+      "salaryGrowth": "3-5% annually",
+      "negotiationPower": "Medium-Low",
+      "confidenceScore": 85
     },
     {
       "country": "New Zealand",
       "countryCode": "NZ",
       "currency": "NZD",
       "salaryScore": 75,
-      "confidenceScore": 85,
-      "softwareEngineer": {
-        "junior": {
-          "min": "40k",
-          "max": "60k",
-          "average": "50k"
+      "purchasingPowerScore": 67,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 65000,
+          "median": 78000,
+          "max": 95000,
+          "usdEquivalent": 47580,
+          "afterTax": 61000,
+          "note": "Auckland and Wellington tech scene; Xero is flagship employer"
         },
-        "mid": {
-          "min": "60k",
-          "max": "80k",
-          "average": "70k"
-        },
-        "senior": {
-          "min": "80k",
-          "max": "120k",
-          "average": "100k"
+        "phdGraduate": {
+          "min": 80000,
+          "median": 95000,
+          "max": 115000,
+          "usdEquivalent": 57950,
+          "afterTax": 72000,
+          "note": "PhDs commands premium in scientific and research organizations"
         }
       },
-      "aiMlEngineer": {
-        "junior": {
-          "min": "50k",
-          "max": "70k",
-          "average": "60k"
-        },
-        "mid": {
-          "min": "70k",
-          "max": "90k",
-          "average": "80k"
-        },
-        "senior": {
-          "min": "90k",
-          "max": "150k",
-          "average": "120k"
-        }
+      "midLevel3to5yrs": {
+        "min": 95000,
+        "median": 115000,
+        "max": 140000,
+        "usdEquivalent": 70150,
+        "afterTax": 85000,
+        "note": "Senior developer or tech lead positions"
       },
-      "dataScientist": {
-        "junior": {
-          "min": "45k",
-          "max": "65k",
-          "average": "55k"
-        },
-        "mid": {
-          "min": "65k",
-          "max": "85k",
-          "average": "75k"
-        },
-        "senior": {
-          "min": "85k",
-          "max": "130k",
-          "average": "110k"
-        }
+      "seniorLevel": {
+        "min": 130000,
+        "median": 155000,
+        "max": 200000,
+        "usdEquivalent": 94550,
+        "afterTax": 110000,
+        "note": "Principal developers or engineering managers"
       },
-      "regionalVariations": {
-        "capital": "+15%"
+      "totalCompensationNote": "Superannuation contributions (KiwiSaver) typically 3% on top of base salary",
+      "taxRate": {
+        "effective": "22-28%",
+        "note": "Moderate income tax rates"
       },
-      "sectorVariations": {
-        "tech": "+20%"
+      "geographicVariation": {
+        "auckland": "+5-10% premium; Wellington: +5%; Christchurch: -5%"
+      },
+      "industryPremium": {
+        "saas": "+15%",
+        "agtech": "+10%",
+        "itServices": "-10%"
       },
       "benefits": {
-        "healthInsurance": "Standard",
-        "retirement": "Standard",
-        "vacation": "20+ days",
-        "parentalLeave": "Varies"
+        "healthInsurance": "Subsidized public healthcare",
+        "retirement": "KiwiSaver match 3%",
+        "vacation": "20 days standard minimum",
+        "parentalLeave": "26 weeks paid parental leave"
       },
-      "salaryGrowth": "Moderate",
-      "negotiationPower": "Moderate"
+      "salaryGrowth": "4-7% with job changes",
+      "negotiationPower": "Medium",
+      "confidenceScore": 85
     },
     {
       "country": "Singapore",
       "countryCode": "SG",
       "currency": "SGD",
       "salaryScore": 75,
-      "confidenceScore": 85,
-      "softwareEngineer": {
-        "junior": {
-          "min": "40k",
-          "max": "60k",
-          "average": "50k"
+      "purchasingPowerScore": 72,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 60000,
+          "median": 78000,
+          "max": 100000,
+          "usdEquivalent": 57720,
+          "afterTax": 72000,
+          "note": "Big Tech, Shopee, Grab, and FinTech pay top ranges; very low income tax"
         },
-        "mid": {
-          "min": "60k",
-          "max": "80k",
-          "average": "70k"
-        },
-        "senior": {
-          "min": "80k",
-          "max": "120k",
-          "average": "100k"
+        "phdGraduate": {
+          "min": 80000,
+          "median": 96000,
+          "max": 130000,
+          "usdEquivalent": 71040,
+          "afterTax": 88000,
+          "note": "Research-heavy AI labs (A*STAR) or quantum tech positions"
         }
       },
-      "aiMlEngineer": {
-        "junior": {
-          "min": "50k",
-          "max": "70k",
-          "average": "60k"
-        },
-        "mid": {
-          "min": "70k",
-          "max": "90k",
-          "average": "80k"
-        },
-        "senior": {
-          "min": "90k",
-          "max": "150k",
-          "average": "120k"
-        }
+      "midLevel3to5yrs": {
+        "min": 95000,
+        "median": 125000,
+        "max": 170000,
+        "usdEquivalent": 92500,
+        "afterTax": 112000,
+        "note": "Senior engineer at scale-ups or mid-level at US tech companies"
       },
-      "dataScientist": {
-        "junior": {
-          "min": "45k",
-          "max": "65k",
-          "average": "55k"
-        },
-        "mid": {
-          "min": "65k",
-          "max": "85k",
-          "average": "75k"
-        },
-        "senior": {
-          "min": "85k",
-          "max": "130k",
-          "average": "110k"
-        }
+      "seniorLevel": {
+        "min": 140000,
+        "median": 190000,
+        "max": 280000,
+        "usdEquivalent": 140600,
+        "afterTax": 165000,
+        "note": "Staff engineers, engineering leads, or AI architects"
       },
-      "regionalVariations": {
-        "capital": "+15%"
+      "totalCompensationNote": "Performance bonus is highly significant (1-3 months); CPF contributions only apply to Citizens/PRs (foreigners get cash base)",
+      "taxRate": {
+        "effective": "8-15%",
+        "note": "Extremely low income tax rates"
       },
-      "sectorVariations": {
-        "tech": "+20%"
+      "geographicVariation": {
+        "singapore": "City-state, no geographic variation"
+      },
+      "industryPremium": {
+        "usTech": "+25-45%",
+        "fintech": "+20-40%",
+        "startups": "-15% to +10%"
       },
       "benefits": {
-        "healthInsurance": "Standard",
-        "retirement": "Standard",
-        "vacation": "20+ days",
-        "parentalLeave": "Varies"
+        "healthInsurance": "Subsidized public healthcare + corporate insurance",
+        "retirement": "None for foreign nationals (cash basis)",
+        "vacation": "14-21 days standard",
+        "parentalLeave": "16 weeks paid maternity leave"
       },
-      "salaryGrowth": "Moderate",
-      "negotiationPower": "Moderate"
+      "salaryGrowth": "8-15% with job changes; highly dynamic market",
+      "negotiationPower": "High",
+      "confidenceScore": 85
     },
     {
       "country": "France",
       "countryCode": "FR",
       "currency": "EUR",
       "salaryScore": 75,
-      "confidenceScore": 85,
-      "softwareEngineer": {
-        "junior": {
-          "min": "40k",
-          "max": "60k",
-          "average": "50k"
+      "purchasingPowerScore": 71,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 42000,
+          "median": 48000,
+          "max": 58000,
+          "usdEquivalent": 52320,
+          "afterTax": 34000,
+          "note": "Tech hubs in Paris and Lyon; Mistral AI is a major local employer"
         },
-        "mid": {
-          "min": "60k",
-          "max": "80k",
-          "average": "70k"
-        },
-        "senior": {
-          "min": "80k",
-          "max": "120k",
-          "average": "100k"
+        "phdGraduate": {
+          "min": 50000,
+          "median": 56000,
+          "max": 72000,
+          "usdEquivalent": 61040,
+          "afterTax": 38500,
+          "note": "Postdoc positions and corporate AI labs (Meta FAIR Paris)"
         }
       },
-      "aiMlEngineer": {
-        "junior": {
-          "min": "50k",
-          "max": "70k",
-          "average": "60k"
-        },
-        "mid": {
-          "min": "70k",
-          "max": "90k",
-          "average": "80k"
-        },
-        "senior": {
-          "min": "90k",
-          "max": "150k",
-          "average": "120k"
-        }
+      "midLevel3to5yrs": {
+        "min": 56000,
+        "median": 70000,
+        "max": 88000,
+        "usdEquivalent": 76300,
+        "afterTax": 46000,
+        "note": "Senior engineer positions in French scale-ups"
       },
-      "dataScientist": {
-        "junior": {
-          "min": "45k",
-          "max": "65k",
-          "average": "55k"
-        },
-        "mid": {
-          "min": "65k",
-          "max": "85k",
-          "average": "75k"
-        },
-        "senior": {
-          "min": "85k",
-          "max": "130k",
-          "average": "110k"
-        }
+      "seniorLevel": {
+        "min": 80000,
+        "median": 100000,
+        "max": 140000,
+        "usdEquivalent": 109000,
+        "afterTax": 62000,
+        "note": "Principal or engineering director roles"
       },
-      "regionalVariations": {
-        "capital": "+15%"
+      "totalCompensationNote": "Relatively high social security charges; work-life balance prioritized (RTT days for extra hours)",
+      "taxRate": {
+        "effective": "28-36%",
+        "note": "High social security and progressive tax rates"
       },
-      "sectorVariations": {
-        "tech": "+20%"
+      "geographicVariation": {
+        "paris": "+15-20% premium; Lyon/Toulouse: -10% lower cost"
+      },
+      "industryPremium": {
+        "aiStartups": "+25%",
+        "usTech": "+30%",
+        "banking": "+10%"
       },
       "benefits": {
-        "healthInsurance": "Standard",
-        "retirement": "Standard",
-        "vacation": "20+ days",
-        "parentalLeave": "Varies"
+        "healthInsurance": "Universal state healthcare coverage",
+        "retirement": "State pension scheme",
+        "vacation": "25 days minimum + RTT days",
+        "parentalLeave": "Standard paid parental leaves"
       },
-      "salaryGrowth": "Moderate",
-      "negotiationPower": "Moderate"
+      "salaryGrowth": "4-8% with job changes",
+      "negotiationPower": "Medium",
+      "confidenceScore": 85
     },
     {
       "country": "United Arab Emirates",
       "countryCode": "AE",
       "currency": "AED",
       "salaryScore": 75,
-      "confidenceScore": 85,
-      "softwareEngineer": {
-        "junior": {
-          "min": "40k",
-          "max": "60k",
-          "average": "50k"
+      "purchasingPowerScore": 76,
+      "entryLevel": {
+        "mscGraduate": {
+          "min": 130000,
+          "median": 168000,
+          "max": 220000,
+          "usdEquivalent": 45700,
+          "afterTax": 168000,
+          "note": "Zero personal income tax; packages usually include housing allowance"
         },
-        "mid": {
-          "min": "60k",
-          "max": "80k",
-          "average": "70k"
-        },
-        "senior": {
-          "min": "80k",
-          "max": "120k",
-          "average": "100k"
+        "phdGraduate": {
+          "min": 180000,
+          "median": 240000,
+          "max": 320000,
+          "usdEquivalent": 65300,
+          "afterTax": 240000,
+          "note": "Research-heavy roles or AI fellowships at MBZUAI"
         }
       },
-      "aiMlEngineer": {
-        "junior": {
-          "min": "50k",
-          "max": "70k",
-          "average": "60k"
-        },
-        "mid": {
-          "min": "70k",
-          "max": "90k",
-          "average": "80k"
-        },
-        "senior": {
-          "min": "90k",
-          "max": "150k",
-          "average": "120k"
-        }
+      "midLevel3to5yrs": {
+        "min": 220000,
+        "median": 280000,
+        "max": 380000,
+        "usdEquivalent": 76200,
+        "afterTax": 280000,
+        "note": "Senior engineer or tech lead at Hub71 scale-ups"
       },
-      "dataScientist": {
-        "junior": {
-          "min": "45k",
-          "max": "65k",
-          "average": "55k"
-        },
-        "mid": {
-          "min": "65k",
-          "max": "85k",
-          "average": "75k"
-        },
-        "senior": {
-          "min": "85k",
-          "max": "130k",
-          "average": "110k"
-        }
+      "seniorLevel": {
+        "min": 340000,
+        "median": 450000,
+        "max": 650000,
+        "usdEquivalent": 122500,
+        "afterTax": 450000,
+        "note": "Engineering manager, director, or principal AI researcher"
       },
-      "regionalVariations": {
-        "capital": "+15%"
+      "totalCompensationNote": "Tax-free basic salary; annual flight ticket home + private health insurance standard; gratuity pay on exit",
+      "taxRate": {
+        "effective": "0%",
+        "note": "Zero personal income tax"
       },
-      "sectorVariations": {
-        "tech": "+20%"
+      "geographicVariation": {
+        "dubai": "+5-10% premium; Abu Dhabi: stable tech hub (Hub71)"
+      },
+      "industryPremium": {
+        "aiLabsStateBacked": "+20%",
+        "fintech": "+15%",
+        "startups": "-10% to +10%"
       },
       "benefits": {
-        "healthInsurance": "Standard",
-        "retirement": "Standard",
-        "vacation": "20+ days",
-        "parentalLeave": "Varies"
+        "healthInsurance": "Universal private health insurance",
+        "retirement": "End-of-service gratuity pay",
+        "vacation": "30 days calendar leave standard",
+        "parentalLeave": "45-60 days paid maternity leave"
       },
-      "salaryGrowth": "Moderate",
-      "negotiationPower": "Moderate"
+      "salaryGrowth": "6-12% with job changes",
+      "negotiationPower": "Medium-High",
+      "confidenceScore": 85
     }
   ]
 }
