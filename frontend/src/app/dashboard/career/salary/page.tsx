@@ -27,7 +27,6 @@ const BDT_RATES: Record<string, number> = {
 
 export default function SalaryIntelligencePage() {
   const [countries, setCountries] = useState<CountrySummary[]>([]);
-  const [selected, setSelected] = useState<CountrySummary[]>([]);
   const [salaryData, setSalaryData] = useState<Record<string, SalaryData>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -40,14 +39,20 @@ export default function SalaryIntelligencePage() {
         setLoading(true);
         const list = await fetchApi("/api/v1/countries") as CountrySummary[];
         setCountries(list || []);
-        const top3 = (list || []).slice(0, 4);
-        setSelected(top3);
-        for (const c of top3) {
+        
+        // Fetch all salary data in parallel
+        const fetchPromises = (list || []).map(async (c) => {
           try {
             const data = await fetchApi(`/api/v1/countries/${c.countryCode}`);
-            if (data?.salary) setSalaryData((prev) => ({ ...prev, [c.countryCode]: data.salary }));
-          } catch {}
-        }
+            if (data?.salary) {
+              setSalaryData((prev) => ({ ...prev, [c.countryCode]: data.salary }));
+            }
+          } catch (err) {
+            console.error(`Failed to load salary for ${c.countryCode}:`, err);
+          }
+        });
+        
+        await Promise.all(fetchPromises);
       } catch (err) {
         setError("Failed to load salary data.");
         console.error(err);
@@ -97,7 +102,7 @@ export default function SalaryIntelligencePage() {
         bdtNet: toBDT(net, currency),
         pppScore: s.purchasingPowerScore,
       };
-    }).sort((a, b) => b.median - a.median);
+    }).sort((a, b) => b.bdt - a.bdt);
   }, [salaryData, countries, experience, degree]);
 
   if (loading) {
@@ -158,7 +163,7 @@ export default function SalaryIntelligencePage() {
                     <div className="flex-1 h-4 bg-muted/30 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-primary/60 rounded-full transition-all duration-700"
-                        style={{ width: `${Math.min((row.median / (comparison[0]?.median || 1)) * 100, 100)}%` }}
+                        style={{ width: `${Math.min((row.bdt / (comparison[0]?.bdt || 1)) * 100, 100)}%` }}
                       />
                     </div>
                     <span className="text-xs font-black text-foreground shrink-0">
