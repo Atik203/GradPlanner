@@ -5,6 +5,7 @@ import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth.js";
 import { prisma } from "./lib/prisma.js";
 import { requireAuth } from "./middleware/auth.js";
+import { requestLogger, errorLogger } from "./middleware/logger.js";
 
 import profileRouter from "./routes/profile.js";
 import rankingsRouter from "./routes/rankings.js";
@@ -46,6 +47,9 @@ app.all("/api/v1/auth/*splat", toNodeHandler(auth));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// ─── HTTP request / response logger ──────────────────────────────────────────
+app.use(requestLogger);
+
 app.use("/api/v1/profile", requireAuth, profileRouter);
 app.use("/api/v1/rankings", rankingsRouter);
 app.use("/api/v1/countries", countriesRouter);
@@ -70,12 +74,15 @@ app.get("/api/v1/health", async (_req: Request, res: Response) => {
   }
 });
 
+// ─── Error logger (must be after all routes) ─────────────────────────────────
+app.use(errorLogger);
+
 process.on("uncaughtException", (error) => {
-  console.error("Critical: Uncaught Exception detected:", error);
+  console.error("\x1b[1m\x1b[31m[FATAL]\x1b[0m Uncaught Exception:", error);
 });
 
 process.on("unhandledRejection", (reason, promise) => {
-  console.error("Critical: Unhandled Rejection at Promise:", promise, "reason:", reason);
+  console.error("\x1b[1m\x1b[31m[FATAL]\x1b[0m Unhandled Rejection at:", promise, "reason:", reason);
 });
 
 export default app;
