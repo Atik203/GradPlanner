@@ -342,8 +342,8 @@ export function CountryClient({ countryData, slug }: { countryData: any, slug: s
                 <div className="space-y-3 pt-2">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Admission Criteria Summary</h4>
                   <div className="text-xs text-muted-foreground space-y-2 leading-relaxed bg-muted/20 p-4 rounded-xl border border-border/40">
-                    <p><strong>Min GPA Criteria:</strong> Typically {countryData.ranking?.typicalMinimumGpa || "3.0 / 4.0 GPA equivalent"}</p>
-                    <p><strong>Language requirements:</strong> {countryData.language?.ieltsMin ? `IELTS minimum score: ${countryData.language.ieltsMin}` : "IELTS 6.5+ average for tech courses"}</p>
+                    <p><strong>Min GPA Criteria:</strong> Typically {countryData.ranking?.dimensionScores?.admissionFeasibility ? `${countryData.ranking.dimensionScores.admissionFeasibility}/100 admission feasibility score` : "3.0 / 4.0 GPA equivalent"}</p>
+                    <p><strong>Language requirements:</strong> {countryData.language?.admissionRequirements?.english?.ielts?.overall ? `IELTS minimum score: ${countryData.language.admissionRequirements.english.ielts.overall}` : "IELTS 6.5+ average for tech courses"}</p>
                   </div>
                 </div>
               </CardContent>
@@ -357,27 +357,50 @@ export function CountryClient({ countryData, slug }: { countryData: any, slug: s
                 </div>
                 {countryData.scholarships?.length > 0 ? (
                   <div className="space-y-4">
-                    {countryData.scholarships.map((s: any, idx: number) => (
-                      <div key={idx} className="border border-border/55 rounded-xl p-4 bg-muted/20 hover:border-border transition-colors space-y-3">
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                          <h4 className="font-bold text-sm text-foreground">{s.name}</h4>
-                          <span className="text-[10px] bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-bold">
-                            Comp: {s.competitiveness || "High"}
-                          </span>
-                        </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{s.eligibility}</p>
-                        <div className="grid grid-cols-2 gap-4 text-xs pt-2 border-t border-border/30">
-                          <div>
-                            <span className="text-[10px] text-muted-foreground block">Funding Value:</span>
-                            <span className="font-bold text-foreground">{s.amount}</span>
+                    {countryData.scholarships.map((s: any, idx: number) => {
+                      // Resolve field names — the seeded data uses scholarshipName, competitionLevel, etc.
+                      const schName = s.scholarshipName || s.name || "Unnamed Scholarship";
+                      const compLevel = s.competitionLevel || s.competitiveness || "High";
+                      const fundingValue = s.funding?.totalAnnualValueUSD || s.amount || "See scholarship page";
+                      // eligibility may be an object {gpa, languageRequirement, ...} or a string
+                      const eligibilityText: string = typeof s.eligibility === "string"
+                        ? s.eligibility
+                        : [
+                            s.eligibility?.gpa ? `GPA: ${s.eligibility.gpa}` : null,
+                            s.eligibility?.languageRequirement ? `Language: ${s.eligibility.languageRequirement}` : null,
+                            s.eligibility?.bangladeshSpecific ? `BD Note: ${s.eligibility.bangladeshSpecific}` : null,
+                            s.eligibility?.supervisorRequired ? `Supervisor: ${s.eligibility.supervisorRequired}` : null,
+                          ].filter(Boolean).join(" · ") || "See scholarship page for full eligibility criteria";
+                      const successProb = s.strategicValue?.probabilityAssessment || s.bangladeshiSuccess || "Moderate";
+                      const schType = s.type || "";
+                      return (
+                        <div key={idx} className="border border-border/55 rounded-xl p-4 bg-muted/20 hover:border-border transition-colors space-y-3">
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                            <div>
+                              <h4 className="font-bold text-sm text-foreground">{schName}</h4>
+                              {schType && <span className="text-[9px] text-muted-foreground font-semibold uppercase tracking-wide">{schType.replace(/_/g, " ")}</span>}
+                            </div>
+                            <span className="text-[10px] bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-bold shrink-0">
+                              {compLevel}
+                            </span>
                           </div>
-                          <div>
-                            <span className="text-[10px] text-muted-foreground block">BD Success Probability:</span>
-                            <span className="font-bold text-foreground">{s.bangladeshiSuccess || "Moderate"}</span>
+                          <p className="text-xs text-muted-foreground leading-relaxed">{eligibilityText}</p>
+                          <div className="grid grid-cols-2 gap-4 text-xs pt-2 border-t border-border/30">
+                            <div>
+                              <span className="text-[10px] text-muted-foreground block">Annual Funding Value:</span>
+                              <span className="font-bold text-foreground">{fundingValue}</span>
+                            </div>
+                            <div>
+                              <span className="text-[10px] text-muted-foreground block">BD Success Probability:</span>
+                              <span className="font-bold text-foreground text-xs line-clamp-2">{successProb}</span>
+                            </div>
                           </div>
+                          {s.recommendation && (
+                            <p className="text-[10px] text-primary/80 font-semibold leading-relaxed border-t border-border/30 pt-2">{s.recommendation}</p>
+                          )}
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 ) : (
                   <EmptyState
