@@ -34,6 +34,8 @@ import { TierBadge } from "@/components/badges/TierBadge";
 import { EmptyState } from "@/components/shared/EmptyState";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "sonner";
+
 
 interface Stats {
   universities: { total: number; dream: number; match: number; safety: number };
@@ -124,13 +126,17 @@ export default function DashboardOverview() {
       });
       dispatch(setProfile(updatedProfile));
       setEditProfileOpen(false);
-    } catch (err) {
+      toast.success("Profile updated successfully!");
+    } catch (err: any) {
       console.error(err);
-      setError("Failed to save profile. Please try again.");
+      const errMsg = err?.message || "Failed to save profile. Please try again.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setProfileSaving(false);
     }
   };
+
 
   if (loading) {
     return (

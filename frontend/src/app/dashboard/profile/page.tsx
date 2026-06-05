@@ -24,8 +24,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "sonner";
 
 const RESEARCH_SUGGESTIONS = [
+
   "NLP", "LLM", "Computer Vision", "Reinforcement Learning",
   "Deep Learning", "Robotics", "ML Theory", "Healthcare AI",
   "Generative AI", "Federated Learning", "Explainable AI",
@@ -129,13 +131,17 @@ export default function ProfileDetailsPage() {
       });
       dispatch(setProfile(updatedProfile));
       setSuccess(true);
-    } catch (err) {
+      toast.success("Profile saved! Country match scores recalculated.");
+    } catch (err: any) {
       console.error(err);
-      setError("Failed to save changes. Please try again.");
+      const errMsg = err?.message || "Failed to save changes. Please try again.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setSaving(false);
     }
   };
+
 
   if (loading) {
     return (

@@ -14,6 +14,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, ArrowLeft, School, Calendar, DollarSign, FileText, Globe } from "lucide-react";
 import { countryList } from "@/lib/countryList";
+import { toast } from "sonner";
+
 
 // Zod Schema
 const universitySchema = z.object({
@@ -86,6 +88,7 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
       });
 
       dispatch(addUniversity(response));
+      toast.success("University tracked successfully!");
       
       // Navigate back to universities list or country page if country specified
       if (initialCountry) {
@@ -96,11 +99,14 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
       }
     } catch (err: any) {
       console.error("Submit university error:", err);
-      setError(err?.message || "Failed to add university. Please check your inputs.");
+      const errMsg = err?.message || "Failed to add university. Please check your inputs.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setSaving(false);
     }
   };
+
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
