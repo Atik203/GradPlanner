@@ -192,9 +192,9 @@ Currently countries show static scores. There's no **user profile input** that p
 | PR Pathway Visualizer           | 🟡 Medium   | Medium | **P2**   | Done   |
 | Budget Planner                  | 🟡 Medium   | Low    | **P2**   | Done   |
 | Professor Research Fit          | 🟡 Medium   | Medium | **P2**   | Done   |
-| Salary Savings Calculator       | 🟢 Medium   | Low    | **P3**   |
-| Research Proposal Assistant     | 🟢 Low      | High   | **P3**   |
-| PR Probability Calculator       | 🟢 Medium   | High   | **P3**   |
+| Salary Savings Calculator       | 🟢 Medium   | Low    | **P3**   | Done   |
+| Research Proposal Assistant     | 🟢 Low      | High   | **P3**   | Done   |
+| PR Probability Calculator       | 🟢 Medium   | High   | **P3**   | Done   |
 
 ---
 
