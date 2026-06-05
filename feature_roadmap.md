@@ -51,21 +51,9 @@ Currently countries show static scores. There's no **user profile input** that p
 
 ---
 
-### 5. SOP / Document Readiness Tracker
+### ✅ ~~5. SOP / Document Readiness Tracker~~ — **DONE**
 
-**Answers:** Q5 — What should I do next, today?
-
-The documents module exists but **has no intelligence — it's just a list**.
-
-**What to build:**
-
-- Per-country document checklist auto-generated (visa + admission docs combined)
-- BD-specific timelines: "Police Clearance takes 2–6 weeks → Start by [date]"
-- "Start by" date calculator working backwards from application deadline
-- Document status: NOT_STARTED / IN_PROGRESS / READY / SUBMITTED
-- APS certificate warning for Germany (mandatory, 6–8 week wait)
-
-**Impact:** High. Document delays are the #1 reason Bangladeshi students miss deadlines.
+**Implemented:** Dynamic target application deadline solver (resolving from tracked university deadlines or profile target intake fallback) · UI Date controller to custom override deadlines · Backwards-calculated timelines for key BD processing queues (Police clearance 2–6 wks + buffer = 8 wks; German APS 6–8 wks + buffer = 12 wks; Transcripts 10 wks; IELTS 10 wks; LOR 6 wks; SOP/CV 4 wks) · Dynamic Chronological Timeline grouping documents into urgency slots (Overdue, Urgent, Upcoming, Completed) · Inline status update dropdowns synchronizing updates with the Express database in real-time · German APS attestation and embassy backlog warnings.
 
 ---
 
@@ -210,8 +198,8 @@ The documents module exists but **has no intelligence — it's just a list**.
 | Professor Email Generator       | 🔴 Critical | Medium | **P0**   | Done   |
 | Application "What Next" Engine  | 🔴 Critical | High   | **P0**   | Done   |
 | Scholarship Eligibility Checker | 🔴 High     | Medium | **P1**   | Done   |
-| Document Readiness + Date Calc  | 🔴 High     | Medium | **P1**   |
-| Country Side-by-Side Compare    | 🟡 High     | Medium | **P1**   |
+| Document Readiness + Date Calc  | 🔴 High     | Medium | **P1**   | Done   |
+| Country Side-by-Side Compare    | 🟡 High     | Medium | **P1**   |        |
 | Application Timeline Gantt      | 🟡 High     | High   | **P1**   |
 | University Full Decision Card   | 🟡 Medium   | Low    | **P2**   |
 | PR Pathway Visualizer           | 🟡 Medium   | Medium | **P2**   |
