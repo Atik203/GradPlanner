@@ -40,24 +40,14 @@ Currently countries show static scores. There's no **user profile input** that p
 ---
 
 ### ✅ ~~3. Application Decision Engine ("What Next Today")~~ — **DONE**
+
 **Implemented:** Multi-dimension Smart Task Checklist (recommending professor follow-ups, Dhaka PCC wait times, German APS certificate wait times, language exam planning, and application deadlines) · Core university readiness score algorithm (25% CGPA, 25% IELTS, 50% documents) with country-specific adaptations (Germany APS; Canada/Australia financials) · Widget overlay for dashboard overview (`WhatNextToday.tsx`) displaying colored gauges, status indicators, and criteria checks.
 
 ---
 
-### 4. Scholarship Eligibility Checker
+### ✅ ~~4. Scholarship Eligibility Checker~~ — **DONE**
 
-**Answers:** Q2 — Which universities fit my profile AND budget?
-
-The scholarship data exists in the DB but **no checker against user profile**.
-
-**What to build:**
-
-- Input: user's CGPA, IELTS, work experience, degree level target
-- Output: list of scholarships ranked by eligibility match %
-- Highlight: which requirements you're missing (e.g. "Need 0.3 more CGPA for RTP")
-- Funding gap calculator: "You need AUD 45,000/year. RTP covers 100%. Gap = $0"
-
-**Impact:** High. Every user is scholarship-dependent (AGENTS.md rule).
+**Implemented:** Express backend routing `/api/v1/scholarships/checker` · Custom string parsing engine for GPA, IELTS, and work experience criteria · Multi-dimension matching & eligibility scoring (100 pt scale covering degree level, CGPA, IELTS, work experience, publications) · Dynamic out-of-pocket funding gap calculator (combining tuition and shared accommodation living cost minus scholarship tuition + monthly stipend coverage, outputting equivalents in both USD and BDT at BDT 118 rate) · Dual-tab frontend Scholarship Hub (Eligibility Checker vs Browse Database) · Interactive parameters control panel (prefilled with profile defaults) · Missing requirements alert blocks · Strengths checks · Expandable annual cost gap breakdowns.
 
 ---
 
@@ -219,7 +209,7 @@ The documents module exists but **has no intelligence — it's just a list**.
 | Profile-Based Country Match     | 🔴 Critical | Medium | **P0**   | Done   |
 | Professor Email Generator       | 🔴 Critical | Medium | **P0**   | Done   |
 | Application "What Next" Engine  | 🔴 Critical | High   | **P0**   | Done   |
-| Scholarship Eligibility Checker | 🔴 High     | Medium | **P1**   |
+| Scholarship Eligibility Checker | 🔴 High     | Medium | **P1**   | Done   |
 | Document Readiness + Date Calc  | 🔴 High     | Medium | **P1**   |
 | Country Side-by-Side Compare    | 🟡 High     | Medium | **P1**   |
 | Application Timeline Gantt      | 🟡 High     | High   | **P1**   |

@@ -6,7 +6,7 @@
   "packageManager": "pnpm@10.14.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "tsx src/index.ts",
+    "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
     "db:migrate": "prisma migrate dev",
