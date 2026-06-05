@@ -210,3 +210,55 @@ Per AGENTS.md — GradPlanner is NOT:
 ---
 
 > **North Star:** A Bangladeshi CS student with CGPA 3.2, IELTS 7.0, and zero savings should open GradPlanner and within 10 minutes know: which 3 countries to target, which 5 professors to email, which 2 scholarships to apply for, and exactly what to do this week.
+
+---
+
+## 🚀 Release History
+
+### v1.1.0 — 2026-06-05 · Country Intelligence + Career Intelligence Suite
+
+**Theme:** Complete all planned P1–P3 features, add BD-first career intelligence, and polish the dashboard UI with country flag identity.
+
+#### ✅ P1 Features Shipped
+| Feature | Page | Description |
+|---|---|---|
+| Scholarship Eligibility Checker | `/dashboard/funding/scholarships` | Auto-filters scholarships by CGPA, IELTS, budget, and BD-specific deadlines |
+| Document Readiness + Date Calculator | `/dashboard/documents/checklist` | BD document timelines (PCC, APS, passport), urgency tracking, date math |
+| Country Side-by-Side Compare | `/dashboard/countries/compare` | Up to 3 countries compared across funding, PR, visa, job market |
+| Application Timeline Gantt | `/dashboard/timeline` | Visual milestone timeline from IELTS to program start |
+
+#### ✅ P2 Features Shipped
+| Feature | Page | Description |
+|---|---|---|
+| University Full Decision Card | `/dashboard/universities` | Shows QS/THE/ARWU ranks, funding status, CGPA/IELTS minimums, acceptance rate |
+| PR Pathway Visualizer | `/dashboard/career/pr-planner` | Dual-tab: CRS (Canada) + Points Test (Australia) + Blue Card (Germany) calculators |
+| Budget Planner | `/dashboard/funding/budget` | Monthly expense breakdown by country, spouse-work advisory, savings timeline |
+| Professor Research Fit | `/dashboard/professors` | Research fit score 1–10, funding status, follow-up reminders, outreach tracker |
+
+#### ✅ P3 Features Shipped
+| Feature | Page | Description |
+|---|---|---|
+| Salary Savings Calculator | `/dashboard/career/salary` | Net monthly savings engine with sliders, BDT equivalent milestones (1 USD = 125 BDT) |
+| Research Proposal Assistant | `/dashboard/professors/new` → Email Modal | Collapsible accordion generating bridging research questions from profile + professor data |
+| PR Probability Calculator | `/dashboard/career/pr-planner` | CRS score, Points Test, Blue Card calculator with BD-specific caveats (USA EB-2/3 warning) |
+
+#### ✅ UI Polish
+| Change | Scope |
+|---|---|
+| Country flags via `country-flag-icons` | Dashboard home AI Fit Recommendations |
+| Country flags via `country-flag-icons` | Country Explorer (`/dashboard/countries`) |
+| Country flags via `country-flag-icons` | Country Detail Hero (`/dashboard/countries/[country]`) |
+| Country flags via `country-flag-icons` | Job Market cards (`/dashboard/career/job-market`) |
+| Skills Demand Heatmap merged into cards | Job Market page — heat-intensity color scale (🔥 rose → amber → blue) |
+| Radial SVG score rings | Job Market cards — animated progress ring per country |
+| Gradient card headers | Job Market — background hue pulled from score color |
+
+#### 🔧 Bug Fixes
+| Bug | Fix |
+|---|---|
+| Job Market showed only 3 countries | Removed `slice(0,3)` limit; all countries fetched in parallel via `Promise.all` |
+| Scholarship Hub 404 error | Fixed API route path mismatch in `ScholarshipHubPage` |
+
+#### 📦 Build
+- Frontend: Next.js 16.2.6 — 43 routes, 0 TS errors, `✓ Compiled successfully`
+- Backend: Express + Prisma — `tsc` clean, 0 errors
