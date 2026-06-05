@@ -8,7 +8,16 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:generate": "prisma generate",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:seed-country": "tsx prisma/seed_country_intelligence.ts",
+    "db:seed-rankings": "tsx prisma/seed_rankings.ts",
+    "db:seed-excel": "tsx prisma/seed_excel.ts"
   },
   "keywords": [],
   "author": "",
@@ -32,5 +41,8 @@
     "express": "^5.2.1",
     "pg": "^8.21.0",
     "xlsx": "^0.18.5"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }

@@ -10,6 +10,9 @@ import {
   deleteProfessor 
 } from "@/lib/store/slices/professorSlice";
 import { setUniversities } from "@/lib/store/slices/universitySlice";
+import { setProfile } from "@/lib/store/slices/profileSlice";
+import { calculateResearchFit } from "@/lib/researchFitHelper";
+import { EmailGeneratorModal } from "@/components/dashboard/professor/EmailGeneratorModal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { 
@@ -17,7 +20,8 @@ import {
   Save,
   Loader2, 
   Trash2,
-  Table as TableIcon
+  Table as TableIcon,
+  Mail
 } from "lucide-react";
 import { Professor, ProfessorStatus } from "@/types";
 import { toast } from "sonner";
@@ -27,6 +31,7 @@ export default function ProfessorsPage() {
   const dispatch = useAppDispatch();
   const storedProfessors = useAppSelector((state) => state.professors.items);
   const universities = useAppSelector((state) => state.universities.items);
+  const profile = useAppSelector((state) => state.profile.profile);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -37,17 +42,35 @@ export default function ProfessorsPage() {
   const [newColName, setNewColName] = useState("");
   const [showNewColInput, setShowNewColInput] = useState(false);
 
-  // Load professors and universities
+  // Outreach Modal state
+  const [selectedProf, setSelectedProf] = useState<Professor | null>(null);
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+
+  const handleOpenEmailModal = (prof: Professor) => {
+    setSelectedProf(prof);
+    setIsEmailModalOpen(true);
+  };
+
+  const handleEmailLogged = (updatedProf: Professor) => {
+    dispatch(updateProfessor(updatedProf));
+    setRows(prev => prev.map(r => r.id === updatedProf.id ? { ...r, ...updatedProf, isDirty: false } : r));
+  };
+
+  // Load professors, universities, and profile
   useEffect(() => {
     async function loadData() {
       try {
         setLoading(true);
-        const [profData, uniData] = await Promise.all([
+        const [profData, uniData, profileData] = await Promise.all([
           fetchApi("/api/v1/professors"),
           fetchApi("/api/v1/universities"),
+          fetchApi("/api/v1/profile").catch(() => null),
         ]);
         dispatch(setProfessors(profData));
         dispatch(setUniversities(uniData));
+        if (profileData) {
+          dispatch(setProfile(profileData));
+        }
       } catch (err) {
         console.error(err);
         setError("Failed to load professors list.");
@@ -110,6 +133,11 @@ export default function ProfessorsPage() {
         row.customFields = { ...(row.customFields || {}), [field]: value };
       } else {
         (row as any)[field] = value;
+        
+        // Auto-calculate researchFitScore if researchInterests is changed
+        if (field === "researchInterests" && profile) {
+          row.researchFitScore = calculateResearchFit(profile.researchInterests, value);
+        }
       }
       
       row.isDirty = true;
@@ -162,6 +190,8 @@ export default function ProfessorsPage() {
           universityId: row.universityId || null,
           researchInterests: row.researchInterests || null,
           status: row.status || "NOT_CONTACTED",
+          fundingStatus: row.fundingStatus || "UNKNOWN",
+          researchFitScore: row.researchFitScore ? parseInt(row.researchFitScore as any, 10) : null,
           notes: row.notes || null,
           customFields: row.customFields || {}
         };
@@ -286,6 +316,8 @@ export default function ProfessorsPage() {
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[250px]">University</th>
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[200px]">Email</th>
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[150px]">Status</th>
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[150px]">Funding</th>
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[100px]">Fit Score</th>
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[250px]">Research Focus</th>
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[250px]">Notes</th>
                 {customColumns.map(col => (
@@ -293,12 +325,13 @@ export default function ProfessorsPage() {
                     {col}
                   </th>
                 ))}
+                <th className="px-4 py-3 font-medium border-r border-border min-w-[120px] text-center">Outreach</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border/50">
               {rows.length === 0 ? (
                 <tr>
-                  <td colSpan={7 + customColumns.length} className="px-4 py-12 text-center text-muted-foreground">
+                  <td colSpan={10 + customColumns.length} className="px-4 py-12 text-center text-muted-foreground">
                     Click "Row" to add your first professor contact.
                   </td>
                 </tr>
@@ -355,6 +388,29 @@ export default function ProfessorsPage() {
                       </select>
                     </td>
                     <td className="px-0 py-0 border-r border-border/50">
+                      <select
+                        value={row.fundingStatus || "UNKNOWN"}
+                        onChange={(e) => updateCell(index, "fundingStatus", e.target.value)}
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground appearance-none font-semibold"
+                      >
+                        <option value="UNKNOWN" className="bg-background font-normal text-muted-foreground">❓ Unknown</option>
+                        <option value="FUNDED" className="bg-background font-bold text-emerald-400">✅ Funded</option>
+                        <option value="LIKELY" className="bg-background font-semibold text-amber-400">🟡 Likely</option>
+                        <option value="UNLIKELY" className="bg-background font-semibold text-destructive">🔴 Unlikely</option>
+                      </select>
+                    </td>
+                    <td className="px-0 py-0 border-r border-border/50">
+                      <input
+                        type="number"
+                        min={1}
+                        max={10}
+                        value={row.researchFitScore || ""}
+                        onChange={(e) => updateCell(index, "researchFitScore", e.target.value ? parseInt(e.target.value, 10) : "")}
+                        placeholder="1-10"
+                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground text-center font-bold"
+                      />
+                    </td>
+                    <td className="px-0 py-0 border-r border-border/50">
                       <input
                         type="text"
                         value={row.researchInterests || ""}
@@ -380,6 +436,18 @@ export default function ProfessorsPage() {
                         />
                       </td>
                     ))}
+                    <td className="px-2 py-0 border-r border-border/50 text-center">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="h-8 border-primary/30 text-primary hover:bg-primary/10 hover:text-primary-foreground font-semibold"
+                        onClick={() => handleOpenEmailModal(row as Professor)}
+                        disabled={row.isNew || !row.email}
+                      >
+                        <Mail className="h-3.5 w-3.5 mr-1" />
+                        Outreach
+                      </Button>
+                    </td>
                   </tr>
                 ))
               )}
@@ -387,6 +455,13 @@ export default function ProfessorsPage() {
           </table>
         )}
       </div>
+
+      <EmailGeneratorModal
+        professor={selectedProf}
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        onEmailLogged={handleEmailLogged}
+      />
     </div>
   );
 }
