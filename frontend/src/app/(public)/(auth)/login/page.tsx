@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -31,6 +32,7 @@ export default function LoginPage() {
     e.preventDefault();
     if (!email || !password) {
       setError("Please enter both email and password.");
+      toast.error("Please enter both email and password.");
       return;
     }
     setError(null);
@@ -43,14 +45,18 @@ export default function LoginPage() {
       });
 
       if (authError) {
-        setError(authError.message || "Failed to sign in. Please check credentials.");
+        const errMsg = authError.message || "Failed to sign in. Please check credentials.";
+        setError(errMsg);
+        toast.error(errMsg);
       } else {
+        toast.success("Welcome back! Signing you in...");
         router.push("/dashboard");
         router.refresh();
       }
     } catch (err) {
       console.error(err);
       setError("An unexpected error occurred. Please try again.");
+      toast.error("An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -60,6 +66,7 @@ export default function LoginPage() {
     setError(null);
     setGoogleLoading(true);
     try {
+      toast.info("Connecting to Google...");
       await authClient.signIn.social({
         provider: "google",
         callbackURL: `${window.location.origin}/dashboard`,
@@ -67,9 +74,11 @@ export default function LoginPage() {
     } catch (err) {
       console.error(err);
       setError("Google sign-in failed. Please try again.");
+      toast.error("Google sign-in failed. Please try again.");
       setGoogleLoading(false);
     }
   };
+
 
   if (isPending || session) {
     return (

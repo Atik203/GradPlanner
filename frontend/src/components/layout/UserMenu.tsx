@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { LogOut, User as UserIcon, Settings, Loader2 } from "lucide-react";
 import Link from "next/link";
+import { toast } from "sonner";
 
 interface UserMenuProps {
   user: {
@@ -30,14 +31,17 @@ export function UserMenu({ user }: UserMenuProps) {
     setLoading(true);
     try {
       await authClient.signOut();
+      toast.success("Signed out successfully.");
       router.push("/login");
       router.refresh();
     } catch (error) {
       console.error("Sign out failed:", error);
+      toast.error("Failed to sign out. Please try again.");
     } finally {
       setLoading(false);
     }
   };
+
 
   const initials = user.name
     ? user.name

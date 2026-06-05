@@ -20,6 +20,8 @@ import {
   Table as TableIcon
 } from "lucide-react";
 import { Professor, ProfessorStatus } from "@/types";
+import { toast } from "sonner";
+
 
 export default function ProfessorsPage() {
   const dispatch = useAppDispatch();
@@ -121,6 +123,7 @@ export default function ProfessorsPage() {
     if (row.isNew) {
       // Just remove from local state
       setRows(prev => prev.filter((_, i) => i !== rowIndex));
+      toast.success("New unsaved row removed.");
       return;
     }
 
@@ -129,9 +132,12 @@ export default function ProfessorsPage() {
     try {
       await fetchApi(`/api/v1/professors/${row.id}`, { method: "DELETE" });
       dispatch(deleteProfessor(row.id as string));
-    } catch (err) {
+      toast.success(`Professor ${row.name || "record"} deleted.`);
+    } catch (err: any) {
       console.error(err);
-      setError("Failed to delete professor.");
+      const errMsg = err?.message || "Failed to delete professor.";
+      setError(errMsg);
+      toast.error(errMsg);
     }
   };
 
@@ -141,6 +147,11 @@ export default function ProfessorsPage() {
     
     try {
       const dirtyRows = rows.filter(r => r.isDirty);
+      if (dirtyRows.length === 0) {
+        toast.info("No changes to save.");
+        setSaving(false);
+        return;
+      }
       
       const promises = dirtyRows.map(async (row) => {
         if (!row.name) return null; // Skip empty names
@@ -173,23 +184,33 @@ export default function ProfessorsPage() {
       const results = await Promise.all(promises);
       
       // Update Redux state
+      let addedCount = 0;
+      let updatedCount = 0;
       results.forEach(res => {
         if (!res) return;
         if (res.type === 'add') {
           dispatch(addProfessor(res.data));
+          addedCount++;
         } else if (res.type === 'update') {
           dispatch(updateProfessor(res.data));
+          updatedCount++;
         }
       });
 
+      if (addedCount > 0 || updatedCount > 0) {
+        toast.success(`Saved changes successfully! Added ${addedCount}, Updated ${updatedCount}.`);
+      }
       // Rows will resync via useEffect
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      setError("Failed to save some changes. Please check your network and try again.");
+      const errMsg = err?.message || "Failed to save some changes. Please check your network and try again.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setSaving(false);
     }
   };
+
 
   return (
     <div className="space-y-4 h-[calc(100vh-80px)] flex flex-col animate-in fade-in duration-500">

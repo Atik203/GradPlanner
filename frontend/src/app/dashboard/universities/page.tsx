@@ -29,6 +29,7 @@ import {
   School
 } from "lucide-react";
 import { UniversityRanking, University, Tier } from "@/types";
+import { toast } from "sonner";
 
 export default function UniversitiesPage() {
   const dispatch = useAppDispatch();
@@ -130,9 +131,12 @@ export default function UniversitiesPage() {
       setTrackFormOpen(false);
       setSearchQuery("");
       setSearchResults([]);
-    } catch (err) {
+      toast.success(`${selectedRanking.institutionName} tracked successfully!`);
+    } catch (err: any) {
       console.error(err);
-      setError("Failed to track university. Please try again.");
+      const errMsg = err?.message || "Failed to track university. Please try again.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setSaving(false);
     }
@@ -146,11 +150,15 @@ export default function UniversitiesPage() {
         method: "DELETE",
       });
       dispatch(deleteUniversity(id));
-    } catch (err) {
+      toast.success("University removed from tracker.");
+    } catch (err: any) {
       console.error(err);
-      setError("Failed to delete university.");
+      const errMsg = err?.message || "Failed to delete university.";
+      setError(errMsg);
+      toast.error(errMsg);
     }
   };
+
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">

@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, ArrowLeft, GraduationCap, AlertCircle, Info, Star } from "lucide-react";
+import { toast } from "sonner";
+
 
 
 const professorSchema = z.object({
@@ -90,6 +92,7 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
         }),
       });
       dispatch(addProfessor(response));
+      toast.success(`Professor ${data.name} added successfully!`);
       if (initialCountry) {
         const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
         router.push(`/dashboard/countries/${countrySlug}`);
@@ -97,11 +100,14 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
         router.push("/dashboard/professors");
       }
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Failed to add professor. Please try again.");
+      const errMsg = err instanceof Error ? err.message : "Failed to add professor. Please try again.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setSaving(false);
     }
   };
+
 
   const goBack = () => {
     if (initialCountry) {
