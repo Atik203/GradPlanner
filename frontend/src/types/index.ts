@@ -34,6 +34,8 @@ export interface University {
   updatedAt: string;
   application?: Application | null;
   professors?: Professor[];
+  rankingId?: string | null;
+  ranking?: UniversityRanking | null;
 }
 
 export type ProfessorStatus =
