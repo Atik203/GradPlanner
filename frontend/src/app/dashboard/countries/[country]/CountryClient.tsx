@@ -18,6 +18,7 @@ import { TierBadge } from "@/components/badges/TierBadge";
 import { FundingStatusBadge } from "@/components/badges/FundingStatusBadge";
 import { StatusBadge } from "@/components/badges/StatusBadge";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 
 // BDT Conversion Rates
 const BDT_RATES: Record<string, number> = {
@@ -126,8 +127,8 @@ export function CountryClient({ countryData, slug }: { countryData: any, slug: s
           
           {/* Main Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <span className="text-3xl sm:text-4xl shadow-xs">📍</span>
+            <div className="flex items-center gap-4">
+              <CountryFlag country={countryData.countryCode || countryName} className="h-12 w-18 rounded-lg border border-border/20 shadow-md shrink-0" />
               <div>
                 <h1 className="text-3xl font-black text-foreground tracking-tight sm:text-4xl">
                   {countryData.country}
