@@ -5,6 +5,8 @@ import { fetchApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { setProfile } from "@/lib/store/slices/profileSlice";
 import { setUniversities } from "@/lib/store/slices/universitySlice";
+import { setMatchScores } from "@/lib/store/slices/countryMatchSlice";
+import { computeCountryMatchScore } from "@/lib/matchScore";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -46,6 +48,8 @@ export default function DashboardOverview() {
   const profile = useAppSelector((state) => state.profile.profile);
   const universities = useAppSelector((state) => state.universities.items);
 
+  const matchScores = useAppSelector((state) => state.countryMatch.scores);
+
   const [stats, setStats] = useState<Stats | null>(null);
   const [countriesSummary, setCountriesSummary] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
@@ -75,6 +79,16 @@ export default function DashboardOverview() {
         dispatch(setUniversities(uniData));
         if (countriesRes) {
           setCountriesSummary(countriesRes);
+          // Compute personal match scores for all countries
+          const scores: Record<string, ReturnType<typeof computeCountryMatchScore>> = {};
+          for (const c of countriesRes) {
+            scores[c.countryCode] = computeCountryMatchScore(profileData || {}, {
+              countryCode: c.countryCode,
+              overallScore: c.overallScore,
+              summary: c.summary,
+            });
+          }
+          dispatch(setMatchScores(scores));
         }
 
         // Prefill profile edit fields
@@ -136,25 +150,16 @@ export default function DashboardOverview() {
     if (profile.graduationDate) completeness += 20;
   }
 
-  // Dynamic Fit Recommendations (Top 3)
-  const gpa = profile?.cgpa ? Number(profile.cgpa) : 0;
+  // Top 3 countries by personal match score (falls back to overallScore)
   const getRecommendations = () => {
     if (countriesSummary.length === 0) return [];
-    
-    // Sort all countries by overallScore
-    const sorted = [...countriesSummary].sort((a, b) => b.overallScore - a.overallScore);
-    
-    // Adjust recommendation based on GPA
-    if (gpa >= 3.7) {
-      // High GPA -> Germany, USA, Switzerland or Canada
-      return sorted.filter(c => ["DE", "US", "CH", "CA"].includes(c.countryCode)).slice(0, 3);
-    } else if (gpa >= 3.3) {
-      // Mid-high GPA -> Germany, Canada, Sweden, Netherlands
-      return sorted.filter(c => ["DE", "CA", "SE", "NL"].includes(c.countryCode)).slice(0, 3);
-    } else {
-      // Moderate GPA -> UAE (fully funded), Japan (MEXT), South Korea (GKS), Finland
-      return sorted.filter(c => ["AE", "JP", "KR", "FI"].includes(c.countryCode)).slice(0, 3);
-    }
+    return [...countriesSummary]
+      .sort((a, b) => {
+        const sa = matchScores[a.countryCode]?.score ?? a.overallScore;
+        const sb = matchScores[b.countryCode]?.score ?? b.overallScore;
+        return sb - sa;
+      })
+      .slice(0, 3);
   };
 
   const recommendations = getRecommendations();
@@ -320,7 +325,7 @@ export default function DashboardOverview() {
               <Sparkles className="h-5 w-5 text-primary" />
               AI Fit Recommendations
             </h3>
-            <p className="text-xs text-muted-foreground">Based on undergrad CGPA ({gpa || "not set"}) & admissions intelligence.</p>
+            <p className="text-xs text-muted-foreground">Top countries matched to your CGPA, IELTS, research interests & priorities.</p>
           </div>
           <Link href="/dashboard/countries">
             <Button variant="ghost" size="sm" className="text-xs text-primary hover:text-primary/80 flex items-center gap-1 cursor-pointer">
@@ -338,8 +343,14 @@ export default function DashboardOverview() {
                 <Card key={country.countryCode} className="border-border/60 bg-card/25 hover:bg-card/45 hover:border-primary/50 transition-all duration-300 flex flex-col h-full shadow-xs group">
                   <CardHeader className="pb-3">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-bold">
-                        Fit Match: {country.overallScore}%
+                      <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${
+                        (matchScores[country.countryCode]?.score ?? country.overallScore) >= 75
+                          ? "bg-emerald-400/10 border-emerald-400/30 text-emerald-400"
+                          : (matchScores[country.countryCode]?.score ?? country.overallScore) >= 55
+                          ? "bg-amber-400/10 border-amber-400/30 text-amber-400"
+                          : "bg-red-400/10 border-red-400/30 text-red-400"
+                      }`}>
+                        {matchScores[country.countryCode] ? "Your Match" : "Score"}: {matchScores[country.countryCode]?.score ?? country.overallScore}%
                       </span>
                       <Globe className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                     </div>

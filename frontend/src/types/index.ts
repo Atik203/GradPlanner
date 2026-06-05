@@ -150,6 +150,12 @@ export interface UserProfile {
   targetIntake?: string | null;
   graduationDate?: string | null;
   targetDegree?: string | null;
+  // ── Match Intelligence ─────────────────────────────────────────────
+  ieltsScore?: number | null;        // actual or target IELTS band score
+  monthlyBudgetUSD?: number | null;  // self-funded monthly cap in USD
+  researchInterests?: string[];      // e.g. ["NLP", "Computer Vision"]
+  prPriority?: number | null;        // 1=low … 5=essential
+  familyRelocation?: boolean | null; // plans to bring spouse/children
   createdAt: string;
   updatedAt: string;
 }
