@@ -19,6 +19,8 @@ import {
   CheckCircle,
   XCircle,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { EmailGeneratorModal } from "@/components/dashboard/professor/EmailGeneratorModal";
 import type { Professor, ProfessorStatus } from "@/types";
 
 const STATUS_LABELS: Record<ProfessorStatus, string> = {
@@ -43,6 +45,19 @@ export default function FollowUpRemindersPage() {
   const [professors, setProfessors] = useState<Professor[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Outreach Modal state
+  const [selectedProf, setSelectedProf] = useState<Professor | null>(null);
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
+
+  const handleOpenEmailModal = (prof: Professor) => {
+    setSelectedProf(prof);
+    setIsEmailModalOpen(true);
+  };
+
+  const handleEmailLogged = (updatedProf: Professor) => {
+    setProfessors(prev => prev.map(p => p.id === updatedProf.id ? updatedProf : p));
+  };
 
   useEffect(() => {
     async function load() {
@@ -155,7 +170,7 @@ export default function FollowUpRemindersPage() {
               </h3>
               <div className="space-y-2">
                 {grouped.overdue.map((p) => (
-                  <ProfessorCard key={p.id} professor={p} />
+                  <ProfessorCard key={p.id} professor={p} onOutreach={() => handleOpenEmailModal(p)} />
                 ))}
               </div>
             </div>
@@ -166,7 +181,7 @@ export default function FollowUpRemindersPage() {
               <h3 className="text-sm font-bold text-foreground mb-3">Upcoming ({grouped.upcoming.length})</h3>
               <div className="space-y-2">
                 {grouped.upcoming.map((p) => (
-                  <ProfessorCard key={p.id} professor={p} />
+                  <ProfessorCard key={p.id} professor={p} onOutreach={() => handleOpenEmailModal(p)} />
                 ))}
               </div>
             </div>
@@ -180,18 +195,25 @@ export default function FollowUpRemindersPage() {
               </h3>
               <div className="space-y-2">
                 {grouped.replied.map((p) => (
-                  <ProfessorCard key={p.id} professor={p} />
+                  <ProfessorCard key={p.id} professor={p} onOutreach={() => handleOpenEmailModal(p)} />
                 ))}
               </div>
             </div>
           )}
         </>
       )}
+
+      <EmailGeneratorModal
+        professor={selectedProf}
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+        onEmailLogged={handleEmailLogged}
+      />
     </div>
   );
 }
 
-function ProfessorCard({ professor }: { professor: Professor }) {
+function ProfessorCard({ professor, onOutreach }: { professor: Professor; onOutreach: () => void }) {
   return (
     <Card className={`border-border/60 bg-card/25 hover:bg-card/40 transition-all ${
       !professor.replyReceived && professor.status !== "REPLIED_POSITIVE" && professor.nextFollowUp && new Date(professor.nextFollowUp) < new Date()
@@ -225,7 +247,7 @@ function ProfessorCard({ professor }: { professor: Professor }) {
               </div>
             )}
           </div>
-          <div className="shrink-0 flex flex-col items-end gap-1">
+          <div className="shrink-0 flex flex-col items-end gap-1.5">
             {professor.emailSentDate && (
               <span className="text-[10px] text-muted-foreground">
                 Sent: {new Date(professor.emailSentDate).toLocaleDateString()}
@@ -245,6 +267,16 @@ function ProfessorCard({ professor }: { professor: Professor }) {
               <span className="text-[10px] text-muted-foreground">
                 Last FU: {new Date(professor.lastFollowUp).toLocaleDateString()}
               </span>
+            )}
+            {professor.email && professor.status !== "REPLIED_POSITIVE" && professor.status !== "REPLIED_NEGATIVE" && professor.status !== "INTERVIEWED" && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-1 h-7 px-3 text-[10px] border-primary/30 text-primary hover:bg-primary/10 hover:text-primary-foreground font-semibold flex items-center gap-1 shrink-0"
+                onClick={onOutreach}
+              >
+                <Mail className="h-3 w-3" /> Outreach
+              </Button>
             )}
           </div>
         </div>

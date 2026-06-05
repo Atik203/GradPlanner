@@ -30,20 +30,8 @@ Currently countries show static scores. There's no **user profile input** that p
 
 ---
 
-### 2. Professor Email Generator + Follow-up Tracker
-**Answers:** Q3 — Which professors have funding and match my research?
-
-The professor module exists but there's **no email drafting or follow-up intelligence**.
-
-**What to build:**
-- Cold email template generator (fills professor name, university, research area, your background)
-- Follow-up scheduler with 14-day minimum enforcement (rule from AGENTS.md)
-- Email count badge warning at ≥2 follow-ups
-- "Best send window" display: Tue–Thu 8:30–9:30 AM professor's local timezone
-- Professor funding status: FUNDED / LIKELY / UNLIKELY / UNKNOWN with color badges
-- Research fit score (1–10) auto-suggested based on keyword matching with user's interests
-
-**Impact:** Very High. This is the most critical conversion action in a student's application.
+### ✅ ~~2. Professor Email Generator + Follow-up Tracker~~ — **DONE**
+**Implemented:** Cold email templates customized dynamically based on student profile (CGPA, IELTS, research tags, degree level) and professor details · Advisor panel with timezone-aware BDT sending slot recommendations · 14-day minimum interval enforcement and 2 follow-ups max limit validated at the database layer in `/api/v1/professors/:id/log-email` · Grid integrations for inline editing of `fundingStatus` and `researchFitScore` with auto-suggest score generation based on profile keyword matching · Integration with Follow-Up Reminders pages and cards.
 
 ---
 
