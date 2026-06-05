@@ -14,8 +14,9 @@
 
 ## 🔴 Critical Gaps (Missing Core Features)
 
-### 1. Profile-Based Country Match Score
-**Answers:** Q1 — Which country should I target?
+### ✅ ~~1. Profile-Based Country Match Score~~ — **DONE**
+**Implemented:** Prisma migration · 6-dimension scoring engine (`matchScore.ts`) · `countryMatchSlice` Redux · Profile "Match Intelligence" UI (IELTS, budget, research tags, PR priority, family plans) · `MatchBreakdownPopover` · Countries page sorted by personal match % · Dashboard top-3 by personal score · BD-specific warnings (Germany APS, USA Green Card backlog, UAE no-PR).
+
 
 Currently countries show static scores. There's no **user profile input** that personalizes the recommendation.
 
