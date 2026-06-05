@@ -153,11 +153,16 @@ export default function ProfileDetailsPage() {
 
   // Calculate profile readiness (now 10 fields)
   const fields = [
-    profile?.university, profile?.cgpa, profile?.targetDegree,
-    profile?.targetIntake, profile?.graduationDate,
-    profile?.ieltsScore, profile?.monthlyBudgetUSD,
-    (profile?.researchInterests?.length ?? 0) > 0 ? true : null,
-    profile?.prPriority, profile?.familyRelocation !== null && profile?.familyRelocation !== undefined ? true : null,
+    !!profile?.university,
+    profile?.cgpa !== null && profile?.cgpa !== undefined,
+    !!profile?.targetDegree,
+    !!profile?.targetIntake,
+    !!profile?.graduationDate,
+    profile?.ieltsScore !== null && profile?.ieltsScore !== undefined,
+    profile?.monthlyBudgetUSD !== null && profile?.monthlyBudgetUSD !== undefined,
+    (profile?.researchInterests?.length ?? 0) > 0,
+    profile?.prPriority !== null && profile?.prPriority !== undefined,
+    profile?.familyRelocation !== null && profile?.familyRelocation !== undefined,
   ];
   const completeness = Math.round((fields.filter(Boolean).length / fields.length) * 100);
 
