@@ -1,19 +1,23 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { fetchApi } from "@/lib/api";
+import { useAppDispatch, useAppSelector } from "@/lib/store/store";
+import { setProfile } from "@/lib/store/slices/profileSlice";
+import { setMatchScores } from "@/lib/store/slices/countryMatchSlice";
+import { computeCountryMatchScore } from "@/lib/matchScore";
+import { MatchBreakdownPopover } from "@/components/countries/MatchBreakdownPopover";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { 
-  Loader2, 
-  Search, 
-  Globe, 
-  ArrowRight, 
-  SlidersHorizontal, 
-  Coins, 
-  ShieldCheck, 
-  TrendingUp 
+import {
+  Loader2,
+  Search,
+  Globe,
+  ArrowRight,
+  SlidersHorizontal,
+  ArrowUpDown,
+  User,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -29,43 +33,55 @@ interface CountryEntry {
     averageLivingCostCurrency: string;
     prScore: number;
     jobMarketScore: number;
+    scholarshipScore: number;
+    admissionScore: number;
+    familyScore: number;
     allowsSpouseWork: boolean;
   };
 }
 
 const BDT_RATES: Record<string, number> = {
-  USD: 118,
-  EUR: 128,
-  CAD: 87,
-  AUD: 78,
-  SEK: 11.2,
-  NOK: 11.0,
-  DKK: 17.2,
-  CHF: 130,
-  NZD: 72,
-  JPY: 0.76,
-  KRW: 0.086,
-  SGD: 88,
-  CNY: 16.3,
-  AED: 32.1,
-  GBP: 150
+  USD: 118, EUR: 128, CAD: 87, AUD: 78, SEK: 11.2,
+  NOK: 11.0, DKK: 17.2, CHF: 130, NZD: 72, JPY: 0.76,
+  KRW: 0.086, SGD: 88, CNY: 16.3, AED: 32.1, GBP: 150,
 };
 
+type SortMode = "match" | "overall" | "pr" | "funding";
+
 export default function CountryExplorerPage() {
+  const dispatch = useAppDispatch();
+  const profile = useAppSelector((s) => s.profile.profile);
+  const matchScores = useAppSelector((s) => s.countryMatch.scores);
+
   const [countries, setCountries] = useState<CountryEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  // Search & Filter State
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedContinent, setSelectedContinent] = useState("All");
+  const [sortMode, setSortMode] = useState<SortMode>("match");
 
   useEffect(() => {
-    async function loadCountries() {
+    async function loadData() {
       try {
         setLoading(true);
-        const data = await fetchApi("/api/v1/countries");
-        setCountries(data || []);
+        const [data, profileData] = await Promise.all([
+          fetchApi("/api/v1/countries"),
+          fetchApi("/api/v1/profile"),
+        ]);
+        const countryList: CountryEntry[] = data || [];
+        setCountries(countryList);
+        dispatch(setProfile(profileData));
+
+        // Compute match scores for all countries
+        const scores: Record<string, ReturnType<typeof computeCountryMatchScore>> = {};
+        for (const c of countryList) {
+          scores[c.countryCode] = computeCountryMatchScore(profileData || {}, {
+            countryCode: c.countryCode,
+            overallScore: c.overallScore,
+            summary: c.summary as any,
+          });
+        }
+        dispatch(setMatchScores(scores));
       } catch (err) {
         console.error(err);
         setError("Failed to load country explorer data.");
@@ -73,29 +89,40 @@ export default function CountryExplorerPage() {
         setLoading(false);
       }
     }
-    loadCountries();
-  }, []);
-
-  const getCurrencyRate = (currencyStr: string) => {
-    const base = currencyStr?.split("/")[0]?.trim() || "USD";
-    return BDT_RATES[base] || 1;
-  };
+    loadData();
+  }, [dispatch]);
 
   const convertToBdtMonthly = (amount: number, currencyStr: string) => {
-    const rate = getCurrencyRate(currencyStr);
+    const base = currencyStr?.split("/")[0]?.trim() || "USD";
+    const rate = BDT_RATES[base] || 1;
     const result = amount * rate;
-    if (result >= 100000) {
-      return `${(result / 100000).toFixed(1)}L BDT/mo`;
-    }
+    if (result >= 100000) return `${(result / 100000).toFixed(1)}L BDT/mo`;
     return `${Math.round(result).toLocaleString()} BDT/mo`;
   };
 
-  // Filter countries
-  const filteredCountries = countries.filter((c) => {
-    const matchesSearch = c.country.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesContinent = selectedContinent === "All" || c.summary?.continent === selectedContinent;
-    return matchesSearch && matchesContinent;
-  });
+  const profileHasMatchData = !!(
+    profile?.cgpa || profile?.ieltsScore || (profile?.researchInterests?.length ?? 0) > 0
+  );
+
+  const filteredAndSorted = useMemo(() => {
+    let list = countries.filter((c) => {
+      const matchesSearch = c.country.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesContinent = selectedContinent === "All" || c.summary?.continent === selectedContinent;
+      return matchesSearch && matchesContinent;
+    });
+
+    list = [...list].sort((a, b) => {
+      if (sortMode === "match") {
+        const sa = matchScores[a.countryCode]?.score ?? a.overallScore;
+        const sb = matchScores[b.countryCode]?.score ?? b.overallScore;
+        return sb - sa;
+      }
+      if (sortMode === "pr")      return (b.summary?.prScore ?? 0) - (a.summary?.prScore ?? 0);
+      if (sortMode === "funding") return (b.summary?.scholarshipScore ?? 0) - (a.summary?.scholarshipScore ?? 0);
+      return b.overallScore - a.overallScore;
+    });
+    return list;
+  }, [countries, searchQuery, selectedContinent, sortMode, matchScores]);
 
   const continents = ["All", ...Array.from(new Set(countries.map((c) => c.summary?.continent).filter(Boolean)))];
 
@@ -109,22 +136,34 @@ export default function CountryExplorerPage() {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      
+
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold tracking-tight text-gradient bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent sm:text-3xl">
+          <h2 className="text-2xl font-bold tracking-tight bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent sm:text-3xl">
             Country Explorer
           </h2>
           <p className="text-muted-foreground text-sm">
-            Evaluate cost of living, AI job market, visa constraints, and PR pathways tailored for Bangladeshi students.
+            {profileHasMatchData
+              ? "Sorted by your personal match score — based on CGPA, IELTS, research interests & priorities."
+              : "Showing generic scores. Complete your profile to see personalised match scores."}
           </p>
         </div>
-        <Link href="/dashboard/countries/compare">
-          <Button className="bg-primary hover:bg-primary/95 text-primary-foreground font-semibold shadow-sm cursor-pointer h-9">
-            Launch Compare Tool
-          </Button>
-        </Link>
+        <div className="flex gap-2 shrink-0">
+          {!profileHasMatchData && (
+            <Link href="/dashboard/profile">
+              <Button variant="outline" className="h-9 text-xs flex items-center gap-1.5 border-primary/30 text-primary hover:bg-primary/10 cursor-pointer">
+                <User className="h-3.5 w-3.5" />
+                Complete Profile
+              </Button>
+            </Link>
+          )}
+          <Link href="/dashboard/countries/compare">
+            <Button className="bg-primary hover:bg-primary/95 text-primary-foreground font-semibold shadow-sm cursor-pointer h-9">
+              Launch Compare Tool
+            </Button>
+          </Link>
+        </div>
       </div>
 
       {error && (
@@ -135,7 +174,7 @@ export default function CountryExplorerPage() {
 
       {/* Filter / Search Bar */}
       <Card className="border-border/60 bg-card/30 backdrop-blur-md">
-        <CardContent className="p-4 flex flex-col sm:flex-row gap-4">
+        <CardContent className="p-4 flex flex-col sm:flex-row gap-3">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
@@ -145,7 +184,7 @@ export default function CountryExplorerPage() {
               className="pl-9 bg-background border-border text-foreground text-xs h-9"
             />
           </div>
-          
+
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="h-4 w-4 text-muted-foreground shrink-0" />
             <select
@@ -154,27 +193,51 @@ export default function CountryExplorerPage() {
               className="bg-background border border-border text-foreground rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary h-9 cursor-pointer"
             >
               {continents.map((cont) => (
-                <option key={cont} value={cont}>
-                  {cont}
-                </option>
+                <option key={cont} value={cont}>{cont}</option>
               ))}
+            </select>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <ArrowUpDown className="h-4 w-4 text-muted-foreground shrink-0" />
+            <select
+              value={sortMode}
+              onChange={(e) => setSortMode(e.target.value as SortMode)}
+              className="bg-background border border-border text-foreground rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary h-9 cursor-pointer"
+            >
+              <option value="match">Sort: Your Match %</option>
+              <option value="overall">Sort: Overall Score</option>
+              <option value="pr">Sort: PR Pathway</option>
+              <option value="funding">Sort: Funding</option>
             </select>
           </div>
         </CardContent>
       </Card>
 
       {/* Countries Grid */}
-      {filteredCountries.length > 0 ? (
+      {filteredAndSorted.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {filteredCountries.map((c) => {
+          {filteredAndSorted.map((c) => {
             const sum = c.summary || {};
+            const matchResult = matchScores[c.countryCode];
+            const displayScore = matchResult?.score ?? c.overallScore;
+            const isPersonalised = !!matchResult;
+
             return (
-              <Card key={c.countryCode} className="border-border/60 bg-card/25 hover:bg-card/45 hover:border-primary/50 transition-all duration-300 flex flex-col h-full shadow-xs group">
+              <Card
+                key={c.countryCode}
+                className="border-border/60 bg-card/25 hover:bg-card/45 hover:border-primary/50 transition-all duration-300 flex flex-col h-full shadow-xs group"
+              >
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-bold">
-                      Fit Match: {c.overallScore}%
-                    </span>
+                    {/* Personal match badge with popover */}
+                    {matchResult ? (
+                      <MatchBreakdownPopover result={matchResult} countryName={c.country} />
+                    ) : (
+                      <span className="text-[10px] bg-primary/10 text-primary px-2.5 py-0.5 rounded-full font-bold">
+                        Score: {c.overallScore}%
+                      </span>
+                    )}
                     <span className="text-[10px] text-muted-foreground font-semibold">{sum.continent}</span>
                   </div>
                   <CardTitle className="text-lg font-black text-foreground flex items-center gap-2">
@@ -191,7 +254,9 @@ export default function CountryExplorerPage() {
                     <div className="bg-muted/40 p-1.5 rounded-md">
                       <span className="text-muted-foreground block font-semibold">Living Cost</span>
                       <span className="font-extrabold text-foreground block truncate mt-0.5">
-                        {sum.averageLivingCost ? convertToBdtMonthly(sum.averageLivingCost, sum.averageLivingCostCurrency) : "N/A"}
+                        {sum.averageLivingCost
+                          ? convertToBdtMonthly(sum.averageLivingCost, sum.averageLivingCostCurrency)
+                          : "N/A"}
                       </span>
                     </div>
                     <div className="bg-muted/40 p-1.5 rounded-md">
@@ -218,8 +283,12 @@ export default function CountryExplorerPage() {
       ) : (
         <div className="text-center py-16 bg-muted/10 border border-border/60 border-dashed rounded-xl">
           <Globe className="h-10 w-10 text-muted-foreground/40 mx-auto mb-2" />
-          <p className="text-sm font-semibold text-foreground">No countries match your search filters.</p>
-          <Button variant="ghost" onClick={() => { setSearchQuery(""); setSelectedContinent("All"); }} className="text-primary text-xs mt-2 cursor-pointer">
+          <p className="text-sm font-semibold text-foreground">No countries match your filters.</p>
+          <Button
+            variant="ghost"
+            onClick={() => { setSearchQuery(""); setSelectedContinent("All"); }}
+            className="text-primary text-xs mt-2 cursor-pointer"
+          >
             Reset Filters
           </Button>
         </div>
