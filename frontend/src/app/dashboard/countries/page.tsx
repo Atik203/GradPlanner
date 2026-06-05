@@ -20,6 +20,7 @@ import {
   User,
 } from "lucide-react";
 import Link from "next/link";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 
 interface CountryEntry {
   id: string;
@@ -240,8 +241,8 @@ export default function CountryExplorerPage() {
                     )}
                     <span className="text-[10px] text-muted-foreground font-semibold">{sum.continent}</span>
                   </div>
-                  <CardTitle className="text-lg font-black text-foreground flex items-center gap-2">
-                    <span>📍</span>
+                  <CardTitle className="text-lg font-black text-foreground flex items-center gap-2.5">
+                    <CountryFlag country={c.countryCode} className="h-6 w-9 rounded border border-border/20 shadow-sm shrink-0" />
                     {c.country}
                   </CardTitle>
                   <CardDescription className="text-xs text-muted-foreground line-clamp-3 h-12 mt-1">
