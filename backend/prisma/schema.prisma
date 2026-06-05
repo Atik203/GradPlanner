@@ -72,16 +72,22 @@ model Verification {
 // ─── Domain Models ───────────────────────────────────────────────────────────
 
 model UserProfile {
-  id             String   @id @default(cuid())
-  userId         String   @unique
-  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  university     String?  // e.g. "UIU Dhaka"
-  cgpa           Float?
-  targetIntake   String?  // e.g. "Sep 2028"
-  graduationDate String?  // e.g. "Nov 2027"
-  targetDegree   String?  // e.g. "MSc ML/AI"
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  university        String?  // e.g. "UIU Dhaka"
+  cgpa              Float?
+  targetIntake      String?  // e.g. "Sep 2028"
+  graduationDate    String?  // e.g. "Nov 2027"
+  targetDegree      String?  // e.g. "MSc ML/AI"
+  // ── Match Intelligence Fields ────────────────────────────────────────
+  ieltsScore        Float?   // actual or target IELTS score e.g. 7.0
+  monthlyBudgetUSD  Int?     // self-funded monthly cap in USD e.g. 1500
+  researchInterests String[] // e.g. ["NLP", "Computer Vision", "RL"]
+  prPriority        Int?     // 1=low 2=moderate 3=high 4=critical 5=essential
+  familyRelocation  Boolean? // plans to bring spouse / children
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 }
 
 model University {

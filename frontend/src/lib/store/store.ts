@@ -6,6 +6,7 @@ import professorReducer from "./slices/professorSlice";
 import applicationReducer from "./slices/applicationSlice";
 import documentReducer from "./slices/documentSlice";
 import profileReducer from "./slices/profileSlice";
+import countryMatchReducer from "./slices/countryMatchSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     applications: applicationReducer,
     documents: documentReducer,
     profile: profileReducer,
+    countryMatch: countryMatchReducer,
   },
 });
 
