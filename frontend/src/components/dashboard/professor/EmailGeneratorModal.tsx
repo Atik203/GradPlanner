@@ -25,6 +25,7 @@ import {
   Clock,
   ShieldCheck,
   Calendar,
+  Sparkles
 } from "lucide-react";
 import { toast } from "sonner";
 import { Professor } from "@/types";
@@ -52,6 +53,12 @@ export function EmailGeneratorModal({
   const [body, setBody] = useState("");
   const [logging, setLogging] = useState(false);
 
+  // Proposal assistant states
+  const [showProposalAssistant, setShowProposalAssistant] = useState(false);
+  const [profPaper, setProfPaper] = useState("");
+  const [userThesis, setUserThesis] = useState("");
+  const [generatedQuestions, setGeneratedQuestions] = useState<string[]>([]);
+
   // Load profile if not present in redux
   useEffect(() => {
     if (isOpen && professor) {
@@ -76,6 +83,64 @@ export function EmailGeneratorModal({
   // Extract user details
   const userName = session?.user?.name || "Applicant";
   const userEmail = session?.user?.email || "";
+
+  // Auto-populate user thesis from profile interests
+  useEffect(() => {
+    if (profile && !userThesis) {
+      const interests = Array.isArray(profile.researchInterests)
+        ? profile.researchInterests.join(", ")
+        : "";
+      setUserThesis(interests || profile.targetDegree || "");
+    }
+  }, [profile, userThesis]);
+
+  const generateQuestions = () => {
+    const paperPhrase = profPaper.trim().replace(/\s+/g, ' ');
+    const workPhrase = userThesis.trim().replace(/\s+/g, ' ');
+    
+    if (!paperPhrase || !workPhrase) return;
+    
+    const q1 = `How can the methodology described in your paper "${paperPhrase}" be adapted to optimize performance when processing low-resource datasets like my undergraduate work on "${workPhrase}"?`;
+    const q2 = `Could the model architectures/frameworks utilized for your work on "${paperPhrase}" be fine-tuned or transferred to enhance accuracy/generalization in "${workPhrase}"?`;
+    const q3 = `What are the computational and scalability trade-offs of integrating your proposed techniques on "${paperPhrase}" into real-world applications in the domain of "${workPhrase}"?`;
+    const q4 = `Can we combine the representation learning principles of "${paperPhrase}" with the sequence classification patterns of "${workPhrase}" to establish a more robust pipeline?`;
+    
+    setGeneratedQuestions([q1, q2, q3, q4]);
+    toast.success("Bridging research questions generated!");
+  };
+
+  const injectQuestionsIntoBody = () => {
+    const paperPhrase = profPaper.trim().replace(/\s+/g, ' ');
+    if (!paperPhrase) return;
+    
+    let newSubject = subject;
+    if (subject.includes("[Enter Paper Title]")) {
+      newSubject = subject.replace("[Enter Paper Title]", `"${paperPhrase}"`);
+    } else if (!subject.toLowerCase().includes(paperPhrase.toLowerCase().slice(0, 15))) {
+      newSubject = `Inquiry regarding your paper: "${paperPhrase.slice(0, 30)}..."`;
+    }
+    
+    let newBody = body;
+    if (newBody.includes("[Enter Paper Title]")) {
+      newBody = newBody.replace("[Enter Paper Title]", `"${paperPhrase}"`);
+    }
+    
+    const questionsBlock = `Specifically, I am very interested in exploring the following research questions bridging your work with my background:
+
+${generatedQuestions.map((q, i) => `   ${i + 1}. ${q}`).join("\n\n")}`;
+
+    if (newBody.includes("For your convenience")) {
+      newBody = newBody.replace("For your convenience", `${questionsBlock}\n\nFor your convenience`);
+    } else if (newBody.includes("I have attached my CV")) {
+      newBody = newBody.replace("I have attached my CV", `${questionsBlock}\n\nI have attached my CV`);
+    } else {
+      newBody = newBody + `\n\n${questionsBlock}`;
+    }
+    
+    setSubject(newSubject);
+    setBody(newBody);
+    toast.success("Bridging research questions injected into email draft!");
+  };
 
   // Compile templates
   const templates = useMemo(() => {
@@ -326,6 +391,87 @@ ${userName}`
                     </option>
                   ))}
                 </select>
+              </div>
+
+              {/* Research Proposal Assistant Collapsible Section */}
+              <div className="border border-border/60 bg-muted/10 rounded-xl p-4 space-y-3">
+                <button
+                  type="button"
+                  onClick={() => setShowProposalAssistant(!showProposalAssistant)}
+                  className="flex items-center justify-between w-full text-xs font-bold text-foreground uppercase tracking-wide cursor-pointer"
+                >
+                  <span className="flex items-center gap-1.5 text-primary">
+                    <Sparkles className="h-4 w-4 text-primary" />
+                    🔬 Research Proposal Assistant (P3)
+                  </span>
+                  <span className="text-muted-foreground text-[10px]">{showProposalAssistant ? "Hide" : "Expand"}</span>
+                </button>
+
+                {showProposalAssistant && (
+                  <div className="space-y-3 pt-2 border-t border-border/30 animate-in fade-in duration-300">
+                    <div className="space-y-1">
+                      <Label htmlFor="profPaper" className="text-[11px] text-muted-foreground font-semibold">
+                        Professor's Recent Paper Title / Abstract
+                      </Label>
+                      <textarea
+                        id="profPaper"
+                        rows={3}
+                        placeholder="e.g. Instruction Tuning of Large Language Models for Low-Resource Languages"
+                        value={profPaper}
+                        onChange={(e) => setProfPaper(e.target.value)}
+                        className="w-full p-2 bg-background border border-border rounded-lg text-xs text-foreground focus:outline-none focus:border-primary placeholder:text-muted-foreground/40"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <Label htmlFor="userThesis" className="text-[11px] text-muted-foreground font-semibold">
+                        Your Previous Work / Thesis Topic
+                      </Label>
+                      <textarea
+                        id="userThesis"
+                        rows={2}
+                        placeholder="e.g. Sentiment analysis on Bangla social media text using BERT"
+                        value={userThesis}
+                        onChange={(e) => setUserThesis(e.target.value)}
+                        className="w-full p-2 bg-background border border-border rounded-lg text-xs text-foreground focus:outline-none focus:border-primary placeholder:text-muted-foreground/40"
+                      />
+                    </div>
+
+                    <div className="flex gap-2 pt-1">
+                      <Button
+                        type="button"
+                        onClick={generateQuestions}
+                        disabled={!profPaper.trim() || !userThesis.trim()}
+                        className="h-8 text-xs bg-primary text-primary-foreground font-bold hover:bg-primary/90"
+                      >
+                        Generate Bridging Questions
+                      </Button>
+                      {generatedQuestions.length > 0 && (
+                        <Button
+                          type="button"
+                          onClick={injectQuestionsIntoBody}
+                          variant="outline"
+                          className="h-8 text-xs border-primary/30 text-primary hover:bg-primary/10"
+                        >
+                          Inject into Email Draft
+                        </Button>
+                      )}
+                    </div>
+
+                    {generatedQuestions.length > 0 && (
+                      <div className="space-y-2 pt-2">
+                        <Label className="text-[11px] font-bold text-foreground">Generated Research Questions:</Label>
+                        <div className="space-y-1.5 max-h-[150px] overflow-y-auto pr-1">
+                          {generatedQuestions.map((q, idx) => (
+                            <div key={idx} className="p-2 rounded bg-background border border-border/60 text-xs text-foreground leading-relaxed">
+                              {q}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* Subject Line */}
