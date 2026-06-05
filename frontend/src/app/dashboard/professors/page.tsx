@@ -21,10 +21,48 @@ import {
   Loader2, 
   Trash2,
   Table as TableIcon,
-  Mail
+  Mail,
+  Sparkles,
+  AlertTriangle,
+  GraduationCap,
+  Coins,
+  Building,
+  Info
 } from "lucide-react";
 import { Professor, ProfessorStatus } from "@/types";
 import { toast } from "sonner";
+
+
+function getUserProfOverlap(userInterests: string[] | string | undefined | null, profInterests: string | undefined | null) {
+  if (!userInterests) return { matches: [], profOnly: profInterests ? profInterests.split(/[,;\n]/).map(s => s.trim()).filter(Boolean) : [] };
+  
+  const userList = Array.isArray(userInterests) 
+    ? userInterests.map(i => i.toLowerCase().trim()).filter(Boolean)
+    : userInterests.split(/[,;\n]/).map(i => i.toLowerCase().trim()).filter(Boolean);
+    
+  if (!profInterests) return { matches: [], profOnly: [] };
+  
+  const profList = profInterests.split(/[,;\n]/).map(s => s.trim()).filter(Boolean);
+  
+  const matches: string[] = [];
+  const profOnly: string[] = [];
+  
+  profList.forEach(pi => {
+    const piLower = pi.toLowerCase().trim();
+    const isMatch = userList.some(ui => {
+      const uiLower = ui.toLowerCase().trim();
+      return uiLower.includes(piLower) || piLower.includes(uiLower);
+    });
+    
+    if (isMatch) {
+      matches.push(pi);
+    } else {
+      profOnly.push(pi);
+    }
+  });
+  
+  return { matches, profOnly };
+}
 
 
 export default function ProfessorsPage() {
@@ -85,11 +123,18 @@ export default function ProfessorsPage() {
   useEffect(() => {
     setRows(storedProfessors.map(p => ({ ...p })));
     
-    // Extract unique custom columns
-    const cols = new Set<string>();
+    // Extract unique custom columns, starting with standard pre-seeded ones
+    const cols = new Set<string>([
+      "lastPublicationYear",
+      "recentPhdGraduations",
+      "activeGrants",
+      "industryPartnerships"
+    ]);
     storedProfessors.forEach(p => {
       if (p.customFields) {
-        Object.keys(p.customFields).forEach(k => cols.add(k));
+        Object.keys(p.customFields).forEach(k => {
+          if (k) cols.add(k);
+        });
       }
     });
     setCustomColumns(Array.from(cols));
@@ -184,6 +229,32 @@ export default function ProfessorsPage() {
       const promises = dirtyRows.map(async (row) => {
         if (!row.name) return null; // Skip empty names
         
+        // Format custom fields safely before submitting
+        const formattedCustomFields = { ...(row.customFields || {}) };
+        
+        if (formattedCustomFields.lastPublicationYear !== undefined && formattedCustomFields.lastPublicationYear !== null && formattedCustomFields.lastPublicationYear !== "") {
+          formattedCustomFields.lastPublicationYear = parseInt(formattedCustomFields.lastPublicationYear as any, 10) || null;
+        } else if (formattedCustomFields.lastPublicationYear === "") {
+          formattedCustomFields.lastPublicationYear = null;
+        }
+        
+        if (formattedCustomFields.recentPhdGraduations !== undefined && formattedCustomFields.recentPhdGraduations !== null && formattedCustomFields.recentPhdGraduations !== "") {
+          formattedCustomFields.recentPhdGraduations = parseInt(formattedCustomFields.recentPhdGraduations as any, 10) || null;
+        } else if (formattedCustomFields.recentPhdGraduations === "") {
+          formattedCustomFields.recentPhdGraduations = null;
+        }
+        
+        if (formattedCustomFields.activeGrants !== undefined && formattedCustomFields.activeGrants !== null) {
+          formattedCustomFields.activeGrants = !!formattedCustomFields.activeGrants;
+        }
+        
+        if (typeof formattedCustomFields.industryPartnerships === "string") {
+          formattedCustomFields.industryPartnerships = formattedCustomFields.industryPartnerships
+            .split(",")
+            .map((s: string) => s.trim())
+            .filter(Boolean);
+        }
+        
         const payload = {
           name: row.name,
           email: row.email || null,
@@ -193,7 +264,7 @@ export default function ProfessorsPage() {
           fundingStatus: row.fundingStatus || "UNKNOWN",
           researchFitScore: row.researchFitScore ? parseInt(row.researchFitScore as any, 10) : null,
           notes: row.notes || null,
-          customFields: row.customFields || {}
+          customFields: formattedCustomFields
         };
 
         if (row.isNew) {
@@ -320,11 +391,18 @@ export default function ProfessorsPage() {
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[100px]">Fit Score</th>
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[250px]">Research Focus</th>
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[250px]">Notes</th>
-                {customColumns.map(col => (
-                  <th key={col} className="px-4 py-3 font-medium border-r border-border min-w-[150px] text-primary">
-                    {col}
-                  </th>
-                ))}
+                {customColumns.map(col => {
+                  let label = col;
+                  if (col === "lastPublicationYear") label = "Last Pub Year";
+                  else if (col === "recentPhdGraduations") label = "Recent PhD Grads";
+                  else if (col === "activeGrants") label = "Active Grants";
+                  else if (col === "industryPartnerships") label = "Industry Partnerships";
+                  return (
+                    <th key={col} className="px-4 py-3 font-medium border-r border-border min-w-[150px] text-primary">
+                      {label}
+                    </th>
+                  );
+                })}
                 <th className="px-4 py-3 font-medium border-r border-border min-w-[120px] text-center">Outreach</th>
               </tr>
             </thead>
@@ -399,16 +477,160 @@ export default function ProfessorsPage() {
                         <option value="UNLIKELY" className="bg-background font-semibold text-destructive">🔴 Unlikely</option>
                       </select>
                     </td>
-                    <td className="px-0 py-0 border-r border-border/50">
-                      <input
-                        type="number"
-                        min={1}
-                        max={10}
-                        value={row.researchFitScore || ""}
-                        onChange={(e) => updateCell(index, "researchFitScore", e.target.value ? parseInt(e.target.value, 10) : "")}
-                        placeholder="1-10"
-                        className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground text-center font-bold"
-                      />
+                    <td className="px-0 py-0 border-r border-border/50 group relative overflow-visible">
+                      <div className="flex items-center justify-between px-3 h-10 w-full">
+                        <input
+                          type="number"
+                          min={1}
+                          max={10}
+                          value={row.researchFitScore || ""}
+                          onChange={(e) => updateCell(index, "researchFitScore", e.target.value ? parseInt(e.target.value, 10) : "")}
+                          placeholder="1-10"
+                          className="w-12 bg-transparent border-none focus:ring-0 text-foreground font-bold text-center"
+                        />
+                        <Info className="h-3.5 w-3.5 text-muted-foreground/60 group-hover:text-primary cursor-help" />
+                      </div>
+                      
+                      {/* Research Fit Score Popover Tooltip */}
+                      {(() => {
+                        const { matches, profOnly } = getUserProfOverlap(profile?.researchInterests, row.researchInterests);
+                        
+                        const pubYear = row.customFields?.lastPublicationYear;
+                        let pubRecencyStatus = "UNKNOWN";
+                        let pubRecencyColor = "bg-muted text-muted-foreground";
+                        let pubRecencyText = "No publication history recorded";
+                        
+                        if (pubYear) {
+                          const year = parseInt(pubYear, 10);
+                          if (year >= 2024) {
+                            pubRecencyStatus = "ACTIVE";
+                            pubRecencyColor = "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+                            pubRecencyText = `Highly Active (Published ${year})`;
+                          } else if (year >= 2021) {
+                            pubRecencyStatus = "MODERATE";
+                            pubRecencyColor = "bg-amber-500/20 text-amber-400 border border-amber-500/30";
+                            pubRecencyText = `Moderately Active (Published ${year})`;
+                          } else {
+                            pubRecencyStatus = "INACTIVE";
+                            pubRecencyColor = "bg-destructive/20 text-destructive border border-destructive/30";
+                            pubRecencyText = `Inactive (Last published ${year})`;
+                          }
+                        }
+                        
+                        const phdCount = row.customFields?.recentPhdGraduations ? parseInt(row.customFields.recentPhdGraduations, 10) : 0;
+                        const hasCapacityCaution = phdCount >= 3;
+                        
+                        const hasActiveGrants = !!row.customFields?.activeGrants;
+                        const industryPartners = row.customFields?.industryPartnerships;
+                        const displayPartners = Array.isArray(industryPartners) 
+                          ? industryPartners 
+                          : (typeof industryPartners === "string" && industryPartners 
+                              ? industryPartners.split(",").map(s => s.trim()).filter(Boolean) 
+                              : []);
+                              
+                        return (
+                          <div className="hidden group-hover:block absolute left-[80%] top-[90%] z-50 w-80 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-4 text-xs space-y-4 pointer-events-none animate-in fade-in slide-in-from-top-2 duration-200 text-left">
+                            {/* Title & Score */}
+                            <div className="flex items-center justify-between border-b border-slate-800 pb-2">
+                              <span className="font-bold text-slate-100 text-sm flex items-center gap-1.5">
+                                <Sparkles className="h-4 w-4 text-amber-400" />
+                                Research Fit Analysis
+                              </span>
+                              <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary font-bold text-xs border border-primary/30">
+                                {row.researchFitScore ? `${row.researchFitScore}/10` : "—"}
+                              </span>
+                            </div>
+                            
+                            {/* Keyword Match Chips */}
+                            <div className="space-y-2">
+                              <span className="font-semibold text-slate-400 block text-[10px] uppercase tracking-wider">Keyword Overlaps</span>
+                              <div className="flex flex-wrap gap-1.5">
+                                {matches.length > 0 ? (
+                                  matches.map(m => (
+                                    <span key={m} className="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
+                                      ✓ {m}
+                                    </span>
+                                  ))
+                                ) : (
+                                  <span className="text-slate-500 italic">No matching keywords.</span>
+                                )}
+                              </div>
+                              
+                              {profOnly.length > 0 && (
+                                <div className="pt-1.5 space-y-1">
+                                  <span className="text-[10px] text-slate-500 uppercase tracking-wider block">Professor Focus</span>
+                                  <div className="flex flex-wrap gap-1">
+                                    {profOnly.map(p => (
+                                      <span key={p} className="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300 font-medium">
+                                        {p}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+
+                            {/* Publication Recency */}
+                            <div className="space-y-1.5 border-t border-slate-800/60 pt-2">
+                              <span className="font-semibold text-slate-400 block text-[10px] uppercase tracking-wider">Publication Recency</span>
+                              <div className="flex items-center gap-2">
+                                <span className={`h-2.5 w-2.5 rounded-full shrink-0 ${
+                                  pubRecencyStatus === "ACTIVE" ? "bg-emerald-400" :
+                                  pubRecencyStatus === "MODERATE" ? "bg-amber-400" :
+                                  pubRecencyStatus === "INACTIVE" ? "bg-red-400" : "bg-slate-600"
+                                }`} />
+                                <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${pubRecencyColor}`}>
+                                  {pubRecencyText}
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Capacity caution */}
+                            {(hasCapacityCaution || phdCount > 0) && (
+                              <div className="space-y-1.5 border-t border-slate-800/60 pt-2">
+                                <span className="font-semibold text-slate-400 block text-[10px] uppercase tracking-wider">Lab Capacity</span>
+                                {hasCapacityCaution ? (
+                                  <div className="flex items-start gap-2 p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                                    <AlertTriangle className="h-4 w-4 shrink-0 mt-0.5" />
+                                    <p className="leading-normal">
+                                      <strong>Capacity Caution:</strong> Professor graduated {phdCount} PhDs recently. Lab space might be limited or funding stretched.
+                                    </p>
+                                  </div>
+                                ) : (
+                                  <div className="flex items-center gap-2 text-slate-300">
+                                    <GraduationCap className="h-4 w-4 text-slate-400 shrink-0" />
+                                    <span>Graduated {phdCount} PhD student(s) recently.</span>
+                                  </div>
+                                )}
+                              </div>
+                            )}
+
+                            {/* Lab Funding Signals */}
+                            <div className="space-y-2 border-t border-slate-800 pt-3">
+                              <span className="font-semibold text-slate-400 block text-[10px] uppercase tracking-wider">Funding & Industry Signals</span>
+                              <div className="space-y-1.5">
+                                {hasActiveGrants ? (
+                                  <div className="flex items-center gap-1.5 text-emerald-400 font-medium">
+                                    <Coins className="h-3.5 w-3.5 text-emerald-400" />
+                                    Active Research Grants Found
+                                  </div>
+                                ) : (
+                                  <div className="text-slate-500 italic">No active grants reported.</div>
+                                )}
+
+                                {displayPartners.length > 0 && (
+                                  <div className="flex items-start gap-1.5 text-slate-300">
+                                    <Building className="h-3.5 w-3.5 text-blue-400 shrink-0 mt-0.5" />
+                                    <span>
+                                      <strong>Partners:</strong> {displayPartners.join(", ")}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })()}
                     </td>
                     <td className="px-0 py-0 border-r border-border/50">
                       <input
@@ -426,16 +648,53 @@ export default function ProfessorsPage() {
                         className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground"
                       />
                     </td>
-                    {customColumns.map(col => (
-                      <td key={col} className="px-0 py-0 border-r border-border/50">
-                        <input
-                          type="text"
-                          value={(row.customFields && row.customFields[col]) || ""}
-                          onChange={(e) => updateCell(index, col, e.target.value, true)}
-                          className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-primary"
-                        />
-                      </td>
-                    ))}
+                    {customColumns.map(col => {
+                      const val = row.customFields?.[col];
+                      
+                      if (col === "activeGrants") {
+                        return (
+                          <td key={col} className="px-0 py-0 border-r border-border/50 text-center align-middle">
+                            <div className="flex items-center justify-center h-10">
+                              <input
+                                type="checkbox"
+                                checked={!!val}
+                                onChange={(e) => updateCell(index, col, e.target.checked, true)}
+                                className="h-4 w-4 rounded border-border text-primary focus:ring-primary bg-background cursor-pointer"
+                              />
+                            </div>
+                          </td>
+                        );
+                      }
+                      
+                      if (col === "lastPublicationYear" || col === "recentPhdGraduations") {
+                        return (
+                          <td key={col} className="px-0 py-0 border-r border-border/50">
+                            <input
+                              type="number"
+                              placeholder={col === "lastPublicationYear" ? "e.g. 2024" : "e.g. 2"}
+                              value={val !== undefined && val !== null ? val : ""}
+                              onChange={(e) => updateCell(index, col, e.target.value !== "" ? parseInt(e.target.value, 10) : "", true)}
+                              className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground text-center"
+                            />
+                          </td>
+                        );
+                      }
+                      
+                      // For industryPartnerships (could be array or comma-separated string)
+                      const displayVal = Array.isArray(val) ? val.join(", ") : (val || "");
+                      
+                      return (
+                        <td key={col} className="px-0 py-0 border-r border-border/50">
+                          <input
+                            type="text"
+                            placeholder={col === "industryPartnerships" ? "e.g. Google, NVIDIA" : "Value..."}
+                            value={displayVal}
+                            onChange={(e) => updateCell(index, col, e.target.value, true)}
+                            className="w-full h-10 px-4 bg-transparent border-none focus:ring-1 focus:ring-inset focus:ring-primary text-foreground"
+                          />
+                        </td>
+                      );
+                    })}
                     <td className="px-2 py-0 border-r border-border/50 text-center">
                       <Button
                         variant="outline"

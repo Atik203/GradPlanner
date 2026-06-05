@@ -40,6 +40,13 @@ router.post("/", async (req: AuthenticatedRequest, res: Response) => {
       tier,
       program,
       tuitionPerYr,
+      livingCostPerYr,
+      scholarshipsAvailable,
+      minCgpa,
+      minIelts,
+      acceptanceRate,
+      fundingAvailable,
+      prPathwayQuality,
       deadline,
       intake,
       website,
@@ -56,6 +63,8 @@ router.post("/", async (req: AuthenticatedRequest, res: Response) => {
       },
     });
 
+    const toFloatOrNull = (val: any) => (val === undefined || val === null || val === "" || isNaN(parseFloat(val))) ? null : parseFloat(val);
+
     const university = await prisma.university.create({
       data: {
         userId,
@@ -64,6 +73,13 @@ router.post("/", async (req: AuthenticatedRequest, res: Response) => {
         tier: tier as Tier,
         program: program || null,
         tuitionPerYr: tuitionPerYr || null,
+        livingCostPerYr: livingCostPerYr || null,
+        scholarshipsAvailable: scholarshipsAvailable !== undefined ? !!scholarshipsAvailable : false,
+        minCgpa: toFloatOrNull(minCgpa),
+        minIelts: toFloatOrNull(minIelts),
+        acceptanceRate: toFloatOrNull(acceptanceRate),
+        fundingAvailable: fundingAvailable !== undefined ? !!fundingAvailable : false,
+        prPathwayQuality: prPathwayQuality || null,
         deadline: deadline || null,
         intake: intake || null,
         website: website || null,
@@ -93,6 +109,13 @@ router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
       tier,
       program,
       tuitionPerYr,
+      livingCostPerYr,
+      scholarshipsAvailable,
+      minCgpa,
+      minIelts,
+      acceptanceRate,
+      fundingAvailable,
+      prPathwayQuality,
       deadline,
       intake,
       website,
@@ -108,6 +131,8 @@ router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
       return res.status(404).json({ error: "University not found" });
     }
 
+    const toFloatOrNull = (val: any) => (val === undefined || val === null || val === "" || isNaN(parseFloat(val))) ? null : parseFloat(val);
+
     const updated = await prisma.university.update({
       where: { id },
       data: {
@@ -116,6 +141,13 @@ router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
         tier: tier !== undefined ? (tier as Tier) : existing.tier,
         program: program !== undefined ? program : existing.program,
         tuitionPerYr: tuitionPerYr !== undefined ? tuitionPerYr : existing.tuitionPerYr,
+        livingCostPerYr: livingCostPerYr !== undefined ? livingCostPerYr : existing.livingCostPerYr,
+        scholarshipsAvailable: scholarshipsAvailable !== undefined ? !!scholarshipsAvailable : existing.scholarshipsAvailable,
+        minCgpa: minCgpa !== undefined ? toFloatOrNull(minCgpa) : existing.minCgpa,
+        minIelts: minIelts !== undefined ? toFloatOrNull(minIelts) : existing.minIelts,
+        acceptanceRate: acceptanceRate !== undefined ? toFloatOrNull(acceptanceRate) : existing.acceptanceRate,
+        fundingAvailable: fundingAvailable !== undefined ? !!fundingAvailable : existing.fundingAvailable,
+        prPathwayQuality: prPathwayQuality !== undefined ? prPathwayQuality : existing.prPathwayQuality,
         deadline: deadline !== undefined ? deadline : existing.deadline,
         intake: intake !== undefined ? intake : existing.intake,
         website: website !== undefined ? website : existing.website,

@@ -21,21 +21,21 @@ import { EmptyState } from "@/components/shared/EmptyState";
 
 // BDT Conversion Rates
 const BDT_RATES: Record<string, number> = {
-  USD: 118,
-  EUR: 128,
-  CAD: 87,
-  AUD: 78,
-  SEK: 11.2,
-  NOK: 11.0,
-  DKK: 17.2,
-  CHF: 130,
-  NZD: 72,
-  JPY: 0.76,
-  KRW: 0.086,
-  SGD: 88,
-  CNY: 16.3,
-  AED: 32.1,
-  GBP: 150
+  USD: 125,
+  EUR: 136,
+  CAD: 92,
+  AUD: 83,
+  SEK: 11.9,
+  NOK: 11.7,
+  DKK: 18.2,
+  CHF: 138,
+  NZD: 76,
+  JPY: 0.81,
+  KRW: 0.091,
+  SGD: 93,
+  CNY: 17.3,
+  AED: 34.0,
+  GBP: 160
 };
 
 interface TabConfig {
@@ -554,6 +554,136 @@ export function CountryClient({ countryData, slug }: { countryData: any, slug: s
                   <h3 className="text-lg font-bold text-foreground mb-1">PR Pathway Route</h3>
                   <p className="text-xs text-muted-foreground font-semibold text-primary">Ease of transition from post-graduate stay-back to Permanent Residence.</p>
                 </div>
+
+                {/* BD passport alerts */}
+                {(() => {
+                  const countryNameLower = countryData.country.toLowerCase();
+                  if (countryNameLower.includes("united states") || countryNameLower === "us" || countryNameLower === "usa") {
+                    return (
+                      <div className="flex gap-3 bg-destructive/10 border border-destructive/20 p-4 rounded-xl text-xs text-muted-foreground leading-relaxed">
+                        <AlertTriangle className="h-4.5 w-4.5 text-destructive shrink-0 mt-0.5 animate-pulse" />
+                        <div>
+                          <p className="font-bold text-foreground">⚠️ Bangladesh Passport Constraint: USA Green Card Backlog</p>
+                          <p className="mt-1">EB-2 and EB-3 permanent residency backlogs are currently estimated at <strong>70–90 years</strong> for Bangladeshi passport holders. The USA F-1 to H-1B to Green Card path is NOT a viable PR pathway for BD nationals. If permanent settlement is your primary goal, avoid targeting the USA.</p>
+                        </div>
+                      </div>
+                    );
+                  }
+                  if (countryNameLower.includes("united arab emirates") || countryNameLower === "ae" || countryNameLower === "uae") {
+                    return (
+                      <div className="flex gap-3 bg-amber-500/10 border border-amber-500/20 p-4 rounded-xl text-xs text-muted-foreground leading-relaxed">
+                        <AlertTriangle className="h-4.5 w-4.5 text-amber-500 shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-bold text-foreground">⚠️ UAE Golden Visa ≠ Permanent Residency</p>
+                          <p className="mt-1">The UAE has NO traditional PR path or citizenship routes. The Golden Visa is a 10-year renewable residency visa, but it does not lead to public benefits, rights of permanent settlement, or a UAE passport.</p>
+                        </div>
+                      </div>
+                    );
+                  }
+                  return null;
+                })()}
+
+                {/* Local Language requirement notification */}
+                {(() => {
+                  const countryNameLower = countryData.country.toLowerCase();
+                  if (countryNameLower.includes("germany")) {
+                    return (
+                      <div className="bg-blue-500/5 border border-blue-500/10 p-3.5 rounded-xl text-xs text-muted-foreground leading-relaxed">
+                        <p className="font-bold text-foreground">🗣️ Language Requirement (German B1/B2)</p>
+                        <p className="mt-1">For EU Blue Card holders, Permanent Residence can be obtained in <strong>21 months</strong> if you pass German B1, or <strong>33 months</strong> if you do not have German language proficiency.</p>
+                      </div>
+                    );
+                  }
+                  if (countryNameLower.includes("netherlands") || countryNameLower.includes("netherland")) {
+                    return (
+                      <div className="bg-blue-500/5 border border-blue-500/10 p-3.5 rounded-xl text-xs text-muted-foreground leading-relaxed">
+                        <p className="font-bold text-foreground">🗣️ Language Requirement (NT2 Dutch)</p>
+                        <p className="mt-1">Netherlands PR and citizenship pathways require passing the <strong>NT2 Dutch language integration exams</strong> after 5 years of legal residence.</p>
+                      </div>
+                    );
+                  }
+                  if (countryNameLower.includes("sweden") || countryNameLower.includes("finland")) {
+                    return (
+                      <div className="bg-blue-500/5 border border-blue-500/10 p-3.5 rounded-xl text-xs text-muted-foreground leading-relaxed">
+                        <p className="font-bold text-foreground">🗣️ Language Requirement (Swedish/Finnish)</p>
+                        <p className="mt-1">Under recent immigration reforms, passing local language proficiency tests is practically required for Permanent Residence conversion.</p>
+                      </div>
+                    );
+                  }
+                  return null;
+                })()}
+
+                {/* Interactive Flowchart Timeline */}
+                <div className="space-y-3 pt-2">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Study-to-Citizenship Pathway Flowchart</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                    {/* Step 1 */}
+                    <div className="bg-card/40 border border-border/40 p-4 rounded-xl relative flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] bg-primary/10 text-primary font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Step 1</span>
+                        <h5 className="font-bold text-sm text-foreground mt-2">Study Phase</h5>
+                        <p className="text-[11px] text-muted-foreground mt-1">1–2 Years Master's degree. Maintain GPA and clear university credits.</p>
+                      </div>
+                    </div>
+
+                    {/* Step 2 */}
+                    <div className="bg-card/40 border border-border/40 p-4 rounded-xl relative flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] bg-blue-500/10 text-blue-400 font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Step 2</span>
+                        <h5 className="font-bold text-sm text-foreground mt-2">Stay-back Work</h5>
+                        <p className="text-[11px] text-muted-foreground mt-1">
+                          {countryData.postStudyWork?.durationStayBack || "18 Months"} Post-study work visa to secure CSE/AI job contract.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Step 3 */}
+                    <div className="bg-card/40 border border-border/40 p-4 rounded-xl relative flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Step 3</span>
+                        <h5 className="font-bold text-sm text-foreground mt-2">Permanent Residence</h5>
+                        <p className="text-[11px] text-muted-foreground mt-1">
+                          Est: {countryData.prPathways?.estimatedYearsFromGraduation || "2-4"} years from graduation. Apply via {countryData.prPathways?.primaryPathwayName || "points-system"}.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Step 4 */}
+                    <div className="bg-card/40 border border-border/40 p-4 rounded-xl relative flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] bg-purple-500/10 text-purple-400 font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Step 4</span>
+                        <h5 className="font-bold text-sm text-foreground mt-2">Citizenship</h5>
+                        <p className="text-[11px] text-muted-foreground mt-1">
+                          Est: {summary.citizenshipYears || "5"} years total legal residence to qualify for the passport.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Side-by-Side Country Compare */}
+                <div className="bg-muted/15 border border-border/40 p-4 rounded-xl space-y-3">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">PR Timelines Comparison Box</h4>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+                    <div className="p-2.5 bg-background rounded-lg border border-border text-center">
+                      <span className="font-bold text-foreground block">🍁 Canada</span>
+                      <span className="text-[10px] text-muted-foreground">Express Entry CEC: <strong>3 years</strong> post-grad PR</span>
+                    </div>
+                    <div className="p-2.5 bg-background rounded-lg border border-border text-center">
+                      <span className="font-bold text-foreground block">🦘 Australia</span>
+                      <span className="text-[10px] text-muted-foreground">485 Work Visa: <strong>3–5 years</strong> skilled PR</span>
+                    </div>
+                    <div className="p-2.5 bg-background rounded-lg border border-border text-center">
+                      <span className="font-bold text-foreground block">🥨 Germany</span>
+                      <span className="text-[10px] text-muted-foreground">EU Blue Card: <strong>21 months</strong> (with B1 German)</span>
+                    </div>
+                    <div className="p-2.5 bg-background rounded-lg border border-border text-center">
+                      <span className="font-bold text-foreground block">🍀 Ireland</span>
+                      <span className="text-[10px] text-muted-foreground">Stamp 1G to Stamp 4: <strong>5 years</strong> to PR</span>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="bg-muted/20 p-4 border border-border/40 rounded-xl space-y-3 text-xs text-muted-foreground">
                   <p><strong>Primary PR Route Name:</strong> {countryData.prPathways?.primaryPathwayName || "Skilled Migration Points-based System"}</p>
                   <p><strong>Estimated Years from Graduation:</strong> {countryData.prPathways?.estimatedYearsFromGraduation || "2-4"} Years</p>
