@@ -138,17 +138,9 @@ Currently countries show static scores. There's no **user profile input** that p
 
 ---
 
-### 12. Application Timeline Planner (Gantt-style)
+### ✅ ~~12. Application Timeline Planner (Gantt-style)~~ — **DONE**
 
-**Answers:** Q5 — What should I do next, today?
-
-- User inputs target intake (Sep 2028 / Jan 2029)
-- System generates backwards timeline:
-  - "Oct 2027: Submit applications"
-  - "Aug 2027: Get Police Clearance"
-  - "Jun 2027: Take IELTS"
-  - "Jan 2027: Contact professors"
-- Color-coded: DONE / IN PROGRESS / UPCOMING / OVERDUE
+**Implemented:** Express API route `/api/v1/timeline/planner` computing chronological milestone dates and status mappings on the server side to comply with Rule 8 rules · Dynamic calculation of 8 key application stages (IELTS prep, professor outreach, document drafting, graduation collection, police clearance, applications, GIC/blocked account setup, and program start) relative to the chosen target intake (Sep 2028 vs Jan 2029) · CSS Grid Gantt chart rendering monthly headers, color-coded task rows (Overdue in red, In Progress in blue, Done in green, Upcoming in gray), and a vertical Today cursor line aligned to the serverTime timestamp · Country timeline overlays mapping Dhaka embassy waiting times (Germany 2.5+ years wait, US 6-12 months wait), Canadian SDS band minimums, and Swedish hard dead-lines.
 
 ---
 
@@ -195,7 +187,7 @@ Currently countries show static scores. There's no **user profile input** that p
 | Scholarship Eligibility Checker | 🔴 High     | Medium | **P1**   | Done   |
 | Document Readiness + Date Calc  | 🔴 High     | Medium | **P1**   | Done   |
 | Country Side-by-Side Compare    | 🟡 High     | Medium | **P1**   | Done   |
-| Application Timeline Gantt      | 🟡 High     | High   | **P1**   |
+| Application Timeline Gantt      | 🟡 High     | High   | **P1**   | Done   |
 | University Full Decision Card   | 🟡 Medium   | Low    | **P2**   |
 | PR Pathway Visualizer           | 🟡 Medium   | Medium | **P2**   |
 | Budget Planner                  | 🟡 Medium   | Low    | **P2**   |
