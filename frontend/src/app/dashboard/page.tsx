@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import { TierBadge } from "@/components/badges/TierBadge";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
@@ -367,7 +368,7 @@ export default function DashboardOverview() {
                       }`}>
                         {matchScores[country.countryCode] ? "Your Match" : "Score"}: {matchScores[country.countryCode]?.score ?? country.overallScore}%
                       </span>
-                      <Globe className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                      <CountryFlag country={country.countryCode} className="h-5 w-8 rounded border border-border/20 shadow-sm" />
                     </div>
                     <CardTitle className="text-lg font-bold text-foreground">{country.country}</CardTitle>
                     <CardDescription className="text-xs text-muted-foreground line-clamp-3">
