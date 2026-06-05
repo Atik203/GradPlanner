@@ -1,9 +1,11 @@
 # GradPlanner Feature Roadmap
+
 > Every feature must answer one of the 5 core user questions from AGENTS.md
 
 ---
 
 ## 🎯 Core User Questions (from AGENTS.md)
+
 1. Which **country** should I target?
 2. Which **universities** fit my profile AND budget?
 3. Which **professors** have funding and match my research?
@@ -15,90 +17,54 @@
 ## 🔴 Critical Gaps (Missing Core Features)
 
 ### ✅ ~~1. Profile-Based Country Match Score~~ — **DONE**
-**Implemented:** Prisma migration · 6-dimension scoring engine (`matchScore.ts`) · `countryMatchSlice` Redux · Profile "Match Intelligence" UI (IELTS, budget, research tags, PR priority, family plans) · `MatchBreakdownPopover` · Countries page sorted by personal match % · Dashboard top-3 by personal score · BD-specific warnings (Germany APS, USA Green Card backlog, UAE no-PR).
 
+**Implemented:** Prisma migration · 6-dimension scoring engine (`matchScore.ts`) · `countryMatchSlice` Redux · Profile "Match Intelligence" UI (IELTS, budget, research tags, PR priority, family plans) · `MatchBreakdownPopover` · Countries page sorted by personal match % · Dashboard top-3 by personal score · BD-specific warnings (Germany APS, USA Green Card backlog, UAE no-PR).
 
 Currently countries show static scores. There's no **user profile input** that personalizes the recommendation.
 
 **What to build:**
+
 - Profile wizard: CGPA, IELTS score, research interests, budget, family plans, PR priority
 - Dynamic country match % recalculated per profile (stored in Redux, no DB needed)
-- Country cards re-sort by *your personal* match score, not generic score
+- Country cards re-sort by _your personal_ match score, not generic score
 - "Why this country fits you" explainer panel
 
 **Impact:** High. Transforms GradPlanner from info-browser → decision engine.
 
 ---
 
-### 2. Professor Email Generator + Follow-up Tracker
-**Answers:** Q3 — Which professors have funding and match my research?
+### ✅ ~~2. Professor Email Generator + Follow-up Tracker~~ — **DONE**
 
-The professor module exists but there's **no email drafting or follow-up intelligence**.
-
-**What to build:**
-- Cold email template generator (fills professor name, university, research area, your background)
-- Follow-up scheduler with 14-day minimum enforcement (rule from AGENTS.md)
-- Email count badge warning at ≥2 follow-ups
-- "Best send window" display: Tue–Thu 8:30–9:30 AM professor's local timezone
-- Professor funding status: FUNDED / LIKELY / UNLIKELY / UNKNOWN with color badges
-- Research fit score (1–10) auto-suggested based on keyword matching with user's interests
-
-**Impact:** Very High. This is the most critical conversion action in a student's application.
+**Implemented:** Cold email templates customized dynamically based on student profile (CGPA, IELTS, research tags, degree level) and professor details · Advisor panel with timezone-aware BDT sending slot recommendations · 14-day minimum interval enforcement and 2 follow-ups max limit validated at the database layer in `/api/v1/professors/:id/log-email` · Grid integrations for inline editing of `fundingStatus` and `researchFitScore` with auto-suggest score generation based on profile keyword matching · Integration with Follow-Up Reminders pages and cards.
 
 ---
 
-### 3. Application Decision Engine ("What Next Today")
-**Answers:** Q5 — What should I do next, today?
+### ✅ ~~3. Application Decision Engine ("What Next Today")~~ — **DONE**
 
-Currently applications are tracked but there's **no intelligent next-action recommendation**.
-
-**What to build:**
-- Smart daily task list: "You have 3 professors to follow up with", "Australia RTP deadline in 47 days"
-- Application readiness score per university: CGPA ✓ IELTS ✗ SOP ✗ → 33% ready
-- Deadline proximity alerts sorted by urgency
-- "Apply Now" vs "Prepare More" vs "Too Early" status per program
-
-**Impact:** Very High. This is the "What should I do today?" answer.
+**Implemented:** Multi-dimension Smart Task Checklist (recommending professor follow-ups, Dhaka PCC wait times, German APS certificate wait times, language exam planning, and application deadlines) · Core university readiness score algorithm (25% CGPA, 25% IELTS, 50% documents) with country-specific adaptations (Germany APS; Canada/Australia financials) · Widget overlay for dashboard overview (`WhatNextToday.tsx`) displaying colored gauges, status indicators, and criteria checks.
 
 ---
 
-### 4. Scholarship Eligibility Checker
-**Answers:** Q2 — Which universities fit my profile AND budget?
+### ✅ ~~4. Scholarship Eligibility Checker~~ — **DONE**
 
-The scholarship data exists in the DB but **no checker against user profile**.
-
-**What to build:**
-- Input: user's CGPA, IELTS, work experience, degree level target
-- Output: list of scholarships ranked by eligibility match %
-- Highlight: which requirements you're missing (e.g. "Need 0.3 more CGPA for RTP")
-- Funding gap calculator: "You need AUD 45,000/year. RTP covers 100%. Gap = $0"
-
-**Impact:** High. Every user is scholarship-dependent (AGENTS.md rule).
+**Implemented:** Express backend routing `/api/v1/scholarships/checker` · Custom string parsing engine for GPA, IELTS, and work experience criteria · Multi-dimension matching & eligibility scoring (100 pt scale covering degree level, CGPA, IELTS, work experience, publications) · Dynamic out-of-pocket funding gap calculator (combining tuition and shared accommodation living cost minus scholarship tuition + monthly stipend coverage, outputting equivalents in both USD and BDT at BDT 118 rate) · Dual-tab frontend Scholarship Hub (Eligibility Checker vs Browse Database) · Interactive parameters control panel (prefilled with profile defaults) · Missing requirements alert blocks · Strengths checks · Expandable annual cost gap breakdowns.
 
 ---
 
-### 5. SOP / Document Readiness Tracker
-**Answers:** Q5 — What should I do next, today?
+### ✅ ~~5. SOP / Document Readiness Tracker~~ — **DONE**
 
-The documents module exists but **has no intelligence — it's just a list**.
-
-**What to build:**
-- Per-country document checklist auto-generated (visa + admission docs combined)
-- BD-specific timelines: "Police Clearance takes 2–6 weeks → Start by [date]"
-- "Start by" date calculator working backwards from application deadline
-- Document status: NOT_STARTED / IN_PROGRESS / READY / SUBMITTED
-- APS certificate warning for Germany (mandatory, 6–8 week wait)
-
-**Impact:** High. Document delays are the #1 reason Bangladeshi students miss deadlines.
+**Implemented:** Dynamic target application deadline solver (resolving from tracked university deadlines or profile target intake fallback) · UI Date controller to custom override deadlines · Backwards-calculated timelines for key BD processing queues (Police clearance 2–6 wks + buffer = 8 wks; German APS 6–8 wks + buffer = 12 wks; Transcripts 10 wks; IELTS 10 wks; LOR 6 wks; SOP/CV 4 wks) · Dynamic Chronological Timeline grouping documents into urgency slots (Overdue, Urgent, Upcoming, Completed) · Inline status update dropdowns synchronizing updates with the Express database in real-time · German APS attestation and embassy backlog warnings.
 
 ---
 
 ## 🟡 High-Value Improvements (Existing Features)
 
 ### 6. University Page: Full Decision Card
+
 **Current state:** Basic list with name, tier, tuition.
 
 **What to add:**
+
 - All 3 ranks side-by-side: QS | THE | ARWU (show "—" if not ranked — never hide)
 - Tuition + estimated living = **Net Annual Cost in BDT**
 - Funding available: Yes / No / Unknown
@@ -110,9 +76,11 @@ The documents module exists but **has no intelligence — it's just a list**.
 ---
 
 ### 7. Country Intelligence: PR Pathway Visualizer
+
 **Current state:** PR info shown as text in the PR tab.
 
 **What to add:**
+
 - Visual timeline: Study → Work → PR → Citizenship with estimated years
 - Side-by-side comparison: "Canada: 3yr PR | Australia: 4yr PR | Germany: 21 months (EU Blue Card)"
 - BD passport-specific warnings (e.g. USA Green Card backlog notice)
@@ -121,9 +89,11 @@ The documents module exists but **has no intelligence — it's just a list**.
 ---
 
 ### 8. Visa Process: Step-by-Step BD-Specific Guide
+
 **Current state:** Generic visa steps.
 
 **What to add:**
+
 - Dhaka Embassy appointment wait times (real values from AGENTS.md)
 - APS certificate requirement alert for Germany
 - Estimated cost breakdown in BDT
@@ -133,9 +103,11 @@ The documents module exists but **has no intelligence — it's just a list**.
 ---
 
 ### 9. Professor Page: Research Fit Intelligence
+
 **Current state:** Basic list of professors.
 
 **What to add:**
+
 - Research keywords extracted from user profile → match against professor interests
 - Publication recency indicator ("Last paper: 2024" vs "Last paper: 2019")
 - Lab funding signals: active grants listed, industry partnerships
@@ -145,9 +117,11 @@ The documents module exists but **has no intelligence — it's just a list**.
 ---
 
 ### 10. Salary Page: BDT Equivalent + Purchasing Power
+
 **Current state:** Shows salary but limited context.
 
 **What to add:**
+
 - Monthly net income after tax (already partially done)
 - **Savings rate calculator**: Net income − living costs = monthly savings
 - "Time to save for parents' Hajj / house in Dhaka" fun contextual goal
@@ -158,30 +132,20 @@ The documents module exists but **has no intelligence — it's just a list**.
 
 ## 🟢 New Sections to Build
 
-### 11. Compare Countries Side-by-Side
-**Answers:** Q1 — Which country should I target?
+### ✅ ~~11. Compare Countries Side-by-Side~~ — **DONE**
 
-- Select 2–4 countries from a multi-select
-- Grid comparison: Funding | Admission | Job Market | PR | Family | Visa | Salary | Cost
-- Winner highlighted per row
-- "For your profile, Canada wins on PR but Germany wins on cost"
+**Implemented:** Multi-select country selector upgraded to support up to 4 countries side-by-side · Tabular matrix grid mapping 8 critical dimensions (Funding, Admission, Job Market, PR, Family, Visa, Salary, Cost) · Row-wise winner calculation engine comparing scores and BDT-equivalent savings · Personalized Match Advisor panel generating tailored study-abroad guidance from Redux user profile settings (budget warnings, Germany zero-tuition advantages, USA Green Card backlog notices, family relocation work rights, and Canada SDS band advice).
 
 ---
 
-### 12. Application Timeline Planner (Gantt-style)
-**Answers:** Q5 — What should I do next, today?
+### ✅ ~~12. Application Timeline Planner (Gantt-style)~~ — **DONE**
 
-- User inputs target intake (Sep 2028 / Jan 2029)
-- System generates backwards timeline:
-  - "Oct 2027: Submit applications"
-  - "Aug 2027: Get Police Clearance"  
-  - "Jun 2027: Take IELTS"
-  - "Jan 2027: Contact professors"
-- Color-coded: DONE / IN PROGRESS / UPCOMING / OVERDUE
+**Implemented:** Express API route `/api/v1/timeline/planner` computing chronological milestone dates and status mappings on the server side to comply with Rule 8 rules · Dynamic calculation of 8 key application stages (IELTS prep, professor outreach, document drafting, graduation collection, police clearance, applications, GIC/blocked account setup, and program start) relative to the chosen target intake (Sep 2028 vs Jan 2029) · CSS Grid Gantt chart rendering monthly headers, color-coded task rows (Overdue in red, In Progress in blue, Done in green, Upcoming in gray), and a vertical Today cursor line aligned to the serverTime timestamp · Country timeline overlays mapping Dhaka embassy waiting times (Germany 2.5+ years wait, US 6-12 months wait), Canadian SDS band minimums, and Swedish hard dead-lines.
 
 ---
 
 ### 13. Budget Planner
+
 **Answers:** Q2 — Which universities fit my profile AND budget?
 
 - Input: available budget (BDT or USD)
@@ -192,6 +156,7 @@ The documents module exists but **has no intelligence — it's just a list**.
 ---
 
 ### 14. Research Proposal Assistant
+
 **Answers:** Q3 — Which professors have funding and match my research?
 
 - User inputs: research area, previous work, professor's recent paper
@@ -202,6 +167,7 @@ The documents module exists but **has no intelligence — it's just a list**.
 ---
 
 ### 15. PR Probability Calculator
+
 **Answers:** Q4 — What are my realistic chances?
 
 - Input: target country, degree level, IELTS score, work experience
@@ -213,27 +179,29 @@ The documents module exists but **has no intelligence — it's just a list**.
 
 ## 📊 Feature Priority Matrix
 
-| Feature | Impact | Effort | Priority |
-|---|---|---|---|
-| Profile-Based Country Match | 🔴 Critical | Medium | **P0** |
-| Professor Email Generator | 🔴 Critical | Medium | **P0** |
-| Application "What Next" Engine | 🔴 Critical | High | **P0** |
-| Scholarship Eligibility Checker | 🔴 High | Medium | **P1** |
-| Document Readiness + Date Calc | 🔴 High | Medium | **P1** |
-| Country Side-by-Side Compare | 🟡 High | Medium | **P1** |
-| Application Timeline Gantt | 🟡 High | High | **P1** |
-| University Full Decision Card | 🟡 Medium | Low | **P2** |
-| PR Pathway Visualizer | 🟡 Medium | Medium | **P2** |
-| Budget Planner | 🟡 Medium | Low | **P2** |
-| Professor Research Fit | 🟡 Medium | Medium | **P2** |
-| Salary Savings Calculator | 🟢 Medium | Low | **P3** |
-| Research Proposal Assistant | 🟢 Low | High | **P3** |
-| PR Probability Calculator | 🟢 Medium | High | **P3** |
+| Feature                         | Impact      | Effort | Priority | Status |
+| ------------------------------- | ----------- | ------ | -------- | ------ |
+| Profile-Based Country Match     | 🔴 Critical | Medium | **P0**   | Done   |
+| Professor Email Generator       | 🔴 Critical | Medium | **P0**   | Done   |
+| Application "What Next" Engine  | 🔴 Critical | High   | **P0**   | Done   |
+| Scholarship Eligibility Checker | 🔴 High     | Medium | **P1**   | Done   |
+| Document Readiness + Date Calc  | 🔴 High     | Medium | **P1**   | Done   |
+| Country Side-by-Side Compare    | 🟡 High     | Medium | **P1**   | Done   |
+| Application Timeline Gantt      | 🟡 High     | High   | **P1**   | Done   |
+| University Full Decision Card   | 🟡 Medium   | Low    | **P2**   | Done   |
+| PR Pathway Visualizer           | 🟡 Medium   | Medium | **P2**   | Done   |
+| Budget Planner                  | 🟡 Medium   | Low    | **P2**   | Done   |
+| Professor Research Fit          | 🟡 Medium   | Medium | **P2**   | Done   |
+| Salary Savings Calculator       | 🟢 Medium   | Low    | **P3**   | Done   |
+| Research Proposal Assistant     | 🟢 Low      | High   | **P3**   | Done   |
+| PR Probability Calculator       | 🟢 Medium   | High   | **P3**   | Done   |
 
 ---
 
 ## 🚫 What NOT to Build
+
 Per AGENTS.md — GradPlanner is NOT:
+
 - A generic university ranking browser → no "Top 100 Universities" page
 - A CRUD dashboard → every list must have decision context
 - A social network → no comments, feeds, or sharing

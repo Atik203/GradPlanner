@@ -15,6 +15,9 @@ import applicationsRouter from "./routes/applications.js";
 import documentsRouter from "./routes/documents.js";
 import statsRouter from "./routes/stats.js";
 import countriesRouter from "./routes/countries.js";
+import decisionEngineRouter from "./routes/decisionEngine.js";
+import scholarshipsRouter from "./routes/scholarships.js";
+import timelineRouter from "./routes/timeline.js";
 
 const app: express.Application = express();
 const rawFrontendUrl = process.env.FRONTEND_URL ?? "http://localhost:3000";
@@ -58,6 +61,9 @@ app.use("/api/v1/professors", requireAuth, professorsRouter);
 app.use("/api/v1/applications", requireAuth, applicationsRouter);
 app.use("/api/v1/documents", requireAuth, documentsRouter);
 app.use("/api/v1/dashboard/stats", requireAuth, statsRouter);
+app.use("/api/v1/decision-engine", requireAuth, decisionEngineRouter);
+app.use("/api/v1/scholarships", requireAuth, scholarshipsRouter);
+app.use("/api/v1/timeline", requireAuth, timelineRouter);
 
 app.get("/api/v1/health", async (_req: Request, res: Response) => {
   try {

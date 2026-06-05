@@ -14,6 +14,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, ArrowLeft, School, Calendar, DollarSign, FileText, Globe } from "lucide-react";
 import { countryList } from "@/lib/countryList";
+import { toast } from "sonner";
+
+
 
 // Zod Schema
 const universitySchema = z.object({
@@ -22,6 +25,13 @@ const universitySchema = z.object({
   tier: z.enum(["DREAM", "MATCH", "SAFETY"]),
   program: z.string().optional().or(z.literal("")),
   tuitionPerYr: z.string().optional().or(z.literal("")),
+  livingCostPerYr: z.string().optional().or(z.literal("")),
+  scholarshipsAvailable: z.boolean().optional(),
+  minCgpa: z.string().optional().or(z.literal("")),
+  minIelts: z.string().optional().or(z.literal("")),
+  acceptanceRate: z.string().optional().or(z.literal("")),
+  fundingAvailable: z.boolean().optional(),
+  prPathwayQuality: z.string().optional().or(z.literal("")),
   deadline: z.string().optional().or(z.literal("")),
   intake: z.string().optional().or(z.literal("")),
   website: z.string().url("Must be a valid URL starting with http:// or https://").optional().or(z.literal("")),
@@ -66,6 +76,13 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
       tier: "MATCH",
       program: "MSc Machine Learning & AI",
       tuitionPerYr: "",
+      livingCostPerYr: "",
+      scholarshipsAvailable: false,
+      minCgpa: "",
+      minIelts: "",
+      acceptanceRate: "",
+      fundingAvailable: false,
+      prPathwayQuality: "Good",
       deadline: "",
       intake: "Sep 2028",
       website: "",
@@ -81,11 +98,14 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
         method: "POST",
         body: JSON.stringify({
           ...data,
+          scholarshipsAvailable: !!data.scholarshipsAvailable,
+          fundingAvailable: !!data.fundingAvailable,
           website: data.website || `https://google.com/search?q=${encodeURIComponent(data.name)}`,
         }),
       });
 
       dispatch(addUniversity(response));
+      toast.success("University tracked successfully!");
       
       // Navigate back to universities list or country page if country specified
       if (initialCountry) {
@@ -96,11 +116,14 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
       }
     } catch (err: any) {
       console.error("Submit university error:", err);
-      setError(err?.message || "Failed to add university. Please check your inputs.");
+      const errMsg = err?.message || "Failed to add university. Please check your inputs.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setSaving(false);
     }
   };
+
 
   return (
     <div className="max-w-2xl mx-auto space-y-6">
@@ -277,6 +300,115 @@ export function UniversityForm({ initialCountry = "" }: UniversityFormProps) {
                 {errors.website && (
                   <p className="text-xs text-destructive mt-1 font-medium">{errors.website.message}</p>
                 )}
+              </div>
+            </div>
+
+            {/* Grid for Living Cost & PR Pathway Quality */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="livingCostPerYr" className="text-sm font-semibold text-foreground flex items-center gap-1.5">
+                  <DollarSign className="h-4 w-4 text-muted-foreground" /> Living Cost per Year
+                </Label>
+                <Input
+                  id="livingCostPerYr"
+                  placeholder="e.g. €11,200 / $12,000 / CAD 15,000"
+                  className="bg-background border-border text-foreground h-10"
+                  {...register("livingCostPerYr")}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="prPathwayQuality" className="text-sm font-semibold text-foreground flex items-center gap-1.5">
+                  PR Pathway Quality
+                </Label>
+                <select
+                  id="prPathwayQuality"
+                  className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                  {...register("prPathwayQuality")}
+                >
+                  <option value="Best">🥇 Best — Fast track, high visa approval</option>
+                  <option value="Good">🥈 Good — Steady skilled pathway</option>
+                  <option value="Possible">🥉 Possible — Language or job offer dependent</option>
+                  <option value="Avoid">❌ Avoid — No viable PR path / massive backlog</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Grid for GPA, IELTS, and Acceptance Rate */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="minCgpa" className="text-sm font-semibold text-foreground">
+                  Minimum CGPA Required
+                </Label>
+                <Input
+                  id="minCgpa"
+                  type="number"
+                  step="0.01"
+                  placeholder="e.g. 3.0"
+                  className="bg-background border-border text-foreground h-10"
+                  {...register("minCgpa")}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="minIelts" className="text-sm font-semibold text-foreground">
+                  Minimum IELTS Required
+                </Label>
+                <Input
+                  id="minIelts"
+                  type="number"
+                  step="0.5"
+                  placeholder="e.g. 6.5"
+                  className="bg-background border-border text-foreground h-10"
+                  {...register("minIelts")}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="acceptanceRate" className="text-sm font-semibold text-foreground">
+                  Acceptance Rate (%)
+                </Label>
+                <Input
+                  id="acceptanceRate"
+                  type="number"
+                  step="0.1"
+                  placeholder="e.g. 15.5"
+                  className="bg-background border-border text-foreground h-10"
+                  {...register("acceptanceRate")}
+                />
+              </div>
+            </div>
+
+            {/* Funding Checkboxes */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              <div className="flex items-center space-x-3 bg-muted/20 border border-border/40 p-3 rounded-lg">
+                <input
+                  id="scholarshipsAvailable"
+                  type="checkbox"
+                  className="h-4 w-4 rounded border-border text-primary focus:ring-primary bg-background"
+                  {...register("scholarshipsAvailable")}
+                />
+                <div className="space-y-0.5">
+                  <Label htmlFor="scholarshipsAvailable" className="text-sm font-semibold text-foreground cursor-pointer">
+                    Scholarships Available
+                  </Label>
+                  <p className="text-[10px] text-muted-foreground">University has active scholarship schemes</p>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-3 bg-muted/20 border border-border/40 p-3 rounded-lg">
+                <input
+                  id="fundingAvailable"
+                  type="checkbox"
+                  className="h-4 w-4 rounded border-border text-primary focus:ring-primary bg-background"
+                  {...register("fundingAvailable")}
+                />
+                <div className="space-y-0.5">
+                  <Label htmlFor="fundingAvailable" className="text-sm font-semibold text-foreground cursor-pointer">
+                    TA/RA Funding Available
+                  </Label>
+                  <p className="text-[10px] text-muted-foreground">Professor/Department offers research/teaching funding</p>
+                </div>
               </div>
             </div>
 
