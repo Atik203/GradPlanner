@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { fetchApi } from "@/lib/api";
 import { SectionHeader } from "@/components/dashboard/SectionHeader";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { CountryFlag } from "@/components/shared/CountryFlag";
 import {
   Bot,
   Loader2,
@@ -11,13 +12,11 @@ import {
   Globe,
   Building2,
   TrendingUp,
-  TrendingDown,
   Clock,
   Zap,
   Briefcase,
   FlameKindling,
   BarChart2,
-  Users,
   Star,
 } from "lucide-react";
 import type { JobMarket } from "@/types/countries/job-market";
@@ -267,9 +266,7 @@ export default function AIJobMarketPage() {
                 >
                   {/* country name + code */}
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
-                      <Globe className="h-4 w-4 text-primary" />
-                    </div>
+                    <CountryFlag country={c.countryCode} className="h-5 w-8 rounded border border-border/20 shadow-sm shrink-0" />
                     <div className="min-w-0">
                       <h3 className="font-bold text-sm text-foreground leading-tight truncate">
                         {c.country}
