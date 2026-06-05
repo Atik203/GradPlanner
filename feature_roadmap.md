@@ -188,10 +188,10 @@ Currently countries show static scores. There's no **user profile input** that p
 | Document Readiness + Date Calc  | 🔴 High     | Medium | **P1**   | Done   |
 | Country Side-by-Side Compare    | 🟡 High     | Medium | **P1**   | Done   |
 | Application Timeline Gantt      | 🟡 High     | High   | **P1**   | Done   |
-| University Full Decision Card   | 🟡 Medium   | Low    | **P2**   |
-| PR Pathway Visualizer           | 🟡 Medium   | Medium | **P2**   |
-| Budget Planner                  | 🟡 Medium   | Low    | **P2**   |
-| Professor Research Fit          | 🟡 Medium   | Medium | **P2**   |
+| University Full Decision Card   | 🟡 Medium   | Low    | **P2**   | Done   |
+| PR Pathway Visualizer           | 🟡 Medium   | Medium | **P2**   | Done   |
+| Budget Planner                  | 🟡 Medium   | Low    | **P2**   | Done   |
+| Professor Research Fit          | 🟡 Medium   | Medium | **P2**   | Done   |
 | Salary Savings Calculator       | 🟢 Medium   | Low    | **P3**   |
 | Research Proposal Assistant     | 🟢 Low      | High   | **P3**   |
 | PR Probability Calculator       | 🟢 Medium   | High   | **P3**   |

@@ -20,8 +20,8 @@ import Link from "next/link";
 import type { University, Application } from "@/types";
 
 const BDT_RATES: Record<string, number> = {
-  USD: 118, EUR: 128, CAD: 87, AUD: 78, GBP: 150, SEK: 11.2, NOK: 11.0, DKK: 17.2,
-  CHF: 130, NZD: 72, JPY: 0.76, KRW: 0.086, SGD: 88, CNY: 16.3, AED: 32.1,
+  USD: 125, EUR: 136, CAD: 92, AUD: 83, GBP: 160, SEK: 11.9, NOK: 11.7, DKK: 18.2,
+  CHF: 138, NZD: 76, JPY: 0.81, KRW: 0.091, SGD: 93, CNY: 17.3, AED: 34.0,
 };
 
 interface CountrySummary { id: string; country: string; countryCode: string; }
@@ -170,7 +170,7 @@ export default function SavedTrackersPage() {
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link href="/dashboard/funding/matrix" className="block">
               <Card className="border-border/60 bg-card/25 hover:bg-card/40 hover:border-primary/30 transition-all cursor-pointer h-full">
                 <CardContent className="p-4 flex items-center gap-3">
@@ -194,6 +194,20 @@ export default function SavedTrackersPage() {
                   <div className="flex-1">
                     <p className="text-xs font-bold text-foreground">Active Scholarships</p>
                     <p className="text-[10px] text-muted-foreground">Browse and filter available scholarships</p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                </CardContent>
+              </Card>
+            </Link>
+            <Link href="/dashboard/funding/budget" className="block">
+              <Card className="border-border/60 bg-card/25 hover:bg-card/40 hover:border-primary/30 transition-all cursor-pointer h-full">
+                <CardContent className="p-4 flex items-center gap-3">
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <PiggyBank className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xs font-bold text-foreground">Budget Planner</p>
+                    <p className="text-[10px] text-muted-foreground">Check program affordability & loan ceilings</p>
                   </div>
                   <ArrowRight className="h-4 w-4 text-muted-foreground" />
                 </CardContent>
