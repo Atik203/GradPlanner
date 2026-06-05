@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, ArrowLeft, FileText, Clock, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
+
 import { countryList } from "@/lib/countryList";
 
 // BD-specific document metadata: name suggestions + timeline hints
@@ -108,6 +110,7 @@ export function DocumentForm({ initialCountry = "" }: DocumentFormProps) {
         }),
       });
       dispatch(addDocument(response));
+      toast.success(`Document "${data.name}" tracked successfully!`);
       if (initialCountry) {
         const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
         router.push(`/dashboard/countries/${countrySlug}`);
@@ -115,11 +118,14 @@ export function DocumentForm({ initialCountry = "" }: DocumentFormProps) {
         router.push("/dashboard/documents");
       }
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Failed to add document. Please try again.");
+      const errMsg = err instanceof Error ? err.message : "Failed to add document. Please try again.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setSaving(false);
     }
   };
+
 
   const goBack = () => {
     if (initialCountry) {

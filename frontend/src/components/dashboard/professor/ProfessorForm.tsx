@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, ArrowLeft, GraduationCap, AlertCircle, Info, Star } from "lucide-react";
+import { toast } from "sonner";
+
 
 
 const professorSchema = z.object({
@@ -24,6 +26,10 @@ const professorSchema = z.object({
   fundingStatus: z.enum(["FUNDED", "LIKELY", "UNLIKELY", "UNKNOWN"]),
   researchFitScore: z.string().optional().or(z.literal("")),
   notes: z.string().optional().or(z.literal("")),
+  lastPublicationYear: z.string().optional().or(z.literal("")),
+  recentPhdGraduations: z.string().optional().or(z.literal("")),
+  activeGrants: z.boolean().optional(),
+  industryPartnerships: z.string().optional().or(z.literal("")),
 });
 
 type ProfessorFormValues = z.infer<typeof professorSchema>;
@@ -68,6 +74,10 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
       fundingStatus: "UNKNOWN" as const,
       researchFitScore: "",
       notes: "",
+      lastPublicationYear: "",
+      recentPhdGraduations: "",
+      activeGrants: false,
+      industryPartnerships: "",
     },
   });
 
@@ -87,9 +97,17 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
           researchFitScore: data.researchFitScore ? parseInt(data.researchFitScore, 10) : null,
           notes: data.notes || null,
           status: "NOT_CONTACTED",
+          customFields: {
+            lastPublicationYear: data.lastPublicationYear ? parseInt(data.lastPublicationYear, 10) : null,
+            recentPhdGraduations: data.recentPhdGraduations ? parseInt(data.recentPhdGraduations, 10) : null,
+            activeGrants: !!data.activeGrants,
+            industryPartnerships: data.industryPartnerships ? data.industryPartnerships.split(",").map(s => s.trim()).filter(Boolean) : [],
+          }
         }),
       });
+
       dispatch(addProfessor(response));
+      toast.success(`Professor ${data.name} added successfully!`);
       if (initialCountry) {
         const countrySlug = initialCountry.toLowerCase().trim().replace(/[\s_]+/g, "-");
         router.push(`/dashboard/countries/${countrySlug}`);
@@ -97,11 +115,14 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
         router.push("/dashboard/professors");
       }
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : "Failed to add professor. Please try again.");
+      const errMsg = err instanceof Error ? err.message : "Failed to add professor. Please try again.";
+      setError(errMsg);
+      toast.error(errMsg);
     } finally {
       setSaving(false);
     }
   };
+
 
   const goBack = () => {
     if (initialCountry) {
@@ -270,6 +291,64 @@ export function ProfessorForm({ initialCountry = "" }: ProfessorFormProps) {
                   {...register("researchFitScore")}
                 />
                 <p className="text-xs text-muted-foreground">How well does their research match yours?</p>
+              </div>
+            </div>
+
+            {/* Grid for Publication Recency & PhD Graduations */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="lastPublicationYear" className="text-sm font-semibold text-foreground">
+                  Last Publication Year
+                </Label>
+                <Input
+                  id="lastPublicationYear"
+                  type="number"
+                  placeholder="e.g. 2024"
+                  className="bg-background border-border text-foreground h-10"
+                  {...register("lastPublicationYear")}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="recentPhdGraduations" className="text-sm font-semibold text-foreground">
+                  Recent PhD Graduations count
+                </Label>
+                <Input
+                  id="recentPhdGraduations"
+                  type="number"
+                  placeholder="e.g. 2"
+                  className="bg-background border-border text-foreground h-10"
+                  {...register("recentPhdGraduations")}
+                />
+              </div>
+            </div>
+
+            {/* Grid for Active Grants & Industry Partnerships */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex items-center space-x-3 bg-muted/20 border border-border/40 p-3 rounded-lg h-[42px] mt-8">
+                <input
+                  id="activeGrants"
+                  type="checkbox"
+                  className="h-4 w-4 rounded border-border text-primary focus:ring-primary bg-background"
+                  {...register("activeGrants")}
+                />
+                <div className="space-y-0.5">
+                  <Label htmlFor="activeGrants" className="text-sm font-semibold text-foreground cursor-pointer">
+                    Active Research Grants
+                  </Label>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="industryPartnerships" className="text-sm font-semibold text-foreground">
+                  Industry Partnerships
+                </Label>
+                <Input
+                  id="industryPartnerships"
+                  placeholder="e.g. Google, NVIDIA, Meta"
+                  className="bg-background border-border text-foreground h-10"
+                  {...register("industryPartnerships")}
+                />
               </div>
             </div>
 

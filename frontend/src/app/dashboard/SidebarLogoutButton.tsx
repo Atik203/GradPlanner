@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { LogOut, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 export function SidebarLogoutButton() {
   const router = useRouter();
@@ -14,14 +15,17 @@ export function SidebarLogoutButton() {
     setLoading(true);
     try {
       await authClient.signOut();
+      toast.success("Signed out successfully.");
       router.push("/login");
       router.refresh();
     } catch (error) {
       console.error("Sign out failed:", error);
+      toast.error("Failed to sign out. Please try again.");
     } finally {
       setLoading(false);
     }
   };
+
 
   return (
     <Button

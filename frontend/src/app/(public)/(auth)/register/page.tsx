@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
@@ -33,14 +34,17 @@ export default function RegisterPage() {
     e.preventDefault();
     if (!name || !email || !password || !confirmPassword) {
       setError("Please fill in all fields.");
+      toast.error("Please fill in all fields.");
       return;
     }
     if (password.length < 8) {
       setError("Password must be at least 8 characters long.");
+      toast.error("Password must be at least 8 characters long.");
       return;
     }
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
+      toast.error("Passwords do not match.");
       return;
     }
     setError(null);
@@ -54,14 +58,18 @@ export default function RegisterPage() {
       });
 
       if (authError) {
-        setError(authError.message || "Failed to create an account. Email might be in use.");
+        const errMsg = authError.message || "Failed to create an account. Email might be in use.";
+        setError(errMsg);
+        toast.error(errMsg);
       } else {
+        toast.success("Account created! Redirecting to workspace...");
         router.push("/dashboard");
         router.refresh();
       }
     } catch (err) {
       console.error(err);
       setError("An unexpected error occurred. Please try again.");
+      toast.error("An unexpected error occurred. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -71,6 +79,7 @@ export default function RegisterPage() {
     setError(null);
     setGoogleLoading(true);
     try {
+      toast.info("Connecting to Google...");
       await authClient.signIn.social({
         provider: "google",
         callbackURL: `${window.location.origin}/dashboard`,
@@ -78,9 +87,11 @@ export default function RegisterPage() {
     } catch (err) {
       console.error(err);
       setError("Google sign-in failed. Please try again.");
+      toast.error("Google sign-in failed. Please try again.");
       setGoogleLoading(false);
     }
   };
+
 
   if (isPending || session) {
     return (

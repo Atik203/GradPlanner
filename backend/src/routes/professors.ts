@@ -41,6 +41,8 @@ router.post("/", async (req: AuthenticatedRequest, res: Response) => {
       replyReceived,
       replyDate,
       status,
+      fundingStatus,
+      researchFitScore,
       lastFollowUp,
       nextFollowUp,
       interviewDate,
@@ -66,6 +68,8 @@ router.post("/", async (req: AuthenticatedRequest, res: Response) => {
         replyReceived: replyReceived !== undefined ? !!replyReceived : false,
         replyDate: replyDate ? new Date(replyDate) : null,
         status: (status as ProfessorStatus) || "NOT_CONTACTED",
+        fundingStatus: fundingStatus || "UNKNOWN",
+        researchFitScore: researchFitScore ? parseInt(researchFitScore, 10) : null,
         lastFollowUp: lastFollowUp ? new Date(lastFollowUp) : null,
         nextFollowUp: nextFollowUp ? new Date(nextFollowUp) : null,
         interviewDate: interviewDate ? new Date(interviewDate) : null,
@@ -102,6 +106,8 @@ router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
       replyReceived,
       replyDate,
       status,
+      fundingStatus,
+      researchFitScore,
       lastFollowUp,
       nextFollowUp,
       interviewDate,
@@ -132,6 +138,8 @@ router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
         replyReceived: replyReceived !== undefined ? !!replyReceived : existing.replyReceived,
         replyDate: replyDate !== undefined ? (replyDate ? new Date(replyDate) : null) : existing.replyDate,
         status: status !== undefined ? (status as ProfessorStatus) : existing.status,
+        fundingStatus: fundingStatus !== undefined ? fundingStatus : existing.fundingStatus,
+        researchFitScore: researchFitScore !== undefined ? (researchFitScore ? parseInt(researchFitScore, 10) : null) : existing.researchFitScore,
         lastFollowUp: lastFollowUp !== undefined ? (lastFollowUp ? new Date(lastFollowUp) : null) : existing.lastFollowUp,
         nextFollowUp: nextFollowUp !== undefined ? (nextFollowUp ? new Date(nextFollowUp) : null) : existing.nextFollowUp,
         interviewDate: interviewDate !== undefined ? (interviewDate ? new Date(interviewDate) : null) : existing.interviewDate,
@@ -140,6 +148,88 @@ router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
         notes: notes !== undefined ? notes : existing.notes,
         customFields: req.body.customFields !== undefined ? req.body.customFields : existing.customFields,
       },
+    });
+
+    res.json(updated);
+  } catch (error) {
+    console.error("PUT /professors/:id error:", error);
+    res.status(500).json({ error: "Failed to update professor" });
+  }
+});
+
+// POST /api/v1/professors/:id/log-email
+router.post("/:id/log-email", async (req: AuthenticatedRequest, res: Response) => {
+  try {
+    const userId = req.user!.id;
+    const id = req.params.id as string;
+    const { subject, body } = req.body;
+
+    // Verify ownership
+    const existing = await prisma.professor.findFirst({
+      where: { id, userId, deletedAt: null },
+    });
+
+    if (!existing) {
+      return res.status(404).json({ error: "Professor not found" });
+    }
+
+    const now = new Date();
+
+    // Check if initial email has been sent
+    if (existing.emailSentDate === null) {
+      // First email sent
+      const nextFollowUp = new Date(now);
+      nextFollowUp.setDate(nextFollowUp.getDate() + 14);
+
+      const updated = await prisma.professor.update({
+        where: { id },
+        data: {
+          status: "EMAILED",
+          emailSentDate: now,
+          emailSubject: subject || "Graduate Research Assistant Opportunities",
+          nextFollowUp,
+          followUpCount: 0,
+        },
+        include: {
+          university: true,
+        },
+      });
+      return res.json(updated);
+    }
+
+    // Logging a follow-up email
+    if (existing.followUpCount >= 2) {
+      return res.status(400).json({
+        error: "Hard limit reached: Maximum of 2 follow-up emails (3 emails total) allowed per professor."
+      });
+    }
+
+    const lastEmailDate = existing.lastFollowUp || existing.emailSentDate;
+    if (lastEmailDate) {
+      const fourteenDaysAgo = new Date(now);
+      fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
+      if (new Date(lastEmailDate) > fourteenDaysAgo) {
+        const diffTime = now.getTime() - new Date(lastEmailDate).getTime();
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        return res.status(400).json({
+          error: `Minimum 14 days required between follow-ups. Only ${diffDays} days have passed since your last email.`
+        });
+      }
+    }
+
+    const nextFollowUpCount = existing.followUpCount + 1;
+    const nextFollowUp = new Date(now);
+    nextFollowUp.setDate(nextFollowUp.getDate() + 14);
+
+    const updated = await prisma.professor.update({
+      where: { id },
+      data: {
+        status: "AWAITING_REPLY",
+        lastFollowUp: now,
+        emailSubject: subject || existing.emailSubject,
+        followUpCount: nextFollowUpCount,
+        nextFollowUp: nextFollowUpCount >= 2 ? null : nextFollowUp, // No next follow-up after the second follow-up
+      },
       include: {
         university: true,
       },
@@ -147,8 +237,8 @@ router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
 
     res.json(updated);
   } catch (error) {
-    console.error("PUT /professors/:id error:", error);
-    res.status(500).json({ error: "Failed to update professor" });
+    console.error("POST /professors/:id/log-email error:", error);
+    res.status(500).json({ error: "Failed to log email" });
   }
 });
 
