@@ -39,20 +39,8 @@ Currently countries show static scores. There's no **user profile input** that p
 
 ---
 
-### 3. Application Decision Engine ("What Next Today")
-
-**Answers:** Q5 — What should I do next, today?
-
-Currently applications are tracked but there's **no intelligent next-action recommendation**.
-
-**What to build:**
-
-- Smart daily task list: "You have 3 professors to follow up with", "Australia RTP deadline in 47 days"
-- Application readiness score per university: CGPA ✓ IELTS ✗ SOP ✗ → 33% ready
-- Deadline proximity alerts sorted by urgency
-- "Apply Now" vs "Prepare More" vs "Too Early" status per program
-
-**Impact:** Very High. This is the "What should I do today?" answer.
+### ✅ ~~3. Application Decision Engine ("What Next Today")~~ — **DONE**
+**Implemented:** Multi-dimension Smart Task Checklist (recommending professor follow-ups, Dhaka PCC wait times, German APS certificate wait times, language exam planning, and application deadlines) · Core university readiness score algorithm (25% CGPA, 25% IELTS, 50% documents) with country-specific adaptations (Germany APS; Canada/Australia financials) · Widget overlay for dashboard overview (`WhatNextToday.tsx`) displaying colored gauges, status indicators, and criteria checks.
 
 ---
 
@@ -226,11 +214,11 @@ The documents module exists but **has no intelligence — it's just a list**.
 
 ## 📊 Feature Priority Matrix
 
-| Feature                         | Impact      | Effort | Priority |
-| ------------------------------- | ----------- | ------ | -------- | ---- |
-| Profile-Based Country Match     | 🔴 Critical | Medium | **P0**   | Done |
-| Professor Email Generator       | 🔴 Critical | Medium | **P0**   | Done |
-| Application "What Next" Engine  | 🔴 Critical | High   | **P0**   |
+| Feature                         | Impact      | Effort | Priority | Status |
+| ------------------------------- | ----------- | ------ | -------- | ------ |
+| Profile-Based Country Match     | 🔴 Critical | Medium | **P0**   | Done   |
+| Professor Email Generator       | 🔴 Critical | Medium | **P0**   | Done   |
+| Application "What Next" Engine  | 🔴 Critical | High   | **P0**   | Done   |
 | Scholarship Eligibility Checker | 🔴 High     | Medium | **P1**   |
 | Document Readiness + Date Calc  | 🔴 High     | Medium | **P1**   |
 | Country Side-by-Side Compare    | 🟡 High     | Medium | **P1**   |

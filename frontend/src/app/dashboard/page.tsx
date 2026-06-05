@@ -35,6 +35,7 @@ import { EmptyState } from "@/components/shared/EmptyState";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
+import { WhatNextToday } from "@/components/dashboard/WhatNextToday";
 
 
 interface Stats {
@@ -54,6 +55,7 @@ export default function DashboardOverview() {
 
   const [stats, setStats] = useState<Stats | null>(null);
   const [countriesSummary, setCountriesSummary] = useState<any[]>([]);
+  const [decisionData, setDecisionData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -70,13 +72,15 @@ export default function DashboardOverview() {
     async function loadDashboardData() {
       try {
         setLoading(true);
-        const [statsData, profileData, uniData, countriesRes] = await Promise.all([
+        const [statsData, profileData, uniData, countriesRes, engineData] = await Promise.all([
           fetchApi("/api/v1/dashboard/stats"),
           fetchApi("/api/v1/profile"),
           fetchApi("/api/v1/universities"),
-          fetchApi("/api/v1/countries")
+          fetchApi("/api/v1/countries"),
+          fetchApi("/api/v1/decision-engine").catch(() => null)
         ]);
         setStats(statsData);
+        setDecisionData(engineData);
         dispatch(setProfile(profileData));
         dispatch(setUniversities(uniData));
         if (countriesRes) {
@@ -94,11 +98,13 @@ export default function DashboardOverview() {
         }
 
         // Prefill profile edit fields
-        setUniversityName(profileData.university || "");
-        setCgpa(profileData.cgpa ? String(profileData.cgpa) : "");
-        setTargetDegree(profileData.targetDegree || "");
-        setTargetIntake(profileData.targetIntake || "");
-        setGraduationDate(profileData.graduationDate || "");
+        if (profileData) {
+          setUniversityName(profileData.university || "");
+          setCgpa(profileData.cgpa ? String(profileData.cgpa) : "");
+          setTargetDegree(profileData.targetDegree || "");
+          setTargetIntake(profileData.targetIntake || "");
+          setGraduationDate(profileData.graduationDate || "");
+        }
       } catch (err) {
         console.error(err);
         setError("Failed to load dashboard data. Please try again.");
@@ -272,6 +278,9 @@ export default function DashboardOverview() {
           <span>{error}</span>
         </div>
       )}
+
+      {/* Section: What Next Today Decision Engine */}
+      <WhatNextToday data={decisionData} loading={loading} />
 
       {/* Section A: Application Pipeline Visualizer */}
       <Card className="border-border/60 bg-card/30 backdrop-blur-md">
