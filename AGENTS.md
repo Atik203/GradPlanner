@@ -246,6 +246,8 @@ None — Phase 1 complete.
 Phase 1: Backend API Hardening & Input Validation (Completed)
 - Zod validation across all routes, ApiResponse<T> envelope, rate limiting,
   body-size cap, structured logger, UserSettings model, settings page rewrite.
+- Seed data: 3045 university rankings (CSV → UniversityRanking) +
+  20-country intelligence (JSON → CountryIntelligence).
 
 ## Shared Components
 
@@ -286,6 +288,19 @@ Phase 1: Backend API Hardening & Input Validation (Completed)
 | fetchApi | frontend/src/lib/api.ts | All API calls |
 | authClient | frontend/src/lib/auth-client.ts | Auth calls |
 
+## Seed Data
+
+| Script | Run With | Seeds |
+|--------|----------|-------|
+| `backend/prisma/seed.ts` | `pnpm db:seed` (or `pnpm exec prisma db seed`) | 3045 UniversityRanking rows from `notebook/universities.csv` + 20 CountryIntelligence rows from `frontend/public/countries/*.json` |
+
+## Data Sources
+
+| Data | Source File | Location |
+|------|-------------|----------|
+| University Rankings | `universities.csv` (preprocessed, 3045 rows) | `notebook/universities.csv` |
+| Country Intelligence | 21 JSON files (countries, visa, PR, etc.) | `frontend/public/countries/` |
+
 ## Shared State Slices
 
 | Slice | Path |
@@ -307,12 +322,9 @@ v1.1 — Current models:
 - University, Professor, Application, Document
 - UniversityRanking
 - CountryIntelligence
-- University, Professor, Application, Document
-- UniversityRanking
-- CountryIntelligence
 
-Pending additions (Phase 1):
-- UserSettings model
+Pending additions:
+- None — Phase 1 complete.
 
 ## Design System Version
 
