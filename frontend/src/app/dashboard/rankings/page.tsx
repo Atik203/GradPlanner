@@ -8,8 +8,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { MultiSelect } from "@/components/ui/multi-select";
 import { Search, Loader2, ChevronLeft, ChevronRight, BarChart3, Star, ExternalLink } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { UniversityRanking } from "@/types";
 import { useDebounce } from "@/hooks/use-debounce";
+import { RankingTableSkeleton } from "@/components/skeletons/RankingTableSkeleton";
 
 interface PaginatedResponse {
   data: UniversityRanking[];
@@ -143,13 +145,11 @@ export default function DashboardRankingsPage() {
           )}
 
           {error && (
-            <div className="rounded-xl bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-              {error}
-            </div>
+            <ApiErrorAlert error={error} />
           )}
 
-          {/* Table */}
-          <div className="rounded-xl border border-border/60 overflow-hidden">
+          {/* Table (Desktop) */}
+          <div className="hidden md:block rounded-xl border border-border/60 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-sm text-left">
                 <thead className="text-xs text-muted-foreground uppercase bg-muted/50 border-b border-border/60">
@@ -172,8 +172,8 @@ export default function DashboardRankingsPage() {
                   )}
                   {loading && results.length === 0 && (
                     <tr>
-                      <td colSpan={6} className="px-5 py-12 text-center">
-                        <Loader2 className="h-6 w-6 animate-spin text-primary mx-auto" />
+                      <td colSpan={6} className="px-5 py-4">
+                        <RankingTableSkeleton />
                       </td>
                     </tr>
                   )}
@@ -233,6 +233,52 @@ export default function DashboardRankingsPage() {
                 </tbody>
               </table>
             </div>
+          </div>
+
+          {/* Cards (Mobile) */}
+          <div className="block md:hidden space-y-3">
+            {loading ? (
+              <RankingTableSkeleton />
+            ) : results.length === 0 ? (
+              <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
+                <p className="text-sm">No universities found matching your search.</p>
+              </div>
+            ) : (
+              results.map((rank) => (
+                <div key={rank.id} className="rounded-lg border border-border bg-card p-4 space-y-3">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-sm text-foreground truncate">{rank.institutionName}</p>
+                      <p className="text-xs text-muted-foreground">{rank.country}{rank.region ? ` · ${rank.region}` : ""}</p>
+                    </div>
+                    <Link
+                      href={`/dashboard/universities/new?name=${encodeURIComponent(rank.institutionName)}&country=${encodeURIComponent(rank.country)}`}
+                      className="shrink-0 inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-primary/10 text-primary border border-primary/20 text-xs font-semibold hover:bg-primary/20 transition-colors"
+                    >
+                      <Star className="h-3 w-3" />
+                      Track
+                    </Link>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {rank.qs2026Rank && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-600 dark:text-purple-400 font-bold text-xs border border-purple-500/20">
+                        QS #{rank.qs2026RankDisplay || rank.qs2026Rank}
+                      </span>
+                    )}
+                    {rank.the2026Rank && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 font-bold text-xs border border-blue-500/20">
+                        THE #{rank.the2026RankDisplay || rank.the2026Rank}
+                      </span>
+                    )}
+                    {rank.arwu2025Rank && (
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-xs border border-emerald-500/20">
+                        ARWU #{rank.arwu2025Rank}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))
+            )}
           </div>
 
           {/* Pagination Controls */}

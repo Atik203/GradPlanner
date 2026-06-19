@@ -8,7 +8,6 @@ import { EmptyState } from "@/components/shared/EmptyState";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
   PiggyBank,
-  Loader2,
   AlertCircle,
   DollarSign,
   Coins,
@@ -16,6 +15,8 @@ import {
   Target,
   ArrowRight,
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { FundingSkeleton } from "@/components/skeletons/FundingSkeleton";
 import Link from "next/link";
 import type { University, Application } from "@/types";
 
@@ -71,11 +72,7 @@ export default function SavedTrackersPage() {
   const appsWithoutScholarships = trackedApps.filter((a) => !a.scholarshipAmt && a.status !== "PLANNING");
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <FundingSkeleton />;
   }
 
   return (
@@ -89,10 +86,7 @@ export default function SavedTrackersPage() {
       />
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

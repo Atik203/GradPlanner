@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { auth } from "../lib/auth.js";
+import { unauthorized, serverError } from "../utils/apiResponse.js";
+import { logger } from "../utils/logger.js";
 
 export interface AuthenticatedRequest extends Request {
   user?: typeof auth.$Infer.Session.user;
@@ -16,13 +18,15 @@ export async function requireAuth(
       headers: req.headers,
     });
     if (!session) {
-      return res.status(401).json({ error: "Unauthorized" });
+      return unauthorized(res, "Authentication required");
     }
     req.user = session.user;
     req.session = session.session;
     next();
   } catch (error) {
-    console.error("Auth middleware error:", error);
-    res.status(500).json({ error: "Internal server error" });
+    logger.error("Auth middleware error", {
+      error: error instanceof Error ? error : new Error(String(error)),
+    });
+    return serverError(res, "Authentication failed");
   }
 }

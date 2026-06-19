@@ -11,8 +11,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { 
   PiggyBank, 
-  Loader2, 
-  AlertCircle, 
   DollarSign, 
   TrendingUp, 
   Coins, 
@@ -23,6 +21,8 @@ import {
   School,
   ArrowUpRight
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { FundingSkeleton } from "@/components/skeletons/FundingSkeleton";
 import Link from "next/link";
 import type { University, UserProfile } from "@/types";
 
@@ -146,11 +146,7 @@ export default function BudgetPlannerPage() {
   }, [ratedUnis]);
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <FundingSkeleton />;
   }
 
   return (
@@ -164,10 +160,7 @@ export default function BudgetPlannerPage() {
       />
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {/* Profile & Parameter Setup */}

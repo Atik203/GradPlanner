@@ -158,6 +158,7 @@ export interface UserProfile {
   researchInterests?: string[];      // e.g. ["NLP", "Computer Vision"]
   prPriority?: number | null;        // 1=low … 5=essential
   familyRelocation?: boolean | null; // plans to bring spouse/children
+  isOnboarded: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -197,4 +198,18 @@ export interface UniversityRanking {
   arwuNs?: number | null;
   arwuPub?: number | null;
   arwuPcp?: number | null;
+}
+
+// ─── User Settings (Phase 1) ────────────────────────────────────────────────
+
+export type StrategyPreference = "PR speed" | "AI Market" | "No Tuition" | "Scholarship";
+
+export interface UserSettings {
+  id: string;
+  userId: string;
+  emailDeadlineAlerts: boolean;
+  timelineNotifications: boolean;
+  strategyPreference: StrategyPreference;
+  createdAt: string;
+  updatedAt: string;
 }

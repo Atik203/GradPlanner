@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { 
@@ -14,17 +14,19 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { ResponsiveModal } from "@/components/responsive/ResponsiveModal";
 import { 
   Plus, 
   Trash2, 
   FolderGit2, 
   Calendar, 
   Coins, 
-  Check, 
-  Loader2, 
-  FileCheck 
+  Loader2,
 } from "lucide-react";
 import { Application, University, ApplicationStatus } from "@/types";
+import { ApplicationSkeleton } from "@/components/skeletons/ApplicationSkeleton";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
 
 export default function ApplicationsPage() {
   const dispatch = useAppDispatch();
@@ -41,27 +43,31 @@ export default function ApplicationsPage() {
   const [scholarshipAmt, setScholarshipAmt] = useState("");
   const [notes, setNotes] = useState("");
   const [saving, setSaving] = useState(false);
+  const [updatingIds, setUpdatingIds] = useState<Set<string>>(new Set());
+
+  // Delete confirm dialog
+  const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
 
   // Load applications and universities
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setLoading(true);
-        const [appData, uniData] = await Promise.all([
-          fetchApi("/api/v1/applications"),
-          fetchApi("/api/v1/universities"),
-        ]);
-        dispatch(setApplications(appData));
-        dispatch(setUniversities(uniData));
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load applications data.");
-      } finally {
-        setLoading(false);
-      }
+  const loadData = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [appData, uniData] = await Promise.all([
+        fetchApi("/api/v1/applications"),
+        fetchApi("/api/v1/universities"),
+      ]);
+      dispatch(setApplications(appData));
+      dispatch(setUniversities(uniData));
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load applications data.");
+    } finally {
+      setLoading(false);
     }
-    loadData();
   }, [dispatch]);
+
+  useEffect(() => { loadData(); }, [loadData]);
 
   // Universities that do not have an application entry tracked yet
   const untrackedUniversities = universities.filter(
@@ -86,7 +92,6 @@ export default function ApplicationsPage() {
       });
       dispatch(addApplication(newApp));
       setFormOpen(false);
-      // Reset form
       setUniversityId("");
       setStatus("PLANNING");
       setDeadline("");
@@ -101,6 +106,7 @@ export default function ApplicationsPage() {
   };
 
   const handleUpdateStatus = async (id: string, newStatus: ApplicationStatus) => {
+    setUpdatingIds(prev => new Set(prev).add(id));
     try {
       const updated = await fetchApi(`/api/v1/applications/${id}`, {
         method: "PUT",
@@ -113,17 +119,20 @@ export default function ApplicationsPage() {
     } catch (err) {
       console.error(err);
       setError("Failed to update status.");
+    } finally {
+      setUpdatingIds(prev => { const n = new Set(prev); n.delete(id); return n; });
     }
   };
 
-  const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to remove this application?")) return;
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
 
     try {
-      await fetchApi(`/api/v1/applications/${id}`, {
+      await fetchApi(`/api/v1/applications/${deleteTarget}`, {
         method: "DELETE",
       });
-      dispatch(deleteApplication(id));
+      dispatch(deleteApplication(deleteTarget));
+      setDeleteTarget(null);
     } catch (err) {
       console.error(err);
       setError("Failed to delete application.");
@@ -132,7 +141,6 @@ export default function ApplicationsPage() {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold text-foreground">Application Funnel</h2>
@@ -140,13 +148,13 @@ export default function ApplicationsPage() {
             Track your submission progress, decision status, and scholarship offers in one view.
           </p>
         </div>
-        {untrackedUniversities.length > 0 && (
+        {!loading && untrackedUniversities.length > 0 && (
           <Button
             onClick={() => {
               setUniversityId(untrackedUniversities[0].id);
               setFormOpen(true);
             }}
-            className="self-start sm:self-center bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-9 px-4 rounded-lg flex items-center gap-2"
+            className="self-start sm:self-center bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-9 px-4 rounded-lg flex items-center gap-2 cursor-pointer"
           >
             <Plus className="h-4 w-4" />
             Track Progress
@@ -155,16 +163,11 @@ export default function ApplicationsPage() {
       </div>
 
       {error && (
-        <div className="rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
-          {error}
-        </div>
+        <ApiErrorAlert error={error} onRetry={loadData} />
       )}
 
-      {/* Grid of Applications */}
       {loading ? (
-        <div className="flex justify-center py-12">
-          <Loader2 className="h-6 w-6 animate-spin text-primary" />
-        </div>
+        <ApplicationSkeleton />
       ) : applications.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
           <FolderGit2 className="h-10 w-10 mb-2 text-muted-foreground/50" />
@@ -192,23 +195,28 @@ export default function ApplicationsPage() {
                 </div>
               </CardHeader>
               <CardContent className="space-y-3 pb-4">
-                {/* Status updater */}
                 <div className="space-y-1">
                   <span className="text-[10px] text-muted-foreground">Admissions Status</span>
-                  <select
-                    value={app.status}
-                    onChange={(e) => handleUpdateStatus(app.id, e.target.value as ApplicationStatus)}
-                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
-                  >
-                    <option value="PLANNING">Planning</option>
-                    <option value="IN_PROGRESS">In Progress</option>
-                    <option value="SUBMITTED">Submitted</option>
-                    <option value="UNDER_REVIEW">Under Review</option>
-                    <option value="OFFER_RECEIVED">Offer Received</option>
-                    <option value="ACCEPTED">Accepted</option>
-                    <option value="REJECTED">Rejected</option>
-                    <option value="WITHDRAWN">Withdrawn</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      value={app.status}
+                      onChange={(e) => handleUpdateStatus(app.id, e.target.value as ApplicationStatus)}
+                      disabled={updatingIds.has(app.id)}
+                      className="w-full h-10 min-h-[44px] px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none disabled:opacity-50"
+                    >
+                      <option value="PLANNING">Planning</option>
+                      <option value="IN_PROGRESS">In Progress</option>
+                      <option value="SUBMITTED">Submitted</option>
+                      <option value="UNDER_REVIEW">Under Review</option>
+                      <option value="OFFER_RECEIVED">Offer Received</option>
+                      <option value="ACCEPTED">Accepted</option>
+                      <option value="REJECTED">Rejected</option>
+                      <option value="WITHDRAWN">Withdrawn</option>
+                    </select>
+                    {updatingIds.has(app.id) && (
+                      <Loader2 className="absolute right-2 top-1/2 -translate-y-1/2 h-3 w-3 animate-spin text-muted-foreground" />
+                    )}
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3 pt-3 border-t border-border/60">
@@ -237,8 +245,8 @@ export default function ApplicationsPage() {
                   Tracked since {new Date(app.createdAt).toLocaleDateString()}
                 </span>
                 <Button
-                  onClick={() => handleDelete(app.id)}
-                  className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all"
+                  onClick={() => setDeleteTarget(app.id)}
+                  className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all cursor-pointer"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                 </Button>
@@ -249,97 +257,99 @@ export default function ApplicationsPage() {
       )}
 
       {/* Track form dialog */}
-      {formOpen && untrackedUniversities.length > 0 && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
-            <h3 className="text-lg font-bold text-foreground">Track Admissions Lifecycle</h3>
-            <form onSubmit={handleCreateApplication} className="space-y-4">
-              <div className="space-y-1">
-                <Label htmlFor="uniSelect" className="text-xs text-muted-foreground">Select Tracked University</Label>
-                <select
-                  id="uniSelect"
-                  value={universityId}
-                  onChange={(e) => setUniversityId(e.target.value)}
-                  className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                  required
-                >
-                  {untrackedUniversities.map((uni) => (
-                    <option key={uni.id} value={uni.id}>{uni.name} ({uni.program})</option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <Label htmlFor="appStatus" className="text-xs text-muted-foreground">Initial Status</Label>
-                  <select
-                    id="appStatus"
-                    value={status}
-                    onChange={(e) => setStatus(e.target.value as ApplicationStatus)}
-                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                  >
-                    <option value="PLANNING">Planning</option>
-                    <option value="IN_PROGRESS">In Progress</option>
-                    <option value="SUBMITTED">Submitted</option>
-                    <option value="UNDER_REVIEW">Under Review</option>
-                  </select>
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="deadlineInput" className="text-xs text-muted-foreground">Application Deadline</Label>
-                  <Input
-                    id="deadlineInput"
-                    placeholder="e.g. Feb 1, 2028"
-                    value={deadline}
-                    onChange={(e) => setDeadline(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="scholarshipInput" className="text-xs text-muted-foreground">Scholarship Amount / Funding Offered (Optional)</Label>
-                <Input
-                  id="scholarshipInput"
-                  placeholder="e.g. 50% tuition waiver / €10,000"
-                  value={scholarshipAmt}
-                  onChange={(e) => setScholarshipAmt(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Application Notes</Label>
-                <textarea
-                  id="notesInput"
-                  rows={3}
-                  placeholder="Application fee paid, waiting on LOR submissions..."
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                />
-              </div>
-
-              <div className="flex justify-end gap-3 pt-4 border-t border-border">
-                <Button
-                  type="button"
-                  onClick={() => setFormOpen(false)}
-                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
-                >
-                  Cancel
-                </Button>
-                <Button
-                  type="submit"
-                  disabled={saving}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9"
-                >
-                  {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Track Application"}
-                </Button>
-              </div>
-            </form>
+      <ResponsiveModal open={formOpen} onOpenChange={setFormOpen} title="Track Admissions Lifecycle">
+        <form onSubmit={handleCreateApplication} className="space-y-4">
+          <div className="space-y-1">
+            <Label htmlFor="uniSelect" className="text-xs text-muted-foreground">Select Tracked University</Label>
+            <select
+              id="uniSelect"
+              value={universityId}
+              onChange={(e) => setUniversityId(e.target.value)}
+              className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+              required
+            >
+              {untrackedUniversities.map((uni) => (
+                <option key={uni.id} value={uni.id}>{uni.name} ({uni.program})</option>
+              ))}
+            </select>
           </div>
-        </div>
-      )}
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <Label htmlFor="appStatus" className="text-xs text-muted-foreground">Initial Status</Label>
+              <select
+                id="appStatus"
+                value={status}
+                onChange={(e) => setStatus(e.target.value as ApplicationStatus)}
+                className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+              >
+                <option value="PLANNING">Planning</option>
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="SUBMITTED">Submitted</option>
+                <option value="UNDER_REVIEW">Under Review</option>
+              </select>
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="deadlineInput" className="text-xs text-muted-foreground">Application Deadline</Label>
+              <Input
+                id="deadlineInput"
+                placeholder="e.g. Feb 1, 2028"
+                value={deadline}
+                onChange={(e) => setDeadline(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <Label htmlFor="scholarshipInput" className="text-xs text-muted-foreground">Scholarship Amount / Funding Offered (Optional)</Label>
+            <Input
+              id="scholarshipInput"
+              placeholder="e.g. 50% tuition waiver / €10,000"
+              value={scholarshipAmt}
+              onChange={(e) => setScholarshipAmt(e.target.value)}
+              className="bg-background border-border text-foreground"
+            />
+          </div>
+
+          <div className="space-y-1">
+            <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Application Notes</Label>
+            <textarea
+              id="notesInput"
+              rows={3}
+              placeholder="Application fee paid, waiting on LOR submissions..."
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+          </div>
+
+          <div className="flex justify-end gap-3 pt-4 border-t border-border">
+            <Button
+              type="button"
+              onClick={() => setFormOpen(false)}
+              className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              disabled={saving}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
+            >
+              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Track Application"}
+            </Button>
+          </div>
+        </form>
+      </ResponsiveModal>
+
+      <DeleteConfirmDialog
+        open={deleteTarget !== null}
+        onOpenChange={(open) => { if (!open) setDeleteTarget(null); }}
+        onConfirm={handleDelete}
+        title="Delete Application"
+        description="Are you sure you want to remove this application? This action cannot be undone."
+      />
     </div>
   );
 }

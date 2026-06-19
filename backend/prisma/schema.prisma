@@ -19,6 +19,7 @@ model User {
   updatedAt     DateTime  @updatedAt
 
   profile      UserProfile?
+  settings     UserSettings?
   universities University[]
   professors   Professor[]
   applications Application[]
@@ -86,8 +87,22 @@ model UserProfile {
   researchInterests String[] // e.g. ["NLP", "Computer Vision", "RL"]
   prPriority        Int?     // 1=low 2=moderate 3=high 4=critical 5=essential
   familyRelocation  Boolean? // plans to bring spouse / children
+  isOnboarded       Boolean  @default(false)
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
+}
+
+// ─── User Settings (notification + strategy preferences) ─────────────────────
+
+model UserSettings {
+  id                    String   @id @default(cuid())
+  userId                String   @unique
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  emailDeadlineAlerts   Boolean  @default(true)
+  timelineNotifications Boolean  @default(true)
+  strategyPreference    String   @default("PR speed")
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 }
 
 model University {

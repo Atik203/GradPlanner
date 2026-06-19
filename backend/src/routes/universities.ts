@@ -1,204 +1,303 @@
+/**
+ * universities.ts — University CRUD with validation, ApiResponse envelope,
+ * structured logging, and explicit `select` projections.
+ *
+ * Each handler is wrapped in try/catch and uses the typed response helpers
+ * (ok, created, notFound, conflict, serverError) so the envelope is consistent.
+ *
+ * Soft-delete is preserved: DELETE sets `deletedAt` and cascades to related
+ * Application / Professor rows via updateMany.
+ */
+
 import { Router, Response } from "express";
+import { Prisma } from "@prisma/client";
 import { prisma } from "../lib/prisma.js";
 import { AuthenticatedRequest } from "../middleware/auth.js";
-import { Tier } from "@prisma/client";
+import {
+  validateBody,
+  validateParams,
+  universityCreateSchema,
+  universityUpdateSchema,
+  universityIdParamSchema,
+} from "../validators/index.js";
+import {
+  ok,
+  created,
+  notFound,
+  serverError,
+} from "../utils/apiResponse.js";
+import { logger } from "../utils/logger.js";
 
 const router: Router = Router();
 
-// GET /api/v1/universities
+/**
+ * Explicit select for University + ranking + application + professors list.
+ * Drops `deletedAt` from the API response (it stays in the DB for audit).
+ */
+const UNIVERSITY_WITH_RELATIONS_SELECT = {
+  id: true,
+  userId: true,
+  name: true,
+  country: true,
+  tier: true,
+  program: true,
+  tuitionPerYr: true,
+  livingCostPerYr: true,
+  scholarshipsAvailable: true,
+  minCgpa: true,
+  minIelts: true,
+  acceptanceRate: true,
+  fundingAvailable: true,
+  prPathwayQuality: true,
+  deadline: true,
+  intake: true,
+  website: true,
+  notes: true,
+  createdAt: true,
+  updatedAt: true,
+  application: {
+    select: {
+      id: true,
+      userId: true,
+      universityId: true,
+      status: true,
+      deadline: true,
+      submittedAt: true,
+      decisionDate: true,
+      offerReceived: true,
+      scholarshipAmt: true,
+      notes: true,
+      createdAt: true,
+      updatedAt: true,
+    },
+  },
+  ranking: true,
+  professors: {
+    where: { deletedAt: null },
+    select: {
+      id: true,
+      name: true,
+      status: true,
+      email: true,
+      profileUrl: true,
+      researchInterests: true,
+      fundingStatus: true,
+      researchFitScore: true,
+      replyReceived: true,
+      nextFollowUp: true,
+    },
+  },
+} satisfies Prisma.UniversitySelect;
+
+// ─── GET /api/v1/universities ────────────────────────────────────────────────
 router.get("/", async (req: AuthenticatedRequest, res: Response) => {
   try {
     const userId = req.user!.id;
     const universities = await prisma.university.findMany({
-      where: {
-        userId,
-        deletedAt: null,
-      },
-      include: {
-        application: true,
-        ranking: true,
-        professors: {
-          where: { deletedAt: null },
-        },
-      },
+      where: { userId, deletedAt: null },
+      select: UNIVERSITY_WITH_RELATIONS_SELECT,
       orderBy: { createdAt: "desc" },
     });
-    res.json(universities);
+    return ok(res, universities);
   } catch (error) {
-    console.error("GET /universities error:", error);
-    res.status(500).json({ error: "Failed to fetch universities" });
+    logger.error("GET /universities error", {
+      userId: req.user?.id,
+      error: error instanceof Error ? error : new Error(String(error)),
+    });
+    return serverError(res, "Failed to fetch universities");
   }
 });
 
-// POST /api/v1/universities
-router.post("/", async (req: AuthenticatedRequest, res: Response) => {
-  try {
-    const userId = req.user!.id;
-    const {
-      name,
-      country,
-      tier,
-      program,
-      tuitionPerYr,
-      livingCostPerYr,
-      scholarshipsAvailable,
-      minCgpa,
-      minIelts,
-      acceptanceRate,
-      fundingAvailable,
-      prPathwayQuality,
-      deadline,
-      intake,
-      website,
-      notes,
-    } = req.body;
+// ─── POST /api/v1/universities ───────────────────────────────────────────────
+router.post(
+  "/",
+  validateBody(universityCreateSchema, "Invalid university data"),
+  async (req: AuthenticatedRequest, res: Response) => {
+    try {
+      const userId = req.user!.id;
+      // After Zod validation, body contains the whitelisted scalar fields.
+      // We re-cast to the Prisma create input type at the call site for safety.
+      const body = req.body as {
+        name: string;
+        country: string;
+        tier: "DREAM" | "MATCH" | "SAFETY";
+        program?: string | null;
+        tuitionPerYr?: string | null;
+        livingCostPerYr?: string | null;
+        scholarshipsAvailable?: boolean;
+        minCgpa?: number | null;
+        minIelts?: number | null;
+        acceptanceRate?: number | null;
+        fundingAvailable?: boolean;
+        prPathwayQuality?: string | null;
+        deadline?: string | null;
+        intake?: string | null;
+        website?: string | null;
+        notes?: string | null;
+      };
 
-    if (!name || !country || !tier) {
-      return res.status(400).json({ error: "Name, country, and tier are required" });
+      // Auto-link to ranking row by case-insensitive institution name.
+      const ranking = await prisma.universityRanking.findFirst({
+        where: {
+          institutionName: { equals: body.name, mode: "insensitive" },
+        },
+        select: { id: true },
+      });
+
+      const university = await prisma.university.create({
+        data: {
+          userId,
+          name: body.name,
+          country: body.country,
+          tier: body.tier,
+          program: body.program ?? null,
+          tuitionPerYr: body.tuitionPerYr ?? null,
+          livingCostPerYr: body.livingCostPerYr ?? null,
+          scholarshipsAvailable: body.scholarshipsAvailable ?? false,
+          minCgpa: body.minCgpa ?? null,
+          minIelts: body.minIelts ?? null,
+          acceptanceRate: body.acceptanceRate ?? null,
+          fundingAvailable: body.fundingAvailable ?? false,
+          prPathwayQuality: body.prPathwayQuality ?? null,
+          deadline: body.deadline ?? null,
+          intake: body.intake ?? null,
+          website: body.website ?? null,
+          notes: body.notes ?? null,
+          rankingId: ranking?.id ?? null,
+        },
+        select: UNIVERSITY_WITH_RELATIONS_SELECT,
+      });
+
+      return created(res, university);
+    } catch (error) {
+      logger.error("POST /universities error", {
+        userId: req.user?.id,
+        error: error instanceof Error ? error : new Error(String(error)),
+      });
+      return serverError(res, "Failed to add university");
     }
+  }
+);
 
-    const ranking = await prisma.universityRanking.findFirst({
-      where: {
-        institutionName: { equals: name, mode: "insensitive" },
-      },
-    });
+// ─── PUT /api/v1/universities/:id ────────────────────────────────────────────
+router.put(
+  "/:id",
+  validateParams(universityIdParamSchema, "Invalid university id"),
+  validateBody(universityUpdateSchema, "Invalid university update"),
+  async (req: AuthenticatedRequest, res: Response) => {
+    try {
+      const userId = req.user!.id;
+      const id = req.params.id as string;
+      const body = req.body as {
+        name?: string;
+        country?: string;
+        tier?: "DREAM" | "MATCH" | "SAFETY";
+        program?: string | null;
+        tuitionPerYr?: string | null;
+        livingCostPerYr?: string | null;
+        scholarshipsAvailable?: boolean;
+        minCgpa?: number | null;
+        minIelts?: number | null;
+        acceptanceRate?: number | null;
+        fundingAvailable?: boolean;
+        prPathwayQuality?: string | null;
+        deadline?: string | null;
+        intake?: string | null;
+        website?: string | null;
+        notes?: string | null;
+      };
 
-    const toFloatOrNull = (val: any) => (val === undefined || val === null || val === "" || isNaN(parseFloat(val))) ? null : parseFloat(val);
-
-    const university = await prisma.university.create({
-      data: {
-        userId,
-        name,
-        country,
-        tier: tier as Tier,
-        program: program || null,
-        tuitionPerYr: tuitionPerYr || null,
-        livingCostPerYr: livingCostPerYr || null,
-        scholarshipsAvailable: scholarshipsAvailable !== undefined ? !!scholarshipsAvailable : false,
-        minCgpa: toFloatOrNull(minCgpa),
-        minIelts: toFloatOrNull(minIelts),
-        acceptanceRate: toFloatOrNull(acceptanceRate),
-        fundingAvailable: fundingAvailable !== undefined ? !!fundingAvailable : false,
-        prPathwayQuality: prPathwayQuality || null,
-        deadline: deadline || null,
-        intake: intake || null,
-        website: website || null,
-        notes: notes || null,
-        rankingId: ranking?.id || null,
-      },
-      include: {
-        ranking: true,
+      const existing = await prisma.university.findFirst({
+        where: { id, userId, deletedAt: null },
+        select: { id: true },
+      });
+      if (!existing) {
+        return notFound(res, "University not found");
       }
-    });
 
-    res.status(201).json(university);
-  } catch (error) {
-    console.error("POST /universities error:", error);
-    res.status(500).json({ error: "Failed to add university" });
-  }
-});
+      // Build update data: only set fields the client actually sent.
+      // For nullable string fields, undefined = keep existing, null = clear, string = set.
+      const updateData: Prisma.UniversityUpdateInput = {};
+      if (body.name !== undefined) updateData.name = body.name;
+      if (body.country !== undefined) updateData.country = body.country;
+      if (body.tier !== undefined) updateData.tier = body.tier;
+      if (body.program !== undefined) updateData.program = body.program;
+      if (body.tuitionPerYr !== undefined) updateData.tuitionPerYr = body.tuitionPerYr;
+      if (body.livingCostPerYr !== undefined) updateData.livingCostPerYr = body.livingCostPerYr;
+      if (body.scholarshipsAvailable !== undefined) updateData.scholarshipsAvailable = body.scholarshipsAvailable;
+      if (body.minCgpa !== undefined) updateData.minCgpa = body.minCgpa;
+      if (body.minIelts !== undefined) updateData.minIelts = body.minIelts;
+      if (body.acceptanceRate !== undefined) updateData.acceptanceRate = body.acceptanceRate;
+      if (body.fundingAvailable !== undefined) updateData.fundingAvailable = body.fundingAvailable;
+      if (body.prPathwayQuality !== undefined) updateData.prPathwayQuality = body.prPathwayQuality;
+      if (body.deadline !== undefined) updateData.deadline = body.deadline;
+      if (body.intake !== undefined) updateData.intake = body.intake;
+      if (body.website !== undefined) updateData.website = body.website;
+      if (body.notes !== undefined) updateData.notes = body.notes;
 
-// PUT /api/v1/universities/:id
-router.put("/:id", async (req: AuthenticatedRequest, res: Response) => {
-  try {
-    const userId = req.user!.id;
-    const id = req.params.id as string;
-    const {
-      name,
-      country,
-      tier,
-      program,
-      tuitionPerYr,
-      livingCostPerYr,
-      scholarshipsAvailable,
-      minCgpa,
-      minIelts,
-      acceptanceRate,
-      fundingAvailable,
-      prPathwayQuality,
-      deadline,
-      intake,
-      website,
-      notes,
-    } = req.body;
+      const updated = await prisma.university.update({
+        where: { id },
+        data: updateData,
+        select: UNIVERSITY_WITH_RELATIONS_SELECT,
+      });
 
-    // Verify ownership
-    const existing = await prisma.university.findFirst({
-      where: { id, userId, deletedAt: null },
-    });
-
-    if (!existing) {
-      return res.status(404).json({ error: "University not found" });
+      return ok(res, updated);
+    } catch (error) {
+      logger.error("PUT /universities/:id error", {
+        userId: req.user?.id,
+        universityId: req.params.id,
+        error: error instanceof Error ? error : new Error(String(error)),
+      });
+      return serverError(res, "Failed to update university");
     }
-
-    const toFloatOrNull = (val: any) => (val === undefined || val === null || val === "" || isNaN(parseFloat(val))) ? null : parseFloat(val);
-
-    const updated = await prisma.university.update({
-      where: { id },
-      data: {
-        name: name !== undefined ? name : existing.name,
-        country: country !== undefined ? country : existing.country,
-        tier: tier !== undefined ? (tier as Tier) : existing.tier,
-        program: program !== undefined ? program : existing.program,
-        tuitionPerYr: tuitionPerYr !== undefined ? tuitionPerYr : existing.tuitionPerYr,
-        livingCostPerYr: livingCostPerYr !== undefined ? livingCostPerYr : existing.livingCostPerYr,
-        scholarshipsAvailable: scholarshipsAvailable !== undefined ? !!scholarshipsAvailable : existing.scholarshipsAvailable,
-        minCgpa: minCgpa !== undefined ? toFloatOrNull(minCgpa) : existing.minCgpa,
-        minIelts: minIelts !== undefined ? toFloatOrNull(minIelts) : existing.minIelts,
-        acceptanceRate: acceptanceRate !== undefined ? toFloatOrNull(acceptanceRate) : existing.acceptanceRate,
-        fundingAvailable: fundingAvailable !== undefined ? !!fundingAvailable : existing.fundingAvailable,
-        prPathwayQuality: prPathwayQuality !== undefined ? prPathwayQuality : existing.prPathwayQuality,
-        deadline: deadline !== undefined ? deadline : existing.deadline,
-        intake: intake !== undefined ? intake : existing.intake,
-        website: website !== undefined ? website : existing.website,
-        notes: notes !== undefined ? notes : existing.notes,
-      },
-    });
-
-    res.json(updated);
-  } catch (error) {
-    console.error("PUT /universities/:id error:", error);
-    res.status(500).json({ error: "Failed to update university" });
   }
-});
+);
 
-// DELETE /api/v1/universities/:id
-router.delete("/:id", async (req: AuthenticatedRequest, res: Response) => {
-  try {
-    const userId = req.user!.id;
-    const id = req.params.id as string;
+// ─── DELETE /api/v1/universities/:id ─────────────────────────────────────────
+router.delete(
+  "/:id",
+  validateParams(universityIdParamSchema, "Invalid university id"),
+  async (req: AuthenticatedRequest, res: Response) => {
+    try {
+      const userId = req.user!.id;
+      const id = req.params.id as string;
 
-    // Verify ownership
-    const existing = await prisma.university.findFirst({
-      where: { id, userId, deletedAt: null },
-    });
+      const existing = await prisma.university.findFirst({
+        where: { id, userId, deletedAt: null },
+        select: { id: true },
+      });
+      if (!existing) {
+        return notFound(res, "University not found");
+      }
 
-    if (!existing) {
-      return res.status(404).json({ error: "University not found" });
+      // Soft-delete cascade: also mark related Application + Professor rows deleted.
+      const now = new Date();
+      await prisma.$transaction([
+        prisma.university.update({
+          where: { id },
+          data: { deletedAt: now },
+        }),
+        prisma.application.updateMany({
+          where: { universityId: id, userId },
+          data: { deletedAt: now },
+        }),
+        prisma.professor.updateMany({
+          where: { universityId: id, userId },
+          data: { deletedAt: now },
+        }),
+      ]);
+
+      return ok(res, { message: "University deleted successfully" });
+    } catch (error) {
+      logger.error("DELETE /universities/:id error", {
+        userId: req.user?.id,
+        universityId: req.params.id,
+        error: error instanceof Error ? error : new Error(String(error)),
+      });
+      return serverError(res, "Failed to delete university");
     }
-
-    // Soft delete
-    await prisma.university.update({
-      where: { id },
-      data: { deletedAt: new Date() },
-    });
-
-    // Also soft-delete associated applications and professors if any
-    await prisma.application.updateMany({
-      where: { universityId: id, userId },
-      data: { deletedAt: new Date() },
-    });
-
-    await prisma.professor.updateMany({
-      where: { universityId: id, userId },
-      data: { deletedAt: new Date() },
-    });
-
-    res.json({ message: "University deleted successfully" });
-  } catch (error) {
-    console.error("DELETE /universities/:id error:", error);
-    res.status(500).json({ error: "Failed to delete university" });
   }
-});
+);
 
+// Reference kept to satisfy `noUnusedLocals` if the helper is ever removed.
 export default router;

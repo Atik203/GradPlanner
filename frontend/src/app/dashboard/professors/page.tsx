@@ -29,8 +29,12 @@ import {
   Building,
   Info
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { ProfessorSkeleton } from "@/components/skeletons/ProfessorSkeleton";
+import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
 import { Professor, ProfessorStatus } from "@/types";
 import { toast } from "sonner";
+import { useIsMobile } from "@/hooks/use-media-query";
 
 
 function getUserProfOverlap(userInterests: string[] | string | undefined | null, profInterests: string | undefined | null) {
@@ -80,6 +84,9 @@ export default function ProfessorsPage() {
   const [newColName, setNewColName] = useState("");
   const [showNewColInput, setShowNewColInput] = useState(false);
 
+  // Delete confirm dialog
+  const [deleteTarget, setDeleteTarget] = useState<number | null>(null);
+
   // Outreach Modal state
   const [selectedProf, setSelectedProf] = useState<Professor | null>(null);
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
@@ -95,29 +102,29 @@ export default function ProfessorsPage() {
   };
 
   // Load professors, universities, and profile
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setLoading(true);
-        const [profData, uniData, profileData] = await Promise.all([
-          fetchApi("/api/v1/professors"),
-          fetchApi("/api/v1/universities"),
-          fetchApi("/api/v1/profile").catch(() => null),
-        ]);
-        dispatch(setProfessors(profData));
-        dispatch(setUniversities(uniData));
-        if (profileData) {
-          dispatch(setProfile(profileData));
-        }
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load professors list.");
-      } finally {
-        setLoading(false);
+  const loadData = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [profData, uniData, profileData] = await Promise.all([
+        fetchApi("/api/v1/professors"),
+        fetchApi("/api/v1/universities"),
+        fetchApi("/api/v1/profile").catch(() => null),
+      ]);
+      dispatch(setProfessors(profData));
+      dispatch(setUniversities(uniData));
+      if (profileData) {
+        dispatch(setProfile(profileData));
       }
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load professors list.");
+    } finally {
+      setLoading(false);
     }
-    loadData();
   }, [dispatch]);
+
+  useEffect(() => { loadData(); }, [loadData]);
 
   // Sync local rows with redux state
   useEffect(() => {
@@ -194,17 +201,22 @@ export default function ProfessorsPage() {
   const handleDeleteRow = async (rowIndex: number) => {
     const row = rows[rowIndex];
     if (row.isNew) {
-      // Just remove from local state
       setRows(prev => prev.filter((_, i) => i !== rowIndex));
       toast.success("New unsaved row removed.");
       return;
     }
+    setDeleteTarget(rowIndex);
+  };
 
-    if (!confirm("Are you sure you want to delete this professor?")) return;
+  const confirmDeleteRow = async () => {
+    if (deleteTarget === null) return;
+    const row = rows[deleteTarget];
+    if (!row) { setDeleteTarget(null); return; }
 
     try {
       await fetchApi(`/api/v1/professors/${row.id}`, { method: "DELETE" });
       dispatch(deleteProfessor(row.id as string));
+      setDeleteTarget(null);
       toast.success(`Professor ${row.name || "record"} deleted.`);
     } catch (err: any) {
       console.error(err);
@@ -367,17 +379,14 @@ export default function ProfessorsPage() {
       </div>
 
       {error && (
-        <div className="shrink-0 rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
-          {error}
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {/* Grid Container */}
-      <div className="flex-1 overflow-auto rounded-xl border border-border bg-card/50 backdrop-blur-sm">
+      <div className="hidden md:block">
+        <div className="flex-1 overflow-auto rounded-xl border border-border bg-card/50 backdrop-blur-sm">
         {loading ? (
-          <div className="h-full flex items-center justify-center">
-            <Loader2 className="h-8 w-8 animate-spin text-primary" />
-          </div>
+          <ProfessorSkeleton />
         ) : (
           <table className="w-full text-sm text-left whitespace-nowrap">
             <thead className="sticky top-0 z-10 text-xs text-muted-foreground uppercase bg-muted/50 border-b border-border">
@@ -713,6 +722,121 @@ export default function ProfessorsPage() {
             </tbody>
           </table>
         )}
+        </div>
+      </div>
+
+      {/* Mobile Cards */}
+      <div className="block md:hidden space-y-3">
+        {loading ? (
+          <ProfessorSkeleton />
+        ) : rows.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
+            <GraduationCap className="h-10 w-10 mb-2 text-muted-foreground/50" />
+            <p className="text-sm">No professors tracked yet.</p>
+          </div>
+        ) : (
+          rows.map((row, index) => (
+            <div key={row.id || row.tempId} className="rounded-lg border border-border bg-card p-4 space-y-3">
+              {/* Header: name + delete */}
+              <div className="flex items-start justify-between gap-2">
+                <div className="min-w-0 flex-1">
+                  <input
+                    type="text"
+                    value={row.name || ""}
+                    onChange={(e) => updateCell(index, "name", e.target.value)}
+                    placeholder="Professor Name"
+                    className="w-full bg-transparent font-semibold text-sm text-foreground placeholder:text-muted-foreground/40 border-none outline-none"
+                  />
+                  <p className="text-xs text-muted-foreground truncate mt-0.5">{row.email || "No email"}</p>
+                </div>
+                <div className="flex items-center gap-1 shrink-0">
+                  {row.id && (
+                    <button onClick={() => handleOpenEmailModal(row as Professor)} className="p-2 text-muted-foreground hover:text-primary transition-colors" title="Send email">
+                      <Mail className="h-4 w-4" />
+                    </button>
+                  )}
+                  <button onClick={() => handleDeleteRow(index)} className="p-2 text-muted-foreground hover:text-destructive transition-colors">
+                    <Trash2 className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+
+              {/* University + Status */}
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div>
+                  <span className="text-muted-foreground block mb-0.5">University</span>
+                  <select
+                    value={row.universityId || ""}
+                    onChange={(e) => updateCell(index, "universityId", e.target.value)}
+                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
+                  >
+                    <option value="">Select...</option>
+                    {universities.map((u) => (
+                      <option key={u.id} value={u.id}>{u.name}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <span className="text-muted-foreground block mb-0.5">Status</span>
+                  <select
+                    value={row.status || "NOT_CONTACTED"}
+                    onChange={(e) => updateCell(index, "status", e.target.value)}
+                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
+                  >
+                    <option value="NOT_CONTACTED">Not Contacted</option>
+                    <option value="EMAILED">Emailed</option>
+                    <option value="AWAITING_REPLY">Awaiting Reply</option>
+                    <option value="REPLIED_POSITIVE">Positive</option>
+                    <option value="REPLIED_NEGATIVE">Negative</option>
+                    <option value="INTERVIEWED">Interviewed</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Research interests */}
+              <div>
+                <span className="text-xs text-muted-foreground block mb-0.5">Research Interests</span>
+                <input
+                  type="text"
+                  value={row.researchInterests || ""}
+                  onChange={(e) => updateCell(index, "researchInterests", e.target.value)}
+                  placeholder="NLP, LLM, Computer Vision..."
+                  className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
+                />
+              </div>
+
+              {/* Notes + Funding */}
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div>
+                  <span className="text-muted-foreground block mb-0.5">Funding</span>
+                  <select
+                    value={row.fundingStatus || "UNKNOWN"}
+                    onChange={(e) => updateCell(index, "fundingStatus", e.target.value)}
+                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
+                  >
+                    <option value="UNKNOWN">Unknown</option>
+                    <option value="FUNDED">Funded</option>
+                    <option value="LIKELY">Likely</option>
+                    <option value="UNLIKELY">Unlikely</option>
+                  </select>
+                </div>
+                <div>
+                  <span className="text-muted-foreground block mb-0.5">Research Fit</span>
+                  <p className="text-xs font-semibold text-foreground">
+                    {row.researchFitScore != null ? `${Math.round(row.researchFitScore)}%` : "N/A"}
+                  </p>
+                </div>
+              </div>
+
+              {/* Notes textarea */}
+              {row.notes && (
+                <p className="text-[11px] text-muted-foreground bg-muted/30 p-2 rounded border border-border/40 line-clamp-2">
+                  {row.notes}
+                </p>
+              )}
+            </div>
+          ))
+        )}
       </div>
 
       <EmailGeneratorModal
@@ -720,6 +844,14 @@ export default function ProfessorsPage() {
         isOpen={isEmailModalOpen}
         onClose={() => setIsEmailModalOpen(false)}
         onEmailLogged={handleEmailLogged}
+      />
+
+      <DeleteConfirmDialog
+        open={deleteTarget !== null}
+        onOpenChange={(open) => { if (!open) setDeleteTarget(null); }}
+        onConfirm={confirmDeleteRow}
+        title="Delete Professor"
+        description="Are you sure you want to delete this professor record? This action cannot be undone."
       />
     </div>
   );
