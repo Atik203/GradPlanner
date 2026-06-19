@@ -1729,3 +1729,339 @@ None. Aggregations use existing data.
 - [ ] Backend routes use Prisma aggregations instead of loading all rows in memory.
 - [ ] pnpm type-check passes.
 - [ ] No new lint errors.
+
+---
+
+## Phase 8: Intelligent Professor Email Generator
+
+### 1. Goal
+
+Integrate an **LLM-assisted email generation engine** that helps students draft highly tailored, high-converting outreach emails to professors by analyzing the professor's research interests against the student's academic profile.
+
+### 2. Why This Phase Is Needed
+
+For Bangladeshi students, securing funding (TA/RA) is critical for visa approval and affordability. The primary mechanism for this is cold-emailing professors:
+
+| Problem | Impact | Risk Level |
+|---------|--------|------------|
+| **Generic, copy-pasted emails** | Professors ignore templates; response rates drop near 0% | 🔴 CRITICAL |
+| **Time-consuming research** | Crafting a good email takes 30-45 minutes per professor | 🟠 HIGH |
+| **Language barriers** | Non-native speakers struggle with the right tone (confident but respectful) | 🟠 HIGH |
+| **Lack of structure** | Students fail to attach their CVs, mention their IELTS, or link their GitHub | 🟡 MEDIUM |
+
+**Business value:** The "Email Generator" becomes a premium feature. By turning a 45-minute task into a 2-minute task while simultaneously increasing the quality of the outreach, GradPlanner provides immediate, tangible ROI to the user.
+
+### 3. Features
+
+#### 3.1 Profile Context Assembly
+- The backend automatically aggregates the student's profile (CGPA, IELTS, Research Interests, GitHub) and the specific professor's details (University, Research Area, Recent Publications).
+
+#### 3.2 AI Prompt Engineering
+- A strict, system-prompted LLM call (e.g., via OpenAI API, Anthropic, or Gemini) that enforces:
+  - 150-200 word limit.
+  - No generic flattery; direct reference to the professor's recent work.
+  - Clear "Call to Action" (e.g., asking for a 10-minute chat or confirming if they are taking students).
+  - Perfect grammar and professional academic tone.
+
+#### 3.3 Draft Editor UI
+- The generated email is presented in a rich-text editor, allowing the user to make manual tweaks before copying it to their email client.
+
+#### 3.4 Feedback Loop
+- Users can click "Regenerate (Make it shorter)" or "Regenerate (Focus more on NLP)".
+
+### 4. Detailed UI/UX Requirements
+
+#### Professor Detail Page Integration
+- Inside the Professor Card / Modal, add a primary button: `✨ Draft Outreach Email`.
+- Clicking this opens a side-panel or full-screen modal:
+  - **Left side:** The professor's details and the student's matching skills.
+  - **Right side:** The generated email draft in a text area, with a "Copy to Clipboard" button.
+- **Loading State:** A skeleton loader with a subtle pulsing animation and text like "Analyzing professor's profile..." to communicate value during the ~3-5 second API wait.
+
+### 5. Backend Requirements
+
+#### API
+| Route | Method | Validation | Auth | Purpose |
+|-------|--------|------------|------|---------|
+| `/api/v1/professors/:id/generate-email` | POST | `emailGenConfigSchema` | Required | Triggers the LLM generation and returns the drafted text |
+
+**LLM Integration Layer:**
+- Add `ai` or `@google/generative-ai` SDK depending on the chosen provider.
+- Manage API keys securely in Vercel Environment Variables.
+- Implement streaming (Server-Sent Events) for the response to improve perceived performance.
+
+### 6. Architecture Requirements
+
+#### New Files
+```
+backend/src/
+├── routes/
+│   └── ai.ts                         # AI generation endpoints
+├── services/
+│   └── llmService.ts                 # Wrapper for the LLM provider SDK
+
+frontend/src/
+├── components/
+│   └── professors/
+│       └── EmailGeneratorModal.tsx   # UI for the draft editor
+```
+
+#### Reusable Modules
+- **`llmService`**: A decoupled service that accepts context and returns a prompt response. Can be reused later for SOP (Statement of Purpose) reviews.
+
+### 7. Database Changes
+| Change | Type | Risk |
+|--------|------|------|
+| Add `emailsGenerated` counter to `UserProfile` | Additive | ✅ Zero risk |
+
+*(Optional: Used to limit AI usage on free tiers).*
+
+### 8. API Changes
+| Change | Breaking? | Migration Path |
+|--------|-----------|----------------|
+| New `/api/v1/professors/:id/generate-email` endpoint | No | Additive feature |
+
+### 9. Compatibility Analysis
+| Dimension | Risk | Mitigation |
+|-----------|------|------------|
+| **Cost / API Usage** | 🟠 Medium | Implement strict rate-limiting (e.g., 5 generations per day per user) |
+| **Response Latency** | 🟡 Low | Use streaming responses (SSE) so the UI updates as the email is written |
+
+### 10. Risks and Mitigation
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| Hallucinations (AI makes up facts) | Medium | High | The prompt MUST instruct the AI not to invent academic papers or grades. |
+| Malicious prompt injection | Low | Low | User input is limited to predefined dropdowns (e.g., "Make it shorter"). |
+
+### 11. Future Phase Considerations
+- **Phase 10:** If email generation is a paid feature, this lays the groundwork for Stripe integration.
+
+### 12. Acceptance Criteria
+- [ ] LLM provider SDK integrated securely in the backend.
+- [ ] `/generate-email` endpoint accepts professor ID, fetches context, and streams AI response.
+- [ ] System prompt enforces length, tone, and accuracy constraints.
+- [ ] Frontend `EmailGeneratorModal` displays the streaming response.
+- [ ] "Copy to Clipboard" functionality works.
+- [ ] Backend rate limits generation to prevent abuse.
+- [ ] `pnpm type-check` passes.
+- [ ] No new lint errors.
+
+---
+
+## Phase 9: PR & Visa Pathway Simulator
+
+### 1. Goal
+
+Build an interactive **Immigration & Visa Pathway Simulator** tailored specifically for Bangladeshi nationals. It maps out the realistic timeline, costs, and steps from Student Visa -> Post-Study Work Visa -> PR (Permanent Residency) for the user's targeted countries.
+
+### 2. Why This Phase Is Needed
+
+Most students study abroad with the ultimate goal of immigration, but they lack clear, BD-specific knowledge of the pathways:
+
+| Problem | Impact | Risk Level |
+|---------|--------|------------|
+| **Misunderstanding timelines** | Students target the USA for PR, not realizing the EB-2/EB-3 backlog for BD is decades | 🔴 CRITICAL |
+| **Hidden costs** | Failure to account for APS certificates (Germany) or GIC (Canada) leads to visa rejection | 🔴 CRITICAL |
+| **Generic advice** | Global advice doesn't account for the high visa rejection rates for BD passports | 🟠 HIGH |
+| **Missing intermediate steps** | Students don't realize they need a specific language proficiency (e.g., B1 German) for expedited PR | 🟡 MEDIUM |
+
+**Business value:** By providing hyper-specific, reality-based immigration pathways, GradPlanner differentiates itself from every other generic study-abroad tracker. It becomes a trusted advisor.
+
+### 3. Features
+
+#### 3.1 BD-Specific Visa Reality Data
+- Static reference data mapping visa requirements specifically for BD passport holders (e.g., APS for Germany, SDS restrictions for Canada).
+
+#### 3.2 Interactive Timeline Simulator
+- A visual node-based timeline (e.g., Start -> Graduation -> Post-Study Work -> Apply for PR -> Citizenship).
+- Dynamic calculations based on graduation date (e.g., if graduation is Nov 2027, PR eligibility in Australia is Nov 2030).
+
+#### 3.3 "Risk & Reality" Cards
+- Honest assessments for each country (e.g., "USA: High Risk for PR", "Canada: Moderate Risk, Fast Processing", "Germany: Low Risk, High Language Barrier").
+
+#### 3.4 Cost Mapping
+- Visualization of immigration-specific costs (SEVIS fees, Residence Permit fees, Health Surcharges) independent of university tuition.
+
+### 4. Detailed UI/UX Requirements
+
+#### Pathway Simulator Page (`/dashboard/pathways`)
+- **Layout:** Horizontal scrolling timeline or vertical stepper (similar to a train map) representing the immigration journey.
+- **Interactivity:** Clicking a node (e.g., "Post-Study Work Visa") opens a drawer with BD-specific requirements (e.g., "Must have IELTS 6.0, costs $500").
+- **Comparison:** Allow users to place two countries side-by-side to visually compare the length of time to PR.
+- **Visuals:** Use a timeline library or custom `shadcn/ui` based steppers. Color-code nodes by difficulty/risk.
+
+### 5. Backend Requirements
+
+#### API
+| Route | Method | Validation | Auth | Purpose |
+|-------|--------|------------|------|---------|
+| `/api/v1/pathways/:country` | GET | — | Required | Returns structured visa and PR timeline data for the given country |
+
+**Data Structure:**
+- Create a set of JSON files or Prisma seeded tables containing the pathway logic (e.g., `PathwayStep`: Title, Description, DurationMonths, CostUSD, RiskLevel).
+
+### 6. Architecture Requirements
+
+#### New Files
+```
+backend/src/
+├── data/
+│   └── pathways/
+│       ├── canada.json               # BD-specific rules
+│       ├── germany.json              # BD-specific rules
+│       └── australia.json            # BD-specific rules
+
+frontend/src/
+├── app/dashboard/pathways/
+│   └── page.tsx                      # Simulator UI
+├── components/
+│   └── pathways/
+│       └── PathwayTimeline.tsx       # Node-based interactive timeline
+```
+
+#### Reusable Modules
+- **`PathwayTimeline`**: Visual stepper component mapping the stages of immigration.
+
+### 7. Database Changes
+| Change | Type | Risk |
+|--------|------|------|
+| (Optional) Add `Pathway` and `PathwayStep` reference tables | Additive | ✅ Zero risk |
+
+*Alternatively, this data can remain in static JSON files since it changes infrequently.*
+
+### 8. API Changes
+| Change | Breaking? | Migration Path |
+|--------|-----------|----------------|
+| New `/api/v1/pathways/:country` endpoint | No | Additive feature |
+
+### 9. Compatibility Analysis
+| Dimension | Risk | Mitigation |
+|-----------|------|------------|
+| **Data Maintenance** | 🟠 Medium | Immigration rules change; keep data in easily editable JSON or simple tables |
+
+### 10. Risks and Mitigation
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| Providing legal advice | High | High | Add explicit disclaimers: "This is a strategic estimate, not legal immigration advice." |
+| Outdated information | Medium | High | Include "Last updated: [Date]" on all pathway cards. |
+
+### 11. Future Phase Considerations
+- **Phase 10:** Combine the pathway timeline with the user's personal timeline to create a unified 5-year master plan.
+
+### 12. Acceptance Criteria
+- [ ] Static data/JSON created for Canada, USA, Australia, and Germany pathways specifically for BD nationals.
+- [ ] `/dashboard/pathways` page built with a responsive timeline/stepper UI.
+- [ ] Side-by-side comparison logic implemented.
+- [ ] Explicit disclaimers added regarding legal advice.
+- [ ] All costs and durations render correctly.
+- [ ] `pnpm type-check` passes.
+- [ ] No new lint errors.
+
+---
+
+## Phase 10: Performance Optimization, Offline Mode & PWA Support
+
+### 1. Goal
+
+Upgrade GradPlanner into a highly performant **Progressive Web App (PWA)**. By enabling offline mode, caching, and installability, the platform will feel like a native mobile application. Furthermore, strict performance optimizations will ensure fast load times even on slow 3G/4G connections typical in Bangladesh.
+
+### 2. Why This Phase Is Needed
+
+A premium SaaS product must be fast, resilient, and always accessible:
+
+| Problem | Impact | Risk Level |
+|---------|--------|------------|
+| **No offline capabilities** | Students cannot check professor details or deadlines when internet drops | 🟠 HIGH |
+| **No home screen icon** | Mobile users must type the URL every time, reducing daily active usage | 🟠 HIGH |
+| **Large bundle sizes** | High bounce rates due to slow initial load times on mobile networks | 🟡 MEDIUM |
+| **Uncached assets** | Re-downloading fonts and images wastes bandwidth | 🟡 MEDIUM |
+
+**Business value:** PWAs increase user engagement by up to 50% because the app lives on the user's home screen. Offline mode ensures reliability, building immense trust with users who might be reviewing application notes while commuting.
+
+### 3. Features
+
+#### 3.1 PWA Installability
+- Valid `manifest.json` with all required app icons, theme colors, and splash screens.
+- Triggers the native "Add to Home Screen" prompt on Android and iOS.
+
+#### 3.2 Service Worker & Offline Caching
+- Implement `next-pwa` or a custom service worker via Workbox.
+- **Cache Strategies:**
+  - *Network First, fallback to Cache:* For user-specific data (e.g., API routes for profile, applications).
+  - *Cache First, fallback to Network:* For static assets (fonts, icons, CSS).
+- When completely offline, users can still view cached dashboard pages and read saved data.
+
+#### 3.3 Next.js Bundle & Rendering Optimization
+- Use `@next/bundle-analyzer` to identify and remove heavy/duplicate dependencies.
+- Implement React Server Components (RSC) heavily for static pages (e.g., country intelligence) to ship zero JS.
+- Optimize images using `next/image` with proper sizing and format (WebP/AVIF).
+
+#### 3.4 API Response Compression & CDN
+- Enable Brotli/Gzip compression on the Express backend.
+- Serve backend static assets through a CDN.
+- Use `ETag` and `Cache-Control` headers for immutable data (e.g., University Rankings lists).
+
+### 4. Detailed UI/UX Requirements
+
+#### Offline State UI
+- A subtle, non-intrusive banner at the top of the app: "You are currently offline. Showing cached data."
+- Disable submit buttons for forms (like "Add Professor") when `navigator.onLine` is false, showing a tooltip: "Action unavailable offline."
+
+#### App Install Banner
+- Instead of relying solely on the browser's native prompt, show a custom, styled banner on the dashboard for mobile users: "Install GradPlanner for a faster, app-like experience."
+
+### 5. Backend Requirements
+
+#### API
+| Route | Method | Validation | Auth | Purpose |
+|-------|--------|------------|------|---------|
+| All `GET` routes | — | — | — | Add appropriate `Cache-Control` headers for data that changes infrequently (like `countries`, `universities`) |
+
+**Compression:** Ensure the `compression` middleware is installed and active in the Express app.
+
+### 6. Architecture Requirements
+
+#### New Files
+```
+frontend/
+├── public/
+│   ├── manifest.json                 # PWA Web App Manifest
+│   ├── icons/                        # 192x192, 512x512 app icons
+│   └── sw.js                         # Custom Service Worker (if not using next-pwa)
+├── next.config.mjs                   # MODIFIED: wrap with withPWA
+```
+
+#### Reusable Modules
+- **`useNetworkStatus` hook:** Monitors online/offline state and dispatches UI changes globally.
+
+### 7. Database Changes
+None.
+
+### 8. API Changes
+None breaking. Additive caching headers.
+
+### 9. Compatibility Analysis
+| Dimension | Risk | Mitigation |
+|-----------|------|------------|
+| **Service Worker caching** | 🟠 Medium | Service workers can aggressively cache stale data. Use strict cache invalidation rules and "stale-while-revalidate" strategies for API calls. |
+| **iOS PWA limits** | 🟡 Low | iOS Safari has strict limits on PWA cache size; ensure we only cache essential data. |
+
+### 10. Risks and Mitigation
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| Over-caching causes users to see outdated application statuses | Medium | High | Exclude `POST/PUT/DELETE` API routes from the service worker completely. Use network-first for dashboard data. |
+
+### 11. Future Phase Considerations
+- **Post-Phase 10:** With PWA foundations, adding Web Push Notifications becomes possible (replacing/supplementing the in-app notification center from Phase 5).
+
+### 12. Acceptance Criteria
+- [ ] `manifest.json` and required icons are present in the `public` directory.
+- [ ] Lighthouse PWA score is 100/100.
+- [ ] Application is installable on Android (Chrome) and iOS (Safari).
+- [ ] Service worker successfully caches static assets and API GET requests.
+- [ ] Application functions in read-only mode when disconnected from the network.
+- [ ] Offline banner displays when `navigator.onLine` is false.
+- [ ] Express backend uses `compression` middleware.
+- [ ] Next.js bundle size is audited and optimized.
+- [ ] `pnpm type-check` passes.
+- [ ] No new lint errors.
