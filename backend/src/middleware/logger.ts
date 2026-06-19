@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from "express";
+import { logger } from "../utils/logger.js";
 
 // ─── ANSI colour helpers ──────────────────────────────────────────────────────
 const C = {
   reset: "\x1b[0m",
   bold: "\x1b[1m",
   dim: "\x1b[2m",
-  // fg colours
   cyan: "\x1b[36m",
   green: "\x1b[32m",
   yellow: "\x1b[33m",
@@ -13,7 +13,6 @@ const C = {
   magenta: "\x1b[35m",
   white: "\x1b[37m",
   gray: "\x1b[90m",
-  // bg colours for status
   bgGreen: "\x1b[42m",
   bgYellow: "\x1b[43m",
   bgRed: "\x1b[41m",
@@ -61,7 +60,6 @@ export function requestLogger(req: Request, res: Response, next: NextFunction): 
   const startAt = process.hrtime.bigint();
   const ts = timestamp();
 
-  // Capture original json/send to measure response size
   let responseSize = 0;
   const originalJson = res.json.bind(res);
   const originalSend = res.send.bind(res);
@@ -81,7 +79,6 @@ export function requestLogger(req: Request, res: Response, next: NextFunction): 
     return originalSend(body);
   };
 
-  // Log incoming request immediately
   const ip = (
     (req.headers["x-forwarded-for"] as string)?.split(",")[0]?.trim() ||
     req.socket.remoteAddress ||
@@ -93,6 +90,9 @@ export function requestLogger(req: Request, res: Response, next: NextFunction): 
     ? formatBytes(parseInt(req.headers["content-length"], 10))
     : "-";
 
+  // Use console.log here intentionally: this is dev output, not a structured log.
+  // The structured logger in utils/logger.ts is for application errors / events.
+  // eslint-disable-next-line no-console
   console.log(
     `${C.gray}${ts}${C.reset} ` +
     `${mc}${req.method.padEnd(7)}${C.reset} ` +
@@ -101,9 +101,9 @@ export function requestLogger(req: Request, res: Response, next: NextFunction): 
     ` ${C.gray}[in:${bodySize} ip:${ip}]${C.reset}`
   );
 
-  // Log body for mutation requests (POST/PUT/PATCH) – redact sensitive fields
   if (["POST", "PUT", "PATCH"].includes(req.method) && req.body && Object.keys(req.body).length > 0) {
     const sanitized = sanitizeBody(req.body);
+    // eslint-disable-next-line no-console
     console.log(
       `${C.gray}  └─ body: ${JSON.stringify(sanitized).substring(0, 300)}${
         JSON.stringify(sanitized).length > 300 ? "…" : ""
@@ -111,9 +111,8 @@ export function requestLogger(req: Request, res: Response, next: NextFunction): 
     );
   }
 
-  // After response is finished, log outcome
   res.on("finish", () => {
-    const elapsed = Number(process.hrtime.bigint() - startAt) / 1_000_000; // ms
+    const elapsed = Number(process.hrtime.bigint() - startAt) / 1_000_000;
     const status = res.statusCode;
     const sc = statusColor(status);
     const dc = durationColor(elapsed);
@@ -127,10 +126,13 @@ export function requestLogger(req: Request, res: Response, next: NextFunction): 
       `${C.gray}out:${formatBytes(responseSize)}${C.reset}`;
 
     if (status >= 500) {
+      // eslint-disable-next-line no-console
       console.error(line);
     } else if (status >= 400) {
+      // eslint-disable-next-line no-console
       console.warn(line);
     } else {
+      // eslint-disable-next-line no-console
       console.log(line);
     }
   });
@@ -138,7 +140,6 @@ export function requestLogger(req: Request, res: Response, next: NextFunction): 
   next();
 }
 
-// ─── Redact known sensitive fields ───────────────────────────────────────────
 const SENSITIVE = new Set(["password", "token", "secret", "apiKey", "api_key", "authorization", "cookie"]);
 
 function sanitizeBody(obj: Record<string, unknown>): Record<string, unknown> {
@@ -152,21 +153,18 @@ function sanitizeBody(obj: Record<string, unknown>): Record<string, unknown> {
 
 // ─── Error logger ─────────────────────────────────────────────────────────────
 // Usage: app.use(errorLogger) AFTER routes, BEFORE error handlers
+// Now delegates to the structured logger in utils/logger.ts for consistent parsing
+// by Vercel Log Drains / Datadog / Sentry.
 export function errorLogger(
   err: Error,
   req: Request,
   _res: Response,
   next: NextFunction
 ): void {
-  console.error(
-    `${C.bold}${C.red}[ERROR]${C.reset} ` +
-    `${C.gray}${timestamp()}${C.reset} ` +
-    `${methodColor(req.method)}${req.method}${C.reset} ` +
-    `${req.path} ` +
-    `${C.red}${err.name}: ${err.message}${C.reset}`
-  );
-  if (process.env.NODE_ENV !== "production") {
-    console.error(err.stack);
-  }
+  logger.error("Request error", {
+    method: req.method,
+    path: req.path,
+    error: err,
+  });
   next(err);
 }
