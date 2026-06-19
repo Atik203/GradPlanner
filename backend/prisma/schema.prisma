@@ -87,6 +87,7 @@ model UserProfile {
   researchInterests String[] // e.g. ["NLP", "Computer Vision", "RL"]
   prPriority        Int?     // 1=low 2=moderate 3=high 4=critical 5=essential
   familyRelocation  Boolean? // plans to bring spouse / children
+  isOnboarded       Boolean  @default(false)
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 }

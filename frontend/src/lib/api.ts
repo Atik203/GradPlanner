@@ -198,10 +198,18 @@ export const apiDelete = <T>(path: string, options?: RequestInit) =>
 
 // ─── Domain-specific API helpers ─────────────────────────────────────────────
 
-import type { UserSettings } from "@/types";
+import type { UserSettings, UserProfile } from "@/types";
 
 export const settingsApi = {
   get: () => apiGet<UserSettings>("/api/v1/settings"),
   update: (patch: Partial<Pick<UserSettings, "emailDeadlineAlerts" | "timelineNotifications" | "strategyPreference">>) =>
     apiPut<UserSettings>("/api/v1/settings", patch),
+};
+
+export const profileApi = {
+  get: () => apiGet<UserProfile>("/api/v1/profile"),
+  update: (patch: Partial<UserProfile>) =>
+    apiPut<UserProfile>("/api/v1/profile", patch),
+  completeOnboarding: (data: Record<string, unknown>) =>
+    apiPost<UserProfile>("/api/v1/profile/complete-onboarding", data),
 };

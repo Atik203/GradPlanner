@@ -158,6 +158,7 @@ export interface UserProfile {
   researchInterests?: string[];      // e.g. ["NLP", "Computer Vision"]
   prPriority?: number | null;        // 1=low … 5=essential
   familyRelocation?: boolean | null; // plans to bring spouse/children
+  isOnboarded: boolean;
   createdAt: string;
   updatedAt: string;
 }

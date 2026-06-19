@@ -9,7 +9,7 @@
 
 import { z } from "zod";
 
-const emptyStringToNull = z
+export const emptyStringToNull = z
   .union([z.string(), z.number(), z.null(), z.undefined()])
   .transform((v) => {
     if (v === undefined || v === null) return null;
@@ -17,7 +17,7 @@ const emptyStringToNull = z
     return v;
   });
 
-const cgpaField = z
+export const cgpaField = z
   .union([z.number(), z.string()])
   .transform((v) => {
     if (typeof v === "number") return v;
@@ -27,7 +27,7 @@ const cgpaField = z
   })
   .pipe(z.number().min(0).max(4).nullable());
 
-const ieltsField = z
+export const ieltsField = z
   .union([z.number(), z.string()])
   .transform((v) => {
     if (typeof v === "number") return v;
@@ -37,7 +37,7 @@ const ieltsField = z
   })
   .pipe(z.number().min(0).max(9).nullable());
 
-const monthlyBudgetField = z
+export const monthlyBudgetField = z
   .union([z.number(), z.string()])
   .transform((v) => {
     if (typeof v === "number") return Math.trunc(v);
@@ -47,7 +47,7 @@ const monthlyBudgetField = z
   })
   .pipe(z.number().int().min(0).max(100000).nullable());
 
-const prPriorityField = z
+export const prPriorityField = z
   .union([z.number(), z.string()])
   .transform((v) => {
     if (typeof v === "number") return Math.trunc(v);
@@ -57,12 +57,12 @@ const prPriorityField = z
   })
   .pipe(z.number().int().min(1).max(5).nullable());
 
-const familyRelocationField = z
+export const familyRelocationField = z
   .union([z.boolean(), z.null(), z.undefined()])
   .transform((v) => (v === undefined ? null : v))
   .pipe(z.boolean().nullable());
 
-const researchInterestsField = z
+export const researchInterestsField = z
   .array(z.string().trim().min(1).max(80))
   .max(40)
   .default([]);
@@ -78,6 +78,7 @@ export const profileUpdateSchema = z.object({
   researchInterests: researchInterestsField.optional(),
   prPriority: prPriorityField.optional(),
   familyRelocation: familyRelocationField.optional(),
+  isOnboarded: z.boolean().optional(),
 });
 
 export type ProfileUpdateInput = z.infer<typeof profileUpdateSchema>;
