@@ -16,7 +16,6 @@ import {
   ShieldCheck,
   ArrowLeft,
   CheckCircle2,
-  AlertCircle,
   Brain,
   Target,
   X,
@@ -25,6 +24,8 @@ import {
   Sparkles,
   Globe,
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { ProfileSkeleton } from "@/components/skeletons/ProfileSkeleton";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
@@ -182,11 +183,7 @@ export default function ProfileDetailsPage() {
 
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <ProfileSkeleton />;
   }
 
   // Calculate profile readiness (now 10 fields)
@@ -220,10 +217,7 @@ export default function ProfileDetailsPage() {
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-xs text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {success && (
