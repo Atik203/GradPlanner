@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { setProfile } from "@/lib/store/slices/profileSlice";
@@ -10,14 +10,12 @@ import { computeCountryMatchScore } from "@/lib/matchScore";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { 
-  Loader2, 
   School, 
   GraduationCap, 
   FolderGit2, 
   FileText, 
   Plus, 
   Calendar,
-  AlertCircle,
   TrendingUp,
   User,
   Globe,
@@ -26,10 +24,12 @@ import {
   ShieldCheck,
   CheckCircle2,
   AlertTriangle,
+  AlertCircle,
   Clock
 } from "lucide-react";
 import { TierBadge } from "@/components/badges/TierBadge";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { CountryFlag } from "@/components/shared/CountryFlag";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
@@ -37,6 +37,9 @@ import { toast } from "sonner";
 import { WhatNextToday } from "@/components/dashboard/WhatNextToday";
 import { OnboardingGate } from "@/components/onboarding/OnboardingGate";
 import { OnboardingGuide } from "@/components/onboarding/OnboardingGuide";
+import { DashboardSkeleton } from "@/components/skeletons/DashboardSkeleton";
+import { SkeletonCard } from "@/components/skeletons/SkeletonCard";
+import { SkeletonMetric } from "@/components/skeletons/SkeletonMetric";
 
 
 interface Stats {
@@ -57,57 +60,102 @@ export default function DashboardOverview() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [countriesSummary, setCountriesSummary] = useState<any[]>([]);
   const [decisionData, setDecisionData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+
+  // Per-section loading states for progressive rendering
+  const [statsLoading, setStatsLoading] = useState(true);
+  const [profileLoading, setProfileLoading] = useState(true);
+  const [uniLoading, setUniLoading] = useState(true);
+  const [countriesLoading, setCountriesLoading] = useState(true);
+  const [engineLoading, setEngineLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  const hasAnyData = stats || profile || universities.length > 0 || countriesSummary.length > 0 || decisionData;
+  const initialLoading = !hasAnyData;
 
   // Profile editing state (removed in Phase 2 — replaced by link to /dashboard/profile)
 
-  useEffect(() => {
-    async function loadDashboardData() {
-      try {
-        setLoading(true);
-        const [statsData, profileData, uniData, countriesRes, engineData] = await Promise.all([
-          fetchApi("/api/v1/dashboard/stats"),
-          fetchApi("/api/v1/profile"),
-          fetchApi("/api/v1/universities"),
-          fetchApi("/api/v1/countries"),
-          fetchApi("/api/v1/decision-engine").catch(() => null)
-        ]);
-        setStats(statsData);
-        setDecisionData(engineData);
-        dispatch(setProfile(profileData));
-        dispatch(setUniversities(uniData));
-        if (countriesRes) {
-          setCountriesSummary(countriesRes);
-          // Compute personal match scores for all countries
-          const scores: Record<string, ReturnType<typeof computeCountryMatchScore>> = {};
-          for (const c of countriesRes) {
-            scores[c.countryCode] = computeCountryMatchScore(profileData || {}, {
-              countryCode: c.countryCode,
-              overallScore: c.overallScore,
-              summary: c.summary,
-            });
-          }
-          dispatch(setMatchScores(scores));
-        }
-
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load dashboard data. Please try again.");
-      } finally {
-        setLoading(false);
-      }
+  const fetchStats = useCallback(async () => {
+    try {
+      setStatsLoading(true);
+      const data = await fetchApi<Stats>("/api/v1/dashboard/stats");
+      setStats(data);
+    } catch {
+      if (!stats) setError("Failed to load dashboard stats.");
+    } finally {
+      setStatsLoading(false);
     }
+  }, []);
 
-    loadDashboardData();
+  const fetchProfile = useCallback(async () => {
+    try {
+      setProfileLoading(true);
+      const data = await fetchApi("/api/v1/profile");
+      dispatch(setProfile(data));
+    } catch {
+      // Non-critical
+    } finally {
+      setProfileLoading(false);
+    }
   }, [dispatch]);
 
-  if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+  const fetchUniversities = useCallback(async () => {
+    try {
+      setUniLoading(true);
+      const data = await fetchApi("/api/v1/universities");
+      dispatch(setUniversities(data));
+    } catch {
+      // Non-critical
+    } finally {
+      setUniLoading(false);
+    }
+  }, [dispatch]);
+
+  const fetchCountries = useCallback(async () => {
+    try {
+      setCountriesLoading(true);
+      const data = await fetchApi("/api/v1/countries");
+      if (data) {
+        setCountriesSummary(data);
+        const profileRes = await fetchApi("/api/v1/profile").catch(() => null);
+        const scores: Record<string, ReturnType<typeof computeCountryMatchScore>> = {};
+        for (const c of data) {
+          scores[c.countryCode] = computeCountryMatchScore(profileRes || {}, {
+            countryCode: c.countryCode,
+            overallScore: c.overallScore,
+            summary: c.summary,
+          });
+        }
+        dispatch(setMatchScores(scores));
+      }
+    } catch {
+      // Non-critical
+    } finally {
+      setCountriesLoading(false);
+    }
+  }, [dispatch]);
+
+  const fetchEngine = useCallback(async () => {
+    try {
+      setEngineLoading(true);
+      const data = await fetchApi("/api/v1/decision-engine").catch(() => null);
+      setDecisionData(data);
+    } catch {
+      // Non-critical
+    } finally {
+      setEngineLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchStats();
+    fetchProfile();
+    fetchUniversities();
+    fetchCountries();
+    fetchEngine();
+  }, []);
+
+  if (initialLoading) {
+    return <DashboardSkeleton />;
   }
 
   // Calculate profile completeness (10 fields)
@@ -248,14 +296,11 @@ export default function DashboardOverview() {
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} onRetry={() => { fetchStats(); fetchProfile(); fetchUniversities(); fetchCountries(); fetchEngine(); }} />
       )}
 
       {/* Section: What Next Today Decision Engine */}
-      <WhatNextToday data={decisionData} loading={loading} />
+      <WhatNextToday data={decisionData} loading={statsLoading && engineLoading} />
 
       {/* Section A: Application Pipeline Visualizer */}
       <Card className="border-border/60 bg-card/30 backdrop-blur-md">

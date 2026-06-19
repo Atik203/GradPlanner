@@ -8,10 +8,10 @@ import { EmptyState } from "@/components/shared/EmptyState";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
   CalendarClock,
-  Loader2,
-  AlertCircle,
   ArrowRight,
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { GenericPageSkeleton } from "@/components/skeletons/GenericPageSkeleton";
 import type { Application, Document } from "@/types";
 
 interface DeadlineItem {
@@ -119,11 +119,7 @@ export default function UpcomingDeadlinesPage() {
   const upcoming = deadlines.filter((d) => new Date(d.date) >= now);
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <GenericPageSkeleton />;
   }
 
   return (
@@ -137,10 +133,7 @@ export default function UpcomingDeadlinesPage() {
       />
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       <div className="flex items-center gap-2">

@@ -29,6 +29,9 @@ import {
   Building,
   Info
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { ProfessorSkeleton } from "@/components/skeletons/ProfessorSkeleton";
+import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
 import { Professor, ProfessorStatus } from "@/types";
 import { toast } from "sonner";
 
@@ -80,6 +83,9 @@ export default function ProfessorsPage() {
   const [newColName, setNewColName] = useState("");
   const [showNewColInput, setShowNewColInput] = useState(false);
 
+  // Delete confirm dialog
+  const [deleteTarget, setDeleteTarget] = useState<number | null>(null);
+
   // Outreach Modal state
   const [selectedProf, setSelectedProf] = useState<Professor | null>(null);
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
@@ -95,29 +101,29 @@ export default function ProfessorsPage() {
   };
 
   // Load professors, universities, and profile
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setLoading(true);
-        const [profData, uniData, profileData] = await Promise.all([
-          fetchApi("/api/v1/professors"),
-          fetchApi("/api/v1/universities"),
-          fetchApi("/api/v1/profile").catch(() => null),
-        ]);
-        dispatch(setProfessors(profData));
-        dispatch(setUniversities(uniData));
-        if (profileData) {
-          dispatch(setProfile(profileData));
-        }
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load professors list.");
-      } finally {
-        setLoading(false);
+  const loadData = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [profData, uniData, profileData] = await Promise.all([
+        fetchApi("/api/v1/professors"),
+        fetchApi("/api/v1/universities"),
+        fetchApi("/api/v1/profile").catch(() => null),
+      ]);
+      dispatch(setProfessors(profData));
+      dispatch(setUniversities(uniData));
+      if (profileData) {
+        dispatch(setProfile(profileData));
       }
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load professors list.");
+    } finally {
+      setLoading(false);
     }
-    loadData();
   }, [dispatch]);
+
+  useEffect(() => { loadData(); }, [loadData]);
 
   // Sync local rows with redux state
   useEffect(() => {
@@ -194,17 +200,22 @@ export default function ProfessorsPage() {
   const handleDeleteRow = async (rowIndex: number) => {
     const row = rows[rowIndex];
     if (row.isNew) {
-      // Just remove from local state
       setRows(prev => prev.filter((_, i) => i !== rowIndex));
       toast.success("New unsaved row removed.");
       return;
     }
+    setDeleteTarget(rowIndex);
+  };
 
-    if (!confirm("Are you sure you want to delete this professor?")) return;
+  const confirmDeleteRow = async () => {
+    if (deleteTarget === null) return;
+    const row = rows[deleteTarget];
+    if (!row) { setDeleteTarget(null); return; }
 
     try {
       await fetchApi(`/api/v1/professors/${row.id}`, { method: "DELETE" });
       dispatch(deleteProfessor(row.id as string));
+      setDeleteTarget(null);
       toast.success(`Professor ${row.name || "record"} deleted.`);
     } catch (err: any) {
       console.error(err);
@@ -367,17 +378,13 @@ export default function ProfessorsPage() {
       </div>
 
       {error && (
-        <div className="shrink-0 rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
-          {error}
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {/* Grid Container */}
       <div className="flex-1 overflow-auto rounded-xl border border-border bg-card/50 backdrop-blur-sm">
         {loading ? (
-          <div className="h-full flex items-center justify-center">
-            <Loader2 className="h-8 w-8 animate-spin text-primary" />
-          </div>
+          <ProfessorSkeleton />
         ) : (
           <table className="w-full text-sm text-left whitespace-nowrap">
             <thead className="sticky top-0 z-10 text-xs text-muted-foreground uppercase bg-muted/50 border-b border-border">
@@ -720,6 +727,14 @@ export default function ProfessorsPage() {
         isOpen={isEmailModalOpen}
         onClose={() => setIsEmailModalOpen(false)}
         onEmailLogged={handleEmailLogged}
+      />
+
+      <DeleteConfirmDialog
+        open={deleteTarget !== null}
+        onOpenChange={(open) => { if (!open) setDeleteTarget(null); }}
+        onConfirm={confirmDeleteRow}
+        title="Delete Professor"
+        description="Are you sure you want to delete this professor record? This action cannot be undone."
       />
     </div>
   );

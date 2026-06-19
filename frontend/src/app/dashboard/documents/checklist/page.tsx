@@ -8,7 +8,6 @@ import { EmptyState } from "@/components/shared/EmptyState";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
   ClipboardCheck,
-  Loader2,
   AlertCircle,
   Globe,
   CheckCircle,
@@ -18,6 +17,8 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { DocumentSkeleton } from "@/components/skeletons/DocumentSkeleton";
 import type { Document, DocumentStatus, DocumentType } from "@/types";
 import type {
   DocumentRequirements as CountryDocRequirements,
@@ -294,11 +295,7 @@ export default function DocumentChecklistPage() {
   }, [allRequiredDocs, targetDeadline, userDocs]);
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <DocumentSkeleton />;
   }
 
   const renderChecklistCard = (item: any, idx: number) => {
@@ -400,10 +397,7 @@ export default function DocumentChecklistPage() {
       />
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {/* Target country and custom deadline select */}
