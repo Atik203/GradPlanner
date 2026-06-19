@@ -16,6 +16,7 @@ import {
 import { DashboardNav } from "./DashboardNav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserMenu } from "@/components/layout/UserMenu";
+import { BottomNavWrapper } from "@/components/navigation/BottomNavWrapper";
 
 export default async function DashboardLayout({
   children,
@@ -44,7 +45,7 @@ export default async function DashboardLayout({
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Header */}
         <header className="flex h-16 items-center justify-between px-4 md:px-8 border-b border-border bg-background/50 backdrop-blur-md">
-          <div className="flex items-center pl-10 md:pl-0">
+          <div className="flex items-center">
             <h1 className="text-lg font-semibold text-foreground text-gradient bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent">Workspace</h1>
           </div>
           <div className="flex items-center gap-4">
@@ -55,10 +56,12 @@ export default async function DashboardLayout({
         </header>
 
         {/* Main View scrollable */}
-        <main className="flex-1 overflow-y-auto bg-background p-4 md:p-8">
+        <main className="flex-1 overflow-y-auto bg-background p-4 md:p-8 pb-14 md:pb-8">
           <div className="mx-auto max-w-6xl space-y-8">{children}</div>
         </main>
       </div>
+
+      <BottomNavWrapper />
     </div>
   );
 }

@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   description: "Track and organize your graduate school applications, contacted professors, document checklists, and search university rankings.",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

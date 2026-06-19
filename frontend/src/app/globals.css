@@ -46,6 +46,10 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --text-page-title: clamp(1.25rem, 3vw, 1.875rem);
+  --text-section: clamp(1rem, 2.5vw, 1.25rem);
+  --text-body: clamp(0.8125rem, 2vw, 0.875rem);
+  --text-meta: clamp(0.6875rem, 1.5vw, 0.75rem);
 }
 
 :root {

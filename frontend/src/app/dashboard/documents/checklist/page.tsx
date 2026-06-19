@@ -331,7 +331,7 @@ export default function DocumentChecklistPage() {
             
             {/* Status Select dropdown */}
             <div className="shrink-0 flex items-center gap-2">
-              <div className={`hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[9px] border font-black ${config.bg} ${config.color}`}>
+              <div className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[9px] border font-black ${config.bg} ${config.color}`}>
                 {config.icon}
                 <span>{config.label.toUpperCase()}</span>
               </div>
