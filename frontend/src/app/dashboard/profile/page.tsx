@@ -445,7 +445,7 @@ export default function ProfileDetailsPage() {
                 {researchInterests.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] font-semibold px-2 py-0.5 rounded-full border border-primary/20"
+                    className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] font-semibold px-2 py-1 rounded-full border border-primary/20"
                   >
                     {tag}
                     <button
@@ -454,7 +454,7 @@ export default function ProfileDetailsPage() {
                       className="hover:text-destructive transition-colors cursor-pointer"
                       aria-label={`Remove ${tag}`}
                     >
-                      <X className="h-2.5 w-2.5" />
+                      <X className="h-4 w-4" />
                     </button>
                   </span>
                 ))}
@@ -490,7 +490,7 @@ export default function ProfileDetailsPage() {
                     key={s}
                     type="button"
                     onClick={() => addResearchTag(s)}
-                    className="text-[9px] text-muted-foreground border border-border/50 px-1.5 py-0.5 rounded-full hover:border-primary hover:text-primary transition-colors cursor-pointer"
+                    className="text-[10px] text-muted-foreground border border-border/50 px-2 py-1 rounded-full hover:border-primary hover:text-primary transition-colors cursor-pointer"
                   >
                     + {s}
                   </button>
@@ -519,16 +519,18 @@ export default function ProfileDetailsPage() {
                 </Label>
                 <span className={`text-xs font-bold ${prLabel.color}`}>{prLabel.label}</span>
               </div>
-              <input
-                type="range"
-                min={1}
-                max={5}
-                step={1}
-                value={prPriority}
-                onChange={(e) => setPrPriority(parseInt(e.target.value, 10))}
-                className="w-full h-1.5 bg-accent rounded-full appearance-none cursor-pointer accent-primary"
-                aria-label="PR priority slider"
-              />
+              <div className="min-h-[44px] flex items-center">
+                <input
+                  type="range"
+                  min={1}
+                  max={5}
+                  step={1}
+                  value={prPriority}
+                  onChange={(e) => setPrPriority(parseInt(e.target.value, 10))}
+                  className="w-full h-1.5 bg-accent rounded-full appearance-none cursor-pointer accent-primary"
+                  aria-label="PR priority slider"
+                />
+              </div>
               <div className="flex justify-between text-[9px] text-muted-foreground">
                 <span>Return to Bangladesh</span>
                 <span>Citizenship essential</span>

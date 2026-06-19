@@ -14,13 +14,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-} from "@/components/ui/dialog";
+import { ResponsiveModal } from "@/components/responsive/ResponsiveModal";
 import { 
   Plus, 
   Trash2, 
@@ -208,7 +202,7 @@ export default function ApplicationsPage() {
                       value={app.status}
                       onChange={(e) => handleUpdateStatus(app.id, e.target.value as ApplicationStatus)}
                       disabled={updatingIds.has(app.id)}
-                      className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none disabled:opacity-50"
+                      className="w-full h-10 min-h-[44px] px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none disabled:opacity-50"
                     >
                       <option value="PLANNING">Planning</option>
                       <option value="IN_PROGRESS">In Progress</option>
@@ -263,96 +257,91 @@ export default function ApplicationsPage() {
       )}
 
       {/* Track form dialog */}
-      <Dialog open={formOpen} onOpenChange={setFormOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Track Admissions Lifecycle</DialogTitle>
-          </DialogHeader>
-          <form onSubmit={handleCreateApplication} className="space-y-4">
+      <ResponsiveModal open={formOpen} onOpenChange={setFormOpen} title="Track Admissions Lifecycle">
+        <form onSubmit={handleCreateApplication} className="space-y-4">
+          <div className="space-y-1">
+            <Label htmlFor="uniSelect" className="text-xs text-muted-foreground">Select Tracked University</Label>
+            <select
+              id="uniSelect"
+              value={universityId}
+              onChange={(e) => setUniversityId(e.target.value)}
+              className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+              required
+            >
+              {untrackedUniversities.map((uni) => (
+                <option key={uni.id} value={uni.id}>{uni.name} ({uni.program})</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
-              <Label htmlFor="uniSelect" className="text-xs text-muted-foreground">Select Tracked University</Label>
+              <Label htmlFor="appStatus" className="text-xs text-muted-foreground">Initial Status</Label>
               <select
-                id="uniSelect"
-                value={universityId}
-                onChange={(e) => setUniversityId(e.target.value)}
+                id="appStatus"
+                value={status}
+                onChange={(e) => setStatus(e.target.value as ApplicationStatus)}
                 className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                required
               >
-                {untrackedUniversities.map((uni) => (
-                  <option key={uni.id} value={uni.id}>{uni.name} ({uni.program})</option>
-                ))}
+                <option value="PLANNING">Planning</option>
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="SUBMITTED">Submitted</option>
+                <option value="UNDER_REVIEW">Under Review</option>
               </select>
             </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <Label htmlFor="appStatus" className="text-xs text-muted-foreground">Initial Status</Label>
-                <select
-                  id="appStatus"
-                  value={status}
-                  onChange={(e) => setStatus(e.target.value as ApplicationStatus)}
-                  className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                >
-                  <option value="PLANNING">Planning</option>
-                  <option value="IN_PROGRESS">In Progress</option>
-                  <option value="SUBMITTED">Submitted</option>
-                  <option value="UNDER_REVIEW">Under Review</option>
-                </select>
-              </div>
-              <div className="space-y-1">
-                <Label htmlFor="deadlineInput" className="text-xs text-muted-foreground">Application Deadline</Label>
-                <Input
-                  id="deadlineInput"
-                  placeholder="e.g. Feb 1, 2028"
-                  value={deadline}
-                  onChange={(e) => setDeadline(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                />
-              </div>
-            </div>
-
             <div className="space-y-1">
-              <Label htmlFor="scholarshipInput" className="text-xs text-muted-foreground">Scholarship Amount / Funding Offered (Optional)</Label>
+              <Label htmlFor="deadlineInput" className="text-xs text-muted-foreground">Application Deadline</Label>
               <Input
-                id="scholarshipInput"
-                placeholder="e.g. 50% tuition waiver / €10,000"
-                value={scholarshipAmt}
-                onChange={(e) => setScholarshipAmt(e.target.value)}
+                id="deadlineInput"
+                placeholder="e.g. Feb 1, 2028"
+                value={deadline}
+                onChange={(e) => setDeadline(e.target.value)}
                 className="bg-background border-border text-foreground"
               />
             </div>
+          </div>
 
-            <div className="space-y-1">
-              <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Application Notes</Label>
-              <textarea
-                id="notesInput"
-                rows={3}
-                placeholder="Application fee paid, waiting on LOR submissions..."
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-              />
-            </div>
+          <div className="space-y-1">
+            <Label htmlFor="scholarshipInput" className="text-xs text-muted-foreground">Scholarship Amount / Funding Offered (Optional)</Label>
+            <Input
+              id="scholarshipInput"
+              placeholder="e.g. 50% tuition waiver / €10,000"
+              value={scholarshipAmt}
+              onChange={(e) => setScholarshipAmt(e.target.value)}
+              className="bg-background border-border text-foreground"
+            />
+          </div>
 
-            <DialogFooter>
-              <Button
-                type="button"
-                onClick={() => setFormOpen(false)}
-                className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
-              >
-                Cancel
-              </Button>
-              <Button
-                type="submit"
-                disabled={saving}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
-              >
-                {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Track Application"}
-              </Button>
-            </DialogFooter>
-          </form>
-        </DialogContent>
-      </Dialog>
+          <div className="space-y-1">
+            <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Application Notes</Label>
+            <textarea
+              id="notesInput"
+              rows={3}
+              placeholder="Application fee paid, waiting on LOR submissions..."
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+          </div>
+
+          <div className="flex justify-end gap-3 pt-4 border-t border-border">
+            <Button
+              type="button"
+              onClick={() => setFormOpen(false)}
+              className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              disabled={saving}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
+            >
+              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Track Application"}
+            </Button>
+          </div>
+        </form>
+      </ResponsiveModal>
 
       <DeleteConfirmDialog
         open={deleteTarget !== null}
