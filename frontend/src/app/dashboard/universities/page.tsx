@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { 
@@ -14,7 +14,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select } from "@/components/ui/select"; // Standard HTML select is fine, or we can use custom
+import { Select } from "@/components/ui/select";
+import { ResponsiveModal } from "@/components/responsive/ResponsiveModal";
 import { 
   Search, 
   Plus, 
@@ -35,6 +36,9 @@ import {
 } from "lucide-react";
 import { UniversityRanking, University, Tier } from "@/types";
 import { toast } from "sonner";
+import { UniversitySkeleton } from "@/components/skeletons/UniversitySkeleton";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
 
 // BDT Conversion Rates constant for calculation
 const BDT_RATES: Record<string, number> = {
@@ -125,28 +129,31 @@ export default function UniversitiesPage() {
   const [notes, setNotes] = useState("");
   const [saving, setSaving] = useState(false);
 
+  // Delete confirm dialog
+  const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
+
   // Load tracked universities and profile
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setLoading(true);
-        const [uniData, profileData] = await Promise.all([
-          fetchApi("/api/v1/universities"),
-          fetchApi("/api/v1/profile").catch(() => null),
-        ]);
-        dispatch(setUniversities(uniData));
-        if (profileData) {
-          dispatch(setProfile(profileData));
-        }
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load tracked universities.");
-      } finally {
-        setLoading(false);
+  const loadData = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [uniData, profileData] = await Promise.all([
+        fetchApi("/api/v1/universities"),
+        fetchApi("/api/v1/profile").catch(() => null),
+      ]);
+      dispatch(setUniversities(uniData));
+      if (profileData) {
+        dispatch(setProfile(profileData));
       }
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load tracked universities.");
+    } finally {
+      setLoading(false);
     }
-    loadData();
   }, [dispatch]);
+
+  useEffect(() => { loadData(); }, [loadData]);
 
   // Search rankings
   useEffect(() => {
@@ -233,14 +240,15 @@ export default function UniversitiesPage() {
     }
   };
 
-  const handleDelete = async (id: string) => {
-    if (!confirm("Are you sure you want to remove this university from your tracker?")) return;
+  const handleDelete = async () => {
+    if (!deleteTarget) return;
 
     try {
-      await fetchApi(`/api/v1/universities/${id}`, {
+      await fetchApi(`/api/v1/universities/${deleteTarget}`, {
         method: "DELETE",
       });
-      dispatch(deleteUniversity(id));
+      dispatch(deleteUniversity(deleteTarget));
+      setDeleteTarget(null);
       toast.success("University removed from tracker.");
     } catch (err: any) {
       console.error(err);
@@ -327,9 +335,7 @@ export default function UniversitiesPage() {
       </Card>
 
       {error && (
-        <div className="rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive">
-          {error}
-        </div>
+        <ApiErrorAlert error={error} onRetry={loadData} />
       )}
 
       {/* Tracked Universities list */}
@@ -340,9 +346,7 @@ export default function UniversitiesPage() {
         </h3>
 
         {loading ? (
-          <div className="flex justify-center py-12">
-            <Loader2 className="h-6 w-6 animate-spin text-primary" />
-          </div>
+          <UniversitySkeleton />
         ) : universities.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
             <School className="h-10 w-10 mb-2 text-muted-foreground/50" />
@@ -505,8 +509,8 @@ export default function UniversitiesPage() {
                       )}
                     </div>
                     <Button
-                      onClick={() => handleDelete(uni.id)}
-                      className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all"
+                      onClick={() => setDeleteTarget(uni.id)}
+                      className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all cursor-pointer"
                     >
                       <Trash2 className="h-3.5 w-3.5" />
                     </Button>
@@ -518,211 +522,215 @@ export default function UniversitiesPage() {
         )}
       </div>
 
-      {/* Track form dialog */}
-      {trackFormOpen && selectedRanking && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-          <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4 max-h-[90vh] overflow-y-auto">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Track University</h3>
-              <p className="text-xs text-muted-foreground">{selectedRanking.institutionName} ({selectedRanking.country})</p>
-            </div>
-            <form onSubmit={handleTrackSubmit} className="space-y-4">
-              <div className="space-y-1">
-                <Label htmlFor="progName" className="text-xs text-muted-foreground">Target Program</Label>
-                <Input
-                  id="progName"
-                  value={program}
-                  onChange={(e) => setProgram(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                  required
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <Label htmlFor="tierSelect" className="text-xs text-muted-foreground">Application Tier</Label>
-                  <select
-                    id="tierSelect"
-                    value={tier}
-                    onChange={(e) => setTier(e.target.value as Tier)}
-                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                  >
-                    <option value="DREAM">DREAM</option>
-                    <option value="MATCH">MATCH</option>
-                    <option value="SAFETY">SAFETY</option>
-                  </select>
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="tuitionInput" className="text-xs text-muted-foreground">Tuition Per Year</Label>
-                  <Input
-                    id="tuitionInput"
-                    placeholder="e.g. €15,000 / Free"
-                    value={tuitionPerYr}
-                    onChange={(e) => setTuitionPerYr(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <Label htmlFor="deadlineInput" className="text-xs text-muted-foreground">Application Deadline</Label>
-                  <Input
-                    id="deadlineInput"
-                    placeholder="e.g. Jan 15, 2028"
-                    value={deadline}
-                    onChange={(e) => setDeadline(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="intakeInput" className="text-xs text-muted-foreground">Target Intake</Label>
-                  <Input
-                    id="intakeInput"
-                    value={intake}
-                    onChange={(e) => setIntake(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="uniWebsite" className="text-xs text-muted-foreground">University Program Website (Optional)</Label>
-                <Input
-                  id="uniWebsite"
-                  type="url"
-                  placeholder="https://..."
-                  value={website}
-                  onChange={(e) => setWebsite(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <Label htmlFor="livingCostInput" className="text-xs text-muted-foreground">Living Cost / Year</Label>
-                  <Input
-                    id="livingCostInput"
-                    placeholder="e.g. €11,200"
-                    value={livingCostPerYr}
-                    onChange={(e) => setLivingCostPerYr(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="prPathwaySelect" className="text-xs text-muted-foreground">PR Pathway Quality</Label>
-                  <select
-                    id="prPathwaySelect"
-                    value={prPathwayQuality}
-                    onChange={(e) => setPrPathwayQuality(e.target.value)}
-                    className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                  >
-                    <option value="Best">🥇 Best</option>
-                    <option value="Good">🥈 Good</option>
-                    <option value="Possible">🥉 Possible</option>
-                    <option value="Avoid">❌ Avoid</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2">
-                <div className="space-y-1">
-                  <Label htmlFor="cgpaInput" className="text-xs text-muted-foreground">Min CGPA</Label>
-                  <Input
-                    id="cgpaInput"
-                    type="number"
-                    step="0.01"
-                    placeholder="3.0"
-                    value={minCgpa}
-                    onChange={(e) => setMinCgpa(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="ieltsInput" className="text-xs text-muted-foreground">Min IELTS</Label>
-                  <Input
-                    id="ieltsInput"
-                    type="number"
-                    step="0.5"
-                    placeholder="6.5"
-                    value={minIelts}
-                    onChange={(e) => setMinIelts(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="acceptanceRateInput" className="text-xs text-muted-foreground">Acceptance %</Label>
-                  <Input
-                    id="acceptanceRateInput"
-                    type="number"
-                    step="0.1"
-                    placeholder="15"
-                    value={acceptanceRate}
-                    onChange={(e) => setAcceptanceRate(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 py-1">
-                <label className="flex items-center gap-2 cursor-pointer bg-muted/20 border border-border/40 p-2 rounded-lg text-xs">
-                  <input
-                    type="checkbox"
-                    checked={scholarshipsAvailable}
-                    onChange={(e) => setScholarshipsAvailable(e.target.checked)}
-                    className="h-3.5 w-3.5 rounded border-border text-primary focus:ring-primary bg-background"
-                  />
-                  <span className="text-foreground font-semibold">Scholarships</span>
-                </label>
-
-                <label className="flex items-center gap-2 cursor-pointer bg-muted/20 border border-border/40 p-2 rounded-lg text-xs">
-                  <input
-                    type="checkbox"
-                    checked={fundingAvailable}
-                    onChange={(e) => setFundingAvailable(e.target.checked)}
-                    className="h-3.5 w-3.5 rounded border-border text-primary focus:ring-primary bg-background"
-                  />
-                  <span className="text-foreground font-semibold">TA/RA Funding</span>
-                </label>
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Personal Notes / Requirements</Label>
-                <textarea
-                  id="notesInput"
-                  rows={3}
-                  placeholder="Minimum IELTS score 7.0, requires 3 LORs..."
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
-                  className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                />
-              </div>
-
-              <div className="flex justify-end gap-3 pt-4 border-t border-border">
-                <Button
-                  type="button"
-                  onClick={() => setTrackFormOpen(false)}
-                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9"
-                >
-                  Cancel
-                </Button>
-                <Button
-                  type="submit"
-                  disabled={saving}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9"
-                >
-                  {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Track University"}
-                </Button>
-              </div>
-            </form>
+      <ResponsiveModal
+        open={trackFormOpen}
+        onOpenChange={setTrackFormOpen}
+        title="Track University"
+        description={selectedRanking ? `${selectedRanking.institutionName} (${selectedRanking.country})` : undefined}
+      >
+        <form onSubmit={handleTrackSubmit} className="space-y-4">
+          <div className="space-y-1">
+            <Label htmlFor="progName" className="text-xs text-muted-foreground">Target Program</Label>
+            <Input
+              id="progName"
+              value={program}
+              onChange={(e) => setProgram(e.target.value)}
+              className="bg-background border-border text-foreground"
+              required
+            />
           </div>
-        </div>
-      )}
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <Label htmlFor="tierSelect" className="text-xs text-muted-foreground">Application Tier</Label>
+              <select
+                id="tierSelect"
+                value={tier}
+                onChange={(e) => setTier(e.target.value as Tier)}
+                className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+              >
+                <option value="DREAM">DREAM</option>
+                <option value="MATCH">MATCH</option>
+                <option value="SAFETY">SAFETY</option>
+              </select>
+            </div>
+
+            <div className="space-y-1">
+              <Label htmlFor="tuitionInput" className="text-xs text-muted-foreground">Tuition Per Year</Label>
+              <Input
+                id="tuitionInput"
+                placeholder="e.g. €15,000 / Free"
+                value={tuitionPerYr}
+                onChange={(e) => setTuitionPerYr(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <Label htmlFor="deadlineInput" className="text-xs text-muted-foreground">Application Deadline</Label>
+              <Input
+                id="deadlineInput"
+                placeholder="e.g. Jan 15, 2028"
+                value={deadline}
+                onChange={(e) => setDeadline(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+
+            <div className="space-y-1">
+              <Label htmlFor="intakeInput" className="text-xs text-muted-foreground">Target Intake</Label>
+              <Input
+                id="intakeInput"
+                value={intake}
+                onChange={(e) => setIntake(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1">
+            <Label htmlFor="uniWebsite" className="text-xs text-muted-foreground">University Program Website (Optional)</Label>
+            <Input
+              id="uniWebsite"
+              type="url"
+              placeholder="https://..."
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              className="bg-background border-border text-foreground"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <Label htmlFor="livingCostInput" className="text-xs text-muted-foreground">Living Cost / Year</Label>
+              <Input
+                id="livingCostInput"
+                placeholder="e.g. €11,200"
+                value={livingCostPerYr}
+                onChange={(e) => setLivingCostPerYr(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+
+            <div className="space-y-1">
+              <Label htmlFor="prPathwaySelect" className="text-xs text-muted-foreground">PR Pathway Quality</Label>
+              <select
+                id="prPathwaySelect"
+                value={prPathwayQuality}
+                onChange={(e) => setPrPathwayQuality(e.target.value)}
+                className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+              >
+                <option value="Best">Best</option>
+                <option value="Good">Good</option>
+                <option value="Possible">Possible</option>
+                <option value="Avoid">Avoid</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-2">
+            <div className="space-y-1">
+              <Label htmlFor="cgpaInput" className="text-xs text-muted-foreground">Min CGPA</Label>
+              <Input
+                id="cgpaInput"
+                type="number"
+                step="0.01"
+                placeholder="3.0"
+                value={minCgpa}
+                onChange={(e) => setMinCgpa(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+
+            <div className="space-y-1">
+              <Label htmlFor="ieltsInput" className="text-xs text-muted-foreground">Min IELTS</Label>
+              <Input
+                id="ieltsInput"
+                type="number"
+                step="0.5"
+                placeholder="6.5"
+                value={minIelts}
+                onChange={(e) => setMinIelts(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+
+            <div className="space-y-1">
+              <Label htmlFor="acceptanceRateInput" className="text-xs text-muted-foreground">Acceptance %</Label>
+              <Input
+                id="acceptanceRateInput"
+                type="number"
+                step="0.1"
+                placeholder="15"
+                value={acceptanceRate}
+                onChange={(e) => setAcceptanceRate(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 py-1">
+            <label className="flex items-center gap-2 cursor-pointer bg-muted/20 border border-border/40 p-2 rounded-lg text-xs">
+              <input
+                type="checkbox"
+                checked={scholarshipsAvailable}
+                onChange={(e) => setScholarshipsAvailable(e.target.checked)}
+                className="h-3.5 w-3.5 rounded border-border text-primary focus:ring-primary bg-background"
+              />
+              <span className="text-foreground font-semibold">Scholarships</span>
+            </label>
+
+            <label className="flex items-center gap-2 cursor-pointer bg-muted/20 border border-border/40 p-2 rounded-lg text-xs">
+              <input
+                type="checkbox"
+                checked={fundingAvailable}
+                onChange={(e) => setFundingAvailable(e.target.checked)}
+                className="h-3.5 w-3.5 rounded border-border text-primary focus:ring-primary bg-background"
+              />
+                <span className="text-foreground font-semibold">TA/RA Funding</span>
+            </label>
+          </div>
+
+          <div className="space-y-1">
+            <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Personal Notes / Requirements</Label>
+            <textarea
+              id="notesInput"
+              rows={3}
+              placeholder="Minimum IELTS score 7.0, requires 3 LORs..."
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+          </div>
+
+          <div className="flex justify-end gap-3 pt-4 border-t border-border">
+            <Button
+              type="button"
+              onClick={() => setTrackFormOpen(false)}
+              className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              disabled={saving}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
+            >
+              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Track University"}
+            </Button>
+          </div>
+        </form>
+      </ResponsiveModal>
+
+      <DeleteConfirmDialog
+        open={deleteTarget !== null}
+        onOpenChange={(open) => { if (!open) setDeleteTarget(null); }}
+        onConfirm={handleDelete}
+        title="Untrack University"
+        description="Are you sure you want to remove this university from your tracker? This action cannot be undone."
+      />
     </div>
   );
 }

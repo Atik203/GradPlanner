@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { setProfile } from "@/lib/store/slices/profileSlice";
@@ -16,15 +16,21 @@ import {
   ShieldCheck,
   ArrowLeft,
   CheckCircle2,
-  AlertCircle,
   Brain,
   Target,
   X,
   Plus,
+  Info,
+  Sparkles,
+  Globe,
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { ProfileSkeleton } from "@/components/skeletons/ProfileSkeleton";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
+import { CountryFlag } from "@/components/shared/CountryFlag";
+import { computeCountryMatchScore } from "@/lib/matchScore";
 
 const RESEARCH_SUGGESTIONS = [
 
@@ -67,12 +73,42 @@ export default function ProfileDetailsPage() {
   const [familyRelocation, setFamilyRelocation] = useState<boolean>(false);
 
   const [saving, setSaving] = useState(false);
+  const [countriesSummary, setCountriesSummary] = useState<any[]>([]);
+
+  // Compute top 3 countries for live preview
+  const topCountries = useMemo(() => {
+    if (countriesSummary.length === 0) return [];
+    const withScores = countriesSummary.map((c: any) => {
+      const profileObj = {
+        university,
+        cgpa: cgpa ? parseFloat(cgpa) : null,
+        targetDegree,
+        targetIntake,
+        graduationDate,
+        ieltsScore: ieltsScore ? parseFloat(ieltsScore) : null,
+        monthlyBudgetUSD: monthlyBudgetUSD ? parseInt(monthlyBudgetUSD, 10) : null,
+        researchInterests,
+        prPriority,
+        familyRelocation,
+      };
+      const match = computeCountryMatchScore(profileObj, {
+        countryCode: c.countryCode,
+        overallScore: c.overallScore,
+        summary: c.summary,
+      });
+      return { ...c, matchScore: match.score };
+    });
+    return withScores.sort((a, b) => b.matchScore - a.matchScore).slice(0, 3);
+  }, [university, cgpa, targetDegree, targetIntake, graduationDate, ieltsScore, monthlyBudgetUSD, researchInterests, prPriority, familyRelocation, countriesSummary]);
 
   useEffect(() => {
     async function loadProfile() {
       try {
         setLoading(true);
-        const profileData = await fetchApi("/api/v1/profile");
+        const [profileData, countriesRes] = await Promise.all([
+          fetchApi("/api/v1/profile"),
+          fetchApi("/api/v1/countries"),
+        ]);
         dispatch(setProfile(profileData));
         if (profileData) {
           setUniversityName(profileData.university || "");
@@ -85,6 +121,9 @@ export default function ProfileDetailsPage() {
           setResearchInterests(profileData.researchInterests ?? []);
           setPrPriority(profileData.prPriority ?? 3);
           setFamilyRelocation(profileData.familyRelocation ?? false);
+        }
+        if (countriesRes) {
+          setCountriesSummary(countriesRes);
         }
       } catch (err) {
         console.error(err);
@@ -144,11 +183,7 @@ export default function ProfileDetailsPage() {
 
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <ProfileSkeleton />;
   }
 
   // Calculate profile readiness (now 10 fields)
@@ -182,10 +217,7 @@ export default function ProfileDetailsPage() {
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-xs text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {success && (
@@ -221,6 +253,29 @@ export default function ProfileDetailsPage() {
         </CardContent>
       </Card>
 
+      {/* Live Country Preview */}
+      {topCountries.length > 0 && (
+        <Card className="border-primary/30 bg-primary/5 shadow-xs">
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 mb-3">
+              <Sparkles className="h-4 w-4 text-primary" />
+              <span className="text-xs font-semibold text-foreground">
+                Based on your current profile, your top 3 countries are:
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {topCountries.map((c: any) => (
+                <div key={c.countryCode} className="flex items-center gap-2 bg-background/80 border border-border/60 rounded-lg px-3 py-1.5">
+                  <CountryFlag country={c.countryCode} className="h-4 w-6 rounded" />
+                  <span className="text-xs font-medium text-foreground">{c.country}</span>
+                  <span className="text-[10px] text-muted-foreground">{c.matchScore}%</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
       <form onSubmit={handleSubmit} className="space-y-6">
 
         {/* ── Academic Profile ─────────────────────────────────────────── */}
@@ -229,6 +284,9 @@ export default function ProfileDetailsPage() {
             <div className="flex items-center gap-2">
               <GraduationCap className="h-4.5 w-4.5 text-primary" />
               <CardTitle className="text-md font-bold text-foreground">Academic Profile</CardTitle>
+              <span className="ml-auto text-[9px] font-semibold uppercase px-2 py-0.5 rounded-full bg-emerald-400/10 text-emerald-400 border border-emerald-400/30">
+                Required
+              </span>
             </div>
             <CardDescription className="text-xs text-muted-foreground">Your undergrad credentials and target degree.</CardDescription>
           </CardHeader>
@@ -322,53 +380,72 @@ export default function ProfileDetailsPage() {
           </CardHeader>
           <CardContent className="space-y-6">
 
-            <div className="grid grid-cols-2 gap-4">
-              {/* IELTS Score */}
-              <div className="space-y-1.5">
-                <Label htmlFor="ieltsInput" className="text-xs text-muted-foreground">
-                  IELTS Score (actual or target)
-                </Label>
-                <Input
-                  id="ieltsInput"
-                  type="number"
-                  step="0.5"
-                  min="0"
-                  max="9.0"
-                  placeholder="7.0"
-                  value={ieltsScore}
-                  onChange={(e) => setIeltsScore(e.target.value)}
-                  className="bg-background border-border text-foreground text-xs"
-                />
-                <p className="text-[10px] text-muted-foreground">Used to check country IELTS minimums</p>
+            {/* ── Improves accuracy section ── */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-[9px] font-semibold uppercase px-2 py-0.5 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/30">
+                  Improves accuracy
+                </span>
               </div>
 
-              {/* Monthly Budget */}
-              <div className="space-y-1.5">
-                <Label htmlFor="budgetInput" className="text-xs text-muted-foreground">
-                  Monthly Budget (USD, self-funded)
-                </Label>
-                <Input
-                  id="budgetInput"
-                  type="number"
-                  step="50"
-                  min="0"
-                  placeholder="1500"
-                  value={monthlyBudgetUSD}
-                  onChange={(e) => setMonthlyBudgetUSD(e.target.value)}
-                  className="bg-background border-border text-foreground text-xs"
-                />
-                <p className="text-[10px] text-muted-foreground">0 = fully scholarship-dependent</p>
-              </div>
-            </div>
+              <div className="grid grid-cols-2 gap-4">
+                {/* IELTS Score */}
+                <div className="space-y-1.5">
+                  <Label htmlFor="ieltsInput" className="text-xs text-muted-foreground flex items-center gap-1">
+                    IELTS Score (actual or target)
+                    <span title="Determines university language requirements and visa approval chances" className="inline-flex">
+                      <Info className="h-3 w-3 text-muted-foreground/50 hover:text-muted-foreground cursor-help" />
+                    </span>
+                  </Label>
+                  <Input
+                    id="ieltsInput"
+                    type="number"
+                    step="0.5"
+                    min="0"
+                    max="9.0"
+                    placeholder="7.0"
+                    value={ieltsScore}
+                    onChange={(e) => setIeltsScore(e.target.value)}
+                    className="bg-background border-border text-foreground text-xs"
+                  />
+                  <p className="text-[10px] text-muted-foreground">Used to check country IELTS minimums</p>
+                </div>
 
-            {/* Research Interests */}
-            <div className="space-y-2">
-              <Label className="text-xs text-muted-foreground">Research Interests (up to 8 tags)</Label>
+                {/* Monthly Budget */}
+                <div className="space-y-1.5">
+                  <Label htmlFor="budgetInput" className="text-xs text-muted-foreground flex items-center gap-1">
+                    Monthly Budget (USD, self-funded)
+                    <span title="Excludes countries where living costs exceed your financial capacity" className="inline-flex">
+                      <Info className="h-3 w-3 text-muted-foreground/50 hover:text-muted-foreground cursor-help" />
+                    </span>
+                  </Label>
+                  <Input
+                    id="budgetInput"
+                    type="number"
+                    step="50"
+                    min="0"
+                    placeholder="1500"
+                    value={monthlyBudgetUSD}
+                    onChange={(e) => setMonthlyBudgetUSD(e.target.value)}
+                    className="bg-background border-border text-foreground text-xs"
+                  />
+                  <p className="text-[10px] text-muted-foreground">0 = fully scholarship-dependent</p>
+                </div>
+              </div>
+
+              {/* Research Interests */}
+              <div className="mt-6 space-y-2">
+                <Label className="text-xs text-muted-foreground flex items-center gap-1">
+                  Research Interests (up to 8 tags)
+                  <span title="Matches you to professors and AI/ML research hubs in target countries" className="inline-flex">
+                    <Info className="h-3 w-3 text-muted-foreground/50 hover:text-muted-foreground cursor-help" />
+                  </span>
+                </Label>
               <div className="flex flex-wrap gap-1.5 min-h-8">
                 {researchInterests.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] font-semibold px-2 py-0.5 rounded-full border border-primary/20"
+                    className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] font-semibold px-2 py-1 rounded-full border border-primary/20"
                   >
                     {tag}
                     <button
@@ -377,7 +454,7 @@ export default function ProfileDetailsPage() {
                       className="hover:text-destructive transition-colors cursor-pointer"
                       aria-label={`Remove ${tag}`}
                     >
-                      <X className="h-2.5 w-2.5" />
+                      <X className="h-4 w-4" />
                     </button>
                   </span>
                 ))}
@@ -413,7 +490,7 @@ export default function ProfileDetailsPage() {
                     key={s}
                     type="button"
                     onClick={() => addResearchTag(s)}
-                    className="text-[9px] text-muted-foreground border border-border/50 px-1.5 py-0.5 rounded-full hover:border-primary hover:text-primary transition-colors cursor-pointer"
+                    className="text-[10px] text-muted-foreground border border-border/50 px-2 py-1 rounded-full hover:border-primary hover:text-primary transition-colors cursor-pointer"
                   >
                     + {s}
                   </button>
@@ -421,22 +498,39 @@ export default function ProfileDetailsPage() {
               </div>
             </div>
 
+            </div>
+
+            {/* ── Optional fine-tuning section ── */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-[9px] font-semibold uppercase px-2 py-0.5 rounded-full bg-blue-400/10 text-blue-400 border border-blue-400/30">
+                  Optional fine-tuning
+                </span>
+              </div>
+
             {/* PR Priority Slider */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <Label className="text-xs text-muted-foreground">PR / Residency Priority</Label>
+                <Label className="text-xs text-muted-foreground flex items-center gap-1">
+                  PR / Residency Priority
+                  <span title="Filters countries by immigration pathway speed and permanent residency feasibility" className="inline-flex">
+                    <Info className="h-3 w-3 text-muted-foreground/50 hover:text-muted-foreground cursor-help" />
+                  </span>
+                </Label>
                 <span className={`text-xs font-bold ${prLabel.color}`}>{prLabel.label}</span>
               </div>
-              <input
-                type="range"
-                min={1}
-                max={5}
-                step={1}
-                value={prPriority}
-                onChange={(e) => setPrPriority(parseInt(e.target.value, 10))}
-                className="w-full h-1.5 bg-accent rounded-full appearance-none cursor-pointer accent-primary"
-                aria-label="PR priority slider"
-              />
+              <div className="min-h-[44px] flex items-center">
+                <input
+                  type="range"
+                  min={1}
+                  max={5}
+                  step={1}
+                  value={prPriority}
+                  onChange={(e) => setPrPriority(parseInt(e.target.value, 10))}
+                  className="w-full h-1.5 bg-accent rounded-full appearance-none cursor-pointer accent-primary"
+                  aria-label="PR priority slider"
+                />
+              </div>
               <div className="flex justify-between text-[9px] text-muted-foreground">
                 <span>Return to Bangladesh</span>
                 <span>Citizenship essential</span>
@@ -469,6 +563,8 @@ export default function ProfileDetailsPage() {
                   </button>
                 ))}
               </div>
+            </div>
+
             </div>
 
           </CardContent>

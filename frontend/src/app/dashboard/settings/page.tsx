@@ -1,93 +1,290 @@
 "use client";
 
+/**
+ * /dashboard/settings — User preferences page.
+ *
+ * Phase 1 changes:
+ *   - Theme selector unchanged (client-only via next-themes, no API).
+ *   - Notification toggles + strategy selector now persist via /api/v1/settings.
+ *   - Form state managed by react-hook-form. Client-side validation via Zod's
+ *     safeParse in onSubmit (the zodResolver@Zod-v4 type detection currently
+ *     leaks `unknown` into the form's JSX-bound types).
+ *   - Loading: SettingsSkeleton (matches the page shape).
+ *   - Error: ApiErrorAlert with retry.
+ *   - Success: Sonner toast.
+ *   - Mobile: full-width sections, 44px toggle hit areas.
+ *
+ * The backend GET upserts a default row on first call, so the form is never
+ * in an "empty" state on initial load.
+ */
+
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import {
+  ArrowLeft,
+  Bell,
+  CheckCircle2,
+  KeyRound,
+  Loader2,
+  Monitor,
+  Moon,
+  Settings as SettingsIcon,
+  Sun,
+  User,
+  RotateCcw,
+} from "lucide-react";
+import { toast } from "sonner";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { 
-  Loader2, 
-  ArrowLeft, 
-  Settings, 
-  Sun, 
-  Moon, 
-  Monitor, 
-  Bell, 
-  KeyRound, 
-  CheckCircle2 
-} from "lucide-react";
-import Link from "next/link";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { SettingsSkeleton } from "@/components/skeletons/SettingsSkeleton";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { authClient } from "@/lib/auth-client";
+import { settingsApi, profileApi } from "@/lib/api";
+import type { StrategyPreference } from "@/types";
+
+// ─── Zod schema (mirrors backend settingsUpdateSchema) ──────────────────────
+
+const strategyEnum = z.enum(["PR speed", "AI Market", "No Tuition", "Scholarship"]);
+
+const settingsFormSchema = z.object({
+  emailDeadlineAlerts: z.boolean(),
+  timelineNotifications: z.boolean(),
+  strategyPreference: strategyEnum,
+});
+
+type SettingsFormValues = z.infer<typeof settingsFormSchema>;
+
+// ─── Strategy options (display copy) ─────────────────────────────────────────
+
+const STRATEGY_OPTIONS: Array<{ value: StrategyPreference; label: string }> = [
+  { value: "PR speed", label: "Fastest Route to PR & Citizenship (e.g. Canada / Germany)" },
+  { value: "AI Market", label: "AI/ML Job Market & Maximum Salaries (e.g. USA / Switzerland)" },
+  { value: "No Tuition", label: "Zero Tuition Fees / Budget Programs (e.g. Germany / Europe)" },
+  { value: "Scholarship", label: "Maximum Stipends & Funding (e.g. UAE / Japan)" },
+];
+
+// ─── Toggle component (touch-friendly, accessible) ───────────────────────────
+
+interface ToggleProps {
+  id: string;
+  checked: boolean;
+  onChange: (next: boolean) => void;
+  disabled?: boolean;
+}
+
+function Toggle({ id, checked, onChange, disabled }: ToggleProps) {
+  return (
+    <button
+      id={id}
+      type="button"
+      role="switch"
+      aria-checked={checked}
+      disabled={disabled}
+      onClick={() => onChange(!checked)}
+      className={`
+        relative inline-flex h-7 w-12 shrink-0 cursor-pointer items-center rounded-full
+        border border-border transition-colors
+        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50
+        disabled:opacity-50 disabled:cursor-not-allowed
+        ${checked ? "bg-primary" : "bg-muted"}
+        min-h-[44px] min-w-[44px] p-0
+      `}
+    >
+      <span
+        aria-hidden="true"
+        className={`
+          inline-block h-5 w-5 transform rounded-full bg-background shadow ring-0
+          transition-transform
+          ${checked ? "translate-x-6" : "translate-x-1"}
+        `}
+      />
+    </button>
+  );
+}
 
 export default function SettingsPage() {
-  const { data: session } = authClient.useSession();
   const { setTheme, theme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState<unknown>(null);
 
-  // Mock settings
-  const [emailAlerts, setEmailAlerts] = useState(true);
-  const [timelineNotices, setTimelineNotices] = useState(true);
-  const [prPriority, setPrPriority] = useState("PR speed");
+  const {
+    handleSubmit,
+    reset,
+    watch,
+    setValue,
+    formState: { isDirty },
+  } = useForm<SettingsFormValues>({
+    defaultValues: {
+      emailDeadlineAlerts: true,
+      timelineNotifications: true,
+      strategyPreference: "PR speed" as StrategyPreference,
+    },
+  });
 
+  const emailAlerts = watch("emailDeadlineAlerts");
+  const timelineNotices = watch("timelineNotifications");
+  const prPriority = watch("strategyPreference");
+
+  // ── Hydration / SSR safety ────────────────────────────────────────────────
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const handleSave = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSaving(true);
-    setSuccess(false);
-    setTimeout(() => {
-      setSaving(false);
-      setSuccess(true);
-    }, 800);
-  };
+  // ── Load current settings ─────────────────────────────────────────────────
+  async function loadSettings() {
+    setLoading(true);
+    setLoadError(null);
+    try {
+      const data = await settingsApi.get();
+      reset({
+        emailDeadlineAlerts: data.emailDeadlineAlerts,
+        timelineNotifications: data.timelineNotifications,
+        strategyPreference: data.strategyPreference,
+      });
+    } catch (err) {
+      setLoadError(err);
+    } finally {
+      setLoading(false);
+    }
+  }
 
-  if (!mounted) {
+  useEffect(() => {
+    if (mounted) {
+      loadSettings();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mounted]);
+
+  // ── Submit handler ────────────────────────────────────────────────────────
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<unknown>(null);
+
+  async function onSubmit(values: SettingsFormValues) {
+    // Client-side validation as a fast pre-check. Backend is the source of truth.
+    const parsed = settingsFormSchema.safeParse(values);
+    if (!parsed.success) {
+      toast.error("Please check your input", {
+        description: parsed.error.issues[0]?.message ?? "Validation failed.",
+      });
+      return;
+    }
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      await settingsApi.update(parsed.data);
+      reset(parsed.data);
+      toast.success("Settings saved", {
+        description: "Your preferences have been updated.",
+      });
+    } catch (err) {
+      setSubmitError(err);
+      toast.error("Could not save settings", {
+        description:
+          err instanceof Error ? err.message : "Please try again in a moment.",
+      });
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  // ── Render: hydration / first paint ───────────────────────────────────────
+  if (!mounted || loading) {
+    return <SettingsSkeleton />;
+  }
+
+  if (loadError) {
     return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      <div className="space-y-6 max-w-2xl mx-auto animate-in fade-in duration-500">
+        <div className="space-y-1">
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary mb-2 transition-colors"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Back to Dashboard
+          </Link>
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            Settings
+          </h2>
+        </div>
+        <ApiErrorAlert error={loadError} onRetry={loadSettings} />
       </div>
     );
   }
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500 max-w-2xl mx-auto">
-      
-      {/* Navigation Header */}
       <div className="space-y-1">
-        <Link href="/dashboard" className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary mb-2 transition-colors">
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-primary mb-2 transition-colors"
+        >
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to Dashboard
         </Link>
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Settings</h2>
-        <p className="text-muted-foreground text-sm">Customize your preferences, theme options, and notification alerts.</p>
+        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          Settings
+        </h2>
+        <p className="text-muted-foreground text-sm">
+          Customize your preferences, theme options, and notification alerts.
+        </p>
       </div>
 
-      {success && (
-        <div className="flex items-center gap-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-4 text-xs text-emerald-400">
-          <CheckCircle2 className="h-4.5 w-4.5 shrink-0" />
-          <span>Settings saved successfully!</span>
-        </div>
-      )}
+      {submitError && !submitting ? (
+        <ApiErrorAlert
+          error={submitError}
+          title="Save failed"
+          compact
+          onRetry={() => {
+            void handleSubmit(onSubmit)();
+          }}
+        />
+      ) : null}
 
-      <form onSubmit={handleSave} className="space-y-6">
-        
-        {/* 1. Theme Configuration */}
+      <form
+        onSubmit={(e) => {
+          void handleSubmit(onSubmit)(e);
+        }}
+        className="space-y-6"
+        noValidate
+      >
         <Card className="border-border/60 bg-card/30 backdrop-blur-md shadow-xs">
           <CardHeader>
-            <CardTitle className="text-sm font-bold text-foreground">Aesthetic & Theme Preferences</CardTitle>
-            <CardDescription className="text-xs text-muted-foreground">Select how GradPlanner looks on your device.</CardDescription>
+            <CardTitle className="text-sm font-bold text-foreground flex items-center gap-1.5">
+              <SettingsIcon className="h-4 w-4 text-primary" />
+              Aesthetic & Theme Preferences
+            </CardTitle>
+            <CardDescription className="text-xs text-muted-foreground">
+              Select how GradPlanner looks on your device. Theme is saved locally to your browser.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-3 gap-3">
-              {/* Light Theme */}
               <button
                 type="button"
                 onClick={() => setTheme("light")}
-                className={`p-4 rounded-xl border transition-all text-center flex flex-col items-center justify-center gap-2 cursor-pointer ${
+                aria-pressed={theme === "light"}
+                className={`p-4 rounded-xl border transition-all text-center flex flex-col items-center justify-center gap-2 cursor-pointer min-h-[44px] ${
                   theme === "light"
                     ? "bg-primary/5 border-primary text-primary font-bold shadow-xs"
                     : "bg-muted/20 border-border hover:bg-muted/40 text-muted-foreground hover:text-foreground"
@@ -97,11 +294,11 @@ export default function SettingsPage() {
                 <span className="text-xs">Light</span>
               </button>
 
-              {/* Dark Theme */}
               <button
                 type="button"
                 onClick={() => setTheme("dark")}
-                className={`p-4 rounded-xl border transition-all text-center flex flex-col items-center justify-center gap-2 cursor-pointer ${
+                aria-pressed={theme === "dark"}
+                className={`p-4 rounded-xl border transition-all text-center flex flex-col items-center justify-center gap-2 cursor-pointer min-h-[44px] ${
                   theme === "dark"
                     ? "bg-primary/5 border-primary text-primary font-bold shadow-xs"
                     : "bg-muted/20 border-border hover:bg-muted/40 text-muted-foreground hover:text-foreground"
@@ -111,11 +308,11 @@ export default function SettingsPage() {
                 <span className="text-xs">Dark</span>
               </button>
 
-              {/* System Theme */}
               <button
                 type="button"
                 onClick={() => setTheme("system")}
-                className={`p-4 rounded-xl border transition-all text-center flex flex-col items-center justify-center gap-2 cursor-pointer ${
+                aria-pressed={theme === "system"}
+                className={`p-4 rounded-xl border transition-all text-center flex flex-col items-center justify-center gap-2 cursor-pointer min-h-[44px] ${
                   theme === "system"
                     ? "bg-primary/5 border-primary text-primary font-bold shadow-xs"
                     : "bg-muted/20 border-border hover:bg-muted/40 text-muted-foreground hover:text-foreground"
@@ -128,90 +325,201 @@ export default function SettingsPage() {
           </CardContent>
         </Card>
 
-        {/* 2. Notification Configuration */}
         <Card className="border-border/60 bg-card/30 backdrop-blur-md shadow-xs">
           <CardHeader>
             <CardTitle className="text-sm font-bold text-foreground flex items-center gap-1.5">
-              <Bell className="h-4.5 w-4.5 text-primary" />
+              <Bell className="h-4 w-4 text-primary" />
               Reminders & Notifications
             </CardTitle>
-            <CardDescription className="text-xs text-muted-foreground">Manage reminders for deadlines and visa timelines.</CardDescription>
+            <CardDescription className="text-xs text-muted-foreground">
+              Manage reminders for deadlines and visa timelines. Changes save when you click
+              &ldquo;Save Preferences&rdquo;.
+            </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            
             <div className="flex items-start gap-3">
-              <input
-                id="emailAlerts"
-                type="checkbox"
-                checked={emailAlerts}
-                onChange={(e) => setEmailAlerts(e.target.checked)}
-                className="mt-0.5 rounded border-border text-primary focus:ring-primary cursor-pointer h-4 w-4"
-              />
-              <div className="text-xs">
-                <Label htmlFor="emailAlerts" className="font-bold text-foreground cursor-pointer">Admissions Deadline Alerts</Label>
-                <p className="text-muted-foreground mt-0.5">Send email alerts 30 days prior to tracked university cutoff deadlines.</p>
+              <div className="flex-1 min-w-0">
+                <Label
+                  htmlFor="emailAlerts"
+                  className="font-bold text-foreground text-xs cursor-pointer"
+                >
+                  Admissions Deadline Alerts
+                </Label>
+                <p className="text-muted-foreground text-xs mt-0.5">
+                  Send email alerts 30 days prior to tracked university cutoff deadlines.
+                </p>
               </div>
+              <Toggle
+                id="emailAlerts"
+                checked={emailAlerts}
+                onChange={(v) =>
+                  setValue("emailDeadlineAlerts", v, { shouldDirty: true })
+                }
+                disabled={submitting}
+              />
             </div>
 
             <div className="flex items-start gap-3 border-t border-border/40 pt-4">
-              <input
-                id="timelineNotices"
-                type="checkbox"
-                checked={timelineNotices}
-                onChange={(e) => setTimelineNotices(e.target.checked)}
-                className="mt-0.5 rounded border-border text-primary focus:ring-primary cursor-pointer h-4 w-4"
-              />
-              <div className="text-xs">
-                <Label htmlFor="timelineNotices" className="font-bold text-foreground cursor-pointer">Immigration Timeline Updates</Label>
-                <p className="text-muted-foreground mt-0.5">Notify when visa processing wait times change at the German or Canadian Embassy in Dhaka.</p>
+              <div className="flex-1 min-w-0">
+                <Label
+                  htmlFor="timelineNotices"
+                  className="font-bold text-foreground text-xs cursor-pointer"
+                >
+                  Immigration Timeline Updates
+                </Label>
+                <p className="text-muted-foreground text-xs mt-0.5">
+                  Notify when visa processing wait times change at the German or Canadian
+                  Embassy in Dhaka.
+                </p>
               </div>
+              <Toggle
+                id="timelineNotices"
+                checked={timelineNotices}
+                onChange={(v) =>
+                  setValue("timelineNotifications", v, { shouldDirty: true })
+                }
+                disabled={submitting}
+              />
             </div>
-
           </CardContent>
         </Card>
 
-        {/* 3. Strategic Strategy Preferences */}
         <Card className="border-border/60 bg-card/30 backdrop-blur-md shadow-xs">
           <CardHeader>
-            <CardTitle className="text-sm font-bold text-foreground">Immigration Strategy Strategy</CardTitle>
-            <CardDescription className="text-xs text-muted-foreground">Select your primary PR goal parameters.</CardDescription>
+            <CardTitle className="text-sm font-bold text-foreground flex items-center gap-1.5">
+              <KeyRound className="h-4 w-4 text-primary" />
+              Immigration Strategy
+            </CardTitle>
+            <CardDescription className="text-xs text-muted-foreground">
+              Select your primary PR goal parameters. Used by country-matching to weight
+              recommendations.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-1.5">
-              <Label htmlFor="strategySel" className="text-xs text-muted-foreground">Prioritize recommendations by</Label>
-              <select
-                id="strategySel"
+              <Label htmlFor="strategySel" className="text-xs text-muted-foreground">
+                Prioritize recommendations by
+              </Label>
+              <Select
                 value={prPriority}
-                onChange={(e) => setPrPriority(e.target.value)}
-                className="w-full bg-background border border-border text-foreground rounded-lg px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary h-9 cursor-pointer"
+                onValueChange={(value) =>
+                  setValue("strategyPreference", value as StrategyPreference, {
+                    shouldDirty: true,
+                  })
+                }
+                disabled={submitting}
               >
-                <option value="PR speed">Fastest Route to PR & Citizenship (e.g. Canada/Germany)</option>
-                <option value="AI Market">AI/ML Job Market & Maximum Salaries (e.g. USA/Switzerland)</option>
-                <option value="No Tuition">Zero Tuition Fees / Budget Programs (e.g. Germany/Europe)</option>
-                <option value="Scholarship">Maximum Stipends & Funding (e.g. UAE/Japan)</option>
-              </select>
+                <SelectTrigger id="strategySel" className="w-full">
+                  <SelectValue placeholder="Select a strategy" />
+                </SelectTrigger>
+                <SelectContent>
+                  {STRATEGY_OPTIONS.map((opt) => (
+                    <SelectItem key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
           </CardContent>
         </Card>
 
-        {/* Save button */}
         <div className="flex justify-end pt-4 border-t border-border/60">
-          <Button 
-            type="submit" 
-            disabled={saving}
-            className="bg-primary hover:bg-primary/95 text-primary-foreground font-semibold px-6 shadow-sm cursor-pointer"
+          <Button
+            type="submit"
+            disabled={submitting || !isDirty}
+            className="bg-primary hover:bg-primary/95 text-primary-foreground font-semibold px-6 shadow-sm cursor-pointer min-h-[44px]"
           >
-            {saving ? (
+            {submitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Saving settings...
+                Saving settings…
               </>
-            ) : "Save Preferences"}
+            ) : (
+              <>
+                <CheckCircle2 className="mr-2 h-4 w-4" />
+                Save Preferences
+              </>
+            )}
           </Button>
         </div>
 
+        {/* Reset Onboarding */}
+        <Card className="border-destructive/30 bg-destructive/5 shadow-xs">
+          <CardHeader>
+            <CardTitle className="text-sm font-bold text-foreground flex items-center gap-1.5">
+              <RotateCcw className="h-4 w-4 text-destructive" />
+              Re-run Onboarding Wizard
+            </CardTitle>
+            <CardDescription className="text-xs text-muted-foreground">
+              Reset your onboarding status to re-complete the setup wizard. Your profile data
+              will not be erased.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">
+                Your onboarding status is currently{" "}
+                <strong>Complete</strong>
+              </span>
+              <ResetOnboardingButton />
+            </div>
+          </CardContent>
+        </Card>
       </form>
-
     </div>
+  );
+}
+
+function ResetOnboardingButton() {
+  const router = useRouter();
+  const [confirming, setConfirming] = useState(false);
+  const [resetting, setResetting] = useState(false);
+
+  const handleReset = async () => {
+    setResetting(true);
+    try {
+      await profileApi.update({ isOnboarded: false } as any);
+      toast.success("Onboarding reset. Redirecting to dashboard...");
+      router.push("/dashboard");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Failed to reset onboarding";
+      toast.error(msg);
+    } finally {
+      setResetting(false);
+      setConfirming(false);
+    }
+  };
+
+  if (confirming) {
+    return (
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={() => setConfirming(false)}
+          className="text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          onClick={handleReset}
+          disabled={resetting}
+          className="text-xs font-semibold bg-destructive text-destructive-foreground px-3 py-1.5 rounded-lg hover:bg-destructive/90 disabled:opacity-60 transition-all cursor-pointer"
+        >
+          {resetting ? "Resetting..." : "Confirm Reset"}
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setConfirming(true)}
+      className="text-xs font-semibold border border-destructive/50 text-destructive px-3 py-1.5 rounded-lg hover:bg-destructive/10 transition-all cursor-pointer"
+    >
+      Reset Onboarding
+    </button>
   );
 }

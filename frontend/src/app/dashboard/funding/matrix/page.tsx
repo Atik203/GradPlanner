@@ -6,7 +6,9 @@ import { SectionHeader } from "@/components/dashboard/SectionHeader";
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { EmptyState } from "@/components/shared/EmptyState";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table2, Loader2, AlertCircle, DollarSign, Coins, PiggyBank } from "lucide-react";
+import { Table2, DollarSign, Coins, PiggyBank } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { FundingSkeleton } from "@/components/skeletons/FundingSkeleton";
 import type { University, Application } from "@/types";
 
 const BDT_RATES: Record<string, number> = {
@@ -118,11 +120,7 @@ export default function FundingMatrixPage() {
   }, [matrix]);
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <FundingSkeleton />;
   }
 
   return (
@@ -136,10 +134,7 @@ export default function FundingMatrixPage() {
       />
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       <div className="flex items-center justify-between">

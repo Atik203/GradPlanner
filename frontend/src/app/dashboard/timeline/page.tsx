@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   GanttChart,
   Loader2,
-  AlertCircle,
   Calendar,
   Award,
   Sparkles,
@@ -24,8 +23,11 @@ import {
   MapPin,
   Globe
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { TimelineSkeleton } from "@/components/skeletons/TimelineSkeleton";
 import Link from "next/link";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { useIsMobile } from "@/hooks/use-media-query";
 
 interface TimelineMilestone {
   id: string;
@@ -52,6 +54,7 @@ export default function TimelinePlannerPage() {
   const profile = useAppSelector((state) => state.profile.profile);
 
   const [intake, setIntake] = useState<string>("");
+  const isMobile = useIsMobile();
   const [selectedCountry, setSelectedCountry] = useState<string>("All");
   const [countries, setCountries] = useState<CountrySummary[]>([]);
   const [timelineData, setTimelineData] = useState<TimelineResponse | null>(null);
@@ -194,11 +197,7 @@ export default function TimelinePlannerPage() {
   const countryAdvice = getCountrySpecificAdvice();
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <TimelineSkeleton />;
   }
 
   const statusColors: Record<string, string> = {
@@ -271,10 +270,7 @@ export default function TimelinePlannerPage() {
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {/* Country Specific Timeline Warning Alert */}
@@ -307,10 +303,10 @@ export default function TimelinePlannerPage() {
             </CardHeader>
             <CardContent className="p-0">
               <div className="overflow-x-auto">
-                <div className="min-w-[800px] relative p-6">
+                <div className="md:min-w-[800px] relative p-6">
                   
                   {/* Grid background rows/cols */}
-                  <div className="grid grid-cols-[220px_1fr] border-b border-border/40 pb-3">
+                  <div className="grid grid-cols-[140px_1fr] md:grid-cols-[220px_1fr] border-b border-border/40 pb-3">
                     <div className="text-xs font-bold text-foreground">Task / Phase</div>
                     <div 
                       className="grid text-[10px] font-black text-muted-foreground text-center"
@@ -332,7 +328,7 @@ export default function TimelinePlannerPage() {
                       <div 
                         className="absolute top-0 bottom-0 w-[2px] bg-primary/70 z-20 pointer-events-none border-l border-dashed border-primary"
                         style={{
-                          left: `calc(220px + ${(todayIndex / monthsRange.length) * 100}%)`,
+                          left: `calc(${isMobile ? 140 : 220}px + ${(todayIndex / monthsRange.length) * 100}%)`,
                         }}
                       >
                         <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[8px] bg-primary text-primary-foreground font-black px-1.5 py-0.5 rounded-full shadow-sm">
@@ -355,7 +351,7 @@ export default function TimelinePlannerPage() {
                       const span = Math.max(endIndex - startIndex + 1, 1);
 
                       return (
-                        <div key={m.id} className="grid grid-cols-[220px_1fr] items-center gap-0">
+                        <div key={m.id} className="grid grid-cols-[140px_1fr] md:grid-cols-[220px_1fr] items-center gap-0">
                           {/* Left: Milestone Title & Status */}
                           <div className="pr-4 space-y-1">
                             <div className="font-semibold text-xs text-foreground truncate flex items-center gap-2">
