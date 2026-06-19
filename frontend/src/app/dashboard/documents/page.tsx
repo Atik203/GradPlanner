@@ -13,13 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogFooter,
-} from "@/components/ui/dialog";
+import { ResponsiveModal } from "@/components/responsive/ResponsiveModal";
 import { 
   Plus, 
   Trash2, 
@@ -190,7 +184,7 @@ export default function DocumentsPage() {
                       value={doc.status}
                       onChange={(e) => handleUpdateStatus(doc.id, e.target.value as DocumentStatus)}
                       disabled={updatingIds.has(doc.id)}
-                      className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none disabled:opacity-50"
+                      className="w-full h-10 min-h-[44px] px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none disabled:opacity-50"
                     >
                       <option value="PENDING">Pending</option>
                       <option value="IN_PROGRESS">In Progress</option>
@@ -226,92 +220,87 @@ export default function DocumentsPage() {
         </div>
       )}
 
-      <Dialog open={formOpen} onOpenChange={setFormOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle>Add Checklist Document</DialogTitle>
-          </DialogHeader>
-          <form onSubmit={handleCreateDocument} className="space-y-4">
+      <ResponsiveModal open={formOpen} onOpenChange={setFormOpen} title="Add Checklist Document">
+        <form onSubmit={handleCreateDocument} className="space-y-4">
+          <div className="space-y-1">
+            <Label htmlFor="docName" className="text-xs text-muted-foreground">Document Name</Label>
+            <Input
+              id="docName"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="bg-background border-border text-foreground"
+              required
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1">
-              <Label htmlFor="docName" className="text-xs text-muted-foreground">Document Name</Label>
-              <Input
-                id="docName"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="bg-background border-border text-foreground"
-                required
-              />
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <Label htmlFor="docTypeSelect" className="text-xs text-muted-foreground">Document Type</Label>
-                <select
-                  id="docTypeSelect"
-                  value={type}
-                  onChange={(e) => setType(e.target.value as DocumentType)}
-                  className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                >
-                  <option value="SOP">SOP (Statement of Purpose)</option>
-                  <option value="CV">Curriculum Vitae (CV)</option>
-                  <option value="TRANSCRIPT">Academic Transcript</option>
-                  <option value="DEGREE_CERTIFICATE">Degree Certificate</option>
-                  <option value="IELTS">IELTS Test Report</option>
-                  <option value="GRE">GRE Score Card</option>
-                  <option value="LOR">Letter of Recommendation</option>
-                  <option value="PASSPORT">Passport Copy</option>
-                  <option value="BANK_STATEMENT">Bank Statement</option>
-                  <option value="OTHER">Other document</option>
-                </select>
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="docStatusSelect" className="text-xs text-muted-foreground">Status</Label>
-                <select
-                  id="docStatusSelect"
-                  value={status}
-                  onChange={(e) => setStatus(e.target.value as DocumentStatus)}
-                  className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                >
-                  <option value="PENDING">Pending</option>
-                  <option value="IN_PROGRESS">In Progress</option>
-                  <option value="OBTAINED">Obtained / Complete</option>
-                  <option value="NOT_REQUIRED">Not Required</option>
-                </select>
-              </div>
+              <Label htmlFor="docTypeSelect" className="text-xs text-muted-foreground">Document Type</Label>
+              <select
+                id="docTypeSelect"
+                value={type}
+                onChange={(e) => setType(e.target.value as DocumentType)}
+                className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+              >
+                <option value="SOP">SOP (Statement of Purpose)</option>
+                <option value="CV">Curriculum Vitae (CV)</option>
+                <option value="TRANSCRIPT">Academic Transcript</option>
+                <option value="DEGREE_CERTIFICATE">Degree Certificate</option>
+                <option value="IELTS">IELTS Test Report</option>
+                <option value="GRE">GRE Score Card</option>
+                <option value="LOR">Letter of Recommendation</option>
+                <option value="PASSPORT">Passport Copy</option>
+                <option value="BANK_STATEMENT">Bank Statement</option>
+                <option value="OTHER">Other document</option>
+              </select>
             </div>
 
             <div className="space-y-1">
-              <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Checklist Notes</Label>
-              <textarea
-                id="notesInput"
-                rows={3}
-                placeholder="Need to request transcript from Registrar's office, SOP draft needs revision..."
-                value={notes}
-                onChange={(e) => setNotes(e.target.value)}
-                className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-              />
+              <Label htmlFor="docStatusSelect" className="text-xs text-muted-foreground">Status</Label>
+              <select
+                id="docStatusSelect"
+                value={status}
+                onChange={(e) => setStatus(e.target.value as DocumentStatus)}
+                className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+              >
+                <option value="PENDING">Pending</option>
+                <option value="IN_PROGRESS">In Progress</option>
+                <option value="OBTAINED">Obtained / Complete</option>
+                <option value="NOT_REQUIRED">Not Required</option>
+              </select>
             </div>
+          </div>
 
-            <DialogFooter>
-              <Button
-                type="button"
-                onClick={() => setFormOpen(false)}
-                className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
-              >
-                Cancel
-              </Button>
-              <Button
-                type="submit"
-                disabled={saving}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
-              >
-                {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Save Checklist"}
-              </Button>
-            </DialogFooter>
-          </form>
-        </DialogContent>
-      </Dialog>
+          <div className="space-y-1">
+            <Label htmlFor="notesInput" className="text-xs text-muted-foreground">Checklist Notes</Label>
+            <textarea
+              id="notesInput"
+              rows={3}
+              placeholder="Need to request transcript from Registrar's office, SOP draft needs revision..."
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              className="w-full p-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+          </div>
+
+          <div className="flex justify-end gap-3 pt-4 border-t border-border">
+            <Button
+              type="button"
+              onClick={() => setFormOpen(false)}
+              className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              disabled={saving}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
+            >
+              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Save Checklist"}
+            </Button>
+          </div>
+        </form>
+      </ResponsiveModal>
 
       <DeleteConfirmDialog
         open={deleteTarget !== null}

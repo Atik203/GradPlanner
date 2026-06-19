@@ -11,8 +11,6 @@ import {
   FolderGit2, 
   Globe,
   BarChart3,
-  Menu,
-  X,
   ChevronLeft,
   ChevronRight,
   ChevronDown,
@@ -114,7 +112,6 @@ const standaloneItems: StandaloneItem[] = [
 
 export function DashboardNav({ user }: { user: any }) {
   const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
   
   // Track open accordion groups
@@ -156,7 +153,6 @@ export function DashboardNav({ user }: { user: any }) {
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all group ${
                   isActive 
                     ? "bg-sidebar-accent text-sidebar-accent-foreground font-semibold shadow-xs" 
@@ -204,7 +200,6 @@ export function DashboardNav({ user }: { user: any }) {
                         <Link
                           key={subItem.name}
                           href={subItem.href}
-                          onClick={() => setMobileMenuOpen(false)}
                           className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
                             isSubActive 
                               ? "text-primary font-semibold" 
@@ -234,7 +229,6 @@ export function DashboardNav({ user }: { user: any }) {
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-all group ${
                   isActive 
                     ? "bg-sidebar-accent text-sidebar-accent-foreground font-semibold shadow-xs" 
@@ -259,15 +253,6 @@ export function DashboardNav({ user }: { user: any }) {
 
   return (
     <>
-      {/* Mobile Toggle Button */}
-      <button 
-        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-sidebar text-sidebar-foreground border border-sidebar-border shadow-sm cursor-pointer hover:bg-sidebar-accent transition-colors"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      >
-        {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-      </button>
-
-      {/* Desktop Sidebar Wrapper */}
       <div className={`hidden md:flex relative h-screen shrink-0 transition-all duration-300 ${isCollapsed ? 'w-0' : 'w-64'}`}>
         <aside className={`flex flex-col h-full bg-sidebar border-sidebar-border transition-all duration-300 overflow-hidden ${isCollapsed ? 'w-0 border-r-0 opacity-0' : 'w-64 border-r'}`}>
           <div className="w-64 flex flex-col h-full shrink-0">
@@ -277,24 +262,12 @@ export function DashboardNav({ user }: { user: any }) {
         
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="absolute top-6 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-sidebar-border bg-sidebar shadow-xs hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-300 cursor-pointer"
+          className="absolute top-6 z-10 hidden md:flex h-6 w-6 items-center justify-center rounded-full border border-sidebar-border bg-sidebar shadow-xs hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-300 cursor-pointer"
           style={{ left: isCollapsed ? '12px' : 'calc(100% - 12px)' }}
         >
           {isCollapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
         </button>
       </div>
-
-      {/* Mobile Sidebar Overlay */}
-      {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-xs animate-fade-in" onClick={() => setMobileMenuOpen(false)} />
-      )}
-
-      {/* Mobile Sidebar */}
-      <aside className={`md:hidden fixed inset-y-0 left-0 z-40 w-64 bg-sidebar transform transition-transform duration-300 ease-in-out flex flex-col ${
-        mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-      }`}>
-        <SidebarContent />
-      </aside>
     </>
   );
 }
