@@ -1,8 +1,82 @@
+/**
+ * decisionEngine.ts — Generate proactive tasks + per-university readiness scores.
+ *
+ * Read-only computation over user data. Heavy DB load: fetches profile, universities,
+ * documents, and professors in parallel. We add explicit `select` clauses to keep
+ * payloads small.
+ *
+ * Business logic from the original is preserved 1:1. The only changes are:
+ *   - Wrapped in `ok(res, ...)` to fit the ApiResponse contract
+ *   - Replaced `console.error` with `logger.error`
+ *   - Added explicit `select` clauses on every Prisma call
+ */
+
 import { Router, Response } from "express";
 import { prisma } from "../lib/prisma.js";
 import { AuthenticatedRequest } from "../middleware/auth.js";
+import { ok, serverError } from "../utils/apiResponse.js";
+import { logger } from "../utils/logger.js";
 
 const router: Router = Router();
+
+const PROFILE_SELECT = {
+  cgpa: true,
+  targetIntake: true,
+  ieltsScore: true,
+} as const;
+
+const UNIVERSITY_WITH_APP_SELECT = {
+  id: true,
+  name: true,
+  country: true,
+  program: true,
+  tier: true,
+  minCgpa: true,
+  minIelts: true,
+  deadline: true,
+  application: {
+    select: { id: true, status: true, deadline: true },
+  },
+} as const;
+
+const DOCUMENT_SELECT = {
+  status: true,
+  type: true,
+  name: true,
+} as const;
+
+const PROFESSOR_SELECT = {
+  id: true,
+  name: true,
+  status: true,
+  replyReceived: true,
+  nextFollowUp: true,
+  lastFollowUp: true,
+  emailSentDate: true,
+} as const;
+
+type DbUniversity = {
+  id: string;
+  name: string;
+  country: string;
+  program: string | null;
+  tier: string;
+  minCgpa: number | null;
+  minIelts: number | null;
+  deadline: string | null;
+  application: { id: string; status: string; deadline: Date | null } | null;
+};
+
+type DbDocument = { status: string; type: string; name: string };
+type DbProfessor = {
+  id: string;
+  name: string;
+  status: string;
+  replyReceived: boolean;
+  nextFollowUp: Date | null;
+  lastFollowUp: Date | null;
+  emailSentDate: Date | null;
+};
 
 // GET /api/v1/decision-engine
 router.get("/", async (req: AuthenticatedRequest, res: Response) => {
@@ -10,37 +84,37 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
     const userId = req.user!.id;
     const now = new Date();
 
-    // 1. Fetch User Profile
-    const profile = await prisma.userProfile.findUnique({
-      where: { userId },
-    });
+    const [profile, universities, documents, professors] = await Promise.all([
+      prisma.userProfile.findUnique({
+        where: { userId },
+        select: PROFILE_SELECT,
+      }),
+      prisma.university.findMany({
+        where: { userId, deletedAt: null },
+        select: UNIVERSITY_WITH_APP_SELECT,
+      }),
+      prisma.document.findMany({
+        where: { userId },
+        select: DOCUMENT_SELECT,
+      }),
+      prisma.professor.findMany({
+        where: { userId, deletedAt: null },
+        select: PROFESSOR_SELECT,
+      }),
+    ]);
 
-    // 2. Fetch Tracked Universities including linked applications and rankings
-    const universities = await prisma.university.findMany({
-      where: { userId, deletedAt: null },
-      include: {
-        application: true,
-      },
-    });
-
-    // 3. Fetch Documents
-    const documents = await prisma.document.findMany({
-      where: { userId },
-    });
-
-    // 4. Fetch Professors Outreach
-    const professors = await prisma.professor.findMany({
-      where: { userId, deletedAt: null },
-    });
+    const docs = documents as unknown as DbDocument[];
+    const profs = professors as unknown as DbProfessor[];
+    const unis = universities as unknown as DbUniversity[];
 
     // Helper: check document status
     const obtainedTypes = new Set(
-      documents.filter((d) => d.status === "OBTAINED").map((d) => d.type)
+      docs.filter((d) => d.status === "OBTAINED").map((d) => d.type)
     );
 
     const hasObtainedDoc = (type: string) => obtainedTypes.has(type as any);
 
-    const hasApsObtained = documents.some(
+    const hasApsObtained = docs.some(
       (d) =>
         d.status === "OBTAINED" &&
         (d.type === "OTHER" || d.type === "DEGREE_CERTIFICATE") &&
@@ -49,13 +123,11 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
 
     const hasBankObtained = obtainedTypes.has("BANK_STATEMENT" as any);
 
-    // Initial lists
-    const tasks: any[] = [];
-    const readiness: any[] = [];
+    const tasks: Array<Record<string, unknown>> = [];
+    const readiness: Array<Record<string, unknown>> = [];
 
     // ─── A. TASK CHECKS GENERATOR ───────────────────────────────────────────
 
-    // 1. Profile Gap Tasks
     if (!profile) {
       tasks.push({
         id: "profile-missing",
@@ -99,7 +171,7 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
     }
 
     // 2. Professor Outreach Follow-up Tasks
-    professors.forEach((p) => {
+    profs.forEach((p) => {
       const isAwaiting = p.status === "EMAILED" || p.status === "AWAITING_REPLY";
       if (isAwaiting && !p.replyReceived && p.nextFollowUp) {
         const followUpDate = new Date(p.nextFollowUp);
@@ -121,19 +193,15 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       }
     });
 
-    // 3. Document Timeline & Deadline Warnings (Dhaka delays!)
-    const hasActiveGermany = universities.some((u) =>
+    // 3. Document Timeline & Deadline Warnings
+    const hasActiveGermany = unis.some((u) =>
       u.country.toLowerCase().includes("germany")
     );
-    const hasActiveCanada = universities.some((u) =>
-      u.country.toLowerCase().includes("canada")
-    );
 
-    // Get earliest university deadline
     let earliestDeadline: Date | null = null;
     let daysToEarliestDeadline: number | null = null;
 
-    universities.forEach((u) => {
+    unis.forEach((u) => {
       if (u.deadline) {
         const dDate = new Date(u.deadline);
         if (dDate > now && (!earliestDeadline || dDate < earliestDeadline)) {
@@ -148,7 +216,6 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       );
     }
 
-    // German APS Check
     if (hasActiveGermany && !hasApsObtained) {
       tasks.push({
         id: "doc-aps-germany",
@@ -160,14 +227,13 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       });
     }
 
-    // Police Clearance Check
     if (!hasObtainedDoc("POLICE_CLEARANCE")) {
       const isUrgent = daysToEarliestDeadline !== null && daysToEarliestDeadline <= 90;
       tasks.push({
         id: "doc-pcc-bd",
         title: "Apply for Police Clearance Certificate",
         description: "Obtaining a PCC in Bangladesh (via Ramna HQ) takes 2–6 weeks. " +
-          (isUrgent 
+          (isUrgent
             ? `Your earliest application deadline is in ${daysToEarliestDeadline} days. Apply immediately at pcc.police.gov.bd.`
             : "Plan to request yours 2 months before submitting university applications."),
         type: "DOCUMENT_DELAY",
@@ -176,7 +242,6 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       });
     }
 
-    // IELTS test registration alert
     if (!hasObtainedDoc("IELTS") && !hasObtainedDoc("TOEFL")) {
       const isUrgent = daysToEarliestDeadline !== null && daysToEarliestDeadline <= 120;
       tasks.push({
@@ -190,7 +255,7 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
     }
 
     // 4. University Deadline Proximity Alerts
-    universities.forEach((u) => {
+    unis.forEach((u) => {
       if (u.deadline) {
         const dDate = new Date(u.deadline);
         const daysLeft = Math.ceil((dDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
@@ -218,13 +283,16 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       }
     });
 
-    // Sort tasks by urgency (HIGH first, then MEDIUM, then LOW)
-    const URGENCY_WEIGHT = { HIGH: 3, MEDIUM: 2, LOW: 1 };
-    tasks.sort((a, b) => URGENCY_WEIGHT[b.urgency as keyof typeof URGENCY_WEIGHT] - URGENCY_WEIGHT[a.urgency as keyof typeof URGENCY_WEIGHT]);
+    // Sort tasks by urgency
+    const URGENCY_WEIGHT = { HIGH: 3, MEDIUM: 2, LOW: 1 } as const;
+    tasks.sort((a, b) =>
+      URGENCY_WEIGHT[b.urgency as keyof typeof URGENCY_WEIGHT] -
+      URGENCY_WEIGHT[a.urgency as keyof typeof URGENCY_WEIGHT]
+    );
 
     // ─── B. UNIVERSITY READINESS SCORES ──────────────────────────────────────
 
-    universities.forEach((u) => {
+    unis.forEach((u) => {
       let cgpaScore = 25;
       let ieltsScore = 25;
 
@@ -240,28 +308,23 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
         actual: profile?.ieltsScore || null,
       };
 
-      // CGPA check
       if (u.minCgpa !== null && u.minCgpa !== undefined) {
-        if (!profile || profile.cgpa === null || profile.cgpa < u.minCgpa) {
+        if (!profile || profile.cgpa === null || (profile.cgpa as number) < u.minCgpa) {
           cgpaCriteria.met = false;
           cgpaScore = 0;
         }
       }
 
-      // IELTS check
       if (u.minIelts !== null && u.minIelts !== undefined) {
-        if (!profile || profile.ieltsScore === null || profile.ieltsScore < u.minIelts) {
+        if (!profile || profile.ieltsScore === null || (profile.ieltsScore as number) < u.minIelts) {
           ieltsCriteria.met = false;
           ieltsScore = 0;
         }
       }
 
-      // Core Documents list based on target country
       const countryLower = u.country.toLowerCase();
-      const coreDocsList = ["CV", "SOP", "TRANSCRIPT", "LOR"];
-      if (countryLower.includes("germany")) {
-        coreDocsList.push("APS");
-      }
+      const coreDocsList: string[] = ["CV", "SOP", "TRANSCRIPT", "LOR"];
+      if (countryLower.includes("germany")) coreDocsList.push("APS");
       if (countryLower.includes("canada") || countryLower.includes("australia")) {
         coreDocsList.push("BANK_STATEMENT");
       }
@@ -270,29 +333,23 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       let obtainedDocs = 0;
       const missingDocs: string[] = [];
 
-      // CV Check
       if (obtainedTypes.has("CV" as any)) obtainedDocs++;
       else missingDocs.push("CV");
 
-      // SOP Check
       if (obtainedTypes.has("SOP" as any)) obtainedDocs++;
       else missingDocs.push("SOP");
 
-      // TRANSCRIPT Check
       if (obtainedTypes.has("TRANSCRIPT" as any)) obtainedDocs++;
       else missingDocs.push("Academic Transcript");
 
-      // LOR Check
       if (obtainedTypes.has("LOR" as any)) obtainedDocs++;
       else missingDocs.push("Letters of Recommendation (LOR)");
 
-      // Germany APS Check
       if (countryLower.includes("germany")) {
         if (hasApsObtained) obtainedDocs++;
         else missingDocs.push("APS Certificate");
       }
 
-      // Canada / Australia Financial Check
       if (countryLower.includes("canada") || countryLower.includes("australia")) {
         if (hasBankObtained) obtainedDocs++;
         else missingDocs.push("Proof of Funding / Bank Statement");
@@ -301,25 +358,21 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       const docScore = 50 * (obtainedDocs / totalDocs);
       const totalReadiness = Math.round(cgpaScore + ieltsScore + docScore);
 
-      // Compute status
       let daysLeft: number | null = null;
       if (u.deadline) {
         daysLeft = Math.ceil((new Date(u.deadline).getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
       }
 
       let decisionStatus: "APPLY_NOW" | "PREPARE_MORE" | "TOO_EARLY" | "IN_PROGRESS" = "IN_PROGRESS";
-      
+
       if (daysLeft !== null && daysLeft > 0) {
         if (daysLeft <= 90) {
           decisionStatus = totalReadiness >= 75 ? "APPLY_NOW" : "PREPARE_MORE";
         } else if (daysLeft > 180) {
           decisionStatus = "TOO_EARLY";
         }
-      } else {
-        // Fallback status if no deadline is set
-        if (!profile?.targetIntake) {
-          decisionStatus = "TOO_EARLY";
-        }
+      } else if (!profile?.targetIntake) {
+        decisionStatus = "TOO_EARLY";
       }
 
       readiness.push({
@@ -345,25 +398,29 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       });
     });
 
-    // Calculate generic summaries
     const highUrgencyCount = tasks.filter((t) => t.urgency === "HIGH").length;
     const avgReadiness =
       readiness.length > 0
-        ? Math.round(readiness.reduce((sum, r) => sum + r.readinessScore, 0) / readiness.length)
+        ? Math.round(
+            readiness.reduce((sum, r) => sum + (r.readinessScore as number), 0) / readiness.length
+          )
         : 0;
 
-    res.json({
+    return ok(res, {
       tasks,
       readiness,
       summary: {
-        totalApplicationsTracked: universities.length,
+        totalApplicationsTracked: unis.length,
         averageReadiness: avgReadiness,
         highUrgencyTasksCount: highUrgencyCount,
       },
     });
   } catch (error) {
-    console.error("GET /decision-engine error:", error);
-    res.status(500).json({ error: "Failed to generate decision engine items" });
+    logger.error("GET /decision-engine error", {
+      userId: req.user?.id,
+      error: error instanceof Error ? error : new Error(String(error)),
+    });
+    return serverError(res, "Failed to generate decision engine items");
   }
 });
 
