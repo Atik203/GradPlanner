@@ -7,6 +7,7 @@ import applicationReducer from "./slices/applicationSlice";
 import documentReducer from "./slices/documentSlice";
 import profileReducer from "./slices/profileSlice";
 import countryMatchReducer from "./slices/countryMatchSlice";
+import settingsReducer from "./slices/settingsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     documents: documentReducer,
     profile: profileReducer,
     countryMatch: countryMatchReducer,
+    settings: settingsReducer,
   },
 });
 

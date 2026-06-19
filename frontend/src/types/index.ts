@@ -198,3 +198,17 @@ export interface UniversityRanking {
   arwuPub?: number | null;
   arwuPcp?: number | null;
 }
+
+// ─── User Settings (Phase 1) ────────────────────────────────────────────────
+
+export type StrategyPreference = "PR speed" | "AI Market" | "No Tuition" | "Scholarship";
+
+export interface UserSettings {
+  id: string;
+  userId: string;
+  emailDeadlineAlerts: boolean;
+  timelineNotifications: boolean;
+  strategyPreference: StrategyPreference;
+  createdAt: string;
+  updatedAt: string;
+}
