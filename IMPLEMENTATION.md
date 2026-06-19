@@ -639,3 +639,801 @@ This phase establishes foundations that make future phases dramatically easier:
 - [ ] Settings page has "Reset Onboarding" option
 - [ ] `pnpm type-check` passes in both frontend and backend
 - [ ] No new lint errors introduced
+
+---
+
+## Phase 3: Loading Skeletons, Error States & Empty States Overhaul
+
+### 1. Goal
+
+Replace every `<Loader2 className="animate-spin" />` spinner with **contextual skeleton loaders** that match the page layout, upgrade all empty states with **illustrations and guided actions**, and standardize error states with **retry buttons and specific error messages** across all 12+ dashboard pages.
+
+### 2. Why This Phase Is Needed
+
+Every page in the dashboard currently follows the same anti-pattern:
+
+```tsx
+// Current pattern on EVERY page:
+if (loading) {
+  return (
+    <div className="flex h-[60vh] items-center justify-center">
+      <Loader2 className="h-8 w-8 animate-spin text-primary" />
+    </div>
+  );
+}
+```
+
+| Problem | Where | Risk Level |
+|---------|-------|------------|
+| **All pages use identical centered spinner** — user sees a blank page with a spinning icon for 1–3 seconds on every navigation | Dashboard, Countries, Universities, Professors, Applications, Documents, Rankings, Profile, Analytics, Timeline, Settings, Funding | 🔴 CRITICAL |
+| **Empty states are inconsistent** — some pages use `EmptyState` component, others use inline `<div>` with basic text | Applications (`<p>No applications...</p>`), Documents (same), Universities (uses `EmptyState`), Dashboard (uses `EmptyState`) | 🟠 HIGH |
+| **Error states are dismissible but not recoverable** — error banners show text but no "Retry" button | All data-fetching pages show `setError("Failed to load...")` with no retry action | 🟠 HIGH |
+| **No progressive loading** — Dashboard fetches 5 API calls in parallel but shows nothing until ALL complete | Dashboard page: stats + profile + universities + countries + decision engine must ALL resolve | 🟡 MEDIUM |
+| **No optimistic UI** — status updates (application status, document status) block the UI until API returns | Applications page `handleUpdateStatus`, Documents page `handleUpdateStatus` | 🟡 MEDIUM |
+| **`confirm()` used for delete actions** — native browser dialog breaks the premium feel | Applications, Documents, Professors, Universities all use `confirm("Are you sure?")` | 🟡 MEDIUM |
+
+**Business value:** Skeleton loaders and progressive loading eliminate the perception of slowness. Users who see a shaped skeleton for 500ms feel faster than users who see a spinner for the same 500ms. Error recovery reduces support requests. Beautiful empty states guide users to take action instead of bouncing.
+
+---
+
+### 3. Features
+
+#### 3.1 Reusable Skeleton Component Library
+
+Create a set of composable skeleton primitives:
+
+- `SkeletonText` — animated pulse rectangle for text lines (configurable width/height)
+- `SkeletonCard` — card-shaped skeleton matching the Card component dimensions
+- `SkeletonTable` — rows with alternating widths simulating a table
+- `SkeletonAvatar` — circular skeleton for user images/flags
+- `SkeletonMetric` — matches the MetricCard component shape (number + label)
+
+Each skeleton matches the exact layout of the real component it replaces.
+
+#### 3.2 Page-Specific Skeleton Screens (12 pages)
+
+| Page | Skeleton Layout |
+|------|----------------|
+| **Dashboard** | 3 metric cards skeleton → 3 country cards skeleton → deadline list skeleton |
+| **Countries Explorer** | Search bar skeleton → 3×3 grid of country card skeletons |
+| **Country Detail** | Hero section skeleton → tabbed content skeleton |
+| **Universities** | Header + 2×2 grid of university card skeletons |
+| **Add University** | Form skeleton with 8 field placeholders |
+| **Professors** | Kanban-style column skeletons (3 columns × 2 cards each) |
+| **Applications** | Pipeline summary skeleton → 2×2 application card skeletons |
+| **Documents** | 2×3 grid of document card skeletons |
+| **Profile** | Completeness bar skeleton → 2 form section skeletons |
+| **Rankings** | Table with 10 row skeletons + search bar |
+| **Timeline** | Vertical timeline with 6 milestone skeletons |
+| **Analytics** | 2 chart placeholder skeletons + 3 stat cards |
+
+#### 3.3 Enhanced Empty State Component
+
+Upgrade the existing `EmptyState` component:
+
+- Add optional `illustration` prop (SVG/icon composition, not external images)
+- Add `actionHref` prop for link-based CTAs (e.g., "Add University" → `/dashboard/universities/new`)
+- Add `secondaryAction` prop for alternative actions
+- Add contextual suggestions based on the page context
+- Examples:
+  - Universities empty: "Start by adding a target university. We'll auto-link QS/THE/ARWU rankings."
+  - Professors empty: "Track professor outreach. Add your first contact to get follow-up reminders."
+  - Applications empty: "Begin tracking application progress once you have saved universities."
+  - Documents empty: "Create a BD document checklist to stay on top of police clearance, transcripts, and bank statements."
+
+#### 3.4 Error State with Retry
+
+Create a reusable `ErrorState` component:
+- Icon + error message + "Try Again" button
+- "Try Again" calls the original fetch function
+- Network errors show specific message: "Unable to reach the server. Check your connection."
+- Server errors show: "Something went wrong. Our team has been notified."
+- All pages refactored to pass their `loadData` function to the error state for retry
+
+#### 3.5 Confirmation Dialog (Replace `confirm()`)
+
+Create a reusable `ConfirmDialog` component using shadcn `Dialog`:
+- Title, description, confirm button (destructive variant), cancel button
+- Replaces all `confirm()` calls across Applications, Documents, Professors, Universities
+- Accessible (focus trap, Escape to close, ARIA labels)
+
+#### 3.6 Progressive Loading on Dashboard
+
+Refactor dashboard to render sections independently:
+- Stats section loads and renders first
+- Country recommendations load next (don't block stats)
+- Decision engine loads last (optional, catches errors silently)
+- Each section shows its own skeleton until its specific data is ready
+
+#### 3.7 Optimistic Status Updates
+
+For status dropdown changes (Applications, Documents):
+- Immediately update UI state
+- Fire API call in background
+- On failure: revert to previous state + show error toast
+- Eliminates the "lag" feeling when changing statuses
+
+---
+
+### 4. Detailed UI/UX Requirements
+
+#### Skeleton Loaders
+
+- **Animation:** Tailwind `animate-pulse` with `bg-muted/60` color
+- **Shape matching:** Skeletons must match the exact dimensions of the real content (same heights, widths, border-radius, grid layout)
+- **Duration:** Skeleton should be visible for at least 200ms (add `min-height` to prevent layout shift)
+- **Transition:** When real data loads, fade-in with `animate-in fade-in duration-300`
+
+#### Empty States
+
+- **Layout:** Centered vertically within the content area, max-width 400px
+- **Icon:** 48×48 icon from lucide-react in `muted-foreground/40` color
+- **Title:** 16px font-semibold, `text-foreground`
+- **Description:** 14px font-normal, `text-muted-foreground`, max 2 lines
+- **CTA:** Primary button or ghost link depending on the action
+- **Mobile:** Same layout, full-width CTA button
+
+#### Error States
+
+- **Layout:** Centered card with destructive border accent
+- **Icon:** `AlertCircle` in destructive color
+- **Message:** Specific and user-friendly (never show raw error strings)
+- **Action:** "Try Again" button (primary), optional "Go Back" link
+- **Timeout:** Network errors auto-suggest after 10 seconds: "This is taking longer than expected."
+
+#### Confirmation Dialog
+
+- **Overlay:** `bg-black/60 backdrop-blur-sm`
+- **Card:** max-width 400px, centered, with shadcn Dialog
+- **Title:** "Delete [item type]?" (e.g., "Delete Professor?")
+- **Description:** "This action cannot be undone. [item name] will be permanently removed."
+- **Buttons:** "Cancel" (ghost) + "Delete" (destructive)
+- **Keyboard:** Escape to cancel, Enter to confirm
+- **Mobile:** Full-width buttons, larger touch targets
+
+---
+
+### 5. Backend Requirements
+
+**No backend changes required for this phase.** All improvements are frontend-only.
+
+---
+
+### 6. Architecture Requirements
+
+#### New Files
+
+```
+frontend/src/components/
+├── skeletons/
+│   ├── SkeletonText.tsx         # Configurable text line skeleton
+│   ├── SkeletonCard.tsx         # Card-shaped skeleton
+│   ├── SkeletonMetric.tsx       # Metric card skeleton
+│   ├── SkeletonTable.tsx        # Table row skeletons
+│   ├── DashboardSkeleton.tsx    # Full dashboard page skeleton
+│   ├── CountrySkeleton.tsx      # Country explorer skeleton
+│   ├── UniversitySkeleton.tsx   # University list skeleton
+│   └── GenericListSkeleton.tsx  # Reusable list/grid skeleton
+├── shared/
+│   ├── EmptyState.tsx           # ENHANCED: add illustration, actionHref, secondaryAction
+│   ├── ErrorState.tsx           # NEW: error display with retry
+│   └── ConfirmDialog.tsx        # NEW: replaces confirm()
+```
+
+#### Reusable Modules
+
+- **Skeleton primitives** (`SkeletonText`, `SkeletonCard`, etc.): Composable building blocks. Page-specific skeletons compose these.
+- **`ErrorState`**: Takes `message`, `onRetry`, optional `onBack`. Used by all data-fetching pages.
+- **`ConfirmDialog`**: Takes `open`, `onConfirm`, `onCancel`, `title`, `description`, `confirmLabel`. Used by all delete actions.
+
+---
+
+### 7. Database Changes
+
+None — this phase is entirely frontend.
+
+---
+
+### 8. API Changes
+
+None — this phase is entirely frontend.
+
+---
+
+### 9. Compatibility Analysis
+
+| Dimension | Risk | Mitigation |
+|-----------|------|------------|
+| **UI** | 🟡 Low — every page changes its loading/empty/error rendering | Changes are isolated to conditional rendering blocks; business logic untouched |
+| **State** | ✅ None — no Redux changes | Optimistic updates use local `useState` |
+| **Breaking** | ✅ None — no API or data model changes | Pure visual improvements |
+
+---
+
+### 10. Risks and Mitigation
+
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| Skeleton dimensions mismatch real content → layout shift | Medium | Low | Measure actual rendered dimensions and match exactly |
+| Optimistic updates cause stale data on network failure | Low | Medium | Always revert to previous state on error + show toast |
+| Too many skeleton variants → maintenance burden | Low | Low | Use composable primitives; page skeletons compose them |
+
+---
+
+### 11. Future Phase Considerations
+
+- **Phase 4 (Mobile):** Skeleton components will need mobile-specific layouts (single column instead of grid).
+- **Phase 6 (Search):** Empty states for "no search results" will reuse the enhanced `EmptyState` component.
+- **Phase 8 (Accessibility):** `ConfirmDialog` is built with shadcn Dialog which has proper focus trap and ARIA — one less thing to fix.
+
+---
+
+### 12. Acceptance Criteria
+
+- [ ] All 12 dashboard pages use contextual skeleton loaders instead of centered spinners
+- [ ] Skeletons match the exact layout of real content (same grid, card sizes, spacing)
+- [ ] Dashboard loads progressively (stats first, recommendations second, decision engine last)
+- [ ] All empty states use the enhanced `EmptyState` component with specific guidance and CTAs
+- [ ] All error states show "Try Again" button that re-fetches data
+- [ ] Network errors show specific "connection" message instead of generic "failed to load"
+- [ ] All `confirm()` calls replaced with `ConfirmDialog` component
+- [ ] Application/Document status updates use optimistic UI
+- [ ] `EmptyState` component supports `actionHref`, `secondaryAction`, and `illustration` props
+- [ ] `ErrorState` component is used on all data-fetching pages
+- [ ] No layout shift when transitioning from skeleton to real content
+- [ ] `pnpm type-check` passes
+- [ ] No new lint errors
+
+---
+
+## Phase 4: Mobile-First Responsive UI & Navigation Overhaul
+
+### 1. Goal
+
+Transform GradPlanner from a desktop-first app with basic mobile support into a **mobile-first responsive application** with a native-feeling bottom navigation bar, touch-optimized interactions, responsive data tables, and mobile-specific dialog patterns. Ensure every page is usable and beautiful on devices from 320px to 2560px.
+
+### 2. Why This Phase Is Needed
+
+The current mobile experience has significant usability issues:
+
+| Problem | Impact | Risk Level |
+|---------|--------|------------|
+| **No bottom navigation** — mobile users must open the hamburger sidebar menu for every page transition | High friction; mobile users average 3x more taps to navigate than necessary | 🔴 CRITICAL |
+| **Data tables (Rankings) overflow horizontally** — no responsive table strategy | Rankings page is unusable on mobile; users must scroll horizontally to see all columns | 🔴 CRITICAL |
+| **Modals use fixed positioning without mobile adaptation** — profile edit, add university, add document modals overflow on small screens | Form inputs below the fold, submit buttons unreachable without scrolling | 🟠 HIGH |
+| **Country comparison grid uses 3-column layout** — cards stack vertically but are too information-dense for mobile | Country cards on mobile have tiny text, cramped metrics, unreadable on small phones | 🟠 HIGH |
+| **Touch targets too small** — many buttons are 32px or smaller (minimum recommended: 44px) | Misclicks, frustration on touch devices | 🟠 HIGH |
+| **No responsive typography** — same font sizes on 320px phone and 2560px monitor | Text either too small on mobile or too large on desktop | 🟡 MEDIUM |
+| **Sidebar collapse button overlaps content** — the circular ◀/▶ toggle overlaps the main content area | Visual glitch on medium-width tablets | 🟡 MEDIUM |
+| **No swipe gestures** — mobile sidebar has no swipe-to-close | Feels non-native compared to mobile apps | 🟡 MEDIUM |
+
+**Business value:** The target user (Bangladeshi CSE student) primarily accesses web apps on mobile devices. A poor mobile experience means losing the majority of the user base. Bottom navigation alone typically increases mobile engagement by 30–50%.
+
+---
+
+### 3. Features
+
+#### 3.1 Bottom Navigation Bar (Mobile)
+
+A fixed bottom navigation bar visible only on mobile (`< 768px`):
+
+- 5 tabs: **Home** (Dashboard), **Countries**, **Universities**, **Professors**, **More** (dropdown)
+- Active tab highlighted with primary color + filled icon
+- "More" tab opens a slide-up sheet with remaining navigation items
+- Hides the hamburger sidebar menu on mobile (bottom nav replaces it)
+- Auto-hides on scroll-down, reveals on scroll-up (like native mobile apps)
+
+#### 3.2 Responsive Data Tables
+
+Replace the Rankings page table with a responsive pattern:
+- **Desktop (>1024px):** Full table with all columns
+- **Tablet (768–1024px):** Table with column visibility toggle (hide less important columns)
+- **Mobile (<768px):** Card-based layout — each university becomes a card showing key metrics
+- Pattern is reusable for any future table-based pages
+
+#### 3.3 Mobile-Optimized Modals → Bottom Sheets
+
+Transform all modals on mobile to **bottom sheets** (slide-up from bottom):
+- Profile edit, Add University, Add Professor, Add Document, Add Application
+- Bottom sheets use 85% viewport height max
+- Drag handle at top for swipe-to-close
+- Snap points: half-screen and full-screen
+- Desktop: unchanged (centered modal)
+
+#### 3.4 Touch Target Standardization
+
+Audit and fix all interactive elements:
+- All buttons: minimum 44×44px touch target (CSS, not visual size)
+- All select dropdowns: minimum 44px height
+- All tag pills (research interests): minimum 36px touch target
+- Sidebar links on mobile: minimum 48px height
+- Status dropdowns in cards: 44px height with larger hit area
+
+#### 3.5 Responsive Typography System
+
+Add a fluid typography scale using CSS `clamp()`:
+- Page titles: `clamp(1.25rem, 3vw, 1.875rem)` (20px→30px)
+- Section headings: `clamp(1rem, 2.5vw, 1.25rem)` (16px→20px)
+- Body text: `clamp(0.8125rem, 2vw, 0.875rem)` (13px→14px)
+- Small/meta text: `clamp(0.6875rem, 1.5vw, 0.75rem)` (11px→12px)
+
+#### 3.6 Country Cards Mobile Layout
+
+Redesign country cards for mobile:
+- Full-width cards instead of 3-column grid
+- Horizontal metric strip (PR | Cost | AI Market) instead of vertical
+- Score badge and flag inline with title
+- Touch-friendly "Analyze" button (full-width, 44px height)
+
+#### 3.7 Mobile-Friendly Sidebar Improvements
+
+- Add swipe-to-close gesture on the mobile sidebar overlay
+- Increase sidebar link touch targets to 48px height
+- Add haptic-style visual feedback on tap (scale animation)
+- Remove sidebar collapse toggle on mobile (it's irrelevant — bottom nav replaces sidebar)
+
+#### 3.8 Safe Area and Notch Handling
+
+- Add `env(safe-area-inset-bottom)` padding to bottom navigation
+- Add `env(safe-area-inset-top)` to header
+- Ensures proper display on iPhones with notch/Dynamic Island
+
+---
+
+### 4. Detailed UI/UX Requirements
+
+#### Bottom Navigation Bar
+
+- **Position:** Fixed bottom, full width, `z-50`
+- **Height:** 56px + safe-area-inset-bottom
+- **Background:** `bg-background/95 backdrop-blur-md border-t border-border`
+- **Icons:** 24×24 lucide icons, label below (10px font)
+- **Active state:** Primary color icon + label, subtle scale animation
+- **Inactive state:** `text-muted-foreground/60`
+- **"More" tab:** Opens a slide-up sheet with all remaining nav items organized by group
+- **Visibility:** `md:hidden` — only visible on mobile
+- **Content padding:** Main content gets `pb-20` on mobile to account for bottom nav
+
+#### Bottom Sheet Pattern
+
+- **Trigger:** All modals auto-convert to bottom sheets on `< 768px`
+- **Animation:** Slide up from bottom, 300ms ease-out
+- **Drag handle:** 40×4px rounded bar at top center, `bg-muted-foreground/30`
+- **Backdrop:** `bg-black/50 backdrop-blur-xs`
+- **Close:** Tap backdrop, swipe down past threshold, or X button
+- **Max height:** `85dvh` (dynamic viewport height for mobile browser chrome)
+- **Snap:** Half-screen (50dvh) for simple forms, full for complex forms
+
+#### Responsive Table → Cards
+
+- **Card layout (mobile):** Each row becomes a card
+- **Key info:** University name (bold), country flag, QS/THE/ARWU ranks in horizontal badges
+- **Secondary info:** Scores collapsed into a "More details" expandable
+- **Sort:** Dropdown selector above the cards
+- **Search:** Full-width search input, 44px height
+
+---
+
+### 5. Backend Requirements
+
+**No backend changes required.** All improvements are frontend-only.
+
+---
+
+### 6. Architecture Requirements
+
+#### New Files
+
+```
+frontend/src/components/
+├── navigation/
+│   ├── BottomNav.tsx            # Mobile bottom navigation bar
+│   ├── MoreSheet.tsx            # "More" tab slide-up sheet
+│   └── useScrollDirection.ts   # Hook for scroll-based show/hide
+├── responsive/
+│   ├── BottomSheet.tsx          # Reusable bottom sheet wrapper
+│   ├── ResponsiveModal.tsx      # Auto-switches between modal (desktop) and bottom sheet (mobile)
+│   └── ResponsiveTable.tsx      # Table on desktop, cards on mobile
+├── hooks/
+│   ├── useMediaQuery.ts         # SSR-safe media query hook
+│   └── useSwipeGesture.ts       # Touch swipe detection hook
+```
+
+#### Modified Files
+
+| File | Changes |
+|------|---------|
+| `DashboardNav.tsx` | Hide sidebar hamburger on mobile, add `md:flex` to desktop sidebar |
+| `dashboard/layout.tsx` | Add `<BottomNav />` for mobile, add bottom padding to main content |
+| `globals.css` | Add fluid typography scale, safe-area variables |
+| All modal-using pages | Replace `<div className="fixed inset-0">` with `<ResponsiveModal>` |
+| Rankings page | Replace `<table>` with `<ResponsiveTable>` |
+| Countries page | Update grid from `md:grid-cols-3` to responsive with mobile card variant |
+
+---
+
+### 7. Database Changes
+
+None — this phase is entirely frontend.
+
+---
+
+### 8. API Changes
+
+None — this phase is entirely frontend.
+
+---
+
+### 9. Compatibility Analysis
+
+| Dimension | Risk | Mitigation |
+|-----------|------|------------|
+| **UI** | 🟠 Medium — navigation pattern changes significantly on mobile | Bottom nav is `md:hidden`, sidebar is `hidden md:flex` — no desktop impact |
+| **State** | ✅ None | No state management changes |
+| **Breaking** | 🟡 Low — modal behavior changes on mobile | `ResponsiveModal` is a wrapper; modal content components unchanged |
+
+---
+
+### 10. Risks and Mitigation
+
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| Bottom nav hides content at page bottom | Certain | Low | Add `pb-20 md:pb-0` to main content container |
+| Bottom sheet swipe conflicts with form scrolling | Medium | Medium | Disable swipe-to-close when user is scrolling within the sheet content |
+| SSR hydration mismatch with `useMediaQuery` | Medium | Low | Use `useEffect` to set media query state client-side; render desktop layout on server |
+| Safe area insets not supported on older browsers | Low | Low | Fallback padding values for non-supporting browsers |
+| Performance of scroll direction detection | Low | Low | Use `requestAnimationFrame` throttling on scroll listener |
+
+---
+
+### 11. Future Phase Considerations
+
+- **Phase 6 (Command Palette):** Bottom nav "More" sheet can include a "Search" shortcut.
+- **Phase 8 (Accessibility):** Bottom nav needs proper `role="navigation"` and `aria-current` attributes.
+- **`ResponsiveModal`** becomes the standard for all future modals — no more one-off implementations.
+- **`ResponsiveTable`** becomes the standard for any future data tables.
+
+---
+
+### 12. Acceptance Criteria
+
+- [ ] Bottom navigation bar visible on mobile (`< 768px`) with 5 tabs
+- [ ] Bottom nav has active state highlighting and smooth transitions
+- [ ] Bottom nav auto-hides on scroll-down, reveals on scroll-up
+- [ ] "More" tab opens slide-up sheet with full navigation
+- [ ] Sidebar hamburger menu removed on mobile (bottom nav replaces it)
+- [ ] All modals convert to bottom sheets on mobile
+- [ ] Bottom sheets have drag-to-close and backdrop-tap-to-close
+- [ ] Rankings page uses card layout on mobile instead of table
+- [ ] All interactive elements have ≥44px touch targets
+- [ ] Fluid typography scales between 320px and 2560px viewports
+- [ ] Country cards use mobile-optimized layout on `< 768px`
+- [ ] Safe area insets applied for notched devices
+- [ ] Mobile sidebar has swipe-to-close gesture
+- [ ] No horizontal overflow on any page at 320px viewport width
+- [ ] Desktop experience is completely unchanged
+- [ ] `pnpm type-check` passes
+- [ ] No new lint errors
+
+---
+
+## Phase 5: Notification & Deadline Reminder System
+
+### 1. Goal
+
+Build an **in-app notification center** and **deadline-aware reminder engine** that proactively alerts users about upcoming application deadlines, professor follow-up windows, document expiration, and profile completion gaps. Transform GradPlanner from a passive tracking tool into an **active advisor** that pushes users to take timely action.
+
+### 2. Why This Phase Is Needed
+
+GradPlanner currently has zero proactive communication:
+
+| Problem | Impact | Risk Level |
+|---------|--------|------------|
+| **No deadline reminders** — users must manually check their tracked deadlines | A student misses a Jan 15 Sweden deadline because they forgot to check GradPlanner | 🔴 CRITICAL |
+| **No follow-up reminders for professors** — `nextFollowUp` date exists in DB but nothing surfaces it | A 14-day follow-up window passes silently; professor outreach momentum is lost | 🔴 CRITICAL |
+| **No document expiration alerts** — IELTS scores expire after 2 years, police clearance expires | User submits an application with an expired IELTS score | 🟠 HIGH |
+| **Settings page has notification toggles but they're mocked** — Phase 1 will persist them, but no system reads them | Users configure "Email alerts" that don't actually exist | 🟠 HIGH |
+| **No in-app notification center** — no bell icon, no notification history, no unread count | Users have no central place to see what needs attention | 🟠 HIGH |
+| **"What Next Today" widget is static** — shows recommendations but doesn't track user actions | Same advice repeats even after user takes action | 🟡 MEDIUM |
+| **No profile completion nudges** — users who skip onboarding never get reminded | Profile stays at 30%, match scores remain generic | 🟡 MEDIUM |
+
+**Business value:** Notifications are the #1 retention mechanism in SaaS products. A student who gets a "Your Sweden deadline is in 30 days" notification is 5x more likely to return than one who doesn't. Professor follow-up reminders directly improve admission outcomes. This phase transforms GradPlanner from a tool users open occasionally into a companion that actively helps.
+
+---
+
+### 3. Features
+
+#### 3.1 Notification Data Model & Backend Engine
+
+**New `Notification` model:**
+- Stores per-user notifications with type, title, message, read status, link, and creation timestamp
+- Notification types: `DEADLINE_APPROACHING`, `FOLLOW_UP_DUE`, `DOCUMENT_EXPIRING`, `PROFILE_INCOMPLETE`, `APPLICATION_UPDATE`, `SYSTEM`
+- A backend notification generation service that runs on specific triggers
+
+**Notification triggers (computed on API calls, not cron):**
+
+| Trigger | When Generated | Notification |
+|---------|----------------|--------------|
+| Application deadline < 30 days away | On `GET /dashboard/stats` or `GET /applications` | "⏰ [University] deadline is in X days" |
+| Application deadline < 7 days away | Same | "🔴 URGENT: [University] deadline in X days!" |
+| Professor `nextFollowUp` date is today or past | On `GET /professors` | "📧 Time to follow up with Prof. [Name]" |
+| Professor follow-up count = 2 (at limit) | On professor update | "⚠️ Prof. [Name] has reached the follow-up limit" |
+| Document `expiresAt` < 60 days away | On `GET /documents` | "📄 [Document] expires in X days" |
+| Profile completeness < 60% | On `GET /profile` | "Complete your profile for better recommendations" |
+| Application status changes to OFFER_RECEIVED | On application update | "🎉 Offer received from [University]!" |
+
+#### 3.2 In-App Notification Center
+
+**Bell icon in the dashboard header:**
+- Shows unread count badge (red dot with number)
+- Clicking opens a dropdown panel (desktop) or bottom sheet (mobile)
+- Lists notifications sorted by recency
+- Each notification has: icon (by type), title, message, timestamp, and optional CTA link
+- "Mark all as read" action
+- "Clear all" action
+- Notifications auto-generated on relevant API calls
+
+#### 3.3 Notification API Endpoints
+
+| Route | Method | Purpose |
+|-------|--------|---------|
+| `GET /api/v1/notifications` | GET | Fetch all user notifications (paginated, newest first) |
+| `GET /api/v1/notifications/unread-count` | GET | Fetch unread count only (lightweight, for header badge) |
+| `PUT /api/v1/notifications/:id/read` | PUT | Mark a single notification as read |
+| `PUT /api/v1/notifications/read-all` | PUT | Mark all as read |
+| `DELETE /api/v1/notifications/:id` | DELETE | Delete a notification |
+| `DELETE /api/v1/notifications/clear-all` | DELETE | Clear all notifications |
+
+#### 3.4 Notification Generation Service
+
+A backend service (`backend/src/services/notificationService.ts`) that:
+- Provides `generateDeadlineNotifications(userId)` — checks all application deadlines
+- Provides `generateFollowUpNotifications(userId)` — checks all professor nextFollowUp dates
+- Provides `generateDocumentExpiryNotifications(userId)` — checks document expiry dates
+- Provides `generateProfileNotifications(userId)` — checks profile completeness
+- De-duplicates: doesn't create a notification if one with the same `type + referenceId` already exists and is unread
+- Called lazily on relevant GET requests (not a cron job — keeps it serverless-friendly)
+
+#### 3.5 Toast-Style Live Notifications
+
+When a notification is generated during a page load:
+- Show a toast notification (using existing Sonner integration)
+- Toast links to the relevant page
+- Only show toasts for HIGH-priority notifications (deadline < 7 days, follow-up overdue)
+
+#### 3.6 Enhanced "What Next Today" Widget
+
+Upgrade the existing `WhatNextToday` component to:
+- Pull from notifications to show the most urgent items
+- Show "You have X notifications requiring attention" summary
+- Track which suggestions the user has dismissed (store in `localStorage`)
+- Refresh dynamically as user takes actions
+
+#### 3.7 User Notification Preferences Integration
+
+Read the `UserSettings` model (from Phase 1) to control notification behavior:
+- `emailDeadlineAlerts: false` → don't generate DEADLINE_APPROACHING notifications
+- `timelineNotifications: false` → don't generate FOLLOW_UP_DUE notifications
+- Respect preferences in the notification generation service
+
+---
+
+### 4. Detailed UI/UX Requirements
+
+#### Notification Bell (Header)
+
+- **Position:** Dashboard header, between theme toggle and user menu
+- **Icon:** `Bell` from lucide-react, 20×20
+- **Badge:** Red circle, 16px diameter, white text, positioned top-right of bell icon
+- **Badge animation:** Scale-in animation when count changes
+- **No notifications:** Bell icon with no badge, muted color
+
+#### Notification Dropdown (Desktop)
+
+- **Width:** 380px, max-height 480px
+- **Position:** Anchored to bell icon, aligned right
+- **Header:** "Notifications" title + "Mark all read" link
+- **Items:** Each notification is a row with:
+  - Left: Type icon (color-coded by urgency)
+  - Center: Title (bold) + message (muted) + timestamp ("2 hours ago")
+  - Right: Blue dot for unread, hover shows "×" to dismiss
+- **Empty state:** "No notifications. You're all caught up! ✅"
+- **Footer:** "View all notifications" link (future: full notifications page)
+
+#### Notification Bottom Sheet (Mobile)
+
+- Same content as dropdown but rendered as a bottom sheet (Phase 4's `ResponsiveModal`)
+- Full width, slides up from bottom
+- Swipe-to-dismiss individual notifications
+
+#### Notification Item Urgency Colors
+
+| Type | Icon | Color |
+|------|------|-------|
+| DEADLINE < 7 days | `AlertCircle` | Destructive (red) |
+| DEADLINE < 30 days | `Clock` | Warning (amber) |
+| FOLLOW_UP_DUE | `Mail` | Info (blue) |
+| DOCUMENT_EXPIRING | `FileText` | Warning (amber) |
+| PROFILE_INCOMPLETE | `User` | Muted |
+| APPLICATION_UPDATE | `CheckCircle` | Success (green) |
+| SYSTEM | `Bell` | Muted |
+
+---
+
+### 5. Backend Requirements
+
+#### Database
+
+**New model: `Notification`**
+
+```prisma
+model Notification {
+  id          String           @id @default(cuid())
+  userId      String
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type        NotificationType
+  title       String
+  message     String
+  link        String?          // e.g., "/dashboard/applications"
+  referenceId String?          // e.g., application ID, professor ID
+  isRead      Boolean          @default(false)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@index([userId, isRead])
+  @@index([userId, createdAt])
+  @@index([userId, type, referenceId])
+}
+```
+
+**New enum: `NotificationType`**
+
+```prisma
+enum NotificationType {
+  DEADLINE_APPROACHING
+  DEADLINE_URGENT
+  FOLLOW_UP_DUE
+  FOLLOW_UP_LIMIT
+  DOCUMENT_EXPIRING
+  PROFILE_INCOMPLETE
+  APPLICATION_UPDATE
+  SYSTEM
+}
+```
+
+**Relation added to User:**
+
+```prisma
+model User {
+  // ... existing fields
+  notifications Notification[]
+}
+```
+
+#### API
+
+| Route | Method | Validation | Auth |
+|-------|--------|------------|------|
+| `/api/v1/notifications` | GET | Query: `?limit=20&offset=0` | Required |
+| `/api/v1/notifications/unread-count` | GET | — | Required |
+| `/api/v1/notifications/:id/read` | PUT | — | Required |
+| `/api/v1/notifications/read-all` | PUT | — | Required |
+| `/api/v1/notifications/:id` | DELETE | — | Required |
+| `/api/v1/notifications/clear-all` | DELETE | — | Required |
+
+---
+
+### 6. Architecture Requirements
+
+#### New Files
+
+```
+backend/src/
+├── routes/
+│   └── notifications.ts                # Notification CRUD endpoints
+├── services/
+│   └── notificationService.ts          # Notification generation logic
+├── validators/
+│   └── notification.ts                 # Query param validation
+
+frontend/src/
+├── components/
+│   ├── notifications/
+│   │   ├── NotificationBell.tsx         # Header bell icon with badge
+│   │   ├── NotificationPanel.tsx        # Dropdown/sheet notification list
+│   │   ├── NotificationItem.tsx         # Single notification row
+│   │   └── NotificationEmptyState.tsx   # "All caught up" empty state
+├── lib/
+│   └── store/
+│       └── slices/
+│           └── notificationSlice.ts     # NEW: unread count in Redux
+```
+
+#### Key Design Decisions
+
+1. **Lazy generation (not cron):** Notifications are generated on relevant GET requests. This keeps the architecture serverless-friendly (no persistent background worker needed on Vercel). Trade-off: notifications only appear when the user opens the app. This is acceptable for Phase 5; Phase 10 can add a cron if needed.
+
+2. **De-duplication by `type + referenceId`:** Prevents "deadline in 30 days" from being created every time the user loads the page. Only creates a new notification if no unread notification of the same type for the same reference exists.
+
+3. **Unread count in Redux:** The header bell badge needs to be updated globally. A lightweight Redux slice with just the count (fetched from `/unread-count`) avoids re-fetching the full notification list on every page.
+
+4. **Notification preferences:** The generation service reads `UserSettings` to respect opt-outs. If `emailDeadlineAlerts` is false, deadline notifications are skipped entirely.
+
+---
+
+### 7. Database Changes
+
+| Change | Type | Risk |
+|--------|------|------|
+| Add `Notification` model | Additive | ✅ Zero risk — new table |
+| Add `NotificationType` enum | Additive | ✅ Zero risk — new enum |
+| Add `notifications` relation to `User` | Additive | ✅ Zero risk — optional relation |
+
+**Migration:** Single `prisma migrate dev` with name `add-notifications`.
+
+---
+
+### 8. API Changes
+
+| Change | Breaking? | Migration Path |
+|--------|-----------|----------------|
+| New `/api/v1/notifications/*` endpoints | No — additive | New route, no existing code affected |
+| Stats/professors/applications endpoints may trigger notification generation | No — side effect only | Notifications generated silently; response shape unchanged |
+
+---
+
+### 9. Compatibility Analysis
+
+| Dimension | Risk | Mitigation |
+|-----------|------|------------|
+| **Migration** | ✅ None — additive | New table and enum only |
+| **Auth** | ✅ None | Uses existing `requireAuth` |
+| **UI** | 🟡 Low — adds bell icon to header | Header layout already has `gap-4` flex container; bell icon slots in naturally |
+| **State** | 🟡 Low — new Redux slice | `notificationSlice` is independent; no existing slices modified |
+| **Performance** | 🟡 Low — lazy notification generation adds DB queries to existing endpoints | Generation queries are indexed and cached per request; minimal overhead |
+
+---
+
+### 10. Risks and Mitigation
+
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| Lazy generation misses notifications if user doesn't visit the page | Medium | Medium | "What Next Today" widget on dashboard runs all generators; users who visit dashboard daily are covered |
+| Notification table grows unbounded | Medium | Low | Add a cleanup query: delete read notifications older than 90 days |
+| De-duplication logic has edge cases | Low | Low | Use database unique constraint on `(userId, type, referenceId)` for unread notifications; catch constraint errors gracefully |
+| Notification dropdown blocks header interaction | Low | Low | Click-outside-to-close handler; proper z-index layering |
+| Too many notifications overwhelm the user | Low | Medium | Group similar notifications ("3 deadlines approaching") and cap at 50 total |
+
+---
+
+### 11. Future Phase Considerations
+
+- **Phase 9 (Performance):** Notification unread count can be cached in Redis/memory for high-traffic scenarios.
+- **Phase 10 (Production Readiness):** Add optional email delivery using a provider (Resend, SendGrid) for critical notifications (deadline < 7 days).
+- **Future "Cron Worker" phase:** Move from lazy generation to a scheduled background job that generates notifications nightly, enabling push notifications for users who haven't visited.
+- **Future "Push Notifications":** The `Notification` model is already structured to support browser push notifications (add `deliveredVia` field).
+
+---
+
+### 12. Acceptance Criteria
+
+- [ ] `Notification` model and `NotificationType` enum exist in Prisma schema
+- [ ] All 6 notification API endpoints implemented and validated
+- [ ] Notification generation service creates de-duplicated notifications for:
+  - Application deadlines < 30 days (and urgent < 7 days)
+  - Professor follow-ups that are due or overdue
+  - Documents approaching expiry (< 60 days)
+  - Profile completeness < 60%
+  - Application status changes to OFFER_RECEIVED
+- [ ] Bell icon in dashboard header shows unread notification count
+- [ ] Clicking bell opens notification dropdown (desktop) / bottom sheet (mobile)
+- [ ] Notifications are sorted by recency with urgency-colored icons
+- [ ] "Mark all as read" and individual "mark read" work correctly
+- [ ] "Clear all" deletes all user notifications
+- [ ] `UserSettings` preferences respected (opt-out of deadline/timeline notifications)
+- [ ] `WhatNextToday` widget integrates with notification system
+- [ ] HIGH-priority notifications trigger toast on page load
+- [ ] Notification Redux slice stores unread count globally
+- [ ] Empty state shown when no notifications exist
+- [ ] `pnpm type-check` passes in both frontend and backend
+- [ ] No new lint errors
