@@ -14,7 +14,7 @@ import { prisma } from "../src/lib/prisma.js";
 import { seedCountryIntelligence } from "./seed_country_intelligence.js";
 
 const CSV_PATH = path.resolve(
-  path.dirname(new URL(import.meta.url).pathname.slice(1)), // strip leading slash on Windows
+  path.dirname(new URL(import.meta.url).pathname.replace(/^\/([a-zA-Z]:\/)/, "$1")),
   "../../notebook/universities.csv"
 );
 
