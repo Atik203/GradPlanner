@@ -2,7 +2,5 @@
   "$schema": "https://opencode.ai/config.json",
   "skills": {
     "paths": [".agents/skills"]
-  },
-  "model": "opencode-go/deepseek-v4-flash",
-  "fallback": "opencode-go/kimi-k2.6"
+  }
 }
