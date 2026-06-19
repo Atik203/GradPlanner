@@ -12,16 +12,16 @@ Transform the Express backend from a prototype-grade API into a **production-har
 
 After a full project audit, the single biggest gap preventing GradPlanner from being production-ready is **backend reliability and safety**. Every downstream feature — UI error states, loading states, mobile UX, onboarding flows — depends on an API that behaves predictably. Currently:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **Zero request validation** — all 11 route files accept `req.body` without Zod/schema validation | Any malformed request can crash queries, inject bad data, or produce silent corruption | 🔴 CRITICAL |
-| **No rate limiting** — every authenticated endpoint is wide open | A single compromised session cookie can exhaust DB connections in seconds | 🔴 CRITICAL |
-| **Inconsistent error responses** — some routes return `{ error: string }`, others throw unhandled | Frontend cannot reliably distinguish "not found" from "validation error" from "server crash" | 🟠 HIGH |
-| **No request body size limits** — `express.json()` has no limit set | A single POST with a 50MB body would consume all available memory on Vercel Serverless | 🟠 HIGH |
-| **Missing `select` in many Prisma queries** — `include: { university: true }` returns ALL fields | Over-fetching wastes bandwidth and leaks data (e.g., `deletedAt`, internal IDs) | 🟡 MEDIUM |
-| **Duplicate helper functions** — `toFloatOrNull` is defined inline in 2 routes | Maintenance burden, inconsistency risk | 🟡 MEDIUM |
-| **No structured logging** — routes use `console.error` with no context | Production debugging is nearly impossible on Vercel serverless | 🟡 MEDIUM |
-| **Settings page is mock-only** — `handleSave` uses `setTimeout`, settings aren't persisted | Users see "saved" but nothing actually persists to the database | 🟠 HIGH |
+| Problem                                                                                           | Impact                                                                                       | Risk Level  |
+| ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ----------- |
+| **Zero request validation** — all 11 route files accept `req.body` without Zod/schema validation  | Any malformed request can crash queries, inject bad data, or produce silent corruption       | 🔴 CRITICAL |
+| **No rate limiting** — every authenticated endpoint is wide open                                  | A single compromised session cookie can exhaust DB connections in seconds                    | 🔴 CRITICAL |
+| **Inconsistent error responses** — some routes return `{ error: string }`, others throw unhandled | Frontend cannot reliably distinguish "not found" from "validation error" from "server crash" | 🟠 HIGH     |
+| **No request body size limits** — `express.json()` has no limit set                               | A single POST with a 50MB body would consume all available memory on Vercel Serverless       | 🟠 HIGH     |
+| **Missing `select` in many Prisma queries** — `include: { university: true }` returns ALL fields  | Over-fetching wastes bandwidth and leaks data (e.g., `deletedAt`, internal IDs)              | 🟡 MEDIUM   |
+| **Duplicate helper functions** — `toFloatOrNull` is defined inline in 2 routes                    | Maintenance burden, inconsistency risk                                                       | 🟡 MEDIUM   |
+| **No structured logging** — routes use `console.error` with no context                            | Production debugging is nearly impossible on Vercel serverless                               | 🟡 MEDIUM   |
+| **Settings page is mock-only** — `handleSave` uses `setTimeout`, settings aren't persisted        | Users see "saved" but nothing actually persists to the database                              | 🟠 HIGH     |
 
 **Business value:** Without this phase, every future phase (onboarding, notifications, mobile UX) will be built on an unreliable foundation that will produce hard-to-debug failures in production.
 
@@ -40,9 +40,14 @@ After a full project audit, the single biggest gap preventing GradPlanner from b
 
 - Create a shared `ApiResponse<T>` type:
   ```typescript
-  type ApiResponse<T> = 
+  type ApiResponse<T> =
     | { success: true; data: T }
-    | { success: false; error: string; code: string; fieldErrors?: Record<string, string[]> }
+    | {
+        success: false;
+        error: string;
+        code: string;
+        fieldErrors?: Record<string, string[]>;
+      };
   ```
 - Consistent error codes: `VALIDATION_ERROR`, `NOT_FOUND`, `UNAUTHORIZED`, `RATE_LIMITED`, `INTERNAL_ERROR`
 - All routes refactored to return this shape
@@ -151,10 +156,10 @@ model User {
 
 #### API
 
-| Route | Method | Validation Schema | Auth | Purpose |
-|-------|--------|-------------------|------|---------|
-| `/api/v1/settings` | GET | — | Required | Fetch user settings (upsert default if none) |
-| `/api/v1/settings` | PUT | `settingsUpdateSchema` | Required | Update user settings |
+| Route              | Method | Validation Schema      | Auth     | Purpose                                      |
+| ------------------ | ------ | ---------------------- | -------- | -------------------------------------------- |
+| `/api/v1/settings` | GET    | —                      | Required | Fetch user settings (upsert default if none) |
+| `/api/v1/settings` | PUT    | `settingsUpdateSchema` | Required | Update user settings                         |
 
 **Validation schemas (Zod):**
 
@@ -162,19 +167,19 @@ model User {
 
 #### All existing routes refactored:
 
-| Route File | Changes |
-|------------|---------|
-| `profile.ts` | Add `profileUpdateSchema` validation on PUT |
-| `universities.ts` | Add `universityCreateSchema` / `universityUpdateSchema` validation |
-| `professors.ts` | Add `professorCreateSchema` / `professorUpdateSchema` / `logEmailSchema` validation |
-| `applications.ts` | Add `applicationCreateSchema` / `applicationUpdateSchema` validation |
-| `documents.ts` | Add `documentCreateSchema` / `documentUpdateSchema` validation |
-| `decisionEngine.ts` | Add query param validation |
-| `scholarships.ts` | Add query param validation |
-| `timeline.ts` | Add query param validation |
-| `rankings.ts` | Add query param validation |
-| `countries.ts` | No body mutations, but add query param validation |
-| `stats.ts` | No changes needed (read-only, no body) |
+| Route File          | Changes                                                                             |
+| ------------------- | ----------------------------------------------------------------------------------- |
+| `profile.ts`        | Add `profileUpdateSchema` validation on PUT                                         |
+| `universities.ts`   | Add `universityCreateSchema` / `universityUpdateSchema` validation                  |
+| `professors.ts`     | Add `professorCreateSchema` / `professorUpdateSchema` / `logEmailSchema` validation |
+| `applications.ts`   | Add `applicationCreateSchema` / `applicationUpdateSchema` validation                |
+| `documents.ts`      | Add `documentCreateSchema` / `documentUpdateSchema` validation                      |
+| `decisionEngine.ts` | Add query param validation                                                          |
+| `scholarships.ts`   | Add query param validation                                                          |
+| `timeline.ts`       | Add query param validation                                                          |
+| `rankings.ts`       | Add query param validation                                                          |
+| `countries.ts`      | No body mutations, but add query param validation                                   |
+| `stats.ts`          | No changes needed (read-only, no body)                                              |
 
 ---
 
@@ -216,10 +221,10 @@ backend/src/
 
 ### 7. Database Changes
 
-| Change | Type | Risk |
-|--------|------|------|
-| Add `UserSettings` model | Additive | ✅ Zero risk — new table, no existing data affected |
-| Add `settings` relation to `User` | Additive | ✅ Zero risk — optional relation |
+| Change                            | Type     | Risk                                                |
+| --------------------------------- | -------- | --------------------------------------------------- |
+| Add `UserSettings` model          | Additive | ✅ Zero risk — new table, no existing data affected |
+| Add `settings` relation to `User` | Additive | ✅ Zero risk — optional relation                    |
 
 **Migration strategy:** Single `prisma migrate dev` with descriptive name `add-user-settings`.
 
@@ -227,36 +232,36 @@ backend/src/
 
 ### 8. API Changes
 
-| Change | Breaking? | Migration Path |
-|--------|-----------|----------------|
-| All responses wrapped in `{ success, data }` or `{ success, error, code }` | ⚠️ Yes — frontend must update | Update `fetchApi` to unwrap `data` from the new envelope. This is a single-point change in `frontend/src/lib/api.ts`. |
-| New 422 status code for validation errors | No — frontend currently treats all non-2xx as errors | Frontend already throws on `!res.ok`. The new `code` field enables smarter error handling. |
-| New `/api/v1/settings` endpoints | No — additive | Frontend settings page updated to use them. |
+| Change                                                                     | Breaking?                                            | Migration Path                                                                                                        |
+| -------------------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| All responses wrapped in `{ success, data }` or `{ success, error, code }` | ⚠️ Yes — frontend must update                        | Update `fetchApi` to unwrap `data` from the new envelope. This is a single-point change in `frontend/src/lib/api.ts`. |
+| New 422 status code for validation errors                                  | No — frontend currently treats all non-2xx as errors | Frontend already throws on `!res.ok`. The new `code` field enables smarter error handling.                            |
+| New `/api/v1/settings` endpoints                                           | No — additive                                        | Frontend settings page updated to use them.                                                                           |
 
 ---
 
 ### 9. Compatibility Analysis
 
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
-| **API contract change** | 🟠 Medium — response shape changes | Update `fetchApi` FIRST, then deploy backend changes. The wrapper function is a single point of change. |
-| **Migration** | ✅ None — purely additive | Standard `prisma migrate dev` |
-| **Auth** | ✅ None — no auth flow changes | Settings endpoints use existing `requireAuth` middleware |
-| **UI** | ✅ Minimal — only Settings page changes | Settings page already exists; replace mock logic with real API calls |
-| **State** | ✅ None — no Redux store changes | Settings are fetched on Settings page mount only, no global state needed |
-| **Breaking changes** | 🟠 One — API response envelope | Mitigated by updating `fetchApi` to transparently unwrap the new format |
+| Dimension               | Risk                                    | Mitigation                                                                                              |
+| ----------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| **API contract change** | 🟠 Medium — response shape changes      | Update `fetchApi` FIRST, then deploy backend changes. The wrapper function is a single point of change. |
+| **Migration**           | ✅ None — purely additive               | Standard `prisma migrate dev`                                                                           |
+| **Auth**                | ✅ None — no auth flow changes          | Settings endpoints use existing `requireAuth` middleware                                                |
+| **UI**                  | ✅ Minimal — only Settings page changes | Settings page already exists; replace mock logic with real API calls                                    |
+| **State**               | ✅ None — no Redux store changes        | Settings are fetched on Settings page mount only, no global state needed                                |
+| **Breaking changes**    | 🟠 One — API response envelope          | Mitigated by updating `fetchApi` to transparently unwrap the new format                                 |
 
 ---
 
 ### 10. Risks and Mitigation
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| API response envelope breaks frontend | Medium | High | Update `fetchApi` to unwrap `data` field — ALL frontend calls go through this single function |
-| Zod adds bundle size to backend | Low | Low | Zod is already a frontend dependency; backend is server-only so bundle size is irrelevant |
-| Rate limiting blocks legitimate users | Low | Medium | Start with generous limits (100/min). Log rate-limit events. Add bypass for health checks. |
-| New `express-rate-limit` package | Low | Low | Well-maintained, zero-dependency package. Confirm with user before installing. |
-| Migration conflicts | None | — | Purely additive migration — no existing columns changed |
+| Risk                                  | Probability | Impact | Mitigation                                                                                    |
+| ------------------------------------- | ----------- | ------ | --------------------------------------------------------------------------------------------- |
+| API response envelope breaks frontend | Medium      | High   | Update `fetchApi` to unwrap `data` field — ALL frontend calls go through this single function |
+| Zod adds bundle size to backend       | Low         | Low    | Zod is already a frontend dependency; backend is server-only so bundle size is irrelevant     |
+| Rate limiting blocks legitimate users | Low         | Medium | Start with generous limits (100/min). Log rate-limit events. Add bypass for health checks.    |
+| New `express-rate-limit` package      | Low         | Low    | Well-maintained, zero-dependency package. Confirm with user before installing.                |
+| Migration conflicts                   | None        | —      | Purely additive migration — no existing columns changed                                       |
 
 ---
 
@@ -270,6 +275,7 @@ This phase establishes foundations that make future phases dramatically easier:
 - **Future API Client Generation:** The `ApiResponse<T>` contract is the foundation for auto-generating a typed frontend client.
 
 **What this phase avoids:**
+
 - No hardcoded logic — all validation is schema-driven and composable
 - No duplicate code — shared utilities in `utils/` and `validators/`
 - No tight coupling — validation middleware is independent of route business logic
@@ -304,14 +310,14 @@ Create a **guided multi-step onboarding wizard** that new users see on their fir
 
 After backend hardening (Phase 1), the single biggest user experience gap is **the first 60 seconds after registration**:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **No onboarding flow** — new users land on an empty dashboard with 0 data | Immediate churn — users don't understand the product value | 🔴 CRITICAL |
-| **Profile completeness drives match scores** — but users must discover the Profile page themselves | The core value proposition (personalized country recommendations) requires data users don't provide | 🔴 CRITICAL |
-| **No `isOnboarded` flag** — every dashboard load rechecks profile, no way to distinguish first-time from returning user | Can't conditionally show onboarding or welcome-back flows | 🟠 HIGH |
-| **Dashboard profile modal is redundant** — quick-edit modal on dashboard duplicates the full Profile page, but collects only 5/10 fields | Users who fill the modal think they're done, but miss 5 critical match intelligence fields | 🟠 HIGH |
-| **No contextual guidance** — new users see "AI Fit Recommendations" with generic scores, no explanation of how to improve them | Users don't understand the relationship between profile data and recommendation quality | 🟡 MEDIUM |
-| **Registration → login → empty dashboard** is a cold, generic experience | No wow moment, no value demonstration, no momentum | 🟡 MEDIUM |
+| Problem                                                                                                                                  | Impact                                                                                              | Risk Level  |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------- |
+| **No onboarding flow** — new users land on an empty dashboard with 0 data                                                                | Immediate churn — users don't understand the product value                                          | 🔴 CRITICAL |
+| **Profile completeness drives match scores** — but users must discover the Profile page themselves                                       | The core value proposition (personalized country recommendations) requires data users don't provide | 🔴 CRITICAL |
+| **No `isOnboarded` flag** — every dashboard load rechecks profile, no way to distinguish first-time from returning user                  | Can't conditionally show onboarding or welcome-back flows                                           | 🟠 HIGH     |
+| **Dashboard profile modal is redundant** — quick-edit modal on dashboard duplicates the full Profile page, but collects only 5/10 fields | Users who fill the modal think they're done, but miss 5 critical match intelligence fields          | 🟠 HIGH     |
+| **No contextual guidance** — new users see "AI Fit Recommendations" with generic scores, no explanation of how to improve them           | Users don't understand the relationship between profile data and recommendation quality             | 🟡 MEDIUM   |
+| **Registration → login → empty dashboard** is a cold, generic experience                                                                 | No wow moment, no value demonstration, no momentum                                                  | 🟡 MEDIUM   |
 
 **Business value:** Onboarding is THE highest-leverage UX improvement. A user who completes the wizard will see personalized country recommendations immediately — that's the product's "aha moment." Without it, most new users will see generic scores, get confused, and leave.
 
@@ -324,6 +330,7 @@ After backend hardening (Phase 1), the single biggest user experience gap is **t
 A full-screen modal/page wizard with 4 steps, shown to users whose `isOnboarded` flag is `false`:
 
 **Step 1 — Welcome & Academic Profile**
+
 - Welcome message with user's name (from auth)
 - University name (text input with autocomplete suggestions for BD universities)
 - CGPA (number input with 4.0 scale validation)
@@ -332,17 +339,20 @@ A full-screen modal/page wizard with 4 steps, shown to users whose `isOnboarded`
 - Target intake (select: Sep 2028, Jan 2029, Sep 2029)
 
 **Step 2 — Match Intelligence**
+
 - IELTS score (number input with 0.5 step, 0–9.0)
 - Monthly budget in USD (number input, with BDT equivalent shown live: `$1,500 ≈ ৳180,000/month`)
 - Research interests (tag picker with quick-add suggestions: NLP, LLM, CV, RL, Deep Learning, etc.)
 - PR priority slider (1–5 with labeled descriptions)
 
 **Step 3 — Priorities & Preferences**
+
 - Family relocation toggle (solo vs. bringing spouse/children)
 - Country preferences (optional multi-select: "I'm already considering" with flags)
 - What matters most (drag-rank or priority selector: Funding > PR > Job Market > Ranking > Cost)
 
 **Step 4 — Summary & Launch**
+
 - Visual summary of everything entered
 - Profile completeness gauge (should be ≥80%)
 - "See Your Personalized Recommendations →" CTA button
@@ -358,6 +368,7 @@ A full-screen modal/page wizard with 4 steps, shown to users whose `isOnboarded`
 #### 3.3 Dashboard Welcome-Back Banner (Post-Onboarding)
 
 After onboarding is complete, the dashboard welcome banner changes:
+
 - Shows "Your profile is X% complete" with contextual tips to reach 100%
 - If profile < 60%: Warning banner "Complete your match intelligence to unlock accurate recommendations"
 - If profile ≥ 80%: Success indicator with match quality confidence
@@ -372,8 +383,9 @@ After onboarding is complete, the dashboard welcome banner changes:
 #### 3.5 Post-Onboarding Guided Tour (Lightweight)
 
 After the wizard, show 3–4 tooltip-style highlights on the dashboard:
+
 - "Your top country matches are here" → points to AI Fit Recommendations section
-- "Track universities you're interested in" → points to sidebar Universities link  
+- "Track universities you're interested in" → points to sidebar Universities link
 - "Email professors directly" → points to sidebar Professors link
 - Dismissible, not shown again after user clicks through or closes
 
@@ -384,18 +396,21 @@ After the wizard, show 3–4 tooltip-style highlights on the dashboard:
 #### Onboarding Wizard (`/dashboard/onboarding` or full-screen overlay)
 
 **Layout:**
+
 - Full-screen overlay on top of the dashboard (not a separate route — prevents URL sharing/bookmarking of a half-state)
 - Centered card, max-width 640px, with glassmorphism background
 - Step indicator at the top: 4 dots/pills showing current step, completed steps have checkmarks
 - Progress bar under the step indicator showing overall progress
 
 **Step Navigation:**
+
 - "Back" and "Next" buttons at the bottom of each step
 - "Next" validates current step fields before proceeding (Zod client-side validation)
 - "Skip for now" link under the Next button (still marks step as visited, sets fields to null)
 - Keyboard: Enter advances to next step, Escape does nothing (prevent accidental close)
 
 **Step 1 — Academic Profile:**
+
 - Hero heading: "Let's set up your profile" with subtle gradient text
 - Subheading: "This takes about 2 minutes and powers all your recommendations"
 - Fields arranged in 2-column grid (desktop), single column (mobile)
@@ -406,6 +421,7 @@ After the wizard, show 3–4 tooltip-style highlights on the dashboard:
 - Target intake: Button group (Sep 2028, Jan 2029, Sep 2029, Other)
 
 **Step 2 — Match Intelligence:**
+
 - Section heading: "What matters to you?" with Brain icon
 - IELTS: Number input with helper text "6.5+ recommended for English-speaking countries"
 - Budget: Input with live BDT conversion shown below (using static rate, ~120 BDT/USD)
@@ -413,11 +429,13 @@ After the wizard, show 3–4 tooltip-style highlights on the dashboard:
 - PR slider: Same slider as Profile page, with descriptions and color coding
 
 **Step 3 — Priorities & Preferences:**
+
 - Family toggle: Two large cards (Solo / Family) with icons, click to select
 - Country preferences: Grid of country flags with checkboxes, max 5 selections, with labels
 - Priority ranker: Drag-and-drop or numbered select for: Funding, PR, Job Market, Ranking, Cost
 
 **Step 4 — Summary:**
+
 - All entered data displayed in a clean summary card
 - Profile completeness radial gauge (like the dashboard PR gauge)
 - "Edit" buttons next to each section that jump back to the relevant step
@@ -431,24 +449,29 @@ After the wizard, show 3–4 tooltip-style highlights on the dashboard:
 **Empty State:** Not applicable (wizard guides data entry)
 
 **Mobile (< 768px):**
+
 - Single column layout throughout
 - Step indicator becomes a text "Step 2 of 4" instead of dots
 - Full-width buttons, min-height 48px for touch targets
 - Scroll within each step if content overflows
 
 **Tablet (768px–1024px):**
+
 - Same as desktop but with slightly smaller max-width (560px)
 
 **Desktop (> 1024px):**
+
 - Centered 640px card with backdrop blur
 - Two-column grid for field pairs
 
 **Hover States:**
+
 - Next/Back buttons: subtle scale and color shift
 - Tag suggestions: border highlight on hover
 - Country flags: scale 1.05 with subtle shadow
 
 **Animations:**
+
 - Step transitions: slide-in from right (next) or left (back), 300ms
 - Progress bar: smooth width transition, 500ms
 - Summary card: fade-in with staggered list animation
@@ -473,11 +496,11 @@ model UserProfile {
 
 #### API
 
-| Route | Method | Changes | Auth |
-|-------|--------|---------|------|
-| `/api/v1/profile` | GET | Add `isOnboarded` to response (already returned by Prisma) | Required |
-| `/api/v1/profile` | PUT | Accept `isOnboarded` field in body | Required |
-| `/api/v1/profile/complete-onboarding` | POST | **NEW** — Bulk-update all profile fields + set `isOnboarded: true` in one transaction | Required |
+| Route                                 | Method | Changes                                                                               | Auth     |
+| ------------------------------------- | ------ | ------------------------------------------------------------------------------------- | -------- |
+| `/api/v1/profile`                     | GET    | Add `isOnboarded` to response (already returned by Prisma)                            | Required |
+| `/api/v1/profile`                     | PUT    | Accept `isOnboarded` field in body                                                    | Required |
+| `/api/v1/profile/complete-onboarding` | POST   | **NEW** — Bulk-update all profile fields + set `isOnboarded: true` in one transaction | Required |
 
 **New endpoint detail:**
 
@@ -506,6 +529,7 @@ model UserProfile {
 ```
 
 **Why a separate endpoint?** The existing PUT `/profile` is for incremental updates. The onboarding endpoint:
+
 1. Sets `isOnboarded: true` atomically
 2. Can trigger future side-effects (e.g., send welcome email, log analytics event)
 3. Validates the full profile context (not just individual field changes)
@@ -558,8 +582,8 @@ backend/src/
 
 ### 7. Database Changes
 
-| Change | Type | Risk |
-|--------|------|------|
+| Change                                                     | Type     | Risk                                                              |
+| ---------------------------------------------------------- | -------- | ----------------------------------------------------------------- |
 | Add `isOnboarded Boolean @default(false)` to `UserProfile` | Additive | ✅ Zero risk — new column with default, existing rows get `false` |
 
 **Migration strategy:** Single `prisma migrate dev` with name `add-is-onboarded-flag`. All existing users will have `isOnboarded: false`, which means they'll see the wizard on next login — this is the desired behavior.
@@ -568,36 +592,36 @@ backend/src/
 
 ### 8. API Changes
 
-| Change | Breaking? | Migration Path |
-|--------|-----------|----------------|
-| `isOnboarded` field added to GET `/profile` response | No — additive field | Frontend reads it when available |
-| `isOnboarded` accepted in PUT `/profile` body | No — optional field | No change needed for existing calls |
-| New POST `/profile/complete-onboarding` endpoint | No — additive | New endpoint, no existing code calls it |
+| Change                                               | Breaking?           | Migration Path                          |
+| ---------------------------------------------------- | ------------------- | --------------------------------------- |
+| `isOnboarded` field added to GET `/profile` response | No — additive field | Frontend reads it when available        |
+| `isOnboarded` accepted in PUT `/profile` body        | No — optional field | No change needed for existing calls     |
+| New POST `/profile/complete-onboarding` endpoint     | No — additive       | New endpoint, no existing code calls it |
 
 ---
 
 ### 9. Compatibility Analysis
 
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
-| **Migration** | ✅ None — purely additive column | `@default(false)` ensures existing rows are valid |
-| **Auth** | ✅ None — uses existing `requireAuth` | No auth flow changes |
-| **UI** | 🟡 Low — existing dashboard layout needs conditional rendering | Add `isOnboarded` check in dashboard layout, redirect to wizard if false |
-| **State** | ✅ Minimal — profile Redux slice already exists | `isOnboarded` is part of the profile object, no new slice needed |
-| **API** | ✅ None — new endpoint, no changes to existing endpoints | Existing profile PUT still works identically |
-| **Breaking changes** | 🟡 One behavioral change — existing users will see the wizard | Mitigated: wizard has "Skip" option and users can complete it in < 2 minutes |
+| Dimension            | Risk                                                           | Mitigation                                                                   |
+| -------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Migration**        | ✅ None — purely additive column                               | `@default(false)` ensures existing rows are valid                            |
+| **Auth**             | ✅ None — uses existing `requireAuth`                          | No auth flow changes                                                         |
+| **UI**               | 🟡 Low — existing dashboard layout needs conditional rendering | Add `isOnboarded` check in dashboard layout, redirect to wizard if false     |
+| **State**            | ✅ Minimal — profile Redux slice already exists                | `isOnboarded` is part of the profile object, no new slice needed             |
+| **API**              | ✅ None — new endpoint, no changes to existing endpoints       | Existing profile PUT still works identically                                 |
+| **Breaking changes** | 🟡 One behavioral change — existing users will see the wizard  | Mitigated: wizard has "Skip" option and users can complete it in < 2 minutes |
 
 ---
 
 ### 10. Risks and Mitigation
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Existing users see the wizard after deploy | Certain | Low | The wizard has a "Skip & go to dashboard" link. Existing users can complete it in 2 minutes, which actually improves their match scores. |
-| Wizard state lost on page refresh | Medium | Medium | Store wizard progress in `sessionStorage`. Restore on re-render. |
-| Onboarding adds friction for users who just want to explore | Low | Medium | Prominent "Skip for now" link on every step. Dashboard is accessible from sidebar even during onboarding. |
-| Step transitions feel janky on mobile | Low | Low | Use CSS `transform: translateX()` with `transition` instead of JavaScript animations. Test on low-end devices. |
-| BDT conversion rate becomes stale | Low | Low | Use a static rate (120 BDT/USD) with a "Rate as of Jun 2026" disclaimer. Future phase can add live rates. |
+| Risk                                                        | Probability | Impact | Mitigation                                                                                                                               |
+| ----------------------------------------------------------- | ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Existing users see the wizard after deploy                  | Certain     | Low    | The wizard has a "Skip & go to dashboard" link. Existing users can complete it in 2 minutes, which actually improves their match scores. |
+| Wizard state lost on page refresh                           | Medium      | Medium | Store wizard progress in `sessionStorage`. Restore on re-render.                                                                         |
+| Onboarding adds friction for users who just want to explore | Low         | Medium | Prominent "Skip for now" link on every step. Dashboard is accessible from sidebar even during onboarding.                                |
+| Step transitions feel janky on mobile                       | Low         | Low    | Use CSS `transform: translateX()` with `transition` instead of JavaScript animations. Test on low-end devices.                           |
+| BDT conversion rate becomes stale                           | Low         | Low    | Use a static rate (120 BDT/USD) with a "Rate as of Jun 2026" disclaimer. Future phase can add live rates.                                |
 
 ---
 
@@ -612,6 +636,7 @@ This phase establishes foundations that make future phases dramatically easier:
 - **Future "Team/Advisor" feature:** The wizard can include a "Share with advisor" step.
 
 **What this phase avoids:**
+
 - No hardcoded step logic — wizard shell is generic and step-count agnostic
 - No duplicate profile forms — step components share field components with the Profile page
 - No tight coupling — wizard state is local, only dispatched to Redux on completion
@@ -663,14 +688,14 @@ if (loading) {
 }
 ```
 
-| Problem | Where | Risk Level |
-|---------|-------|------------|
+| Problem                                                                                                                        | Where                                                                                                                              | Risk Level  |
+| ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | **All pages use identical centered spinner** — user sees a blank page with a spinning icon for 1–3 seconds on every navigation | Dashboard, Countries, Universities, Professors, Applications, Documents, Rankings, Profile, Analytics, Timeline, Settings, Funding | 🔴 CRITICAL |
-| **Empty states are inconsistent** — some pages use `EmptyState` component, others use inline `<div>` with basic text | Applications (`<p>No applications...</p>`), Documents (same), Universities (uses `EmptyState`), Dashboard (uses `EmptyState`) | 🟠 HIGH |
-| **Error states are dismissible but not recoverable** — error banners show text but no "Retry" button | All data-fetching pages show `setError("Failed to load...")` with no retry action | 🟠 HIGH |
-| **No progressive loading** — Dashboard fetches 5 API calls in parallel but shows nothing until ALL complete | Dashboard page: stats + profile + universities + countries + decision engine must ALL resolve | 🟡 MEDIUM |
-| **No optimistic UI** — status updates (application status, document status) block the UI until API returns | Applications page `handleUpdateStatus`, Documents page `handleUpdateStatus` | 🟡 MEDIUM |
-| **`confirm()` used for delete actions** — native browser dialog breaks the premium feel | Applications, Documents, Professors, Universities all use `confirm("Are you sure?")` | 🟡 MEDIUM |
+| **Empty states are inconsistent** — some pages use `EmptyState` component, others use inline `<div>` with basic text           | Applications (`<p>No applications...</p>`), Documents (same), Universities (uses `EmptyState`), Dashboard (uses `EmptyState`)      | 🟠 HIGH     |
+| **Error states are dismissible but not recoverable** — error banners show text but no "Retry" button                           | All data-fetching pages show `setError("Failed to load...")` with no retry action                                                  | 🟠 HIGH     |
+| **No progressive loading** — Dashboard fetches 5 API calls in parallel but shows nothing until ALL complete                    | Dashboard page: stats + profile + universities + countries + decision engine must ALL resolve                                      | 🟡 MEDIUM   |
+| **No optimistic UI** — status updates (application status, document status) block the UI until API returns                     | Applications page `handleUpdateStatus`, Documents page `handleUpdateStatus`                                                        | 🟡 MEDIUM   |
+| **`confirm()` used for delete actions** — native browser dialog breaks the premium feel                                        | Applications, Documents, Professors, Universities all use `confirm("Are you sure?")`                                               | 🟡 MEDIUM   |
 
 **Business value:** Skeleton loaders and progressive loading eliminate the perception of slowness. Users who see a shaped skeleton for 500ms feel faster than users who see a spinner for the same 500ms. Error recovery reduces support requests. Beautiful empty states guide users to take action instead of bouncing.
 
@@ -692,20 +717,20 @@ Each skeleton matches the exact layout of the real component it replaces.
 
 #### 3.2 Page-Specific Skeleton Screens (12 pages)
 
-| Page | Skeleton Layout |
-|------|----------------|
-| **Dashboard** | 3 metric cards skeleton → 3 country cards skeleton → deadline list skeleton |
-| **Countries Explorer** | Search bar skeleton → 3×3 grid of country card skeletons |
-| **Country Detail** | Hero section skeleton → tabbed content skeleton |
-| **Universities** | Header + 2×2 grid of university card skeletons |
-| **Add University** | Form skeleton with 8 field placeholders |
-| **Professors** | Kanban-style column skeletons (3 columns × 2 cards each) |
-| **Applications** | Pipeline summary skeleton → 2×2 application card skeletons |
-| **Documents** | 2×3 grid of document card skeletons |
-| **Profile** | Completeness bar skeleton → 2 form section skeletons |
-| **Rankings** | Table with 10 row skeletons + search bar |
-| **Timeline** | Vertical timeline with 6 milestone skeletons |
-| **Analytics** | 2 chart placeholder skeletons + 3 stat cards |
+| Page                   | Skeleton Layout                                                             |
+| ---------------------- | --------------------------------------------------------------------------- |
+| **Dashboard**          | 3 metric cards skeleton → 3 country cards skeleton → deadline list skeleton |
+| **Countries Explorer** | Search bar skeleton → 3×3 grid of country card skeletons                    |
+| **Country Detail**     | Hero section skeleton → tabbed content skeleton                             |
+| **Universities**       | Header + 2×2 grid of university card skeletons                              |
+| **Add University**     | Form skeleton with 8 field placeholders                                     |
+| **Professors**         | Kanban-style column skeletons (3 columns × 2 cards each)                    |
+| **Applications**       | Pipeline summary skeleton → 2×2 application card skeletons                  |
+| **Documents**          | 2×3 grid of document card skeletons                                         |
+| **Profile**            | Completeness bar skeleton → 2 form section skeletons                        |
+| **Rankings**           | Table with 10 row skeletons + search bar                                    |
+| **Timeline**           | Vertical timeline with 6 milestone skeletons                                |
+| **Analytics**          | 2 chart placeholder skeletons + 3 stat cards                                |
 
 #### 3.3 Enhanced Empty State Component
 
@@ -724,6 +749,7 @@ Upgrade the existing `EmptyState` component:
 #### 3.4 Error State with Retry
 
 Create a reusable `ErrorState` component:
+
 - Icon + error message + "Try Again" button
 - "Try Again" calls the original fetch function
 - Network errors show specific message: "Unable to reach the server. Check your connection."
@@ -733,6 +759,7 @@ Create a reusable `ErrorState` component:
 #### 3.5 Confirmation Dialog (Replace `confirm()`)
 
 Create a reusable `ConfirmDialog` component using shadcn `Dialog`:
+
 - Title, description, confirm button (destructive variant), cancel button
 - Replaces all `confirm()` calls across Applications, Documents, Professors, Universities
 - Accessible (focus trap, Escape to close, ARIA labels)
@@ -740,6 +767,7 @@ Create a reusable `ConfirmDialog` component using shadcn `Dialog`:
 #### 3.6 Progressive Loading on Dashboard
 
 Refactor dashboard to render sections independently:
+
 - Stats section loads and renders first
 - Country recommendations load next (don't block stats)
 - Decision engine loads last (optional, catches errors silently)
@@ -748,6 +776,7 @@ Refactor dashboard to render sections independently:
 #### 3.7 Optimistic Status Updates
 
 For status dropdown changes (Applications, Documents):
+
 - Immediately update UI state
 - Fire API call in background
 - On failure: revert to previous state + show error toast
@@ -842,21 +871,21 @@ None — this phase is entirely frontend.
 
 ### 9. Compatibility Analysis
 
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
-| **UI** | 🟡 Low — every page changes its loading/empty/error rendering | Changes are isolated to conditional rendering blocks; business logic untouched |
-| **State** | ✅ None — no Redux changes | Optimistic updates use local `useState` |
-| **Breaking** | ✅ None — no API or data model changes | Pure visual improvements |
+| Dimension    | Risk                                                          | Mitigation                                                                     |
+| ------------ | ------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **UI**       | 🟡 Low — every page changes its loading/empty/error rendering | Changes are isolated to conditional rendering blocks; business logic untouched |
+| **State**    | ✅ None — no Redux changes                                    | Optimistic updates use local `useState`                                        |
+| **Breaking** | ✅ None — no API or data model changes                        | Pure visual improvements                                                       |
 
 ---
 
 ### 10. Risks and Mitigation
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Skeleton dimensions mismatch real content → layout shift | Medium | Low | Measure actual rendered dimensions and match exactly |
-| Optimistic updates cause stale data on network failure | Low | Medium | Always revert to previous state on error + show toast |
-| Too many skeleton variants → maintenance burden | Low | Low | Use composable primitives; page skeletons compose them |
+| Risk                                                     | Probability | Impact | Mitigation                                             |
+| -------------------------------------------------------- | ----------- | ------ | ------------------------------------------------------ |
+| Skeleton dimensions mismatch real content → layout shift | Medium      | Low    | Measure actual rendered dimensions and match exactly   |
+| Optimistic updates cause stale data on network failure   | Low         | Medium | Always revert to previous state on error + show toast  |
+| Too many skeleton variants → maintenance burden          | Low         | Low    | Use composable primitives; page skeletons compose them |
 
 ---
 
@@ -896,16 +925,16 @@ Transform GradPlanner from a desktop-first app with basic mobile support into a 
 
 The current mobile experience has significant usability issues:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **No bottom navigation** — mobile users must open the hamburger sidebar menu for every page transition | High friction; mobile users average 3x more taps to navigate than necessary | 🔴 CRITICAL |
-| **Data tables (Rankings) overflow horizontally** — no responsive table strategy | Rankings page is unusable on mobile; users must scroll horizontally to see all columns | 🔴 CRITICAL |
-| **Modals use fixed positioning without mobile adaptation** — profile edit, add university, add document modals overflow on small screens | Form inputs below the fold, submit buttons unreachable without scrolling | 🟠 HIGH |
-| **Country comparison grid uses 3-column layout** — cards stack vertically but are too information-dense for mobile | Country cards on mobile have tiny text, cramped metrics, unreadable on small phones | 🟠 HIGH |
-| **Touch targets too small** — many buttons are 32px or smaller (minimum recommended: 44px) | Misclicks, frustration on touch devices | 🟠 HIGH |
-| **No responsive typography** — same font sizes on 320px phone and 2560px monitor | Text either too small on mobile or too large on desktop | 🟡 MEDIUM |
-| **Sidebar collapse button overlaps content** — the circular ◀/▶ toggle overlaps the main content area | Visual glitch on medium-width tablets | 🟡 MEDIUM |
-| **No swipe gestures** — mobile sidebar has no swipe-to-close | Feels non-native compared to mobile apps | 🟡 MEDIUM |
+| Problem                                                                                                                                  | Impact                                                                                 | Risk Level  |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----------- |
+| **No bottom navigation** — mobile users must open the hamburger sidebar menu for every page transition                                   | High friction; mobile users average 3x more taps to navigate than necessary            | 🔴 CRITICAL |
+| **Data tables (Rankings) overflow horizontally** — no responsive table strategy                                                          | Rankings page is unusable on mobile; users must scroll horizontally to see all columns | 🔴 CRITICAL |
+| **Modals use fixed positioning without mobile adaptation** — profile edit, add university, add document modals overflow on small screens | Form inputs below the fold, submit buttons unreachable without scrolling               | 🟠 HIGH     |
+| **Country comparison grid uses 3-column layout** — cards stack vertically but are too information-dense for mobile                       | Country cards on mobile have tiny text, cramped metrics, unreadable on small phones    | 🟠 HIGH     |
+| **Touch targets too small** — many buttons are 32px or smaller (minimum recommended: 44px)                                               | Misclicks, frustration on touch devices                                                | 🟠 HIGH     |
+| **No responsive typography** — same font sizes on 320px phone and 2560px monitor                                                         | Text either too small on mobile or too large on desktop                                | 🟡 MEDIUM   |
+| **Sidebar collapse button overlaps content** — the circular ◀/▶ toggle overlaps the main content area                                    | Visual glitch on medium-width tablets                                                  | 🟡 MEDIUM   |
+| **No swipe gestures** — mobile sidebar has no swipe-to-close                                                                             | Feels non-native compared to mobile apps                                               | 🟡 MEDIUM   |
 
 **Business value:** The target user (Bangladeshi CSE student) primarily accesses web apps on mobile devices. A poor mobile experience means losing the majority of the user base. Bottom navigation alone typically increases mobile engagement by 30–50%.
 
@@ -926,6 +955,7 @@ A fixed bottom navigation bar visible only on mobile (`< 768px`):
 #### 3.2 Responsive Data Tables
 
 Replace the Rankings page table with a responsive pattern:
+
 - **Desktop (>1024px):** Full table with all columns
 - **Tablet (768–1024px):** Table with column visibility toggle (hide less important columns)
 - **Mobile (<768px):** Card-based layout — each university becomes a card showing key metrics
@@ -934,6 +964,7 @@ Replace the Rankings page table with a responsive pattern:
 #### 3.3 Mobile-Optimized Modals → Bottom Sheets
 
 Transform all modals on mobile to **bottom sheets** (slide-up from bottom):
+
 - Profile edit, Add University, Add Professor, Add Document, Add Application
 - Bottom sheets use 85% viewport height max
 - Drag handle at top for swipe-to-close
@@ -943,6 +974,7 @@ Transform all modals on mobile to **bottom sheets** (slide-up from bottom):
 #### 3.4 Touch Target Standardization
 
 Audit and fix all interactive elements:
+
 - All buttons: minimum 44×44px touch target (CSS, not visual size)
 - All select dropdowns: minimum 44px height
 - All tag pills (research interests): minimum 36px touch target
@@ -952,6 +984,7 @@ Audit and fix all interactive elements:
 #### 3.5 Responsive Typography System
 
 Add a fluid typography scale using CSS `clamp()`:
+
 - Page titles: `clamp(1.25rem, 3vw, 1.875rem)` (20px→30px)
 - Section headings: `clamp(1rem, 2.5vw, 1.25rem)` (16px→20px)
 - Body text: `clamp(0.8125rem, 2vw, 0.875rem)` (13px→14px)
@@ -960,6 +993,7 @@ Add a fluid typography scale using CSS `clamp()`:
 #### 3.6 Country Cards Mobile Layout
 
 Redesign country cards for mobile:
+
 - Full-width cards instead of 3-column grid
 - Horizontal metric strip (PR | Cost | AI Market) instead of vertical
 - Score badge and flag inline with title
@@ -1041,14 +1075,14 @@ frontend/src/components/
 
 #### Modified Files
 
-| File | Changes |
-|------|---------|
-| `DashboardNav.tsx` | Hide sidebar hamburger on mobile, add `md:flex` to desktop sidebar |
-| `dashboard/layout.tsx` | Add `<BottomNav />` for mobile, add bottom padding to main content |
-| `globals.css` | Add fluid typography scale, safe-area variables |
-| All modal-using pages | Replace `<div className="fixed inset-0">` with `<ResponsiveModal>` |
-| Rankings page | Replace `<table>` with `<ResponsiveTable>` |
-| Countries page | Update grid from `md:grid-cols-3` to responsive with mobile card variant |
+| File                   | Changes                                                                  |
+| ---------------------- | ------------------------------------------------------------------------ |
+| `DashboardNav.tsx`     | Hide sidebar hamburger on mobile, add `md:flex` to desktop sidebar       |
+| `dashboard/layout.tsx` | Add `<BottomNav />` for mobile, add bottom padding to main content       |
+| `globals.css`          | Add fluid typography scale, safe-area variables                          |
+| All modal-using pages  | Replace `<div className="fixed inset-0">` with `<ResponsiveModal>`       |
+| Rankings page          | Replace `<table>` with `<ResponsiveTable>`                               |
+| Countries page         | Update grid from `md:grid-cols-3` to responsive with mobile card variant |
 
 ---
 
@@ -1066,23 +1100,23 @@ None — this phase is entirely frontend.
 
 ### 9. Compatibility Analysis
 
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
-| **UI** | 🟠 Medium — navigation pattern changes significantly on mobile | Bottom nav is `md:hidden`, sidebar is `hidden md:flex` — no desktop impact |
-| **State** | ✅ None | No state management changes |
-| **Breaking** | 🟡 Low — modal behavior changes on mobile | `ResponsiveModal` is a wrapper; modal content components unchanged |
+| Dimension    | Risk                                                           | Mitigation                                                                 |
+| ------------ | -------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **UI**       | 🟠 Medium — navigation pattern changes significantly on mobile | Bottom nav is `md:hidden`, sidebar is `hidden md:flex` — no desktop impact |
+| **State**    | ✅ None                                                        | No state management changes                                                |
+| **Breaking** | 🟡 Low — modal behavior changes on mobile                      | `ResponsiveModal` is a wrapper; modal content components unchanged         |
 
 ---
 
 ### 10. Risks and Mitigation
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Bottom nav hides content at page bottom | Certain | Low | Add `pb-20 md:pb-0` to main content container |
-| Bottom sheet swipe conflicts with form scrolling | Medium | Medium | Disable swipe-to-close when user is scrolling within the sheet content |
-| SSR hydration mismatch with `useMediaQuery` | Medium | Low | Use `useEffect` to set media query state client-side; render desktop layout on server |
-| Safe area insets not supported on older browsers | Low | Low | Fallback padding values for non-supporting browsers |
-| Performance of scroll direction detection | Low | Low | Use `requestAnimationFrame` throttling on scroll listener |
+| Risk                                             | Probability | Impact | Mitigation                                                                            |
+| ------------------------------------------------ | ----------- | ------ | ------------------------------------------------------------------------------------- |
+| Bottom nav hides content at page bottom          | Certain     | Low    | Add `pb-20 md:pb-0` to main content container                                         |
+| Bottom sheet swipe conflicts with form scrolling | Medium      | Medium | Disable swipe-to-close when user is scrolling within the sheet content                |
+| SSR hydration mismatch with `useMediaQuery`      | Medium      | Low    | Use `useEffect` to set media query state client-side; render desktop layout on server |
+| Safe area insets not supported on older browsers | Low         | Low    | Fallback padding values for non-supporting browsers                                   |
+| Performance of scroll direction detection        | Low         | Low    | Use `requestAnimationFrame` throttling on scroll listener                             |
 
 ---
 
@@ -1127,15 +1161,15 @@ Build an **in-app notification center** and **deadline-aware reminder engine** t
 
 GradPlanner currently has zero proactive communication:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **No deadline reminders** — users must manually check their tracked deadlines | A student misses a Jan 15 Sweden deadline because they forgot to check GradPlanner | 🔴 CRITICAL |
-| **No follow-up reminders for professors** — `nextFollowUp` date exists in DB but nothing surfaces it | A 14-day follow-up window passes silently; professor outreach momentum is lost | 🔴 CRITICAL |
-| **No document expiration alerts** — IELTS scores expire after 2 years, police clearance expires | User submits an application with an expired IELTS score | 🟠 HIGH |
-| **Settings page has notification toggles but they're mocked** — Phase 1 will persist them, but no system reads them | Users configure "Email alerts" that don't actually exist | 🟠 HIGH |
-| **No in-app notification center** — no bell icon, no notification history, no unread count | Users have no central place to see what needs attention | 🟠 HIGH |
-| **"What Next Today" widget is static** — shows recommendations but doesn't track user actions | Same advice repeats even after user takes action | 🟡 MEDIUM |
-| **No profile completion nudges** — users who skip onboarding never get reminded | Profile stays at 30%, match scores remain generic | 🟡 MEDIUM |
+| Problem                                                                                                             | Impact                                                                             | Risk Level  |
+| ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ----------- |
+| **No deadline reminders** — users must manually check their tracked deadlines                                       | A student misses a Jan 15 Sweden deadline because they forgot to check GradPlanner | 🔴 CRITICAL |
+| **No follow-up reminders for professors** — `nextFollowUp` date exists in DB but nothing surfaces it                | A 14-day follow-up window passes silently; professor outreach momentum is lost     | 🔴 CRITICAL |
+| **No document expiration alerts** — IELTS scores expire after 2 years, police clearance expires                     | User submits an application with an expired IELTS score                            | 🟠 HIGH     |
+| **Settings page has notification toggles but they're mocked** — Phase 1 will persist them, but no system reads them | Users configure "Email alerts" that don't actually exist                           | 🟠 HIGH     |
+| **No in-app notification center** — no bell icon, no notification history, no unread count                          | Users have no central place to see what needs attention                            | 🟠 HIGH     |
+| **"What Next Today" widget is static** — shows recommendations but doesn't track user actions                       | Same advice repeats even after user takes action                                   | 🟡 MEDIUM   |
+| **No profile completion nudges** — users who skip onboarding never get reminded                                     | Profile stays at 30%, match scores remain generic                                  | 🟡 MEDIUM   |
 
 **Business value:** Notifications are the #1 retention mechanism in SaaS products. A student who gets a "Your Sweden deadline is in 30 days" notification is 5x more likely to return than one who doesn't. Professor follow-up reminders directly improve admission outcomes. This phase transforms GradPlanner from a tool users open occasionally into a companion that actively helps.
 
@@ -1146,25 +1180,27 @@ GradPlanner currently has zero proactive communication:
 #### 3.1 Notification Data Model & Backend Engine
 
 **New `Notification` model:**
+
 - Stores per-user notifications with type, title, message, read status, link, and creation timestamp
 - Notification types: `DEADLINE_APPROACHING`, `FOLLOW_UP_DUE`, `DOCUMENT_EXPIRING`, `PROFILE_INCOMPLETE`, `APPLICATION_UPDATE`, `SYSTEM`
 - A backend notification generation service that runs on specific triggers
 
 **Notification triggers (computed on API calls, not cron):**
 
-| Trigger | When Generated | Notification |
-|---------|----------------|--------------|
-| Application deadline < 30 days away | On `GET /dashboard/stats` or `GET /applications` | "⏰ [University] deadline is in X days" |
-| Application deadline < 7 days away | Same | "🔴 URGENT: [University] deadline in X days!" |
-| Professor `nextFollowUp` date is today or past | On `GET /professors` | "📧 Time to follow up with Prof. [Name]" |
-| Professor follow-up count = 2 (at limit) | On professor update | "⚠️ Prof. [Name] has reached the follow-up limit" |
-| Document `expiresAt` < 60 days away | On `GET /documents` | "📄 [Document] expires in X days" |
-| Profile completeness < 60% | On `GET /profile` | "Complete your profile for better recommendations" |
-| Application status changes to OFFER_RECEIVED | On application update | "🎉 Offer received from [University]!" |
+| Trigger                                        | When Generated                                   | Notification                                       |
+| ---------------------------------------------- | ------------------------------------------------ | -------------------------------------------------- |
+| Application deadline < 30 days away            | On `GET /dashboard/stats` or `GET /applications` | "⏰ [University] deadline is in X days"            |
+| Application deadline < 7 days away             | Same                                             | "🔴 URGENT: [University] deadline in X days!"      |
+| Professor `nextFollowUp` date is today or past | On `GET /professors`                             | "📧 Time to follow up with Prof. [Name]"           |
+| Professor follow-up count = 2 (at limit)       | On professor update                              | "⚠️ Prof. [Name] has reached the follow-up limit"  |
+| Document `expiresAt` < 60 days away            | On `GET /documents`                              | "📄 [Document] expires in X days"                  |
+| Profile completeness < 60%                     | On `GET /profile`                                | "Complete your profile for better recommendations" |
+| Application status changes to OFFER_RECEIVED   | On application update                            | "🎉 Offer received from [University]!"             |
 
 #### 3.2 In-App Notification Center
 
 **Bell icon in the dashboard header:**
+
 - Shows unread count badge (red dot with number)
 - Clicking opens a dropdown panel (desktop) or bottom sheet (mobile)
 - Lists notifications sorted by recency
@@ -1175,18 +1211,19 @@ GradPlanner currently has zero proactive communication:
 
 #### 3.3 Notification API Endpoints
 
-| Route | Method | Purpose |
-|-------|--------|---------|
-| `GET /api/v1/notifications` | GET | Fetch all user notifications (paginated, newest first) |
-| `GET /api/v1/notifications/unread-count` | GET | Fetch unread count only (lightweight, for header badge) |
-| `PUT /api/v1/notifications/:id/read` | PUT | Mark a single notification as read |
-| `PUT /api/v1/notifications/read-all` | PUT | Mark all as read |
-| `DELETE /api/v1/notifications/:id` | DELETE | Delete a notification |
-| `DELETE /api/v1/notifications/clear-all` | DELETE | Clear all notifications |
+| Route                                    | Method | Purpose                                                 |
+| ---------------------------------------- | ------ | ------------------------------------------------------- |
+| `GET /api/v1/notifications`              | GET    | Fetch all user notifications (paginated, newest first)  |
+| `GET /api/v1/notifications/unread-count` | GET    | Fetch unread count only (lightweight, for header badge) |
+| `PUT /api/v1/notifications/:id/read`     | PUT    | Mark a single notification as read                      |
+| `PUT /api/v1/notifications/read-all`     | PUT    | Mark all as read                                        |
+| `DELETE /api/v1/notifications/:id`       | DELETE | Delete a notification                                   |
+| `DELETE /api/v1/notifications/clear-all` | DELETE | Clear all notifications                                 |
 
 #### 3.4 Notification Generation Service
 
 A backend service (`backend/src/services/notificationService.ts`) that:
+
 - Provides `generateDeadlineNotifications(userId)` — checks all application deadlines
 - Provides `generateFollowUpNotifications(userId)` — checks all professor nextFollowUp dates
 - Provides `generateDocumentExpiryNotifications(userId)` — checks document expiry dates
@@ -1197,6 +1234,7 @@ A backend service (`backend/src/services/notificationService.ts`) that:
 #### 3.5 Toast-Style Live Notifications
 
 When a notification is generated during a page load:
+
 - Show a toast notification (using existing Sonner integration)
 - Toast links to the relevant page
 - Only show toasts for HIGH-priority notifications (deadline < 7 days, follow-up overdue)
@@ -1204,6 +1242,7 @@ When a notification is generated during a page load:
 #### 3.6 Enhanced "What Next Today" Widget
 
 Upgrade the existing `WhatNextToday` component to:
+
 - Pull from notifications to show the most urgent items
 - Show "You have X notifications requiring attention" summary
 - Track which suggestions the user has dismissed (store in `localStorage`)
@@ -1212,6 +1251,7 @@ Upgrade the existing `WhatNextToday` component to:
 #### 3.7 User Notification Preferences Integration
 
 Read the `UserSettings` model (from Phase 1) to control notification behavior:
+
 - `emailDeadlineAlerts: false` → don't generate DEADLINE_APPROACHING notifications
 - `timelineNotifications: false` → don't generate FOLLOW_UP_DUE notifications
 - Respect preferences in the notification generation service
@@ -1248,15 +1288,15 @@ Read the `UserSettings` model (from Phase 1) to control notification behavior:
 
 #### Notification Item Urgency Colors
 
-| Type | Icon | Color |
-|------|------|-------|
-| DEADLINE < 7 days | `AlertCircle` | Destructive (red) |
-| DEADLINE < 30 days | `Clock` | Warning (amber) |
-| FOLLOW_UP_DUE | `Mail` | Info (blue) |
-| DOCUMENT_EXPIRING | `FileText` | Warning (amber) |
-| PROFILE_INCOMPLETE | `User` | Muted |
-| APPLICATION_UPDATE | `CheckCircle` | Success (green) |
-| SYSTEM | `Bell` | Muted |
+| Type               | Icon          | Color             |
+| ------------------ | ------------- | ----------------- |
+| DEADLINE < 7 days  | `AlertCircle` | Destructive (red) |
+| DEADLINE < 30 days | `Clock`       | Warning (amber)   |
+| FOLLOW_UP_DUE      | `Mail`        | Info (blue)       |
+| DOCUMENT_EXPIRING  | `FileText`    | Warning (amber)   |
+| PROFILE_INCOMPLETE | `User`        | Muted             |
+| APPLICATION_UPDATE | `CheckCircle` | Success (green)   |
+| SYSTEM             | `Bell`        | Muted             |
 
 ---
 
@@ -1312,14 +1352,14 @@ model User {
 
 #### API
 
-| Route | Method | Validation | Auth |
-|-------|--------|------------|------|
-| `/api/v1/notifications` | GET | Query: `?limit=20&offset=0` | Required |
-| `/api/v1/notifications/unread-count` | GET | — | Required |
-| `/api/v1/notifications/:id/read` | PUT | — | Required |
-| `/api/v1/notifications/read-all` | PUT | — | Required |
-| `/api/v1/notifications/:id` | DELETE | — | Required |
-| `/api/v1/notifications/clear-all` | DELETE | — | Required |
+| Route                                | Method | Validation                  | Auth     |
+| ------------------------------------ | ------ | --------------------------- | -------- |
+| `/api/v1/notifications`              | GET    | Query: `?limit=20&offset=0` | Required |
+| `/api/v1/notifications/unread-count` | GET    | —                           | Required |
+| `/api/v1/notifications/:id/read`     | PUT    | —                           | Required |
+| `/api/v1/notifications/read-all`     | PUT    | —                           | Required |
+| `/api/v1/notifications/:id`          | DELETE | —                           | Required |
+| `/api/v1/notifications/clear-all`    | DELETE | —                           | Required |
 
 ---
 
@@ -1363,10 +1403,10 @@ frontend/src/
 
 ### 7. Database Changes
 
-| Change | Type | Risk |
-|--------|------|------|
-| Add `Notification` model | Additive | ✅ Zero risk — new table |
-| Add `NotificationType` enum | Additive | ✅ Zero risk — new enum |
+| Change                                 | Type     | Risk                             |
+| -------------------------------------- | -------- | -------------------------------- |
+| Add `Notification` model               | Additive | ✅ Zero risk — new table         |
+| Add `NotificationType` enum            | Additive | ✅ Zero risk — new enum          |
 | Add `notifications` relation to `User` | Additive | ✅ Zero risk — optional relation |
 
 **Migration:** Single `prisma migrate dev` with name `add-notifications`.
@@ -1375,34 +1415,34 @@ frontend/src/
 
 ### 8. API Changes
 
-| Change | Breaking? | Migration Path |
-|--------|-----------|----------------|
-| New `/api/v1/notifications/*` endpoints | No — additive | New route, no existing code affected |
+| Change                                                                      | Breaking?             | Migration Path                                             |
+| --------------------------------------------------------------------------- | --------------------- | ---------------------------------------------------------- |
+| New `/api/v1/notifications/*` endpoints                                     | No — additive         | New route, no existing code affected                       |
 | Stats/professors/applications endpoints may trigger notification generation | No — side effect only | Notifications generated silently; response shape unchanged |
 
 ---
 
 ### 9. Compatibility Analysis
 
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
-| **Migration** | ✅ None — additive | New table and enum only |
-| **Auth** | ✅ None | Uses existing `requireAuth` |
-| **UI** | 🟡 Low — adds bell icon to header | Header layout already has `gap-4` flex container; bell icon slots in naturally |
-| **State** | 🟡 Low — new Redux slice | `notificationSlice` is independent; no existing slices modified |
-| **Performance** | 🟡 Low — lazy notification generation adds DB queries to existing endpoints | Generation queries are indexed and cached per request; minimal overhead |
+| Dimension       | Risk                                                                        | Mitigation                                                                     |
+| --------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Migration**   | ✅ None — additive                                                          | New table and enum only                                                        |
+| **Auth**        | ✅ None                                                                     | Uses existing `requireAuth`                                                    |
+| **UI**          | 🟡 Low — adds bell icon to header                                           | Header layout already has `gap-4` flex container; bell icon slots in naturally |
+| **State**       | 🟡 Low — new Redux slice                                                    | `notificationSlice` is independent; no existing slices modified                |
+| **Performance** | 🟡 Low — lazy notification generation adds DB queries to existing endpoints | Generation queries are indexed and cached per request; minimal overhead        |
 
 ---
 
 ### 10. Risks and Mitigation
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Lazy generation misses notifications if user doesn't visit the page | Medium | Medium | "What Next Today" widget on dashboard runs all generators; users who visit dashboard daily are covered |
-| Notification table grows unbounded | Medium | Low | Add a cleanup query: delete read notifications older than 90 days |
-| De-duplication logic has edge cases | Low | Low | Use database unique constraint on `(userId, type, referenceId)` for unread notifications; catch constraint errors gracefully |
-| Notification dropdown blocks header interaction | Low | Low | Click-outside-to-close handler; proper z-index layering |
-| Too many notifications overwhelm the user | Low | Medium | Group similar notifications ("3 deadlines approaching") and cap at 50 total |
+| Risk                                                                | Probability | Impact | Mitigation                                                                                                                   |
+| ------------------------------------------------------------------- | ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| Lazy generation misses notifications if user doesn't visit the page | Medium      | Medium | "What Next Today" widget on dashboard runs all generators; users who visit dashboard daily are covered                       |
+| Notification table grows unbounded                                  | Medium      | Low    | Add a cleanup query: delete read notifications older than 90 days                                                            |
+| De-duplication logic has edge cases                                 | Low         | Low    | Use database unique constraint on `(userId, type, referenceId)` for unread notifications; catch constraint errors gracefully |
+| Notification dropdown blocks header interaction                     | Low         | Low    | Click-outside-to-close handler; proper z-index layering                                                                      |
+| Too many notifications overwhelm the user                           | Low         | Medium | Group similar notifications ("3 deadlines approaching") and cap at 50 total                                                  |
 
 ---
 
@@ -1437,3 +1477,255 @@ frontend/src/
 - [ ] Empty state shown when no notifications exist
 - [ ] `pnpm type-check` passes in both frontend and backend
 - [ ] No new lint errors
+
+---
+
+## Phase 6: Global Search & Command Palette
+
+### 1. Goal
+
+Implement a **fast, keyboard-driven Ctrl+K command palette** that serves as the central nervous system for GradPlanner. Allow users to instantly navigate the app, search across all entities (universities, professors, countries, applications), and execute quick actions without taking their hands off the keyboard.
+
+### 2. Why This Phase Is Needed
+
+Currently, navigating GradPlanner requires significant mouse interaction and multiple clicks:
+
+| Problem | Impact | Risk Level |
+|---------|--------|------------|
+| **Deep navigation paths** | Users must click sidebar -> list -> item to view details | 🟠 HIGH |
+| **No cross-entity search** | Finding a specific professor requires going to the Professors page | 🟠 HIGH |
+| **Slow repetitive actions** | Adding a new university takes 3-4 clicks from the dashboard | 🟡 MEDIUM |
+| **No keyboard shortcuts** | Power users have no way to speed up their workflow | 🟡 MEDIUM |
+| **Hidden features** | Less commonly used features are hard to discover | 🟡 MEDIUM |
+
+**Business value:** A command palette drastically reduces friction, making the app feel like a premium, professional tool (similar to Superhuman, Linear, or Raycast). This increases perceived value and user retention by speeding up everyday tasks.
+
+### 3. Features
+
+#### 3.1 Global Shortcut Trigger
+- Pressing Ctrl+K (Windows/Linux) or Cmd+K (Mac) opens the command palette overlay.
+- Accessible via a visible search bar button in the dashboard header for mouse users.
+
+#### 3.2 Unified Search Engine
+- **Universities:** Search by name or country.
+- **Professors:** Search by name, university, or research interest.
+- **Countries:** Quick jump to country intelligence pages.
+- **Applications:** Search by university or status.
+
+#### 3.3 Quick Navigation Commands
+- "Go to Dashboard"
+- "Go to Profile"
+- "Go to Settings"
+- "Go to Timeline"
+
+#### 3.4 Quick Actions
+- "Add New University" (opens the bottom sheet/modal immediately)
+- "Add New Professor"
+- "Add New Document"
+- "Toggle Theme (Light/Dark)"
+- "Log Out"
+
+#### 3.5 Context-Aware Suggestions
+- Empty state (no search query) shows:
+  - Recently accessed items (stored in localStorage)
+  - Suggested commands based on the current page (e.g., if on Professors page, prioritize "Add Professor")
+
+### 4. Detailed UI/UX Requirements
+
+#### Command Palette Modal
+- **Layout:** Centered modal overlay, max-width 640px, elevated shadow (shadow-2xl).
+- **Backdrop:** g-black/50 backdrop-blur-sm.
+- **Search Input:** Large, clean input field with a search icon. No visible border.
+- **Results List:** Grouped by category (e.g., "Universities", "Commands").
+- **Highlighting:** The matched substring in the search results should be highlighted (e.g., bold or primary color).
+- **Keyboard Navigation:** 
+  - Arrow Up / Arrow Down to traverse the list.
+  - Enter to select.
+  - Escape to close.
+- **Visuals:** Use cmdk (a React command menu component) styled with shadcn/ui Command component.
+
+#### Mobile UX
+- On mobile, the command palette opens as a full-screen sheet or stays as a responsive modal that anchors to the top.
+- The Ctrl+K hint is hidden on touch devices.
+
+### 5. Backend Requirements
+
+#### API
+| Route | Method | Validation | Auth | Purpose |
+|-------|--------|------------|------|---------|
+| /api/v1/search | GET | Query: ?q=query | Required | Unified search endpoint returning matching universities, professors, and applications |
+
+**Search Query Logic:**
+- Use contains with mode: 'insensitive' in Prisma for fast LIKE queries.
+- Limit results to top 5 per category to keep the payload lightweight and UI responsive.
+
+### 6. Architecture Requirements
+
+#### New Files
+``
+backend/src/
+├── routes/
+│   └── search.ts                     # Unified search endpoint
+
+frontend/src/
+├── components/
+│   └── command-palette/
+│       ├── CommandPalette.tsx        # Main cmdk wrapper and state
+│       └── useCommandPalette.ts      # Global state/hook to manage open/close
+``
+
+#### Reusable Modules
+- **useCommandPalette context/zustand store:** Allows any component to trigger the command palette programmatically.
+
+### 7. Database Changes
+None. Search utilizes existing tables and indexes.
+
+### 8. API Changes
+| Change | Breaking? | Migration Path |
+|--------|-----------|----------------|
+| New /api/v1/search endpoint | No | Additive feature |
+
+### 9. Compatibility Analysis
+| Dimension | Risk | Mitigation |
+|-----------|------|------------|
+| **Performance** | 🟡 Low | Debounce the search input (e.g., 300ms) before hitting the /search API |
+| **Keyboard conflicts** | 🟡 Low | Ensure Ctrl+K doesn't conflict with browser defaults (it usually focuses the address bar, preventDefault() is needed) |
+
+### 10. Risks and Mitigation
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| Search API is too slow | Medium | Medium | Limit results, ensure proper DB indexes on 
+ame fields |
+| cmdk bundle size | Low | Low | The library is lightweight and tree-shakable |
+
+### 11. Future Phase Considerations
+- **Phase 8 (AI Email Generator):** Can add a "Draft Email to Professor" quick action directly from the search results.
+
+### 12. Acceptance Criteria
+- [ ] cmdk component integrated and styled with Tailwind.
+- [ ] Ctrl+K / Cmd+K keyboard shortcut opens the palette globally.
+- [ ] Dashboard header includes a visual search bar button.
+- [ ] Typing in the input debounces and calls GET /api/v1/search.
+- [ ] Search results are grouped by category (Universities, Professors, Commands).
+- [ ] Arrow key navigation and Enter selection works flawlessly.
+- [ ] Selecting a route navigates to the correct page.
+- [ ] Selecting an action (e.g., "Add University") opens the respective modal.
+- [ ] Mobile view is responsive and usable without keyboard shortcuts.
+- [ ] pnpm type-check passes.
+- [ ] No new lint errors.
+
+---
+
+## Phase 7: Advanced Analytics & ROI Dashboard
+
+### 1. Goal
+
+Build a comprehensive **Analytics & ROI (Return on Investment) Dashboard** that visualizes the student's application funnel, scholarship probabilities, and total estimated costs. Move beyond tracking to strategic financial and timeline forecasting.
+
+### 2. Why This Phase Is Needed
+
+Targeting higher education abroad involves complex financial planning and probability assessment:
+
+| Problem | Impact | Risk Level |
+|---------|--------|------------|
+| **No aggregate view of costs** | Students don't know their total estimated first-year costs across all target universities | 🔴 CRITICAL |
+| **Hard to visualize progress** | A list of applications doesn't show conversion rates (Applied -> Interview -> Offer) | 🟠 HIGH |
+| **Unclear scholarship ROI** | Students don't see how much funding they actually need vs. what is guaranteed | 🟠 HIGH |
+| **Professor outreach black box** | No visualization of email response rates | 🟡 MEDIUM |
+
+**Business value:** Providing a "Financial Snapshot" and "Success Funnel" makes GradPlanner indispensable. It transitions the product from a CRM to a strategic planner that directly impacts a student's financial decisions.
+
+### 3. Features
+
+#### 3.1 Application Success Funnel
+- A visual funnel chart showing: Shortlisted → Applied → Interviewed → Offer Received → Enrolled.
+- Calculates conversion percentages between stages.
+
+#### 3.2 Financial & ROI Forecaster
+- **Total Estimated Cost:** Aggregates tuition and living costs of shortlisted universities.
+- **Funding Gap Analysis:** Visualizes (Total Cost) - (Expected Scholarships/Stipends) = (Funding Gap in BDT).
+- **ROI Metric:** Compares the median post-graduation salary of the target country against the total cost.
+
+#### 3.3 Professor Outreach Analytics
+- Response rate pie chart (Replied Positive, Replied Negative, No Response).
+- Follow-up effectiveness metrics.
+
+#### 3.4 Timeline Heatmap
+- A GitHub-style contribution heatmap showing user activity (documents uploaded, emails logged, statuses updated) to encourage daily engagement.
+
+### 4. Detailed UI/UX Requirements
+
+#### Analytics Page (/dashboard/analytics)
+- **Layout:** Masonry grid or defined CSS grid for dashboard widgets.
+- **Charts:** Use echarts for highly customizable, responsive SVG charts.
+- **Theming:** Charts must use CSS variables (e.g., hsl(var(--primary))) to perfectly match light/dark modes.
+- **Financial Widget:** Large typography for the "Funding Gap" in BDT. Conditional coloring (red if gap > user budget, green if fully funded).
+- **Funnel Widget:** Horizontal or vertical funnel visualization. 
+- **Tooltips:** Hovering over chart elements shows detailed breakdowns.
+
+### 5. Backend Requirements
+
+#### API
+| Route | Method | Validation | Auth | Purpose |
+|-------|--------|------------|------|---------|
+| /api/v1/analytics/funnel | GET | — | Required | Returns counts for application stages |
+| /api/v1/analytics/financial | GET | — | Required | Returns aggregated cost and funding data |
+| /api/v1/analytics/outreach | GET | — | Required | Returns professor response statistics |
+
+**Aggregation Logic:**
+- Use Prisma groupBy and aggregate functions (_sum, _avg) to compute stats on the database side rather than loading all rows into Node.js memory.
+
+### 6. Architecture Requirements
+
+#### New Files
+``
+backend/src/
+├── routes/
+│   └── analytics.ts                  # Analytics aggregation endpoints
+
+frontend/src/
+├── app/dashboard/analytics/
+│   └── page.tsx                      # Main Analytics dashboard
+├── components/
+│   └── analytics/
+│       ├── FunnelChart.tsx           # Recharts funnel
+│       ├── FinancialForecaster.tsx   # ROI widget
+│       └── OutreachStats.tsx         # Pie/Bar charts for professor data
+``
+
+#### Reusable Modules
+- Add echarts as a dependency.
+- Create a ChartContainer wrapper that handles ResponsiveContainer and theming consistently.
+
+### 7. Database Changes
+None. Aggregations use existing data.
+
+### 8. API Changes
+| Change | Breaking? | Migration Path |
+|--------|-----------|----------------|
+| New /api/v1/analytics/* endpoints | No | Additive feature |
+
+### 9. Compatibility Analysis
+| Dimension | Risk | Mitigation |
+|-----------|------|------------|
+| **Bundle Size** | 🟡 Low | echarts is a medium-sized dependency. Ensure it's only loaded on the Analytics route (Next.js route-based splitting handles this). |
+
+### 10. Risks and Mitigation
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| Complex Prisma aggregations cause slow queries | Low | Medium | Ensure indexes exist on status fields in Application and Professor tables. |
+| Charts break on small mobile screens | High | Medium | Use ResponsiveContainer and stack charts vertically on < 768px. |
+
+### 11. Future Phase Considerations
+- **Phase 9 (PR Pathway):** The ROI calculator can integrate PR visa costs into the total financial gap analysis.
+
+### 12. Acceptance Criteria
+- [ ] echarts library integrated.
+- [ ] /dashboard/analytics page created and accessible from the sidebar/bottom nav.
+- [ ] Application funnel chart renders correctly and calculates conversion rates.
+- [ ] Financial Forecaster aggregates costs from universities and displays the BDT gap.
+- [ ] Professor outreach stats render as a pie or bar chart.
+- [ ] All charts are fully responsive and adapt to light/dark themes.
+- [ ] Backend routes use Prisma aggregations instead of loading all rows in memory.
+- [ ] pnpm type-check passes.
+- [ ] No new lint errors.
