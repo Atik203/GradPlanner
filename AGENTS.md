@@ -197,7 +197,7 @@ Do not blindly generate code.
 Read implementation.md once per phase. Use this section as the source of truth for current progress.
 
 ```text
-Phase 1 : In Progress   (Backend API hardening: validators, ApiResponse<T>, UserSettings)
+Phase 1 : Completed     (Backend API hardening: validators, ApiResponse<T>, UserSettings)
 Phase 2 : Pending       (Onboarding wizard & isOnboarded flag)
 Phase 3 : Pending       (Skeletons, error states, empty states)
 Phase 4 : Pending       (Mobile-first UI & navigation)
@@ -211,21 +211,25 @@ Phase 10: Pending       (PWA & performance optimization)
 
 ## Current Phase Details
 
-Phase 1: Backend API Hardening & Input Validation
-
-Goals:
-- Add Zod validators in backend/src/validators/
-- Introduce ApiResponse<T> envelope: { success: true, data: T } | { success: false, error, code, fieldErrors? }
-- Update fetchApi in frontend/src/lib/api.ts to unwrap the envelope
-- Add rate limiting, body-size limits, structured logger
-- Extract shared parsers (toFloatOrNull, toIntOrNull, toBoolOrNull)
-- Add UserSettings model + /api/v1/settings endpoints
-- Wire frontend Settings page to real API
-- Add type-check scripts to both package.json files
+None — Phase 1 complete. See "Completed Phases" for details.
 
 ## Completed Phases
 
-None.
+### Phase 1 — Backend API Hardening & Input Validation (Completed)
+
+Goals delivered:
+- ✅ Zod validation layer across all mutating routes (backend/src/validators/)
+- ✅ ApiResponse<T> envelope on every response (success/data or error/code/fieldErrors)
+- ✅ Frontend fetchApi auto-unwraps envelope + throws typed ApiError
+- ✅ Global 100/min, auth 10/min, write 30/min rate limiters (express-rate-limit)
+- ✅ express.json + urlencoded capped at 256kb
+- ✅ Shared parsers (toFloatOrNull, toIntOrNull, toBoolOrNull, toDateOrNull)
+- ✅ Structured logger (JSON in prod, human-readable in dev)
+- ✅ Explicit `select` projections on all Prisma queries
+- ✅ UserSettings model + GET/PUT /api/v1/settings
+- ✅ Frontend Settings page rewritten with RHF + Zod + shadcn Select + skeleton + error state
+- ✅ Frontend shared: ApiErrorAlert, FieldError, SettingsSkeleton
+- ✅ Frontend Redux: settingsSlice
 
 ---
 
@@ -235,11 +239,13 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-Phase 1: Backend API Hardening & Input Validation
+None — Phase 1 complete.
 
 ## Completed Phases
 
-None.
+Phase 1: Backend API Hardening & Input Validation (Completed)
+- Zod validation across all routes, ApiResponse<T> envelope, rate limiting,
+  body-size cap, structured logger, UserSettings model, settings page rewrite.
 
 ## Shared Components
 
@@ -253,6 +259,9 @@ None.
 | Select | frontend/src/components/ui/select.tsx | Dropdowns |
 | EmptyState | frontend/src/components/shared/EmptyState.tsx | Empty lists |
 | CountryFlag | frontend/src/components/shared/CountryFlag.tsx | Flag rendering |
+| ApiErrorAlert | frontend/src/components/shared/ApiErrorAlert.tsx | Friendly error display with retry |
+| FieldError | frontend/src/components/shared/FieldError.tsx | Inline form-field error |
+| SettingsSkeleton | frontend/src/components/skeletons/SettingsSkeleton.tsx | Settings page loading |
 | MetricCard | frontend/src/components/dashboard/MetricCard.tsx | Dashboard metrics |
 | SectionHeader | frontend/src/components/dashboard/SectionHeader.tsx | Page sections |
 | WhatNextToday | frontend/src/components/dashboard/WhatNextToday.tsx | Dashboard suggestions |
@@ -287,12 +296,17 @@ None.
 | applicationSlice | frontend/src/lib/store/slices/applicationSlice.ts |
 | documentSlice | frontend/src/lib/store/slices/documentSlice.ts |
 | countryMatchSlice | frontend/src/lib/store/slices/countryMatchSlice.ts |
+| settingsSlice | frontend/src/lib/store/slices/settingsSlice.ts |
 
 ## Database Schema Version
 
-v1.0 — Current models:
+v1.1 — Current models:
 - User, Account, Session, Verification
 - UserProfile
+- UserSettings (Phase 1: emailDeadlineAlerts, timelineNotifications, strategyPreference)
+- University, Professor, Application, Document
+- UniversityRanking
+- CountryIntelligence
 - University, Professor, Application, Document
 - UniversityRanking
 - CountryIntelligence
