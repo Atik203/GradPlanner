@@ -11,7 +11,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-  Loader2,
   Search,
   Globe,
   ArrowRight,
@@ -19,8 +18,10 @@ import {
   ArrowUpDown,
   User,
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import Link from "next/link";
 import { CountryFlag } from "@/components/shared/CountryFlag";
+import { CountrySkeleton } from "@/components/skeletons/CountrySkeleton";
 
 interface CountryEntry {
   id: string;
@@ -128,11 +129,7 @@ export default function CountryExplorerPage() {
   const continents = ["All", ...Array.from(new Set(countries.map((c) => c.summary?.continent).filter(Boolean)))];
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <CountrySkeleton />;
   }
 
   return (
@@ -168,9 +165,7 @@ export default function CountryExplorerPage() {
       </div>
 
       {error && (
-        <div className="bg-destructive/10 border border-destructive/20 text-destructive p-4 rounded-xl text-xs">
-          {error}
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {/* Filter / Search Bar */}

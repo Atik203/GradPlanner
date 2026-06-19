@@ -11,7 +11,6 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import {
   MapPin,
-  Loader2,
   AlertCircle,
   Globe,
   Star,
@@ -28,6 +27,8 @@ import {
   BookOpen,
   Briefcase
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { GenericPageSkeleton } from "@/components/skeletons/GenericPageSkeleton";
 import type { PrPathways } from "@/types/countries/pr-pathways";
 
 interface CountrySummary { id: string; country: string; countryCode: string; }
@@ -340,11 +341,7 @@ export default function PRRoutePlannerPage() {
   }, [selected]);
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <GenericPageSkeleton />;
   }
 
   return (
@@ -358,10 +355,7 @@ export default function PRRoutePlannerPage() {
       />
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {/* Country Selection Card */}

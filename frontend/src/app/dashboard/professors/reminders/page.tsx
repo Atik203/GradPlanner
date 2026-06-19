@@ -9,7 +9,6 @@ import { EmptyState } from "@/components/shared/EmptyState";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
   BellRing,
-  Loader2,
   AlertCircle,
   Mail,
   Send,
@@ -19,6 +18,8 @@ import {
   CheckCircle,
   XCircle,
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { ProfessorSkeleton } from "@/components/skeletons/ProfessorSkeleton";
 import { Button } from "@/components/ui/button";
 import { EmailGeneratorModal } from "@/components/dashboard/professor/EmailGeneratorModal";
 import type { Professor, ProfessorStatus } from "@/types";
@@ -121,11 +122,7 @@ export default function FollowUpRemindersPage() {
   }, [professors]);
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <ProfessorSkeleton />;
   }
 
   return (
@@ -139,10 +136,7 @@ export default function FollowUpRemindersPage() {
       />
 
       {error && (
-        <div className="flex items-center gap-2 rounded-lg bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

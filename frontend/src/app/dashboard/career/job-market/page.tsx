@@ -8,7 +8,6 @@ import { CountryFlag } from "@/components/shared/CountryFlag";
 import {
   Bot,
   Loader2,
-  AlertCircle,
   Globe,
   Building2,
   TrendingUp,
@@ -19,6 +18,8 @@ import {
   BarChart2,
   Star,
 } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { GenericPageSkeleton } from "@/components/skeletons/GenericPageSkeleton";
 import type { JobMarket } from "@/types/countries/job-market";
 import type { AiEcosystem } from "@/types/countries/ai-ecosystem";
 
@@ -202,10 +203,7 @@ export default function AIJobMarketPage() {
 
       {/* ── error banner ── */}
       {error && (
-        <div className="flex items-center gap-2.5 rounded-xl bg-destructive/10 border border-destructive/20 px-4 py-3 text-sm text-destructive">
-          <AlertCircle className="h-4 w-4 shrink-0" />
-          <span>{error}</span>
-        </div>
+        <ApiErrorAlert error={error} />
       )}
 
       {/* ── legend ── */}
@@ -233,11 +231,7 @@ export default function AIJobMarketPage() {
 
       {/* ── cards grid ── */}
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {[...Array(6)].map((_, i) => (
-            <SkeletonCard key={i} />
-          ))}
-        </div>
+        <GenericPageSkeleton />
       ) : countries.length === 0 ? (
         <EmptyState
           icon={Bot}

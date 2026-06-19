@@ -8,8 +8,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { MultiSelect } from "@/components/ui/multi-select";
 import { Search, Loader2, ChevronLeft, ChevronRight, BarChart3, Star, ExternalLink } from "lucide-react";
+import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { UniversityRanking } from "@/types";
 import { useDebounce } from "@/hooks/use-debounce";
+import { RankingTableSkeleton } from "@/components/skeletons/RankingTableSkeleton";
 
 interface PaginatedResponse {
   data: UniversityRanking[];
@@ -143,9 +145,7 @@ export default function DashboardRankingsPage() {
           )}
 
           {error && (
-            <div className="rounded-xl bg-destructive/10 border border-destructive/20 p-4 text-sm text-destructive">
-              {error}
-            </div>
+            <ApiErrorAlert error={error} />
           )}
 
           {/* Table */}
@@ -172,8 +172,8 @@ export default function DashboardRankingsPage() {
                   )}
                   {loading && results.length === 0 && (
                     <tr>
-                      <td colSpan={6} className="px-5 py-12 text-center">
-                        <Loader2 className="h-6 w-6 animate-spin text-primary mx-auto" />
+                      <td colSpan={6} className="px-5 py-4">
+                        <RankingTableSkeleton />
                       </td>
                     </tr>
                   )}
