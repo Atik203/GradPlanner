@@ -1,6 +1,15 @@
+/**
+ * stats.ts — Dashboard stats aggregation.
+ *
+ * Read-only endpoint. No body, no params. We just add explicit `select` clauses
+ * to avoid fetching the full row (defense-in-depth) and wrap in the ApiResponse envelope.
+ */
+
 import { Router, Response } from "express";
 import { prisma } from "../lib/prisma.js";
 import { AuthenticatedRequest } from "../middleware/auth.js";
+import { ok, serverError } from "../utils/apiResponse.js";
+import { logger } from "../utils/logger.js";
 
 const router: Router = Router();
 
@@ -9,11 +18,24 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
   try {
     const userId = req.user!.id;
 
-    // 1. Universities metrics
-    const universities = await prisma.university.findMany({
-      where: { userId, deletedAt: null },
-      select: { tier: true },
-    });
+    const [universities, professors, applications, documents] = await Promise.all([
+      prisma.university.findMany({
+        where: { userId, deletedAt: null },
+        select: { tier: true },
+      }),
+      prisma.professor.findMany({
+        where: { userId, deletedAt: null },
+        select: { status: true, replyReceived: true },
+      }),
+      prisma.application.findMany({
+        where: { userId, deletedAt: null },
+        select: { status: true },
+      }),
+      prisma.document.findMany({
+        where: { userId },
+        select: { status: true },
+      }),
+    ]);
 
     const uniStats = {
       total: universities.length,
@@ -21,12 +43,6 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       match: universities.filter((u) => u.tier === "MATCH").length,
       safety: universities.filter((u) => u.tier === "SAFETY").length,
     };
-
-    // 2. Professors metrics
-    const professors = await prisma.professor.findMany({
-      where: { userId, deletedAt: null },
-      select: { status: true, replyReceived: true },
-    });
 
     const profStats = {
       total: professors.length,
@@ -39,12 +55,6 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       totalReplies: professors.filter((p) => p.replyReceived).length,
     };
 
-    // 3. Applications metrics
-    const applications = await prisma.application.findMany({
-      where: { userId, deletedAt: null },
-      select: { status: true },
-    });
-
     const appStats = {
       total: applications.length,
       planning: applications.filter((a) => a.status === "PLANNING").length,
@@ -56,12 +66,6 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       rejected: applications.filter((a) => a.status === "REJECTED").length,
       withdrawn: applications.filter((a) => a.status === "WITHDRAWN").length,
     };
-
-    // 4. Documents metrics
-    const documents = await prisma.document.findMany({
-      where: { userId },
-      select: { status: true },
-    });
 
     const docStats = {
       total: documents.length,
@@ -78,15 +82,18 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       docStats.progressPercentage = Math.round((completed / docStats.total) * 100);
     }
 
-    res.json({
+    return ok(res, {
       universities: uniStats,
       professors: profStats,
       applications: appStats,
       documents: docStats,
     });
   } catch (error) {
-    console.error("GET /dashboard/stats error:", error);
-    res.status(500).json({ error: "Failed to fetch stats" });
+    logger.error("GET /dashboard/stats error", {
+      userId: req.user?.id,
+      error: error instanceof Error ? error : new Error(String(error)),
+    });
+    return serverError(res, "Failed to fetch stats");
   }
 });
 
