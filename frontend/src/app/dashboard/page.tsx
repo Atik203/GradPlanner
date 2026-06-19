@@ -9,8 +9,6 @@ import { setMatchScores } from "@/lib/store/slices/countryMatchSlice";
 import { computeCountryMatchScore } from "@/lib/matchScore";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { 
   Loader2, 
   School, 
@@ -37,6 +35,8 @@ import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { WhatNextToday } from "@/components/dashboard/WhatNextToday";
+import { OnboardingGate } from "@/components/onboarding/OnboardingGate";
+import { OnboardingGuide } from "@/components/onboarding/OnboardingGuide";
 
 
 interface Stats {
@@ -60,14 +60,7 @@ export default function DashboardOverview() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Profile editing state
-  const [editProfileOpen, setEditProfileOpen] = useState(false);
-  const [university, setUniversityName] = useState("");
-  const [cgpa, setCgpa] = useState("");
-  const [targetDegree, setTargetDegree] = useState("");
-  const [targetIntake, setTargetIntake] = useState("");
-  const [graduationDate, setGraduationDate] = useState("");
-  const [profileSaving, setProfileSaving] = useState(false);
+  // Profile editing state (removed in Phase 2 — replaced by link to /dashboard/profile)
 
   useEffect(() => {
     async function loadDashboardData() {
@@ -98,14 +91,6 @@ export default function DashboardOverview() {
           dispatch(setMatchScores(scores));
         }
 
-        // Prefill profile edit fields
-        if (profileData) {
-          setUniversityName(profileData.university || "");
-          setCgpa(profileData.cgpa ? String(profileData.cgpa) : "");
-          setTargetDegree(profileData.targetDegree || "");
-          setTargetIntake(profileData.targetIntake || "");
-          setGraduationDate(profileData.graduationDate || "");
-        }
       } catch (err) {
         console.error(err);
         setError("Failed to load dashboard data. Please try again.");
@@ -117,34 +102,6 @@ export default function DashboardOverview() {
     loadDashboardData();
   }, [dispatch]);
 
-  const handleSaveProfile = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setProfileSaving(true);
-    try {
-      const updatedProfile = await fetchApi("/api/v1/profile", {
-        method: "PUT",
-        body: JSON.stringify({
-          university,
-          cgpa: cgpa ? parseFloat(cgpa) : null,
-          targetIntake,
-          graduationDate,
-          targetDegree,
-        }),
-      });
-      dispatch(setProfile(updatedProfile));
-      setEditProfileOpen(false);
-      toast.success("Profile updated successfully!");
-    } catch (err: any) {
-      console.error(err);
-      const errMsg = err?.message || "Failed to save profile. Please try again.";
-      setError(errMsg);
-      toast.error(errMsg);
-    } finally {
-      setProfileSaving(false);
-    }
-  };
-
-
   if (loading) {
     return (
       <div className="flex h-[60vh] items-center justify-center">
@@ -153,14 +110,22 @@ export default function DashboardOverview() {
     );
   }
 
-  // Calculate profile completeness
+  // Calculate profile completeness (10 fields)
   let completeness = 0;
   if (profile) {
-    if (profile.university) completeness += 20;
-    if (profile.cgpa) completeness += 20;
-    if (profile.targetDegree) completeness += 20;
-    if (profile.targetIntake) completeness += 20;
-    if (profile.graduationDate) completeness += 20;
+    const fields = [
+      profile.university,
+      profile.cgpa != null,
+      profile.targetDegree,
+      profile.targetIntake,
+      profile.graduationDate,
+      profile.ieltsScore != null,
+      profile.monthlyBudgetUSD != null,
+      (profile.researchInterests?.length ?? 0) > 0,
+      profile.prPriority != null,
+      profile.familyRelocation != null,
+    ];
+    completeness = Math.round((fields.filter(Boolean).length / fields.length) * 100);
   }
 
   // Top 3 countries by personal match score (falls back to overallScore)
@@ -219,6 +184,8 @@ export default function DashboardOverview() {
   const prScoreAvg = getAveragePrScore();
 
   return (
+    <OnboardingGate>
+    <OnboardingGuide />
     <div className="space-y-8 animate-in fade-in duration-500">
       
       {/* Welcome Banner / Command Center Header */}
@@ -239,13 +206,12 @@ export default function DashboardOverview() {
           </div>
           
           <div className="flex flex-col gap-2 shrink-0">
-            <Button 
-              onClick={() => setEditProfileOpen(true)}
-              className="bg-primary hover:bg-primary/95 text-primary-foreground h-10 px-5 rounded-lg flex items-center justify-center gap-2 font-semibold shadow-sm transition-all cursor-pointer"
-            >
-              <User className="h-4 w-4" />
-              Update Profile Details
-            </Button>
+            <Link href="/dashboard/profile">
+              <Button className="bg-primary hover:bg-primary/95 text-primary-foreground h-10 px-5 rounded-lg flex items-center justify-center gap-2 font-semibold shadow-sm transition-all cursor-pointer w-full">
+                <User className="h-4 w-4" />
+                Update Profile Details
+              </Button>
+            </Link>
             <p className="text-[11px] text-muted-foreground text-center">Intake Target: {profile?.targetIntake || "September 2028"}</p>
           </div>
         </div>
@@ -265,9 +231,17 @@ export default function DashboardOverview() {
               style={{ width: `${completeness}%` }}
             />
           </div>
-          {completeness < 100 && (
-            <p className="text-[11px] text-muted-foreground mt-2">
-              ⚠️ Complete your undergrad profile (CGPA, degree target) to unlock highly accurate country matches.
+          {completeness < 60 ? (
+            <p className="text-[11px] text-destructive mt-2">
+              ⚠️ Complete your match intelligence to unlock accurate recommendations.
+            </p>
+          ) : completeness >= 80 ? (
+            <p className="text-[11px] text-emerald-400 mt-2">
+              ✓ High confidence — your profile is well set up for personalized matches.
+            </p>
+          ) : (
+            <p className="text-[11px] text-amber-400 mt-2">
+              ⚡ Add more details to improve your match accuracy.
             </p>
           )}
         </div>
@@ -334,7 +308,7 @@ export default function DashboardOverview() {
       </Card>
 
       {/* Section B: Fit-based Country Recommendations */}
-      <div className="space-y-4">
+      <div className="space-y-4" id="ai-fit-recommendations">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
@@ -567,97 +541,7 @@ export default function DashboardOverview() {
 
       </div>
 
-      {/* Update Profile Modal */}
-      {editProfileOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 animate-in fade-in duration-200">
-          <div className="w-full max-w-md rounded-xl border border-border bg-card p-6 shadow-2xl space-y-4">
-            <h3 className="text-lg font-bold text-foreground">Update Profile Details</h3>
-            <form onSubmit={handleSaveProfile} className="space-y-4">
-              <div className="space-y-1">
-                <Label htmlFor="undergradUni" className="text-xs text-muted-foreground">Current/Previous Undergrad University</Label>
-                <Input
-                  id="undergradUni"
-                  type="text"
-                  placeholder="UIU Dhaka"
-                  value={university}
-                  onChange={(e) => setUniversityName(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <Label htmlFor="cgpaInput" className="text-xs text-muted-foreground">CGPA</Label>
-                  <Input
-                    id="cgpaInput"
-                    type="number"
-                    step="0.01"
-                    placeholder="3.8"
-                    value={cgpa}
-                    onChange={(e) => setCgpa(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="degreeInput" className="text-xs text-muted-foreground">Target Degree</Label>
-                  <Input
-                    id="degreeInput"
-                    type="text"
-                    placeholder="MSc ML/AI"
-                    value={targetDegree}
-                    onChange={(e) => setTargetDegree(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <Label htmlFor="intakeInput" className="text-xs text-muted-foreground">Target Intake</Label>
-                  <Input
-                    id="intakeInput"
-                    type="text"
-                    placeholder="Sep 2028"
-                    value={targetIntake}
-                    onChange={(e) => setTargetIntake(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <Label htmlFor="gradInput" className="text-xs text-muted-foreground">Graduation Date</Label>
-                  <Input
-                    id="gradInput"
-                    type="text"
-                    placeholder="Nov 2027"
-                    value={graduationDate}
-                    onChange={(e) => setGraduationDate(e.target.value)}
-                    className="bg-background border-border text-foreground"
-                  />
-                </div>
-              </div>
-
-              <div className="flex justify-end gap-3 pt-4 border-t border-border">
-                <Button 
-                  type="button" 
-                  onClick={() => setEditProfileOpen(false)}
-                  className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
-                >
-                  Cancel
-                </Button>
-                <Button 
-                  type="submit" 
-                  disabled={profileSaving}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
-                >
-                  {profileSaving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Save Changes"}
-                </Button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
+    </OnboardingGate>
   );
 }

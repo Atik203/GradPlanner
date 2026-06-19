@@ -20,6 +20,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -33,6 +34,8 @@ import {
   Moon,
   Settings as SettingsIcon,
   Sun,
+  User,
+  RotateCcw,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -55,7 +58,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { authClient } from "@/lib/auth-client";
-import { settingsApi } from "@/lib/api";
+import { settingsApi, profileApi } from "@/lib/api";
 import type { StrategyPreference } from "@/types";
 
 // ─── Zod schema (mirrors backend settingsUpdateSchema) ──────────────────────
@@ -440,7 +443,83 @@ export default function SettingsPage() {
             )}
           </Button>
         </div>
+
+        {/* Reset Onboarding */}
+        <Card className="border-destructive/30 bg-destructive/5 shadow-xs">
+          <CardHeader>
+            <CardTitle className="text-sm font-bold text-foreground flex items-center gap-1.5">
+              <RotateCcw className="h-4 w-4 text-destructive" />
+              Re-run Onboarding Wizard
+            </CardTitle>
+            <CardDescription className="text-xs text-muted-foreground">
+              Reset your onboarding status to re-complete the setup wizard. Your profile data
+              will not be erased.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center justify-between">
+              <span className="text-xs text-muted-foreground">
+                Your onboarding status is currently{" "}
+                <strong>Complete</strong>
+              </span>
+              <ResetOnboardingButton />
+            </div>
+          </CardContent>
+        </Card>
       </form>
     </div>
+  );
+}
+
+function ResetOnboardingButton() {
+  const router = useRouter();
+  const [confirming, setConfirming] = useState(false);
+  const [resetting, setResetting] = useState(false);
+
+  const handleReset = async () => {
+    setResetting(true);
+    try {
+      await profileApi.update({ isOnboarded: false } as any);
+      toast.success("Onboarding reset. Redirecting to dashboard...");
+      router.push("/dashboard");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Failed to reset onboarding";
+      toast.error(msg);
+    } finally {
+      setResetting(false);
+      setConfirming(false);
+    }
+  };
+
+  if (confirming) {
+    return (
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={() => setConfirming(false)}
+          className="text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+        >
+          Cancel
+        </button>
+        <button
+          type="button"
+          onClick={handleReset}
+          disabled={resetting}
+          className="text-xs font-semibold bg-destructive text-destructive-foreground px-3 py-1.5 rounded-lg hover:bg-destructive/90 disabled:opacity-60 transition-all cursor-pointer"
+        >
+          {resetting ? "Resetting..." : "Confirm Reset"}
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setConfirming(true)}
+      className="text-xs font-semibold border border-destructive/50 text-destructive px-3 py-1.5 rounded-lg hover:bg-destructive/10 transition-all cursor-pointer"
+    >
+      Reset Onboarding
+    </button>
   );
 }

@@ -14,6 +14,7 @@ import { prisma } from "../lib/prisma.js";
 import { AuthenticatedRequest } from "../middleware/auth.js";
 import { validateBody } from "../validators/index.js";
 import { profileUpdateSchema } from "../validators/profile.js";
+import { onboardingSchema } from "../validators/onboarding.js";
 import { ok, serverError } from "../utils/apiResponse.js";
 import { logger } from "../utils/logger.js";
 
@@ -36,6 +37,7 @@ const PROFILE_SELECT = {
   researchInterests: true,
   prPriority: true,
   familyRelocation: true,
+  isOnboarded: true,
   createdAt: true,
   updatedAt: true,
 } as const;
@@ -57,6 +59,7 @@ const EMPTY_PROFILE = {
   researchInterests: [],
   prPriority: null,
   familyRelocation: null,
+  isOnboarded: false,
   createdAt: null,
   updatedAt: null,
 } as const;
@@ -92,18 +95,7 @@ router.put(
     try {
       const userId = req.user!.id;
       // After validateBody, req.body is the parsed shape from profileUpdateSchema.
-      const data = req.body as {
-        university?: string | null;
-        cgpa?: number | null;
-        targetIntake?: string | null;
-        graduationDate?: string | null;
-        targetDegree?: string | null;
-        ieltsScore?: number | null;
-        monthlyBudgetUSD?: number | null;
-        researchInterests?: string[];
-        prPriority?: number | null;
-        familyRelocation?: boolean | null;
-      };
+      const data = req.body as Record<string, unknown>;
 
       const profile = await prisma.userProfile.upsert({
         where: { userId },
@@ -119,6 +111,38 @@ router.put(
         error: error instanceof Error ? error : new Error(String(error)),
       });
       return serverError(res, "Failed to update profile");
+    }
+  }
+);
+
+// POST /api/v1/profile/complete-onboarding
+router.post(
+  "/complete-onboarding",
+  validateBody(onboardingSchema, "Invalid onboarding data"),
+  async (req: AuthenticatedRequest, res: Response) => {
+    try {
+      const userId = req.user!.id;
+      const data = req.body;
+
+      const profile = await prisma.userProfile.upsert({
+        where: { userId },
+        update: { ...data, isOnboarded: true },
+        create: { userId, ...data, isOnboarded: true },
+        select: PROFILE_SELECT,
+      });
+
+      logger.info("Onboarding completed", {
+        userId,
+        fields: Object.keys(data).length,
+      });
+
+      return ok(res, profile);
+    } catch (error) {
+      logger.error("POST /profile/complete-onboarding error", {
+        userId: req.user?.id,
+        error: error instanceof Error ? error : new Error(String(error)),
+      });
+      return serverError(res, "Failed to complete onboarding");
     }
   }
 );
