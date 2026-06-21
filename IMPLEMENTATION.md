@@ -33,7 +33,7 @@
 - [x] Shared `parsers.ts` replaces duplicated `toFloatOrNull`
 - [x] Structured logger replaces all `console.error` in route files
 - [x] `pnpm type-check` passes in both frontend and backend
-- [x] Database seeded: 3045 university rankings + 20-country intelligence
+- [x] Database seeded: university rankings + 20-country intelligence
 
 ---
 
