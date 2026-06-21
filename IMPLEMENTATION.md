@@ -19,7 +19,7 @@
 | **Frontend envelope**     | `fetchApi` auto-unwraps `data`, throws typed `ApiError` with `code` + `fieldErrors`               | `frontend/src/lib/api.ts`                                                    |
 | **Settings page rewrite** | RHF + Zod + shadcn Select + SettingsSkeleton + ApiErrorAlert + Sonner toast                       | `frontend/src/app/dashboard/settings/page.tsx`                               |
 | **Shared components**     | `ApiErrorAlert` (retry), `FieldError` (inline), `SettingsSkeleton` (page-shaped)                  | `frontend/src/components/shared/`                                            |
-| **Seed data**             | 3045 university rankings + 20-country intelligence dataset                                        | `backend/prisma/seed.ts`                                                     |
+| **Seed data**             | university rankings + 20-country intelligence dataset                                             | `backend/prisma/seed.ts`                                                     |
 
 ### Acceptance criteria
 
