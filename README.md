@@ -14,7 +14,7 @@
 
 ## 🌟 Why GradPlanner?
 
-Standard study-abroad tools focus on generic dashboards and simple university rankings. But applying for a technical graduate degree under a **Bangladeshi passport** presents unique realities.
+Standard study-abroad tools focus on generic dashboards and simple university rankings. But applying for a technical graduate degree under a **Bangladeshi Passport** presents unique realities.
 
 GradPlanner solves the real bottlenecks:
 
