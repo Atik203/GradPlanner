@@ -31,7 +31,7 @@ GradPlanner is built as a highly performant, decoupled monorepo:
 
 ### Frontend
 
-- **Framework:** Next.js 15 (App Router) with TypeScript
+- **Framework:** Next.js 16 (App Router) with TypeScript
 - **State Management:** Redux Toolkit
 - **Styling:** Tailwind CSS & shadcn/ui
 - **Client Authentication:** `better-auth` client instance
