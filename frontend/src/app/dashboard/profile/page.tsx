@@ -171,9 +171,8 @@ export default function ProfileDetailsPage() {
       dispatch(setProfile(updatedProfile));
       setSuccess(true);
       toast.success("Profile saved! Country match scores recalculated.");
-    } catch (err: any) {
-      console.error(err);
-      const errMsg = err?.message || "Failed to save changes. Please try again.";
+    } catch (err: unknown) {
+      const errMsg = err instanceof Error ? err.message : "Failed to save changes. Please try again.";
       setError(errMsg);
       toast.error(errMsg);
     } finally {
@@ -543,7 +542,12 @@ export default function ProfileDetailsPage() {
 
             {/* Family Relocation Toggle */}
             <div className="space-y-2">
-              <Label className="text-xs text-muted-foreground">Family Relocation Plans</Label>
+              <Label className="text-xs text-muted-foreground flex items-center gap-1">
+                Family Relocation Plans
+                <span title="Countries with family-friendly immigration (Canada, Ireland, Australia) score higher when enabled" className="inline-flex">
+                  <Info className="h-3 w-3 text-muted-foreground/50 hover:text-muted-foreground cursor-help" />
+                </span>
+              </Label>
               <div className="flex gap-2">
                 {[
                   { value: false, label: "Solo / No family move" },
