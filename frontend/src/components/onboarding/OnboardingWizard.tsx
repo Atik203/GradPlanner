@@ -65,6 +65,7 @@ export function OnboardingWizard() {
   const [data, setData] = useState<WizardData>(defaultData);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [stepError, setStepError] = useState<string | null>(null);
 
   // Restore session
   useEffect(() => {
@@ -108,7 +109,36 @@ export function OnboardingWizard() {
 
   const goToStep = (step: number) => {
     setCurrentStep(step);
+    setStepError(null);
     persist(step, data);
+  };
+
+  /** Validates hard-constraint fields for the current step.
+   *  Returns an error message or null if valid. Steps other than 0 and 1
+   *  have no required fields — the wizard is intentionally skippable. */
+  const validateStep = (step: number): string | null => {
+    if (step === 0 && data.cgpa) {
+      const cgpa = parseFloat(data.cgpa);
+      if (Number.isNaN(cgpa) || cgpa < 0 || cgpa > 4.0) {
+        return "CGPA must be between 0.00 and 4.00.";
+      }
+    }
+    if (step === 1 && data.ieltsScore) {
+      const ielts = parseFloat(data.ieltsScore);
+      if (Number.isNaN(ielts) || ielts < 0 || ielts > 9.0) {
+        return "IELTS score must be between 0.0 and 9.0.";
+      }
+    }
+    return null;
+  };
+
+  const handleNext = () => {
+    const validationError = validateStep(currentStep);
+    if (validationError) {
+      setStepError(validationError);
+      return;
+    }
+    goToStep(currentStep + 1);
   };
 
   const handleComplete = async () => {
@@ -247,6 +277,9 @@ export function OnboardingWizard() {
               )}
             </div>
             <div className="flex items-center gap-4">
+              {stepError && (
+                <p className="text-xs text-destructive max-w-[200px] text-right">{stepError}</p>
+              )}
               <button
                 type="button"
                 onClick={handleSkip}
@@ -256,7 +289,7 @@ export function OnboardingWizard() {
               </button>
               <button
                 type="button"
-                onClick={() => goToStep(currentStep + 1)}
+                onClick={handleNext}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-semibold px-5 py-2 rounded-lg transition-all cursor-pointer"
               >
                 Next →
