@@ -479,7 +479,7 @@ function ResetOnboardingButton() {
   const handleReset = async () => {
     setResetting(true);
     try {
-      await profileApi.update({ isOnboarded: false } as any);
+      await profileApi.update({ isOnboarded: false });
       toast.success("Onboarding reset. Redirecting to dashboard...");
       router.push("/dashboard");
     } catch (err: unknown) {
