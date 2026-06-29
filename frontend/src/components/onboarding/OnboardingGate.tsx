@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { setProfile } from "@/lib/store/slices/profileSlice";
 import { profileApi } from "@/lib/api";
-import { Loader2 } from "lucide-react";
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
+import { DashboardSkeleton } from "@/components/skeletons/DashboardSkeleton";
 import { OnboardingWizard } from "./OnboardingWizard";
 
 export function OnboardingGate({ children }: { children: React.ReactNode }) {
@@ -35,11 +35,7 @@ export function OnboardingGate({ children }: { children: React.ReactNode }) {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
-    );
+    return <DashboardSkeleton />;
   }
 
   if (error) {

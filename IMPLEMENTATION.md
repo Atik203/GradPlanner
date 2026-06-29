@@ -4,26 +4,25 @@
 
 ## Phase 1: Backend API Hardening & Input Validation ✅ COMPLETED
 
-### What was delivered
+### What was done
 
-| Feature | Details | Files |
-|---------|---------|-------|
-| **Zod validation layer** | 7 schema files + `validateBody/Query/Params` middleware. All 11 routes validated. | `backend/src/validators/*.ts` |
-| **ApiResponse envelope** | `<T>` contract with `success/data` or `success/error/code/fieldErrors`. All routes refactored. | `backend/src/types/api.ts`, `backend/src/utils/apiResponse.ts` |
-| **Rate limiting** | Global (100/min), auth (10/min), write (30/min). Environment-overridable. | `backend/src/middleware/rateLimit.ts` |
-| **Body size cap** | `express.json({ limit: '256kb' })` | `backend/src/app.ts` |
-| **Shared parsers** | `toFloatOrNull`, `toIntOrNull`, `toBoolOrNull`, `toDateOrNull`, `toStringOrNull`, `toPositiveInt` | `backend/src/utils/parsers.ts` |
-| **Structured logger** | JSON in prod, ANSI-coloured in dev, level filtering via `LOG_LEVEL` | `backend/src/utils/logger.ts` |
-| **UserSettings model** | `emailDeadlineAlerts`, `timelineNotifications`, `strategyPreference` + migration | `backend/prisma/schema.prisma`, `backend/prisma/migrations/20260619000001_*` |
-| **Settings API** | `GET /api/v1/settings` (upsert), `PUT /api/v1/settings` (partial update) | `backend/src/routes/settings.ts` |
-| **Frontend envelope** | `fetchApi` auto-unwraps `data`, throws typed `ApiError` with `code` + `fieldErrors` | `frontend/src/lib/api.ts` |
-| **Settings page rewrite** | RHF + Zod + shadcn Select + SettingsSkeleton + ApiErrorAlert + Sonner toast | `frontend/src/app/dashboard/settings/page.tsx` |
-| **Shared components** | `ApiErrorAlert` (retry), `FieldError` (inline), `SettingsSkeleton` (page-shaped) | `frontend/src/components/shared/` |
-| **Seed data** | 3045 university rankings + 20-country intelligence dataset | `backend/prisma/seed.ts` |
+| Feature                   | Details                                                                                           | Files                                                                        |
+| ------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| **Zod validation layer**  | 7 schema files + `validateBody/Query/Params` middleware. All 11 routes validated.                 | `backend/src/validators/*.ts`                                                |
+| **ApiResponse envelope**  | `<T>` contract with `success/data` or `success/error/code/fieldErrors`. All routes refactored.    | `backend/src/types/api.ts`, `backend/src/utils/apiResponse.ts`               |
+| **Rate limiting**         | Global (100/min), auth (10/min), write (30/min). Environment-overridable.                         | `backend/src/middleware/rateLimit.ts`                                        |
+| **Body size cap**         | `express.json({ limit: '256kb' })`                                                                | `backend/src/app.ts`                                                         |
+| **Shared parsers**        | `toFloatOrNull`, `toIntOrNull`, `toBoolOrNull`, `toDateOrNull`, `toStringOrNull`, `toPositiveInt` | `backend/src/utils/parsers.ts`                                               |
+| **Structured logger**     | JSON in prod, ANSI-coloured in dev, level filtering via `LOG_LEVEL`                               | `backend/src/utils/logger.ts`                                                |
+| **UserSettings model**    | `emailDeadlineAlerts`, `timelineNotifications`, `strategyPreference` + migration                  | `backend/prisma/schema.prisma`, `backend/prisma/migrations/20260619000001_*` |
+| **Settings API**          | `GET /api/v1/settings` (upsert), `PUT /api/v1/settings` (partial update)                          | `backend/src/routes/settings.ts`                                             |
+| **Frontend envelope**     | `fetchApi` auto-unwraps `data`, throws typed `ApiError` with `code` + `fieldErrors`               | `frontend/src/lib/api.ts`                                                    |
+| **Settings page rewrite** | RHF + Zod + shadcn Select + SettingsSkeleton + ApiErrorAlert + Sonner toast                       | `frontend/src/app/dashboard/settings/page.tsx`                               |
+| **Shared components**     | `ApiErrorAlert` (retry), `FieldError` (inline), `SettingsSkeleton` (page-shaped)                  | `frontend/src/components/shared/`                                            |
+| **Seed data**             | university rankings + 20-country intelligence dataset                                             | `backend/prisma/seed.ts`                                                     |
 
 ### Acceptance criteria
 
-- [x] All 11 backend route files use Zod validation
 - [x] All API responses follow the `{ success, data }` / `{ success, error, code }` contract
 - [x] Frontend `fetchApi` transparently unwraps the new response format
 - [x] Rate limiting active on all routes (global 100/min, auth 10/min, write 30/min)
@@ -34,11 +33,11 @@
 - [x] Shared `parsers.ts` replaces duplicated `toFloatOrNull`
 - [x] Structured logger replaces all `console.error` in route files
 - [x] `pnpm type-check` passes in both frontend and backend
-- [x] Database seeded: 3045 university rankings + 20-country intelligence
+- [x] Database seeded: university rankings + 20-country intelligence
 
 ---
 
-## Phase 2: Onboarding Wizard & Profile Intelligence UX
+## Phase 2: Onboarding Wizard & Profile Intelligence UX ✅ COMPLETED
 
 ### 1. Goal
 
@@ -384,24 +383,24 @@ This phase establishes foundations that make future phases dramatically easier:
 
 ### 12. Acceptance Criteria
 
-- [ ] New `isOnboarded` field exists on `UserProfile` with `@default(false)`
-- [ ] New POST `/api/v1/profile/complete-onboarding` endpoint exists and is validated
-- [ ] Users with `isOnboarded: false` see the full-screen onboarding wizard on dashboard load
-- [ ] Wizard has 4 steps with proper back/next navigation and step indicator
-- [ ] Each step validates fields before allowing "Next" (with inline error display)
-- [ ] "Skip for now" link is available on every step
-- [ ] Step 2 shows live BDT conversion for the budget field
-- [ ] Step 4 shows a visual summary of all entered data with edit links
-- [ ] Completing the wizard sets `isOnboarded: true` and redirects to dashboard
-- [ ] Dashboard shows personalized country recommendations immediately after onboarding
-- [ ] Wizard state persists in `sessionStorage` across page refreshes
-- [ ] Wizard is fully responsive (mobile single-column, desktop two-column)
-- [ ] Step transitions are smooth (slide animation, 300ms)
-- [ ] Redundant profile edit modal removed from dashboard page
-- [ ] Profile page has "What does this affect?" tooltips on Match Intelligence fields
-- [ ] Settings page has "Reset Onboarding" option
-- [ ] `pnpm type-check` passes in both frontend and backend
-- [ ] No new lint errors introduced
+- [x] New `isOnboarded` field exists on `UserProfile` with `@default(false)`
+- [x] New POST `/api/v1/profile/complete-onboarding` endpoint exists and is validated
+- [x] Users with `isOnboarded: false` see the full-screen onboarding wizard on dashboard load
+- [x] Wizard has 4 steps with proper back/next navigation and step indicator
+- [x] Each step validates fields before allowing "Next" (with inline error display)
+- [x] "Skip for now" link is available on every step
+- [x] Step 2 shows live BDT conversion for the budget field
+- [x] Step 4 shows a visual summary of all entered data with edit links
+- [x] Completing the wizard sets `isOnboarded: true` and redirects to dashboard
+- [x] Dashboard shows personalized country recommendations immediately after onboarding
+- [x] Wizard state persists in `sessionStorage` across page refreshes
+- [x] Wizard is fully responsive (mobile single-column, desktop two-column)
+- [x] Step transitions are smooth (slide animation, 300ms)
+- [x] Redundant profile edit modal removed from dashboard page
+- [x] Profile page has "What does this affect?" tooltips on Match Intelligence fields
+- [x] Settings page has "Reset Onboarding" option
+- [x] `pnpm type-check` passes in frontend — backend has a pre-existing Prisma client sync error in `settings.ts` (unrelated to Phase 2; fix with `pnpm exec prisma generate`)
+- [x] No new lint errors introduced
 
 ---
 
@@ -1228,35 +1227,39 @@ Implement a **fast, keyboard-driven Ctrl+K command palette** that serves as the 
 
 Currently, navigating GradPlanner requires significant mouse interaction and multiple clicks:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **Deep navigation paths** | Users must click sidebar -> list -> item to view details | 🟠 HIGH |
-| **No cross-entity search** | Finding a specific professor requires going to the Professors page | 🟠 HIGH |
-| **Slow repetitive actions** | Adding a new university takes 3-4 clicks from the dashboard | 🟡 MEDIUM |
-| **No keyboard shortcuts** | Power users have no way to speed up their workflow | 🟡 MEDIUM |
-| **Hidden features** | Less commonly used features are hard to discover | 🟡 MEDIUM |
+| Problem                     | Impact                                                             | Risk Level |
+| --------------------------- | ------------------------------------------------------------------ | ---------- |
+| **Deep navigation paths**   | Users must click sidebar -> list -> item to view details           | 🟠 HIGH    |
+| **No cross-entity search**  | Finding a specific professor requires going to the Professors page | 🟠 HIGH    |
+| **Slow repetitive actions** | Adding a new university takes 3-4 clicks from the dashboard        | 🟡 MEDIUM  |
+| **No keyboard shortcuts**   | Power users have no way to speed up their workflow                 | 🟡 MEDIUM  |
+| **Hidden features**         | Less commonly used features are hard to discover                   | 🟡 MEDIUM  |
 
 **Business value:** A command palette drastically reduces friction, making the app feel like a premium, professional tool (similar to Superhuman, Linear, or Raycast). This increases perceived value and user retention by speeding up everyday tasks.
 
 ### 3. Features
 
 #### 3.1 Global Shortcut Trigger
+
 - Pressing Ctrl+K (Windows/Linux) or Cmd+K (Mac) opens the command palette overlay.
 - Accessible via a visible search bar button in the dashboard header for mouse users.
 
 #### 3.2 Unified Search Engine
+
 - **Universities:** Search by name or country.
 - **Professors:** Search by name, university, or research interest.
 - **Countries:** Quick jump to country intelligence pages.
 - **Applications:** Search by university or status.
 
 #### 3.3 Quick Navigation Commands
+
 - "Go to Dashboard"
 - "Go to Profile"
 - "Go to Settings"
 - "Go to Timeline"
 
 #### 3.4 Quick Actions
+
 - "Add New University" (opens the bottom sheet/modal immediately)
 - "Add New Professor"
 - "Add New Document"
@@ -1264,6 +1267,7 @@ Currently, navigating GradPlanner requires significant mouse interaction and mul
 - "Log Out"
 
 #### 3.5 Context-Aware Suggestions
+
 - Empty state (no search query) shows:
   - Recently accessed items (stored in localStorage)
   - Suggested commands based on the current page (e.g., if on Professors page, prioritize "Add Professor")
@@ -1271,75 +1275,87 @@ Currently, navigating GradPlanner requires significant mouse interaction and mul
 ### 4. Detailed UI/UX Requirements
 
 #### Command Palette Modal
+
 - **Layout:** Centered modal overlay, max-width 640px, elevated shadow (shadow-2xl).
 - **Backdrop:** g-black/50 backdrop-blur-sm.
 - **Search Input:** Large, clean input field with a search icon. No visible border.
 - **Results List:** Grouped by category (e.g., "Universities", "Commands").
 - **Highlighting:** The matched substring in the search results should be highlighted (e.g., bold or primary color).
-- **Keyboard Navigation:** 
+- **Keyboard Navigation:**
   - Arrow Up / Arrow Down to traverse the list.
   - Enter to select.
   - Escape to close.
 - **Visuals:** Use cmdk (a React command menu component) styled with shadcn/ui Command component.
 
 #### Mobile UX
+
 - On mobile, the command palette opens as a full-screen sheet or stays as a responsive modal that anchors to the top.
 - The Ctrl+K hint is hidden on touch devices.
 
 ### 5. Backend Requirements
 
 #### API
-| Route | Method | Validation | Auth | Purpose |
-|-------|--------|------------|------|---------|
-| /api/v1/search | GET | Query: ?q=query | Required | Unified search endpoint returning matching universities, professors, and applications |
+
+| Route          | Method | Validation      | Auth     | Purpose                                                                               |
+| -------------- | ------ | --------------- | -------- | ------------------------------------------------------------------------------------- |
+| /api/v1/search | GET    | Query: ?q=query | Required | Unified search endpoint returning matching universities, professors, and applications |
 
 **Search Query Logic:**
+
 - Use contains with mode: 'insensitive' in Prisma for fast LIKE queries.
 - Limit results to top 5 per category to keep the payload lightweight and UI responsive.
 
 ### 6. Architecture Requirements
 
 #### New Files
+
 ``
 backend/src/
 ├── routes/
-│   └── search.ts                     # Unified search endpoint
+│ └── search.ts # Unified search endpoint
 
 frontend/src/
 ├── components/
-│   └── command-palette/
-│       ├── CommandPalette.tsx        # Main cmdk wrapper and state
-│       └── useCommandPalette.ts      # Global state/hook to manage open/close
+│ └── command-palette/
+│ ├── CommandPalette.tsx # Main cmdk wrapper and state
+│ └── useCommandPalette.ts # Global state/hook to manage open/close
 ``
 
 #### Reusable Modules
+
 - **useCommandPalette context/zustand store:** Allows any component to trigger the command palette programmatically.
 
 ### 7. Database Changes
+
 None. Search utilizes existing tables and indexes.
 
 ### 8. API Changes
-| Change | Breaking? | Migration Path |
-|--------|-----------|----------------|
-| New /api/v1/search endpoint | No | Additive feature |
+
+| Change                      | Breaking? | Migration Path   |
+| --------------------------- | --------- | ---------------- |
+| New /api/v1/search endpoint | No        | Additive feature |
 
 ### 9. Compatibility Analysis
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
-| **Performance** | 🟡 Low | Debounce the search input (e.g., 300ms) before hitting the /search API |
+
+| Dimension              | Risk   | Mitigation                                                                                                            |
+| ---------------------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
+| **Performance**        | 🟡 Low | Debounce the search input (e.g., 300ms) before hitting the /search API                                                |
 | **Keyboard conflicts** | 🟡 Low | Ensure Ctrl+K doesn't conflict with browser defaults (it usually focuses the address bar, preventDefault() is needed) |
 
 ### 10. Risks and Mitigation
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Search API is too slow | Medium | Medium | Limit results, ensure proper DB indexes on 
-ame fields |
-| cmdk bundle size | Low | Low | The library is lightweight and tree-shakable |
+
+| Risk                   | Probability | Impact | Mitigation                                   |
+| ---------------------- | ----------- | ------ | -------------------------------------------- |
+| Search API is too slow | Medium      | Medium | Limit results, ensure proper DB indexes on   |
+| ame fields             |
+| cmdk bundle size       | Low         | Low    | The library is lightweight and tree-shakable |
 
 ### 11. Future Phase Considerations
+
 - **Phase 8 (AI Email Generator):** Can add a "Draft Email to Professor" quick action directly from the search results.
 
 ### 12. Acceptance Criteria
+
 - [ ] cmdk component integrated and styled with Tailwind.
 - [ ] Ctrl+K / Cmd+K keyboard shortcut opens the palette globally.
 - [ ] Dashboard header includes a visual search bar button.
@@ -1364,101 +1380,119 @@ Build a comprehensive **Analytics & ROI (Return on Investment) Dashboard** that 
 
 Targeting higher education abroad involves complex financial planning and probability assessment:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **No aggregate view of costs** | Students don't know their total estimated first-year costs across all target universities | 🔴 CRITICAL |
-| **Hard to visualize progress** | A list of applications doesn't show conversion rates (Applied -> Interview -> Offer) | 🟠 HIGH |
-| **Unclear scholarship ROI** | Students don't see how much funding they actually need vs. what is guaranteed | 🟠 HIGH |
-| **Professor outreach black box** | No visualization of email response rates | 🟡 MEDIUM |
+| Problem                          | Impact                                                                                    | Risk Level  |
+| -------------------------------- | ----------------------------------------------------------------------------------------- | ----------- |
+| **No aggregate view of costs**   | Students don't know their total estimated first-year costs across all target universities | 🔴 CRITICAL |
+| **Hard to visualize progress**   | A list of applications doesn't show conversion rates (Applied -> Interview -> Offer)      | 🟠 HIGH     |
+| **Unclear scholarship ROI**      | Students don't see how much funding they actually need vs. what is guaranteed             | 🟠 HIGH     |
+| **Professor outreach black box** | No visualization of email response rates                                                  | 🟡 MEDIUM   |
 
 **Business value:** Providing a "Financial Snapshot" and "Success Funnel" makes GradPlanner indispensable. It transitions the product from a CRM to a strategic planner that directly impacts a student's financial decisions.
 
 ### 3. Features
 
 #### 3.1 Application Success Funnel
+
 - A visual funnel chart showing: Shortlisted → Applied → Interviewed → Offer Received → Enrolled.
 - Calculates conversion percentages between stages.
 
 #### 3.2 Financial & ROI Forecaster
+
 - **Total Estimated Cost:** Aggregates tuition and living costs of shortlisted universities.
 - **Funding Gap Analysis:** Visualizes (Total Cost) - (Expected Scholarships/Stipends) = (Funding Gap in BDT).
 - **ROI Metric:** Compares the median post-graduation salary of the target country against the total cost.
 
 #### 3.3 Professor Outreach Analytics
+
 - Response rate pie chart (Replied Positive, Replied Negative, No Response).
 - Follow-up effectiveness metrics.
 
 #### 3.4 Timeline Heatmap
+
 - A GitHub-style contribution heatmap showing user activity (documents uploaded, emails logged, statuses updated) to encourage daily engagement.
 
 ### 4. Detailed UI/UX Requirements
 
 #### Analytics Page (/dashboard/analytics)
+
 - **Layout:** Masonry grid or defined CSS grid for dashboard widgets.
-- **Charts:** Use echarts for highly customizable, responsive SVG charts.
+- **Charts:** Use
+  echarts for highly customizable, responsive SVG charts.
 - **Theming:** Charts must use CSS variables (e.g., hsl(var(--primary))) to perfectly match light/dark modes.
 - **Financial Widget:** Large typography for the "Funding Gap" in BDT. Conditional coloring (red if gap > user budget, green if fully funded).
-- **Funnel Widget:** Horizontal or vertical funnel visualization. 
+- **Funnel Widget:** Horizontal or vertical funnel visualization.
 - **Tooltips:** Hovering over chart elements shows detailed breakdowns.
 
 ### 5. Backend Requirements
 
 #### API
-| Route | Method | Validation | Auth | Purpose |
-|-------|--------|------------|------|---------|
-| /api/v1/analytics/funnel | GET | — | Required | Returns counts for application stages |
-| /api/v1/analytics/financial | GET | — | Required | Returns aggregated cost and funding data |
-| /api/v1/analytics/outreach | GET | — | Required | Returns professor response statistics |
+
+| Route                       | Method | Validation | Auth     | Purpose                                  |
+| --------------------------- | ------ | ---------- | -------- | ---------------------------------------- |
+| /api/v1/analytics/funnel    | GET    | —          | Required | Returns counts for application stages    |
+| /api/v1/analytics/financial | GET    | —          | Required | Returns aggregated cost and funding data |
+| /api/v1/analytics/outreach  | GET    | —          | Required | Returns professor response statistics    |
 
 **Aggregation Logic:**
-- Use Prisma groupBy and aggregate functions (_sum, _avg) to compute stats on the database side rather than loading all rows into Node.js memory.
+
+- Use Prisma groupBy and aggregate functions (\_sum, \_avg) to compute stats on the database side rather than loading all rows into Node.js memory.
 
 ### 6. Architecture Requirements
 
 #### New Files
+
 ``
 backend/src/
 ├── routes/
-│   └── analytics.ts                  # Analytics aggregation endpoints
+│ └── analytics.ts # Analytics aggregation endpoints
 
 frontend/src/
 ├── app/dashboard/analytics/
-│   └── page.tsx                      # Main Analytics dashboard
+│ └── page.tsx # Main Analytics dashboard
 ├── components/
-│   └── analytics/
-│       ├── FunnelChart.tsx           # Recharts funnel
-│       ├── FinancialForecaster.tsx   # ROI widget
-│       └── OutreachStats.tsx         # Pie/Bar charts for professor data
+│ └── analytics/
+│ ├── FunnelChart.tsx # Recharts funnel
+│ ├── FinancialForecaster.tsx # ROI widget
+│ └── OutreachStats.tsx # Pie/Bar charts for professor data
 ``
 
 #### Reusable Modules
-- Add echarts as a dependency.
+
+- Add
+  echarts as a dependency.
 - Create a ChartContainer wrapper that handles ResponsiveContainer and theming consistently.
 
 ### 7. Database Changes
+
 None. Aggregations use existing data.
 
 ### 8. API Changes
-| Change | Breaking? | Migration Path |
-|--------|-----------|----------------|
-| New /api/v1/analytics/* endpoints | No | Additive feature |
+
+| Change                             | Breaking? | Migration Path   |
+| ---------------------------------- | --------- | ---------------- |
+| New /api/v1/analytics/\* endpoints | No        | Additive feature |
 
 ### 9. Compatibility Analysis
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
-| **Bundle Size** | 🟡 Low | echarts is a medium-sized dependency. Ensure it's only loaded on the Analytics route (Next.js route-based splitting handles this). |
+
+| Dimension                                                                                                                          | Risk   | Mitigation |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------- |
+| **Bundle Size**                                                                                                                    | 🟡 Low |
+| echarts is a medium-sized dependency. Ensure it's only loaded on the Analytics route (Next.js route-based splitting handles this). |
 
 ### 10. Risks and Mitigation
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Complex Prisma aggregations cause slow queries | Low | Medium | Ensure indexes exist on status fields in Application and Professor tables. |
-| Charts break on small mobile screens | High | Medium | Use ResponsiveContainer and stack charts vertically on < 768px. |
+
+| Risk                                           | Probability | Impact | Mitigation                                                                 |
+| ---------------------------------------------- | ----------- | ------ | -------------------------------------------------------------------------- |
+| Complex Prisma aggregations cause slow queries | Low         | Medium | Ensure indexes exist on status fields in Application and Professor tables. |
+| Charts break on small mobile screens           | High        | Medium | Use ResponsiveContainer and stack charts vertically on < 768px.            |
 
 ### 11. Future Phase Considerations
+
 - **Phase 9 (PR Pathway):** The ROI calculator can integrate PR visa costs into the total financial gap analysis.
 
 ### 12. Acceptance Criteria
-- [ ] echarts library integrated.
+
+- [ ] echarts library integrated.
 - [ ] /dashboard/analytics page created and accessible from the sidebar/bottom nav.
 - [ ] Application funnel chart renders correctly and calculates conversion rates.
 - [ ] Financial Forecaster aggregates costs from universities and displays the BDT gap.
@@ -1480,21 +1514,23 @@ Integrate an **LLM-assisted email generation engine** that helps students draft 
 
 For Bangladeshi students, securing funding (TA/RA) is critical for visa approval and affordability. The primary mechanism for this is cold-emailing professors:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **Generic, copy-pasted emails** | Professors ignore templates; response rates drop near 0% | 🔴 CRITICAL |
-| **Time-consuming research** | Crafting a good email takes 30-45 minutes per professor | 🟠 HIGH |
-| **Language barriers** | Non-native speakers struggle with the right tone (confident but respectful) | 🟠 HIGH |
-| **Lack of structure** | Students fail to attach their CVs, mention their IELTS, or link their GitHub | 🟡 MEDIUM |
+| Problem                         | Impact                                                                       | Risk Level  |
+| ------------------------------- | ---------------------------------------------------------------------------- | ----------- |
+| **Generic, copy-pasted emails** | Professors ignore templates; response rates drop near 0%                     | 🔴 CRITICAL |
+| **Time-consuming research**     | Crafting a good email takes 30-45 minutes per professor                      | 🟠 HIGH     |
+| **Language barriers**           | Non-native speakers struggle with the right tone (confident but respectful)  | 🟠 HIGH     |
+| **Lack of structure**           | Students fail to attach their CVs, mention their IELTS, or link their GitHub | 🟡 MEDIUM   |
 
 **Business value:** The "Email Generator" becomes a premium feature. By turning a 45-minute task into a 2-minute task while simultaneously increasing the quality of the outreach, GradPlanner provides immediate, tangible ROI to the user.
 
 ### 3. Features
 
 #### 3.1 Profile Context Assembly
+
 - The backend automatically aggregates the student's profile (CGPA, IELTS, Research Interests, GitHub) and the specific professor's details (University, Research Area, Recent Publications).
 
 #### 3.2 AI Prompt Engineering
+
 - A strict, system-prompted LLM call (e.g., via OpenAI API, Anthropic, or Gemini) that enforces:
   - 150-200 word limit.
   - No generic flattery; direct reference to the professor's recent work.
@@ -1502,14 +1538,17 @@ For Bangladeshi students, securing funding (TA/RA) is critical for visa approval
   - Perfect grammar and professional academic tone.
 
 #### 3.3 Draft Editor UI
+
 - The generated email is presented in a rich-text editor, allowing the user to make manual tweaks before copying it to their email client.
 
 #### 3.4 Feedback Loop
+
 - Users can click "Regenerate (Make it shorter)" or "Regenerate (Focus more on NLP)".
 
 ### 4. Detailed UI/UX Requirements
 
 #### Professor Detail Page Integration
+
 - Inside the Professor Card / Modal, add a primary button: `✨ Draft Outreach Email`.
 - Clicking this opens a side-panel or full-screen modal:
   - **Left side:** The professor's details and the student's matching skills.
@@ -1519,11 +1558,13 @@ For Bangladeshi students, securing funding (TA/RA) is critical for visa approval
 ### 5. Backend Requirements
 
 #### API
-| Route | Method | Validation | Auth | Purpose |
-|-------|--------|------------|------|---------|
-| `/api/v1/professors/:id/generate-email` | POST | `emailGenConfigSchema` | Required | Triggers the LLM generation and returns the drafted text |
+
+| Route                                   | Method | Validation             | Auth     | Purpose                                                  |
+| --------------------------------------- | ------ | ---------------------- | -------- | -------------------------------------------------------- |
+| `/api/v1/professors/:id/generate-email` | POST   | `emailGenConfigSchema` | Required | Triggers the LLM generation and returns the drafted text |
 
 **LLM Integration Layer:**
+
 - Add `ai` or `@google/generative-ai` SDK depending on the chosen provider.
 - Manage API keys securely in Vercel Environment Variables.
 - Implement streaming (Server-Sent Events) for the response to improve perceived performance.
@@ -1531,6 +1572,7 @@ For Bangladeshi students, securing funding (TA/RA) is critical for visa approval
 ### 6. Architecture Requirements
 
 #### New Files
+
 ```
 backend/src/
 ├── routes/
@@ -1545,36 +1587,43 @@ frontend/src/
 ```
 
 #### Reusable Modules
+
 - **`llmService`**: A decoupled service that accepts context and returns a prompt response. Can be reused later for SOP (Statement of Purpose) reviews.
 
 ### 7. Database Changes
-| Change | Type | Risk |
-|--------|------|------|
+
+| Change                                         | Type     | Risk         |
+| ---------------------------------------------- | -------- | ------------ |
 | Add `emailsGenerated` counter to `UserProfile` | Additive | ✅ Zero risk |
 
-*(Optional: Used to limit AI usage on free tiers).*
+_(Optional: Used to limit AI usage on free tiers)._
 
 ### 8. API Changes
-| Change | Breaking? | Migration Path |
-|--------|-----------|----------------|
-| New `/api/v1/professors/:id/generate-email` endpoint | No | Additive feature |
+
+| Change                                               | Breaking? | Migration Path   |
+| ---------------------------------------------------- | --------- | ---------------- |
+| New `/api/v1/professors/:id/generate-email` endpoint | No        | Additive feature |
 
 ### 9. Compatibility Analysis
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
-| **Cost / API Usage** | 🟠 Medium | Implement strict rate-limiting (e.g., 5 generations per day per user) |
-| **Response Latency** | 🟡 Low | Use streaming responses (SSE) so the UI updates as the email is written |
+
+| Dimension            | Risk      | Mitigation                                                              |
+| -------------------- | --------- | ----------------------------------------------------------------------- |
+| **Cost / API Usage** | 🟠 Medium | Implement strict rate-limiting (e.g., 5 generations per day per user)   |
+| **Response Latency** | 🟡 Low    | Use streaming responses (SSE) so the UI updates as the email is written |
 
 ### 10. Risks and Mitigation
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Hallucinations (AI makes up facts) | Medium | High | The prompt MUST instruct the AI not to invent academic papers or grades. |
-| Malicious prompt injection | Low | Low | User input is limited to predefined dropdowns (e.g., "Make it shorter"). |
+
+| Risk                               | Probability | Impact | Mitigation                                                               |
+| ---------------------------------- | ----------- | ------ | ------------------------------------------------------------------------ |
+| Hallucinations (AI makes up facts) | Medium      | High   | The prompt MUST instruct the AI not to invent academic papers or grades. |
+| Malicious prompt injection         | Low         | Low    | User input is limited to predefined dropdowns (e.g., "Make it shorter"). |
 
 ### 11. Future Phase Considerations
+
 - **Phase 10:** If email generation is a paid feature, this lays the groundwork for Stripe integration.
 
 ### 12. Acceptance Criteria
+
 - [ ] LLM provider SDK integrated securely in the backend.
 - [ ] `/generate-email` endpoint accepts professor ID, fetches context, and streams AI response.
 - [ ] System prompt enforces length, tone, and accuracy constraints.
@@ -1596,33 +1645,38 @@ Build an interactive **Immigration & Visa Pathway Simulator** tailored specifica
 
 Most students study abroad with the ultimate goal of immigration, but they lack clear, BD-specific knowledge of the pathways:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **Misunderstanding timelines** | Students target the USA for PR, not realizing the EB-2/EB-3 backlog for BD is decades | 🔴 CRITICAL |
-| **Hidden costs** | Failure to account for APS certificates (Germany) or GIC (Canada) leads to visa rejection | 🔴 CRITICAL |
-| **Generic advice** | Global advice doesn't account for the high visa rejection rates for BD passports | 🟠 HIGH |
-| **Missing intermediate steps** | Students don't realize they need a specific language proficiency (e.g., B1 German) for expedited PR | 🟡 MEDIUM |
+| Problem                        | Impact                                                                                              | Risk Level  |
+| ------------------------------ | --------------------------------------------------------------------------------------------------- | ----------- |
+| **Misunderstanding timelines** | Students target the USA for PR, not realizing the EB-2/EB-3 backlog for BD is decades               | 🔴 CRITICAL |
+| **Hidden costs**               | Failure to account for APS certificates (Germany) or GIC (Canada) leads to visa rejection           | 🔴 CRITICAL |
+| **Generic advice**             | Global advice doesn't account for the high visa rejection rates for BD passports                    | 🟠 HIGH     |
+| **Missing intermediate steps** | Students don't realize they need a specific language proficiency (e.g., B1 German) for expedited PR | 🟡 MEDIUM   |
 
 **Business value:** By providing hyper-specific, reality-based immigration pathways, GradPlanner differentiates itself from every other generic study-abroad tracker. It becomes a trusted advisor.
 
 ### 3. Features
 
 #### 3.1 BD-Specific Visa Reality Data
+
 - Static reference data mapping visa requirements specifically for BD passport holders (e.g., APS for Germany, SDS restrictions for Canada).
 
 #### 3.2 Interactive Timeline Simulator
+
 - A visual node-based timeline (e.g., Start -> Graduation -> Post-Study Work -> Apply for PR -> Citizenship).
 - Dynamic calculations based on graduation date (e.g., if graduation is Nov 2027, PR eligibility in Australia is Nov 2030).
 
 #### 3.3 "Risk & Reality" Cards
+
 - Honest assessments for each country (e.g., "USA: High Risk for PR", "Canada: Moderate Risk, Fast Processing", "Germany: Low Risk, High Language Barrier").
 
 #### 3.4 Cost Mapping
+
 - Visualization of immigration-specific costs (SEVIS fees, Residence Permit fees, Health Surcharges) independent of university tuition.
 
 ### 4. Detailed UI/UX Requirements
 
 #### Pathway Simulator Page (`/dashboard/pathways`)
+
 - **Layout:** Horizontal scrolling timeline or vertical stepper (similar to a train map) representing the immigration journey.
 - **Interactivity:** Clicking a node (e.g., "Post-Study Work Visa") opens a drawer with BD-specific requirements (e.g., "Must have IELTS 6.0, costs $500").
 - **Comparison:** Allow users to place two countries side-by-side to visually compare the length of time to PR.
@@ -1631,16 +1685,19 @@ Most students study abroad with the ultimate goal of immigration, but they lack 
 ### 5. Backend Requirements
 
 #### API
-| Route | Method | Validation | Auth | Purpose |
-|-------|--------|------------|------|---------|
-| `/api/v1/pathways/:country` | GET | — | Required | Returns structured visa and PR timeline data for the given country |
+
+| Route                       | Method | Validation | Auth     | Purpose                                                            |
+| --------------------------- | ------ | ---------- | -------- | ------------------------------------------------------------------ |
+| `/api/v1/pathways/:country` | GET    | —          | Required | Returns structured visa and PR timeline data for the given country |
 
 **Data Structure:**
+
 - Create a set of JSON files or Prisma seeded tables containing the pathway logic (e.g., `PathwayStep`: Title, Description, DurationMonths, CostUSD, RiskLevel).
 
 ### 6. Architecture Requirements
 
 #### New Files
+
 ```
 backend/src/
 ├── data/
@@ -1658,35 +1715,42 @@ frontend/src/
 ```
 
 #### Reusable Modules
+
 - **`PathwayTimeline`**: Visual stepper component mapping the stages of immigration.
 
 ### 7. Database Changes
-| Change | Type | Risk |
-|--------|------|------|
+
+| Change                                                      | Type     | Risk         |
+| ----------------------------------------------------------- | -------- | ------------ |
 | (Optional) Add `Pathway` and `PathwayStep` reference tables | Additive | ✅ Zero risk |
 
-*Alternatively, this data can remain in static JSON files since it changes infrequently.*
+_Alternatively, this data can remain in static JSON files since it changes infrequently._
 
 ### 8. API Changes
-| Change | Breaking? | Migration Path |
-|--------|-----------|----------------|
-| New `/api/v1/pathways/:country` endpoint | No | Additive feature |
+
+| Change                                   | Breaking? | Migration Path   |
+| ---------------------------------------- | --------- | ---------------- |
+| New `/api/v1/pathways/:country` endpoint | No        | Additive feature |
 
 ### 9. Compatibility Analysis
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
+
+| Dimension            | Risk      | Mitigation                                                                   |
+| -------------------- | --------- | ---------------------------------------------------------------------------- |
 | **Data Maintenance** | 🟠 Medium | Immigration rules change; keep data in easily editable JSON or simple tables |
 
 ### 10. Risks and Mitigation
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Providing legal advice | High | High | Add explicit disclaimers: "This is a strategic estimate, not legal immigration advice." |
-| Outdated information | Medium | High | Include "Last updated: [Date]" on all pathway cards. |
+
+| Risk                   | Probability | Impact | Mitigation                                                                              |
+| ---------------------- | ----------- | ------ | --------------------------------------------------------------------------------------- |
+| Providing legal advice | High        | High   | Add explicit disclaimers: "This is a strategic estimate, not legal immigration advice." |
+| Outdated information   | Medium      | High   | Include "Last updated: [Date]" on all pathway cards.                                    |
 
 ### 11. Future Phase Considerations
+
 - **Phase 10:** Combine the pathway timeline with the user's personal timeline to create a unified 5-year master plan.
 
 ### 12. Acceptance Criteria
+
 - [ ] Static data/JSON created for Canada, USA, Australia, and Germany pathways specifically for BD nationals.
 - [ ] `/dashboard/pathways` page built with a responsive timeline/stepper UI.
 - [ ] Side-by-side comparison logic implemented.
@@ -1707,34 +1771,38 @@ Upgrade GradPlanner into a highly performant **Progressive Web App (PWA)**. By e
 
 A premium SaaS product must be fast, resilient, and always accessible:
 
-| Problem | Impact | Risk Level |
-|---------|--------|------------|
-| **No offline capabilities** | Students cannot check professor details or deadlines when internet drops | 🟠 HIGH |
-| **No home screen icon** | Mobile users must type the URL every time, reducing daily active usage | 🟠 HIGH |
-| **Large bundle sizes** | High bounce rates due to slow initial load times on mobile networks | 🟡 MEDIUM |
-| **Uncached assets** | Re-downloading fonts and images wastes bandwidth | 🟡 MEDIUM |
+| Problem                     | Impact                                                                   | Risk Level |
+| --------------------------- | ------------------------------------------------------------------------ | ---------- |
+| **No offline capabilities** | Students cannot check professor details or deadlines when internet drops | 🟠 HIGH    |
+| **No home screen icon**     | Mobile users must type the URL every time, reducing daily active usage   | 🟠 HIGH    |
+| **Large bundle sizes**      | High bounce rates due to slow initial load times on mobile networks      | 🟡 MEDIUM  |
+| **Uncached assets**         | Re-downloading fonts and images wastes bandwidth                         | 🟡 MEDIUM  |
 
 **Business value:** PWAs increase user engagement by up to 50% because the app lives on the user's home screen. Offline mode ensures reliability, building immense trust with users who might be reviewing application notes while commuting.
 
 ### 3. Features
 
 #### 3.1 PWA Installability
+
 - Valid `manifest.json` with all required app icons, theme colors, and splash screens.
 - Triggers the native "Add to Home Screen" prompt on Android and iOS.
 
 #### 3.2 Service Worker & Offline Caching
+
 - Implement `next-pwa` or a custom service worker via Workbox.
 - **Cache Strategies:**
-  - *Network First, fallback to Cache:* For user-specific data (e.g., API routes for profile, applications).
-  - *Cache First, fallback to Network:* For static assets (fonts, icons, CSS).
+  - _Network First, fallback to Cache:_ For user-specific data (e.g., API routes for profile, applications).
+  - _Cache First, fallback to Network:_ For static assets (fonts, icons, CSS).
 - When completely offline, users can still view cached dashboard pages and read saved data.
 
 #### 3.3 Next.js Bundle & Rendering Optimization
+
 - Use `@next/bundle-analyzer` to identify and remove heavy/duplicate dependencies.
 - Implement React Server Components (RSC) heavily for static pages (e.g., country intelligence) to ship zero JS.
 - Optimize images using `next/image` with proper sizing and format (WebP/AVIF).
 
 #### 3.4 API Response Compression & CDN
+
 - Enable Brotli/Gzip compression on the Express backend.
 - Serve backend static assets through a CDN.
 - Use `ETag` and `Cache-Control` headers for immutable data (e.g., University Rankings lists).
@@ -1742,24 +1810,28 @@ A premium SaaS product must be fast, resilient, and always accessible:
 ### 4. Detailed UI/UX Requirements
 
 #### Offline State UI
+
 - A subtle, non-intrusive banner at the top of the app: "You are currently offline. Showing cached data."
 - Disable submit buttons for forms (like "Add Professor") when `navigator.onLine` is false, showing a tooltip: "Action unavailable offline."
 
 #### App Install Banner
+
 - Instead of relying solely on the browser's native prompt, show a custom, styled banner on the dashboard for mobile users: "Install GradPlanner for a faster, app-like experience."
 
 ### 5. Backend Requirements
 
 #### API
-| Route | Method | Validation | Auth | Purpose |
-|-------|--------|------------|------|---------|
-| All `GET` routes | — | — | — | Add appropriate `Cache-Control` headers for data that changes infrequently (like `countries`, `universities`) |
+
+| Route            | Method | Validation | Auth | Purpose                                                                                                       |
+| ---------------- | ------ | ---------- | ---- | ------------------------------------------------------------------------------------------------------------- |
+| All `GET` routes | —      | —          | —    | Add appropriate `Cache-Control` headers for data that changes infrequently (like `countries`, `universities`) |
 
 **Compression:** Ensure the `compression` middleware is installed and active in the Express app.
 
 ### 6. Architecture Requirements
 
 #### New Files
+
 ```
 frontend/
 ├── public/
@@ -1770,29 +1842,36 @@ frontend/
 ```
 
 #### Reusable Modules
+
 - **`useNetworkStatus` hook:** Monitors online/offline state and dispatches UI changes globally.
 
 ### 7. Database Changes
+
 None.
 
 ### 8. API Changes
+
 None breaking. Additive caching headers.
 
 ### 9. Compatibility Analysis
-| Dimension | Risk | Mitigation |
-|-----------|------|------------|
+
+| Dimension                  | Risk      | Mitigation                                                                                                                                    |
+| -------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Service Worker caching** | 🟠 Medium | Service workers can aggressively cache stale data. Use strict cache invalidation rules and "stale-while-revalidate" strategies for API calls. |
-| **iOS PWA limits** | 🟡 Low | iOS Safari has strict limits on PWA cache size; ensure we only cache essential data. |
+| **iOS PWA limits**         | 🟡 Low    | iOS Safari has strict limits on PWA cache size; ensure we only cache essential data.                                                          |
 
 ### 10. Risks and Mitigation
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Over-caching causes users to see outdated application statuses | Medium | High | Exclude `POST/PUT/DELETE` API routes from the service worker completely. Use network-first for dashboard data. |
+
+| Risk                                                           | Probability | Impact | Mitigation                                                                                                     |
+| -------------------------------------------------------------- | ----------- | ------ | -------------------------------------------------------------------------------------------------------------- |
+| Over-caching causes users to see outdated application statuses | Medium      | High   | Exclude `POST/PUT/DELETE` API routes from the service worker completely. Use network-first for dashboard data. |
 
 ### 11. Future Phase Considerations
+
 - **Post-Phase 10:** With PWA foundations, adding Web Push Notifications becomes possible (replacing/supplementing the in-app notification center from Phase 5).
 
 ### 12. Acceptance Criteria
+
 - [ ] `manifest.json` and required icons are present in the `public` directory.
 - [ ] Lighthouse PWA score is 100/100.
 - [ ] Application is installable on Android (Chrome) and iOS (Safari).

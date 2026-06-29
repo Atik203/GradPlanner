@@ -198,7 +198,7 @@ Read implementation.md once per phase. Use this section as the source of truth f
 
 ```text
 Phase 1 : Completed     (Backend API hardening: validators, ApiResponse<T>, UserSettings)
-Phase 2 : Pending       (Onboarding wizard & isOnboarded flag)
+Phase 2 : Completed     (Onboarding wizard & isOnboarded flag)
 Phase 3 : Pending       (Skeletons, error states, empty states)
 Phase 4 : Pending       (Mobile-first UI & navigation)
 Phase 5 : Pending       (Notifications & reminders)
@@ -211,7 +211,7 @@ Phase 10: Pending       (PWA & performance optimization)
 
 ## Current Phase Details
 
-None — Phase 1 complete. See "Completed Phases" for details.
+None — Phase 2 complete. See "Completed Phases" for details.
 
 ## Completed Phases
 
@@ -231,6 +231,28 @@ Goals delivered:
 - ✅ Frontend shared: ApiErrorAlert, FieldError, SettingsSkeleton
 - ✅ Frontend Redux: settingsSlice
 
+### Phase 2 — Onboarding Wizard & Profile Intelligence UX (Completed)
+
+Goals delivered:
+- ✅ `isOnboarded Boolean @default(false)` added to `UserProfile` model
+- ✅ POST `/api/v1/profile/complete-onboarding` endpoint (Zod-validated, atomic upsert)
+- ✅ `onboardingSchema` validator in `backend/src/validators/onboarding.ts`
+- ✅ `OnboardingWizard` — 4-step wizard shell with sessionStorage persistence
+- ✅ `StepAcademicProfile`, `StepMatchIntelligence`, `StepPriorities`, `StepSummary`
+- ✅ `OnboardingGate` — wraps dashboard; shows wizard if `isOnboarded: false`
+- ✅ `OnboardingGuide` — post-onboarding tooltip tour (3 highlights, dismissible)
+- ✅ `BdtConverter` — reusable USD→BDT display component (static rate, ৳120/USD)
+- ✅ `DeleteConfirmDialog` — replaces all native `confirm()` calls
+- ✅ Per-step CGPA (0–4) and IELTS (0–9) validation with inline error display
+- ✅ Dashboard profile completeness bar with contextual messages (<60 / 60-80 / ≥80)
+- ✅ Profile page: live top-3 country preview updates as user changes fields
+- ✅ Profile page: `Info` tooltips on all 5 Match Intelligence fields
+- ✅ Settings page: "Reset Onboarding" button (confirm → PUT isOnboarded:false)
+- ✅ `profileApi.completeOnboarding()` in `frontend/src/lib/api.ts`
+- ✅ `OnboardingGate` uses `DashboardSkeleton` (not spinner) during profile load
+- ✅ `console.error` removed from profile page; `as any` cast removed from settings
+- ✅ Frontend `pnpm type-check` passes
+
 ---
 
 # Implementation Memory
@@ -239,7 +261,7 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-None — Phase 1 complete.
+None — Phase 2 complete.
 
 ## Completed Phases
 
@@ -248,6 +270,15 @@ Phase 1: Backend API Hardening & Input Validation (Completed)
   body-size cap, structured logger, UserSettings model, settings page rewrite.
 - Seed data: 3045 university rankings (CSV → UniversityRanking) +
   20-country intelligence (JSON → CountryIntelligence).
+
+Phase 2: Onboarding Wizard & Profile Intelligence UX (Completed)
+- 4-step onboarding wizard with sessionStorage persistence and per-step validation.
+- `isOnboarded` DB flag + POST `/api/v1/profile/complete-onboarding` endpoint.
+- `OnboardingGate` wraps dashboard; `OnboardingGuide` post-onboarding tour.
+- `BdtConverter`, `DeleteConfirmDialog` shared components.
+- Profile page: Info tooltips on all Match Intelligence fields + live country preview.
+- Dashboard: profile completeness bar with contextual messages.
+- Settings: "Reset Onboarding" option.
 
 ## Shared Components
 
@@ -263,7 +294,14 @@ Phase 1: Backend API Hardening & Input Validation (Completed)
 | CountryFlag | frontend/src/components/shared/CountryFlag.tsx | Flag rendering |
 | ApiErrorAlert | frontend/src/components/shared/ApiErrorAlert.tsx | Friendly error display with retry |
 | FieldError | frontend/src/components/shared/FieldError.tsx | Inline form-field error |
+| BdtConverter | frontend/src/components/shared/BdtConverter.tsx | USD→BDT live conversion display |
+| DeleteConfirmDialog | frontend/src/components/shared/DeleteConfirmDialog.tsx | Replaces native confirm() |
 | SettingsSkeleton | frontend/src/components/skeletons/SettingsSkeleton.tsx | Settings page loading |
+| DashboardSkeleton | frontend/src/components/skeletons/DashboardSkeleton.tsx | Dashboard page loading |
+| ProfileSkeleton | frontend/src/components/skeletons/ProfileSkeleton.tsx | Profile page loading |
+| OnboardingGate | frontend/src/components/onboarding/OnboardingGate.tsx | Guards dashboard; shows wizard if !isOnboarded |
+| OnboardingWizard | frontend/src/components/onboarding/OnboardingWizard.tsx | 4-step first-run wizard |
+| OnboardingGuide | frontend/src/components/onboarding/OnboardingGuide.tsx | Post-onboarding tooltip tour |
 | MetricCard | frontend/src/components/dashboard/MetricCard.tsx | Dashboard metrics |
 | SectionHeader | frontend/src/components/dashboard/SectionHeader.tsx | Page sections |
 | WhatNextToday | frontend/src/components/dashboard/WhatNextToday.tsx | Dashboard suggestions |
@@ -324,7 +362,7 @@ v1.1 — Current models:
 - CountryIntelligence
 
 Pending additions:
-- None — Phase 1 complete.
+- None — Phase 2 complete. Schema is stable going into Phase 3.
 
 ## Design System Version
 
