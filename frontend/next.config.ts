@@ -9,11 +9,9 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   serverExternalPackages: ["@prisma/client"],
 
-  // Fix: Tell Turbopack to treat this directory as the project root so it
-  // doesn't walk up to the monorepo root and pick up the wrong pnpm-workspace.yaml.
-  turbopack: {
-    root: path.resolve(__dirname),
-  },
+  // Silence the "inferred workspace root" warning caused by pnpm-workspace.yaml
+  // at the monorepo root. Points Next.js to the correct root for output file tracing.
+  outputFileTracingRoot: path.resolve(__dirname, ".."),
 
   // Proxy all /api/* requests to the Express backend.
   // This is used by client-side fetches that use relative URLs.
@@ -29,3 +27,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+

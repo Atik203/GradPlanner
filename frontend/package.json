@@ -4,8 +4,8 @@
   "packageManager": "pnpm@10.14.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --turbopack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "type-check": "tsc --noEmit"
