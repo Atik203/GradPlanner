@@ -20,6 +20,7 @@ import decisionEngineRouter from "./routes/decisionEngine.js";
 import scholarshipsRouter from "./routes/scholarships.js";
 import timelineRouter from "./routes/timeline.js";
 import settingsRouter from "./routes/settings.js";
+import notificationsRouter from "./routes/notifications.js";
 import { ok, serverError } from "./utils/apiResponse.js";
 import { logger } from "./utils/logger.js";
 
@@ -78,6 +79,7 @@ app.use("/api/v1/decision-engine", requireAuth, decisionEngineRouter);
 app.use("/api/v1/scholarships", requireAuth, scholarshipsRouter);
 app.use("/api/v1/timeline", requireAuth, timelineRouter);
 app.use("/api/v1/settings", requireAuth, settingsRouter);
+app.use("/api/v1/notifications", requireAuth, notificationsRouter);
 
 app.get("/api/v1/health", async (_req: Request, res: Response) => {
   try {
