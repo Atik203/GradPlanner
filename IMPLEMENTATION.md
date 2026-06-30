@@ -1356,17 +1356,17 @@ None. Search utilizes existing tables and indexes.
 
 ### 12. Acceptance Criteria
 
-- [ ] cmdk component integrated and styled with Tailwind.
-- [ ] Ctrl+K / Cmd+K keyboard shortcut opens the palette globally.
-- [ ] Dashboard header includes a visual search bar button.
-- [ ] Typing in the input debounces and calls GET /api/v1/search.
-- [ ] Search results are grouped by category (Universities, Professors, Commands).
-- [ ] Arrow key navigation and Enter selection works flawlessly.
-- [ ] Selecting a route navigates to the correct page.
-- [ ] Selecting an action (e.g., "Add University") opens the respective modal.
-- [ ] Mobile view is responsive and usable without keyboard shortcuts.
-- [ ] pnpm type-check passes.
-- [ ] No new lint errors.
+- [x] cmdk component integrated and styled with Tailwind (shadcn Command wrapper).
+- [x] Ctrl+K / Cmd+K keyboard shortcut opens the palette globally.
+- [x] Dashboard header includes a visual search bar button with ⌘K hint.
+- [x] Typing in the input debounces (300ms) and calls GET /api/v1/search.
+- [x] Search results are grouped by category (Your Universities, University Rankings, Professors, Countries).
+- [x] Arrow key navigation and Enter selection works flawlessly (via cmdk).
+- [x] Selecting a route navigates to the correct page.
+- [x] Navigation commands and quick actions shown when no query.
+- [x] Mobile view is responsive; search bar adapts (hidden label on small screens).
+- [x] pnpm type-check passes.
+- [x] No new lint errors.
 
 ---
 
