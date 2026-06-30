@@ -28,6 +28,7 @@ import { ApplicationSkeleton } from "@/components/skeletons/ApplicationSkeleton"
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { toast } from "sonner";
 
 export default function ApplicationsPage() {
   const dispatch = useAppDispatch();
@@ -44,7 +45,6 @@ export default function ApplicationsPage() {
   const [scholarshipAmt, setScholarshipAmt] = useState("");
   const [notes, setNotes] = useState("");
   const [saving, setSaving] = useState(false);
-  const [updatingIds, setUpdatingIds] = useState<Set<string>>(new Set());
 
   // Delete confirm dialog
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
@@ -107,7 +107,14 @@ export default function ApplicationsPage() {
   };
 
   const handleUpdateStatus = async (id: string, newStatus: ApplicationStatus) => {
-    setUpdatingIds(prev => new Set(prev).add(id));
+    const currentApp = applications.find(a => a.id === id);
+    if (!currentApp) return;
+
+    const previousStatus = currentApp.status;
+
+    // Optimistic: immediately update UI
+    dispatch(updateApplication({ ...currentApp, status: newStatus }));
+
     try {
       const updated = await fetchApi(`/api/v1/applications/${id}`, {
         method: "PUT",
@@ -118,10 +125,10 @@ export default function ApplicationsPage() {
       });
       dispatch(updateApplication(updated));
     } catch (err) {
+      // Revert on failure
+      dispatch(updateApplication({ ...currentApp, status: previousStatus }));
       console.error(err);
-      setError("Failed to update status.");
-    } finally {
-      setUpdatingIds(prev => { const n = new Set(prev); n.delete(id); return n; });
+      toast.error("Failed to update status.");
     }
   };
 
@@ -201,12 +208,11 @@ export default function ApplicationsPage() {
               <CardContent className="space-y-3 pb-4">
                 <div className="space-y-1">
                   <span className="text-[10px] text-muted-foreground">Admissions Status</span>
-                  <div className="relative">
+                    <div className="relative">
                     <select
                       value={app.status}
                       onChange={(e) => handleUpdateStatus(app.id, e.target.value as ApplicationStatus)}
-                      disabled={updatingIds.has(app.id)}
-                      className="w-full h-10 min-h-[44px] px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none disabled:opacity-50"
+                      className="w-full h-10 min-h-[44px] px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
                     >
                       <option value="PLANNING">Planning</option>
                       <option value="IN_PROGRESS">In Progress</option>
@@ -217,9 +223,6 @@ export default function ApplicationsPage() {
                       <option value="REJECTED">Rejected</option>
                       <option value="WITHDRAWN">Withdrawn</option>
                     </select>
-                    {updatingIds.has(app.id) && (
-                      <Loader2 className="absolute right-2 top-1/2 -translate-y-1/2 h-3 w-3 animate-spin text-muted-foreground" />
-                    )}
                   </div>
                 </div>
 
