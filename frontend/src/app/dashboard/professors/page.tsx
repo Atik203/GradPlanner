@@ -379,7 +379,7 @@ export default function ProfessorsPage() {
       </div>
 
       {error && (
-        <ApiErrorAlert error={error} />
+        <ApiErrorAlert error={error} onRetry={loadData} />
       )}
 
       {/* Grid Container */}

@@ -59,6 +59,10 @@ export default function DashboardRankingsPage() {
     }
   }, []);
 
+  const handleRetry = useCallback(() => {
+    loadData(1, debouncedQuery, countryFilter);
+  }, [loadData, debouncedQuery, countryFilter]);
+
   // Fetch countries on mount
   useEffect(() => {
     async function loadCountries() {
@@ -145,7 +149,7 @@ export default function DashboardRankingsPage() {
           )}
 
           {error && (
-            <ApiErrorAlert error={error} />
+            <ApiErrorAlert error={error} onRetry={handleRetry} />
           )}
 
           {/* Table (Desktop) */}
