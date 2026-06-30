@@ -223,7 +223,7 @@ export default function SettingsPage() {
             <ArrowLeft className="h-3.5 w-3.5" />
             Back to Dashboard
           </Link>
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h2 className="text-page-title font-black tracking-tight text-foreground">
             Settings
           </h2>
         </div>
@@ -242,7 +242,7 @@ export default function SettingsPage() {
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to Dashboard
         </Link>
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+        <h2 className="text-page-title font-black tracking-tight text-foreground">
           Settings
         </h2>
         <p className="text-muted-foreground text-sm">

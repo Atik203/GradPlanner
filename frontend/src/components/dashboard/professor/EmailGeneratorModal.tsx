@@ -4,20 +4,12 @@ import React, { useState, useEffect, useMemo } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppSelector } from "@/lib/store/store";
 import { authClient } from "@/lib/auth-client";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { ResponsiveModal } from "@/components/responsive/ResponsiveModal";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { getBdtOutreachAdvice } from "@/lib/timezoneHelper";
 import {
-  Mail,
   Copy,
   CheckCircle,
   AlertCircle,
@@ -348,266 +340,13 @@ ${userName}`
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
-      <DialogContent className="max-w-4xl p-6 border border-border bg-card text-foreground rounded-2xl shadow-2xl backdrop-blur-2xl">
-        <DialogHeader className="border-b border-border/40 pb-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-primary/10 rounded-lg text-primary">
-              <Mail className="h-5 w-5" />
-            </div>
-            <div>
-              <DialogTitle className="text-xl font-bold text-foreground">
-                Email Outreach Advisor
-              </DialogTitle>
-              <DialogDescription className="text-muted-foreground text-sm">
-                Generate highly tailored cold emails for Prof. <strong className="text-foreground">{professor.name}</strong> ({professor.university?.name || "No linked university"}).
-              </DialogDescription>
-            </div>
-          </div>
-        </DialogHeader>
-
-        {profileLoading ? (
-          <div className="py-12 flex flex-col items-center justify-center gap-3">
-            <Loader2 className="h-8 w-8 animate-spin text-primary" />
-            <p className="text-sm text-muted-foreground">Tailoring outreach drafts to your profile...</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-4 overflow-y-auto max-h-[60vh] pr-1">
-            {/* Form Editor Block */}
-            <div className="md:col-span-2 space-y-4">
-              <div className="space-y-1.5">
-                <Label htmlFor="templateSelect" className="text-xs font-bold text-muted-foreground uppercase">
-                  Select Outreach Template
-                </Label>
-                <select
-                  id="templateSelect"
-                  value={selectedTemplateId}
-                  onChange={handleTemplateChange}
-                  className="w-full h-10 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary"
-                >
-                  {templates.map((t) => (
-                    <option key={t.id} value={t.id}>
-                      {t.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Research Proposal Assistant Collapsible Section */}
-              <div className="border border-border/60 bg-muted/10 rounded-xl p-4 space-y-3">
-                <button
-                  type="button"
-                  onClick={() => setShowProposalAssistant(!showProposalAssistant)}
-                  className="flex items-center justify-between w-full text-xs font-bold text-foreground uppercase tracking-wide cursor-pointer"
-                >
-                  <span className="flex items-center gap-1.5 text-primary">
-                    <Sparkles className="h-4 w-4 text-primary" />
-                    🔬 Research Proposal Assistant (P3)
-                  </span>
-                  <span className="text-muted-foreground text-[10px]">{showProposalAssistant ? "Hide" : "Expand"}</span>
-                </button>
-
-                {showProposalAssistant && (
-                  <div className="space-y-3 pt-2 border-t border-border/30 animate-in fade-in duration-300">
-                    <div className="space-y-1">
-                      <Label htmlFor="profPaper" className="text-[11px] text-muted-foreground font-semibold">
-                        Professor's Recent Paper Title / Abstract
-                      </Label>
-                      <textarea
-                        id="profPaper"
-                        rows={3}
-                        placeholder="e.g. Instruction Tuning of Large Language Models for Low-Resource Languages"
-                        value={profPaper}
-                        onChange={(e) => setProfPaper(e.target.value)}
-                        className="w-full p-2 bg-background border border-border rounded-lg text-xs text-foreground focus:outline-none focus:border-primary placeholder:text-muted-foreground/40"
-                      />
-                    </div>
-
-                    <div className="space-y-1">
-                      <Label htmlFor="userThesis" className="text-[11px] text-muted-foreground font-semibold">
-                        Your Previous Work / Thesis Topic
-                      </Label>
-                      <textarea
-                        id="userThesis"
-                        rows={2}
-                        placeholder="e.g. Sentiment analysis on Bangla social media text using BERT"
-                        value={userThesis}
-                        onChange={(e) => setUserThesis(e.target.value)}
-                        className="w-full p-2 bg-background border border-border rounded-lg text-xs text-foreground focus:outline-none focus:border-primary placeholder:text-muted-foreground/40"
-                      />
-                    </div>
-
-                    <div className="flex gap-2 pt-1">
-                      <Button
-                        type="button"
-                        onClick={generateQuestions}
-                        disabled={!profPaper.trim() || !userThesis.trim()}
-                        className="h-8 text-xs bg-primary text-primary-foreground font-bold hover:bg-primary/90"
-                      >
-                        Generate Bridging Questions
-                      </Button>
-                      {generatedQuestions.length > 0 && (
-                        <Button
-                          type="button"
-                          onClick={injectQuestionsIntoBody}
-                          variant="outline"
-                          className="h-8 text-xs border-primary/30 text-primary hover:bg-primary/10"
-                        >
-                          Inject into Email Draft
-                        </Button>
-                      )}
-                    </div>
-
-                    {generatedQuestions.length > 0 && (
-                      <div className="space-y-2 pt-2">
-                        <Label className="text-[11px] font-bold text-foreground">Generated Research Questions:</Label>
-                        <div className="space-y-1.5 max-h-[150px] overflow-y-auto pr-1">
-                          {generatedQuestions.map((q, idx) => (
-                            <div key={idx} className="p-2 rounded bg-background border border-border/60 text-xs text-foreground leading-relaxed">
-                              {q}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-
-              {/* Subject Line */}
-              <div className="space-y-1.5 relative">
-                <Label htmlFor="subject" className="text-xs font-bold text-muted-foreground uppercase flex justify-between">
-                  <span>Subject Line</span>
-                  <button onClick={copySubject} className="text-primary hover:underline flex items-center gap-1 normal-case font-medium text-[11px]">
-                    <Copy className="h-3 w-3" /> Copy Subject
-                  </button>
-                </Label>
-                <Input
-                  id="subject"
-                  value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
-                  className="bg-background border-border text-foreground"
-                />
-              </div>
-
-              {/* Body Text Area */}
-              <div className="space-y-1.5 relative">
-                <Label htmlFor="body" className="text-xs font-bold text-muted-foreground uppercase flex justify-between">
-                  <span>Email Content</span>
-                  <button onClick={copyBody} className="text-primary hover:underline flex items-center gap-1 normal-case font-medium text-[11px]">
-                    <Copy className="h-3 w-3" /> Copy Body
-                  </button>
-                </Label>
-                <textarea
-                  id="body"
-                  rows={12}
-                  value={body}
-                  onChange={(e) => setBody(e.target.value)}
-                  className="w-full p-4 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary font-mono leading-relaxed"
-                />
-              </div>
-            </div>
-
-            {/* Sidebar Advisor Panel */}
-            <div className="space-y-4">
-              {/* BDT Timezone Advisor Card */}
-              <div className="p-4 rounded-xl border border-primary/20 bg-primary/5 space-y-2.5">
-                <h4 className="text-xs font-bold text-primary flex items-center gap-1.5 uppercase">
-                  <Clock className="h-4 w-4" /> BDT Timezone Advisor
-                </h4>
-                <div className="space-y-1">
-                  <div className="text-[11px] text-muted-foreground">Target Country</div>
-                  <div className="text-sm font-bold text-foreground">{tzAdvice.country}</div>
-                </div>
-                <div className="space-y-1">
-                  <div className="text-[11px] text-muted-foreground">Optimal Sending Slot (Local)</div>
-                  <div className="text-sm font-bold text-amber-400">{tzAdvice.localWindow}</div>
-                </div>
-                <div className="space-y-1">
-                  <div className="text-[11px] text-muted-foreground">Target BDT Window</div>
-                  <div className="text-sm font-bold text-emerald-400">{tzAdvice.bdtWindow}</div>
-                </div>
-                <p className="text-[11px] leading-normal text-muted-foreground/90 border-t border-primary/10 pt-2">
-                  {tzAdvice.advice}
-                </p>
-              </div>
-
-              {/* Follow-up Track Card */}
-              <div className="p-4 rounded-xl border border-border bg-muted/20 space-y-3">
-                <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5 uppercase">
-                  <ShieldCheck className="h-4 w-4 text-emerald-400" /> Outreach Tracker Rules
-                </h4>
-
-                <div className="space-y-2 text-xs">
-                  <div className="flex justify-between border-b border-border/40 pb-1.5">
-                    <span className="text-muted-foreground">Status:</span>
-                    <span className="font-bold text-foreground capitalize">{professor.status.replace("_", " ").toLowerCase()}</span>
-                  </div>
-
-                  <div className="flex justify-between border-b border-border/40 pb-1.5">
-                    <span className="text-muted-foreground">Follow-ups Logged:</span>
-                    <span className={`font-bold ${maxFollowUpsReached ? "text-destructive" : "text-foreground"}`}>
-                      {followUpCount} / 2
-                    </span>
-                  </div>
-
-                  {professor.emailSentDate && (
-                    <div className="flex justify-between border-b border-border/40 pb-1.5">
-                      <span className="text-muted-foreground">Initial Sent:</span>
-                      <span className="font-medium text-foreground">
-                        {new Date(professor.emailSentDate).toLocaleDateString()}
-                      </span>
-                    </div>
-                  )}
-
-                  {lastEmailDate && (
-                    <div className="flex justify-between border-b border-border/40 pb-1.5">
-                      <span className="text-muted-foreground">Days Since Last:</span>
-                      <span className={`font-bold ${isWithin14Days ? "text-amber-500" : "text-emerald-400"}`}>
-                        {daysSinceLastEmail} days
-                      </span>
-                    </div>
-                  )}
-
-                  {professor.nextFollowUp && (
-                    <div className="flex justify-between border-b border-border/40 pb-1.5">
-                      <span className="text-muted-foreground">Next Follow-up Due:</span>
-                      <span className="font-medium text-foreground">
-                        {new Date(professor.nextFollowUp).toLocaleDateString()}
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Validation Warnings */}
-                {maxFollowUpsReached ? (
-                  <div className="rounded-lg bg-destructive/10 border border-destructive/20 p-2.5 text-[11px] text-destructive flex gap-2">
-                    <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
-                    <div>
-                      <strong>Hard Limit Reached:</strong> Maximum of 2 follow-ups allowed. Do not email this professor again.
-                    </div>
-                  </div>
-                ) : isWithin14Days ? (
-                  <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-2.5 text-[11px] text-amber-500 flex gap-2">
-                    <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
-                    <div>
-                      <strong>Gap Constraint:</strong> Only {daysSinceLastEmail} days elapsed since your last outreach. Wait at least 14 days.
-                    </div>
-                  </div>
-                ) : (
-                  <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-2.5 text-[11px] text-emerald-400 flex gap-2">
-                    <CheckCircle className="h-4 w-4 shrink-0 mt-0.5" />
-                    <div>
-                      Ready to send! Make sure you copy the draft and send it using your email client.
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        )}
-
-        <DialogFooter className="flex flex-col sm:flex-row gap-2 border-t border-border/40 pt-4 mt-2 bg-transparent">
+    <ResponsiveModal
+      open={isOpen}
+      onOpenChange={(open) => !open && onClose()}
+      title="Email Outreach Advisor"
+      description={`Generate highly tailored cold emails for Prof. ${professor.name} (${professor.university?.name || "No linked university"}).`}
+      footer={
+        <div className="flex flex-col sm:flex-row gap-2 w-full">
           <Button variant="outline" onClick={copyFullDraft} className="border-border text-foreground hover:bg-muted font-medium shrink-0 flex items-center gap-1.5">
             <Copy className="h-4 w-4" /> Copy Full Draft
           </Button>
@@ -628,8 +367,250 @@ ${userName}`
               Log Email as Sent
             </Button>
           </div>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </div>
+      }
+      className="max-w-4xl"
+    >
+      {profileLoading ? (
+        <div className="py-12 flex flex-col items-center justify-center gap-3">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          <p className="text-sm text-muted-foreground">Tailoring outreach drafts to your profile...</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-4">
+          {/* Form Editor Block */}
+          <div className="md:col-span-2 space-y-4">
+            <div className="space-y-1.5">
+              <Label htmlFor="templateSelect" className="text-xs font-bold text-muted-foreground uppercase">
+                Select Outreach Template
+              </Label>
+              <select
+                id="templateSelect"
+                value={selectedTemplateId}
+                onChange={handleTemplateChange}
+                className="w-full min-h-11 px-3 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary"
+              >
+                {templates.map((t) => (
+                  <option key={t.id} value={t.id}>
+                    {t.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Research Proposal Assistant Collapsible Section */}
+            <div className="border border-border/60 bg-muted/10 rounded-xl p-4 space-y-3">
+              <button
+                type="button"
+                onClick={() => setShowProposalAssistant(!showProposalAssistant)}
+                className="flex items-center justify-between w-full text-xs font-bold text-foreground uppercase tracking-wide cursor-pointer"
+              >
+                <span className="flex items-center gap-1.5 text-primary">
+                  <Sparkles className="h-4 w-4 text-primary" />
+                  🔬 Research Proposal Assistant (P3)
+                </span>
+                <span className="text-muted-foreground text-[10px]">{showProposalAssistant ? "Hide" : "Expand"}</span>
+              </button>
+
+              {showProposalAssistant && (
+                <div className="space-y-3 pt-2 border-t border-border/30 animate-in fade-in duration-300">
+                  <div className="space-y-1">
+                    <Label htmlFor="profPaper" className="text-[11px] text-muted-foreground font-semibold">
+                      Professor&apos;s Recent Paper Title / Abstract
+                    </Label>
+                    <textarea
+                      id="profPaper"
+                      rows={3}
+                      placeholder="e.g. Instruction Tuning of Large Language Models for Low-Resource Languages"
+                      value={profPaper}
+                      onChange={(e) => setProfPaper(e.target.value)}
+                      className="w-full p-2 bg-background border border-border rounded-lg text-xs text-foreground focus:outline-none focus:border-primary placeholder:text-muted-foreground/40"
+                    />
+                  </div>
+
+                  <div className="space-y-1">
+                    <Label htmlFor="userThesis" className="text-[11px] text-muted-foreground font-semibold">
+                      Your Previous Work / Thesis Topic
+                    </Label>
+                    <textarea
+                      id="userThesis"
+                      rows={2}
+                      placeholder="e.g. Sentiment analysis on Bangla social media text using BERT"
+                      value={userThesis}
+                      onChange={(e) => setUserThesis(e.target.value)}
+                      className="w-full p-2 bg-background border border-border rounded-lg text-xs text-foreground focus:outline-none focus:border-primary placeholder:text-muted-foreground/40"
+                    />
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    <Button
+                      type="button"
+                      onClick={generateQuestions}
+                      disabled={!profPaper.trim() || !userThesis.trim()}
+                      className="min-h-11 text-xs bg-primary text-primary-foreground font-bold hover:bg-primary/90"
+                    >
+                      Generate Bridging Questions
+                    </Button>
+                    {generatedQuestions.length > 0 && (
+                      <Button
+                        type="button"
+                        onClick={injectQuestionsIntoBody}
+                        variant="outline"
+                        className="min-h-11 text-xs border-primary/30 text-primary hover:bg-primary/10"
+                      >
+                        Inject into Email Draft
+                      </Button>
+                    )}
+                  </div>
+
+                  {generatedQuestions.length > 0 && (
+                    <div className="space-y-2 pt-2">
+                      <Label className="text-[11px] font-bold text-foreground">Generated Research Questions:</Label>
+                      <div className="space-y-1.5 max-h-[150px] overflow-y-auto pr-1">
+                        {generatedQuestions.map((q, idx) => (
+                          <div key={idx} className="p-2 rounded bg-background border border-border/60 text-xs text-foreground leading-relaxed">
+                            {q}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {/* Subject Line */}
+            <div className="space-y-1.5 relative">
+              <Label htmlFor="subject" className="text-xs font-bold text-muted-foreground uppercase flex justify-between">
+                <span>Subject Line</span>
+                <button onClick={copySubject} className="text-primary hover:underline flex items-center gap-1 normal-case font-medium text-[11px]">
+                  <Copy className="h-3 w-3" /> Copy Subject
+                </button>
+              </Label>
+              <Input
+                id="subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                className="bg-background border-border text-foreground"
+              />
+            </div>
+
+            {/* Body Text Area */}
+            <div className="space-y-1.5 relative">
+              <Label htmlFor="body" className="text-xs font-bold text-muted-foreground uppercase flex justify-between">
+                <span>Email Content</span>
+                <button onClick={copyBody} className="text-primary hover:underline flex items-center gap-1 normal-case font-medium text-[11px]">
+                  <Copy className="h-3 w-3" /> Copy Body
+                </button>
+              </Label>
+              <textarea
+                id="body"
+                rows={12}
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+                className="w-full p-4 bg-background border border-border rounded-lg text-sm text-foreground focus:outline-none focus:border-primary font-mono leading-relaxed"
+              />
+            </div>
+          </div>
+
+          {/* Sidebar Advisor Panel */}
+          <div className="space-y-4">
+            {/* BDT Timezone Advisor Card */}
+            <div className="p-4 rounded-xl border border-primary/20 bg-primary/5 space-y-2.5">
+              <h4 className="text-xs font-bold text-primary flex items-center gap-1.5 uppercase">
+                <Clock className="h-4 w-4" /> BDT Timezone Advisor
+              </h4>
+              <div className="space-y-1">
+                <div className="text-[11px] text-muted-foreground">Target Country</div>
+                <div className="text-sm font-bold text-foreground">{tzAdvice.country}</div>
+              </div>
+              <div className="space-y-1">
+                <div className="text-[11px] text-muted-foreground">Optimal Sending Slot (Local)</div>
+                <div className="text-sm font-bold text-amber-400">{tzAdvice.localWindow}</div>
+              </div>
+              <div className="space-y-1">
+                <div className="text-[11px] text-muted-foreground">Target BDT Window</div>
+                <div className="text-sm font-bold text-emerald-400">{tzAdvice.bdtWindow}</div>
+              </div>
+              <p className="text-[11px] leading-normal text-muted-foreground/90 border-t border-primary/10 pt-2">
+                {tzAdvice.advice}
+              </p>
+            </div>
+
+            {/* Follow-up Track Card */}
+            <div className="p-4 rounded-xl border border-border bg-muted/20 space-y-3">
+              <h4 className="text-xs font-bold text-foreground flex items-center gap-1.5 uppercase">
+                <ShieldCheck className="h-4 w-4 text-emerald-400" /> Outreach Tracker Rules
+              </h4>
+
+              <div className="space-y-2 text-xs">
+                <div className="flex justify-between border-b border-border/40 pb-1.5">
+                  <span className="text-muted-foreground">Status:</span>
+                  <span className="font-bold text-foreground capitalize">{professor.status.replace("_", " ").toLowerCase()}</span>
+                </div>
+
+                <div className="flex justify-between border-b border-border/40 pb-1.5">
+                  <span className="text-muted-foreground">Follow-ups Logged:</span>
+                  <span className={`font-bold ${maxFollowUpsReached ? "text-destructive" : "text-foreground"}`}>
+                    {followUpCount} / 2
+                  </span>
+                </div>
+
+                {professor.emailSentDate && (
+                  <div className="flex justify-between border-b border-border/40 pb-1.5">
+                    <span className="text-muted-foreground">Initial Sent:</span>
+                    <span className="font-medium text-foreground">
+                      {new Date(professor.emailSentDate).toLocaleDateString()}
+                    </span>
+                  </div>
+                )}
+
+                {lastEmailDate && (
+                  <div className="flex justify-between border-b border-border/40 pb-1.5">
+                    <span className="text-muted-foreground">Days Since Last:</span>
+                    <span className={`font-bold ${isWithin14Days ? "text-amber-500" : "text-emerald-400"}`}>
+                      {daysSinceLastEmail} days
+                    </span>
+                  </div>
+                )}
+
+                {professor.nextFollowUp && (
+                  <div className="flex justify-between border-b border-border/40 pb-1.5">
+                    <span className="text-muted-foreground">Next Follow-up Due:</span>
+                    <span className="font-medium text-foreground">
+                      {new Date(professor.nextFollowUp).toLocaleDateString()}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* Validation Warnings */}
+              {maxFollowUpsReached ? (
+                <div className="rounded-lg bg-destructive/10 border border-destructive/20 p-2.5 text-[11px] text-destructive flex gap-2">
+                  <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
+                  <div>
+                    <strong>Hard Limit Reached:</strong> Maximum of 2 follow-ups allowed. Do not email this professor again.
+                  </div>
+                </div>
+              ) : isWithin14Days ? (
+                <div className="rounded-lg bg-amber-500/10 border border-amber-500/20 p-2.5 text-[11px] text-amber-500 flex gap-2">
+                  <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
+                  <div>
+                    <strong>Gap Constraint:</strong> Only {daysSinceLastEmail} days elapsed since your last outreach. Wait at least 14 days.
+                  </div>
+                </div>
+              ) : (
+                <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-2.5 text-[11px] text-emerald-400 flex gap-2">
+                  <CheckCircle className="h-4 w-4 shrink-0 mt-0.5" />
+                  <div>
+                    Ready to send! Make sure you copy the draft and send it using your email client.
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </ResponsiveModal>
   );
 }
