@@ -153,14 +153,14 @@ export default function CountryExplorerPage() {
         <div className="flex gap-2 shrink-0">
           {!profileHasMatchData && (
             <Link href="/dashboard/profile">
-              <Button variant="outline" className="h-9 text-xs flex items-center gap-1.5 border-primary/30 text-primary hover:bg-primary/10 cursor-pointer">
+              <Button variant="outline" className="h-11 text-xs flex items-center gap-1.5 border-primary/30 text-primary hover:bg-primary/10 cursor-pointer">
                 <User className="h-3.5 w-3.5" />
                 Complete Profile
               </Button>
             </Link>
           )}
           <Link href="/dashboard/countries/compare">
-            <Button className="bg-primary hover:bg-primary/95 text-primary-foreground font-semibold shadow-sm cursor-pointer h-9">
+            <Button className="bg-primary hover:bg-primary/95 text-primary-foreground font-semibold shadow-sm cursor-pointer h-11">
               Launch Compare Tool
             </Button>
           </Link>
@@ -180,7 +180,7 @@ export default function CountryExplorerPage() {
               placeholder="Search by country name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 bg-background border-border text-foreground text-xs h-9"
+              className="pl-9 bg-background border-border text-foreground text-xs min-h-11"
             />
           </div>
 
@@ -189,7 +189,7 @@ export default function CountryExplorerPage() {
             <select
               value={selectedContinent}
               onChange={(e) => setSelectedContinent(e.target.value)}
-              className="bg-background border border-border text-foreground rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary h-9 cursor-pointer"
+              className="bg-background border border-border text-foreground rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary min-h-11 cursor-pointer"
             >
               {continents.map((cont) => (
                 <option key={cont} value={cont}>{cont}</option>
@@ -202,7 +202,7 @@ export default function CountryExplorerPage() {
             <select
               value={sortMode}
               onChange={(e) => setSortMode(e.target.value as SortMode)}
-              className="bg-background border border-border text-foreground rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary h-9 cursor-pointer"
+              className="bg-background border border-border text-foreground rounded-lg px-3 py-1.5 text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary min-h-11 cursor-pointer"
             >
               <option value="match">Sort: Your Match %</option>
               <option value="overall">Sort: Overall Score</option>
@@ -249,8 +249,8 @@ export default function CountryExplorerPage() {
                 </CardHeader>
 
                 <CardContent className="flex-1 flex flex-col justify-end space-y-4 pt-0">
-                  <div className="grid grid-cols-3 gap-1.5 text-center text-[10px] border-t border-border/30 pt-3">
-                    <div className="bg-muted/40 p-1.5 rounded-md">
+                  <div className="flex md:grid md:grid-cols-3 gap-1.5 text-center text-[10px] border-t border-border/30 pt-3 overflow-x-auto overflow-y-hidden -mx-1 px-1 snap-x snap-mandatory scrollbar-none">
+                    <div className="bg-muted/40 p-1.5 rounded-md shrink-0 w-[110px] snap-start md:w-auto">
                       <span className="text-muted-foreground block font-semibold">Living Cost</span>
                       <span className="font-extrabold text-foreground block truncate mt-0.5">
                         {sum.averageLivingCost
@@ -258,11 +258,11 @@ export default function CountryExplorerPage() {
                           : "N/A"}
                       </span>
                     </div>
-                    <div className="bg-muted/40 p-1.5 rounded-md">
+                    <div className="bg-muted/40 p-1.5 rounded-md shrink-0 w-[110px] snap-start md:w-auto">
                       <span className="text-muted-foreground block font-semibold">PR Score</span>
                       <span className="font-extrabold text-blue-400 block mt-0.5">{sum.prScore}/100</span>
                     </div>
-                    <div className="bg-muted/40 p-1.5 rounded-md">
+                    <div className="bg-muted/40 p-1.5 rounded-md shrink-0 w-[110px] snap-start md:w-auto">
                       <span className="text-muted-foreground block font-semibold">AI Market</span>
                       <span className="font-extrabold text-purple-400 block mt-0.5">{sum.jobMarketScore}/100</span>
                     </div>

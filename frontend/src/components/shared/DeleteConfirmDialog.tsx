@@ -1,16 +1,9 @@
 "use client";
 
 import React from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogFooter,
-} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { AlertTriangle } from "lucide-react";
+import { ResponsiveModal } from "@/components/responsive/ResponsiveModal";
 
 interface DeleteConfirmDialogProps {
   open: boolean;
@@ -30,21 +23,13 @@ export function DeleteConfirmDialog({
   confirmLabel = "Delete",
 }: DeleteConfirmDialogProps) {
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent showCloseButton={false} className="max-w-md">
-        <DialogHeader>
-          <div className="flex items-center gap-2">
-            <AlertTriangle className="h-5 w-5 text-destructive" />
-            <DialogTitle>{title}</DialogTitle>
-          </div>
-          <DialogDescription>{description}</DialogDescription>
-        </DialogHeader>
-        <DialogFooter>
-          <Button
-            type="button"
-            variant="ghost"
-            onClick={() => onOpenChange(false)}
-          >
+    <ResponsiveModal
+      open={open}
+      onOpenChange={onOpenChange}
+      title={title}
+      footer={
+        <>
+          <Button type="button" variant="ghost" onClick={() => onOpenChange(false)}>
             Cancel
           </Button>
           <Button
@@ -57,8 +42,13 @@ export function DeleteConfirmDialog({
           >
             {confirmLabel}
           </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
+        </>
+      }
+    >
+      <div className="flex items-start gap-3">
+        <AlertTriangle className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
+        <p className="text-sm text-muted-foreground">{description}</p>
+      </div>
+    </ResponsiveModal>
   );
 }

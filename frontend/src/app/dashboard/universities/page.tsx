@@ -323,7 +323,7 @@ export default function UniversitiesPage() {
                   </div>
                   <Button
                     onClick={() => handleOpenTrackForm(rank)}
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-8 px-3 rounded-lg text-xs flex items-center gap-1 self-start sm:self-center"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold min-h-11 px-3 rounded-lg text-xs flex items-center gap-1 self-start sm:self-center"
                   >
                     <Plus className="h-3 w-3" />
                     Track
@@ -514,7 +514,7 @@ export default function UniversitiesPage() {
                     </div>
                     <Button
                       onClick={() => setDeleteTarget(uni.id)}
-                      className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all cursor-pointer"
+                      className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-2.5 rounded-lg transition-all cursor-pointer touch-target flex items-center justify-center"
                     >
                       <Trash2 className="h-3.5 w-3.5" />
                     </Button>
@@ -713,14 +713,14 @@ export default function UniversitiesPage() {
             <Button
               type="button"
               onClick={() => setTrackFormOpen(false)}
-              className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
+              className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-11 cursor-pointer"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={saving}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-11 cursor-pointer"
             >
               {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Track University"}
             </Button>

@@ -306,7 +306,7 @@ export default function DashboardRankingsPage() {
                 size="sm"
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage <= 1 || loading}
-                className="border-border text-muted-foreground hover:text-foreground h-9 px-2 sm:px-3"
+                className="touch-target px-2 sm:px-3"
               >
                 <ChevronLeft className="h-4 w-4 sm:mr-1" />
                 <span className="hidden sm:inline">Previous</span>
@@ -329,7 +329,7 @@ export default function DashboardRankingsPage() {
                       key={pageNum}
                       onClick={() => handlePageChange(pageNum)}
                       disabled={loading}
-                      className={`w-8 h-8 rounded-lg text-xs font-semibold transition-colors ${
+                      className={`touch-target rounded-lg text-xs font-semibold transition-colors ${
                         pageNum === currentPage
                           ? "bg-primary text-primary-foreground"
                           : "text-muted-foreground hover:bg-muted hover:text-foreground border border-border"
@@ -346,7 +346,7 @@ export default function DashboardRankingsPage() {
                 size="sm"
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage >= totalPages || loading}
-                className="border-border text-muted-foreground hover:text-foreground h-9 px-2 sm:px-3"
+                className="touch-target px-2 sm:px-3"
               >
                 <span className="hidden sm:inline">Next</span>
                 <ChevronRight className="h-4 w-4 sm:ml-1" />
