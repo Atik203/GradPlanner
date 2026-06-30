@@ -21,6 +21,7 @@ import {
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import Link from "next/link";
 import { CountryFlag } from "@/components/shared/CountryFlag";
+import { EmptyState } from "@/components/shared/EmptyState";
 import { CountrySkeleton } from "@/components/skeletons/CountrySkeleton";
 
 interface CountryEntry {
@@ -279,17 +280,12 @@ export default function CountryExplorerPage() {
           })}
         </div>
       ) : (
-        <div className="text-center py-16 bg-muted/10 border border-border/60 border-dashed rounded-xl">
-          <Globe className="h-10 w-10 text-muted-foreground/40 mx-auto mb-2" />
-          <p className="text-sm font-semibold text-foreground">No countries match your filters.</p>
-          <Button
-            variant="ghost"
-            onClick={() => { setSearchQuery(""); setSelectedContinent("All"); }}
-            className="text-primary text-xs mt-2 cursor-pointer"
-          >
-            Reset Filters
-          </Button>
-        </div>
+        <EmptyState
+          icon={Globe}
+          title="No countries match your filters"
+          description="Try adjusting your search or filters to discover country insights."
+          secondaryAction={{ label: "Reset Filters", onAction: () => { setSearchQuery(""); setSelectedContinent("All"); } }}
+        />
       )}
 
     </div>

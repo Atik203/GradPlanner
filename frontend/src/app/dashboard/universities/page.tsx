@@ -39,6 +39,7 @@ import { toast } from "sonner";
 import { UniversitySkeleton } from "@/components/skeletons/UniversitySkeleton";
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 // BDT Conversion Rates constant for calculation
 const BDT_RATES: Record<string, number> = {
@@ -348,10 +349,13 @@ export default function UniversitiesPage() {
         {loading ? (
           <UniversitySkeleton />
         ) : universities.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
-            <School className="h-10 w-10 mb-2 text-muted-foreground/50" />
-            <p className="text-sm">No universities tracked yet. Find one above to begin!</p>
-          </div>
+          <EmptyState
+            icon={School}
+            title="No universities tracked yet"
+            description="Search and add universities above to build your personalized shortlist."
+            actionLabel="Add University"
+            actionHref="/dashboard/universities/new"
+          />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {universities.map((uni) => {

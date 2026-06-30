@@ -12,6 +12,7 @@ import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { UniversityRanking } from "@/types";
 import { useDebounce } from "@/hooks/use-debounce";
 import { RankingTableSkeleton } from "@/components/skeletons/RankingTableSkeleton";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 interface PaginatedResponse {
   data: UniversityRanking[];
@@ -169,8 +170,18 @@ export default function DashboardRankingsPage() {
                 <tbody className="divide-y divide-border/60">
                   {results.length === 0 && !loading && (
                     <tr>
-                      <td colSpan={6} className="px-5 py-12 text-center text-muted-foreground">
-                        No universities found matching your search.
+                      <td colSpan={6} className="px-5 py-12">
+                        <div className="max-w-sm mx-auto">
+                          <EmptyState
+                            icon={Search}
+                            title="No universities found"
+                            description="No results match your search. Try different keywords or remove filters."
+                            secondaryAction={{
+                              label: "Clear Filters",
+                              onAction: () => { setSearchQuery(""); setCountryFilter([]); }
+                            }}
+                          />
+                        </div>
                       </td>
                     </tr>
                   )}
@@ -244,9 +255,11 @@ export default function DashboardRankingsPage() {
             {loading ? (
               <RankingTableSkeleton />
             ) : results.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
-                <p className="text-sm">No universities found matching your search.</p>
-              </div>
+              <EmptyState
+                icon={Search}
+                title="No universities found"
+                description="No results match your search. Try different keywords or remove filters."
+              />
             ) : (
               results.map((rank) => (
                 <div key={rank.id} className="rounded-lg border border-border bg-card p-4 space-y-3">

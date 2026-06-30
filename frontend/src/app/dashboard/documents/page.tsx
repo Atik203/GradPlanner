@@ -25,6 +25,7 @@ import { Document, DocumentType, DocumentStatus } from "@/types";
 import { DocumentSkeleton } from "@/components/skeletons/DocumentSkeleton";
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 export default function DocumentsPage() {
   const dispatch = useAppDispatch();
@@ -152,10 +153,13 @@ export default function DocumentsPage() {
       {loading ? (
         <DocumentSkeleton />
       ) : documents.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
-          <FileText className="h-10 w-10 mb-2 text-muted-foreground/50" />
-          <p className="text-sm">Your document checklist is empty. Add a file checklist item!</p>
-        </div>
+        <EmptyState
+          icon={FileText}
+          title="Document checklist empty"
+          description="Create a BD document checklist to stay on top of police clearance, transcripts, and bank statements."
+          actionLabel="Add Document"
+          actionHref="/dashboard/documents/new"
+        />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {documents.map((doc) => (
