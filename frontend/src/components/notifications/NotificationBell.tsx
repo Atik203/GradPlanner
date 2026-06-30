@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useCallback, useEffect, useRef } from "react";
-import { Bell, BellOff } from "lucide-react";
+import { Bell, BellOff, BellRing } from "lucide-react";
+import { toast } from "sonner";
 import { notificationApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { setUnreadCount, resetUnreadCount } from "@/lib/store/slices/notificationSlice";
@@ -13,13 +14,14 @@ export function NotificationBell() {
   const [open, setOpen] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const bellRef = useRef<HTMLButtonElement>(null);
+  const prevCountRef = useRef(unreadCount);
 
   const fetchCount = useCallback(async () => {
     try {
       const { count } = await notificationApi.unreadCount();
       dispatch(setUnreadCount(count));
     } catch {
-      // Silently fail — keep previous count
+      // Silent
     }
   }, [dispatch]);
 
@@ -41,6 +43,28 @@ export function NotificationBell() {
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, [fetchCount]);
+
+  useEffect(() => {
+    if (loading || open) return;
+    if (unreadCount > prevCountRef.current) {
+      const newCount = unreadCount - prevCountRef.current;
+      toast(
+        <div className="flex items-center gap-3">
+          <BellRing className="h-5 w-5 text-destructive shrink-0" />
+          <div>
+            <p className="text-sm font-medium text-foreground">
+              {newCount} new notification{newCount > 1 ? "s" : ""}
+            </p>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              Check your notification panel
+            </p>
+          </div>
+        </div>,
+        { duration: 6000 }
+      );
+    }
+    prevCountRef.current = unreadCount;
+  }, [unreadCount, loading, open]);
 
   const handleOpenChange = useCallback(
     (v: boolean) => {
