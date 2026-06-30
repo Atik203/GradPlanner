@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import {
   GanttChart,
-  Loader2,
   Calendar,
   Award,
   Sparkles,
@@ -294,9 +293,7 @@ export default function TimelinePlannerPage() {
       )}
 
       {fetchingTimeline ? (
-        <div className="flex h-[40vh] items-center justify-center">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
-        </div>
+        <TimelineSkeleton />
       ) : timelineData && timelineData.milestones.length > 0 ? (
         <div className="space-y-8 animate-in fade-in duration-300">
           
