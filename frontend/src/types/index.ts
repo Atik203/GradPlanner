@@ -326,3 +326,104 @@ export interface GeneratedEmail {
   subject: string;
   body: string;
 }
+
+// ─── PR & Visa Pathway Simulator (Phase 9) ─────────────────────────────────────
+
+export interface PathwayVisa {
+  visaName: string;
+  processingTime: string;
+  applicationFee: number;
+  feeCurrency: string;
+  difficulty: string;
+  rejectionRiskBD: string;
+  tips: string;
+  officialUrl: string;
+  workRights: string;
+}
+
+export interface PathwayPostStudyWork {
+  visaName: string;
+  duration: string;
+  pathwayToPR: boolean;
+  difficulty: string;
+  notes: string;
+}
+
+export interface PathwayPROverview {
+  overallScore: number;
+  averageYears: number;
+  confidenceScore: number;
+  keyRisks: string[];
+  keyAdvantages: string[];
+}
+
+export interface PathwayPR {
+  pathwayName: string;
+  difficulty: string;
+  estimatedYears: number;
+  description: string;
+  languageRequired: string;
+  jobRequired: boolean;
+  costEstimate: number | null;
+  costCurrency: string | null;
+  strengths: string[];
+  weaknesses: string[];
+  strategicAdvice: string;
+}
+
+export interface PathwayPhase {
+  id: string;
+  name: string;
+  duration: string;
+  milestones: string[];
+  riskLevel: string;
+}
+
+export interface PathwayTimeline {
+  totalJourneyYears: string;
+  phases: PathwayPhase[];
+  sampleTimeline: { year: number; event: string }[];
+}
+
+export interface PathwayRiskDimension {
+  name: string;
+  score: number;
+  level: string;
+  summary: string;
+  trend: string;
+}
+
+export interface PathwayRisks {
+  overallScore: number;
+  riskLevel: string;
+  warnings: string[];
+  dimensions: PathwayRiskDimension[];
+}
+
+export interface PathwayCitizenship {
+  yearsRequired: number;
+  difficulty: string;
+  dualAllowed: boolean;
+  languageRequired: string;
+  passportStrength: string;
+}
+
+export interface PathwayCost {
+  item: string;
+  amountUSD: number;
+  notes: string;
+}
+
+export interface PathwayData {
+  country: string;
+  countryCode: string;
+  studentVisa: PathwayVisa | null;
+  postStudyWork: PathwayPostStudyWork | null;
+  prOverview: PathwayPROverview | null;
+  prPathways: PathwayPR[];
+  timeline: PathwayTimeline | null;
+  risks: PathwayRisks | null;
+  citizenship: PathwayCitizenship | null;
+  costs: PathwayCost[];
+  lastUpdated: string;
+}
