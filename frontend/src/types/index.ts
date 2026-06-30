@@ -277,3 +277,38 @@ export interface SearchResults {
   professors: SearchedProfessor[];
   countries: SearchedCountry[];
 }
+
+// ─── Analytics (Phase 7) ──────────────────────────────────────────────────────
+
+export interface UnivBreakdown {
+  name: string;
+  country: string;
+  tier: string;
+  tuition: number;
+  livingCost: number;
+  scholarship: number;
+}
+
+export interface AnalyticsResponse {
+  profileCompleteness: number;
+  applicationFunnel: Record<string, number>;
+  financial: {
+    totalEstimatedCost: number;
+    scholarshipsTotal: number;
+    fundingGap: number;
+    avgPostGradSalary: number;
+    roiScore: number;
+    breakdownByUniversity: UnivBreakdown[];
+  };
+  professorOutreach: {
+    total: number;
+    contacted: number;
+    repliedPositive: number;
+    repliedNegative: number;
+    noResponse: number;
+    responseRate: number;
+    averageFitScore: number;
+    followUpEfficacy: number;
+  };
+  activityTimeline: Array<{ date: string; count: number }>;
+}

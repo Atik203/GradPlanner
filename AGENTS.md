@@ -202,20 +202,19 @@ Phase 2 : Completed     (Onboarding wizard & isOnboarded flag)
 Phase 3 : Completed     (Skeletons, error states, empty states)
 Phase 4 : Completed     (Mobile-first UI & navigation)
 Phase 5 : Completed     (Notifications & reminders)
-Phase 6 : In Progress   (Global search & command palette)
-Phase 7 : Pending       (Advanced analytics & ROI)
-Phase 8 : Pending       (Professor email generator)
+Phase 6 : Completed     (Global search & command palette)
+Phase 7 : Completed     (Advanced analytics & ROI dashboard)
+
 Phase 9 : Pending       (PR & visa pathway simulator)
 Phase 10: Pending       (PWA & performance optimization)
 ```
 
 ## Current Phase Details
 
-Phase 6 — Global search & command palette:
-- Backend: GET /api/v1/search?q= cross-entity search (UniversityRanking, University, Professor, CountryIntelligence)
-- Frontend: cmd-based CommandPalette with Ctrl+K, debounced search, grouped results, navigation commands, quick actions
-- Search trigger button in header with ⌘K hint
-- All 7 steps implemented, type-check passes.
+Phase 8 — Professor email generator (Pending)
+- Backend: POST /api/v1/professors/:id/generate-email endpoint with LLM integration
+- Frontend: EmailGeneratorModal with draft editor, regenerate options, copy to clipboard
+- Professor detail page integration with "Draft Outreach Email" button
 
 ## Completed Phases
 
@@ -243,6 +242,16 @@ Goals delivered:
 
 Goals delivered:
 - ✅ Notification model+enum, 6 CRUD endpoints, notificationService (5 generators), injection into 5 routes, Redux slice, NotificationBell/Panel/Item/EmptyState, header integration, WhatNextToday summary, Sonner toast on urgent.
+
+### Phase 6 — Global Search & Command Palette (Completed)
+
+Goals delivered:
+- ✅ cmdk + shadcn Command, Ctrl+K palette, GET /api/v1/search cross-entity, useCommandPalette hook, CommandPalette with grouped results + quick actions, SearchTrigger in header, `pnpm build`+`type-check` pass.
+
+### Phase 7 — Advanced Analytics & ROI Dashboard (Completed)
+
+Goals delivered:
+- ✅ GET /api/v1/analytics endpoint (funnel, financial, outreach, activity), ApplicationFunnel (FunnelChart), FinancialROI (BarChart + funding gap), ProfessorOutreach (PieChart + metrics), ActivityHeatmap (custom SVG 365-day grid), full analytics page rewrite, `pnpm build` passes.
 
 ---
 
