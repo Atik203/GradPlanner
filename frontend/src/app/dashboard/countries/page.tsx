@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { setProfile } from "@/lib/store/slices/profileSlice";
@@ -62,37 +62,39 @@ export default function CountryExplorerPage() {
   const [selectedContinent, setSelectedContinent] = useState("All");
   const [sortMode, setSortMode] = useState<SortMode>("match");
 
-  useEffect(() => {
-    async function loadData() {
-      try {
-        setLoading(true);
-        const [data, profileData] = await Promise.all([
-          fetchApi("/api/v1/countries"),
-          fetchApi("/api/v1/profile"),
-        ]);
-        const countryList: CountryEntry[] = data || [];
-        setCountries(countryList);
-        dispatch(setProfile(profileData));
+  const loadData = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [data, profileData] = await Promise.all([
+        fetchApi("/api/v1/countries"),
+        fetchApi("/api/v1/profile"),
+      ]);
+      const countryList: CountryEntry[] = data || [];
+      setCountries(countryList);
+      dispatch(setProfile(profileData));
 
-        // Compute match scores for all countries
-        const scores: Record<string, ReturnType<typeof computeCountryMatchScore>> = {};
-        for (const c of countryList) {
-          scores[c.countryCode] = computeCountryMatchScore(profileData || {}, {
-            countryCode: c.countryCode,
-            overallScore: c.overallScore,
-            summary: c.summary as any,
-          });
-        }
-        dispatch(setMatchScores(scores));
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load country explorer data.");
-      } finally {
-        setLoading(false);
+      // Compute match scores for all countries
+      const scores: Record<string, ReturnType<typeof computeCountryMatchScore>> = {};
+      for (const c of countryList) {
+        scores[c.countryCode] = computeCountryMatchScore(profileData || {}, {
+          countryCode: c.countryCode,
+          overallScore: c.overallScore,
+          summary: c.summary as any,
+        });
       }
+      dispatch(setMatchScores(scores));
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load country explorer data.");
+    } finally {
+      setLoading(false);
     }
-    loadData();
   }, [dispatch]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
 
   const convertToBdtMonthly = (amount: number, currencyStr: string) => {
     const base = currencyStr?.split("/")[0]?.trim() || "USD";
@@ -165,7 +167,7 @@ export default function CountryExplorerPage() {
       </div>
 
       {error && (
-        <ApiErrorAlert error={error} />
+        <ApiErrorAlert error={error} onRetry={loadData} />
       )}
 
       {/* Filter / Search Bar */}

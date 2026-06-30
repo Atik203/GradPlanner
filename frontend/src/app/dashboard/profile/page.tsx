@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppDispatch, useAppSelector } from "@/lib/store/store";
 import { setProfile } from "@/lib/store/slices/profileSlice";
@@ -101,39 +101,41 @@ export default function ProfileDetailsPage() {
     return withScores.sort((a, b) => b.matchScore - a.matchScore).slice(0, 3);
   }, [university, cgpa, targetDegree, targetIntake, graduationDate, ieltsScore, monthlyBudgetUSD, researchInterests, prPriority, familyRelocation, countriesSummary]);
 
-  useEffect(() => {
-    async function loadProfile() {
-      try {
-        setLoading(true);
-        const [profileData, countriesRes] = await Promise.all([
-          fetchApi("/api/v1/profile"),
-          fetchApi("/api/v1/countries"),
-        ]);
-        dispatch(setProfile(profileData));
-        if (profileData) {
-          setUniversityName(profileData.university || "");
-          setCgpa(profileData.cgpa ? String(profileData.cgpa) : "");
-          setTargetDegree(profileData.targetDegree || "");
-          setTargetIntake(profileData.targetIntake || "");
-          setGraduationDate(profileData.graduationDate || "");
-          setIeltsScore(profileData.ieltsScore ? String(profileData.ieltsScore) : "");
-          setMonthlyBudgetUSD(profileData.monthlyBudgetUSD ? String(profileData.monthlyBudgetUSD) : "");
-          setResearchInterests(profileData.researchInterests ?? []);
-          setPrPriority(profileData.prPriority ?? 3);
-          setFamilyRelocation(profileData.familyRelocation ?? false);
-        }
-        if (countriesRes) {
-          setCountriesSummary(countriesRes);
-        }
-      } catch (err) {
-        console.error(err);
-        setError("Failed to load profile details.");
-      } finally {
-        setLoading(false);
+  const loadProfile = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [profileData, countriesRes] = await Promise.all([
+        fetchApi("/api/v1/profile"),
+        fetchApi("/api/v1/countries"),
+      ]);
+      dispatch(setProfile(profileData));
+      if (profileData) {
+        setUniversityName(profileData.university || "");
+        setCgpa(profileData.cgpa ? String(profileData.cgpa) : "");
+        setTargetDegree(profileData.targetDegree || "");
+        setTargetIntake(profileData.targetIntake || "");
+        setGraduationDate(profileData.graduationDate || "");
+        setIeltsScore(profileData.ieltsScore ? String(profileData.ieltsScore) : "");
+        setMonthlyBudgetUSD(profileData.monthlyBudgetUSD ? String(profileData.monthlyBudgetUSD) : "");
+        setResearchInterests(profileData.researchInterests ?? []);
+        setPrPriority(profileData.prPriority ?? 3);
+        setFamilyRelocation(profileData.familyRelocation ?? false);
       }
+      if (countriesRes) {
+        setCountriesSummary(countriesRes);
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Failed to load profile details.");
+    } finally {
+      setLoading(false);
     }
-    loadProfile();
   }, [dispatch]);
+
+  useEffect(() => {
+    loadProfile();
+  }, [loadProfile]);
 
   const addResearchTag = (tag: string) => {
     const clean = tag.trim();
@@ -216,7 +218,7 @@ export default function ProfileDetailsPage() {
       </div>
 
       {error && (
-        <ApiErrorAlert error={error} />
+        <ApiErrorAlert error={error} onRetry={loadProfile} />
       )}
 
       {success && (
