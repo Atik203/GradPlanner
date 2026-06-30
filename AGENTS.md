@@ -201,7 +201,7 @@ Phase 1 : Completed     (Backend API hardening: validators, ApiResponse<T>, User
 Phase 2 : Completed     (Onboarding wizard & isOnboarded flag)
 Phase 3 : Completed     (Skeletons, error states, empty states)
 Phase 4 : Completed     (Mobile-first UI & navigation)
-Phase 5 : Pending       (Notifications & reminders)
+Phase 5 : Completed     (Notifications & reminders)
 Phase 6 : Pending       (Global search & command palette)
 Phase 7 : Pending       (Advanced analytics & ROI)
 Phase 8 : Pending       (Professor email generator)
@@ -211,7 +211,7 @@ Phase 10: Pending       (PWA & performance optimization)
 
 ## Current Phase Details
 
-None — Phase 4 complete. See "Completed Phases" for details.
+None — Phase 5 complete. See "Completed Phases" for details.
 
 ## Completed Phases
 
@@ -281,6 +281,27 @@ Goals delivered:
 - ✅ Rankings pagination — touch targets standardized
 - ✅ `pnpm build` + `pnpm type-check` pass cleanly
 
+### Phase 5 — Notifications & Deadline Reminders (Completed)
+
+Goals delivered:
+- ✅ `NotificationType` enum (8 values) + `Notification` model with indexes + `User.notifications` relation in Prisma schema
+- ✅ `prisma db push` synced schema; `prisma generate` regenerated client
+- ✅ `notificationService.ts` — 5 generator functions (deadline, follow-up, document expiry, profile, application update) + cleanup + bulk generator
+- ✅ `notifications.ts` route — 6 CRUD endpoints with ownership checks + validator
+- ✅ Registered `/api/v1/notifications` with `requireAuth` in `app.ts`
+- ✅ Background notification generation injected into applications, professors, documents, profile, stats routes
+- ✅ Safety-net bulk generation on stats/dashboard route
+- ✅ Frontend `notificationSlice.ts` — Redux slice for unread count
+- ✅ `notificationApi` in `frontend/src/lib/api.ts` + `NotificationItem` type
+- ✅ `NotificationBell` — header bell icon with unread badge + 30s polling + visibility-aware
+- ✅ `NotificationPanel` — Sheet-based panel with list, mark-all-read, clear-all
+- ✅ `NotificationItem` — type-colored icons, urgency indicators, click-to-mark-read
+- ✅ `NotificationEmptyState` — "No notifications yet" empty state
+- ✅ Integrated `NotificationBell` into dashboard layout header
+- ✅ `WhatNextToday` — notification summary banner when unread > 0
+- ✅ Toast integration — Sonner toast on new urgent notifications
+- ✅ `pnpm type-check` passes in both frontend and backend
+
 ---
 
 # Implementation Memory
@@ -289,7 +310,7 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-None — Phase 4 complete.
+None — Phase 5 complete.
 
 ## Completed Phases
 
@@ -330,6 +351,16 @@ Phase 4: Mobile-First UI & Navigation (Completed)
 - Rankings pagination: touch targets standardized.
 - `pnpm build` + `pnpm type-check` pass cleanly.
 
+Phase 5: Notifications & Deadline Reminders (Completed)
+- `NotificationType` enum + `Notification` model added to Prisma schema.
+- `notificationService.ts` — 5 generators + cleanup + bulk generator.
+- 6 CRUD notification endpoints with ownership checks.
+- Injected generation into applications, professors, documents, profile, stats routes.
+- `notificationSlice.ts` Redux slice for unread count.
+- `NotificationBell`, `NotificationPanel`, `NotificationItem`, `NotificationEmptyState` components.
+- Integrated bell into header; WhatNextToday notification summary; Sonner toast on new urgent notifications.
+- `pnpm type-check` passes in both frontend and backend.
+
 ## Shared Components
 
 | Component | Path | Use For |
@@ -355,6 +386,10 @@ Phase 4: Mobile-First UI & Navigation (Completed)
 | MetricCard | frontend/src/components/dashboard/MetricCard.tsx | Dashboard metrics |
 | SectionHeader | frontend/src/components/dashboard/SectionHeader.tsx | Page sections |
 | WhatNextToday | frontend/src/components/dashboard/WhatNextToday.tsx | Dashboard suggestions |
+| NotificationBell | frontend/src/components/notifications/NotificationBell.tsx | Header bell with badge + polling |
+| NotificationPanel | frontend/src/components/notifications/NotificationPanel.tsx | Notification list sheet |
+| NotificationItem | frontend/src/components/notifications/NotificationItem.tsx | Single notification row |
+| NotificationEmptyState | frontend/src/components/notifications/NotificationEmptyState.tsx | Empty notification state |
 
 ## Shared Layouts
 
@@ -400,19 +435,21 @@ Phase 4: Mobile-First UI & Navigation (Completed)
 | documentSlice | frontend/src/lib/store/slices/documentSlice.ts |
 | countryMatchSlice | frontend/src/lib/store/slices/countryMatchSlice.ts |
 | settingsSlice | frontend/src/lib/store/slices/settingsSlice.ts |
+| notificationSlice | frontend/src/lib/store/slices/notificationSlice.ts |
 
 ## Database Schema Version
 
-v1.1 — Current models:
+v1.2 — Current models:
 - User, Account, Session, Verification
 - UserProfile
 - UserSettings (Phase 1: emailDeadlineAlerts, timelineNotifications, strategyPreference)
 - University, Professor, Application, Document
 - UniversityRanking
 - CountryIntelligence
+- Notification (Phase 5: type, title, message, link, referenceId, isRead)
 
 Pending additions:
-- None — Phase 2 complete. Schema is stable going into Phase 3.
+- None — Phase 5 complete. Schema is stable going into Phase 6.
 
 ## Design System Version
 
