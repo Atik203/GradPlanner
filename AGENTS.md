@@ -200,7 +200,7 @@ Read implementation.md once per phase. Use this section as the source of truth f
 Phase 1 : Completed     (Backend API hardening: validators, ApiResponse<T>, UserSettings)
 Phase 2 : Completed     (Onboarding wizard & isOnboarded flag)
 Phase 3 : Completed     (Skeletons, error states, empty states)
-Phase 4 : Pending       (Mobile-first UI & navigation)
+Phase 4 : Completed     (Mobile-first UI & navigation)
 Phase 5 : Pending       (Notifications & reminders)
 Phase 6 : Pending       (Global search & command palette)
 Phase 7 : Pending       (Advanced analytics & ROI)
@@ -211,7 +211,7 @@ Phase 10: Pending       (PWA & performance optimization)
 
 ## Current Phase Details
 
-None — Phase 3 complete. See "Completed Phases" for details.
+None — Phase 4 complete. See "Completed Phases" for details.
 
 ## Completed Phases
 
@@ -264,6 +264,23 @@ Goals delivered:
 - ✅ Optimistic status updates on applications + documents (immediate UI, revert + toast on failure)
 - ✅ `pnpm build` + `pnpm type-check` pass cleanly
 
+### Phase 4 — Mobile-First UI & Navigation (Completed)
+
+Goals delivered:
+- ✅ `useSwipeGesture` hook — horizontal swipe detection for mobile gestures
+- ✅ `globals.css` — `safe-bottom`, `safe-top`, `touch-target`, `scrollbar-none` utilities
+- ✅ Fluid typography — `text-page-title`/`text-section` on all 13 dashboard pages
+- ✅ 29 touch targets standardized to `min-h-11`/`touch-target` (44px)
+- ✅ `DeleteConfirmDialog` uses `ResponsiveModal` (Sheet on mobile, Dialog on desktop)
+- ✅ `EmailGeneratorModal` uses `ResponsiveModal` (Sheet on mobile, Dialog on desktop)
+- ✅ `MoreSheet` — `safe-bottom` padding for mobile safe areas
+- ✅ `ResponsiveModal` — drag handle indicator + `safe-bottom` padding
+- ✅ Country cards — horizontally scrollable metric strip on mobile (`snap-x snap-mandatory`)
+- ✅ Sidebar — swipe left/right to collapse via `useSwipeGesture`
+- ✅ Bottom nav — active tab indicator bar (`h-1 w-8 rounded-full bg-primary`)
+- ✅ Rankings pagination — touch targets standardized
+- ✅ `pnpm build` + `pnpm type-check` pass cleanly
+
 ---
 
 # Implementation Memory
@@ -272,7 +289,7 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-None — Phase 3 complete.
+None — Phase 4 complete.
 
 ## Completed Phases
 
@@ -298,6 +315,19 @@ Phase 3: Loading Skeletons, Error States & Empty States Overhaul (Completed)
 - Timeline refetch spinner replaced with `TimelineSkeleton`.
 - `loading.tsx` + `error.tsx` added at dashboard segment level.
 - Optimistic status updates on applications + documents pages.
+- `pnpm build` + `pnpm type-check` pass cleanly.
+
+Phase 4: Mobile-First UI & Navigation (Completed)
+- `useSwipeGesture` hook for horizontal swipe detection on mobile.
+- `globals.css` utilities: `safe-bottom`, `safe-top`, `touch-target`, `scrollbar-none`.
+- Fluid typography (`text-page-title`/`text-section`) applied across 13 dashboard pages.
+- 29 touch targets standardized to 44px (`min-h-11`/`touch-target`).
+- `DeleteConfirmDialog` and `EmailGeneratorModal` use `ResponsiveModal` (Sheet mobile, Dialog desktop).
+- `MoreSheet` has `safe-bottom` padding; `ResponsiveModal` has drag handle + safe area.
+- Country cards: horizontally scrollable metric strip with `snap-x` on mobile.
+- Sidebar: swipe left/right to collapse via `useSwipeGesture`.
+- Bottom nav: active tab indicator bar (`h-1 w-8 rounded-full bg-primary`).
+- Rankings pagination: touch targets standardized.
 - `pnpm build` + `pnpm type-check` pass cleanly.
 
 ## Shared Components
@@ -389,7 +419,7 @@ Pending additions:
 v1.0 — Tailwind v4 + shadcn/ui primitives.
 - Theme: light/dark/system via next-themes
 - Color tokens: default shadcn slate/zinc scale
-- No custom fluid typography yet (Phase 4)
+- Fluid typography via `clamp()` CSS variables (Phase 4)
 
 ## Implementation Status
 
