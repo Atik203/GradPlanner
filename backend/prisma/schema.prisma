@@ -26,6 +26,7 @@ model User {
   documents    Document[]
   accounts     Account[]
   sessions     Session[]
+  notifications Notification[]
 }
 
 model Account {
@@ -198,6 +199,25 @@ model Document {
   updatedAt DateTime       @updatedAt
 }
 
+// ─── Notifications ─────────────────────────────────────────────────────────
+model Notification {
+  id          String           @id @default(cuid())
+  userId      String
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type        NotificationType
+  title       String
+  message     String
+  link        String?
+  referenceId String?
+  isRead      Boolean          @default(false)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@index([userId, isRead])
+  @@index([userId, createdAt])
+  @@index([userId, type, referenceId])
+}
+
 // ─── University Rankings — one row per university, all 3 systems combined ────
 
 model UniversityRanking {
@@ -351,4 +371,15 @@ enum DocumentStatus {
   OBTAINED
   EXPIRED
   NOT_REQUIRED
+}
+
+enum NotificationType {
+  DEADLINE_APPROACHING
+  DEADLINE_URGENT
+  FOLLOW_UP_DUE
+  FOLLOW_UP_LIMIT
+  DOCUMENT_EXPIRING
+  PROFILE_INCOMPLETE
+  APPLICATION_UPDATE
+  SYSTEM
 }
