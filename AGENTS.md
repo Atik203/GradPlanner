@@ -199,7 +199,7 @@ Read implementation.md once per phase. Use this section as the source of truth f
 ```text
 Phase 1 : Completed     (Backend API hardening: validators, ApiResponse<T>, UserSettings)
 Phase 2 : Completed     (Onboarding wizard & isOnboarded flag)
-Phase 3 : Pending       (Skeletons, error states, empty states)
+Phase 3 : Completed     (Skeletons, error states, empty states)
 Phase 4 : Pending       (Mobile-first UI & navigation)
 Phase 5 : Pending       (Notifications & reminders)
 Phase 6 : Pending       (Global search & command palette)
@@ -211,7 +211,7 @@ Phase 10: Pending       (PWA & performance optimization)
 
 ## Current Phase Details
 
-None — Phase 2 complete. See "Completed Phases" for details.
+None — Phase 3 complete. See "Completed Phases" for details.
 
 ## Completed Phases
 
@@ -253,6 +253,17 @@ Goals delivered:
 - ✅ `console.error` removed from profile page; `as any` cast removed from settings
 - ✅ Frontend `pnpm type-check` passes
 
+### Phase 3 — Loading Skeletons, Error States & Empty States Overhaul (Completed)
+
+Goals delivered:
+- ✅ `ErrorState` component — full-page centered error card with `onRetry` + `onBack` navigation
+- ✅ `onRetry` added to 7 pages (timeline, analytics, countries, professors, rankings, funding, profile)
+- ✅ All 10 inline empty states replaced with `EmptyState` component (8 pages)
+- ✅ Timeline refetch `Loader2` spinner replaced with `TimelineSkeleton`
+- ✅ `loading.tsx` + `error.tsx` Next.js boundaries at dashboard segment level
+- ✅ Optimistic status updates on applications + documents (immediate UI, revert + toast on failure)
+- ✅ `pnpm build` + `pnpm type-check` pass cleanly
+
 ---
 
 # Implementation Memory
@@ -261,7 +272,7 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-None — Phase 2 complete.
+None — Phase 3 complete.
 
 ## Completed Phases
 
@@ -279,6 +290,15 @@ Phase 2: Onboarding Wizard & Profile Intelligence UX (Completed)
 - Profile page: Info tooltips on all Match Intelligence fields + live country preview.
 - Dashboard: profile completeness bar with contextual messages.
 - Settings: "Reset Onboarding" option.
+
+Phase 3: Loading Skeletons, Error States & Empty States Overhaul (Completed)
+- `ErrorState` full-page centered error card with retry + back navigation.
+- `onRetry` added to 7 dashboard pages (timeline, analytics, countries, professors, rankings, funding, profile).
+- All inline empty states replaced with `EmptyState` component (10 locations across 8 pages).
+- Timeline refetch spinner replaced with `TimelineSkeleton`.
+- `loading.tsx` + `error.tsx` added at dashboard segment level.
+- Optimistic status updates on applications + documents pages.
+- `pnpm build` + `pnpm type-check` pass cleanly.
 
 ## Shared Components
 

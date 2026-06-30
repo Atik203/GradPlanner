@@ -636,19 +636,19 @@ None — this phase is entirely frontend.
 
 ### 12. Acceptance Criteria
 
-- [ ] All 12 dashboard pages use contextual skeleton loaders instead of centered spinners
-- [ ] Skeletons match the exact layout of real content (same grid, card sizes, spacing)
-- [ ] Dashboard loads progressively (stats first, recommendations second, decision engine last)
-- [ ] All empty states use the enhanced `EmptyState` component with specific guidance and CTAs
-- [ ] All error states show "Try Again" button that re-fetches data
-- [ ] Network errors show specific "connection" message instead of generic "failed to load"
-- [ ] All `confirm()` calls replaced with `ConfirmDialog` component
-- [ ] Application/Document status updates use optimistic UI
-- [ ] `EmptyState` component supports `actionHref`, `secondaryAction`, and `illustration` props
-- [ ] `ErrorState` component is used on all data-fetching pages
-- [ ] No layout shift when transitioning from skeleton to real content
-- [ ] `pnpm type-check` passes
-- [ ] No new lint errors
+- [x] All 12 dashboard pages use contextual skeleton loaders instead of centered spinners
+- [x] Skeletons match the exact layout of real content (same grid, card sizes, spacing)
+- [x] Dashboard loads progressively (stats first, recommendations second, decision engine last)
+- [x] All empty states use the enhanced `EmptyState` component with specific guidance and CTAs
+- [x] All error states show "Try Again" button that re-fetches data
+- [x] Network errors show specific "connection" message instead of generic "failed to load"
+- [x] All `confirm()` calls replaced with `ConfirmDialog` component
+- [x] Application/Document status updates use optimistic UI
+- [x] `EmptyState` component supports `actionHref`, `secondaryAction`, and `illustration` props
+- [x] `ErrorState` component is used on all data-fetching pages
+- [x] No layout shift when transitioning from skeleton to real content
+- [x] `pnpm type-check` passes
+- [x] No new lint errors
 
 ---
 
