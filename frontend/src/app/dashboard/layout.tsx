@@ -19,6 +19,9 @@ import { UserMenu } from "@/components/layout/UserMenu";
 import { NotificationBell } from "@/components/notifications/NotificationBell";
 import { SearchTrigger } from "@/components/command-palette/SearchTrigger";
 import { BottomNavWrapper } from "@/components/navigation/BottomNavWrapper";
+import { PwaRegister } from "@/components/layout/PwaRegister";
+import { OfflineBanner } from "@/components/layout/OfflineBanner";
+import { InstallBanner } from "@/components/layout/InstallBanner";
 
 export default async function DashboardLayout({
   children,
@@ -58,12 +61,16 @@ export default async function DashboardLayout({
           </div>
         </header>
 
+        <OfflineBanner />
+
         {/* Main View scrollable */}
         <main className="flex-1 overflow-y-auto bg-background p-4 md:p-8 pb-14 md:pb-8">
           <div className="mx-auto max-w-6xl space-y-8">{children}</div>
         </main>
       </div>
 
+      <PwaRegister />
+      <InstallBanner />
       <BottomNavWrapper />
     </div>
   );
