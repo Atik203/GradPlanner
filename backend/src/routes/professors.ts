@@ -27,6 +27,7 @@ import {
   professorUpdateSchema,
   logEmailSchema,
   professorIdParamSchema,
+  generateEmailSchema,
 } from "../validators/index.js";
 import {
   ok,
@@ -38,6 +39,7 @@ import {
 import { logger } from "../utils/logger.js";
 import { toDateOrNull } from "../utils/parsers.js";
 import { generateFollowUpNotifications } from "../services/notificationService.js";
+import { generateProfessorEmail } from "../services/llmService.js";
 
 const router: Router = Router();
 
@@ -333,6 +335,81 @@ router.post(
         error: error instanceof Error ? error : new Error(String(error)),
       });
       return serverError(res, "Failed to log email");
+    }
+  }
+);
+
+// ─── POST /api/v1/professors/:id/generate-email ─────────────────────────────
+router.post(
+  "/:id/generate-email",
+  validateParams(professorIdParamSchema, "Invalid professor id"),
+  validateBody(generateEmailSchema, "Invalid email generation options"),
+  async (req: AuthenticatedRequest, res: Response) => {
+    try {
+      const userId = req.user!.id;
+      const id = req.params.id as string;
+      const body = req.body as { focus?: "research" | "funding" | "paper" | "followUp1" | "followUp2"; paperTitle?: string };
+
+      const professor = await prisma.professor.findFirst({
+        where: { id, userId, deletedAt: null },
+        select: {
+          id: true,
+          name: true,
+          researchInterests: true,
+          emailSentDate: true,
+          followUpCount: true,
+          lastFollowUp: true,
+          university: { select: { name: true, country: true } },
+        },
+      });
+      if (!professor) {
+        return notFound(res, "Professor not found");
+      }
+
+      const profile = await prisma.userProfile.findUnique({
+        where: { userId },
+        select: {
+          university: true,
+          cgpa: true,
+          ieltsScore: true,
+          targetDegree: true,
+          targetIntake: true,
+          researchInterests: true,
+        },
+      });
+
+      const user = req.user!;
+      const generated = await generateProfessorEmail(
+        {
+          name: professor.name,
+          researchInterests: professor.researchInterests,
+          universityName: professor.university?.name ?? null,
+          universityCountry: professor.university?.country ?? null,
+          emailSentDate: professor.emailSentDate,
+          followUpCount: professor.followUpCount,
+          lastFollowUp: professor.lastFollowUp,
+        },
+        {
+          name: user.name,
+          email: user.email,
+          university: profile?.university ?? null,
+          cgpa: profile?.cgpa ?? null,
+          ieltsScore: profile?.ieltsScore ?? null,
+          targetDegree: profile?.targetDegree ?? null,
+          targetIntake: profile?.targetIntake ?? null,
+          researchInterests: profile?.researchInterests ?? [],
+        },
+        { focus: body.focus, paperTitle: body.paperTitle }
+      );
+
+      return ok(res, generated);
+    } catch (error) {
+      logger.error("POST /professors/:id/generate-email error", {
+        userId: req.user?.id,
+        professorId: req.params.id,
+        error: error instanceof Error ? error : new Error(String(error)),
+      });
+      return serverError(res, "Failed to generate email");
     }
   }
 );
