@@ -151,7 +151,7 @@ export default function ApplicationsPage() {
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-foreground">Application Funnel</h2>
+          <h2 className="text-page-title font-black tracking-tight text-foreground">Application Funnel</h2>
           <p className="text-muted-foreground text-sm">
             Track your submission progress, decision status, and scholarship offers in one view.
           </p>

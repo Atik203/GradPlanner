@@ -98,7 +98,7 @@ export default function DashboardRankingsPage() {
           <BarChart3 className="h-6 w-6 text-primary" />
         </div>
         <div>
-          <h1 className="text-2xl font-black tracking-tight text-foreground">Global Rankings Browser</h1>
+          <h1 className="text-page-title font-black tracking-tight text-foreground">Global Rankings Browser</h1>
           <p className="text-sm text-muted-foreground">QS 2026 · THE 2026 · ARWU 2025 — Click any institution to see full ranking breakdown</p>
         </div>
       </div>

@@ -133,7 +133,7 @@ export default function DocumentsPage() {
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-foreground">Document Checklist</h2>
+          <h2 className="text-page-title font-black tracking-tight text-foreground">Document Checklist</h2>
           <p className="text-muted-foreground text-sm">
             Manage files, SOPs, CV drafts, and examination transcripts needed for admissions.
           </p>

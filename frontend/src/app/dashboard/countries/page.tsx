@@ -141,7 +141,7 @@ export default function CountryExplorerPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-1">
-          <h2 className="text-2xl font-bold tracking-tight bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent sm:text-3xl">
+          <h2 className="text-page-title font-black tracking-tight bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
             Country Explorer
           </h2>
           <p className="text-muted-foreground text-sm">

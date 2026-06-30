@@ -265,7 +265,7 @@ export default function UniversitiesPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-foreground">University Tracker</h2>
+          <h2 className="text-page-title font-black tracking-tight text-foreground">University Tracker</h2>
           <p className="text-muted-foreground text-sm">
             Search from 3,045 ranked institutions and add them to your tracking dashboard.
           </p>
