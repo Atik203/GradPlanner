@@ -222,89 +222,27 @@ Phase 6 — Global search & command palette:
 ### Phase 1 — Backend API Hardening & Input Validation (Completed)
 
 Goals delivered:
-- ✅ Zod validation layer across all mutating routes (backend/src/validators/)
-- ✅ ApiResponse<T> envelope on every response (success/data or error/code/fieldErrors)
-- ✅ Frontend fetchApi auto-unwraps envelope + throws typed ApiError
-- ✅ Global 100/min, auth 10/min, write 30/min rate limiters (express-rate-limit)
-- ✅ express.json + urlencoded capped at 256kb
-- ✅ Shared parsers (toFloatOrNull, toIntOrNull, toBoolOrNull, toDateOrNull)
-- ✅ Structured logger (JSON in prod, human-readable in dev)
-- ✅ Explicit `select` projections on all Prisma queries
-- ✅ UserSettings model + GET/PUT /api/v1/settings
-- ✅ Frontend Settings page rewritten with RHF + Zod + shadcn Select + skeleton + error state
-- ✅ Frontend shared: ApiErrorAlert, FieldError, SettingsSkeleton
-- ✅ Frontend Redux: settingsSlice
+- ✅ Zod validation, ApiResponse<T> envelope, rate limiting, body-size cap, structured logger, UserSettings model, settings page rewrite, shared parsers, 3045 rankings + 20-country seed data.
 
 ### Phase 2 — Onboarding Wizard & Profile Intelligence UX (Completed)
 
 Goals delivered:
-- ✅ `isOnboarded Boolean @default(false)` added to `UserProfile` model
-- ✅ POST `/api/v1/profile/complete-onboarding` endpoint (Zod-validated, atomic upsert)
-- ✅ `onboardingSchema` validator in `backend/src/validators/onboarding.ts`
-- ✅ `OnboardingWizard` — 4-step wizard shell with sessionStorage persistence
-- ✅ `StepAcademicProfile`, `StepMatchIntelligence`, `StepPriorities`, `StepSummary`
-- ✅ `OnboardingGate` — wraps dashboard; shows wizard if `isOnboarded: false`
-- ✅ `OnboardingGuide` — post-onboarding tooltip tour (3 highlights, dismissible)
-- ✅ `BdtConverter` — reusable USD→BDT display component (static rate, ৳120/USD)
-- ✅ `DeleteConfirmDialog` — replaces all native `confirm()` calls
-- ✅ Per-step CGPA (0–4) and IELTS (0–9) validation with inline error display
-- ✅ Dashboard profile completeness bar with contextual messages (<60 / 60-80 / ≥80)
-- ✅ Profile page: live top-3 country preview updates as user changes fields
-- ✅ Profile page: `Info` tooltips on all 5 Match Intelligence fields
-- ✅ Settings page: "Reset Onboarding" button (confirm → PUT isOnboarded:false)
-- ✅ `profileApi.completeOnboarding()` in `frontend/src/lib/api.ts`
-- ✅ `OnboardingGate` uses `DashboardSkeleton` (not spinner) during profile load
-- ✅ `console.error` removed from profile page; `as any` cast removed from settings
-- ✅ Frontend `pnpm type-check` passes
+- ✅ `isOnboarded` flag, 4-step wizard (OnboardingWizard/Guide/Gate), BdtConverter, DeleteConfirmDialog, profile completeness bar, Info tooltips, live country preview, Reset Onboarding.
 
 ### Phase 3 — Loading Skeletons, Error States & Empty States Overhaul (Completed)
 
 Goals delivered:
-- ✅ `ErrorState` component — full-page centered error card with `onRetry` + `onBack` navigation
-- ✅ `onRetry` added to 7 pages (timeline, analytics, countries, professors, rankings, funding, profile)
-- ✅ All 10 inline empty states replaced with `EmptyState` component (8 pages)
-- ✅ Timeline refetch `Loader2` spinner replaced with `TimelineSkeleton`
-- ✅ `loading.tsx` + `error.tsx` Next.js boundaries at dashboard segment level
-- ✅ Optimistic status updates on applications + documents (immediate UI, revert + toast on failure)
-- ✅ `pnpm build` + `pnpm type-check` pass cleanly
+- ✅ ErrorState (retry+back), EmptyState (10 locations), TimelineSkeleton, `loading.tsx`+`error.tsx` boundaries, optimistic status updates, `pnpm build` passes.
 
 ### Phase 4 — Mobile-First UI & Navigation (Completed)
 
 Goals delivered:
-- ✅ `useSwipeGesture` hook — horizontal swipe detection for mobile gestures
-- ✅ `globals.css` — `safe-bottom`, `safe-top`, `touch-target`, `scrollbar-none` utilities
-- ✅ Fluid typography — `text-page-title`/`text-section` on all 13 dashboard pages
-- ✅ 29 touch targets standardized to `min-h-11`/`touch-target` (44px)
-- ✅ `DeleteConfirmDialog` uses `ResponsiveModal` (Sheet on mobile, Dialog on desktop)
-- ✅ `EmailGeneratorModal` uses `ResponsiveModal` (Sheet on mobile, Dialog on desktop)
-- ✅ `MoreSheet` — `safe-bottom` padding for mobile safe areas
-- ✅ `ResponsiveModal` — drag handle indicator + `safe-bottom` padding
-- ✅ Country cards — horizontally scrollable metric strip on mobile (`snap-x snap-mandatory`)
-- ✅ Sidebar — swipe left/right to collapse via `useSwipeGesture`
-- ✅ Bottom nav — active tab indicator bar (`h-1 w-8 rounded-full bg-primary`)
-- ✅ Rankings pagination — touch targets standardized
-- ✅ `pnpm build` + `pnpm type-check` pass cleanly
+- ✅ useSwipeGesture, safe-area utilities, fluid typography, 29 touch targets (44px), ResponsiveModal (Sheet/Dialog), MoreSheet, country card snap-scroll, sidebar swipe, bottom nav indicator, `pnpm build`+`type-check` pass.
 
 ### Phase 5 — Notifications & Deadline Reminders (Completed)
 
 Goals delivered:
-- ✅ `NotificationType` enum (8 values) + `Notification` model with indexes + `User.notifications` relation in Prisma schema
-- ✅ `prisma db push` synced schema; `prisma generate` regenerated client
-- ✅ `notificationService.ts` — 5 generator functions (deadline, follow-up, document expiry, profile, application update) + cleanup + bulk generator
-- ✅ `notifications.ts` route — 6 CRUD endpoints with ownership checks + validator
-- ✅ Registered `/api/v1/notifications` with `requireAuth` in `app.ts`
-- ✅ Background notification generation injected into applications, professors, documents, profile, stats routes
-- ✅ Safety-net bulk generation on stats/dashboard route
-- ✅ Frontend `notificationSlice.ts` — Redux slice for unread count
-- ✅ `notificationApi` in `frontend/src/lib/api.ts` + `NotificationItem` type
-- ✅ `NotificationBell` — header bell icon with unread badge + 30s polling + visibility-aware
-- ✅ `NotificationPanel` — Sheet-based panel with list, mark-all-read, clear-all
-- ✅ `NotificationItem` — type-colored icons, urgency indicators, click-to-mark-read
-- ✅ `NotificationEmptyState` — "No notifications yet" empty state
-- ✅ Integrated `NotificationBell` into dashboard layout header
-- ✅ `WhatNextToday` — notification summary banner when unread > 0
-- ✅ Toast integration — Sonner toast on new urgent notifications
-- ✅ `pnpm type-check` passes in both frontend and backend
+- ✅ Notification model+enum, 6 CRUD endpoints, notificationService (5 generators), injection into 5 routes, Redux slice, NotificationBell/Panel/Item/EmptyState, header integration, WhatNextToday summary, Sonner toast on urgent.
 
 ---
 
@@ -356,13 +294,10 @@ Phase 4: Mobile-First UI & Navigation (Completed)
 - `pnpm build` + `pnpm type-check` pass cleanly.
 
 Phase 5: Notifications & Deadline Reminders (Completed)
-- `NotificationType` enum + `Notification` model added to Prisma schema.
-- `notificationService.ts` — 5 generators + cleanup + bulk generator.
-- 6 CRUD notification endpoints with ownership checks.
-- Injected generation into applications, professors, documents, profile, stats routes.
-- `notificationSlice.ts` Redux slice for unread count.
-- `NotificationBell`, `NotificationPanel`, `NotificationItem`, `NotificationEmptyState` components.
-- Integrated bell into header; WhatNextToday notification summary; Sonner toast on new urgent notifications.
+- Notification model+enum, 6 CRUD endpoints, notificationService (5 generators).
+- Injected into applications, professors, documents, profile, stats routes.
+- Redux slice + 3 notification components (Bell/Panel/Item) + empty state.
+- Header integration, WhatNextToday summary, Sonner toast on urgent.
 - `pnpm type-check` passes in both frontend and backend.
 
 ## Shared Components
