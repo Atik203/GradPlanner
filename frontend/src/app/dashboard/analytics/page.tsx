@@ -18,11 +18,13 @@ import {
 } from "lucide-react";
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { AnalyticsSkeleton } from "@/components/skeletons/AnalyticsSkeleton";
-import { ApplicationFunnel } from "@/components/charts/ApplicationFunnel";
-import { FinancialROI } from "@/components/charts/FinancialROI";
-import { ProfessorOutreach } from "@/components/charts/ProfessorOutreach";
+import dynamic from "next/dynamic";
 import { ActivityHeatmap } from "@/components/charts/ActivityHeatmap";
 import type { AnalyticsResponse } from "@/types";
+
+const ApplicationFunnel = dynamic(() => import("@/components/charts/ApplicationFunnel").then((m) => ({ default: m.ApplicationFunnel })), { ssr: false });
+const FinancialROI = dynamic(() => import("@/components/charts/FinancialROI").then((m) => ({ default: m.FinancialROI })), { ssr: false });
+const ProfessorOutreach = dynamic(() => import("@/components/charts/ProfessorOutreach").then((m) => ({ default: m.ProfessorOutreach })), { ssr: false });
 
 export default function AnalyticsFitPage() {
   const profile = useAppSelector((state) => state.profile.profile);
