@@ -57,13 +57,16 @@ export function ResponsiveModal({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto">
+      <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto safe-bottom">
+        <div className="flex justify-center pt-1 pb-0">
+          <div className="w-10 h-1 rounded-full bg-muted-foreground/30" />
+        </div>
         <SheetHeader>
           <SheetTitle>{title}</SheetTitle>
           {description && <SheetDescription>{description}</SheetDescription>}
         </SheetHeader>
         <div className="px-1">{children}</div>
-        {footer && <SheetFooter>{footer}</SheetFooter>}
+        {footer && <SheetFooter className="px-1">{footer}</SheetFooter>}
       </SheetContent>
     </Sheet>
   );

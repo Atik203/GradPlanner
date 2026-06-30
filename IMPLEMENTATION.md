@@ -868,23 +868,23 @@ None — this phase is entirely frontend.
 
 ### 12. Acceptance Criteria
 
-- [ ] Bottom navigation bar visible on mobile (`< 768px`) with 5 tabs
-- [ ] Bottom nav has active state highlighting and smooth transitions
-- [ ] Bottom nav auto-hides on scroll-down, reveals on scroll-up
-- [ ] "More" tab opens slide-up sheet with full navigation
-- [ ] Sidebar hamburger menu removed on mobile (bottom nav replaces it)
-- [ ] All modals convert to bottom sheets on mobile
-- [ ] Bottom sheets have drag-to-close and backdrop-tap-to-close
-- [ ] Rankings page uses card layout on mobile instead of table
-- [ ] All interactive elements have ≥44px touch targets
-- [ ] Fluid typography scales between 320px and 2560px viewports
-- [ ] Country cards use mobile-optimized layout on `< 768px`
-- [ ] Safe area insets applied for notched devices
-- [ ] Mobile sidebar has swipe-to-close gesture
-- [ ] No horizontal overflow on any page at 320px viewport width
-- [ ] Desktop experience is completely unchanged
-- [ ] `pnpm type-check` passes
-- [ ] No new lint errors
+- [x] Bottom navigation bar visible on mobile (`< 768px`) with 5 tabs
+- [x] Bottom nav has active state highlighting and smooth transitions
+- [x] Bottom nav auto-hides on scroll-down, reveals on scroll-up
+- [x] "More" tab opens slide-up sheet with full navigation
+- [x] Sidebar hamburger menu removed on mobile (bottom nav replaces it)
+- [x] All modals convert to bottom sheets on mobile
+- [x] Bottom sheets have drag-to-close and backdrop-tap-to-close
+- [x] Rankings page uses card layout on mobile instead of table
+- [x] All interactive elements have ≥44px touch targets
+- [x] Fluid typography scales between 320px and 2560px viewports
+- [x] Country cards use mobile-optimized layout on `< 768px`
+- [x] Safe area insets applied for notched devices
+- [x] Mobile sidebar has swipe-to-close gesture
+- [x] No horizontal overflow on any page at 320px viewport width
+- [x] Desktop experience is completely unchanged
+- [x] `pnpm type-check` passes
+- [x] No new lint errors
 
 ---
 
