@@ -198,7 +198,7 @@ export const apiDelete = <T>(path: string, options?: RequestInit) =>
 
 // ─── Domain-specific API helpers ─────────────────────────────────────────────
 
-import type { UserSettings, UserProfile, NotificationItem } from "@/types";
+import type { UserSettings, UserProfile, NotificationItem, SearchResults } from "@/types";
 
 export const settingsApi = {
   get: () => apiGet<UserSettings>("/api/v1/settings"),
@@ -229,4 +229,8 @@ export const notificationApi = {
   markAllRead: () => apiPut("/api/v1/notifications/read-all"),
   delete: (id: string) => apiDelete(`/api/v1/notifications/${id}`),
   clearAll: () => apiDelete("/api/v1/notifications/clear-all"),
+};
+
+export const searchApi = {
+  search: (q: string) => apiGet<SearchResults>(`/api/v1/search?q=${encodeURIComponent(q)}`),
 };
