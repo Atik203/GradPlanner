@@ -347,7 +347,15 @@ export default function DashboardOverview() {
               </div>
             </div>
           ) : (
-            <div className="text-center py-6 text-xs text-muted-foreground">No applications statistics found.</div>
+            <div className="py-6">
+              <EmptyState
+                icon={FolderGit2}
+                title="No applications yet"
+                description="Start tracking your applications to see pipeline statistics here."
+                actionLabel="Go to Applications"
+                actionHref="/dashboard/applications"
+              />
+            </div>
           )}
         </CardContent>
       </Card>
@@ -525,9 +533,13 @@ export default function DashboardOverview() {
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-6 text-xs text-muted-foreground">
-                  Track universities to compute PR transition score.
-                </div>
+                <EmptyState
+                  icon={TrendingUp}
+                  title="No PR score yet"
+                  description="Track universities to compute your PR transition score."
+                  actionLabel="Track Universities"
+                  actionHref="/dashboard/universities"
+                />
               )}
               {prScoreAvg > 0 && (
                 <div className="mt-4 text-center">

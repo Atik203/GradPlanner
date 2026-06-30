@@ -32,6 +32,7 @@ import {
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { ProfessorSkeleton } from "@/components/skeletons/ProfessorSkeleton";
 import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
+import { EmptyState } from "@/components/shared/EmptyState";
 import { Professor, ProfessorStatus } from "@/types";
 import { toast } from "sonner";
 import { useIsMobile } from "@/hooks/use-media-query";
@@ -379,7 +380,7 @@ export default function ProfessorsPage() {
       </div>
 
       {error && (
-        <ApiErrorAlert error={error} />
+        <ApiErrorAlert error={error} onRetry={loadData} />
       )}
 
       {/* Grid Container */}
@@ -418,8 +419,14 @@ export default function ProfessorsPage() {
             <tbody className="divide-y divide-border/50">
               {rows.length === 0 ? (
                 <tr>
-                  <td colSpan={10 + customColumns.length} className="px-4 py-12 text-center text-muted-foreground">
-                    Click "Row" to add your first professor contact.
+                  <td colSpan={10 + customColumns.length} className="px-4 py-12">
+                    <div className="max-w-sm mx-auto">
+                      <EmptyState
+                        icon={GraduationCap}
+                        title="No professors tracked"
+                        description="Click &quot;Row&quot; to add your first professor contact and start tracking outreach."
+                      />
+                    </div>
                   </td>
                 </tr>
               ) : (
@@ -730,10 +737,11 @@ export default function ProfessorsPage() {
         {loading ? (
           <ProfessorSkeleton />
         ) : rows.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
-            <GraduationCap className="h-10 w-10 mb-2 text-muted-foreground/50" />
-            <p className="text-sm">No professors tracked yet.</p>
-          </div>
+          <EmptyState
+            icon={GraduationCap}
+            title="No professors tracked"
+            description="Track professor outreach and manage your contacts."
+          />
         ) : (
           rows.map((row, index) => (
             <div key={row.id || row.tempId} className="rounded-lg border border-border bg-card p-4 space-y-3">
