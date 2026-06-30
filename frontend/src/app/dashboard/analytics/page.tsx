@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppSelector } from "@/lib/store/store";
 import { SectionHeader } from "@/components/dashboard/SectionHeader";
@@ -39,27 +39,29 @@ export default function AnalyticsFitPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function load() {
-      try {
-        setLoading(true);
-        const [statsData, unis, docs] = await Promise.all([
-          fetchApi("/api/v1/dashboard/stats") as Promise<DashboardStats>,
-          fetchApi("/api/v1/universities") as Promise<University[]>,
-          fetchApi("/api/v1/documents") as Promise<Document[]>,
-        ]);
-        setStats(statsData);
-        setUniversities(unis || []);
-        setDocuments(docs || []);
-      } catch (err) {
-        setError("Failed to load analytics data.");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
+  const loadAnalytics = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [statsData, unis, docs] = await Promise.all([
+        fetchApi("/api/v1/dashboard/stats") as Promise<DashboardStats>,
+        fetchApi("/api/v1/universities") as Promise<University[]>,
+        fetchApi("/api/v1/documents") as Promise<Document[]>,
+      ]);
+      setStats(statsData);
+      setUniversities(unis || []);
+      setDocuments(docs || []);
+    } catch (err) {
+      setError("Failed to load analytics data.");
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
-    load();
   }, []);
+
+  useEffect(() => {
+    loadAnalytics();
+  }, [loadAnalytics]);
 
   const profileCompleteness = useMemo(() => {
     if (!profile) return 0;
@@ -114,7 +116,7 @@ export default function AnalyticsFitPage() {
       />
 
       {error && (
-        <ApiErrorAlert error={error} />
+        <ApiErrorAlert error={error} onRetry={loadAnalytics} />
       )}
 
       <Card className="border-border/60 bg-card/25">
@@ -242,15 +244,23 @@ export default function AnalyticsFitPage() {
         </Card>
       </div>
 
-      {universities.length > 0 && (
-        <Card className="border-border/60 bg-card/25">
-          <CardHeader>
-            <CardTitle className="text-sm font-bold text-foreground flex items-center gap-2">
-              <Target className="h-4 w-4 text-primary" />
-              University Quick Scan
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+      <Card className="border-border/60 bg-card/25">
+        <CardHeader>
+          <CardTitle className="text-sm font-bold text-foreground flex items-center gap-2">
+            <Target className="h-4 w-4 text-primary" />
+            University Quick Scan
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {universities.length === 0 ? (
+            <EmptyState
+              icon={Target}
+              title="No universities tracked"
+              description="Add universities to your workspace to see quick scan insights here."
+              actionLabel="Add University"
+              actionHref="/dashboard/universities/new"
+            />
+          ) : (
             <div className="space-y-2">
               {universities.slice(0, 10).map((uni) => (
                 <div key={uni.id} className="flex items-center justify-between p-2 rounded-lg bg-muted/20 hover:bg-muted/30 transition-colors">
@@ -279,9 +289,9 @@ export default function AnalyticsFitPage() {
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
-      )}
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

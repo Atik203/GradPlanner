@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppSelector } from "@/lib/store/store";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
   GanttChart,
-  Loader2,
   Calendar,
   Award,
   Sparkles,
@@ -72,38 +71,43 @@ export default function TimelinePlannerPage() {
   }, [profile]);
 
   // Load countries list
-  useEffect(() => {
-    async function loadCountries() {
-      try {
-        const list = await fetchApi("/api/v1/countries");
-        setCountries(list || []);
-      } catch (err) {
-        console.error("Failed to load countries:", err);
-      }
+  const loadCountries = useCallback(async () => {
+    try {
+      const list = await fetchApi("/api/v1/countries");
+      setCountries(list || []);
+    } catch (err) {
+      console.error("Failed to load countries:", err);
     }
-    loadCountries();
   }, []);
 
-  // Fetch timeline when intake changes
   useEffect(() => {
-    if (!intake) return;
+    loadCountries();
+  }, [loadCountries]);
 
-    async function loadTimeline() {
-      try {
-        setFetchingTimeline(true);
-        const data = await fetchApi(`/api/v1/timeline/planner?intake=${encodeURIComponent(intake)}`);
-        setTimelineData(data);
-      } catch (err) {
-        console.error(err);
-        setError("Failed to fetch journey timeline details.");
-      } finally {
-        setFetchingTimeline(false);
-        setLoading(false);
-      }
+  // Fetch timeline when intake changes
+  const loadTimeline = useCallback(async (i: string) => {
+    if (!i) return;
+    try {
+      setFetchingTimeline(true);
+      const data = await fetchApi(`/api/v1/timeline/planner?intake=${encodeURIComponent(i)}`);
+      setTimelineData(data);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to fetch journey timeline details.");
+    } finally {
+      setFetchingTimeline(false);
+      setLoading(false);
     }
+  }, []);
 
-    loadTimeline();
-  }, [intake]);
+  useEffect(() => {
+    loadTimeline(intake);
+  }, [intake, loadTimeline]);
+
+  const handleTimelineRetry = useCallback(() => {
+    setError(null);
+    loadTimeline(intake);
+  }, [loadTimeline, intake]);
 
   // Months range calculation
   const monthsRange = useMemo(() => {
@@ -270,7 +274,7 @@ export default function TimelinePlannerPage() {
       </div>
 
       {error && (
-        <ApiErrorAlert error={error} />
+        <ApiErrorAlert error={error} onRetry={handleTimelineRetry} />
       )}
 
       {/* Country Specific Timeline Warning Alert */}
@@ -289,9 +293,7 @@ export default function TimelinePlannerPage() {
       )}
 
       {fetchingTimeline ? (
-        <div className="flex h-[40vh] items-center justify-center">
-          <Loader2 className="h-8 w-8 animate-spin text-primary" />
-        </div>
+        <TimelineSkeleton />
       ) : timelineData && timelineData.milestones.length > 0 ? (
         <div className="space-y-8 animate-in fade-in duration-300">
           
