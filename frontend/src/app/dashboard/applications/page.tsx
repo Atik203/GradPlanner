@@ -27,6 +27,7 @@ import { Application, University, ApplicationStatus } from "@/types";
 import { ApplicationSkeleton } from "@/components/skeletons/ApplicationSkeleton";
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
+import { EmptyState } from "@/components/shared/EmptyState";
 
 export default function ApplicationsPage() {
   const dispatch = useAppDispatch();
@@ -169,10 +170,13 @@ export default function ApplicationsPage() {
       {loading ? (
         <ApplicationSkeleton />
       ) : applications.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-16 text-muted-foreground border border-dashed border-border rounded-xl bg-muted/20">
-          <FolderGit2 className="h-10 w-10 mb-2 text-muted-foreground/50" />
-          <p className="text-sm">No applications are currently being tracked.</p>
-        </div>
+        <EmptyState
+          icon={FolderGit2}
+          title="No applications tracked"
+          description="Add universities to your workspace to start tracking application progress."
+          actionLabel="Go to Universities"
+          actionHref="/dashboard/universities"
+        />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {applications.map((app) => (
