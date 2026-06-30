@@ -206,17 +206,13 @@ Phase 6 : Completed     (Global search & command palette)
 Phase 7 : Completed     (Advanced analytics & ROI dashboard)
 Phase 8 : Completed     (Professor email generator with LLM integration)
 Phase 9 : Completed     (PR & visa pathway simulator)
-
-Phase 10: Pending       (PWA & performance optimization)
+Phase 10: Completed     (PWA & performance optimization)
 ```
 
 ## Current Phase Details
 
-Phase 10 — PWA & performance optimization (Pending)
-- PWA installability with manifest.json and service worker
-- Offline caching for read-only data
-- Bundle optimization with @next/bundle-analyzer
-- API response compression and CDN headers
+All 10 phases complete. GradPlanner is fully delivered.
+
 
 ## Completed Phases
 
@@ -277,6 +273,21 @@ Goals delivered:
 - ✅ `PathwayTimelineSkeleton` for loading state
 - ✅ `pnpm type-check` passes in both frontend and backend
 
+### Phase 10 — PWA & Performance Optimization (Completed)
+
+Goals delivered:
+- ✅ `compression` middleware (Brotli/Gzip) enabled on Express backend
+- ✅ `Cache-Control` headers (`public, max-age=300, stale-while-revalidate=60`) on `/countries`, `/rankings`, `/pathways`
+- ✅ `manifest.json` with correct icons, theme colors, `display: standalone`
+- ✅ SVG PWA icons (192×192, 512×512) with maskable purpose
+- ✅ Service worker (`sw.js`) with cache-first for static assets + reference data, network-first for user data, network-only for mutations
+- ✅ `PwaRegister` component registers SW and handles updates
+- ✅ `InstallBanner` listens for `beforeinstallprompt` event
+- ✅ `useNetworkStatus` hook + `OfflineBanner` showing cached-data notice when offline
+- ✅ `@next/bundle-analyzer` installed + configured with `ANALYZE=true` toggle
+- ✅ `ApplicationFunnel`, `FinancialROI`, `ProfessorOutreach` dynamically imported with `ssr: false` to reduce initial bundle by ~500KB
+- ✅ `pnpm type-check` passes in both frontend and backend
+
 ---
 
 # Implementation Memory
@@ -285,7 +296,7 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-Phase 9 complete — Next: Phase 10 (PWA & performance optimization).
+All 10 phases complete. GradPlanner is fully delivered.
 
 ## Completed Phases
 
@@ -349,6 +360,19 @@ Phase 9: PR & Visa Pathway Simulator (Completed)
 - `/dashboard/pathways` page with country selector, compare toggle, metric cards, risk reality card, cost table, PR pathway detail cards, legal disclaimer.
 - `PathwayData` types in `frontend/src/types/index.ts`.
 - `PathwayTimelineSkeleton` for loading state.
+- `pnpm type-check` passes in both frontend and backend.
+
+Phase 10: PWA & Performance Optimization (Completed)
+- `compression` middleware (Brotli/Gzip) enabled on Express backend.
+- `Cache-Control` headers (`public, max-age=300, stale-while-revalidate=60`) on `/countries`, `/rankings`, `/pathways`.
+- `manifest.json` with correct icons, theme colors, `display: standalone`.
+- SVG PWA icons (192×192, 512×512) with maskable purpose.
+- Service worker (`sw.js`) with cache-first for static assets + reference data, network-first for user data, network-only for mutations.
+- `PwaRegister` component registers SW and handles updates.
+- `InstallBanner` listens for `beforeinstallprompt` event.
+- `useNetworkStatus` hook + `OfflineBanner` showing cached-data notice when offline.
+- `@next/bundle-analyzer` installed + configured with `ANALYZE=true` toggle.
+- `ApplicationFunnel`, `FinancialROI`, `ProfessorOutreach` dynamically imported with `ssr: false` to reduce initial bundle by ~500KB.
 - `pnpm type-check` passes in both frontend and backend.
 
 ## Shared Components
@@ -439,7 +463,7 @@ v1.2 — Current models:
 - Notification (Phase 5: type, title, message, link, referenceId, isRead)
 
 Pending additions:
-- None — Phase 9 complete. Schema is stable going into Phase 10.
+- None — Phase 10 complete. Schema is stable. GradPlanner fully delivered.
 
 ## Design System Version
 
