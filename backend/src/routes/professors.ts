@@ -37,6 +37,7 @@ import {
 } from "../utils/apiResponse.js";
 import { logger } from "../utils/logger.js";
 import { toDateOrNull } from "../utils/parsers.js";
+import { generateFollowUpNotifications } from "../services/notificationService.js";
 
 const router: Router = Router();
 
@@ -89,6 +90,8 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       select: PROFESSOR_WITH_UNIVERSITY_SELECT,
       orderBy: { createdAt: "desc" },
     });
+    generateFollowUpNotifications(userId)
+      .catch((err) => logger.warn("Failed to generate follow-up notifications", { userId, error: String(err) }));
     return ok(res, professors);
   } catch (error) {
     logger.error("GET /professors error", {
