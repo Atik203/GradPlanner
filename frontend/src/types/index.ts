@@ -236,3 +236,44 @@ export interface UserSettings {
   createdAt: string;
   updatedAt: string;
 }
+
+// ─── Search (Phase 6) ────────────────────────────────────────────────────────
+
+export interface SearchUniversityRanking {
+  id: string;
+  institutionName: string;
+  country: string;
+  inQs: boolean;
+  inThe: boolean;
+  inArwu: boolean;
+}
+
+export interface SearchedUniversity {
+  id: string;
+  name: string;
+  country: string;
+  program: string | null;
+  tier: Tier;
+}
+
+export interface SearchedProfessor {
+  id: string;
+  name: string;
+  researchInterests: string | null;
+  researchFitScore: number | null;
+  university: { name: string } | null;
+}
+
+export interface SearchedCountry {
+  id: string;
+  country: string;
+  countryCode: string;
+  overallScore: number;
+}
+
+export interface SearchResults {
+  universityRankings: SearchUniversityRanking[];
+  universities: SearchedUniversity[];
+  professors: SearchedProfessor[];
+  countries: SearchedCountry[];
+}
