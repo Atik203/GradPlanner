@@ -255,7 +255,9 @@ _(Optional: Used to limit AI usage on free tiers)._
 
 ---
 
-## Phase 9: PR & Visa Pathway Simulator
+## Phase 9: PR & Visa Pathway Simulator ✅ COMPLETED
+
+**Summary:** `GET /api/v1/pathways/:country` endpoint reading from `CountryIntelligence` JSONB fields (visa, prPathways, timeline, country-risks, citizenship) returning structured pathway data with studentVisa, postStudyWork, prOverview, prPathways, timeline, risks, citizenship, costs. `PathwayTimeline` interactive vertical stepper with 5 lifecycle phases, expandable milestones, risk color-coding, citizenship detail card. `ComparisonView` side-by-side layout with synchronized timeline + risk summaries. `/dashboard/pathways` page with country selector, compare toggle, metric cards, risk reality card, cost table, PR pathway detail cards, legal disclaimer. `PathwayData` types in `frontend/src/types/index.ts`. `PathwayTimelineSkeleton` for loading state.
 
 ### 1. Goal
 
@@ -371,13 +373,13 @@ _Alternatively, this data can remain in static JSON files since it changes infre
 
 ### 12. Acceptance Criteria
 
-- [ ] Static data/JSON created for Canada, USA, Australia, and Germany pathways specifically for BD nationals.
-- [ ] `/dashboard/pathways` page built with a responsive timeline/stepper UI.
-- [ ] Side-by-side comparison logic implemented.
-- [ ] Explicit disclaimers added regarding legal advice.
-- [ ] All costs and durations render correctly.
-- [ ] `pnpm type-check` passes.
-- [ ] No new lint errors.
+- [x] Data sourced from existing CountryIntelligence JSONB fields (visa, prPathways, timeline, country-risks, citizenship) covering all 20 countries for BD nationals.
+- [x] `/dashboard/pathways` page built with interactive vertical stepper, risk reality cards, cost table, PR pathway details.
+- [x] Side-by-side comparison logic implemented via ComparisonView component.
+- [x] Explicit disclaimers added regarding legal advice (amber banners at top + bottom of page).
+- [x] All costs and durations render correctly with currency conversion estimates.
+- [x] `pnpm type-check` passes in both frontend and backend.
+- [x] No new lint errors.
 
 ---
 
