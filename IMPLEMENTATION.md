@@ -1194,26 +1194,26 @@ frontend/src/
 
 ### 12. Acceptance Criteria
 
-- [ ] `Notification` model and `NotificationType` enum exist in Prisma schema
-- [ ] All 6 notification API endpoints implemented and validated
-- [ ] Notification generation service creates de-duplicated notifications for:
+- [x] `Notification` model and `NotificationType` enum exist in Prisma schema
+- [x] All 6 notification API endpoints implemented and validated
+- [x] Notification generation service creates de-duplicated notifications for:
   - Application deadlines < 30 days (and urgent < 7 days)
   - Professor follow-ups that are due or overdue
   - Documents approaching expiry (< 60 days)
   - Profile completeness < 60%
   - Application status changes to OFFER_RECEIVED
-- [ ] Bell icon in dashboard header shows unread notification count
-- [ ] Clicking bell opens notification dropdown (desktop) / bottom sheet (mobile)
-- [ ] Notifications are sorted by recency with urgency-colored icons
-- [ ] "Mark all as read" and individual "mark read" work correctly
-- [ ] "Clear all" deletes all user notifications
-- [ ] `UserSettings` preferences respected (opt-out of deadline/timeline notifications)
-- [ ] `WhatNextToday` widget integrates with notification system
-- [ ] HIGH-priority notifications trigger toast on page load
-- [ ] Notification Redux slice stores unread count globally
-- [ ] Empty state shown when no notifications exist
-- [ ] `pnpm type-check` passes in both frontend and backend
-- [ ] No new lint errors
+- [x] Bell icon in dashboard header shows unread notification count
+- [x] Clicking bell opens notification panel (Sheet on mobile/desktop)
+- [x] Notifications are sorted by recency with urgency-colored icons
+- [x] "Mark all as read" and individual "mark read" work correctly
+- [x] "Clear all" deletes all user notifications
+- [x] `UserSettings` preferences respected (opt-out of deadline/timeline notifications)
+- [x] `WhatNextToday` widget integrates with notification system
+- [x] HIGH-priority notifications trigger toast on page load
+- [x] Notification Redux slice stores unread count globally
+- [x] Empty state shown when no notifications exist
+- [x] `pnpm type-check` passes in both frontend and backend
+- [x] No new lint errors
 
 ---
 
