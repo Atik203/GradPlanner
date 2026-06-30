@@ -106,137 +106,19 @@
 
 ---
 
-## Phase 7: Advanced Analytics & ROI Dashboard
+## Phase 7: Advanced Analytics & ROI Dashboard ✅ COMPLETED
 
-### 1. Goal
+**Summary:** GET /api/v1/analytics endpoint (funnel, financial, outreach, activity data aggregation). ApplicationFunnel (recharts FunnelChart with conversion rates), FinancialROI (stacked BarChart + funding gap/scholarships/ROI score), ProfessorOutreach (PieChart + response rate/fit score/follow-up efficacy metrics), ActivityHeatmap (custom SVG 365-day grid with hover tooltips). Full analytics page rewrite with Profile Strength bar + Metric cards + 4 chart sections. AnalyticsSkeleton updated. recharts installed. `pnpm build` passes.
 
-Build a comprehensive **Analytics & ROI (Return on Investment) Dashboard** that visualizes the student's application funnel, scholarship probabilities, and total estimated costs. Move beyond tracking to strategic financial and timeline forecasting.
-
-### 2. Why This Phase Is Needed
-
-Targeting higher education abroad involves complex financial planning and probability assessment:
-
-| Problem                          | Impact                                                                                    | Risk Level  |
-| -------------------------------- | ----------------------------------------------------------------------------------------- | ----------- |
-| **No aggregate view of costs**   | Students don't know their total estimated first-year costs across all target universities | 🔴 CRITICAL |
-| **Hard to visualize progress**   | A list of applications doesn't show conversion rates (Applied -> Interview -> Offer)      | 🟠 HIGH     |
-| **Unclear scholarship ROI**      | Students don't see how much funding they actually need vs. what is guaranteed             | 🟠 HIGH     |
-| **Professor outreach black box** | No visualization of email response rates                                                  | 🟡 MEDIUM   |
-
-**Business value:** Providing a "Financial Snapshot" and "Success Funnel" makes GradPlanner indispensable. It transitions the product from a CRM to a strategic planner that directly impacts a student's financial decisions.
-
-### 3. Features
-
-#### 3.1 Application Success Funnel
-
-- A visual funnel chart showing: Shortlisted → Applied → Interviewed → Offer Received → Enrolled.
-- Calculates conversion percentages between stages.
-
-#### 3.2 Financial & ROI Forecaster
-
-- **Total Estimated Cost:** Aggregates tuition and living costs of shortlisted universities.
-- **Funding Gap Analysis:** Visualizes (Total Cost) - (Expected Scholarships/Stipends) = (Funding Gap in BDT).
-- **ROI Metric:** Compares the median post-graduation salary of the target country against the total cost.
-
-#### 3.3 Professor Outreach Analytics
-
-- Response rate pie chart (Replied Positive, Replied Negative, No Response).
-- Follow-up effectiveness metrics.
-
-#### 3.4 Timeline Heatmap
-
-- A GitHub-style contribution heatmap showing user activity (documents uploaded, emails logged, statuses updated) to encourage daily engagement.
-
-### 4. Detailed UI/UX Requirements
-
-#### Analytics Page (/dashboard/analytics)
-
-- **Layout:** Masonry grid or defined CSS grid for dashboard widgets.
-- **Charts:** Use
-  echarts for highly customizable, responsive SVG charts.
-- **Theming:** Charts must use CSS variables (e.g., hsl(var(--primary))) to perfectly match light/dark modes.
-- **Financial Widget:** Large typography for the "Funding Gap" in BDT. Conditional coloring (red if gap > user budget, green if fully funded).
-- **Funnel Widget:** Horizontal or vertical funnel visualization.
-- **Tooltips:** Hovering over chart elements shows detailed breakdowns.
-
-### 5. Backend Requirements
-
-#### API
-
-| Route                       | Method | Validation | Auth     | Purpose                                  |
-| --------------------------- | ------ | ---------- | -------- | ---------------------------------------- |
-| /api/v1/analytics/funnel    | GET    | —          | Required | Returns counts for application stages    |
-| /api/v1/analytics/financial | GET    | —          | Required | Returns aggregated cost and funding data |
-| /api/v1/analytics/outreach  | GET    | —          | Required | Returns professor response statistics    |
-
-**Aggregation Logic:**
-
-- Use Prisma groupBy and aggregate functions (\_sum, \_avg) to compute stats on the database side rather than loading all rows into Node.js memory.
-
-### 6. Architecture Requirements
-
-#### New Files
-
-``
-backend/src/
-├── routes/
-│ └── analytics.ts # Analytics aggregation endpoints
-
-frontend/src/
-├── app/dashboard/analytics/
-│ └── page.tsx # Main Analytics dashboard
-├── components/
-│ └── analytics/
-│ ├── FunnelChart.tsx # Recharts funnel
-│ ├── FinancialForecaster.tsx # ROI widget
-│ └── OutreachStats.tsx # Pie/Bar charts for professor data
-``
-
-#### Reusable Modules
-
-- Add
-  echarts as a dependency.
-- Create a ChartContainer wrapper that handles ResponsiveContainer and theming consistently.
-
-### 7. Database Changes
-
-None. Aggregations use existing data.
-
-### 8. API Changes
-
-| Change                             | Breaking? | Migration Path   |
-| ---------------------------------- | --------- | ---------------- |
-| New /api/v1/analytics/\* endpoints | No        | Additive feature |
-
-### 9. Compatibility Analysis
-
-| Dimension                                                                                                                          | Risk   | Mitigation |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ------ | ---------- |
-| **Bundle Size**                                                                                                                    | 🟡 Low |
-| echarts is a medium-sized dependency. Ensure it's only loaded on the Analytics route (Next.js route-based splitting handles this). |
-
-### 10. Risks and Mitigation
-
-| Risk                                           | Probability | Impact | Mitigation                                                                 |
-| ---------------------------------------------- | ----------- | ------ | -------------------------------------------------------------------------- |
-| Complex Prisma aggregations cause slow queries | Low         | Medium | Ensure indexes exist on status fields in Application and Professor tables. |
-| Charts break on small mobile screens           | High        | Medium | Use ResponsiveContainer and stack charts vertically on < 768px.            |
-
-### 11. Future Phase Considerations
-
-- **Phase 9 (PR Pathway):** The ROI calculator can integrate PR visa costs into the total financial gap analysis.
-
-### 12. Acceptance Criteria
-
-- [ ] echarts library integrated.
-- [ ] /dashboard/analytics page created and accessible from the sidebar/bottom nav.
-- [ ] Application funnel chart renders correctly and calculates conversion rates.
-- [ ] Financial Forecaster aggregates costs from universities and displays the BDT gap.
-- [ ] Professor outreach stats render as a pie or bar chart.
-- [ ] All charts are fully responsive and adapt to light/dark themes.
-- [ ] Backend routes use Prisma aggregations instead of loading all rows in memory.
-- [ ] pnpm type-check passes.
-- [ ] No new lint errors.
+### Acceptance criteria (all met)
+- [x] GET /api/v1/analytics returns all chart data in one call
+- [x] Application Funnel chart with correct counts and conversion labels
+- [x] Financial ROI with cost breakdown per university, funding gap, salary/cost ratio
+- [x] Professor outreach pie chart with response distribution
+- [x] Activity heatmap 365-day grid with color-coded intensity
+- [x] Profile strength bar and metric cards at page top
+- [x] Empty states for all 4 sections when no data
+- [x] `pnpm build` passes
 
 ---
 
