@@ -17,6 +17,7 @@ import { DashboardNav } from "./DashboardNav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { NotificationBell } from "@/components/notifications/NotificationBell";
+import { SearchTrigger } from "@/components/command-palette/SearchTrigger";
 import { BottomNavWrapper } from "@/components/navigation/BottomNavWrapper";
 
 export default async function DashboardLayout({
@@ -50,6 +51,7 @@ export default async function DashboardLayout({
             <h1 className="text-lg font-semibold text-foreground text-gradient bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent">Workspace</h1>
           </div>
           <div className="flex items-center gap-2 md:gap-4">
+            <SearchTrigger />
             <NotificationBell />
             <ThemeToggle />
             <UserMenu user={user} />
