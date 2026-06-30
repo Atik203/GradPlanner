@@ -22,6 +22,7 @@ import timelineRouter from "./routes/timeline.js";
 import settingsRouter from "./routes/settings.js";
 import notificationsRouter from "./routes/notifications.js";
 import searchRouter from "./routes/search.js";
+import analyticsRouter from "./routes/analytics.js";
 import { ok, serverError } from "./utils/apiResponse.js";
 import { logger } from "./utils/logger.js";
 
@@ -82,6 +83,7 @@ app.use("/api/v1/timeline", requireAuth, timelineRouter);
 app.use("/api/v1/settings", requireAuth, settingsRouter);
 app.use("/api/v1/notifications", requireAuth, notificationsRouter);
 app.use("/api/v1/search", requireAuth, searchRouter);
+app.use("/api/v1/analytics", requireAuth, analyticsRouter);
 
 app.get("/api/v1/health", async (_req: Request, res: Response) => {
   try {
