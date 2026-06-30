@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
-import { fetchApi } from "@/lib/api";
+import { fetchApi, professorApi } from "@/lib/api";
 import { useAppSelector } from "@/lib/store/store";
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
@@ -17,10 +17,12 @@ import {
   Clock,
   ShieldCheck,
   Calendar,
-  Sparkles
+  Sparkles,
+  Wand2,
+  RotateCcw,
 } from "lucide-react";
 import { toast } from "sonner";
-import { Professor } from "@/types";
+import type { Professor, EmailFocus, GenerateEmailInput } from "@/types";
 
 interface EmailGeneratorModalProps {
   professor: Professor | null;
@@ -45,13 +47,16 @@ export function EmailGeneratorModal({
   const [body, setBody] = useState("");
   const [logging, setLogging] = useState(false);
 
-  // Proposal assistant states
+  const [aiGenerating, setAiGenerating] = useState(false);
+  const [aiFocus, setAiFocus] = useState<EmailFocus>("research");
+  const [aiPaperTitle, setAiPaperTitle] = useState("");
+  const [aiGenerated, setAiGenerated] = useState(false);
+
   const [showProposalAssistant, setShowProposalAssistant] = useState(false);
   const [profPaper, setProfPaper] = useState("");
   const [userThesis, setUserThesis] = useState("");
   const [generatedQuestions, setGeneratedQuestions] = useState<string[]>([]);
 
-  // Load profile if not present in redux
   useEffect(() => {
     if (isOpen && professor) {
       if (reduxProfile) {
@@ -72,11 +77,9 @@ export function EmailGeneratorModal({
     }
   }, [isOpen, professor, reduxProfile]);
 
-  // Extract user details
   const userName = session?.user?.name || "Applicant";
   const userEmail = session?.user?.email || "";
 
-  // Auto-populate user thesis from profile interests
   useEffect(() => {
     if (profile && !userThesis) {
       const interests = Array.isArray(profile.researchInterests)
@@ -89,14 +92,14 @@ export function EmailGeneratorModal({
   const generateQuestions = () => {
     const paperPhrase = profPaper.trim().replace(/\s+/g, ' ');
     const workPhrase = userThesis.trim().replace(/\s+/g, ' ');
-    
+
     if (!paperPhrase || !workPhrase) return;
-    
+
     const q1 = `How can the methodology described in your paper "${paperPhrase}" be adapted to optimize performance when processing low-resource datasets like my undergraduate work on "${workPhrase}"?`;
     const q2 = `Could the model architectures/frameworks utilized for your work on "${paperPhrase}" be fine-tuned or transferred to enhance accuracy/generalization in "${workPhrase}"?`;
     const q3 = `What are the computational and scalability trade-offs of integrating your proposed techniques on "${paperPhrase}" into real-world applications in the domain of "${workPhrase}"?`;
     const q4 = `Can we combine the representation learning principles of "${paperPhrase}" with the sequence classification patterns of "${workPhrase}" to establish a more robust pipeline?`;
-    
+
     setGeneratedQuestions([q1, q2, q3, q4]);
     toast.success("Bridging research questions generated!");
   };
@@ -104,19 +107,19 @@ export function EmailGeneratorModal({
   const injectQuestionsIntoBody = () => {
     const paperPhrase = profPaper.trim().replace(/\s+/g, ' ');
     if (!paperPhrase) return;
-    
+
     let newSubject = subject;
     if (subject.includes("[Enter Paper Title]")) {
       newSubject = subject.replace("[Enter Paper Title]", `"${paperPhrase}"`);
     } else if (!subject.toLowerCase().includes(paperPhrase.toLowerCase().slice(0, 15))) {
       newSubject = `Inquiry regarding your paper: "${paperPhrase.slice(0, 30)}..."`;
     }
-    
+
     let newBody = body;
     if (newBody.includes("[Enter Paper Title]")) {
       newBody = newBody.replace("[Enter Paper Title]", `"${paperPhrase}"`);
     }
-    
+
     const questionsBlock = `Specifically, I am very interested in exploring the following research questions bridging your work with my background:
 
 ${generatedQuestions.map((q, i) => `   ${i + 1}. ${q}`).join("\n\n")}`;
@@ -128,26 +131,25 @@ ${generatedQuestions.map((q, i) => `   ${i + 1}. ${q}`).join("\n\n")}`;
     } else {
       newBody = newBody + `\n\n${questionsBlock}`;
     }
-    
+
     setSubject(newSubject);
     setBody(newBody);
     toast.success("Bridging research questions injected into email draft!");
   };
 
-  // Compile templates
   const templates = useMemo(() => {
     if (!professor) return [];
-    
+
     const profName = professor.name || "Professor";
     const profUni = professor.university?.name || "your institution";
     const profInterests = professor.researchInterests || "your research areas";
     const targetDegree = profile?.targetDegree || "MSc/PhD";
     const targetIntake = profile?.targetIntake || "Fall 2028";
-    
+
     const bscUni = profile?.university || "[My BD University]";
     const bscCgpa = profile?.cgpa ? `${profile.cgpa}/4.00` : "[My CGPA]";
     const ieltsStr = profile?.ieltsScore ? `(IELTS: ${profile.ieltsScore})` : "";
-    
+
     const userInterestsStr = Array.isArray(profile?.researchInterests)
       ? profile.researchInterests.join(", ")
       : typeof profile?.researchInterests === "string"
@@ -238,22 +240,20 @@ ${userName}`
     ];
   }, [professor, profile, userName, userEmail]);
 
-  // Set default templates or select based on history
   useEffect(() => {
     if (isOpen && templates.length > 0 && professor) {
       let defaultId = "initial_focus";
-      
-      // Auto select template based on followUpCount and emailSentDate
+
       if (professor.emailSentDate) {
         if (professor.followUpCount === 0) {
           defaultId = "followup_1";
         } else if (professor.followUpCount === 1) {
           defaultId = "followup_2";
         } else {
-          defaultId = "followup_2"; // cap at 2
+          defaultId = "followup_2";
         }
       }
-      
+
       setSelectedTemplateId(defaultId);
       const matched = templates.find(t => t.id === defaultId);
       if (matched) {
@@ -263,7 +263,6 @@ ${userName}`
     }
   }, [isOpen, templates, professor]);
 
-  // Handle template dropdown change
   const handleTemplateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const id = e.target.value;
     setSelectedTemplateId(id);
@@ -272,20 +271,41 @@ ${userName}`
       setSubject(matched.subject);
       setBody(matched.body);
     }
+    setAiGenerated(false);
+  };
+
+  const handleAiGenerate = async () => {
+    if (!professor) return;
+    setAiGenerating(true);
+    try {
+      const input: GenerateEmailInput = { focus: aiFocus };
+      if (aiFocus === "paper" && aiPaperTitle.trim()) input.paperTitle = aiPaperTitle.trim();
+
+      const result = await professorApi.generateEmail(professor.id, input);
+      setSubject(result.subject);
+      setBody(result.body);
+      setAiGenerated(true);
+      toast.success("AI-generated draft ready!");
+    } catch (err: any) {
+      toast.error(err.message || "AI generation failed. You can still use the template below.");
+    } finally {
+      setAiGenerating(false);
+    }
+  };
+
+  const handleAiRegenerate = () => {
+    handleAiGenerate();
   };
 
   if (!professor) return null;
 
-  // Compute timezone advice
   const country = professor.university?.country;
   const tzAdvice = getBdtOutreachAdvice(country);
 
-  // Follow-up status indicators
   const hasSentInitial = !!professor.emailSentDate;
   const followUpCount = professor.followUpCount || 0;
   const maxFollowUpsReached = followUpCount >= 2;
 
-  // Minimum 14 day check
   const lastEmailDate = professor.lastFollowUp || professor.emailSentDate;
   let daysSinceLastEmail = 999;
   let isWithin14Days = false;
@@ -295,7 +315,6 @@ ${userName}`
     isWithin14Days = daysSinceLastEmail < 14;
   }
 
-  // Copy helpers
   const copySubject = () => {
     navigator.clipboard.writeText(subject);
     toast.success("Subject copied to clipboard!");
@@ -312,7 +331,6 @@ ${userName}`
     toast.success("Full draft copied to clipboard!");
   };
 
-  // Submit / Log email sent API
   const handleLogSent = async () => {
     setLogging(true);
     try {
@@ -320,13 +338,13 @@ ${userName}`
         method: "POST",
         body: JSON.stringify({ subject, body }),
       });
-      
+
       toast.success(
-        hasSentInitial 
+        hasSentInitial
           ? `Logged Follow-up #${followUpCount + 1} sent to Prof. ${professor.name}!`
           : `Logged Initial Email sent to Prof. ${professor.name}!`
       );
-      
+
       if (onEmailLogged) {
         onEmailLogged(updated);
       }
@@ -378,8 +396,85 @@ ${userName}`
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-4">
-          {/* Form Editor Block */}
           <div className="md:col-span-2 space-y-4">
+            {/* AI Generate Section */}
+            <div className="border border-primary/20 bg-primary/5 rounded-xl p-4 space-y-3">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xs font-bold text-primary flex items-center gap-1.5 uppercase">
+                  <Wand2 className="h-4 w-4" /> AI Email Generator
+                </h3>
+                {aiGenerated && (
+                  <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
+                    <CheckCircle className="h-3 w-3" /> AI Draft Ready
+                  </span>
+                )}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div className="space-y-1">
+                  <Label htmlFor="aiFocus" className="text-[10px] text-muted-foreground font-semibold uppercase">
+                    Email Focus
+                  </Label>
+                  <select
+                    id="aiFocus"
+                    value={aiFocus}
+                    onChange={(e) => setAiFocus(e.target.value as EmailFocus)}
+                    disabled={aiGenerating}
+                    className="w-full min-h-9 px-2 bg-background border border-border rounded-lg text-xs text-foreground focus:outline-none focus:border-primary"
+                  >
+                    <option value="research">Research Focus</option>
+                    <option value="funding">Funding Inquiry</option>
+                    <option value="paper">Specific Paper</option>
+                    <option value="followUp1">Follow-up #1</option>
+                    <option value="followUp2">Follow-up #2</option>
+                  </select>
+                </div>
+
+                {aiFocus === "paper" && (
+                  <div className="space-y-1">
+                    <Label htmlFor="aiPaperTitle" className="text-[10px] text-muted-foreground font-semibold uppercase">
+                      Paper Title
+                    </Label>
+                    <Input
+                      id="aiPaperTitle"
+                      value={aiPaperTitle}
+                      onChange={(e) => setAiPaperTitle(e.target.value)}
+                      placeholder="e.g. Instruction Tuning for Low-Resource NLP"
+                      disabled={aiGenerating}
+                      className="h-9 text-xs bg-background border-border"
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div className="flex gap-2">
+                <Button
+                  onClick={handleAiGenerate}
+                  disabled={aiGenerating || maxFollowUpsReached}
+                  className="min-h-9 text-xs bg-primary text-primary-foreground font-bold hover:bg-primary/90 flex items-center gap-1.5"
+                >
+                  {aiGenerating ? (
+                    <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                  ) : (
+                    <Wand2 className="h-3.5 w-3.5" />
+                  )}
+                  {aiGenerating ? "Generating..." : "AI Generate"}
+                </Button>
+                {aiGenerated && (
+                  <Button
+                    onClick={handleAiRegenerate}
+                    disabled={aiGenerating}
+                    variant="outline"
+                    className="min-h-9 text-xs border-primary/30 text-primary hover:bg-primary/10 flex items-center gap-1.5"
+                  >
+                    <RotateCcw className="h-3.5 w-3.5" />
+                    Regenerate
+                  </Button>
+                )}
+              </div>
+            </div>
+
+            {/* Template Selector */}
             <div className="space-y-1.5">
               <Label htmlFor="templateSelect" className="text-xs font-bold text-muted-foreground uppercase">
                 Select Outreach Template
@@ -398,7 +493,7 @@ ${userName}`
               </select>
             </div>
 
-            {/* Research Proposal Assistant Collapsible Section */}
+            {/* Research Proposal Assistant */}
             <div className="border border-border/60 bg-muted/10 rounded-xl p-4 space-y-3">
               <button
                 type="button"
@@ -407,7 +502,7 @@ ${userName}`
               >
                 <span className="flex items-center gap-1.5 text-primary">
                   <Sparkles className="h-4 w-4 text-primary" />
-                  🔬 Research Proposal Assistant (P3)
+                  Research Proposal Assistant (P3)
                 </span>
                 <span className="text-muted-foreground text-[10px]">{showProposalAssistant ? "Hide" : "Expand"}</span>
               </button>
@@ -584,7 +679,6 @@ ${userName}`
                 )}
               </div>
 
-              {/* Validation Warnings */}
               {maxFollowUpsReached ? (
                 <div className="rounded-lg bg-destructive/10 border border-destructive/20 p-2.5 text-[11px] text-destructive flex gap-2">
                   <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
