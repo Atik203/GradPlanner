@@ -202,7 +202,7 @@ Phase 2 : Completed     (Onboarding wizard & isOnboarded flag)
 Phase 3 : Completed     (Skeletons, error states, empty states)
 Phase 4 : Completed     (Mobile-first UI & navigation)
 Phase 5 : Completed     (Notifications & reminders)
-Phase 6 : Pending       (Global search & command palette)
+Phase 6 : In Progress   (Global search & command palette)
 Phase 7 : Pending       (Advanced analytics & ROI)
 Phase 8 : Pending       (Professor email generator)
 Phase 9 : Pending       (PR & visa pathway simulator)
@@ -211,7 +211,11 @@ Phase 10: Pending       (PWA & performance optimization)
 
 ## Current Phase Details
 
-None — Phase 5 complete. See "Completed Phases" for details.
+Phase 6 — Global search & command palette:
+- Backend: GET /api/v1/search?q= cross-entity search (UniversityRanking, University, Professor, CountryIntelligence)
+- Frontend: cmd-based CommandPalette with Ctrl+K, debounced search, grouped results, navigation commands, quick actions
+- Search trigger button in header with ⌘K hint
+- All 7 steps implemented, type-check passes.
 
 ## Completed Phases
 
