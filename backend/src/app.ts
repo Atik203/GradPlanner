@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
 import cors from "cors";
+import compression from "compression";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth.js";
 import { prisma } from "./lib/prisma.js";
@@ -53,6 +54,9 @@ app.use(
   })
 );
 
+// ─── Response compression (Brotli/Gzip) ─────────────────────────────────────
+app.use(compression({ level: 6 }));
+
 // ─── Body parsers with explicit size limits (prevents memory exhaustion) ─────
 app.use(express.json({ limit: "256kb" }));
 app.use(express.urlencoded({ limit: "256kb", extended: true }));
@@ -68,6 +72,15 @@ app.use("/api", globalLimiter);
 
 // ─── Write rate limit on mutating methods (applied per-route via writeLimiter) ─
 app.use("/api/v1", writeLimiter);
+
+// ─── Cache-Control for semi-static GET endpoints ──────────────────────────
+const cacheablePaths = ["/api/v1/countries", "/api/v1/rankings", "/api/v1/pathways"];
+app.use((req, res, next) => {
+  if (req.method === "GET" && cacheablePaths.some((p) => req.path.startsWith(p))) {
+    res.setHeader("Cache-Control", "public, max-age=300, stale-while-revalidate=60");
+  }
+  next();
+});
 
 // ─── Domain routes ──────────────────────────────────────────────────────────
 app.use("/api/v1/profile", requireAuth, profileRouter);
