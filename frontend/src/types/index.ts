@@ -200,6 +200,29 @@ export interface UniversityRanking {
   arwuPcp?: number | null;
 }
 
+// ─── Notifications (Phase 5) ─────────────────────────────────────────────────
+
+export type NotificationType =
+  | "DEADLINE_APPROACHING"
+  | "DEADLINE_URGENT"
+  | "FOLLOW_UP_DUE"
+  | "FOLLOW_UP_LIMIT"
+  | "DOCUMENT_EXPIRING"
+  | "PROFILE_INCOMPLETE"
+  | "APPLICATION_UPDATE"
+  | "SYSTEM";
+
+export interface NotificationItem {
+  id: string;
+  type: NotificationType;
+  title: string;
+  message: string;
+  link?: string | null;
+  referenceId?: string | null;
+  isRead: boolean;
+  createdAt: string;
+}
+
 // ─── User Settings (Phase 1) ────────────────────────────────────────────────
 
 export type StrategyPreference = "PR speed" | "AI Market" | "No Tuition" | "Scholarship";
