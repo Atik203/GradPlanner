@@ -198,7 +198,7 @@ export const apiDelete = <T>(path: string, options?: RequestInit) =>
 
 // ─── Domain-specific API helpers ─────────────────────────────────────────────
 
-import type { UserSettings, UserProfile } from "@/types";
+import type { UserSettings, UserProfile, NotificationItem } from "@/types";
 
 export const settingsApi = {
   get: () => apiGet<UserSettings>("/api/v1/settings"),
@@ -212,4 +212,21 @@ export const profileApi = {
     apiPut<UserProfile>("/api/v1/profile", patch),
   completeOnboarding: (data: Record<string, unknown>) =>
     apiPost<UserProfile>("/api/v1/profile/complete-onboarding", data),
+};
+
+export interface NotificationListResponse {
+  notifications: NotificationItem[];
+  total: number;
+  limit: number;
+  offset: number;
+}
+
+export const notificationApi = {
+  list: (limit = 20, offset = 0) =>
+    apiGet<NotificationListResponse>(`/api/v1/notifications?limit=${limit}&offset=${offset}`),
+  unreadCount: () => apiGet<{ count: number }>("/api/v1/notifications/unread-count"),
+  markRead: (id: string) => apiPut(`/api/v1/notifications/${id}/read`),
+  markAllRead: () => apiPut("/api/v1/notifications/read-all"),
+  delete: (id: string) => apiDelete(`/api/v1/notifications/${id}`),
+  clearAll: () => apiDelete("/api/v1/notifications/clear-all"),
 };
