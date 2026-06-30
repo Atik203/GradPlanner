@@ -312,3 +312,17 @@ export interface AnalyticsResponse {
   };
   activityTimeline: Array<{ date: string; count: number }>;
 }
+
+// ─── Professor Email Generator (Phase 8) ─────────────────────────────────────
+
+export type EmailFocus = "research" | "funding" | "paper" | "followUp1" | "followUp2";
+
+export interface GenerateEmailInput {
+  focus?: EmailFocus;
+  paperTitle?: string;
+}
+
+export interface GeneratedEmail {
+  subject: string;
+  body: string;
+}

@@ -198,7 +198,7 @@ export const apiDelete = <T>(path: string, options?: RequestInit) =>
 
 // ─── Domain-specific API helpers ─────────────────────────────────────────────
 
-import type { UserSettings, UserProfile, NotificationItem, SearchResults } from "@/types";
+import type { UserSettings, UserProfile, NotificationItem, SearchResults, GenerateEmailInput, GeneratedEmail } from "@/types";
 
 export const settingsApi = {
   get: () => apiGet<UserSettings>("/api/v1/settings"),
@@ -233,4 +233,9 @@ export const notificationApi = {
 
 export const searchApi = {
   search: (q: string) => apiGet<SearchResults>(`/api/v1/search?q=${encodeURIComponent(q)}`),
+};
+
+export const professorApi = {
+  generateEmail: (professorId: string, input?: GenerateEmailInput) =>
+    apiPost<GeneratedEmail>(`/api/v1/professors/${professorId}/generate-email`, input ?? {}),
 };
