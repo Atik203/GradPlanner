@@ -204,6 +204,7 @@ Phase 4 : Completed     (Mobile-first UI & navigation)
 Phase 5 : Completed     (Notifications & reminders)
 Phase 6 : Completed     (Global search & command palette)
 Phase 7 : Completed     (Advanced analytics & ROI dashboard)
+Phase 8 : Completed     (Professor email generator with LLM integration)
 
 Phase 9 : Pending       (PR & visa pathway simulator)
 Phase 10: Pending       (PWA & performance optimization)
@@ -211,10 +212,10 @@ Phase 10: Pending       (PWA & performance optimization)
 
 ## Current Phase Details
 
-Phase 8 — Professor email generator (Pending)
-- Backend: POST /api/v1/professors/:id/generate-email endpoint with LLM integration
-- Frontend: EmailGeneratorModal with draft editor, regenerate options, copy to clipboard
-- Professor detail page integration with "Draft Outreach Email" button
+Phase 9 — PR & visa pathway simulator (Pending)
+- Backend: GET /api/v1/pathways/:country endpoint with BD-specific visa/PR data
+- Frontend: /dashboard/pathways page with interactive timeline, side-by-side comparison
+- Risk & reality cards with honest assessments for each country
 
 ## Completed Phases
 
@@ -253,6 +254,16 @@ Goals delivered:
 Goals delivered:
 - ✅ GET /api/v1/analytics endpoint (funnel, financial, outreach, activity), ApplicationFunnel (FunnelChart), FinancialROI (BarChart + funding gap), ProfessorOutreach (PieChart + metrics), ActivityHeatmap (custom SVG 365-day grid), full analytics page rewrite, `pnpm build` passes.
 
+### Phase 8 — Professor Email Generator with LLM Integration (Completed)
+
+Goals delivered:
+- ✅ `llmService` (`backend/src/services/llmService.ts`) with OpenAI `gpt-4o-mini`, 5 focus modes (research/funding/paper/followUp1/followUp2), structured JSON response, template fallback
+- ✅ `POST /api/v1/professors/:id/generate-email` endpoint with Zod validation, ownership check, profile+professor context assembly
+- ✅ `EmailGeneratorModal` rewrite — AI Generate button, focus selector dropdown, paper title input, Regenerate flow, loading spinner, toast errors, template selector preserved as fallback
+- ✅ `generateEmailSchema` validator (`backend/src/validators/professor.ts`) with focus enum + optional paperTitle
+- ✅ `professorApi.generateEmail()` helper in `frontend/src/lib/api.ts`
+- ✅ `pnpm type-check` passes in both frontend and backend
+
 ---
 
 # Implementation Memory
@@ -261,7 +272,7 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-None — Phase 5 complete.
+Phase 8 complete — Next: Phase 9 (PR & visa pathway simulator).
 
 ## Completed Phases
 
@@ -307,6 +318,14 @@ Phase 5: Notifications & Deadline Reminders (Completed)
 - Injected into applications, professors, documents, profile, stats routes.
 - Redux slice + 3 notification components (Bell/Panel/Item) + empty state.
 - Header integration, WhatNextToday summary, Sonner toast on urgent.
+- `pnpm type-check` passes in both frontend and backend.
+
+Phase 8: Professor Email Generator with LLM Integration (Completed)
+- `llmService` (`backend/src/services/llmService.ts`) with OpenAI `gpt-4o-mini`, 5 focus modes, template fallback.
+- `POST /api/v1/professors/:id/generate-email` endpoint with Zod validation + ownership check.
+- `generateEmailSchema` validator with focus enum + optional paperTitle.
+- `EmailGeneratorModal` rewrite with AI Generate, focus dropdown, paper title input, Regenerate flow.
+- `professorApi.generateEmail()` helper in `frontend/src/lib/api.ts`.
 - `pnpm type-check` passes in both frontend and backend.
 
 ## Shared Components
@@ -397,7 +416,7 @@ v1.2 — Current models:
 - Notification (Phase 5: type, title, message, link, referenceId, isRead)
 
 Pending additions:
-- None — Phase 5 complete. Schema is stable going into Phase 6.
+- None — Phase 8 complete. Schema is stable going into Phase 9.
 
 ## Design System Version
 
