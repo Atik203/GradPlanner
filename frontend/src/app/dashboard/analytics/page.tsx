@@ -244,15 +244,23 @@ export default function AnalyticsFitPage() {
         </Card>
       </div>
 
-      {universities.length > 0 && (
-        <Card className="border-border/60 bg-card/25">
-          <CardHeader>
-            <CardTitle className="text-sm font-bold text-foreground flex items-center gap-2">
-              <Target className="h-4 w-4 text-primary" />
-              University Quick Scan
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+      <Card className="border-border/60 bg-card/25">
+        <CardHeader>
+          <CardTitle className="text-sm font-bold text-foreground flex items-center gap-2">
+            <Target className="h-4 w-4 text-primary" />
+            University Quick Scan
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {universities.length === 0 ? (
+            <EmptyState
+              icon={Target}
+              title="No universities tracked"
+              description="Add universities to your workspace to see quick scan insights here."
+              actionLabel="Add University"
+              actionHref="/dashboard/universities/new"
+            />
+          ) : (
             <div className="space-y-2">
               {universities.slice(0, 10).map((uni) => (
                 <div key={uni.id} className="flex items-center justify-between p-2 rounded-lg bg-muted/20 hover:bg-muted/30 transition-colors">
@@ -281,9 +289,9 @@ export default function AnalyticsFitPage() {
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
-      )}
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }
