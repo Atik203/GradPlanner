@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { SectionHeader } from "@/components/dashboard/SectionHeader";
 import { MetricCard } from "@/components/dashboard/MetricCard";
@@ -33,25 +33,27 @@ export default function SavedTrackersPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function load() {
-      try {
-        setLoading(true);
-        const [unis, apps] = await Promise.all([
-          fetchApi("/api/v1/universities") as Promise<University[]>,
-          fetchApi("/api/v1/applications") as Promise<Application[]>,
-        ]);
-        setUniversities(unis || []);
-        setApplications(apps || []);
-      } catch (err) {
-        setError("Failed to load funding tracker data.");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
+  const loadFunding = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [unis, apps] = await Promise.all([
+        fetchApi("/api/v1/universities") as Promise<University[]>,
+        fetchApi("/api/v1/applications") as Promise<Application[]>,
+      ]);
+      setUniversities(unis || []);
+      setApplications(apps || []);
+    } catch (err) {
+      setError("Failed to load funding tracker data.");
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
-    load();
   }, []);
+
+  useEffect(() => {
+    loadFunding();
+  }, [loadFunding]);
 
   const trackedApps = useMemo(() => {
     return applications.filter((a) => a.scholarshipAmt || a.status !== "PLANNING");
@@ -86,7 +88,7 @@ export default function SavedTrackersPage() {
       />
 
       {error && (
-        <ApiErrorAlert error={error} />
+        <ApiErrorAlert error={error} onRetry={loadFunding} />
       )}
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useCallback } from "react";
 import { fetchApi } from "@/lib/api";
 import { useAppSelector } from "@/lib/store/store";
 import { SectionHeader } from "@/components/dashboard/SectionHeader";
@@ -39,27 +39,29 @@ export default function AnalyticsFitPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    async function load() {
-      try {
-        setLoading(true);
-        const [statsData, unis, docs] = await Promise.all([
-          fetchApi("/api/v1/dashboard/stats") as Promise<DashboardStats>,
-          fetchApi("/api/v1/universities") as Promise<University[]>,
-          fetchApi("/api/v1/documents") as Promise<Document[]>,
-        ]);
-        setStats(statsData);
-        setUniversities(unis || []);
-        setDocuments(docs || []);
-      } catch (err) {
-        setError("Failed to load analytics data.");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
+  const loadAnalytics = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const [statsData, unis, docs] = await Promise.all([
+        fetchApi("/api/v1/dashboard/stats") as Promise<DashboardStats>,
+        fetchApi("/api/v1/universities") as Promise<University[]>,
+        fetchApi("/api/v1/documents") as Promise<Document[]>,
+      ]);
+      setStats(statsData);
+      setUniversities(unis || []);
+      setDocuments(docs || []);
+    } catch (err) {
+      setError("Failed to load analytics data.");
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
-    load();
   }, []);
+
+  useEffect(() => {
+    loadAnalytics();
+  }, [loadAnalytics]);
 
   const profileCompleteness = useMemo(() => {
     if (!profile) return 0;
@@ -114,7 +116,7 @@ export default function AnalyticsFitPage() {
       />
 
       {error && (
-        <ApiErrorAlert error={error} />
+        <ApiErrorAlert error={error} onRetry={loadAnalytics} />
       )}
 
       <Card className="border-border/60 bg-card/25">
