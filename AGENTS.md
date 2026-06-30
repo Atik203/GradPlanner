@@ -205,17 +205,18 @@ Phase 5 : Completed     (Notifications & reminders)
 Phase 6 : Completed     (Global search & command palette)
 Phase 7 : Completed     (Advanced analytics & ROI dashboard)
 Phase 8 : Completed     (Professor email generator with LLM integration)
+Phase 9 : Completed     (PR & visa pathway simulator)
 
-Phase 9 : Pending       (PR & visa pathway simulator)
 Phase 10: Pending       (PWA & performance optimization)
 ```
 
 ## Current Phase Details
 
-Phase 9 — PR & visa pathway simulator (Pending)
-- Backend: GET /api/v1/pathways/:country endpoint with BD-specific visa/PR data
-- Frontend: /dashboard/pathways page with interactive timeline, side-by-side comparison
-- Risk & reality cards with honest assessments for each country
+Phase 10 — PWA & performance optimization (Pending)
+- PWA installability with manifest.json and service worker
+- Offline caching for read-only data
+- Bundle optimization with @next/bundle-analyzer
+- API response compression and CDN headers
 
 ## Completed Phases
 
@@ -264,6 +265,18 @@ Goals delivered:
 - ✅ `professorApi.generateEmail()` helper in `frontend/src/lib/api.ts`
 - ✅ `pnpm type-check` passes in both frontend and backend
 
+### Phase 9 — PR & Visa Pathway Simulator (Completed)
+
+Goals delivered:
+- ✅ `GET /api/v1/pathways/:country` endpoint reading from `CountryIntelligence` JSONB fields (visa, prPathways, timeline, country-risks, citizenship)
+- ✅ Structured response with studentVisa, postStudyWork, prOverview, prPathways, timeline, risks, citizenship, costs
+- ✅ `PathwayTimeline` interactive vertical stepper with 5 lifecycle phases, expandable milestones, risk color-coding, citizenship detail card
+- ✅ `ComparisonView` side-by-side layout with synchronized timeline + risk summaries
+- ✅ `/dashboard/pathways` page with country selector, compare toggle, metric cards, risk reality card, cost table, PR pathway detail cards, legal disclaimer
+- ✅ `PathwayData` types in `frontend/src/types/index.ts`
+- ✅ `PathwayTimelineSkeleton` for loading state
+- ✅ `pnpm type-check` passes in both frontend and backend
+
 ---
 
 # Implementation Memory
@@ -272,7 +285,7 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-Phase 8 complete — Next: Phase 9 (PR & visa pathway simulator).
+Phase 9 complete — Next: Phase 10 (PWA & performance optimization).
 
 ## Completed Phases
 
@@ -326,6 +339,16 @@ Phase 8: Professor Email Generator with LLM Integration (Completed)
 - `generateEmailSchema` validator with focus enum + optional paperTitle.
 - `EmailGeneratorModal` rewrite with AI Generate, focus dropdown, paper title input, Regenerate flow.
 - `professorApi.generateEmail()` helper in `frontend/src/lib/api.ts`.
+- `pnpm type-check` passes in both frontend and backend.
+
+Phase 9: PR & Visa Pathway Simulator (Completed)
+- `GET /api/v1/pathways/:country` endpoint reading from `CountryIntelligence` JSONB fields (visa, prPathways, timeline, country-risks, citizenship).
+- Structured response with studentVisa, postStudyWork, prOverview, prPathways, timeline, risks, citizenship, costs.
+- `PathwayTimeline` interactive vertical stepper with 5 lifecycle phases, expandable milestones, risk color-coding, citizenship detail card.
+- `ComparisonView` side-by-side layout with synchronized timeline + risk summaries.
+- `/dashboard/pathways` page with country selector, compare toggle, metric cards, risk reality card, cost table, PR pathway detail cards, legal disclaimer.
+- `PathwayData` types in `frontend/src/types/index.ts`.
+- `PathwayTimelineSkeleton` for loading state.
 - `pnpm type-check` passes in both frontend and backend.
 
 ## Shared Components
@@ -416,7 +439,7 @@ v1.2 — Current models:
 - Notification (Phase 5: type, title, message, link, referenceId, isRead)
 
 Pending additions:
-- None — Phase 8 complete. Schema is stable going into Phase 9.
+- None — Phase 9 complete. Schema is stable going into Phase 10.
 
 ## Design System Version
 
