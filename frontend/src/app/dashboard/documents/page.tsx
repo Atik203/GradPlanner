@@ -26,6 +26,7 @@ import { DocumentSkeleton } from "@/components/skeletons/DocumentSkeleton";
 import { ApiErrorAlert } from "@/components/shared/ApiErrorAlert";
 import { DeleteConfirmDialog } from "@/components/shared/DeleteConfirmDialog";
 import { EmptyState } from "@/components/shared/EmptyState";
+import { toast } from "sonner";
 
 export default function DocumentsPage() {
   const dispatch = useAppDispatch();
@@ -40,7 +41,6 @@ export default function DocumentsPage() {
   const [status, setStatus] = useState<DocumentStatus>("PENDING");
   const [notes, setNotes] = useState("");
   const [saving, setSaving] = useState(false);
-  const [updatingIds, setUpdatingIds] = useState<Set<string>>(new Set());
 
   // Delete confirm dialog
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
@@ -92,7 +92,14 @@ export default function DocumentsPage() {
   };
 
   const handleUpdateStatus = async (id: string, newStatus: DocumentStatus) => {
-    setUpdatingIds(prev => new Set(prev).add(id));
+    const currentDoc = documents.find(d => d.id === id);
+    if (!currentDoc) return;
+
+    const previousStatus = currentDoc.status;
+
+    // Optimistic: immediately update UI
+    dispatch(updateDocument({ ...currentDoc, status: newStatus }));
+
     try {
       const updated = await fetchApi(`/api/v1/documents/${id}`, {
         method: "PUT",
@@ -100,10 +107,10 @@ export default function DocumentsPage() {
       });
       dispatch(updateDocument(updated));
     } catch (err) {
+      // Revert on failure
+      dispatch(updateDocument({ ...currentDoc, status: previousStatus }));
       console.error(err);
-      setError("Failed to update document status.");
-    } finally {
-      setUpdatingIds(prev => { const n = new Set(prev); n.delete(id); return n; });
+      toast.error("Failed to update document status.");
     }
   };
 
@@ -187,8 +194,7 @@ export default function DocumentsPage() {
                     <select
                       value={doc.status}
                       onChange={(e) => handleUpdateStatus(doc.id, e.target.value as DocumentStatus)}
-                      disabled={updatingIds.has(doc.id)}
-                      className="w-full h-10 min-h-[44px] px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none disabled:opacity-50"
+                      className="w-full h-10 min-h-[44px] px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
                     >
                       <option value="PENDING">Pending</option>
                       <option value="IN_PROGRESS">In Progress</option>
@@ -196,9 +202,6 @@ export default function DocumentsPage() {
                       <option value="EXPIRED">Expired</option>
                       <option value="NOT_REQUIRED">Not Required</option>
                     </select>
-                    {updatingIds.has(doc.id) && (
-                      <Loader2 className="absolute right-2 top-1/2 -translate-y-1/2 h-3 w-3 animate-spin text-muted-foreground" />
-                    )}
                   </div>
                 </div>
 
