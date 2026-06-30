@@ -114,6 +114,7 @@ const STATUS_BADGES = {
 
 export function WhatNextToday({ data, loading }: WhatNextTodayProps) {
   const [expandedUniId, setExpandedUniId] = useState<string | null>(null);
+  const unreadCount = useAppSelector((s) => s.notifications.unreadCount);
 
   if (loading) {
     return (
@@ -127,8 +128,6 @@ export function WhatNextToday({ data, loading }: WhatNextTodayProps) {
   if (!data) return null;
 
   const { tasks, readiness, summary } = data;
-
-  const unreadCount = useAppSelector((s) => s.notifications.unreadCount);
 
   const toggleUniExpand = (id: string) => {
     setExpandedUniId((prev) => (prev === id ? null : id));
