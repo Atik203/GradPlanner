@@ -330,7 +330,7 @@ export default function ProfessorsPage() {
     <div className="space-y-4 h-[calc(100vh-80px)] flex flex-col animate-in fade-in duration-500">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 shrink-0">
         <div>
-          <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
+          <h2 className="text-page-title font-black tracking-tight text-foreground flex items-center gap-2">
             <TableIcon className="h-6 w-6 text-primary" />
             Professor Tracker
           </h2>
@@ -346,17 +346,17 @@ export default function ProfessorsPage() {
                 value={newColName}
                 onChange={(e) => setNewColName(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleAddColumn()}
-                className="h-9 w-40 bg-background border-border text-foreground"
+                className="min-h-11 w-40 bg-background border-border text-foreground"
                 autoFocus
               />
-              <Button onClick={handleAddColumn} size="sm" className="h-9 bg-primary text-primary-foreground hover:bg-primary/90">Add</Button>
-              <Button onClick={() => setShowNewColInput(false)} size="sm" variant="ghost" className="h-9 text-muted-foreground">Cancel</Button>
+              <Button onClick={handleAddColumn} size="sm" className="min-h-11 bg-primary text-primary-foreground hover:bg-primary/90">Add</Button>
+              <Button onClick={() => setShowNewColInput(false)} size="sm" variant="ghost" className="min-h-11 text-muted-foreground">Cancel</Button>
             </div>
           ) : (
             <Button
               onClick={() => setShowNewColInput(true)}
               variant="outline"
-              className="h-9 border-border hover:bg-accent text-muted-foreground"
+              className="min-h-11 border-border hover:bg-accent text-muted-foreground"
             >
               + Add Column
             </Button>
@@ -364,14 +364,14 @@ export default function ProfessorsPage() {
 
           <Button
             onClick={handleAddRow}
-            className="h-9 bg-muted hover:bg-muted/80 text-foreground border border-border"
+            className="min-h-11 bg-muted hover:bg-muted/80 text-foreground border border-border"
           >
             <Plus className="h-4 w-4 mr-2" /> Row
           </Button>
           <Button
             onClick={handleSaveChanges}
             disabled={saving || !rows.some(r => r.isDirty)}
-            className="h-9 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+            className="min-h-11 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
           >
             {saving ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Save className="h-4 w-4 mr-2" />}
             Save Changes
@@ -715,7 +715,7 @@ export default function ProfessorsPage() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="h-8 border-primary/30 text-primary hover:bg-primary/10 hover:text-primary-foreground font-semibold"
+                        className="min-h-11 border-primary/30 text-primary hover:bg-primary/10 hover:text-primary-foreground font-semibold"
                         onClick={() => handleOpenEmailModal(row as Professor)}
                         disabled={row.isNew || !row.email}
                       >
@@ -776,7 +776,7 @@ export default function ProfessorsPage() {
                   <select
                     value={row.universityId || ""}
                     onChange={(e) => updateCell(index, "universityId", e.target.value)}
-                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
+                    className="w-full min-h-11 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
                   >
                     <option value="">Select...</option>
                     {universities.map((u) => (
@@ -789,7 +789,7 @@ export default function ProfessorsPage() {
                   <select
                     value={row.status || "NOT_CONTACTED"}
                     onChange={(e) => updateCell(index, "status", e.target.value)}
-                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
+                    className="w-full min-h-11 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
                   >
                     <option value="NOT_CONTACTED">Not Contacted</option>
                     <option value="EMAILED">Emailed</option>
@@ -820,7 +820,7 @@ export default function ProfessorsPage() {
                   <select
                     value={row.fundingStatus || "UNKNOWN"}
                     onChange={(e) => updateCell(index, "fundingStatus", e.target.value)}
-                    className="w-full h-8 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
+                    className="w-full min-h-11 px-2 bg-background border border-border rounded text-xs text-foreground focus:outline-none"
                   >
                     <option value="UNKNOWN">Unknown</option>
                     <option value="FUNDED">Funded</option>

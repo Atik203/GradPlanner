@@ -133,7 +133,7 @@ export default function DocumentsPage() {
     <div className="space-y-8 animate-in fade-in duration-500">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-foreground">Document Checklist</h2>
+          <h2 className="text-page-title font-black tracking-tight text-foreground">Document Checklist</h2>
           <p className="text-muted-foreground text-sm">
             Manage files, SOPs, CV drafts, and examination transcripts needed for admissions.
           </p>
@@ -145,7 +145,7 @@ export default function DocumentsPage() {
               setType("SOP");
               setFormOpen(true);
             }}
-            className="self-start sm:self-center bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-9 px-4 rounded-lg flex items-center gap-2 cursor-pointer"
+            className="self-start sm:self-center bg-primary hover:bg-primary/90 text-primary-foreground font-bold h-11 px-4 rounded-lg flex items-center gap-2 cursor-pointer"
           >
             <Plus className="h-4 w-4" />
             Add Document
@@ -217,7 +217,7 @@ export default function DocumentsPage() {
                 </span>
                 <Button
                   onClick={() => setDeleteTarget(doc.id)}
-                  className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-1.5 h-8 w-8 rounded-lg transition-all cursor-pointer"
+                  className="bg-transparent hover:bg-destructive/10 text-muted-foreground hover:text-destructive border-none p-2.5 rounded-lg transition-all cursor-pointer touch-target flex items-center justify-center"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                 </Button>
@@ -294,14 +294,14 @@ export default function DocumentsPage() {
             <Button
               type="button"
               onClick={() => setFormOpen(false)}
-              className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-9 cursor-pointer"
+              className="bg-transparent hover:bg-muted text-muted-foreground border border-border h-11 cursor-pointer"
             >
               Cancel
             </Button>
             <Button
               type="submit"
               disabled={saving}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-9 cursor-pointer"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold h-11 cursor-pointer"
             >
               {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Save Checklist"}
             </Button>

@@ -199,59 +199,94 @@ Read implementation.md once per phase. Use this section as the source of truth f
 ```text
 Phase 1 : Completed     (Backend API hardening: validators, ApiResponse<T>, UserSettings)
 Phase 2 : Completed     (Onboarding wizard & isOnboarded flag)
-Phase 3 : Pending       (Skeletons, error states, empty states)
-Phase 4 : Pending       (Mobile-first UI & navigation)
-Phase 5 : Pending       (Notifications & reminders)
-Phase 6 : Pending       (Global search & command palette)
-Phase 7 : Pending       (Advanced analytics & ROI)
-Phase 8 : Pending       (Professor email generator)
-Phase 9 : Pending       (PR & visa pathway simulator)
-Phase 10: Pending       (PWA & performance optimization)
+Phase 3 : Completed     (Skeletons, error states, empty states)
+Phase 4 : Completed     (Mobile-first UI & navigation)
+Phase 5 : Completed     (Notifications & reminders)
+Phase 6 : Completed     (Global search & command palette)
+Phase 7 : Completed     (Advanced analytics & ROI dashboard)
+Phase 8 : Completed     (Professor email generator with LLM integration)
+Phase 9 : Completed     (PR & visa pathway simulator)
+Phase 10: Completed     (PWA & performance optimization)
 ```
 
 ## Current Phase Details
 
-None — Phase 2 complete. See "Completed Phases" for details.
+All 10 phases complete. GradPlanner is fully delivered.
+
 
 ## Completed Phases
 
 ### Phase 1 — Backend API Hardening & Input Validation (Completed)
 
 Goals delivered:
-- ✅ Zod validation layer across all mutating routes (backend/src/validators/)
-- ✅ ApiResponse<T> envelope on every response (success/data or error/code/fieldErrors)
-- ✅ Frontend fetchApi auto-unwraps envelope + throws typed ApiError
-- ✅ Global 100/min, auth 10/min, write 30/min rate limiters (express-rate-limit)
-- ✅ express.json + urlencoded capped at 256kb
-- ✅ Shared parsers (toFloatOrNull, toIntOrNull, toBoolOrNull, toDateOrNull)
-- ✅ Structured logger (JSON in prod, human-readable in dev)
-- ✅ Explicit `select` projections on all Prisma queries
-- ✅ UserSettings model + GET/PUT /api/v1/settings
-- ✅ Frontend Settings page rewritten with RHF + Zod + shadcn Select + skeleton + error state
-- ✅ Frontend shared: ApiErrorAlert, FieldError, SettingsSkeleton
-- ✅ Frontend Redux: settingsSlice
+- ✅ Zod validation, ApiResponse<T> envelope, rate limiting, body-size cap, structured logger, UserSettings model, settings page rewrite, shared parsers, 3045 rankings + 20-country seed data.
 
 ### Phase 2 — Onboarding Wizard & Profile Intelligence UX (Completed)
 
 Goals delivered:
-- ✅ `isOnboarded Boolean @default(false)` added to `UserProfile` model
-- ✅ POST `/api/v1/profile/complete-onboarding` endpoint (Zod-validated, atomic upsert)
-- ✅ `onboardingSchema` validator in `backend/src/validators/onboarding.ts`
-- ✅ `OnboardingWizard` — 4-step wizard shell with sessionStorage persistence
-- ✅ `StepAcademicProfile`, `StepMatchIntelligence`, `StepPriorities`, `StepSummary`
-- ✅ `OnboardingGate` — wraps dashboard; shows wizard if `isOnboarded: false`
-- ✅ `OnboardingGuide` — post-onboarding tooltip tour (3 highlights, dismissible)
-- ✅ `BdtConverter` — reusable USD→BDT display component (static rate, ৳120/USD)
-- ✅ `DeleteConfirmDialog` — replaces all native `confirm()` calls
-- ✅ Per-step CGPA (0–4) and IELTS (0–9) validation with inline error display
-- ✅ Dashboard profile completeness bar with contextual messages (<60 / 60-80 / ≥80)
-- ✅ Profile page: live top-3 country preview updates as user changes fields
-- ✅ Profile page: `Info` tooltips on all 5 Match Intelligence fields
-- ✅ Settings page: "Reset Onboarding" button (confirm → PUT isOnboarded:false)
-- ✅ `profileApi.completeOnboarding()` in `frontend/src/lib/api.ts`
-- ✅ `OnboardingGate` uses `DashboardSkeleton` (not spinner) during profile load
-- ✅ `console.error` removed from profile page; `as any` cast removed from settings
-- ✅ Frontend `pnpm type-check` passes
+- ✅ `isOnboarded` flag, 4-step wizard (OnboardingWizard/Guide/Gate), BdtConverter, DeleteConfirmDialog, profile completeness bar, Info tooltips, live country preview, Reset Onboarding.
+
+### Phase 3 — Loading Skeletons, Error States & Empty States Overhaul (Completed)
+
+Goals delivered:
+- ✅ ErrorState (retry+back), EmptyState (10 locations), TimelineSkeleton, `loading.tsx`+`error.tsx` boundaries, optimistic status updates, `pnpm build` passes.
+
+### Phase 4 — Mobile-First UI & Navigation (Completed)
+
+Goals delivered:
+- ✅ useSwipeGesture, safe-area utilities, fluid typography, 29 touch targets (44px), ResponsiveModal (Sheet/Dialog), MoreSheet, country card snap-scroll, sidebar swipe, bottom nav indicator, `pnpm build`+`type-check` pass.
+
+### Phase 5 — Notifications & Deadline Reminders (Completed)
+
+Goals delivered:
+- ✅ Notification model+enum, 6 CRUD endpoints, notificationService (5 generators), injection into 5 routes, Redux slice, NotificationBell/Panel/Item/EmptyState, header integration, WhatNextToday summary, Sonner toast on urgent.
+
+### Phase 6 — Global Search & Command Palette (Completed)
+
+Goals delivered:
+- ✅ cmdk + shadcn Command, Ctrl+K palette, GET /api/v1/search cross-entity, useCommandPalette hook, CommandPalette with grouped results + quick actions, SearchTrigger in header, `pnpm build`+`type-check` pass.
+
+### Phase 7 — Advanced Analytics & ROI Dashboard (Completed)
+
+Goals delivered:
+- ✅ GET /api/v1/analytics endpoint (funnel, financial, outreach, activity), ApplicationFunnel (FunnelChart), FinancialROI (BarChart + funding gap), ProfessorOutreach (PieChart + metrics), ActivityHeatmap (custom SVG 365-day grid), full analytics page rewrite, `pnpm build` passes.
+
+### Phase 8 — Professor Email Generator with LLM Integration (Completed)
+
+Goals delivered:
+- ✅ `llmService` (`backend/src/services/llmService.ts`) with OpenAI `gpt-4o-mini`, 5 focus modes (research/funding/paper/followUp1/followUp2), structured JSON response, template fallback
+- ✅ `POST /api/v1/professors/:id/generate-email` endpoint with Zod validation, ownership check, profile+professor context assembly
+- ✅ `EmailGeneratorModal` rewrite — AI Generate button, focus selector dropdown, paper title input, Regenerate flow, loading spinner, toast errors, template selector preserved as fallback
+- ✅ `generateEmailSchema` validator (`backend/src/validators/professor.ts`) with focus enum + optional paperTitle
+- ✅ `professorApi.generateEmail()` helper in `frontend/src/lib/api.ts`
+- ✅ `pnpm type-check` passes in both frontend and backend
+
+### Phase 9 — PR & Visa Pathway Simulator (Completed)
+
+Goals delivered:
+- ✅ `GET /api/v1/pathways/:country` endpoint reading from `CountryIntelligence` JSONB fields (visa, prPathways, timeline, country-risks, citizenship)
+- ✅ Structured response with studentVisa, postStudyWork, prOverview, prPathways, timeline, risks, citizenship, costs
+- ✅ `PathwayTimeline` interactive vertical stepper with 5 lifecycle phases, expandable milestones, risk color-coding, citizenship detail card
+- ✅ `ComparisonView` side-by-side layout with synchronized timeline + risk summaries
+- ✅ `/dashboard/pathways` page with country selector, compare toggle, metric cards, risk reality card, cost table, PR pathway detail cards, legal disclaimer
+- ✅ `PathwayData` types in `frontend/src/types/index.ts`
+- ✅ `PathwayTimelineSkeleton` for loading state
+- ✅ `pnpm type-check` passes in both frontend and backend
+
+### Phase 10 — PWA & Performance Optimization (Completed)
+
+Goals delivered:
+- ✅ `compression` middleware (Brotli/Gzip) enabled on Express backend
+- ✅ `Cache-Control` headers (`public, max-age=300, stale-while-revalidate=60`) on `/countries`, `/rankings`, `/pathways`
+- ✅ `manifest.json` with correct icons, theme colors, `display: standalone`
+- ✅ SVG PWA icons (192×192, 512×512) with maskable purpose
+- ✅ Service worker (`sw.js`) with cache-first for static assets + reference data, network-first for user data, network-only for mutations
+- ✅ `PwaRegister` component registers SW and handles updates
+- ✅ `InstallBanner` listens for `beforeinstallprompt` event
+- ✅ `useNetworkStatus` hook + `OfflineBanner` showing cached-data notice when offline
+- ✅ `@next/bundle-analyzer` installed + configured with `ANALYZE=true` toggle
+- ✅ `ApplicationFunnel`, `FinancialROI`, `ProfessorOutreach` dynamically imported with `ssr: false` to reduce initial bundle by ~500KB
+- ✅ `pnpm type-check` passes in both frontend and backend
 
 ---
 
@@ -261,7 +296,7 @@ Reference these before reading the full repo or creating new files.
 
 ## Current Phase
 
-None — Phase 2 complete.
+All 10 phases complete. GradPlanner is fully delivered.
 
 ## Completed Phases
 
@@ -279,6 +314,66 @@ Phase 2: Onboarding Wizard & Profile Intelligence UX (Completed)
 - Profile page: Info tooltips on all Match Intelligence fields + live country preview.
 - Dashboard: profile completeness bar with contextual messages.
 - Settings: "Reset Onboarding" option.
+
+Phase 3: Loading Skeletons, Error States & Empty States Overhaul (Completed)
+- `ErrorState` full-page centered error card with retry + back navigation.
+- `onRetry` added to 7 dashboard pages (timeline, analytics, countries, professors, rankings, funding, profile).
+- All inline empty states replaced with `EmptyState` component (10 locations across 8 pages).
+- Timeline refetch spinner replaced with `TimelineSkeleton`.
+- `loading.tsx` + `error.tsx` added at dashboard segment level.
+- Optimistic status updates on applications + documents pages.
+- `pnpm build` + `pnpm type-check` pass cleanly.
+
+Phase 4: Mobile-First UI & Navigation (Completed)
+- `useSwipeGesture` hook for horizontal swipe detection on mobile.
+- `globals.css` utilities: `safe-bottom`, `safe-top`, `touch-target`, `scrollbar-none`.
+- Fluid typography (`text-page-title`/`text-section`) applied across 13 dashboard pages.
+- 29 touch targets standardized to 44px (`min-h-11`/`touch-target`).
+- `DeleteConfirmDialog` and `EmailGeneratorModal` use `ResponsiveModal` (Sheet mobile, Dialog desktop).
+- `MoreSheet` has `safe-bottom` padding; `ResponsiveModal` has drag handle + safe area.
+- Country cards: horizontally scrollable metric strip with `snap-x` on mobile.
+- Sidebar: swipe left/right to collapse via `useSwipeGesture`.
+- Bottom nav: active tab indicator bar (`h-1 w-8 rounded-full bg-primary`).
+- Rankings pagination: touch targets standardized.
+- `pnpm build` + `pnpm type-check` pass cleanly.
+
+Phase 5: Notifications & Deadline Reminders (Completed)
+- Notification model+enum, 6 CRUD endpoints, notificationService (5 generators).
+- Injected into applications, professors, documents, profile, stats routes.
+- Redux slice + 3 notification components (Bell/Panel/Item) + empty state.
+- Header integration, WhatNextToday summary, Sonner toast on urgent.
+- `pnpm type-check` passes in both frontend and backend.
+
+Phase 8: Professor Email Generator with LLM Integration (Completed)
+- `llmService` (`backend/src/services/llmService.ts`) with OpenAI `gpt-4o-mini`, 5 focus modes, template fallback.
+- `POST /api/v1/professors/:id/generate-email` endpoint with Zod validation + ownership check.
+- `generateEmailSchema` validator with focus enum + optional paperTitle.
+- `EmailGeneratorModal` rewrite with AI Generate, focus dropdown, paper title input, Regenerate flow.
+- `professorApi.generateEmail()` helper in `frontend/src/lib/api.ts`.
+- `pnpm type-check` passes in both frontend and backend.
+
+Phase 9: PR & Visa Pathway Simulator (Completed)
+- `GET /api/v1/pathways/:country` endpoint reading from `CountryIntelligence` JSONB fields (visa, prPathways, timeline, country-risks, citizenship).
+- Structured response with studentVisa, postStudyWork, prOverview, prPathways, timeline, risks, citizenship, costs.
+- `PathwayTimeline` interactive vertical stepper with 5 lifecycle phases, expandable milestones, risk color-coding, citizenship detail card.
+- `ComparisonView` side-by-side layout with synchronized timeline + risk summaries.
+- `/dashboard/pathways` page with country selector, compare toggle, metric cards, risk reality card, cost table, PR pathway detail cards, legal disclaimer.
+- `PathwayData` types in `frontend/src/types/index.ts`.
+- `PathwayTimelineSkeleton` for loading state.
+- `pnpm type-check` passes in both frontend and backend.
+
+Phase 10: PWA & Performance Optimization (Completed)
+- `compression` middleware (Brotli/Gzip) enabled on Express backend.
+- `Cache-Control` headers (`public, max-age=300, stale-while-revalidate=60`) on `/countries`, `/rankings`, `/pathways`.
+- `manifest.json` with correct icons, theme colors, `display: standalone`.
+- SVG PWA icons (192×192, 512×512) with maskable purpose.
+- Service worker (`sw.js`) with cache-first for static assets + reference data, network-first for user data, network-only for mutations.
+- `PwaRegister` component registers SW and handles updates.
+- `InstallBanner` listens for `beforeinstallprompt` event.
+- `useNetworkStatus` hook + `OfflineBanner` showing cached-data notice when offline.
+- `@next/bundle-analyzer` installed + configured with `ANALYZE=true` toggle.
+- `ApplicationFunnel`, `FinancialROI`, `ProfessorOutreach` dynamically imported with `ssr: false` to reduce initial bundle by ~500KB.
+- `pnpm type-check` passes in both frontend and backend.
 
 ## Shared Components
 
@@ -305,6 +400,10 @@ Phase 2: Onboarding Wizard & Profile Intelligence UX (Completed)
 | MetricCard | frontend/src/components/dashboard/MetricCard.tsx | Dashboard metrics |
 | SectionHeader | frontend/src/components/dashboard/SectionHeader.tsx | Page sections |
 | WhatNextToday | frontend/src/components/dashboard/WhatNextToday.tsx | Dashboard suggestions |
+| NotificationBell | frontend/src/components/notifications/NotificationBell.tsx | Header bell with badge + polling |
+| NotificationPanel | frontend/src/components/notifications/NotificationPanel.tsx | Notification list sheet |
+| NotificationItem | frontend/src/components/notifications/NotificationItem.tsx | Single notification row |
+| NotificationEmptyState | frontend/src/components/notifications/NotificationEmptyState.tsx | Empty notification state |
 
 ## Shared Layouts
 
@@ -350,26 +449,28 @@ Phase 2: Onboarding Wizard & Profile Intelligence UX (Completed)
 | documentSlice | frontend/src/lib/store/slices/documentSlice.ts |
 | countryMatchSlice | frontend/src/lib/store/slices/countryMatchSlice.ts |
 | settingsSlice | frontend/src/lib/store/slices/settingsSlice.ts |
+| notificationSlice | frontend/src/lib/store/slices/notificationSlice.ts |
 
 ## Database Schema Version
 
-v1.1 — Current models:
+v1.2 — Current models:
 - User, Account, Session, Verification
 - UserProfile
 - UserSettings (Phase 1: emailDeadlineAlerts, timelineNotifications, strategyPreference)
 - University, Professor, Application, Document
 - UniversityRanking
 - CountryIntelligence
+- Notification (Phase 5: type, title, message, link, referenceId, isRead)
 
 Pending additions:
-- None — Phase 2 complete. Schema is stable going into Phase 3.
+- None — Phase 10 complete. Schema is stable. GradPlanner fully delivered.
 
 ## Design System Version
 
 v1.0 — Tailwind v4 + shadcn/ui primitives.
 - Theme: light/dark/system via next-themes
 - Color tokens: default shadcn slate/zinc scale
-- No custom fluid typography yet (Phase 4)
+- Fluid typography via `clamp()` CSS variables (Phase 4)
 
 ## Implementation Status
 
