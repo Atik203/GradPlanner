@@ -6,7 +6,6 @@ import { useParams } from "next/navigation";
 import { fetchApi } from "@/lib/api";
 import { UniversityRanking } from "@/types";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ThemeToggle } from "@/components/theme-toggle";
 import {
   ArrowLeft, School, ExternalLink, Star, BarChart3, Users, Briefcase,
   Globe, BookOpen, Loader2, Trophy, Building2, AlertTriangle, Lightbulb, Wallet, FileCheck
@@ -112,7 +111,7 @@ export default function UniversityDetailPage() {
             <School className="h-5 w-5 text-primary" />
             <span>GradPlanner</span>
           </div>
-          <ThemeToggle />
+          <div className="w-9" /> {/* spacer for alignment */}
         </div>
       </header>
 
