@@ -213,7 +213,7 @@ export default function ProfileDetailsPage() {
           <ArrowLeft className="h-3.5 w-3.5" />
           Back to Dashboard
         </Link>
-        <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Profile & Match Intelligence</h2>
+        <h2 className="text-page-title font-black tracking-tight text-foreground">Profile & Match Intelligence</h2>
         <p className="text-muted-foreground text-sm">Your academic standing + match preferences drive personalised country scores.</p>
       </div>
 

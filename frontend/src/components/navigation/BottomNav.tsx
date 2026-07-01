@@ -61,10 +61,13 @@ export function BottomNav({ onMoreClick }: { onMoreClick: () => void }) {
             <Link
               key={tab.name}
               href={tab.href}
-              className={`flex flex-col items-center justify-center gap-0.5 min-w-0 flex-1 h-full transition-colors ${
+              className={`relative flex flex-col items-center justify-center gap-0.5 min-w-0 flex-1 h-full transition-colors ${
                 active ? "text-primary" : "text-muted-foreground/60 hover:text-muted-foreground"
               }`}
             >
+              {active && (
+                <span className="absolute top-0 w-8 h-1 rounded-full bg-primary" />
+              )}
               <tab.icon className={`h-5 w-5 ${active ? "fill-primary/20" : ""}`} />
               <span className={`text-[10px] font-medium ${active ? "font-semibold" : ""}`}>
                 {tab.name}

@@ -17,6 +17,7 @@ import { profileUpdateSchema } from "../validators/profile.js";
 import { onboardingSchema } from "../validators/onboarding.js";
 import { ok, serverError } from "../utils/apiResponse.js";
 import { logger } from "../utils/logger.js";
+import { generateProfileNotifications } from "../services/notificationService.js";
 
 const router: Router = Router();
 
@@ -74,9 +75,13 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
     });
 
     if (!profile) {
+      generateProfileNotifications(userId)
+        .catch((err) => logger.warn("Failed to generate profile notifications", { userId, error: String(err) }));
       return ok(res, { ...EMPTY_PROFILE, userId });
     }
 
+    generateProfileNotifications(userId)
+      .catch((err) => logger.warn("Failed to generate profile notifications", { userId, error: String(err) }));
     return ok(res, profile);
   } catch (error) {
     logger.error("GET /profile error", {

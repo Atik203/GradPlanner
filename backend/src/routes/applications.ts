@@ -26,6 +26,7 @@ import {
 } from "../utils/apiResponse.js";
 import { logger } from "../utils/logger.js";
 import { toDateOrNull } from "../utils/parsers.js";
+import { generateDeadlineNotifications, generateApplicationUpdateNotification } from "../services/notificationService.js";
 
 const router: Router = Router();
 
@@ -73,6 +74,8 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       select: APPLICATION_WITH_UNIVERSITY_SELECT,
       orderBy: { createdAt: "desc" },
     });
+    generateDeadlineNotifications(userId)
+      .catch((err) => logger.warn("Failed to generate deadline notifications", { userId, error: String(err) }));
     return ok(res, applications);
   } catch (error) {
     logger.error("GET /applications error", {
@@ -184,6 +187,11 @@ router.put(
         data: updateData,
         select: APPLICATION_WITH_UNIVERSITY_SELECT,
       });
+
+      if (body.status === "OFFER_RECEIVED") {
+        generateApplicationUpdateNotification(userId, id, updated.university.name, body.status)
+          .catch((err) => logger.warn("Failed to generate app update notification", { userId, error: String(err) }));
+      }
 
       return ok(res, updated);
     } catch (error) {
