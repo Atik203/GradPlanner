@@ -16,9 +16,11 @@ import {
   AlertTriangle,
   Info,
   ExternalLink,
+  Bell,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { useAppSelector } from "@/lib/store/store";
 
 interface Task {
   id: string;
@@ -112,6 +114,7 @@ const STATUS_BADGES = {
 
 export function WhatNextToday({ data, loading }: WhatNextTodayProps) {
   const [expandedUniId, setExpandedUniId] = useState<string | null>(null);
+  const unreadCount = useAppSelector((s) => s.notifications.unreadCount);
 
   if (loading) {
     return (
@@ -154,6 +157,25 @@ export function WhatNextToday({ data, loading }: WhatNextTodayProps) {
           </div>
         </CardHeader>
         <CardContent className="space-y-4 flex-1">
+          {unreadCount > 0 && (
+            <Link
+              href="/dashboard"
+              className="flex items-center gap-3 p-3 rounded-xl border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors group"
+            >
+              <div className="flex items-center justify-center h-9 w-9 rounded-full bg-primary/10 text-primary shrink-0">
+                <Bell className="h-4 w-4" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-foreground">
+                  {unreadCount} unread notification{unreadCount > 1 ? "s" : ""}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Check the notification panel for deadlines, follow-ups, and updates.
+                </p>
+              </div>
+              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors shrink-0" />
+            </Link>
+          )}
           {tasks.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-12 text-center space-y-3">
               <div className="p-3 bg-emerald-500/10 rounded-full text-emerald-400 border border-emerald-500/20">

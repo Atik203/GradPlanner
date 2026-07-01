@@ -121,7 +121,7 @@ export function ErrorState({
               aria-hidden="true"
             />
           </div>
-          <h2 className="text-lg font-semibold text-foreground mb-2">
+          <h2 className="text-section font-semibold text-foreground mb-2">
             {displayTitle}
           </h2>
           <p className="text-sm text-muted-foreground mb-6 max-w-sm">

@@ -234,7 +234,7 @@ export default function TimelinePlannerPage() {
             <ArrowLeft className="h-3 w-3" />
             Back to Dashboard
           </Link>
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl flex items-center gap-2">
+          <h2 className="text-page-title font-black tracking-tight text-foreground flex items-center gap-2">
             <GanttChart className="h-7 w-7 text-primary" />
             Application Timeline Planner
           </h2>

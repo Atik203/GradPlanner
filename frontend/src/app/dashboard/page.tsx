@@ -245,7 +245,7 @@ export default function DashboardOverview() {
               <Sparkles className="h-3 w-3" />
               Admissions Command Center
             </div>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl tracking-tight">
+            <h2 className="text-page-title font-black tracking-tight text-foreground">
               Hello, {session?.user?.name || "Future Scholar"}!
             </h2>
             <p className="text-muted-foreground text-sm max-w-xl">
@@ -364,7 +364,7 @@ export default function DashboardOverview() {
       <div className="space-y-4" id="ai-fit-recommendations">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+            <h3 className="text-section font-bold text-foreground flex items-center gap-2">
               <Sparkles className="h-5 w-5 text-primary" />
               AI Fit Recommendations
             </h3>
@@ -397,7 +397,7 @@ export default function DashboardOverview() {
                       </span>
                       <CountryFlag country={country.countryCode} className="h-5 w-8 rounded border border-border/20 shadow-sm" />
                     </div>
-                    <CardTitle className="text-lg font-bold text-foreground">{country.country}</CardTitle>
+                    <CardTitle className="text-section font-bold text-foreground">{country.country}</CardTitle>
                     <CardDescription className="text-xs text-muted-foreground line-clamp-3">
                       {info.summary || "No country summary available."}
                     </CardDescription>

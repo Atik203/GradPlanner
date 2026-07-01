@@ -20,6 +20,7 @@ import {
 import { ok, created, notFound, serverError } from "../utils/apiResponse.js";
 import { logger } from "../utils/logger.js";
 import { toDateOrNull } from "../utils/parsers.js";
+import { generateDocumentExpiryNotifications } from "../services/notificationService.js";
 
 const router: Router = Router();
 
@@ -68,6 +69,8 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       select: DOCUMENT_SELECT,
       orderBy: { createdAt: "desc" },
     });
+    generateDocumentExpiryNotifications(userId)
+      .catch((err) => logger.warn("Failed to generate document expiry notifications", { userId, error: String(err) }));
     return ok(res, documents);
   } catch (error) {
     logger.error("GET /documents error", {

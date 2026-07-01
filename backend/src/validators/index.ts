@@ -83,3 +83,4 @@ export * from "./professor.js";
 export * from "./application.js";
 export * from "./document.js";
 export * from "./settings.js";
+export * from "./notification.js";

@@ -10,6 +10,7 @@ import { prisma } from "../lib/prisma.js";
 import { AuthenticatedRequest } from "../middleware/auth.js";
 import { ok, serverError } from "../utils/apiResponse.js";
 import { logger } from "../utils/logger.js";
+import { generateAllNotifications } from "../services/notificationService.js";
 
 const router: Router = Router();
 
@@ -82,6 +83,8 @@ router.get("/", async (req: AuthenticatedRequest, res: Response) => {
       docStats.progressPercentage = Math.round((completed / docStats.total) * 100);
     }
 
+    generateAllNotifications(userId)
+      .catch((err) => logger.warn("Failed to generate all notifications", { userId, error: String(err) }));
     return ok(res, {
       universities: uniStats,
       professors: profStats,
