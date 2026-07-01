@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSwipeGesture } from "@/hooks/use-swipe-gesture";
 import { 
   LayoutDashboard, 
   School, 
@@ -113,6 +114,12 @@ const standaloneItems: StandaloneItem[] = [
 export function DashboardNav({ user }: { user: any }) {
   const pathname = usePathname();
   const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const swipeHandlers = useSwipeGesture({
+    onSwipeLeft: () => { if (!isCollapsed) setIsCollapsed(true); },
+    onSwipeRight: () => { if (isCollapsed) setIsCollapsed(false); },
+    threshold: 50,
+  });
   
   // Track open accordion groups
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() => {
@@ -254,7 +261,11 @@ export function DashboardNav({ user }: { user: any }) {
   return (
     <>
       <div className={`hidden md:flex relative h-screen shrink-0 transition-all duration-300 ${isCollapsed ? 'w-0' : 'w-64'}`}>
-        <aside className={`flex flex-col h-full bg-sidebar border-sidebar-border transition-all duration-300 overflow-hidden ${isCollapsed ? 'w-0 border-r-0 opacity-0' : 'w-64 border-r'}`}>
+        <aside
+          onTouchStart={swipeHandlers.onTouchStart}
+          onTouchMove={swipeHandlers.onTouchMove}
+          onTouchEnd={swipeHandlers.onTouchEnd}
+          className={`flex flex-col h-full bg-sidebar border-sidebar-border transition-all duration-300 overflow-hidden ${isCollapsed ? 'w-0 border-r-0 opacity-0' : 'w-64 border-r'}`}>
           <div className="w-64 flex flex-col h-full shrink-0">
             <SidebarContent />
           </div>
@@ -262,7 +273,7 @@ export function DashboardNav({ user }: { user: any }) {
         
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="absolute top-6 z-10 hidden md:flex h-6 w-6 items-center justify-center rounded-full border border-sidebar-border bg-sidebar shadow-xs hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-300 cursor-pointer"
+          className="absolute top-6 z-10 hidden md:flex h-8 w-8 items-center justify-center rounded-full border border-sidebar-border bg-sidebar shadow-xs hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-300 cursor-pointer"
           style={{ left: isCollapsed ? '12px' : 'calc(100% - 12px)' }}
         >
           {isCollapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}

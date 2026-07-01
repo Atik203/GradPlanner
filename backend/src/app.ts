@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express, { Request, Response } from "express";
 import cors from "cors";
+import compression from "compression";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth.js";
 import { prisma } from "./lib/prisma.js";
@@ -20,6 +21,10 @@ import decisionEngineRouter from "./routes/decisionEngine.js";
 import scholarshipsRouter from "./routes/scholarships.js";
 import timelineRouter from "./routes/timeline.js";
 import settingsRouter from "./routes/settings.js";
+import notificationsRouter from "./routes/notifications.js";
+import searchRouter from "./routes/search.js";
+import analyticsRouter from "./routes/analytics.js";
+import pathwaysRouter from "./routes/pathways.js";
 import { ok, serverError } from "./utils/apiResponse.js";
 import { logger } from "./utils/logger.js";
 
@@ -49,6 +54,9 @@ app.use(
   })
 );
 
+// ─── Response compression (Brotli/Gzip) ─────────────────────────────────────
+app.use(compression({ level: 6 }));
+
 // ─── Body parsers with explicit size limits (prevents memory exhaustion) ─────
 app.use(express.json({ limit: "256kb" }));
 app.use(express.urlencoded({ limit: "256kb", extended: true }));
@@ -65,6 +73,15 @@ app.use("/api", globalLimiter);
 // ─── Write rate limit on mutating methods (applied per-route via writeLimiter) ─
 app.use("/api/v1", writeLimiter);
 
+// ─── Cache-Control for semi-static GET endpoints ──────────────────────────
+const cacheablePaths = ["/api/v1/countries", "/api/v1/rankings", "/api/v1/pathways"];
+app.use((req, res, next) => {
+  if (req.method === "GET" && cacheablePaths.some((p) => req.path.startsWith(p))) {
+    res.setHeader("Cache-Control", "public, max-age=300, stale-while-revalidate=60");
+  }
+  next();
+});
+
 // ─── Domain routes ──────────────────────────────────────────────────────────
 app.use("/api/v1/profile", requireAuth, profileRouter);
 app.use("/api/v1/rankings", rankingsRouter);
@@ -78,6 +95,10 @@ app.use("/api/v1/decision-engine", requireAuth, decisionEngineRouter);
 app.use("/api/v1/scholarships", requireAuth, scholarshipsRouter);
 app.use("/api/v1/timeline", requireAuth, timelineRouter);
 app.use("/api/v1/settings", requireAuth, settingsRouter);
+app.use("/api/v1/notifications", requireAuth, notificationsRouter);
+app.use("/api/v1/search", requireAuth, searchRouter);
+app.use("/api/v1/analytics", requireAuth, analyticsRouter);
+app.use("/api/v1/pathways", requireAuth, pathwaysRouter);
 
 app.get("/api/v1/health", async (_req: Request, res: Response) => {
   try {
