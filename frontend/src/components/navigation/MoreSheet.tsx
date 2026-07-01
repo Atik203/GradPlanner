@@ -113,11 +113,11 @@ export function MoreSheet({ open, onOpenChange }: { open: boolean; onOpenChange:
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto">
-        <SheetHeader>
+      <SheetContent side="bottom" className="max-h-[85dvh] overflow-y-auto safe-bottom">
+        <SheetHeader className="px-1">
           <SheetTitle>All Destinations</SheetTitle>
         </SheetHeader>
-        <div className="space-y-4 px-1 pb-6">
+        <div className="space-y-4 px-1">
           {standaloneItems.map((item) => {
             const active = pathname === item.href;
             return (

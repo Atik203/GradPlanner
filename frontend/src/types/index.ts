@@ -200,6 +200,29 @@ export interface UniversityRanking {
   arwuPcp?: number | null;
 }
 
+// ─── Notifications (Phase 5) ─────────────────────────────────────────────────
+
+export type NotificationType =
+  | "DEADLINE_APPROACHING"
+  | "DEADLINE_URGENT"
+  | "FOLLOW_UP_DUE"
+  | "FOLLOW_UP_LIMIT"
+  | "DOCUMENT_EXPIRING"
+  | "PROFILE_INCOMPLETE"
+  | "APPLICATION_UPDATE"
+  | "SYSTEM";
+
+export interface NotificationItem {
+  id: string;
+  type: NotificationType;
+  title: string;
+  message: string;
+  link?: string | null;
+  referenceId?: string | null;
+  isRead: boolean;
+  createdAt: string;
+}
+
 // ─── User Settings (Phase 1) ────────────────────────────────────────────────
 
 export type StrategyPreference = "PR speed" | "AI Market" | "No Tuition" | "Scholarship";
@@ -212,4 +235,195 @@ export interface UserSettings {
   strategyPreference: StrategyPreference;
   createdAt: string;
   updatedAt: string;
+}
+
+// ─── Search (Phase 6) ────────────────────────────────────────────────────────
+
+export interface SearchUniversityRanking {
+  id: string;
+  institutionName: string;
+  country: string;
+  inQs: boolean;
+  inThe: boolean;
+  inArwu: boolean;
+}
+
+export interface SearchedUniversity {
+  id: string;
+  name: string;
+  country: string;
+  program: string | null;
+  tier: Tier;
+}
+
+export interface SearchedProfessor {
+  id: string;
+  name: string;
+  researchInterests: string | null;
+  researchFitScore: number | null;
+  university: { name: string } | null;
+}
+
+export interface SearchedCountry {
+  id: string;
+  country: string;
+  countryCode: string;
+  overallScore: number;
+}
+
+export interface SearchResults {
+  universityRankings: SearchUniversityRanking[];
+  universities: SearchedUniversity[];
+  professors: SearchedProfessor[];
+  countries: SearchedCountry[];
+}
+
+// ─── Analytics (Phase 7) ──────────────────────────────────────────────────────
+
+export interface UnivBreakdown {
+  name: string;
+  country: string;
+  tier: string;
+  tuition: number;
+  livingCost: number;
+  scholarship: number;
+}
+
+export interface AnalyticsResponse {
+  profileCompleteness: number;
+  applicationFunnel: Record<string, number>;
+  financial: {
+    totalEstimatedCost: number;
+    scholarshipsTotal: number;
+    fundingGap: number;
+    avgPostGradSalary: number;
+    roiScore: number;
+    breakdownByUniversity: UnivBreakdown[];
+  };
+  professorOutreach: {
+    total: number;
+    contacted: number;
+    repliedPositive: number;
+    repliedNegative: number;
+    noResponse: number;
+    responseRate: number;
+    averageFitScore: number;
+    followUpEfficacy: number;
+  };
+  activityTimeline: Array<{ date: string; count: number }>;
+}
+
+// ─── Professor Email Generator (Phase 8) ─────────────────────────────────────
+
+export type EmailFocus = "research" | "funding" | "paper" | "followUp1" | "followUp2";
+
+export interface GenerateEmailInput {
+  focus?: EmailFocus;
+  paperTitle?: string;
+}
+
+export interface GeneratedEmail {
+  subject: string;
+  body: string;
+}
+
+// ─── PR & Visa Pathway Simulator (Phase 9) ─────────────────────────────────────
+
+export interface PathwayVisa {
+  visaName: string;
+  processingTime: string;
+  applicationFee: number;
+  feeCurrency: string;
+  difficulty: string;
+  rejectionRiskBD: string;
+  tips: string;
+  officialUrl: string;
+  workRights: string;
+}
+
+export interface PathwayPostStudyWork {
+  visaName: string;
+  duration: string;
+  pathwayToPR: boolean;
+  difficulty: string;
+  notes: string;
+}
+
+export interface PathwayPROverview {
+  overallScore: number;
+  averageYears: number;
+  confidenceScore: number;
+  keyRisks: string[];
+  keyAdvantages: string[];
+}
+
+export interface PathwayPR {
+  pathwayName: string;
+  difficulty: string;
+  estimatedYears: number;
+  description: string;
+  languageRequired: string;
+  jobRequired: boolean;
+  costEstimate: number | null;
+  costCurrency: string | null;
+  strengths: string[];
+  weaknesses: string[];
+  strategicAdvice: string;
+}
+
+export interface PathwayPhase {
+  id: string;
+  name: string;
+  duration: string;
+  milestones: string[];
+  riskLevel: string;
+}
+
+export interface PathwayTimeline {
+  totalJourneyYears: string;
+  phases: PathwayPhase[];
+  sampleTimeline: { year: number; event: string }[];
+}
+
+export interface PathwayRiskDimension {
+  name: string;
+  score: number;
+  level: string;
+  summary: string;
+  trend: string;
+}
+
+export interface PathwayRisks {
+  overallScore: number;
+  riskLevel: string;
+  warnings: string[];
+  dimensions: PathwayRiskDimension[];
+}
+
+export interface PathwayCitizenship {
+  yearsRequired: number;
+  difficulty: string;
+  dualAllowed: boolean;
+  languageRequired: string;
+  passportStrength: string;
+}
+
+export interface PathwayCost {
+  item: string;
+  amountUSD: number;
+  notes: string;
+}
+
+export interface PathwayData {
+  country: string;
+  countryCode: string;
+  studentVisa: PathwayVisa | null;
+  postStudyWork: PathwayPostStudyWork | null;
+  prOverview: PathwayPROverview | null;
+  prPathways: PathwayPR[];
+  timeline: PathwayTimeline | null;
+  risks: PathwayRisks | null;
+  citizenship: PathwayCitizenship | null;
+  costs: PathwayCost[];
+  lastUpdated: string;
 }

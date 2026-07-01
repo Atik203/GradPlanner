@@ -1,9 +1,15 @@
 import type { NextConfig } from "next";
 import path from "path";
+import withBundleAnalyzerImport from "@next/bundle-analyzer";
 
 // In production (Vercel), NEXT_BACKEND_URL must be set to the deployed backend URL.
 // In local dev it falls back to localhost:5000.
 const BACKEND_URL = process.env.NEXT_BACKEND_URL || "http://localhost:5000";
+
+const withBundleAnalyzer = withBundleAnalyzerImport({
+  enabled: process.env.ANALYZE === "true",
+  analyzerMode: "static",
+});
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
@@ -26,5 +32,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);
 

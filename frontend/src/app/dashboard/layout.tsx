@@ -16,7 +16,12 @@ import {
 import { DashboardNav } from "./DashboardNav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { UserMenu } from "@/components/layout/UserMenu";
+import { NotificationBell } from "@/components/notifications/NotificationBell";
+import { SearchTrigger } from "@/components/command-palette/SearchTrigger";
 import { BottomNavWrapper } from "@/components/navigation/BottomNavWrapper";
+import { PwaRegister } from "@/components/layout/PwaRegister";
+import { OfflineBanner } from "@/components/layout/OfflineBanner";
+import { InstallBanner } from "@/components/layout/InstallBanner";
 
 export default async function DashboardLayout({
   children,
@@ -48,12 +53,15 @@ export default async function DashboardLayout({
           <div className="flex items-center">
             <h1 className="text-lg font-semibold text-foreground text-gradient bg-linear-to-r from-primary to-emerald-400 bg-clip-text text-transparent">Workspace</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="text-xs text-muted-foreground hidden sm:block">Target Intake: Sept 2028</div>
+          <div className="flex items-center gap-2 md:gap-4">
+            <SearchTrigger />
+            <NotificationBell />
             <ThemeToggle />
             <UserMenu user={user} />
           </div>
         </header>
+
+        <OfflineBanner />
 
         {/* Main View scrollable */}
         <main className="flex-1 overflow-y-auto bg-background p-4 md:p-8 pb-14 md:pb-8">
@@ -61,6 +69,8 @@ export default async function DashboardLayout({
         </main>
       </div>
 
+      <PwaRegister />
+      <InstallBanner />
       <BottomNavWrapper />
     </div>
   );

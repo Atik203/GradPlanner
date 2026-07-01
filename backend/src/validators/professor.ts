@@ -150,3 +150,12 @@ export const logEmailSchema = z
 export type LogEmailInput = z.infer<typeof logEmailSchema>;
 
 export const professorIdParamSchema = idParamSchema;
+
+export const generateEmailSchema = z
+  .object({
+    focus: z.enum(["research", "funding", "paper", "followUp1", "followUp2"]).optional().default("research"),
+    paperTitle: z.string().max(300).optional(),
+  })
+  .strict();
+
+export type GenerateEmailInput = z.infer<typeof generateEmailSchema>;

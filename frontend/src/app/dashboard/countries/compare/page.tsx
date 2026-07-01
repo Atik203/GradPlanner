@@ -401,7 +401,7 @@ export default function CountryComparePage() {
             <ArrowLeft className="h-3 w-3" />
             Back to Dashboard
           </Link>
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">Compare Countries</h2>
+          <h2 className="text-page-title font-black tracking-tight text-foreground">Compare Countries</h2>
           <p className="text-muted-foreground text-sm">Select up to 4 countries to run side-by-side admission and immigration simulations.</p>
         </div>
       </div>

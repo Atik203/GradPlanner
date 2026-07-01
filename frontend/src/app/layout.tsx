@@ -25,11 +25,16 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "GradPlanner — Machine Learning & AI Graduate School Workspace",
   description: "Track and organize your graduate school applications, contacted professors, document checklists, and search university rankings.",
+  manifest: "/manifest.json",
+  icons: {
+    apple: "/icons/icon-192.svg",
+  },
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#0a0a0a",
 };
 
 export default function RootLayout({
