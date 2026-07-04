@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/License-MIT-emerald.svg" alt="License MIT">
   <img src="https://img.shields.io/badge/Stack-Next.js%2016%20%7C%20Express.js-blue.svg" alt="Tech Stack">
   <img src="https://img.shields.io/badge/Edition-Bangladesh-red.svg" alt="Edition">
+  <img src="https://img.shields.io/badge/version-1.2.2-green.svg" alt="version">
 </p>
 
 ---
@@ -51,7 +52,7 @@ GradPlanner is built as a highly performant, decoupled monorepo:
 ├── backend/                  # Express.js REST API server
 │   ├── prisma/               # Database schemas and seeding scripts
 │   └── src/                  # Controllers, routes, and lib instances
-├── frontend/                 # Next.js 16 public & dashboard app
+├── frontend/                 # Next.js 16 (App Router) with shadcn/ui dashboard
 │   ├── public/               # Static country and salary JSON metadata
 │   └── src/                  # Page routers, Redux slices, and UI components
 ├── AGENTS.md                 # Product guidance for AI agents
