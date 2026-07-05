@@ -14,8 +14,6 @@
 
 ---
 
----
-
 ## Phase 2: Onboarding Wizard & Profile Intelligence UX ✅ COMPLETED
 
 **Summary:** `isOnboarded` flag on UserProfile, POST `/api/v1/profile/complete-onboarding` endpoint, 4-step OnboardingWizard (AcademicProfile/MatchIntelligence/Priorities/Summary) with sessionStorage persistence per-step validation, OnboardingGate wraps dashboard, OnboardingGuide post-onboarding tour, BdtConverter, Info tooltips/live country preview on Profile page, completeness bar on dashboard, Reset Onboarding in Settings.
