@@ -6,9 +6,11 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-emerald.svg" alt="License MIT">
-  <img src="https://img.shields.io/badge/Stack-Next.js%2016%20%7C%20Express.js-blue.svg" alt="Tech Stack">
+  <img src="https://img.shields.io/badge/Stack-Next.js%2015%20%7C%20Express.js-blue.svg" alt="Tech Stack">
   <img src="https://img.shields.io/badge/Edition-Bangladesh-red.svg" alt="Edition">
-  <img src="https://img.shields.io/badge/version-1.2.2-green.svg" alt="version">
+  <img src="https://img.shields.io/badge/version-2.0.0-green.svg" alt="version">
+  <img src="https://img.shields.io/badge/PWA-Ready-purple.svg" alt="PWA Ready">
+  <img src="https://img.shields.io/badge/Phases-10%2F10%20Complete-brightgreen.svg" alt="Phases Complete">
 </p>
 
 ---
