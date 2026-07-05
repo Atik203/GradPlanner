@@ -21,10 +21,15 @@ Standard study-abroad tools focus on generic dashboards and simple university ra
 
 GradPlanner solves the real bottlenecks:
 
-- **Funding > Rankings:** Prioritizes programs with active TA/RA stipends, DAAD, MEXT, and fully funded fellowship packages.
-- **Bangladesh-Specific Visa Intelligence:** Tracks German APS bottlenecks (2.5+ years Dhaka waittimes), Canadian SDS requirements, and USA F-1 interview strategies.
-- **Outreach Tracker:** Organizes email pipelines to prospective advisors, managing local local times, follow-up timers, and reply status tracking.
-- **Document Timelines:** Schedules document gathering (police clearances, transcript requests, GIC bank transfers) matching Dhaka timeline realities.
+- **Funding > Rankings:** Prioritizes programs with active TA/RA stipends, DAAD, MEXT, and fully funded fellowship packages — not just QS rankings.
+- **Bangladesh-Specific Visa Intelligence:** Tracks German APS bottlenecks (2.5+ yr Dhaka wait times), Canadian SDS requirements, and USA F-1 interview strategies with BD-specific rejection rate data.
+- **AI-Powered Professor Outreach:** LLM-assisted cold email generator (5 focus modes) drafts tailored outreach to professors in under 2 minutes with tone, funding, and research-fit alignment.
+- **PR & Visa Pathway Simulator:** Interactive country-by-country immigration timeline — Student Visa → Post-Study Work → PR → Citizenship — with honest BD-specific risk ratings and hidden costs.
+- **Deadline Notification Engine:** Smart deadline reminders for application windows, follow-up timers, document expiry alerts, and urgent Sonner toasts across 5 event types.
+- **Command Palette (⌘K):** Instant cross-entity search across universities, professors, countries, and rankings — navigate anywhere without leaving the keyboard.
+- **Advanced Analytics & ROI Dashboard:** Application funnel chart, financial ROI breakdown, professor outreach distribution, and 365-day activity heatmap powered by Recharts.
+- **Document Timelines:** Schedules document gathering (police clearances, APS certificates, GIC bank transfers) matching real Dhaka-to-embassy timeline realities.
+- **PWA & Offline Mode:** Installable as a home-screen app on Android/iOS with service-worker caching, offline banner, and Brotli-compressed API responses.
 
 ---
 
