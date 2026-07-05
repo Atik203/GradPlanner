@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Edition-Bangladesh-red.svg" alt="Edition">
   <img src="https://img.shields.io/badge/version-2.0.0-green.svg" alt="version">
   <img src="https://img.shields.io/badge/PWA-Ready-purple.svg" alt="PWA Ready">
-  <img src="https://img.shields.io/badge/Phases-10%2F10%20Complete-brightgreen.svg" alt="Phases Complete">
+
 </p>
 
 ---
