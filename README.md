@@ -63,13 +63,28 @@ GradPlanner is built as a highly performant, decoupled monorepo:
 
 ```
 ├── backend/                  # Express.js REST API server
-│   ├── prisma/               # Database schemas and seeding scripts
-│   └── src/                  # Controllers, routes, and lib instances
-├── frontend/                 # Next.js 16 (App Router) with shadcn/ui dashboard
-│   ├── public/               # Static country and salary JSON metadata
-│   └── src/                  # Page routers, Redux slices, and UI components
+│   ├── prisma/               # Schema, migrations, and seed scripts (3045 rankings + 20 countries)
+│   └── src/
+│       ├── routes/           # All REST endpoints (auth, profile, countries, professors, ai, analytics…)
+│       ├── services/         # Business logic: notificationService, llmService
+│       ├── validators/       # Zod schemas for every route
+│       └── lib/              # Auth handler, logger, Prisma client
+├── frontend/                 # Next.js 15 (App Router) with shadcn/ui dashboard
+│   ├── public/
+│   │   ├── countries/        # 21 country intelligence JSON files (visa, PR, costs, risks)
+│   │   ├── manifest.json     # PWA Web App Manifest
+│   │   └── sw.js             # Custom Service Worker (cache-first / network-first strategies)
+│   └── src/
+│       ├── app/dashboard/    # Dashboard pages (pathways, analytics, professors, rankings…)
+│       ├── components/       # Shared UI: notifications, onboarding, skeletons, analytics charts
+│       ├── lib/
+│       │   ├── api.ts        # Centralized API client (all fetch calls)
+│       │   └── store/slices/ # Redux Toolkit slices (profile, countries, professors, notifications…)
+│       └── hooks/            # useDebounce, useSwipeGesture, useNetworkStatus, useCommandPalette
+├── notebook/                 # Data preprocessing scripts + universities.csv (3045 rows)
 ├── AGENTS.md                 # Product guidance for AI agents
 ├── CONTRIBUTING.md           # Contribution workflows & guidelines
+├── implementation.md         # Phase-by-phase implementation plan & acceptance criteria
 ├── LICENSE                   # MIT License
 └── README.md                 # Main workspace documentation
 ```
