@@ -39,17 +39,23 @@ GradPlanner is built as a highly performant, decoupled monorepo:
 
 ### Frontend
 
-- **Framework:** Next.js 16 (App Router) with TypeScript
-- **State Management:** Redux Toolkit
-- **Styling:** Tailwind CSS & shadcn/ui
+- **Framework:** Next.js 15 (App Router) with TypeScript Strict
+- **State Management:** Redux Toolkit + Redux Persist
+- **Styling:** Tailwind CSS v4 & shadcn/ui component library
+- **Charts & Visuals:** Recharts (funnel, bar, pie) + custom SVG heatmap
+- **Command Palette:** `cmdk` + shadcn Command component
+- **Notifications:** Sonner toast + in-app notification panel
+- **PWA:** Custom Service Worker + Web App Manifest + `InstallBanner`
 - **Client Authentication:** `better-auth` client instance
 
 ### Backend
 
 - **Server:** Express.js with TypeScript
-- **Database ORM:** Prisma Client
-- **Database:** PostgreSQL
+- **Database ORM:** Prisma 7 (PostgreSQL)
+- **Database:** PostgreSQL with JSONB country intelligence fields
 - **Authentication:** `better-auth` server handler
+- **AI Integration:** OpenAI `gpt-4o-mini` via `llmService` (professor email generation)
+- **Performance:** `compression` middleware (Brotli/Gzip) + `Cache-Control` headers
 
 ---
 
