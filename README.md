@@ -101,29 +101,40 @@ Install dependencies for both frontend and backend using `pnpm` from the root di
 pnpm install
 ```
 
-### 2. Database Setup & Seeding
+### 2. Environment Variables
 
-Ensure you have a PostgreSQL database running. Create a `.env` file in the `backend/` folder and supply the credentials:
+Create `.env` files in both `backend/` and `frontend/` folders:
 
+**`backend/.env`**
 ```env
 DATABASE_URL="postgresql://user:password@localhost:5432/gradplanner?schema=public"
 BETTER_AUTH_SECRET="your-super-secret-auth-key"
+BETTER_AUTH_URL="http://localhost:5000"
+OPENAI_API_KEY="sk-..."       # Required for AI professor email generation
 ```
 
-Apply database migrations:
+**`frontend/.env.local`**
+```env
+NEXT_PUBLIC_API_URL="http://localhost:5000"
+NEXT_PUBLIC_BETTER_AUTH_URL="http://localhost:5000"
+```
+
+### 3. Database Setup & Seeding
+
+Ensure you have a PostgreSQL database running, then apply migrations:
 
 ```bash
 cd backend
 pnpm exec prisma migrate dev
 ```
 
-Seed the reference country intelligence and university ranking datasets:
+Seed the reference country intelligence and university ranking datasets (3045 rankings + 20 countries):
 
 ```bash
 pnpm exec prisma db seed
 ```
 
-### 3. Running Locally
+### 4. Running Locally
 
 Start both services in development mode:
 
@@ -137,20 +148,56 @@ Start both services in development mode:
   _(Starts API on `http://localhost:5000`)_
 
 - **Frontend Client:**
+
   ```bash
   cd frontend
   pnpm dev
   ```
+
   _(Starts Next.js on `http://localhost:3000`)_
+
+### 5. Type Checking
+
+Run type checks in both workspaces after any TypeScript changes:
+
+```bash
+cd backend && pnpm type-check
+cd frontend && pnpm type-check
+```
+
+### 6. Bundle Analysis (optional)
+
+```bash
+cd frontend
+ANALYZE=true pnpm build
+```
+
+---
+
+## ✨ Features at a Glance
+
+| Phase | Feature | Status |
+|-------|---------|--------|
+| 1 | Backend API hardening — Zod validation, `ApiResponse<T>`, rate limiting, seed data | ✅ Done |
+| 2 | Onboarding wizard — 4-step profile setup, `isOnboarded` gate, completeness bar | ✅ Done |
+| 3 | Loading skeletons, error states, empty states overhaul (10 locations) | ✅ Done |
+| 4 | Mobile-first UI — bottom nav, swipe gestures, 44px touch targets, fluid typography | ✅ Done |
+| 5 | Notification & deadline reminder engine — 6 CRUD endpoints, Sonner toasts | ✅ Done |
+| 6 | Global search & command palette — ⌘K, cross-entity search, grouped results | ✅ Done |
+| 7 | Advanced analytics & ROI dashboard — funnel, financial, outreach, heatmap | ✅ Done |
+| 8 | AI professor email generator — OpenAI `gpt-4o-mini`, 5 focus modes, template fallback | ✅ Done |
+| 9 | PR & visa pathway simulator — interactive timeline, BD-specific risks, comparison view | ✅ Done |
+| 10 | PWA & performance — service worker, offline mode, Brotli compression, bundle analysis | ✅ Done |
 
 ---
 
 ## 🤝 Contributing
 
-Contributions to GradPlanner are highly welcome! Please read our [CONTRIBUTING.md](file:///e:/PROJECT/GradPlanner/CONTRIBUTING.md) to understand branch conventions, coding guidelines, and PR procedures.
+Contributions to GradPlanner are highly welcome! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) to understand branch conventions, coding guidelines, and PR procedures.
 
 ---
 
 ## ⚖️ License
 
-Distributed under the MIT License. See [LICENSE](file:///e:/PROJECT/GradPlanner/LICENSE) for more details. Copyright (c) 2026 Atik203.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more details. Copyright (c) 2026 Atik203.
+
