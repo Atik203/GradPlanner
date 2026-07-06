@@ -1,3 +1,4 @@
+  <img src="https://img.shields.io/badge/Phases-10%2F10%20Complete-brightgreen.svg" alt="Phases Complete">
 # GradPlanner — Continuous Improvement Plan
 
 ---
