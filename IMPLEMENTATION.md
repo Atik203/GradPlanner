@@ -1,8 +1,6 @@
 
 # GradPlanner — Continuous Improvement Plan
 
-  <img src="https://img.shields.io/badge/Phases-10%2F10%20Complete-brightgreen.svg" alt="Phases Complete">
-
 ---
 
 ## Phase 1: Backend API Hardening & Input Validation ✅ COMPLETED
