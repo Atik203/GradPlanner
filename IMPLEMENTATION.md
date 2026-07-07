@@ -5,7 +5,7 @@
 
 ## Phase 1: Backend API Hardening & Input Validation ✅ COMPLETED
 
-**Summary:** Zod validation (7 schemas), ApiResponse<T> envelope, rate limiting (100/10/30 per min), 256kb body cap, shared parsers, structured logger, UserSettings model + GET/PUT endpoints, Settings page rewrite with RHF+Zod, ApiErrorAlert/FieldError shared components, fetchApi auto-unwrap, 3045 university rankings + 20-country seed data.
+
 
 ### Acceptance criteria (all met)
 - All API responses use `{ success, data }` / `{ success, error, code }` contract
