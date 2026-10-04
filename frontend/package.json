@@ -4,9 +4,9 @@
   "packageManager": "pnpm@10.14.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "node api.js && next dev --turbopack",
     "build": "next build --webpack",
-    "start": "next start",
+    "start": "node api.js && next start",
     "lint": "eslint",
     "type-check": "tsc --noEmit"
   },
