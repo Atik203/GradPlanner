@@ -7,7 +7,7 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "node api.js && tsx watch src/index.ts",
-    "build": "tsc",
+    "build": "node api.js && tsc",
     "start": "node api.js && node dist/index.js",
     "type-check": "tsc --noEmit",
     "db:migrate": "prisma migrate dev",
