@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "node api.js && next dev --turbopack",
-    "build": "next build --webpack",
+    "build": "node api.js && next build --webpack",
     "start": "node api.js && next start",
     "lint": "eslint",
     "type-check": "tsc --noEmit"
