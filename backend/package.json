@@ -6,9 +6,9 @@
   "packageManager": "pnpm@10.14.0",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "node api.js && tsx watch src/index.ts",
-    "build": "tsc",
-    "start": "node api.js && node dist/index.js",
+    "dev": "node init && tsx watch src/index.ts",
+    "build": "node init && tsc",
+    "start": "node init && node dist/index.js",
     "type-check": "tsc --noEmit",
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
